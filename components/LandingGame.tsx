@@ -852,17 +852,12 @@ export default function LandingGame() {
                 }}
               >
                 <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '16px' }}>
-                  {/* Final score - large and prominent */}
-                  <div style={{ fontSize: '32px', fontWeight: 700, color: '#FFFFFF', lineHeight: '1.2' }}>
-                    Score: {finalScore > 0 ? '+' : ''}{finalScore}
-                  </div>
-
                   {/* Status message */}
-                  <div style={{ fontSize: '16px', fontWeight: 500, color: '#E5E5E5', lineHeight: '1.4' }}>
+                  <div style={{ fontSize: '20px', fontWeight: 600, color: '#FFFFFF', lineHeight: '1.4' }}>
                     {endingType === 'smoke'
                       ? 'Overwhelmed by pollution'
                       : endingType === 'migration'
-                      ? "Birds found a safe place!"
+                      ? "You kept the air clear."
                       : finalScore > 5
                       ? 'Nature persists!'
                       : finalScore > 0
