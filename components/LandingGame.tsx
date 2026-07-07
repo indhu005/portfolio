@@ -38,8 +38,8 @@ interface Bird {
   rotation: number
 }
 
-const GRID_ROWS = 3
-const GRID_COLS = 5
+const GRID_ROWS = 4
+const GRID_COLS = 8
 const SAPLING_GROW_TIME = 1000 // Fast tree growth
 const TRUCK_SPAWN_INTERVAL = 750 // Relentless truck spawning - dominates if idle
 const ROUND_DURATION = 10 // Quick 10-second rounds
@@ -74,7 +74,15 @@ const TreeIcon = ({ hasBird = false, size = 60, variant = 0 }: { hasBird?: boole
   const treeFile = treeVariants[variant % 5]
 
   return (
-    <div style={{ position: 'relative', width: size, height: size }}>
+    <div style={{
+      position: 'absolute',
+      width: size,
+      height: size,
+      top: '50%',
+      left: '50%',
+      transform: 'translate(-50%, -50%)',
+      zIndex: 5,
+    }}>
       <img
         src={`/images/home/${treeFile}`}
         alt="tree"
@@ -113,9 +121,14 @@ const BuildingIcon = ({ size = 60, variant = 0 }: { size?: number; variant?: num
       src={`/images/home/${buildingFile}`}
       alt="building"
       style={{
+        position: 'absolute',
         width: size,
         height: size,
+        top: '50%',
+        left: '50%',
+        transform: 'translate(-50%, -50%)',
         objectFit: 'contain',
+        zIndex: 5,
       }}
     />
   )
@@ -131,10 +144,15 @@ const SaplingIcon = ({ size = 40, variant = 0 }: { size?: number; variant?: numb
       src={`/images/home/${treeFile}`}
       alt="sapling"
       style={{
+        position: 'absolute',
         width: size,
         height: size,
+        top: '50%',
+        left: '50%',
+        transform: 'translate(-50%, -50%)',
         objectFit: 'contain',
         opacity: 0.7,
+        zIndex: 5,
       }}
     />
   )
