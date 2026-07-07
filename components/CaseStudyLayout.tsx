@@ -1,0 +1,358 @@
+'use client'
+import { useState, useEffect, useRef } from 'react'
+import Sidebar from './Sidebar'
+
+const useMediaQuery = (query: string) => {
+  const [matches, setMatches] = useState(false)
+
+  useEffect(() => {
+    const media = window.matchMedia(query)
+    if (media.matches !== matches) {
+      setMatches(media.matches)
+    }
+    const listener = () => setMatches(media.matches)
+    media.addEventListener('change', listener)
+    return () => media.removeEventListener('change', listener)
+  }, [matches, query])
+
+  return matches
+}
+
+interface Section {
+  id: string
+  title: string
+  content: string
+}
+
+interface CaseStudy {
+  title: string
+  subtitle: string
+  description: string
+  sections: Section[]
+}
+
+interface CaseStudyLayoutProps {
+  caseStudy: CaseStudy
+  slug: string
+}
+
+export default function CaseStudyLayout({ caseStudy, slug }: CaseStudyLayoutProps) {
+  const [activeSection, setActiveSection] = useState<string>('snapshot')
+  const sectionRefs = useRef<Record<string, HTMLDivElement | null>>({})
+  const contentRef = useRef<HTMLDivElement>(null)
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const isMobile = useMediaQuery('(max-width: 768px)')
+  const isTablet = useMediaQuery('(max-width: 1024px)')
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (!contentRef.current) return
+
+      const scrollPosition = contentRef.current.scrollTop + 150
+
+      for (const section of caseStudy.sections) {
+        const element = sectionRefs.current[section.id]
+        if (!element) continue
+
+        const offsetTop = element.offsetTop
+        const offsetBottom = offsetTop + element.offsetHeight
+
+        if (scrollPosition >= offsetTop && scrollPosition < offsetBottom) {
+          setActiveSection(section.id)
+          break
+        }
+      }
+    }
+
+    const contentElement = contentRef.current
+    if (contentElement) {
+      contentElement.addEventListener('scroll', handleScroll)
+      return () => contentElement.removeEventListener('scroll', handleScroll)
+    }
+  }, [caseStudy.sections])
+
+  const scrollToSection = (sectionId: string) => {
+    const element = sectionRefs.current[sectionId]
+    if (element && contentRef.current) {
+      const offsetTop = element.offsetTop - 100
+      contentRef.current.scrollTo({
+        top: offsetTop,
+        behavior: 'smooth'
+      })
+    }
+  }
+
+  return (
+    <div style={{
+      display: 'flex',
+      height: '100vh',
+      backgroundColor: '#F7F4F0',
+      overflow: 'hidden',
+      width: '100vw',
+    }}>
+      {/* SIDEBAR - Hidden on mobile/tablet */}
+      {!isTablet && (
+        <Sidebar
+          activeProject={slug}
+          activeSection={activeSection}
+          onSectionClick={scrollToSection}
+          sections={caseStudy.sections}
+        />
+      )}
+
+      {/* MOBILE MENU BUTTON */}
+      {isTablet && (
+        <button
+          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+          style={{
+            position: 'fixed',
+            top: '20px',
+            left: '20px',
+            zIndex: 1000,
+            background: '#F42E5F',
+            color: 'white',
+            border: 'none',
+            borderRadius: '8px',
+            padding: '12px 16px',
+            fontSize: '14px',
+            fontWeight: 600,
+            cursor: 'pointer',
+            boxShadow: '0 2px 8px rgba(0,0,0,0.1)',
+          }}
+        >
+          {mobileMenuOpen ? '✕ Close' : '☰ Menu'}
+        </button>
+      )}
+
+      {/* MOBILE/TABLET OVERLAY MENU */}
+      {isTablet && mobileMenuOpen && (
+        <div
+          style={{
+            position: 'fixed',
+            top: 0,
+            left: 0,
+            width: '100vw',
+            height: '100vh',
+            backgroundColor: '#F7F4F0',
+            zIndex: 999,
+            overflowY: 'auto',
+            padding: '80px 20px 20px 20px',
+          }}
+        >
+          <Sidebar
+            activeProject={slug}
+            activeSection={activeSection}
+            onSectionClick={(sectionId) => {
+              scrollToSection(sectionId)
+              setMobileMenuOpen(false)
+            }}
+            sections={caseStudy.sections}
+          />
+        </div>
+      )}
+
+      {/* RIGHT SIDE */}
+      <div style={{
+        flex: 1,
+        display: 'flex',
+        flexDirection: 'column',
+        height: '100vh',
+      }}>
+        {/* TOPBAR - Same as home page for "channel switching" feel */}
+        <div style={{
+          height: isMobile ? '60px' : '72px',
+          borderBottom: '1px solid rgba(0,0,0,0.08)',
+          display: 'flex',
+          alignItems: 'baseline',
+          justifyContent: 'space-between',
+          padding: isMobile ? '0 20px' : isTablet ? '0 32px' : '0 48px 0 0px',
+          paddingTop: isMobile ? '20px' : '24px',
+          flexShrink: 0,
+        }}>
+          <div style={{ display: 'flex', alignItems: 'baseline', gap: isMobile ? '8px' : '12px', flexWrap: 'wrap' }}>
+            <span style={{
+              fontFamily: 'inherit',
+              fontSize: isMobile ? '14px' : '16px',
+              fontWeight: 700,
+              color: '#1C1917',
+            }}>{caseStudy.title}</span>
+            {!isMobile && (
+              <span style={{
+                fontSize: '14px',
+                fontWeight: 400,
+                color: '#9CA3AF',
+              }}>— {caseStudy.subtitle}</span>
+            )}
+          </div>
+          {!isMobile && (
+            <span style={{
+              fontSize: '14px',
+              fontWeight: 400,
+              color: '#9CA3AF',
+            }}>{caseStudy.description}</span>
+          )}
+        </div>
+
+        {/* CONTENT AREA - The "TV" that scrolls */}
+        <div
+          ref={contentRef}
+          data-scroll-container
+          style={{
+            flex: 1,
+            overflowY: 'auto',
+            padding: isMobile ? '0 20px 40px 20px' : isTablet ? '0 32px 50px 32px' : '0 48px 60px 0px',
+            minWidth: 0,
+            scrollBehavior: 'smooth',
+          }}
+        >
+          {caseStudy.sections.map((section, index) => (
+            <div
+              key={section.id}
+              ref={(el) => { sectionRefs.current[section.id] = el }}
+              style={{
+                marginBottom: index === caseStudy.sections.length - 1 ? '0' : '160px',
+              }}
+            >
+              {/* Hero Image for first section (Snapshot) */}
+              {index === 0 && (
+                <div style={{
+                  width: '100%',
+                  height: '580px',
+                  backgroundColor: '#7EB3F5',
+                  borderRadius: '4px',
+                  marginBottom: '36px',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  color: '#FFFFFF',
+                  fontSize: '48px',
+                  fontWeight: 700,
+                }}>
+                  {caseStudy.title} Hero
+                </div>
+              )}
+
+              {/* Section Title */}
+              <h2 style={{
+                fontSize: '24px',
+                fontWeight: 700,
+                color: '#1C1917',
+                marginBottom: '16px',
+                fontFamily: 'var(--font-fraunces), serif',
+              }}>
+                {section.title}
+              </h2>
+
+              {/* Section Text */}
+              <div
+                style={{
+                  fontSize: '16px',
+                  fontWeight: 400,
+                  color: '#1F2937',
+                  lineHeight: '1.6',
+                  marginBottom: '32px',
+                  width: '100%',
+                }}
+                dangerouslySetInnerHTML={{ __html: section.content }}
+              />
+
+              {/* Visual Content Area - Hidden for strategy, constraints, and tradeoffs sections */}
+              {section.id !== 'strategy' && section.id !== 'constraints' && section.id !== 'tradeoffs' && (
+                <div style={{
+                  width: '100%',
+                  minHeight: '500px',
+                  backgroundColor: '#E5E7EB',
+                  borderRadius: '8px',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  flexDirection: 'column',
+                  gap: '16px',
+                  padding: '40px',
+                  color: '#9CA3AF',
+                  fontSize: '14px',
+                }}>
+                  <div>📸 Image / Video / Figma Embed</div>
+                  <div style={{ fontSize: '12px', textAlign: 'center' }}>
+                    Replace with: &lt;img&gt;, &lt;video&gt;, or &lt;iframe&gt; for Figma prototypes
+                  </div>
+                  <div style={{ fontSize: '12px', color: '#D1D5DB' }}>
+                    Section: {section.title}
+                  </div>
+                </div>
+              )}
+
+            </div>
+          ))}
+
+          {/* Next Case Study Navigation */}
+          {(() => {
+            const caseStudies = [
+              { name: 'Keye', slug: 'keye', subtitle: 'Subscription Marketplace' },
+              { name: 'LAT', slug: 'lat', subtitle: 'Lifecycle Assessment Tracker' },
+              { name: 'Misinformation Center', slug: 'misinformation-center', subtitle: 'Media Literacy Tools' },
+            ]
+            const currentIndex = caseStudies.findIndex(cs => cs.slug === slug)
+            const nextIndex = (currentIndex + 1) % caseStudies.length
+            const nextStudy = caseStudies[nextIndex]
+
+            return (
+              <div style={{
+                marginTop: '120px',
+                paddingTop: '60px',
+                borderTop: '1px solid rgba(0,0,0,0.08)',
+              }}>
+                <a
+                  href={`/work/${nextStudy.slug}`}
+                  style={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'space-between',
+                    textDecoration: 'none',
+                    color: '#1C1917',
+                    transition: 'opacity 0.2s ease',
+                  }}
+                  onMouseEnter={(e) => e.currentTarget.style.opacity = '0.6'}
+                  onMouseLeave={(e) => e.currentTarget.style.opacity = '1'}
+                >
+                  <div>
+                    <div style={{
+                      fontSize: isMobile ? '14px' : '15px',
+                      fontWeight: 400,
+                      color: '#6B7280',
+                      marginBottom: '8px',
+                    }}>
+                      Next Case Study
+                    </div>
+                    <div style={{
+                      fontSize: isMobile ? '24px' : '32px',
+                      fontWeight: 700,
+                      fontFamily: 'var(--font-fraunces), serif',
+                      marginBottom: '4px',
+                    }}>
+                      {nextStudy.name}
+                    </div>
+                    <div style={{
+                      fontSize: isMobile ? '14px' : '16px',
+                      fontWeight: 400,
+                      color: '#6B7280',
+                    }}>
+                      {nextStudy.subtitle}
+                    </div>
+                  </div>
+                  <div style={{
+                    fontSize: isMobile ? '32px' : '48px',
+                    fontWeight: 300,
+                    color: '#1C1917',
+                  }}>
+                    →
+                  </div>
+                </a>
+              </div>
+            )
+          })()}
+        </div>
+      </div>
+    </div>
+  )
+}
