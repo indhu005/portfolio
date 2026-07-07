@@ -857,7 +857,7 @@ export default function LandingGame() {
                   position: 'absolute',
                   left: '0',
                   top: '0',
-                  transform: `translate(${truck.x - 30}px, ${truck.y - 18}px) scaleX(${truck.facingRight ? -1 : 1})`,
+                  transform: `translate(${truck.x - 30}px, ${truck.y - 18}px) scaleX(${truck.facingRight ? 1 : -1})`,
                   width: '60px',
                   height: '36px',
                   willChange: 'transform',
