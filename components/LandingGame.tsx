@@ -855,23 +855,30 @@ export default function LandingGame() {
             )}
 
             {/* Trucks overlay - multiple trucks can exist simultaneously */}
-            {trucks.map(truck => (
-              <img
-                key={truck.id}
-                src="/images/home/truck.svg"
-                alt="truck"
-                style={{
-                  position: 'absolute',
-                  left: '0',
-                  top: '0',
-                  transform: `translate(${truck.x - 30}px, ${truck.y - 18}px) scaleX(${truck.facingRight ? 1 : -1})`,
-                  width: '60px',
-                  height: '36px',
-                  willChange: 'transform',
-                  zIndex: 20,
-                }}
-              />
-            ))}
+            {trucks.map(truck => {
+              const truckWidth = isMobile ? 36 : 60
+              const truckHeight = isMobile ? 22 : 36
+              const offsetX = isMobile ? 18 : 30
+              const offsetY = isMobile ? 11 : 18
+
+              return (
+                <img
+                  key={truck.id}
+                  src="/images/home/truck.svg"
+                  alt="truck"
+                  style={{
+                    position: 'absolute',
+                    left: '0',
+                    top: '0',
+                    transform: `translate(${truck.x - offsetX}px, ${truck.y - offsetY}px) scaleX(${truck.facingRight ? 1 : -1})`,
+                    width: `${truckWidth}px`,
+                    height: `${truckHeight}px`,
+                    willChange: 'transform',
+                    zIndex: 20,
+                  }}
+                />
+              )
+            })}
           </div>
 
           {/* Smoke overlay */}
