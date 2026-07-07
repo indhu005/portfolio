@@ -793,7 +793,7 @@ export default function LandingGame() {
           position: 'relative',
           width: '100%',
           height: '100%',
-          padding: isMobile ? '16px 16px 20px 16px' : `${GAME_FIELD_PADDING}px ${GAME_FIELD_PADDING}px 20px ${GAME_FIELD_PADDING}px`,
+          padding: isMobile ? '16px 16px 20px 16px' : `${GAME_FIELD_PADDING}px 10px 20px ${GAME_FIELD_PADDING}px`,
           overflow: 'hidden',
         }}
       >
