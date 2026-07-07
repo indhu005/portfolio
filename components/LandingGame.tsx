@@ -662,16 +662,16 @@ export default function LandingGame() {
       <div
         style={{
           width: '100%',
-          height: isMobile ? 'auto' : '580px',
-          minHeight: isMobile ? '600px' : '580px',
+          height: 'auto',
+          minHeight: isMobile ? '600px' : 'auto',
           position: 'relative',
-          overflow: 'hidden',
+          overflow: 'visible',
           backgroundColor: '#FFFFFF',
           display: 'flex',
           flexDirection: 'column',
           alignItems: 'center',
-          justifyContent: 'center',
-          padding: isMobile ? '20px 16px' : '40px',
+          justifyContent: 'flex-start',
+          padding: isMobile ? '20px 16px 40px' : '40px',
         }}
       >
       {/* Centered header block - location, tagline, instruction only - positioned relative to outer container */}
