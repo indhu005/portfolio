@@ -44,6 +44,9 @@ const SAPLING_GROW_TIME = 1000 // Fast tree growth
 const TRUCK_SPAWN_INTERVAL = 750 // Relentless truck spawning - dominates if idle
 const ROUND_DURATION = 10 // Quick 10-second rounds
 
+// Game field padding - consistent inset from all edges
+const GAME_FIELD_PADDING = 40 // px on all sides
+
 // Grid positioning - defines safe zone below header
 const GRID_TOP_OFFSET = 170 // marginTop (110px) + padding-top (60px)
 const CELL_SIZE = 80
@@ -361,7 +364,7 @@ export default function LandingGame() {
         turnCol: targetCol,
         turnRow: targetRow,
         phase: 'horizontal',
-        x: startCol * CELL_STRIDE,
+        x: startCol * CELL_STRIDE + GAME_FIELD_PADDING,
         y: startRow * CELL_STRIDE + GRID_TOP_OFFSET,
         rotation: 0,
         facingRight: fromLeft, // true if starting from left (moving right)
@@ -395,7 +398,7 @@ export default function LandingGame() {
 
             if (truck.phase === 'horizontal') {
               // Move horizontally toward target column
-              const targetX = truck.turnCol * CELL_STRIDE
+              const targetX = truck.turnCol * CELL_STRIDE + GAME_FIELD_PADDING
               const direction = truck.startCol < truck.turnCol ? 1 : -1
               newX += speed * direction
               newFacingRight = direction > 0 // Update facing direction
@@ -435,7 +438,7 @@ export default function LandingGame() {
               newX += speed * exitDirection
               newFacingRight = exitDirection > 0
 
-              if (newX < -100 || newX > (GRID_COLS + 1) * CELL_STRIDE) {
+              if (newX < -100 || newX > (GRID_COLS + 1) * CELL_STRIDE + GAME_FIELD_PADDING) {
                 return null // Remove this truck
               }
             }
@@ -503,14 +506,21 @@ export default function LandingGame() {
   }, [grid, gameActive, hasInteracted])
 
   // Bird animation - generate more birds initially
-  // Birds spawn only in safe zone below header (20-80% of container height)
-  const BIRD_MIN_Y = 20 // % from top - keeps birds below header
-  const BIRD_MAX_Y = 80 // % from top - keeps birds in visible area
+  // Birds spawn only in safe zone with padding from edges
+  // Convert padding to percentage of 580px container height
+  const paddingPercent = (GAME_FIELD_PADDING / 580) * 100
+  const BIRD_MIN_Y = paddingPercent + 15 // % from top - padding + header clearance
+  const BIRD_MAX_Y = 100 - paddingPercent // % from top - keeps birds within padding
 
   const generateInitialBirds = (): Bird[] => {
+    // Calculate horizontal padding as percentage (container width includes 40px padding on each side already)
+    const horizontalPaddingPercent = 5 // Additional % from edges for birds
+    const BIRD_MIN_X = horizontalPaddingPercent
+    const BIRD_MAX_X = 100 - horizontalPaddingPercent
+
     return Array.from({ length: 8 }, (_, i) => ({
       id: i,
-      x: Math.random() * 100,
+      x: BIRD_MIN_X + Math.random() * (BIRD_MAX_X - BIRD_MIN_X),
       y: BIRD_MIN_Y + Math.random() * (BIRD_MAX_Y - BIRD_MIN_Y),
       vx: (Math.random() - 0.5) * 0.3,
       vy: (Math.random() - 0.5) * 0.2,
@@ -764,7 +774,7 @@ export default function LandingGame() {
         </button>
       ) : (
         <>
-          {/* Grid - with generous top margin and padding from edges */}
+          {/* Grid - with consistent padding from all edges */}
           <div
             style={{
               position: 'relative',
@@ -774,7 +784,7 @@ export default function LandingGame() {
               gap: '16px',
               zIndex: 10,
               marginTop: '110px',
-              padding: '60px 30px 30px 30px',
+              padding: `60px ${GAME_FIELD_PADDING}px ${GAME_FIELD_PADDING}px ${GAME_FIELD_PADDING}px`,
             }}
           >
             {grid.map((row, rowIndex) =>
