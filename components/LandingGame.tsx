@@ -687,7 +687,7 @@ export default function LandingGame() {
           flexDirection: 'column',
           alignItems: 'center',
           justifyContent: 'flex-start',
-          padding: isMobile ? '20px 16px 40px' : '40px',
+          padding: 0,
         }}
       >
       {/* Centered header block - location, tagline, instruction only - positioned relative to outer container */}
@@ -812,10 +812,10 @@ export default function LandingGame() {
               gridTemplateColumns: isMobile ? `repeat(${GRID_COLS}, 48px)` : `repeat(${GRID_COLS}, 80px)`,
               gap: isMobile ? '8px' : '16px',
               zIndex: 10,
-              marginTop: isMobile ? '80px' : '110px',
+              marginTop: isMobile ? '60px' : '80px',
               marginLeft: 'auto',
               marginRight: 'auto',
-              padding: isMobile ? `40px 0 0 0` : `60px 0 0 0`,
+              padding: 0,
             }}
           >
             {grid.map((row, rowIndex) =>
