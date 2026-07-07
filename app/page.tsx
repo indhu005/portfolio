@@ -110,6 +110,7 @@ export default function Home() {
           {/* Home page content */}
           <div style={{
             maxWidth: '920px',
+            marginTop: '-10px',
           }}>
             <h1 style={{
               fontFamily: 'var(--font-fraunces), serif',
