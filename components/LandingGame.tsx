@@ -194,8 +194,9 @@ export default function LandingGame() {
   const [timeLeft, setTimeLeft] = useState(ROUND_DURATION)
   const [gameActive, setGameActive] = useState(false)
   const [gameEnded, setGameEnded] = useState(false)
-  const [score, setScore] = useState(0)
-  const [finalScore, setFinalScore] = useState(0)
+  const [planted, setPlanted] = useState(0)
+  const [stillStanding, setStillStanding] = useState(0)
+  const [hasInteracted, setHasInteracted] = useState(false)
   const [trucks, setTrucks] = useState<Truck[]>([])
   const [showPlantingHand, setShowPlantingHand] = useState<{row: number, col: number} | null>(null)
   const [birds, setBirds] = useState<Bird[]>([])
@@ -238,8 +239,9 @@ export default function LandingGame() {
     setGameActive(true)
     setGameEnded(false)
     setTimeLeft(ROUND_DURATION)
-    setScore(0)
-    setFinalScore(0)
+    setPlanted(0)
+    setStillStanding(0)
+    setHasInteracted(false)
     setTrucks([])
     setSmokeOpacity(0)
     setEndingType(null)
@@ -263,10 +265,19 @@ export default function LandingGame() {
     if (timeLeft <= 0) {
       // Round ended by timer
       const trees = grid.flat().filter(cell => cell.state === 'tree').length
+      const saplings = grid.flat().filter(cell => cell.state === 'sapling').length
+      const stillStandingCount = trees + saplings
       const buildings = grid.flat().filter(cell => cell.state === 'building').length
-      const finalScoreValue = trees - buildings
 
-      setFinalScore(finalScoreValue)
+      setStillStanding(stillStandingCount)
+
+      // If visitor never interacted, silently restart round
+      if (!hasInteracted) {
+        setTimeout(() => {
+          startGame()
+        }, 500)
+        return
+      }
 
       // Determine ending type based on tree vs building count
       if (trees >= buildings) {
@@ -290,7 +301,7 @@ export default function LandingGame() {
     }, 1000)
 
     return () => clearInterval(timer)
-  }, [timeLeft, gameActive])
+  }, [timeLeft, gameActive, hasInteracted, grid])
 
   // Grow saplings
   useEffect(() => {
@@ -446,12 +457,12 @@ export default function LandingGame() {
     }
   }, [trucks, gameActive])
 
-  // Calculate score and monitor pollution/smoke
+  // Monitor pollution/smoke
   useEffect(() => {
     if (!gameActive) return
     const trees = grid.flat().filter(cell => cell.state === 'tree').length
+    const saplings = grid.flat().filter(cell => cell.state === 'sapling').length
     const buildings = grid.flat().filter(cell => cell.state === 'building').length
-    setScore(trees - buildings)
 
     // Calculate pollution ratio
     const totalCells = GRID_ROWS * GRID_COLS
@@ -467,12 +478,21 @@ export default function LandingGame() {
 
     // Check for smoke ending (early game end)
     if (buildingRatio >= SMOKE_END_RATIO && gameActive) {
-      setGameActive(false)
-      setGameEnded(true)
-      setFinalScore(trees - buildings)
-      setEndingType('smoke')
+      const stillStandingCount = trees + saplings
+      setStillStanding(stillStandingCount)
+
+      // If visitor never interacted, silently restart
+      if (!hasInteracted) {
+        setTimeout(() => {
+          startGame()
+        }, 500)
+      } else {
+        setGameActive(false)
+        setGameEnded(true)
+        setEndingType('smoke')
+      }
     }
-  }, [grid, gameActive])
+  }, [grid, gameActive, hasInteracted])
 
   // Bird animation - generate more birds initially
   // Birds spawn only in safe zone below header (20-80% of container height)
@@ -562,6 +582,11 @@ export default function LandingGame() {
 
     const cell = grid[row][col]
     if (cell.state === 'empty') {
+      // Mark that visitor has interacted
+      setHasInteracted(true)
+      // Increment planted count immediately
+      setPlanted(prev => prev + 1)
+
       setShowPlantingHand({ row, col })
       setTimeout(() => setShowPlantingHand(null), 300)
 
@@ -698,7 +723,7 @@ export default function LandingGame() {
             Time: {timeLeft}s
           </div>
 
-          {/* Score - more prominent */}
+          {/* Planted count */}
           <div
             style={{
               fontSize: '18px',
@@ -707,7 +732,7 @@ export default function LandingGame() {
               lineHeight: '1.2',
             }}
           >
-            Score: {score > 0 ? '+' : ''}{score}
+            Planted: {planted}
           </div>
         </div>
       )}
@@ -847,32 +872,44 @@ export default function LandingGame() {
                   zIndex: 101,
                   fontFamily: 'DM Sans, sans-serif',
                   boxShadow: '0 8px 32px rgba(0, 0, 0, 0.4)',
-                  minWidth: '320px',
+                  minWidth: '360px',
                   animation: 'scaleIn 0.4s cubic-bezier(0.34, 1.56, 0.64, 1)',
                 }}
               >
-                <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '16px' }}>
-                  {/* Status message */}
-                  <div style={{ fontSize: '20px', fontWeight: 600, color: '#FFFFFF', lineHeight: '1.4' }}>
-                    {endingType === 'smoke'
-                      ? 'Overwhelmed by pollution'
-                      : endingType === 'migration'
-                      ? "You kept the air clear."
-                      : finalScore > 5
-                      ? 'Nature persists!'
-                      : finalScore > 0
-                      ? 'A fighting chance.'
-                      : 'The city wins.'}
+                <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '20px' }}>
+                  {/* Stats line */}
+                  <div style={{ fontSize: '16px', fontWeight: 500, color: '#E5E5E5', lineHeight: '1.5' }}>
+                    You planted {planted} {planted === 1 ? 'tree' : 'trees'}. {stillStanding} {stillStanding === 1 ? 'is' : 'are'} still standing.
                   </div>
 
-                  {/* Subtitle message */}
-                  {endingType === 'smoke' && (
-                    <div style={{ fontSize: '14px', color: '#9CA3AF' }}>
-                      The city consumed the field.
-                    </div>
-                  )}
+                  {/* Bridge line */}
+                  <div style={{ fontSize: '14px', fontWeight: 400, color: '#9CA3AF', lineHeight: '1.5' }}>
+                    Small, deliberate choices — that's the whole job.
+                  </div>
 
-                  {/* Play again button */}
+                  {/* Case study link - secondary styling */}
+                  <a
+                    href="/work/lat"
+                    style={{
+                      fontSize: '13px',
+                      fontWeight: 500,
+                      color: '#86C232',
+                      textDecoration: 'none',
+                      borderBottom: '1px solid transparent',
+                      transition: 'border-color 0.2s',
+                      cursor: 'pointer',
+                    }}
+                    onMouseEnter={(e) => {
+                      e.currentTarget.style.borderBottomColor = '#86C232'
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.style.borderBottomColor = 'transparent'
+                    }}
+                  >
+                    See how this plays out for real →
+                  </a>
+
+                  {/* Play again button - primary */}
                   <button
                     onClick={startGame}
                     style={{
@@ -884,7 +921,7 @@ export default function LandingGame() {
                       border: 'none',
                       borderRadius: '8px',
                       cursor: 'pointer',
-                      marginTop: '8px',
+                      marginTop: '4px',
                     }}
                   >
                     Plant again
