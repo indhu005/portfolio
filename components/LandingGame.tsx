@@ -849,6 +849,9 @@ export default function LandingGame() {
           height: '100%',
           padding: isMobile ? '16px' : `${GAME_FIELD_PADDING}px`,
           overflow: 'hidden',
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
         }}
       >
           {/* Birds layer - inside bounded play area */}
@@ -866,8 +869,6 @@ export default function LandingGame() {
               gap: isMobile ? '8px' : '16px',
               zIndex: 10,
               marginTop: isMobile ? '200px' : '160px',
-              marginLeft: 'auto',
-              marginRight: 'auto',
               padding: 0,
             }}
           >
