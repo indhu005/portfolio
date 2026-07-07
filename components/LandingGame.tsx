@@ -870,6 +870,7 @@ export default function LandingGame() {
               gap: isMobile ? '8px' : '16px',
               zIndex: 10,
               padding: 0,
+              marginTop: isMobile ? '120px' : '100px',
             }}
           >
             {grid.map((row, rowIndex) =>
