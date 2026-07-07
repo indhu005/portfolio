@@ -384,7 +384,7 @@ export default function LandingGame() {
         turnCol: targetCol,
         turnRow: targetRow,
         phase: 'horizontal',
-        x: startCol * CELL_STRIDE + GAME_FIELD_PADDING,
+        x: startCol * CELL_STRIDE,
         y: startRow * CELL_STRIDE + GRID_TOP_OFFSET,
         rotation: 0,
         facingRight: fromLeft, // true if starting from left (moving right)
@@ -418,7 +418,7 @@ export default function LandingGame() {
 
             if (truck.phase === 'horizontal') {
               // Move horizontally toward target column
-              const targetX = truck.turnCol * CELL_STRIDE + GAME_FIELD_PADDING
+              const targetX = truck.turnCol * CELL_STRIDE
               const direction = truck.startCol < truck.turnCol ? 1 : -1
               newX += speed * direction
               newFacingRight = direction > 0 // Update facing direction
@@ -458,7 +458,7 @@ export default function LandingGame() {
               newX += speed * exitDirection
               newFacingRight = exitDirection > 0
 
-              if (newX < -100 || newX > (GRID_COLS + 1) * CELL_STRIDE + GAME_FIELD_PADDING) {
+              if (newX < -100 || newX > (GRID_COLS + 1) * CELL_STRIDE) {
                 return null // Remove this truck
               }
             }
@@ -674,12 +674,7 @@ export default function LandingGame() {
           padding: isMobile ? '20px 16px' : '40px',
         }}
       >
-      {/* Birds layer */}
-      {birds.map(bird => (
-        <BirdSilhouette key={bird.id} x={bird.x} y={bird.y} rotation={bird.rotation} />
-      ))}
-
-      {/* Centered header block - location, tagline, instruction only */}
+      {/* Centered header block - location, tagline, instruction only - positioned relative to outer container */}
       <div
         style={{
           position: 'absolute',
@@ -796,7 +791,19 @@ export default function LandingGame() {
           Start Game
         </button>
       ) : (
-        <>
+        <div
+          style={{
+            position: 'relative',
+            width: '100%',
+            height: '100%',
+            padding: isMobile ? '16px' : `${GAME_FIELD_PADDING}px`,
+          }}
+        >
+          {/* Birds layer - inside bounded play area */}
+          {birds.map(bird => (
+            <BirdSilhouette key={bird.id} x={bird.x} y={bird.y} rotation={bird.rotation} />
+          ))}
+
           {/* Grid - with consistent padding from all edges */}
           <div
             style={{
@@ -809,7 +816,7 @@ export default function LandingGame() {
               marginTop: isMobile ? '80px' : '110px',
               marginLeft: 'auto',
               marginRight: 'auto',
-              padding: isMobile ? `40px 16px 16px 16px` : `60px ${GAME_FIELD_PADDING}px ${GAME_FIELD_PADDING}px ${GAME_FIELD_PADDING}px`,
+              padding: isMobile ? `40px 0 0 0` : `60px 0 0 0`,
             }}
           >
             {grid.map((row, rowIndex) =>
@@ -977,7 +984,7 @@ export default function LandingGame() {
               </div>
             </>
           )}
-        </>
+        </div>
       )}
       </div>
     </>
