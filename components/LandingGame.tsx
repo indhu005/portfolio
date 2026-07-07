@@ -762,7 +762,7 @@ export default function LandingGame() {
           style={{
             fontSize: '12px',
             color: '#6B7280',
-            marginBottom: '16px',
+            marginBottom: isMobile ? '8px' : '16px',
             lineHeight: '1.5',
           }}
         >
@@ -775,7 +775,7 @@ export default function LandingGame() {
             fontSize: isMobile ? '16px' : '18px',
             fontWeight: 600,
             color: '#1C1917',
-            marginBottom: '20px',
+            marginBottom: isMobile ? '12px' : '20px',
             fontFamily: 'var(--font-fraunces), serif',
             lineHeight: '1.4',
           }}
@@ -789,7 +789,7 @@ export default function LandingGame() {
             style={{
               fontSize: isMobile ? '13px' : '14px',
               color: '#6B7280',
-              marginBottom: '16px',
+              marginBottom: isMobile ? '8px' : '16px',
               lineHeight: '1.5',
             }}
           >
@@ -870,7 +870,7 @@ export default function LandingGame() {
               gap: isMobile ? '8px' : '16px',
               zIndex: 10,
               padding: 0,
-              marginTop: isMobile ? '120px' : '100px',
+              marginTop: isMobile ? '140px' : '100px',
             }}
           >
             {grid.map((row, rowIndex) =>
