@@ -681,6 +681,8 @@ export default function LandingGame() {
           position: 'relative',
           overflow: 'visible',
           backgroundColor: '#FFFFFF',
+          borderRadius: '4px',
+          marginBottom: isMobile ? '40px' : '64px',
           display: 'flex',
           flexDirection: 'column',
           alignItems: 'center',
