@@ -68,10 +68,10 @@ const TREE_COLORS = [
 const SMOKE_START_RATIO = 0.5  // 50% buildings
 const SMOKE_END_RATIO = 0.75   // 75% buildings
 
-const TreeIcon = ({ hasBird = false, size = 60, seed = 0 }: { hasBird?: boolean; size?: number; seed?: number }) => {
-  // Pick one of the 5 new 3D tree SVGs randomly
+const TreeIcon = ({ hasBird = false, size = 60, variant = 0 }: { hasBird?: boolean; size?: number; variant?: number }) => {
+  // Pick one of the 5 new 3D tree SVGs based on stored variant
   const treeVariants = ['tree 01 (1).svg', 'tree 01 (2).svg', 'tree 01 (3).svg', 'tree 01 (4).svg', 'tree 01 (5).svg']
-  const treeFile = treeVariants[Math.floor(Math.random() * 5)]
+  const treeFile = treeVariants[variant % 5]
 
   return (
     <div style={{ position: 'relative', width: size, height: size }}>
@@ -103,10 +103,10 @@ const TreeIcon = ({ hasBird = false, size = 60, seed = 0 }: { hasBird?: boolean;
   )
 }
 
-const BuildingIcon = ({ size = 60, seed = 0 }: { size?: number; seed?: number }) => {
-  // Pick one of the 3 new 3D building SVGs randomly
+const BuildingIcon = ({ size = 60, variant = 0 }: { size?: number; variant?: number }) => {
+  // Pick one of the 3 new 3D building SVGs based on stored variant
   const buildingVariants = ['building 01.svg', 'building 02.svg', 'building 03.svg']
-  const buildingFile = buildingVariants[Math.floor(Math.random() * 3)]
+  const buildingFile = buildingVariants[variant % 3]
 
   return (
     <img
@@ -121,10 +121,10 @@ const BuildingIcon = ({ size = 60, seed = 0 }: { size?: number; seed?: number })
   )
 }
 
-const SaplingIcon = ({ size = 40, seed = 0 }: { size?: number; seed?: number }) => {
+const SaplingIcon = ({ size = 40, variant = 0 }: { size?: number; variant?: number }) => {
   // Use same 3D tree SVGs but smaller for saplings
   const treeVariants = ['tree 01 (1).svg', 'tree 01 (2).svg', 'tree 01 (3).svg', 'tree 01 (4).svg', 'tree 01 (5).svg']
-  const treeFile = treeVariants[seed % 5]
+  const treeFile = treeVariants[variant % 5]
 
   return (
     <img
@@ -388,6 +388,7 @@ export default function LandingGame() {
                 // Assign random color from palette and possibly a bird (1/3 to 1/2 chance)
                 const treeColor = TREE_COLORS[Math.floor(Math.random() * TREE_COLORS.length)]
                 const hasBird = Math.random() < 0.4 // 40% chance of bird
+                // Preserve the variant from sapling
                 return { ...cell, state: 'tree', treeColor, hasBird }
               }
             }
@@ -484,7 +485,9 @@ export default function LandingGame() {
                     const newGrid = [...prevGrid]
                     const cell = newGrid[truck.row][truck.targetCol]
                     if (cell.state !== 'building') {
-                      newGrid[truck.row][truck.targetCol] = { state: 'building' }
+                      // Assign a random variant (0-2) for building shape
+                      const buildingVariant = Math.floor(Math.random() * 3)
+                      newGrid[truck.row][truck.targetCol] = { state: 'building', variant: buildingVariant }
                     }
                     return newGrid
                   })
@@ -670,10 +673,12 @@ export default function LandingGame() {
 
       // Assign a random color from palette for this tree
       const treeColor = TREE_COLORS[Math.floor(Math.random() * TREE_COLORS.length)]
+      // Assign a random variant (0-4) for tree shape
+      const treeVariant = Math.floor(Math.random() * 5)
 
       setGrid(prevGrid => {
         const newGrid = [...prevGrid]
-        newGrid[row][col] = { state: 'sapling', plantedAt: Date.now(), treeColor }
+        newGrid[row][col] = { state: 'sapling', plantedAt: Date.now(), treeColor, variant: treeVariant }
         return newGrid
       })
     }
@@ -869,9 +874,9 @@ export default function LandingGame() {
                   }}
                 >
                   {cell.state === 'empty' && <IsometricGroundMarker size={isMobile ? 48 : 80} />}
-                  {cell.state === 'tree' && <TreeIcon hasBird={cell.hasBird} seed={rowIndex * GRID_COLS + colIndex} size={isMobile ? 36 : 60} />}
-                  {cell.state === 'building' && <BuildingIcon seed={rowIndex * GRID_COLS + colIndex + 1000} size={isMobile ? 36 : 60} />}
-                  {cell.state === 'sapling' && <SaplingIcon seed={rowIndex * GRID_COLS + colIndex + 2000} size={isMobile ? 24 : 40} />}
+                  {cell.state === 'tree' && <TreeIcon hasBird={cell.hasBird} variant={cell.variant || 0} size={isMobile ? 36 : 60} />}
+                  {cell.state === 'building' && <BuildingIcon variant={cell.variant || 0} size={isMobile ? 36 : 60} />}
+                  {cell.state === 'sapling' && <SaplingIcon variant={cell.variant || 0} size={isMobile ? 24 : 40} />}
                   {showPlantingHand?.row === rowIndex && showPlantingHand?.col === colIndex && (
                     <PlantingHand show={true} />
                   )}
