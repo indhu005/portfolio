@@ -69,9 +69,9 @@ const SMOKE_START_RATIO = 0.5  // 50% buildings
 const SMOKE_END_RATIO = 0.75   // 75% buildings
 
 const TreeIcon = ({ hasBird = false, size = 60, seed = 0 }: { hasBird?: boolean; size?: number; seed?: number }) => {
-  // Pick one of the 5 new 3D tree SVGs based on seed
+  // Pick one of the 5 new 3D tree SVGs randomly
   const treeVariants = ['tree 01 (1).svg', 'tree 01 (2).svg', 'tree 01 (3).svg', 'tree 01 (4).svg', 'tree 01 (5).svg']
-  const treeFile = treeVariants[seed % 5]
+  const treeFile = treeVariants[Math.floor(Math.random() * 5)]
 
   return (
     <div style={{ position: 'relative', width: size, height: size }}>
@@ -104,9 +104,9 @@ const TreeIcon = ({ hasBird = false, size = 60, seed = 0 }: { hasBird?: boolean;
 }
 
 const BuildingIcon = ({ size = 60, seed = 0 }: { size?: number; seed?: number }) => {
-  // Pick one of the 3 new 3D building SVGs based on seed
+  // Pick one of the 3 new 3D building SVGs randomly
   const buildingVariants = ['building 01.svg', 'building 02.svg', 'building 03.svg']
-  const buildingFile = buildingVariants[seed % 3]
+  const buildingFile = buildingVariants[Math.floor(Math.random() * 3)]
 
   return (
     <img
