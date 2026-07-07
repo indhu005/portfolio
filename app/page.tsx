@@ -110,7 +110,7 @@ export default function Home() {
           {/* Home page content */}
           <div style={{
             maxWidth: '920px',
-            marginTop: isMobile ? '-40px' : '-20px',
+            marginTop: isMobile ? '-32px' : '-20px',
           }}>
             <h1 style={{
               fontFamily: 'var(--font-fraunces), serif',
