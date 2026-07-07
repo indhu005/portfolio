@@ -187,7 +187,24 @@ const PlantingHand = ({ show }: { show: boolean }) => (
   </div>
 )
 
+// Hook to detect mobile viewport
+const useIsMobile = () => {
+  const [isMobile, setIsMobile] = useState(false)
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768)
+    }
+    checkMobile()
+    window.addEventListener('resize', checkMobile)
+    return () => window.removeEventListener('resize', checkMobile)
+  }, [])
+
+  return isMobile
+}
+
 export default function LandingGame() {
+  const isMobile = useIsMobile()
   const [grid, setGrid] = useState<Cell[][]>(() =>
     Array(GRID_ROWS)
       .fill(null)
@@ -645,7 +662,8 @@ export default function LandingGame() {
       <div
         style={{
           width: '100%',
-          height: '580px',
+          height: isMobile ? 'auto' : '580px',
+          minHeight: isMobile ? '600px' : '580px',
           position: 'relative',
           overflow: 'hidden',
           backgroundColor: '#FFFFFF',
@@ -653,7 +671,7 @@ export default function LandingGame() {
           flexDirection: 'column',
           alignItems: 'center',
           justifyContent: 'center',
-          padding: '40px',
+          padding: isMobile ? '20px 16px' : '40px',
         }}
       >
       {/* Birds layer */}
@@ -689,12 +707,14 @@ export default function LandingGame() {
         {/* Tagline - Fraunces font */}
         <div
           style={{
-            fontSize: '18px',
+            fontSize: isMobile ? '16px' : '18px',
             fontWeight: 600,
             color: '#1C1917',
             marginBottom: '20px',
             fontFamily: 'var(--font-fraunces), serif',
             lineHeight: '1.4',
+            maxWidth: isMobile ? '90%' : '100%',
+            margin: '0 auto 20px',
           }}
         >
           Plant faster than the city can build. Good luck.
@@ -704,13 +724,13 @@ export default function LandingGame() {
         {(gameActive || gameEnded) && !gameEnded && (
           <div
             style={{
-              fontSize: '14px',
+              fontSize: isMobile ? '13px' : '14px',
               color: '#6B7280',
               marginBottom: '16px',
               lineHeight: '1.5',
             }}
           >
-            Click to plant trees.
+            {isMobile ? 'Tap to plant trees.' : 'Click to plant trees.'}
           </div>
         )}
       </div>
@@ -720,11 +740,11 @@ export default function LandingGame() {
         <div
           style={{
             position: 'absolute',
-            top: '20px',
-            right: '40px',
+            top: isMobile ? '16px' : '20px',
+            right: isMobile ? '16px' : '40px',
             backgroundColor: '#1C1917',
             borderRadius: '12px',
-            padding: '12px 20px',
+            padding: isMobile ? '10px 16px' : '12px 20px',
             display: 'flex',
             flexDirection: 'column',
             gap: '8px',
@@ -782,14 +802,14 @@ export default function LandingGame() {
             style={{
               position: 'relative',
               display: 'grid',
-              gridTemplateRows: `repeat(${GRID_ROWS}, 80px)`,
-              gridTemplateColumns: `repeat(${GRID_COLS}, 80px)`,
-              gap: '16px',
+              gridTemplateRows: isMobile ? `repeat(${GRID_ROWS}, 48px)` : `repeat(${GRID_ROWS}, 80px)`,
+              gridTemplateColumns: isMobile ? `repeat(${GRID_COLS}, 48px)` : `repeat(${GRID_COLS}, 80px)`,
+              gap: isMobile ? '8px' : '16px',
               zIndex: 10,
-              marginTop: '110px',
+              marginTop: isMobile ? '80px' : '110px',
               marginLeft: 'auto',
               marginRight: 'auto',
-              padding: `60px ${GAME_FIELD_PADDING}px ${GAME_FIELD_PADDING}px ${GAME_FIELD_PADDING}px`,
+              padding: isMobile ? `40px 16px 16px 16px` : `60px ${GAME_FIELD_PADDING}px ${GAME_FIELD_PADDING}px ${GAME_FIELD_PADDING}px`,
             }}
           >
             {grid.map((row, rowIndex) =>
@@ -799,8 +819,8 @@ export default function LandingGame() {
                   onClick={() => handleCellClick(rowIndex, colIndex)}
                   style={{
                     position: 'relative',
-                    width: '80px',
-                    height: '80px',
+                    width: isMobile ? '48px' : '80px',
+                    height: isMobile ? '48px' : '80px',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
@@ -817,9 +837,9 @@ export default function LandingGame() {
                     e.currentTarget.style.transform = 'scale(1)'
                   }}
                 >
-                  {cell.state === 'tree' && <TreeIcon hasBird={cell.hasBird} seed={rowIndex * GRID_COLS + colIndex} />}
-                  {cell.state === 'building' && <BuildingIcon seed={rowIndex * GRID_COLS + colIndex + 1000} />}
-                  {cell.state === 'sapling' && <SaplingIcon seed={rowIndex * GRID_COLS + colIndex + 2000} />}
+                  {cell.state === 'tree' && <TreeIcon hasBird={cell.hasBird} seed={rowIndex * GRID_COLS + colIndex} size={isMobile ? 36 : 60} />}
+                  {cell.state === 'building' && <BuildingIcon seed={rowIndex * GRID_COLS + colIndex + 1000} size={isMobile ? 36 : 60} />}
+                  {cell.state === 'sapling' && <SaplingIcon seed={rowIndex * GRID_COLS + colIndex + 2000} size={isMobile ? 24 : 40} />}
                   {showPlantingHand?.row === rowIndex && showPlantingHand?.col === colIndex && (
                     <PlantingHand show={true} />
                   )}
@@ -886,16 +906,18 @@ export default function LandingGame() {
                 style={{
                   position: 'absolute',
                   top: '50%',
-                  left: '50%',
-                  transform: 'translate(-50%, -50%)',
+                  left: isMobile ? '16px' : '50%',
+                  right: isMobile ? '16px' : 'auto',
+                  transform: isMobile ? 'translateY(-50%)' : 'translate(-50%, -50%)',
                   backgroundColor: '#1C1917',
                   borderRadius: '16px',
-                  padding: '40px 48px',
+                  padding: isMobile ? '32px 24px' : '40px 48px',
                   textAlign: 'center',
                   zIndex: 101,
                   fontFamily: 'DM Sans, sans-serif',
                   boxShadow: '0 8px 32px rgba(0, 0, 0, 0.4)',
-                  minWidth: '360px',
+                  minWidth: isMobile ? 'auto' : '360px',
+                  maxWidth: isMobile ? '100%' : 'auto',
                   animation: 'scaleIn 0.4s cubic-bezier(0.34, 1.56, 0.64, 1)',
                 }}
               >
