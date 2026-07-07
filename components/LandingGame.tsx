@@ -140,27 +140,31 @@ const SaplingIcon = ({ size = 40, variant = 0 }: { size?: number; variant?: numb
   )
 }
 
-const IsometricGroundMarker = ({ size = 60 }: { size?: number }) => {
-  // Isometric diamond outline for empty plantable cells
+const GroundMarker = ({ size = 60 }: { size?: number }) => {
+  // Simple grey ellipse ground marker for all cells
+  const ellipseWidth = size * 0.7
+  const ellipseHeight = size * 0.3
   return (
     <svg
       width={size}
-      height={size * 0.5}
-      viewBox="0 0 60 30"
+      height={size}
+      viewBox={`0 0 ${size} ${size}`}
       style={{
         position: 'absolute',
-        top: '50%',
+        bottom: '5%',
         left: '50%',
-        transform: 'translate(-50%, -50%)',
+        transform: 'translateX(-50%)',
         pointerEvents: 'none',
+        zIndex: 0,
       }}
     >
-      <path
-        d="M 30 2 L 58 15 L 30 28 L 2 15 Z"
-        fill="none"
-        stroke="#E5E5E5"
-        strokeWidth="1"
-        strokeDasharray="3,2"
+      <ellipse
+        cx={size / 2}
+        cy={size * 0.8}
+        rx={ellipseWidth / 2}
+        ry={ellipseHeight / 2}
+        fill="#D1D1D1"
+        opacity="0.4"
       />
     </svg>
   )
@@ -873,7 +877,8 @@ export default function LandingGame() {
                     e.currentTarget.style.transform = 'scale(1)'
                   }}
                 >
-                  {cell.state === 'empty' && <IsometricGroundMarker size={isMobile ? 48 : 80} />}
+                  {/* Ground marker shown for all cells */}
+                  <GroundMarker size={isMobile ? 48 : 80} />
                   {cell.state === 'tree' && <TreeIcon hasBird={cell.hasBird} variant={cell.variant || 0} size={isMobile ? 36 : 60} />}
                   {cell.state === 'building' && <BuildingIcon variant={cell.variant || 0} size={isMobile ? 36 : 60} />}
                   {cell.state === 'sapling' && <SaplingIcon variant={cell.variant || 0} size={isMobile ? 24 : 40} />}
