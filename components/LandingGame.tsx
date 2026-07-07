@@ -45,7 +45,7 @@ const TRUCK_SPAWN_INTERVAL = 750 // Relentless truck spawning - dominates if idl
 const ROUND_DURATION = 10 // Quick 10-second rounds
 
 // Game field padding - consistent inset from all edges
-const GAME_FIELD_PADDING = 40 // px on all sides
+const GAME_FIELD_PADDING = 20 // px on all sides
 
 // Grid positioning - defines safe zone below header
 const GRID_TOP_OFFSET = 170 // marginTop (110px) + padding-top (60px)
@@ -813,8 +813,8 @@ export default function LandingGame() {
               gridTemplateColumns: isMobile ? `repeat(${GRID_COLS}, 48px)` : `repeat(${GRID_COLS}, 80px)`,
               gap: isMobile ? '8px' : '16px',
               zIndex: 10,
-              marginTop: isMobile ? '60px' : '80px',
-              marginLeft: isMobile ? 'auto' : '0',
+              marginTop: isMobile ? '140px' : '160px',
+              marginLeft: 'auto',
               marginRight: 'auto',
               padding: 0,
             }}
