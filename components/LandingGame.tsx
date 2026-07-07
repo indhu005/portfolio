@@ -262,45 +262,53 @@ export default function LandingGame() {
   useEffect(() => {
     if (!gameActive) return
 
-    if (timeLeft <= 0) {
-      // Round ended by timer
-      const trees = grid.flat().filter(cell => cell.state === 'tree').length
-      const saplings = grid.flat().filter(cell => cell.state === 'sapling').length
-      const stillStandingCount = trees + saplings
-      const buildings = grid.flat().filter(cell => cell.state === 'building').length
-
-      setStillStanding(stillStandingCount)
-
-      // If visitor never interacted, silently restart round
-      if (!hasInteracted) {
-        setTimeout(() => {
-          startGame()
-        }, 500)
-        return
-      }
-
-      // Determine ending type based on tree vs building count
-      if (trees >= buildings) {
-        setEndingType('migration')
-        // Trigger bird migration animation
-        setBirdsMigrating(true)
-        setTimeout(() => {
-          setGameActive(false)
-          setGameEnded(true)
-        }, 2000) // Show migration for 2 seconds before showing end screen
-      } else {
-        setEndingType('neutral')
-        setGameActive(false)
-        setGameEnded(true)
-      }
-      return
-    }
-
     const timer = setInterval(() => {
-      setTimeLeft(prev => prev - 1)
+      setTimeLeft(prev => {
+        if (prev <= 1) {
+          // Timer hit zero - end the round
+          return 0
+        }
+        return prev - 1
+      })
     }, 1000)
 
     return () => clearInterval(timer)
+  }, [gameActive])
+
+  // Handle game end when timer reaches 0
+  useEffect(() => {
+    if (!gameActive || timeLeft > 0) return
+
+    // Round ended by timer
+    const trees = grid.flat().filter(cell => cell.state === 'tree').length
+    const saplings = grid.flat().filter(cell => cell.state === 'sapling').length
+    const stillStandingCount = trees + saplings
+    const buildings = grid.flat().filter(cell => cell.state === 'building').length
+
+    setStillStanding(stillStandingCount)
+
+    // If visitor never interacted, silently restart round
+    if (!hasInteracted) {
+      setTimeout(() => {
+        startGame()
+      }, 500)
+      return
+    }
+
+    // Determine ending type based on tree vs building count
+    if (trees >= buildings) {
+      setEndingType('migration')
+      // Trigger bird migration animation
+      setBirdsMigrating(true)
+      setTimeout(() => {
+        setGameActive(false)
+        setGameEnded(true)
+      }, 2000) // Show migration for 2 seconds before showing end screen
+    } else {
+      setEndingType('neutral')
+      setGameActive(false)
+      setGameEnded(true)
+    }
   }, [timeLeft, gameActive, hasInteracted, grid])
 
   // Grow saplings
@@ -882,9 +890,11 @@ export default function LandingGame() {
                     You planted {planted} {planted === 1 ? 'tree' : 'trees'}. {stillStanding} {stillStanding === 1 ? 'is' : 'are'} still standing.
                   </div>
 
-                  {/* Bridge line */}
+                  {/* Bridge line - varies based on ending type */}
                   <div style={{ fontSize: '14px', fontWeight: 400, color: '#9CA3AF', lineHeight: '1.5' }}>
-                    Small, deliberate choices — that's the whole job.
+                    {endingType === 'neutral'
+                      ? 'The buildings had a head start this time.'
+                      : 'Small, deliberate choices — that's the whole job.'}
                   </div>
 
                   {/* Case study link - secondary styling */}
