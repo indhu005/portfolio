@@ -746,12 +746,12 @@ export default function LandingGame() {
         )}
       </div>
 
-      {/* Stats panel - top-right corner, dark background */}
+      {/* Stats panel - positioned below header on mobile, top-right on desktop */}
       {(gameActive || gameEnded) && !gameEnded && (
         <div
           style={{
             position: 'absolute',
-            top: isMobile ? '16px' : '20px',
+            top: isMobile ? '120px' : '20px',
             right: isMobile ? '16px' : '40px',
             backgroundColor: '#1C1917',
             borderRadius: '12px',
@@ -813,7 +813,7 @@ export default function LandingGame() {
               gridTemplateColumns: isMobile ? `repeat(${GRID_COLS}, 48px)` : `repeat(${GRID_COLS}, 80px)`,
               gap: isMobile ? '8px' : '16px',
               zIndex: 10,
-              marginTop: isMobile ? '140px' : '160px',
+              marginTop: isMobile ? '200px' : '160px',
               marginLeft: 'auto',
               marginRight: 'auto',
               padding: 0,
