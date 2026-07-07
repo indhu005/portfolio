@@ -1,0 +1,26 @@
+<svg width="64" height="121" viewBox="0 0 64 121" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M0.25 102.29L34.25 119.79L63.75 102.29V20.79L29.25 0.290039L0.25 17.29V102.29Z" fill="#DDDDDD" stroke="#2E2E2E" stroke-width="0.5"/>
+<path d="M7.75 79.8972V73.79L11.75 76.6829V82.79L7.75 79.8972Z" stroke="black" stroke-width="0.5"/>
+<path d="M7.75 93.2186V87.79L11.75 90.3615V95.79L7.75 93.2186Z" stroke="black" stroke-width="0.5"/>
+<path d="M19.75 99.8972V93.79L23.75 96.6829V102.79L19.75 99.8972Z" stroke="black" stroke-width="0.5"/>
+<path d="M20.75 87.2186V81.79L24.75 84.3615V89.79L20.75 87.2186Z" stroke="black" stroke-width="0.5"/>
+<path d="M8.25 93.29L11.75 90.29" stroke="black" stroke-width="0.2"/>
+<path d="M19.75 99.79L23.25 96.79" stroke="black" stroke-width="0.2"/>
+<path d="M20.75 87.79L24.25 84.79" stroke="black" stroke-width="0.2"/>
+<path d="M7.75 79.79L11.25 76.79" stroke="black" stroke-width="0.2"/>
+<path d="M7.75 38.8972V32.79L11.75 35.6829V41.79L7.75 38.8972Z" stroke="black" stroke-width="0.5"/>
+<path d="M7.75 52.2186V46.79L11.75 49.3615V54.79L7.75 52.2186Z" stroke="black" stroke-width="0.5"/>
+<path d="M19.75 58.8972V52.79L23.75 55.6829V61.79L19.75 58.8972Z" stroke="black" stroke-width="0.5"/>
+<path d="M20.75 46.2186V40.79L24.75 43.3615V48.79L20.75 46.2186Z" stroke="black" stroke-width="0.5"/>
+<path d="M8.25 52.29L11.75 49.29" stroke="black" stroke-width="0.2"/>
+<path d="M19.75 58.79L23.25 55.79" stroke="black" stroke-width="0.2"/>
+<path d="M7.75 66.2186V60.79L11.75 63.3615V68.79L7.75 66.2186Z" stroke="black" stroke-width="0.5"/>
+<path d="M19.75 72.8972V66.79L23.75 69.6829V75.79L19.75 72.8972Z" stroke="black" stroke-width="0.5"/>
+<path d="M8.25 66.29L11.75 63.29" stroke="black" stroke-width="0.2"/>
+<path d="M19.75 72.79L23.25 69.79" stroke="black" stroke-width="0.2"/>
+<path d="M20.75 46.79L24.25 43.79" stroke="black" stroke-width="0.2"/>
+<path d="M7.75 38.79L11.25 35.79" stroke="black" stroke-width="0.2"/>
+<path d="M34.25 118.79V38.79" stroke="black" stroke-width="0.5"/>
+<path d="M63.75 20.79L33.75 38.79" stroke="black" stroke-width="0.5"/>
+<path d="M0.25 17.79L34.25 38.79" stroke="black" stroke-width="0.5"/>
+</svg>
