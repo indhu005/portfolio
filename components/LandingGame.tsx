@@ -787,6 +787,8 @@ export default function LandingGame() {
               gap: '16px',
               zIndex: 10,
               marginTop: '110px',
+              marginLeft: 'auto',
+              marginRight: 'auto',
               padding: `60px ${GAME_FIELD_PADDING}px ${GAME_FIELD_PADDING}px ${GAME_FIELD_PADDING}px`,
             }}
           >
