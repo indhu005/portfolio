@@ -744,13 +744,14 @@ export default function LandingGame() {
           padding: 0,
         }}
       >
-      {/* Left-aligned header block - location, tagline, instruction - positioned relative to outer container */}
+      {/* Center-aligned header block - location, tagline, instruction - positioned relative to outer container */}
       <div
         style={{
           position: 'absolute',
           top: '20px',
-          left: isMobile ? '16px' : '20px',
-          textAlign: 'left',
+          left: '50%',
+          transform: 'translateX(-50%)',
+          textAlign: 'center',
           maxWidth: isMobile ? 'calc(100% - 32px)' : '600px',
           zIndex: 50,
           fontFamily: 'DM Sans, sans-serif',
