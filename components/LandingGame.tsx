@@ -38,8 +38,8 @@ interface Bird {
   rotation: number
 }
 
-const GRID_ROWS = 5
-const GRID_COLS = 10
+const GRID_ROWS = 3
+const GRID_COLS = 5
 const SAPLING_GROW_TIME = 1000 // Fast tree growth
 const TRUCK_SPAWN_INTERVAL = 750 // Relentless truck spawning - dominates if idle
 const ROUND_DURATION = 10 // Quick 10-second rounds
@@ -828,7 +828,7 @@ export default function LandingGame() {
           position: 'relative',
           width: '100%',
           height: '100%',
-          padding: isMobile ? '16px 16px 20px 16px' : `${GAME_FIELD_PADDING}px 10px 20px ${GAME_FIELD_PADDING}px`,
+          padding: isMobile ? '16px' : `${GAME_FIELD_PADDING}px`,
           overflow: 'hidden',
         }}
       >
