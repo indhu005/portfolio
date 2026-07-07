@@ -894,7 +894,7 @@ export default function LandingGame() {
                   <div style={{ fontSize: '14px', fontWeight: 400, color: '#9CA3AF', lineHeight: '1.5' }}>
                     {endingType === 'neutral'
                       ? 'The buildings had a head start this time.'
-                      : 'Small, deliberate choices — that's the whole job.'}
+                      : "Small, deliberate choices — that's the whole job."}
                   </div>
 
                   {/* Case study link - secondary styling */}
