@@ -39,7 +39,7 @@ interface Bird {
 }
 
 const GRID_ROWS = 5
-const GRID_COLS = 7
+const GRID_COLS = 9
 const SAPLING_GROW_TIME = 1000 // Fast tree growth
 const TRUCK_SPAWN_INTERVAL = 750 // Relentless truck spawning - dominates if idle
 const ROUND_DURATION = 10 // Quick 10-second rounds
@@ -690,15 +690,14 @@ export default function LandingGame() {
           padding: 0,
         }}
       >
-      {/* Centered header block - location, tagline, instruction only - positioned relative to outer container */}
+      {/* Left-aligned header block - location, tagline, instruction - positioned relative to outer container */}
       <div
         style={{
           position: 'absolute',
           top: '20px',
-          left: '50%',
-          transform: 'translateX(-50%)',
-          textAlign: 'center',
-          width: '100%',
+          left: isMobile ? '16px' : '20px',
+          textAlign: 'left',
+          maxWidth: isMobile ? 'calc(100% - 32px)' : '600px',
           zIndex: 50,
           fontFamily: 'DM Sans, sans-serif',
         }}
@@ -724,8 +723,6 @@ export default function LandingGame() {
             marginBottom: '20px',
             fontFamily: 'var(--font-fraunces), serif',
             lineHeight: '1.4',
-            maxWidth: isMobile ? '90%' : '100%',
-            margin: '0 auto 20px',
           }}
         >
           Plant faster than the city can build. Good luck.
