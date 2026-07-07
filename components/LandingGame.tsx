@@ -140,6 +140,32 @@ const SaplingIcon = ({ size = 40, seed = 0 }: { size?: number; seed?: number }) 
   )
 }
 
+const IsometricGroundMarker = ({ size = 60 }: { size?: number }) => {
+  // Isometric diamond outline for empty plantable cells
+  return (
+    <svg
+      width={size}
+      height={size * 0.5}
+      viewBox="0 0 60 30"
+      style={{
+        position: 'absolute',
+        top: '50%',
+        left: '50%',
+        transform: 'translate(-50%, -50%)',
+        pointerEvents: 'none',
+      }}
+    >
+      <path
+        d="M 30 2 L 58 15 L 30 28 L 2 15 Z"
+        fill="none"
+        stroke="#E5E5E5"
+        strokeWidth="1"
+        strokeDasharray="3,2"
+      />
+    </svg>
+  )
+}
+
 const BirdSilhouette = ({ x, y, rotation }: { x: number; y: number; rotation: number }) => (
   <div
     style={{
@@ -842,6 +868,7 @@ export default function LandingGame() {
                     e.currentTarget.style.transform = 'scale(1)'
                   }}
                 >
+                  {cell.state === 'empty' && <IsometricGroundMarker size={isMobile ? 48 : 80} />}
                   {cell.state === 'tree' && <TreeIcon hasBird={cell.hasBird} seed={rowIndex * GRID_COLS + colIndex} size={isMobile ? 36 : 60} />}
                   {cell.state === 'building' && <BuildingIcon seed={rowIndex * GRID_COLS + colIndex + 1000} size={isMobile ? 36 : 60} />}
                   {cell.state === 'sapling' && <SaplingIcon seed={rowIndex * GRID_COLS + colIndex + 2000} size={isMobile ? 24 : 40} />}
