@@ -215,14 +215,28 @@ export default function LandingGame() {
       )
   )
   const [timeLeft, setTimeLeft] = useState(ROUND_DURATION)
-  const [gameActive, setGameActive] = useState(false)
+  const [gameActive, setGameActive] = useState(true) // Auto-start for ambient loop
   const [gameEnded, setGameEnded] = useState(false)
   const [planted, setPlanted] = useState(0)
   const [stillStanding, setStillStanding] = useState(0)
   const [hasInteracted, setHasInteracted] = useState(false)
   const [trucks, setTrucks] = useState<Truck[]>([])
   const [showPlantingHand, setShowPlantingHand] = useState<{row: number, col: number} | null>(null)
-  const [birds, setBirds] = useState<Bird[]>([])
+  const [birds, setBirds] = useState<Bird[]>(() => {
+    // Initialize birds on mount for ambient animation
+    const BIRD_MIN_Y = 15
+    const BIRD_MAX_Y = 85
+    const BIRD_MIN_X = 5
+    const BIRD_MAX_X = 95
+    return Array.from({ length: 8 }, (_, i) => ({
+      id: i,
+      x: BIRD_MIN_X + Math.random() * (BIRD_MAX_X - BIRD_MIN_X),
+      y: BIRD_MIN_Y + Math.random() * (BIRD_MAX_Y - BIRD_MIN_Y),
+      vx: (Math.random() - 0.5) * 0.3,
+      vy: (Math.random() - 0.5) * 0.2,
+      rotation: Math.random() * 20 - 10,
+    }))
+  })
   const [localTime, setLocalTime] = useState('')
   const [localRegion, setLocalRegion] = useState('')
   const [smokeOpacity, setSmokeOpacity] = useState(0)
@@ -773,32 +787,15 @@ export default function LandingGame() {
         </div>
       )}
 
-      {/* Game area - separate from header */}
-      {!gameActive && !gameEnded ? (
-        <button
-          onClick={startGame}
-          style={{
-            padding: '16px 32px',
-            fontSize: '18px',
-            fontWeight: 600,
-            backgroundColor: '#000000',
-            color: '#FFFFFF',
-            border: 'none',
-            borderRadius: '8px',
-            cursor: 'pointer',
-          }}
-        >
-          Start Game
-        </button>
-      ) : (
-        <div
-          style={{
-            position: 'relative',
-            width: '100%',
-            height: '100%',
-            padding: isMobile ? '16px' : `${GAME_FIELD_PADDING}px`,
-          }}
-        >
+      {/* Game area - always renders for ambient loop */}
+      <div
+        style={{
+          position: 'relative',
+          width: '100%',
+          height: '100%',
+          padding: isMobile ? '16px' : `${GAME_FIELD_PADDING}px`,
+        }}
+      >
           {/* Birds layer - inside bounded play area */}
           {birds.map(bird => (
             <BirdSilhouette key={bird.id} x={bird.x} y={bird.y} rotation={bird.rotation} />
@@ -992,7 +989,6 @@ export default function LandingGame() {
             </>
           )}
         </div>
-      )}
       </div>
     </>
   )
