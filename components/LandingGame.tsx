@@ -852,6 +852,7 @@ export default function LandingGame() {
           display: 'flex',
           flexDirection: 'column',
           alignItems: 'center',
+          justifyContent: 'center',
         }}
       >
           {/* Birds layer - inside bounded play area */}
@@ -868,7 +869,6 @@ export default function LandingGame() {
               gridTemplateColumns: isMobile ? `repeat(${GRID_COLS}, 48px)` : `repeat(${GRID_COLS}, 80px)`,
               gap: isMobile ? '8px' : '16px',
               zIndex: 10,
-              marginTop: isMobile ? '200px' : '160px',
               padding: 0,
             }}
           >
