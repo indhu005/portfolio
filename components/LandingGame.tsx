@@ -39,7 +39,7 @@ interface Bird {
 }
 
 const GRID_ROWS = 5
-const GRID_COLS = 9
+const GRID_COLS = 10
 const SAPLING_GROW_TIME = 1000 // Fast tree growth
 const TRUCK_SPAWN_INTERVAL = 750 // Relentless truck spawning - dominates if idle
 const ROUND_DURATION = 10 // Quick 10-second rounds
