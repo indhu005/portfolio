@@ -796,6 +796,7 @@ export default function LandingGame() {
           width: '100%',
           height: '100%',
           padding: isMobile ? '16px' : `${GAME_FIELD_PADDING}px`,
+          overflow: 'hidden',
         }}
       >
           {/* Birds layer - inside bounded play area */}
@@ -813,7 +814,7 @@ export default function LandingGame() {
               gap: isMobile ? '8px' : '16px',
               zIndex: 10,
               marginTop: isMobile ? '60px' : '80px',
-              marginLeft: 'auto',
+              marginLeft: isMobile ? 'auto' : '0',
               marginRight: 'auto',
               padding: 0,
             }}
@@ -966,7 +967,7 @@ export default function LandingGame() {
                       e.currentTarget.style.borderBottomColor = 'transparent'
                     }}
                   >
-                    See how this plays out for real →
+                    Check how I design now →
                   </a>
 
                   {/* Play again button - primary */}
