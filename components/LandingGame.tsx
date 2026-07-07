@@ -69,9 +69,9 @@ const SMOKE_START_RATIO = 0.5  // 50% buildings
 const SMOKE_END_RATIO = 0.75   // 75% buildings
 
 const TreeIcon = ({ hasBird = false, size = 60, seed = 0 }: { hasBird?: boolean; size?: number; seed?: number }) => {
-  // Pick one of the 4 tree SVGs based on seed
-  const treeVariants = ['Tree 01.svg', 'Tree 02.svg', 'Tree 03.svg', 'Tree 04.svg']
-  const treeFile = treeVariants[seed % 4]
+  // Pick one of the 5 new 3D tree SVGs based on seed
+  const treeVariants = ['tree 01 (1).svg', 'tree 01 (2).svg', 'tree 01 (3).svg', 'tree 01 (4).svg', 'tree 01 (5).svg']
+  const treeFile = treeVariants[seed % 5]
 
   return (
     <div style={{ position: 'relative', width: size, height: size }}>
@@ -103,25 +103,28 @@ const TreeIcon = ({ hasBird = false, size = 60, seed = 0 }: { hasBird?: boolean;
   )
 }
 
-const BuildingIcon = ({ size = 60 }: { size?: number }) => {
+const BuildingIcon = ({ size = 60, seed = 0 }: { size?: number; seed?: number }) => {
+  // Pick one of the 3 new 3D building SVGs based on seed
+  const buildingVariants = ['building 01.svg', 'building 02.svg', 'building 03.svg']
+  const buildingFile = buildingVariants[seed % 3]
+
   return (
-    <svg width={size} height={size} viewBox="0 0 100 100">
-      {/* Clean black square with sharp edges */}
-      <rect
-        x="20"
-        y="20"
-        width="60"
-        height="60"
-        fill="#000000"
-      />
-    </svg>
+    <img
+      src={`/images/home/${buildingFile}`}
+      alt="building"
+      style={{
+        width: size,
+        height: size,
+        objectFit: 'contain',
+      }}
+    />
   )
 }
 
 const SaplingIcon = ({ size = 40, seed = 0 }: { size?: number; seed?: number }) => {
-  // Use same tree SVGs but smaller for saplings
-  const treeVariants = ['Tree 01.svg', 'Tree 02.svg', 'Tree 03.svg', 'Tree 04.svg']
-  const treeFile = treeVariants[seed % 4]
+  // Use same 3D tree SVGs but smaller for saplings
+  const treeVariants = ['tree 01 (1).svg', 'tree 01 (2).svg', 'tree 01 (3).svg', 'tree 01 (4).svg', 'tree 01 (5).svg']
+  const treeFile = treeVariants[seed % 5]
 
   return (
     <img
@@ -813,7 +816,7 @@ export default function LandingGame() {
                   }}
                 >
                   {cell.state === 'tree' && <TreeIcon hasBird={cell.hasBird} seed={rowIndex * GRID_COLS + colIndex} />}
-                  {cell.state === 'building' && <BuildingIcon />}
+                  {cell.state === 'building' && <BuildingIcon seed={rowIndex * GRID_COLS + colIndex + 1000} />}
                   {cell.state === 'sapling' && <SaplingIcon seed={rowIndex * GRID_COLS + colIndex + 2000} />}
                   {showPlantingHand?.row === rowIndex && showPlantingHand?.col === colIndex && (
                     <PlantingHand show={true} />
