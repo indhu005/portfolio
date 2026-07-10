@@ -94,7 +94,7 @@ export default function Home() {
           style={{
             flex: 1,
             overflowY: 'auto',
-            padding: isMobile ? '0 20px 40px 20px' : isTablet ? '0 32px 50px 32px' : '0 48px 60px 20px',
+            padding: isMobile ? '0 20px 40px 20px' : isTablet ? '0 32px 50px 20px' : '0 48px 60px 20px',
             minWidth: 0,
             scrollBehavior: 'smooth',
             backgroundColor: '#FFFFFF',
@@ -110,7 +110,7 @@ export default function Home() {
           {/* Home page content */}
           <div style={{
             maxWidth: '920px',
-            marginTop: isMobile ? '-60px' : '-20px',
+            marginTop: isMobile ? '0px' : '-20px',
           }}>
             <h1 style={{
               fontFamily: 'var(--font-fraunces), serif',
