@@ -103,7 +103,7 @@ export default function Home() {
         >
           {/* Landing Game */}
           <div style={{
-            marginBottom: isMobile ? '40px' : '64px',
+            marginBottom: isMobile ? '40px' : isLargeDesktop ? '120px' : '64px',
           }}>
             <LandingGame />
           </div>

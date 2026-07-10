@@ -61,6 +61,16 @@ export default function Sidebar({
 }: SidebarProps = {}) {
   const router = useRouter()
   const [expandedProject, setExpandedProject] = useState<string | null>(activeProjectProp)
+  const [isLargeDesktop, setIsLargeDesktop] = useState(false)
+
+  useEffect(() => {
+    const checkLargeDesktop = () => {
+      setIsLargeDesktop(window.innerWidth >= 1600)
+    }
+    checkLargeDesktop()
+    window.addEventListener('resize', checkLargeDesktop)
+    return () => window.removeEventListener('resize', checkLargeDesktop)
+  }, [])
 
   return (
     <div style={{
@@ -85,7 +95,7 @@ export default function Sidebar({
         onMouseUp={(e) => e.currentTarget.style.opacity = '1'}
         onMouseLeave={(e) => e.currentTarget.style.opacity = '1'}
         style={{
-          fontSize: '16px',
+          fontSize: isLargeDesktop ? '20px' : '16px',
           fontWeight: 700,
           color: '#1C1917',
           cursor: 'pointer',
@@ -98,13 +108,13 @@ export default function Sidebar({
       {/* SUBTITLE */}
       <div style={{ marginTop: '8px' }}>
         <div style={{
-          fontSize: '15px',
+          fontSize: isLargeDesktop ? '18px' : '15px',
           fontWeight: 400,
           color: '#6B7280',
           marginBottom: '4px',
         }}>Product Designer</div>
         <div style={{
-          fontSize: '15px',
+          fontSize: isLargeDesktop ? '18px' : '15px',
           fontWeight: 400,
           color: '#6B7280',
         }}>based in Seattle</div>
@@ -113,7 +123,7 @@ export default function Sidebar({
       {/* WORK SECTION */}
       <div style={{ marginTop: '48px' }}>
         <div style={{
-          fontSize: '15px',
+          fontSize: isLargeDesktop ? '18px' : '15px',
           fontWeight: 700,
           color: '#1C1917',
           marginBottom: '12px',
@@ -140,7 +150,7 @@ export default function Sidebar({
                 onMouseUp={(e) => e.currentTarget.style.opacity = '1'}
                 onMouseLeave={(e) => e.currentTarget.style.opacity = '1'}
                 style={{
-                  fontSize: '15px',
+                  fontSize: isLargeDesktop ? '18px' : '15px',
                   fontWeight: isActiveProject ? 600 : 400,
                   color: isActiveProject ? '#1C1917' : '#6B7280',
                   cursor: 'pointer',
@@ -171,7 +181,7 @@ export default function Sidebar({
                         onMouseUp={(e) => e.currentTarget.style.opacity = '1'}
                         onMouseLeave={(e) => e.currentTarget.style.opacity = '1'}
                         style={{
-                          fontSize: '14px',
+                          fontSize: isLargeDesktop ? '17px' : '14px',
                           color: isActiveSection ? '#1C1917' : '#6B7280',
                           fontWeight: isActiveSection ? 500 : 400,
                           paddingTop: '4px',
@@ -208,7 +218,7 @@ export default function Sidebar({
           onMouseUp={(e) => e.currentTarget.style.opacity = '1'}
           onMouseLeave={(e) => e.currentTarget.style.opacity = '1'}
           style={{
-            fontSize: '15px',
+            fontSize: isLargeDesktop ? '18px' : '15px',
             fontWeight: 700,
             color: '#1C1917',
             marginBottom: '12px',
@@ -233,7 +243,7 @@ export default function Sidebar({
               onMouseUp={(e) => e.currentTarget.style.opacity = '1'}
               onMouseLeave={(e) => e.currentTarget.style.opacity = '1'}
               style={{
-                fontSize: '15px',
+                fontSize: isLargeDesktop ? '18px' : '15px',
                 fontWeight: 400,
                 color: '#6B7280',
                 paddingTop: '4px',
@@ -253,7 +263,7 @@ export default function Sidebar({
               onMouseUp={(e) => e.currentTarget.style.opacity = '1'}
               onMouseLeave={(e) => e.currentTarget.style.opacity = '1'}
               style={{
-                fontSize: '15px',
+                fontSize: isLargeDesktop ? '18px' : '15px',
                 fontWeight: 400,
                 color: '#6B7280',
                 paddingTop: '4px',
