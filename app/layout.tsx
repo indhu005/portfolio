@@ -30,7 +30,7 @@ export default function RootLayout({
       <body className={dmSans.className} style={{
         margin: 0,
         padding: '20px 0 0 0',
-        backgroundColor: '#F7F4F0',
+        backgroundColor: '#FFFFFF',
         overflow: 'hidden'
       }}>
         <ScrollRestoration />
