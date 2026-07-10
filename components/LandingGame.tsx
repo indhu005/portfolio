@@ -979,7 +979,7 @@ export default function LandingGame() {
                   left: isMobile ? '16px' : '50%',
                   right: isMobile ? '16px' : 'auto',
                   transform: isMobile ? 'translateY(-50%)' : 'translate(-50%, -50%)',
-                  backgroundColor: '#1C1917',
+                  backgroundColor: '#FFFFFF',
                   borderRadius: '16px',
                   padding: isMobile ? '32px 24px' : '40px 48px',
                   textAlign: 'center',
@@ -993,55 +993,60 @@ export default function LandingGame() {
               >
                 <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '20px' }}>
                   {/* Stats line */}
-                  <div style={{ fontSize: '16px', fontWeight: 500, color: '#E5E5E5', lineHeight: '1.5' }}>
+                  <div style={{ fontSize: '16px', fontWeight: 500, color: '#57534E', lineHeight: '1.5' }}>
                     You planted {planted} {planted === 1 ? 'tree' : 'trees'}. {stillStanding} {stillStanding === 1 ? 'is' : 'are'} still standing.
                   </div>
 
                   {/* Bridge line - varies based on ending type */}
-                  <div style={{ fontSize: '14px', fontWeight: 400, color: '#9CA3AF', lineHeight: '1.5' }}>
+                  <div style={{ fontSize: '14px', fontWeight: 400, color: '#78716C', lineHeight: '1.5' }}>
                     {endingType === 'neutral'
                       ? 'The buildings had a head start this time.'
                       : "Small, deliberate choices — that's the whole job."}
                   </div>
 
-                  {/* Case study link - secondary styling */}
+                  {/* View case studies button - primary */}
                   <a
-                    href="/work/lat"
+                    href="/work"
+                    style={{
+                      padding: '14px 32px',
+                      fontSize: '15px',
+                      fontWeight: 600,
+                      backgroundColor: '#4A87FF',
+                      color: '#FFFFFF',
+                      border: 'none',
+                      borderRadius: '8px',
+                      cursor: 'pointer',
+                      marginTop: '4px',
+                      textDecoration: 'none',
+                      display: 'inline-block',
+                    }}
+                  >
+                    View my case studies
+                  </a>
+
+                  {/* Play again link - secondary styling */}
+                  <button
+                    onClick={startGame}
                     style={{
                       fontSize: '13px',
                       fontWeight: 500,
-                      color: '#86C232',
+                      color: '#78716C',
+                      background: 'none',
+                      border: 'none',
                       textDecoration: 'none',
                       borderBottom: '1px solid transparent',
                       transition: 'border-color 0.2s',
                       cursor: 'pointer',
+                      padding: 0,
                     }}
                     onMouseEnter={(e) => {
-                      e.currentTarget.style.borderBottomColor = '#86C232'
+                      e.currentTarget.style.borderBottomColor = '#78716C'
                     }}
                     onMouseLeave={(e) => {
                       e.currentTarget.style.borderBottomColor = 'transparent'
                     }}
                   >
-                    Check how I design now →
-                  </a>
-
-                  {/* Play again button - primary */}
-                  <button
-                    onClick={startGame}
-                    style={{
-                      padding: '14px 32px',
-                      fontSize: '15px',
-                      fontWeight: 600,
-                      backgroundColor: '#FFFFFF',
-                      color: '#1C1917',
-                      border: 'none',
-                      borderRadius: '8px',
-                      cursor: 'pointer',
-                      marginTop: '4px',
-                    }}
-                  >
-                    Plant again
+                    Play again
                   </button>
                 </div>
               </div>
