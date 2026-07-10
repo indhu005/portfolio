@@ -70,7 +70,7 @@ export default function Sidebar({
       maxWidth: '320px',
       height: '100vh',
       borderRight: '1px solid rgba(0,0,0,0.08)',
-      backgroundColor: '#F7F4F0',
+      backgroundColor: '#FFFFFF',
       padding: '0px 0px 40px 40px',
       paddingTop: '24px',
       display: 'flex',
