@@ -69,9 +69,31 @@ const SMOKE_START_RATIO = 0.5  // 50% buildings
 const SMOKE_END_RATIO = 0.75   // 75% buildings
 
 const TreeIcon = ({ hasBird = false, size = 60, variant = 0 }: { hasBird?: boolean; size?: number; variant?: number }) => {
-  // Pick one of the 5 new 3D tree SVGs based on stored variant
-  const treeVariants = ['tree 01 (1).svg', 'tree 01 (2).svg', 'tree 01 (3).svg', 'tree 01 (4).svg', 'tree 01 (5).svg']
-  const treeFile = treeVariants[variant % 5]
+  const [isSwaying, setIsSwaying] = useState(false)
+
+  // Pick one of the 5 tree variants
+  const treeVariants = ['tree 01 (1)', 'tree 01 (2)', 'tree 01 (3)', 'tree 01 (4)', 'tree 01 (5)']
+  const treeName = treeVariants[variant % 5]
+  const currentFile = isSwaying ? `${treeName} Swing.svg` : `${treeName}.svg`
+
+  // Random sway animation - not all trees sway at the same time
+  useEffect(() => {
+    const randomDelay = Math.random() * 5000 // Random delay 0-5 seconds
+    const swayDuration = 800 // How long the sway lasts
+
+    const startSwaying = () => {
+      const shouldSway = Math.random() < 0.3 // 30% chance to sway
+      if (shouldSway) {
+        setIsSwaying(true)
+        setTimeout(() => setIsSwaying(false), swayDuration)
+      }
+      // Schedule next potential sway
+      setTimeout(startSwaying, 3000 + Math.random() * 4000) // Every 3-7 seconds
+    }
+
+    const initialTimeout = setTimeout(startSwaying, randomDelay)
+    return () => clearTimeout(initialTimeout)
+  }, [])
 
   return (
     <div style={{
@@ -84,12 +106,13 @@ const TreeIcon = ({ hasBird = false, size = 60, variant = 0 }: { hasBird?: boole
       zIndex: 5,
     }}>
       <img
-        src={`/images/home/${treeFile}`}
+        src={`/images/home/${currentFile}`}
         alt="tree"
         style={{
           width: '100%',
           height: '100%',
           objectFit: 'contain',
+          transition: 'all 0.4s ease-in-out',
         }}
       />
       {hasBird && (
@@ -112,9 +135,17 @@ const TreeIcon = ({ hasBird = false, size = 60, variant = 0 }: { hasBird?: boole
 }
 
 const BuildingIcon = ({ size = 60, variant = 0 }: { size?: number; variant?: number }) => {
+  const [isAnimating, setIsAnimating] = useState(true)
+
   // Pick one of the 3 new 3D building SVGs based on stored variant
   const buildingVariants = ['building 01.svg', 'building 02.svg', 'building 03.svg']
   const buildingFile = buildingVariants[variant % 3]
+
+  // Trigger animation only once on mount
+  useEffect(() => {
+    const timer = setTimeout(() => setIsAnimating(false), 600) // Animation duration
+    return () => clearTimeout(timer)
+  }, [])
 
   return (
     <img
@@ -126,18 +157,27 @@ const BuildingIcon = ({ size = 60, variant = 0 }: { size?: number; variant?: num
         height: size,
         bottom: '20%',
         left: '50%',
-        transform: 'translateX(-50%)',
+        transform: `translateX(-50%) ${isAnimating ? 'rotate(360deg) scale(0.3)' : 'rotate(0deg) scale(1)'}`,
         objectFit: 'contain',
         zIndex: 5,
+        transition: 'transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1)',
       }}
     />
   )
 }
 
 const SaplingIcon = ({ size = 40, variant = 0 }: { size?: number; variant?: number }) => {
+  const [isGrowing, setIsGrowing] = useState(true)
+
   // Use same 3D tree SVGs but smaller for saplings
   const treeVariants = ['tree 01 (1).svg', 'tree 01 (2).svg', 'tree 01 (3).svg', 'tree 01 (4).svg', 'tree 01 (5).svg']
   const treeFile = treeVariants[variant % 5]
+
+  // Subtle grow animation on plant
+  useEffect(() => {
+    const timer = setTimeout(() => setIsGrowing(false), 400)
+    return () => clearTimeout(timer)
+  }, [])
 
   return (
     <img
@@ -149,10 +189,11 @@ const SaplingIcon = ({ size = 40, variant = 0 }: { size?: number; variant?: numb
         height: size,
         bottom: '20%',
         left: '50%',
-        transform: 'translateX(-50%)',
+        transform: `translateX(-50%) scale(${isGrowing ? 0.3 : 1})`,
         objectFit: 'contain',
         opacity: 0.7,
         zIndex: 5,
+        transition: 'transform 0.4s ease-out',
       }}
     />
   )
