@@ -28,7 +28,7 @@ export default function Home() {
     <div style={{
       display: 'flex',
       height: '100vh',
-      backgroundColor: '#F7F4F0',
+      backgroundColor: '#FFFFFF',
       overflow: 'hidden',
       width: '100vw',
     }}>
@@ -69,7 +69,7 @@ export default function Home() {
             left: 0,
             width: '100vw',
             height: '100vh',
-            backgroundColor: '#F7F4F0',
+            backgroundColor: '#FFFFFF',
             zIndex: 999,
             overflowY: 'auto',
             padding: '80px 20px 20px 20px',
