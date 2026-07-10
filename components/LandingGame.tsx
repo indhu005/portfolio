@@ -106,7 +106,7 @@ const TreeIcon = ({ hasBird = false, size = 60, variant = 0 }: { hasBird?: boole
       zIndex: 5,
     }}>
       <img
-        src={`/images/home/${currentFile}`}
+        src={`/images/home/${currentFile}?cache=july10-2026`}
         alt="tree"
         style={{
           width: '100%',
@@ -117,7 +117,7 @@ const TreeIcon = ({ hasBird = false, size = 60, variant = 0 }: { hasBird?: boole
       />
       {hasBird && (
         <img
-          src="/images/home/Birds.svg"
+          src="/images/home/Birds.svg?cache=july10-2026"
           alt="bird"
           style={{
             position: 'absolute',
@@ -141,7 +141,7 @@ const BuildingIcon = ({ size = 60, variant = 0 }: { size?: number; variant?: num
 
   return (
     <img
-      src={`/images/home/${buildingFile}`}
+      src={`/images/home/${buildingFile}?cache=july10-2026`}
       alt="building"
       style={{
         position: 'absolute',
@@ -172,7 +172,7 @@ const SaplingIcon = ({ size = 40, variant = 0 }: { size?: number; variant?: numb
 
   return (
     <img
-      src={`/images/home/${treeFile}`}
+      src={`/images/home/${treeFile}?cache=july10-2026`}
       alt="sapling"
       style={{
         position: 'absolute',
@@ -232,7 +232,7 @@ const BirdSilhouette = ({ x, y, rotation }: { x: number; y: number; rotation: nu
     }}
   >
     <img
-      src="/images/home/Birds.svg"
+      src="/images/home/Birds.svg?cache=july10-2026"
       alt="bird"
       style={{
         width: '24px',
@@ -283,27 +283,29 @@ const useIsMobile = () => {
   return isMobile
 }
 
-// Hook to detect large desktop viewport
-const useIsLargeDesktop = () => {
-  const [isLargeDesktop, setIsLargeDesktop] = useState(false)
+// Hook to detect wide desktop viewport
+const useIsWideDesktop = () => {
+  const [isWideDesktop, setIsWideDesktop] = useState(false)
 
   useEffect(() => {
-    const checkLargeDesktop = () => {
-      setIsLargeDesktop(window.innerWidth >= 1600)
+    const checkWideDesktop = () => {
+      setIsWideDesktop(window.innerWidth >= 1440)
     }
-    checkLargeDesktop()
-    window.addEventListener('resize', checkLargeDesktop)
-    return () => window.removeEventListener('resize', checkLargeDesktop)
+    checkWideDesktop()
+    window.addEventListener('resize', checkWideDesktop)
+    return () => window.removeEventListener('resize', checkWideDesktop)
   }, [])
 
-  return isLargeDesktop
+  return isWideDesktop
 }
 
 export default function LandingGame() {
   const isMobile = useIsMobile()
-  const isLargeDesktop = useIsLargeDesktop()
+  const isWideDesktop = useIsWideDesktop()
+  const currentRows = isWideDesktop ? 5 : GRID_ROWS
+
   const [grid, setGrid] = useState<Cell[][]>(() =>
-    Array(GRID_ROWS)
+    Array(currentRows)
       .fill(null)
       .map(() =>
         Array(GRID_COLS)
@@ -341,6 +343,26 @@ export default function LandingGame() {
   const [birdsMigrating, setBirdsMigrating] = useState(false)
   const animationFrameRef = useRef<number>()
 
+  // Update grid when screen size changes
+  useEffect(() => {
+    setGrid(prevGrid => {
+      const newRows = isWideDesktop ? 5 : GRID_ROWS
+      if (prevGrid.length === newRows) return prevGrid
+
+      // Resize grid
+      if (newRows > prevGrid.length) {
+        // Add rows
+        const additionalRows = Array(newRows - prevGrid.length)
+          .fill(null)
+          .map(() => Array(GRID_COLS).fill(null).map(() => ({ state: 'empty' })))
+        return [...prevGrid, ...additionalRows]
+      } else {
+        // Remove rows
+        return prevGrid.slice(0, newRows)
+      }
+    })
+  }, [isWideDesktop])
+
   // Get local time and region
   useEffect(() => {
     const updateTime = () => {
@@ -370,6 +392,7 @@ export default function LandingGame() {
 
   // Start game
   const startGame = () => {
+    const newRows = isWideDesktop ? 5 : GRID_ROWS
     setGameActive(true)
     setGameEnded(false)
     setTimeLeft(ROUND_DURATION)
@@ -381,7 +404,7 @@ export default function LandingGame() {
     setEndingType(null)
     setBirdsMigrating(false)
     setGrid(
-      Array(GRID_ROWS)
+      Array(newRows)
         .fill(null)
         .map(() =>
           Array(GRID_COLS)
@@ -443,7 +466,7 @@ export default function LandingGame() {
       setGameActive(false)
       setGameEnded(true)
     }
-  }, [timeLeft, gameActive, hasInteracted, grid])
+  }, [timeLeft, gameActive, hasInteracted, grid, isWideDesktop])
 
   // Grow saplings
   useEffect(() => {
@@ -477,12 +500,12 @@ export default function LandingGame() {
     if (!gameActive) return
 
     const spawnTruck = () => {
-      const targetRow = Math.floor(Math.random() * GRID_ROWS)
+      const targetRow = Math.floor(Math.random() * currentRows)
       const targetCol = Math.floor(Math.random() * GRID_COLS)
 
       // Start from a random edge (left or right)
       const fromLeft = Math.random() < 0.5
-      const startRow = Math.floor(Math.random() * GRID_ROWS)
+      const startRow = Math.floor(Math.random() * currentRows)
       const startCol = fromLeft ? -1 : GRID_COLS
 
       const newTruck: Truck = {
@@ -509,7 +532,7 @@ export default function LandingGame() {
     spawnTruck()
 
     return () => clearInterval(interval)
-  }, [gameActive])
+  }, [gameActive, currentRows])
 
   // Animate trucks with turning path
   useEffect(() => {
@@ -610,7 +633,7 @@ export default function LandingGame() {
     const buildings = grid.flat().filter(cell => cell.state === 'building').length
 
     // Calculate pollution ratio
-    const totalCells = GRID_ROWS * GRID_COLS
+    const totalCells = currentRows * GRID_COLS
     const buildingRatio = buildings / totalCells
 
     // Update smoke opacity based on building ratio
@@ -637,7 +660,7 @@ export default function LandingGame() {
         setEndingType('smoke')
       }
     }
-  }, [grid, gameActive, hasInteracted])
+  }, [grid, gameActive, hasInteracted, currentRows])
 
   // Bird animation - generate more birds initially
   // Birds spawn only in safe zone with padding from edges
@@ -684,7 +707,7 @@ export default function LandingGame() {
 
         // Scale bird count DRAMATICALLY with tree count
         const trees = grid.flat().filter(cell => cell.state === 'tree').length
-        const totalCells = GRID_ROWS * GRID_COLS
+        const totalCells = currentRows * GRID_COLS
         const treeRatio = trees / totalCells
 
         // VERY wide range: 2-3 birds when no trees, 25-35 when full of trees
@@ -726,7 +749,7 @@ export default function LandingGame() {
 
     const interval = setInterval(animateBirds, 50)
     return () => clearInterval(interval)
-  }, [gameActive, birdsMigrating, grid])
+  }, [gameActive, birdsMigrating, grid, currentRows])
 
   // Plant tree
   const handleCellClick = (row: number, col: number) => {
@@ -779,20 +802,16 @@ export default function LandingGame() {
         style={{
           width: '100%',
           height: 'auto',
-          maxHeight: isMobile ? 'auto' : isLargeDesktop ? '900px' : '700px',
-          minHeight: isMobile ? '600px' : 'auto',
           position: 'relative',
           overflow: 'visible',
           backgroundColor: '#FFFFFF',
           borderRadius: '4px',
-          marginBottom: isMobile ? '40px' : '64px',
+          marginBottom: 0,
           display: 'flex',
           flexDirection: 'column',
           alignItems: 'center',
           justifyContent: 'flex-start',
           padding: 0,
-          transform: isLargeDesktop ? 'scale(1.3)' : 'scale(1)',
-          transformOrigin: 'top center',
         }}
       >
       {/* Center-aligned header block - location, tagline, instruction - positioned relative to outer container */}
@@ -803,7 +822,7 @@ export default function LandingGame() {
           left: '50%',
           transform: 'translateX(-50%)',
           textAlign: 'center',
-          maxWidth: isMobile ? 'calc(100% - 32px)' : isLargeDesktop ? '800px' : '600px',
+          maxWidth: isMobile ? 'calc(100% - 32px)' : '600px',
           zIndex: 50,
           fontFamily: 'DM Sans, sans-serif',
         }}
@@ -811,7 +830,7 @@ export default function LandingGame() {
         {/* Location and time */}
         <div
           style={{
-            fontSize: isLargeDesktop ? '16px' : '12px',
+            fontSize: '12px',
             color: '#6B7280',
             marginBottom: isMobile ? '8px' : '16px',
             lineHeight: '1.5',
@@ -823,7 +842,7 @@ export default function LandingGame() {
         {/* Tagline - Fraunces font */}
         <div
           style={{
-            fontSize: isMobile ? '16px' : isLargeDesktop ? '23px' : '18px',
+            fontSize: isMobile ? '16px' : '18px',
             fontWeight: 600,
             color: '#1C1917',
             marginBottom: isMobile ? '12px' : '20px',
@@ -838,7 +857,7 @@ export default function LandingGame() {
         {(gameActive || gameEnded) && !gameEnded && (
           <div
             style={{
-              fontSize: isMobile ? '13px' : isLargeDesktop ? '18px' : '14px',
+              fontSize: isMobile ? '13px' : '14px',
               color: '#6B7280',
               marginBottom: isMobile ? '8px' : '16px',
               lineHeight: '1.5',
@@ -850,19 +869,19 @@ export default function LandingGame() {
       </div>
 
       {/* Stats panel - positioned below header on mobile, top-right on desktop */}
-      {(gameActive || gameEnded) && !gameEnded && (
+      {gameActive && !gameEnded && (
         <div
           style={{
             position: 'absolute',
             top: isMobile ? '120px' : '20px',
-            right: isMobile ? '16px' : '40px',
+            right: isWideDesktop ? '80px' : isMobile ? '16px' : '40px',
             backgroundColor: '#1C1917',
             borderRadius: '12px',
             padding: isMobile ? '10px 16px' : '12px 20px',
             display: 'flex',
             flexDirection: 'column',
             gap: '8px',
-            zIndex: 50,
+            zIndex: 100,
             fontFamily: 'DM Sans, sans-serif',
           }}
         >
@@ -899,11 +918,13 @@ export default function LandingGame() {
           width: '100%',
           height: '100%',
           padding: isMobile ? '16px' : `${GAME_FIELD_PADDING}px`,
+          paddingBottom: isMobile ? '16px' : '20px',
           overflow: 'hidden',
           display: 'flex',
           flexDirection: 'column',
           alignItems: 'center',
           justifyContent: 'center',
+          zIndex: 1,
         }}
       >
           {/* Birds layer - inside bounded play area */}
@@ -916,12 +937,12 @@ export default function LandingGame() {
             style={{
               position: 'relative',
               display: 'grid',
-              gridTemplateRows: isMobile ? `repeat(${GRID_ROWS}, 48px)` : `repeat(${GRID_ROWS}, 80px)`,
-              gridTemplateColumns: isMobile ? `repeat(${GRID_COLS}, 48px)` : `repeat(${GRID_COLS}, 80px)`,
-              gap: isMobile ? '8px' : '16px',
+              gridTemplateRows: isMobile ? `repeat(${currentRows}, 48px)` : isWideDesktop ? `repeat(${currentRows}, 96px)` : `repeat(${currentRows}, 80px)`,
+              gridTemplateColumns: isMobile ? `repeat(${GRID_COLS}, 48px)` : isWideDesktop ? `repeat(${GRID_COLS}, 96px)` : `repeat(${GRID_COLS}, 80px)`,
+              gap: isMobile ? '8px' : isWideDesktop ? '20px' : '16px',
               zIndex: 10,
               padding: 0,
-              marginTop: isMobile ? '260px' : '160px',
+              marginTop: isMobile ? '260px' : isWideDesktop ? '180px' : '160px',
             }}
           >
             {grid.map((row, rowIndex) =>
@@ -931,8 +952,8 @@ export default function LandingGame() {
                   onClick={() => handleCellClick(rowIndex, colIndex)}
                   style={{
                     position: 'relative',
-                    width: isMobile ? '48px' : '80px',
-                    height: isMobile ? '48px' : '80px',
+                    width: isMobile ? '48px' : isWideDesktop ? '96px' : '80px',
+                    height: isMobile ? '48px' : isWideDesktop ? '96px' : '80px',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
@@ -950,10 +971,10 @@ export default function LandingGame() {
                   }}
                 >
                   {/* Ground marker shown only for empty cells */}
-                  {cell.state === 'empty' && <GroundMarker size={isMobile ? 48 : 80} />}
-                  {cell.state === 'tree' && <TreeIcon hasBird={cell.hasBird} variant={cell.variant || 0} size={isMobile ? 36 : 60} />}
-                  {cell.state === 'building' && <BuildingIcon variant={cell.variant || 0} size={isMobile ? 36 : 60} />}
-                  {cell.state === 'sapling' && <SaplingIcon variant={cell.variant || 0} size={isMobile ? 24 : 40} />}
+                  {cell.state === 'empty' && <GroundMarker size={isMobile ? 48 : isWideDesktop ? 96 : 80} />}
+                  {cell.state === 'tree' && <TreeIcon hasBird={cell.hasBird} variant={cell.variant || 0} size={isMobile ? 36 : isWideDesktop ? 72 : 60} />}
+                  {cell.state === 'building' && <BuildingIcon variant={cell.variant || 0} size={isMobile ? 36 : isWideDesktop ? 72 : 60} />}
+                  {cell.state === 'sapling' && <SaplingIcon variant={cell.variant || 0} size={isMobile ? 24 : isWideDesktop ? 48 : 40} />}
                   {showPlantingHand?.row === rowIndex && showPlantingHand?.col === colIndex && (
                     <PlantingHand show={true} />
                   )}
@@ -963,15 +984,15 @@ export default function LandingGame() {
 
             {/* Trucks overlay - multiple trucks can exist simultaneously */}
             {trucks.map(truck => {
-              const truckWidth = isMobile ? 36 : 60
-              const truckHeight = isMobile ? 22 : 36
-              const offsetX = isMobile ? 18 : 30
-              const offsetY = isMobile ? 11 : 18
+              const truckWidth = isMobile ? 36 : isWideDesktop ? 72 : 60
+              const truckHeight = isMobile ? 22 : isWideDesktop ? 43 : 36
+              const offsetX = isMobile ? 18 : isWideDesktop ? 36 : 30
+              const offsetY = isMobile ? 11 : isWideDesktop ? 21 : 18
 
               return (
                 <img
                   key={truck.id}
-                  src="/images/home/truck.svg"
+                  src="/images/home/truck.svg?cache=july10-2026"
                   alt="truck"
                   style={{
                     position: 'absolute',
@@ -1044,12 +1065,12 @@ export default function LandingGame() {
               >
                 <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '20px' }}>
                   {/* Stats line */}
-                  <div style={{ fontSize: isLargeDesktop ? '21px' : '16px', fontWeight: 500, color: '#E5E5E5', lineHeight: '1.5' }}>
+                  <div style={{ fontSize: '16px', fontWeight: 500, color: '#E5E5E5', lineHeight: '1.5' }}>
                     You planted {planted} {planted === 1 ? 'tree' : 'trees'}. {stillStanding} {stillStanding === 1 ? 'is' : 'are'} still standing.
                   </div>
 
                   {/* Bridge line - varies based on ending type */}
-                  <div style={{ fontSize: isLargeDesktop ? '18px' : '14px', fontWeight: 400, color: '#9CA3AF', lineHeight: '1.5' }}>
+                  <div style={{ fontSize: '14px', fontWeight: 400, color: '#9CA3AF', lineHeight: '1.5' }}>
                     {endingType === 'neutral'
                       ? 'The buildings had a head start this time.'
                       : "Small, deliberate choices — that's the whole job."}
@@ -1063,7 +1084,7 @@ export default function LandingGame() {
                       document.getElementById('case-studies')?.scrollIntoView({ behavior: 'smooth', block: 'start' })
                     }}
                     style={{
-                      fontSize: isLargeDesktop ? '19px' : '15px',
+                      fontSize: '15px',
                       fontWeight: 500,
                       color: '#86C232',
                       textDecoration: 'none',
@@ -1085,7 +1106,7 @@ export default function LandingGame() {
                   <button
                     onClick={startGame}
                     style={{
-                      fontSize: isLargeDesktop ? '17px' : '13px',
+                      fontSize: '13px',
                       fontWeight: 500,
                       color: '#9CA3AF',
                       background: 'none',

@@ -5,8 +5,10 @@ import { useState, useEffect } from 'react'
 
 const useMediaQuery = (query: string) => {
   const [matches, setMatches] = useState(false)
+  const [mounted, setMounted] = useState(false)
 
   useEffect(() => {
+    setMounted(true)
     const media = window.matchMedia(query)
     if (media.matches !== matches) {
       setMatches(media.matches)
@@ -16,14 +18,14 @@ const useMediaQuery = (query: string) => {
     return () => media.removeEventListener('change', listener)
   }, [matches, query])
 
-  return matches
+  return mounted ? matches : false
 }
 
 export default function Home() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const isMobile = useMediaQuery('(max-width: 768px)')
   const isTablet = useMediaQuery('(max-width: 1024px)')
-  const isLargeDesktop = useMediaQuery('(min-width: 1600px)')
+  const isWideDesktop = useMediaQuery('(min-width: 1440px)')
 
   return (
     <div style={{
@@ -95,7 +97,7 @@ export default function Home() {
           style={{
             flex: 1,
             overflowY: 'auto',
-            padding: isMobile ? '0 20px 40px 20px' : isTablet ? '0 32px 50px 20px' : '0 48px 60px 20px',
+            padding: isMobile ? '20px 20px 40px 20px' : isTablet ? '32px 32px 50px 20px' : isWideDesktop ? '48px 80px 80px 80px' : '32px 48px 60px 20px',
             minWidth: 0,
             scrollBehavior: 'smooth',
             backgroundColor: '#FFFFFF',
@@ -103,39 +105,39 @@ export default function Home() {
         >
           {/* Landing Game */}
           <div style={{
-            marginBottom: isMobile ? '40px' : isLargeDesktop ? '120px' : '64px',
+            marginBottom: '20px',
           }}>
             <LandingGame />
           </div>
 
           {/* Home page content */}
           <div style={{
-            maxWidth: '920px',
-            marginTop: isMobile ? '0px' : isLargeDesktop ? '250px' : '-20px',
-            paddingLeft: isMobile ? '0' : '48px',
+            maxWidth: isWideDesktop ? '1100px' : '920px',
+            marginTop: '0px',
+            paddingLeft: isMobile ? '0' : isWideDesktop ? '64px' : '48px',
           }}>
             <h1 style={{
               fontFamily: 'var(--font-fraunces), serif',
-              fontSize: isMobile ? '48px' : isTablet ? '64px' : isLargeDesktop ? '104px' : '80px',
+              fontSize: isMobile ? '48px' : isTablet ? '64px' : isWideDesktop ? '96px' : '80px',
               fontWeight: 700,
               lineHeight: '1.1',
               color: '#1C1917',
-              marginBottom: isMobile ? '32px' : isLargeDesktop ? '64px' : '48px',
+              marginBottom: isMobile ? '32px' : isWideDesktop ? '56px' : '48px',
               letterSpacing: '-0.02em',
             }}>
               Hi, I'm Indhu
             </h1>
 
             <div style={{
-              fontSize: isMobile ? '17px' : isLargeDesktop ? '23px' : '18px',
+              fontSize: isMobile ? '17px' : isWideDesktop ? '20px' : '18px',
               lineHeight: '1.8',
               color: '#1C1917',
             }}>
-              <p style={{ marginBottom: '28px' }}>
+              <p style={{ marginBottom: isWideDesktop ? '32px' : '28px' }}>
                 I'm a product designer based in Seattle, exploring the space between architecture and digital products. Currently working on projects that feel more like spaces you want to stay in than apps you have to use.
               </p>
 
-              <p style={{ marginBottom: '28px' }}>
+              <p style={{ marginBottom: isWideDesktop ? '32px' : '28px' }}>
                 My work lives somewhere between structure and storytelling — building systems that scale while keeping the details that make things feel human.
               </p>
             </div>
@@ -143,17 +145,17 @@ export default function Home() {
 
           {/* Case Studies Section */}
           <div id="case-studies" style={{
-            maxWidth: isLargeDesktop ? '1600px' : '1200px',
-            marginTop: isMobile ? '60px' : isLargeDesktop ? '140px' : '100px',
-            paddingLeft: isMobile ? '0' : '48px',
+            maxWidth: isWideDesktop ? '1400px' : '1200px',
+            marginTop: isMobile ? '60px' : isWideDesktop ? '120px' : '100px',
+            paddingLeft: isMobile ? '0' : isWideDesktop ? '64px' : '48px',
           }}>
             {/* Section Header */}
             <h2 style={{
               fontFamily: 'var(--font-fraunces), serif',
-              fontSize: isMobile ? '32px' : isLargeDesktop ? '62px' : '48px',
+              fontSize: isMobile ? '32px' : isWideDesktop ? '56px' : '48px',
               fontWeight: 700,
               color: '#1C1917',
-              marginBottom: isMobile ? '32px' : isLargeDesktop ? '64px' : '48px',
+              marginBottom: isMobile ? '32px' : isWideDesktop ? '64px' : '48px',
               letterSpacing: '-0.01em',
             }}>
               Selected Work
@@ -163,19 +165,19 @@ export default function Home() {
             <div style={{
               display: 'flex',
               flexDirection: 'column',
-              gap: isMobile ? '40px' : '60px',
+              gap: isMobile ? '40px' : isWideDesktop ? '80px' : '60px',
             }}>
               {/* Card 1 - LAT */}
               <div style={{
                 display: 'flex',
                 flexDirection: isMobile ? 'column' : 'row',
-                gap: isMobile ? '20px' : isLargeDesktop ? '56px' : '40px',
+                gap: isMobile ? '20px' : '40px',
                 alignItems: isMobile ? 'flex-start' : 'center',
               }}>
                 {/* Image Placeholder */}
                 <div style={{
-                  width: isMobile ? '100%' : isLargeDesktop ? '640px' : '480px',
-                  height: isMobile ? '240px' : isLargeDesktop ? '426px' : '320px',
+                  width: isMobile ? '100%' : isWideDesktop ? '560px' : '480px',
+                  height: isMobile ? '240px' : isWideDesktop ? '380px' : '320px',
                   backgroundColor: '#E5E5E5',
                   borderRadius: '8px',
                   flexShrink: 0,
@@ -190,15 +192,15 @@ export default function Home() {
                 }}>
                   <h3 style={{
                     fontFamily: 'var(--font-fraunces), serif',
-                    fontSize: isMobile ? '24px' : isLargeDesktop ? '42px' : '32px',
+                    fontSize: isMobile ? '24px' : isWideDesktop ? '36px' : '32px',
                     fontWeight: 600,
                     color: '#1C1917',
-                    marginBottom: '8px',
+                    marginBottom: isWideDesktop ? '12px' : '8px',
                   }}>
                     LAT Platform
                   </h3>
                   <p style={{
-                    fontSize: isMobile ? '16px' : isLargeDesktop ? '23px' : '18px',
+                    fontSize: isMobile ? '16px' : isWideDesktop ? '19px' : '18px',
                     lineHeight: '1.6',
                     color: '#57534E',
                   }}>
@@ -210,7 +212,7 @@ export default function Home() {
                       display: 'inline-flex',
                       alignItems: 'center',
                       gap: '4px',
-                      fontSize: isLargeDesktop ? '21px' : '16px',
+                      fontSize: '16px',
                       fontWeight: 500,
                       color: '#1C1917',
                       textDecoration: 'none',
@@ -233,13 +235,13 @@ export default function Home() {
               <div style={{
                 display: 'flex',
                 flexDirection: isMobile ? 'column' : 'row',
-                gap: isMobile ? '20px' : isLargeDesktop ? '56px' : '40px',
+                gap: isMobile ? '20px' : '40px',
                 alignItems: isMobile ? 'flex-start' : 'center',
               }}>
                 {/* Image Placeholder */}
                 <div style={{
-                  width: isMobile ? '100%' : isLargeDesktop ? '640px' : '480px',
-                  height: isMobile ? '240px' : isLargeDesktop ? '426px' : '320px',
+                  width: isMobile ? '100%' : isWideDesktop ? '560px' : '480px',
+                  height: isMobile ? '240px' : isWideDesktop ? '380px' : '320px',
                   backgroundColor: '#E5E5E5',
                   borderRadius: '8px',
                   flexShrink: 0,
@@ -254,15 +256,15 @@ export default function Home() {
                 }}>
                   <h3 style={{
                     fontFamily: 'var(--font-fraunces), serif',
-                    fontSize: isMobile ? '24px' : isLargeDesktop ? '42px' : '32px',
+                    fontSize: isMobile ? '24px' : isWideDesktop ? '36px' : '32px',
                     fontWeight: 600,
                     color: '#1C1917',
-                    marginBottom: '8px',
+                    marginBottom: isWideDesktop ? '12px' : '8px',
                   }}>
                     Keye
                   </h3>
                   <p style={{
-                    fontSize: isMobile ? '16px' : isLargeDesktop ? '23px' : '18px',
+                    fontSize: isMobile ? '16px' : isWideDesktop ? '19px' : '18px',
                     lineHeight: '1.6',
                     color: '#57534E',
                   }}>
@@ -274,7 +276,7 @@ export default function Home() {
                       display: 'inline-flex',
                       alignItems: 'center',
                       gap: '4px',
-                      fontSize: isLargeDesktop ? '21px' : '16px',
+                      fontSize: '16px',
                       fontWeight: 500,
                       color: '#1C1917',
                       textDecoration: 'none',
@@ -297,13 +299,13 @@ export default function Home() {
               <div style={{
                 display: 'flex',
                 flexDirection: isMobile ? 'column' : 'row',
-                gap: isMobile ? '20px' : isLargeDesktop ? '56px' : '40px',
+                gap: isMobile ? '20px' : '40px',
                 alignItems: isMobile ? 'flex-start' : 'center',
               }}>
                 {/* Image Placeholder */}
                 <div style={{
-                  width: isMobile ? '100%' : isLargeDesktop ? '640px' : '480px',
-                  height: isMobile ? '240px' : isLargeDesktop ? '426px' : '320px',
+                  width: isMobile ? '100%' : isWideDesktop ? '560px' : '480px',
+                  height: isMobile ? '240px' : isWideDesktop ? '380px' : '320px',
                   backgroundColor: '#E5E5E5',
                   borderRadius: '8px',
                   flexShrink: 0,
@@ -318,15 +320,15 @@ export default function Home() {
                 }}>
                   <h3 style={{
                     fontFamily: 'var(--font-fraunces), serif',
-                    fontSize: isMobile ? '24px' : isLargeDesktop ? '42px' : '32px',
+                    fontSize: isMobile ? '24px' : isWideDesktop ? '36px' : '32px',
                     fontWeight: 600,
                     color: '#1C1917',
-                    marginBottom: '8px',
+                    marginBottom: isWideDesktop ? '12px' : '8px',
                   }}>
                     True Media
                   </h3>
                   <p style={{
-                    fontSize: isMobile ? '16px' : isLargeDesktop ? '23px' : '18px',
+                    fontSize: isMobile ? '16px' : isWideDesktop ? '19px' : '18px',
                     lineHeight: '1.6',
                     color: '#57534E',
                   }}>
@@ -338,7 +340,7 @@ export default function Home() {
                       display: 'inline-flex',
                       alignItems: 'center',
                       gap: '4px',
-                      fontSize: isLargeDesktop ? '21px' : '16px',
+                      fontSize: '16px',
                       fontWeight: 500,
                       color: '#1C1917',
                       textDecoration: 'none',
