@@ -138,6 +138,215 @@ export default function Home() {
               </p>
             </div>
           </div>
+
+          {/* Case Studies Section */}
+          <div id="case-studies" style={{
+            maxWidth: '1200px',
+            marginTop: isMobile ? '60px' : '100px',
+            paddingLeft: isMobile ? '0' : '48px',
+          }}>
+            {/* Section Header */}
+            <h2 style={{
+              fontFamily: 'var(--font-fraunces), serif',
+              fontSize: isMobile ? '32px' : '48px',
+              fontWeight: 700,
+              color: '#1C1917',
+              marginBottom: isMobile ? '32px' : '48px',
+              letterSpacing: '-0.01em',
+            }}>
+              Selected Work
+            </h2>
+
+            {/* Case Study Cards */}
+            <div style={{
+              display: 'flex',
+              flexDirection: 'column',
+              gap: isMobile ? '40px' : '60px',
+            }}>
+              {/* Card 1 - LAT */}
+              <div style={{
+                display: 'flex',
+                flexDirection: isMobile ? 'column' : 'row',
+                gap: isMobile ? '20px' : '40px',
+                alignItems: isMobile ? 'flex-start' : 'center',
+              }}>
+                {/* Image Placeholder */}
+                <div style={{
+                  width: isMobile ? '100%' : '480px',
+                  height: isMobile ? '240px' : '320px',
+                  backgroundColor: '#E5E5E5',
+                  borderRadius: '8px',
+                  flexShrink: 0,
+                }} />
+
+                {/* Content */}
+                <div style={{
+                  flex: 1,
+                  display: 'flex',
+                  flexDirection: 'column',
+                  gap: '16px',
+                }}>
+                  <h3 style={{
+                    fontFamily: 'var(--font-fraunces), serif',
+                    fontSize: isMobile ? '24px' : '32px',
+                    fontWeight: 600,
+                    color: '#1C1917',
+                    marginBottom: '8px',
+                  }}>
+                    LAT Platform
+                  </h3>
+                  <p style={{
+                    fontSize: isMobile ? '16px' : '18px',
+                    lineHeight: '1.6',
+                    color: '#57534E',
+                  }}>
+                    Redesigning mental health assessment tools to reduce clinician burnout and improve patient care outcomes.
+                  </p>
+                  <a
+                    href="/work/lat"
+                    style={{
+                      display: 'inline-flex',
+                      alignItems: 'center',
+                      padding: '12px 24px',
+                      fontSize: '15px',
+                      fontWeight: 600,
+                      backgroundColor: '#4A87FF',
+                      color: '#FFFFFF',
+                      border: 'none',
+                      borderRadius: '8px',
+                      textDecoration: 'none',
+                      width: 'fit-content',
+                      cursor: 'pointer',
+                    }}
+                  >
+                    View Case Study
+                  </a>
+                </div>
+              </div>
+
+              {/* Card 2 - Keye */}
+              <div style={{
+                display: 'flex',
+                flexDirection: isMobile ? 'column' : 'row',
+                gap: isMobile ? '20px' : '40px',
+                alignItems: isMobile ? 'flex-start' : 'center',
+              }}>
+                {/* Image Placeholder */}
+                <div style={{
+                  width: isMobile ? '100%' : '480px',
+                  height: isMobile ? '240px' : '320px',
+                  backgroundColor: '#E5E5E5',
+                  borderRadius: '8px',
+                  flexShrink: 0,
+                }} />
+
+                {/* Content */}
+                <div style={{
+                  flex: 1,
+                  display: 'flex',
+                  flexDirection: 'column',
+                  gap: '16px',
+                }}>
+                  <h3 style={{
+                    fontFamily: 'var(--font-fraunces), serif',
+                    fontSize: isMobile ? '24px' : '32px',
+                    fontWeight: 600,
+                    color: '#1C1917',
+                    marginBottom: '8px',
+                  }}>
+                    Keye
+                  </h3>
+                  <p style={{
+                    fontSize: isMobile ? '16px' : '18px',
+                    lineHeight: '1.6',
+                    color: '#57534E',
+                  }}>
+                    Building a community-driven platform that helps people discover and share authentic local experiences.
+                  </p>
+                  <a
+                    href="/work/keye"
+                    style={{
+                      display: 'inline-flex',
+                      alignItems: 'center',
+                      padding: '12px 24px',
+                      fontSize: '15px',
+                      fontWeight: 600,
+                      backgroundColor: '#4A87FF',
+                      color: '#FFFFFF',
+                      border: 'none',
+                      borderRadius: '8px',
+                      textDecoration: 'none',
+                      width: 'fit-content',
+                      cursor: 'pointer',
+                    }}
+                  >
+                    View Case Study
+                  </a>
+                </div>
+              </div>
+
+              {/* Card 3 - Misinformation Center */}
+              <div style={{
+                display: 'flex',
+                flexDirection: isMobile ? 'column' : 'row',
+                gap: isMobile ? '20px' : '40px',
+                alignItems: isMobile ? 'flex-start' : 'center',
+              }}>
+                {/* Image Placeholder */}
+                <div style={{
+                  width: isMobile ? '100%' : '480px',
+                  height: isMobile ? '240px' : '320px',
+                  backgroundColor: '#E5E5E5',
+                  borderRadius: '8px',
+                  flexShrink: 0,
+                }} />
+
+                {/* Content */}
+                <div style={{
+                  flex: 1,
+                  display: 'flex',
+                  flexDirection: 'column',
+                  gap: '16px',
+                }}>
+                  <h3 style={{
+                    fontFamily: 'var(--font-fraunces), serif',
+                    fontSize: isMobile ? '24px' : '32px',
+                    fontWeight: 600,
+                    color: '#1C1917',
+                    marginBottom: '8px',
+                  }}>
+                    True Media
+                  </h3>
+                  <p style={{
+                    fontSize: isMobile ? '16px' : '18px',
+                    lineHeight: '1.6',
+                    color: '#57534E',
+                  }}>
+                    Designing tools to help users identify and combat misinformation through AI-powered fact checking.
+                  </p>
+                  <a
+                    href="/work/misinformation-center"
+                    style={{
+                      display: 'inline-flex',
+                      alignItems: 'center',
+                      padding: '12px 24px',
+                      fontSize: '15px',
+                      fontWeight: 600,
+                      backgroundColor: '#4A87FF',
+                      color: '#FFFFFF',
+                      border: 'none',
+                      borderRadius: '8px',
+                      textDecoration: 'none',
+                      width: 'fit-content',
+                      cursor: 'pointer',
+                    }}
+                  >
+                    View Case Study
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
 
       </div>

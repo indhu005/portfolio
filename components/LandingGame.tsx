@@ -1006,7 +1006,11 @@ export default function LandingGame() {
 
                   {/* View case studies button - primary */}
                   <a
-                    href="/work"
+                    href="#case-studies"
+                    onClick={(e) => {
+                      e.preventDefault()
+                      document.getElementById('case-studies')?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+                    }}
                     style={{
                       padding: '14px 32px',
                       fontSize: '15px',
