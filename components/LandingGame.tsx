@@ -158,6 +158,7 @@ const BuildingIcon = ({ size = 60, variant = 0 }: { size?: number; variant?: num
         bottom: '20%',
         left: '50%',
         transform: `translateX(-50%) ${isAnimating ? 'rotate(360deg) scale(0.3)' : 'rotate(0deg) scale(1)'}`,
+        transformOrigin: 'bottom center',
         objectFit: 'contain',
         zIndex: 5,
         transition: 'transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1)',
