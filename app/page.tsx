@@ -25,7 +25,7 @@ export default function Home() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const isMobile = useMediaQuery('(max-width: 768px)')
   const isTablet = useMediaQuery('(max-width: 1024px)')
-  const isWideDesktop = useMediaQuery('(min-width: 1440px)')
+  const isWideDesktop = useMediaQuery('(min-width: 2200px)')
 
   return (
     <div style={{

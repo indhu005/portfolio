@@ -289,7 +289,7 @@ const useIsWideDesktop = () => {
 
   useEffect(() => {
     const checkWideDesktop = () => {
-      setIsWideDesktop(window.innerWidth >= 1600)
+      setIsWideDesktop(window.innerWidth >= 2200)
     }
     checkWideDesktop()
     window.addEventListener('resize', checkWideDesktop)
