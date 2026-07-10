@@ -78,7 +78,7 @@ const TreeIcon = ({ hasBird = false, size = 60, variant = 0 }: { hasBird?: boole
       position: 'absolute',
       width: size,
       height: size,
-      top: '50%',
+      top: '45%',
       left: '50%',
       transform: 'translate(-50%, -50%)',
       zIndex: 5,
@@ -124,7 +124,7 @@ const BuildingIcon = ({ size = 60, variant = 0 }: { size?: number; variant?: num
         position: 'absolute',
         width: size,
         height: size,
-        top: '50%',
+        top: '45%',
         left: '50%',
         transform: 'translate(-50%, -50%)',
         objectFit: 'contain',
@@ -147,7 +147,7 @@ const SaplingIcon = ({ size = 40, variant = 0 }: { size?: number; variant?: numb
         position: 'absolute',
         width: size,
         height: size,
-        top: '50%',
+        top: '45%',
         left: '50%',
         transform: 'translate(-50%, -50%)',
         objectFit: 'contain',
@@ -169,7 +169,7 @@ const GroundMarker = ({ size = 60 }: { size?: number }) => {
       viewBox={`0 0 ${size} ${size}`}
       style={{
         position: 'absolute',
-        bottom: '5%',
+        bottom: '15%',
         left: '50%',
         transform: 'translateX(-50%)',
         pointerEvents: 'none',
@@ -181,8 +181,8 @@ const GroundMarker = ({ size = 60 }: { size?: number }) => {
         cy={size * 0.8}
         rx={ellipseWidth / 2}
         ry={ellipseHeight / 2}
-        fill="#D1D1D1"
-        opacity="0.4"
+        fill="#999999"
+        opacity="0.6"
       />
     </svg>
   )
@@ -870,7 +870,7 @@ export default function LandingGame() {
               gap: isMobile ? '8px' : '16px',
               zIndex: 10,
               padding: 0,
-              marginTop: isMobile ? '200px' : '100px',
+              marginTop: isMobile ? '260px' : '160px',
             }}
           >
             {grid.map((row, rowIndex) =>
