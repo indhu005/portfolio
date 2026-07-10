@@ -283,8 +283,25 @@ const useIsMobile = () => {
   return isMobile
 }
 
+// Hook to detect large desktop viewport
+const useIsLargeDesktop = () => {
+  const [isLargeDesktop, setIsLargeDesktop] = useState(false)
+
+  useEffect(() => {
+    const checkLargeDesktop = () => {
+      setIsLargeDesktop(window.innerWidth >= 1600)
+    }
+    checkLargeDesktop()
+    window.addEventListener('resize', checkLargeDesktop)
+    return () => window.removeEventListener('resize', checkLargeDesktop)
+  }, [])
+
+  return isLargeDesktop
+}
+
 export default function LandingGame() {
   const isMobile = useIsMobile()
+  const isLargeDesktop = useIsLargeDesktop()
   const [grid, setGrid] = useState<Cell[][]>(() =>
     Array(GRID_ROWS)
       .fill(null)
@@ -762,7 +779,7 @@ export default function LandingGame() {
         style={{
           width: '100%',
           height: 'auto',
-          maxHeight: isMobile ? 'auto' : '700px',
+          maxHeight: isMobile ? 'auto' : isLargeDesktop ? '900px' : '700px',
           minHeight: isMobile ? '600px' : 'auto',
           position: 'relative',
           overflow: 'visible',
@@ -774,6 +791,8 @@ export default function LandingGame() {
           alignItems: 'center',
           justifyContent: 'flex-start',
           padding: 0,
+          transform: isLargeDesktop ? 'scale(1.3)' : 'scale(1)',
+          transformOrigin: 'top center',
         }}
       >
       {/* Center-aligned header block - location, tagline, instruction - positioned relative to outer container */}
@@ -784,7 +803,7 @@ export default function LandingGame() {
           left: '50%',
           transform: 'translateX(-50%)',
           textAlign: 'center',
-          maxWidth: isMobile ? 'calc(100% - 32px)' : '600px',
+          maxWidth: isMobile ? 'calc(100% - 32px)' : isLargeDesktop ? '800px' : '600px',
           zIndex: 50,
           fontFamily: 'DM Sans, sans-serif',
         }}
@@ -792,7 +811,7 @@ export default function LandingGame() {
         {/* Location and time */}
         <div
           style={{
-            fontSize: '12px',
+            fontSize: isLargeDesktop ? '16px' : '12px',
             color: '#6B7280',
             marginBottom: isMobile ? '8px' : '16px',
             lineHeight: '1.5',
@@ -804,7 +823,7 @@ export default function LandingGame() {
         {/* Tagline - Fraunces font */}
         <div
           style={{
-            fontSize: isMobile ? '16px' : '18px',
+            fontSize: isMobile ? '16px' : isLargeDesktop ? '23px' : '18px',
             fontWeight: 600,
             color: '#1C1917',
             marginBottom: isMobile ? '12px' : '20px',
@@ -819,7 +838,7 @@ export default function LandingGame() {
         {(gameActive || gameEnded) && !gameEnded && (
           <div
             style={{
-              fontSize: isMobile ? '13px' : '14px',
+              fontSize: isMobile ? '13px' : isLargeDesktop ? '18px' : '14px',
               color: '#6B7280',
               marginBottom: isMobile ? '8px' : '16px',
               lineHeight: '1.5',
@@ -1025,12 +1044,12 @@ export default function LandingGame() {
               >
                 <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '20px' }}>
                   {/* Stats line */}
-                  <div style={{ fontSize: '16px', fontWeight: 500, color: '#E5E5E5', lineHeight: '1.5' }}>
+                  <div style={{ fontSize: isLargeDesktop ? '21px' : '16px', fontWeight: 500, color: '#E5E5E5', lineHeight: '1.5' }}>
                     You planted {planted} {planted === 1 ? 'tree' : 'trees'}. {stillStanding} {stillStanding === 1 ? 'is' : 'are'} still standing.
                   </div>
 
                   {/* Bridge line - varies based on ending type */}
-                  <div style={{ fontSize: '14px', fontWeight: 400, color: '#9CA3AF', lineHeight: '1.5' }}>
+                  <div style={{ fontSize: isLargeDesktop ? '18px' : '14px', fontWeight: 400, color: '#9CA3AF', lineHeight: '1.5' }}>
                     {endingType === 'neutral'
                       ? 'The buildings had a head start this time.'
                       : "Small, deliberate choices — that's the whole job."}
@@ -1044,7 +1063,7 @@ export default function LandingGame() {
                       document.getElementById('case-studies')?.scrollIntoView({ behavior: 'smooth', block: 'start' })
                     }}
                     style={{
-                      fontSize: '15px',
+                      fontSize: isLargeDesktop ? '19px' : '15px',
                       fontWeight: 500,
                       color: '#86C232',
                       textDecoration: 'none',
@@ -1066,7 +1085,7 @@ export default function LandingGame() {
                   <button
                     onClick={startGame}
                     style={{
-                      fontSize: '13px',
+                      fontSize: isLargeDesktop ? '17px' : '13px',
                       fontWeight: 500,
                       color: '#9CA3AF',
                       background: 'none',

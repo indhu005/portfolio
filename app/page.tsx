@@ -23,6 +23,7 @@ export default function Home() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const isMobile = useMediaQuery('(max-width: 768px)')
   const isTablet = useMediaQuery('(max-width: 1024px)')
+  const isLargeDesktop = useMediaQuery('(min-width: 1600px)')
 
   return (
     <div style={{
@@ -115,18 +116,18 @@ export default function Home() {
           }}>
             <h1 style={{
               fontFamily: 'var(--font-fraunces), serif',
-              fontSize: isMobile ? '48px' : isTablet ? '64px' : '80px',
+              fontSize: isMobile ? '48px' : isTablet ? '64px' : isLargeDesktop ? '104px' : '80px',
               fontWeight: 700,
               lineHeight: '1.1',
               color: '#1C1917',
-              marginBottom: isMobile ? '32px' : '48px',
+              marginBottom: isMobile ? '32px' : isLargeDesktop ? '64px' : '48px',
               letterSpacing: '-0.02em',
             }}>
               Hi, I'm Indhu
             </h1>
 
             <div style={{
-              fontSize: isMobile ? '17px' : '18px',
+              fontSize: isMobile ? '17px' : isLargeDesktop ? '23px' : '18px',
               lineHeight: '1.8',
               color: '#1C1917',
             }}>
@@ -142,17 +143,17 @@ export default function Home() {
 
           {/* Case Studies Section */}
           <div id="case-studies" style={{
-            maxWidth: '1200px',
-            marginTop: isMobile ? '60px' : '100px',
+            maxWidth: isLargeDesktop ? '1600px' : '1200px',
+            marginTop: isMobile ? '60px' : isLargeDesktop ? '140px' : '100px',
             paddingLeft: isMobile ? '0' : '48px',
           }}>
             {/* Section Header */}
             <h2 style={{
               fontFamily: 'var(--font-fraunces), serif',
-              fontSize: isMobile ? '32px' : '48px',
+              fontSize: isMobile ? '32px' : isLargeDesktop ? '62px' : '48px',
               fontWeight: 700,
               color: '#1C1917',
-              marginBottom: isMobile ? '32px' : '48px',
+              marginBottom: isMobile ? '32px' : isLargeDesktop ? '64px' : '48px',
               letterSpacing: '-0.01em',
             }}>
               Selected Work
@@ -168,13 +169,13 @@ export default function Home() {
               <div style={{
                 display: 'flex',
                 flexDirection: isMobile ? 'column' : 'row',
-                gap: isMobile ? '20px' : '40px',
+                gap: isMobile ? '20px' : isLargeDesktop ? '56px' : '40px',
                 alignItems: isMobile ? 'flex-start' : 'center',
               }}>
                 {/* Image Placeholder */}
                 <div style={{
-                  width: isMobile ? '100%' : '480px',
-                  height: isMobile ? '240px' : '320px',
+                  width: isMobile ? '100%' : isLargeDesktop ? '640px' : '480px',
+                  height: isMobile ? '240px' : isLargeDesktop ? '426px' : '320px',
                   backgroundColor: '#E5E5E5',
                   borderRadius: '8px',
                   flexShrink: 0,
@@ -189,7 +190,7 @@ export default function Home() {
                 }}>
                   <h3 style={{
                     fontFamily: 'var(--font-fraunces), serif',
-                    fontSize: isMobile ? '24px' : '32px',
+                    fontSize: isMobile ? '24px' : isLargeDesktop ? '42px' : '32px',
                     fontWeight: 600,
                     color: '#1C1917',
                     marginBottom: '8px',
@@ -197,7 +198,7 @@ export default function Home() {
                     LAT Platform
                   </h3>
                   <p style={{
-                    fontSize: isMobile ? '16px' : '18px',
+                    fontSize: isMobile ? '16px' : isLargeDesktop ? '23px' : '18px',
                     lineHeight: '1.6',
                     color: '#57534E',
                   }}>
@@ -209,7 +210,7 @@ export default function Home() {
                       display: 'inline-flex',
                       alignItems: 'center',
                       gap: '4px',
-                      fontSize: '16px',
+                      fontSize: isLargeDesktop ? '21px' : '16px',
                       fontWeight: 500,
                       color: '#1C1917',
                       textDecoration: 'none',
@@ -232,13 +233,13 @@ export default function Home() {
               <div style={{
                 display: 'flex',
                 flexDirection: isMobile ? 'column' : 'row',
-                gap: isMobile ? '20px' : '40px',
+                gap: isMobile ? '20px' : isLargeDesktop ? '56px' : '40px',
                 alignItems: isMobile ? 'flex-start' : 'center',
               }}>
                 {/* Image Placeholder */}
                 <div style={{
-                  width: isMobile ? '100%' : '480px',
-                  height: isMobile ? '240px' : '320px',
+                  width: isMobile ? '100%' : isLargeDesktop ? '640px' : '480px',
+                  height: isMobile ? '240px' : isLargeDesktop ? '426px' : '320px',
                   backgroundColor: '#E5E5E5',
                   borderRadius: '8px',
                   flexShrink: 0,
@@ -253,7 +254,7 @@ export default function Home() {
                 }}>
                   <h3 style={{
                     fontFamily: 'var(--font-fraunces), serif',
-                    fontSize: isMobile ? '24px' : '32px',
+                    fontSize: isMobile ? '24px' : isLargeDesktop ? '42px' : '32px',
                     fontWeight: 600,
                     color: '#1C1917',
                     marginBottom: '8px',
@@ -261,7 +262,7 @@ export default function Home() {
                     Keye
                   </h3>
                   <p style={{
-                    fontSize: isMobile ? '16px' : '18px',
+                    fontSize: isMobile ? '16px' : isLargeDesktop ? '23px' : '18px',
                     lineHeight: '1.6',
                     color: '#57534E',
                   }}>
@@ -273,7 +274,7 @@ export default function Home() {
                       display: 'inline-flex',
                       alignItems: 'center',
                       gap: '4px',
-                      fontSize: '16px',
+                      fontSize: isLargeDesktop ? '21px' : '16px',
                       fontWeight: 500,
                       color: '#1C1917',
                       textDecoration: 'none',
@@ -296,13 +297,13 @@ export default function Home() {
               <div style={{
                 display: 'flex',
                 flexDirection: isMobile ? 'column' : 'row',
-                gap: isMobile ? '20px' : '40px',
+                gap: isMobile ? '20px' : isLargeDesktop ? '56px' : '40px',
                 alignItems: isMobile ? 'flex-start' : 'center',
               }}>
                 {/* Image Placeholder */}
                 <div style={{
-                  width: isMobile ? '100%' : '480px',
-                  height: isMobile ? '240px' : '320px',
+                  width: isMobile ? '100%' : isLargeDesktop ? '640px' : '480px',
+                  height: isMobile ? '240px' : isLargeDesktop ? '426px' : '320px',
                   backgroundColor: '#E5E5E5',
                   borderRadius: '8px',
                   flexShrink: 0,
@@ -317,7 +318,7 @@ export default function Home() {
                 }}>
                   <h3 style={{
                     fontFamily: 'var(--font-fraunces), serif',
-                    fontSize: isMobile ? '24px' : '32px',
+                    fontSize: isMobile ? '24px' : isLargeDesktop ? '42px' : '32px',
                     fontWeight: 600,
                     color: '#1C1917',
                     marginBottom: '8px',
@@ -325,7 +326,7 @@ export default function Home() {
                     True Media
                   </h3>
                   <p style={{
-                    fontSize: isMobile ? '16px' : '18px',
+                    fontSize: isMobile ? '16px' : isLargeDesktop ? '23px' : '18px',
                     lineHeight: '1.6',
                     color: '#57534E',
                   }}>
@@ -337,7 +338,7 @@ export default function Home() {
                       display: 'inline-flex',
                       alignItems: 'center',
                       gap: '4px',
-                      fontSize: '16px',
+                      fontSize: isLargeDesktop ? '21px' : '16px',
                       fontWeight: 500,
                       color: '#1C1917',
                       textDecoration: 'none',
