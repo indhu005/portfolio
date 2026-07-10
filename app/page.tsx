@@ -97,7 +97,7 @@ export default function Home() {
           style={{
             flex: 1,
             overflowY: 'auto',
-            padding: isMobile ? '20px 20px 40px 20px' : isTablet ? '32px 32px 50px 20px' : isWideDesktop ? '48px 80px 80px 80px' : '32px 48px 60px 20px',
+            padding: isMobile ? '0 20px 40px 20px' : isTablet ? '0 32px 50px 20px' : isWideDesktop ? '0 80px 80px 80px' : '0 48px 60px 20px',
             minWidth: 0,
             scrollBehavior: 'smooth',
             backgroundColor: '#FFFFFF',
@@ -118,7 +118,7 @@ export default function Home() {
           }}>
             <h1 style={{
               fontFamily: 'var(--font-fraunces), serif',
-              fontSize: isMobile ? '48px' : isTablet ? '64px' : isWideDesktop ? '96px' : '80px',
+              fontSize: isMobile ? '34px' : isTablet ? '45px' : isWideDesktop ? '67px' : '56px',
               fontWeight: 700,
               lineHeight: '1.1',
               color: '#1C1917',
@@ -152,7 +152,7 @@ export default function Home() {
             {/* Section Header */}
             <h2 style={{
               fontFamily: 'var(--font-fraunces), serif',
-              fontSize: isMobile ? '32px' : isWideDesktop ? '56px' : '48px',
+              fontSize: isMobile ? '22px' : isWideDesktop ? '39px' : '34px',
               fontWeight: 700,
               color: '#1C1917',
               marginBottom: isMobile ? '32px' : isWideDesktop ? '64px' : '48px',
@@ -192,7 +192,7 @@ export default function Home() {
                 }}>
                   <h3 style={{
                     fontFamily: 'var(--font-fraunces), serif',
-                    fontSize: isMobile ? '24px' : isWideDesktop ? '36px' : '32px',
+                    fontSize: isMobile ? '17px' : isWideDesktop ? '25px' : '22px',
                     fontWeight: 600,
                     color: '#1C1917',
                     marginBottom: isWideDesktop ? '12px' : '8px',
@@ -256,7 +256,7 @@ export default function Home() {
                 }}>
                   <h3 style={{
                     fontFamily: 'var(--font-fraunces), serif',
-                    fontSize: isMobile ? '24px' : isWideDesktop ? '36px' : '32px',
+                    fontSize: isMobile ? '17px' : isWideDesktop ? '25px' : '22px',
                     fontWeight: 600,
                     color: '#1C1917',
                     marginBottom: isWideDesktop ? '12px' : '8px',
@@ -320,7 +320,7 @@ export default function Home() {
                 }}>
                   <h3 style={{
                     fontFamily: 'var(--font-fraunces), serif',
-                    fontSize: isMobile ? '24px' : isWideDesktop ? '36px' : '32px',
+                    fontSize: isMobile ? '17px' : isWideDesktop ? '25px' : '22px',
                     fontWeight: 600,
                     color: '#1C1917',
                     marginBottom: isWideDesktop ? '12px' : '8px',

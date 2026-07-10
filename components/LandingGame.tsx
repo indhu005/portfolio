@@ -818,7 +818,7 @@ export default function LandingGame() {
       <div
         style={{
           position: 'absolute',
-          top: '20px',
+          top: '24px',
           left: '50%',
           transform: 'translateX(-50%)',
           textAlign: 'center',
@@ -942,7 +942,7 @@ export default function LandingGame() {
               gap: isMobile ? '8px' : isWideDesktop ? '20px' : '16px',
               zIndex: 10,
               padding: 0,
-              marginTop: isMobile ? '260px' : isWideDesktop ? '180px' : '160px',
+              marginTop: isMobile ? '180px' : isWideDesktop ? '200px' : '160px',
             }}
           >
             {grid.map((row, rowIndex) =>
