@@ -207,19 +207,22 @@ export default function Home() {
                     style={{
                       display: 'inline-flex',
                       alignItems: 'center',
-                      padding: '12px 24px',
-                      fontSize: '15px',
-                      fontWeight: 600,
-                      backgroundColor: '#4A87FF',
-                      color: '#FFFFFF',
-                      border: 'none',
-                      borderRadius: '8px',
+                      gap: '4px',
+                      fontSize: '16px',
+                      fontWeight: 500,
+                      color: '#1C1917',
                       textDecoration: 'none',
                       width: 'fit-content',
                       cursor: 'pointer',
                     }}
+                    onMouseEnter={(e) => {
+                      e.currentTarget.style.textDecoration = 'underline'
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.style.textDecoration = 'none'
+                    }}
                   >
-                    View Case Study
+                    View Case Study ↗
                   </a>
                 </div>
               </div>
@@ -268,19 +271,22 @@ export default function Home() {
                     style={{
                       display: 'inline-flex',
                       alignItems: 'center',
-                      padding: '12px 24px',
-                      fontSize: '15px',
-                      fontWeight: 600,
-                      backgroundColor: '#4A87FF',
-                      color: '#FFFFFF',
-                      border: 'none',
-                      borderRadius: '8px',
+                      gap: '4px',
+                      fontSize: '16px',
+                      fontWeight: 500,
+                      color: '#1C1917',
                       textDecoration: 'none',
                       width: 'fit-content',
                       cursor: 'pointer',
                     }}
+                    onMouseEnter={(e) => {
+                      e.currentTarget.style.textDecoration = 'underline'
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.style.textDecoration = 'none'
+                    }}
                   >
-                    View Case Study
+                    View Case Study ↗
                   </a>
                 </div>
               </div>
@@ -329,19 +335,22 @@ export default function Home() {
                     style={{
                       display: 'inline-flex',
                       alignItems: 'center',
-                      padding: '12px 24px',
-                      fontSize: '15px',
-                      fontWeight: 600,
-                      backgroundColor: '#4A87FF',
-                      color: '#FFFFFF',
-                      border: 'none',
-                      borderRadius: '8px',
+                      gap: '4px',
+                      fontSize: '16px',
+                      fontWeight: 500,
+                      color: '#1C1917',
                       textDecoration: 'none',
                       width: 'fit-content',
                       cursor: 'pointer',
                     }}
+                    onMouseEnter={(e) => {
+                      e.currentTarget.style.textDecoration = 'underline'
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.style.textDecoration = 'none'
+                    }}
                   >
-                    View Case Study
+                    View Case Study ↗
                   </a>
                 </div>
               </div>
