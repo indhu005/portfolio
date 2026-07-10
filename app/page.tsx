@@ -111,7 +111,7 @@ export default function Home() {
           {/* Home page content */}
           <div style={{
             maxWidth: '920px',
-            marginTop: isMobile ? '0px' : isLargeDesktop ? '100px' : '-20px',
+            marginTop: isMobile ? '0px' : isLargeDesktop ? '250px' : '-20px',
             paddingLeft: isMobile ? '0' : '48px',
           }}>
             <h1 style={{
