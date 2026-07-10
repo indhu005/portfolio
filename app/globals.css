@@ -1,3 +1,10 @@
+:root {
+  --text-primary: #1C1917;
+  --text-secondary: #57534E;
+  --text-muted: #78716C;
+  --border-accent: #F42E5F;
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -27,6 +34,26 @@ a:active {
 /* Smooth scroll behavior */
 * {
   scroll-behavior: smooth;
+}
+
+/* Case study body copy styling */
+.case-study-content {
+  font-size: 15px;
+  font-weight: 400;
+  color: var(--text-secondary);
+  line-height: 1.7;
+}
+
+/* Pull quote styling */
+.pull-quote {
+  border-left: 3px solid var(--border-accent);
+  padding-left: 16px;
+  font-family: var(--font-fraunces), serif;
+  font-weight: 600;
+  font-size: 19px;
+  line-height: 1.5;
+  color: var(--text-primary);
+  margin: 32px 0;
 }
 
 /* Water rise animation for photo grid */

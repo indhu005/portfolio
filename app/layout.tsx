@@ -29,7 +29,7 @@ export default function RootLayout({
     <html lang="en" className={fraunces.variable}>
       <body className={dmSans.className} style={{
         margin: 0,
-        padding: '20px 0 0 0',
+        padding: 0,
         backgroundColor: '#FFFFFF',
         overflow: 'hidden'
       }}>

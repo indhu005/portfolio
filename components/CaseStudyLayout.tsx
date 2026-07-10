@@ -21,6 +21,7 @@ const useMediaQuery = (query: string) => {
 interface Section {
   id: string
   title: string
+  headline?: string
   content: string
 }
 
@@ -162,35 +163,42 @@ export default function CaseStudyLayout({ caseStudy, slug }: CaseStudyLayoutProp
         <div style={{
           height: isMobile ? '60px' : '72px',
           borderBottom: '1px solid rgba(0,0,0,0.08)',
-          display: 'flex',
-          alignItems: 'baseline',
-          justifyContent: 'space-between',
-          padding: isMobile ? '0 20px' : isTablet ? '0 32px' : '0 48px 0 0px',
+          padding: isMobile ? '0 20px' : isTablet ? '0 32px' : '0 48px 0 48px',
           paddingTop: isMobile ? '20px' : '24px',
           flexShrink: 0,
+          backgroundColor: '#FFFFFF',
         }}>
-          <div style={{ display: 'flex', alignItems: 'baseline', gap: isMobile ? '8px' : '12px', flexWrap: 'wrap' }}>
-            <span style={{
-              fontFamily: 'inherit',
-              fontSize: isMobile ? '14px' : '16px',
-              fontWeight: 700,
-              color: '#1C1917',
-            }}>{caseStudy.title}</span>
+          <div style={{
+            display: 'flex',
+            alignItems: 'baseline',
+            justifyContent: 'space-between',
+            maxWidth: '1100px',
+            marginLeft: 'auto',
+            marginRight: 'auto',
+          }}>
+            <div style={{ display: 'flex', alignItems: 'baseline', gap: isMobile ? '8px' : '12px', flexWrap: 'wrap' }}>
+              <span style={{
+                fontFamily: 'inherit',
+                fontSize: isMobile ? '14px' : '16px',
+                fontWeight: 700,
+                color: '#1C1917',
+              }}>{caseStudy.title}</span>
+              {!isMobile && (
+                <span style={{
+                  fontSize: '14px',
+                  fontWeight: 400,
+                  color: '#9CA3AF',
+                }}>— {caseStudy.subtitle}</span>
+              )}
+            </div>
             {!isMobile && (
               <span style={{
                 fontSize: '14px',
                 fontWeight: 400,
                 color: '#9CA3AF',
-              }}>— {caseStudy.subtitle}</span>
+              }}>{caseStudy.description}</span>
             )}
           </div>
-          {!isMobile && (
-            <span style={{
-              fontSize: '14px',
-              fontWeight: 400,
-              color: '#9CA3AF',
-            }}>{caseStudy.description}</span>
-          )}
         </div>
 
         {/* CONTENT AREA - The "TV" that scrolls */}
@@ -200,9 +208,10 @@ export default function CaseStudyLayout({ caseStudy, slug }: CaseStudyLayoutProp
           style={{
             flex: 1,
             overflowY: 'auto',
-            padding: isMobile ? '0 20px 40px 20px' : isTablet ? '0 32px 50px 32px' : '0 48px 60px 0px',
+            padding: isMobile ? '0 20px 40px 20px' : isTablet ? '0 32px 50px 32px' : '0 48px 60px 48px',
             minWidth: 0,
             scrollBehavior: 'smooth',
+            backgroundColor: '#FFFFFF',
           }}
         >
           {caseStudy.sections.map((section, index) => (
@@ -211,6 +220,9 @@ export default function CaseStudyLayout({ caseStudy, slug }: CaseStudyLayoutProp
               ref={(el) => { sectionRefs.current[section.id] = el }}
               style={{
                 marginBottom: index === caseStudy.sections.length - 1 ? '0' : '160px',
+                maxWidth: '1100px',
+                marginLeft: 'auto',
+                marginRight: 'auto',
               }}
             >
               {/* Hero Image for first section (Snapshot) */}
@@ -219,8 +231,8 @@ export default function CaseStudyLayout({ caseStudy, slug }: CaseStudyLayoutProp
                   width: '100%',
                   height: '580px',
                   backgroundColor: '#7EB3F5',
-                  borderRadius: '4px',
-                  marginBottom: '36px',
+                  borderRadius: '12px',
+                  marginBottom: '50px',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
@@ -232,24 +244,37 @@ export default function CaseStudyLayout({ caseStudy, slug }: CaseStudyLayoutProp
                 </div>
               )}
 
-              {/* Section Title */}
-              <h2 style={{
-                fontSize: '24px',
-                fontWeight: 700,
-                color: '#1C1917',
-                marginBottom: '16px',
-                fontFamily: 'var(--font-fraunces), serif',
+              {/* Section Label */}
+              <div style={{
+                fontSize: '12px',
+                fontWeight: 400,
+                color: 'var(--text-muted)',
+                letterSpacing: '0.08em',
+                textTransform: 'uppercase',
+                marginBottom: '12px',
+                fontFamily: 'inherit',
               }}>
                 {section.title}
-              </h2>
+              </div>
+
+              {/* Section Headline */}
+              {section.headline && (
+                <h2 style={{
+                  fontSize: isMobile ? '22px' : '26px',
+                  fontWeight: 700,
+                  color: 'var(--text-primary)',
+                  marginBottom: '24px',
+                  lineHeight: '1.3',
+                  fontFamily: 'var(--font-fraunces), serif',
+                }}>
+                  {section.headline}
+                </h2>
+              )}
 
               {/* Section Text */}
               <div
+                className="case-study-content"
                 style={{
-                  fontSize: '16px',
-                  fontWeight: 400,
-                  color: '#1F2937',
-                  lineHeight: '1.6',
                   marginBottom: '32px',
                   width: '100%',
                 }}

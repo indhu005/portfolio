@@ -830,9 +830,9 @@ export default function LandingGame() {
         {/* Location and time */}
         <div
           style={{
-            fontSize: '12px',
+            fontSize: isWideDesktop ? '18px' : '12px',
             color: '#6B7280',
-            marginBottom: isMobile ? '8px' : '16px',
+            marginBottom: isMobile ? '8px' : isWideDesktop ? '24px' : '16px',
             lineHeight: '1.5',
           }}
         >
@@ -842,10 +842,10 @@ export default function LandingGame() {
         {/* Tagline - Fraunces font */}
         <div
           style={{
-            fontSize: isMobile ? '16px' : '18px',
+            fontSize: isMobile ? '16px' : isWideDesktop ? '27px' : '18px',
             fontWeight: 600,
             color: '#1C1917',
-            marginBottom: isMobile ? '12px' : '20px',
+            marginBottom: isMobile ? '12px' : isWideDesktop ? '30px' : '20px',
             fontFamily: 'var(--font-fraunces), serif',
             lineHeight: '1.4',
           }}
@@ -857,9 +857,9 @@ export default function LandingGame() {
         {(gameActive || gameEnded) && !gameEnded && (
           <div
             style={{
-              fontSize: isMobile ? '13px' : '14px',
+              fontSize: isMobile ? '13px' : isWideDesktop ? '21px' : '14px',
               color: '#6B7280',
-              marginBottom: isMobile ? '8px' : '16px',
+              marginBottom: isMobile ? '8px' : isWideDesktop ? '24px' : '16px',
               lineHeight: '1.5',
             }}
           >

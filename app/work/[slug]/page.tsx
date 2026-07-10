@@ -34,6 +34,7 @@ const caseStudies = {
       {
         id: 'context-problem',
         title: '02 — The Problem',
+        headline: 'Premium tools were priced for committed subscribers, not curious explorers',
         content: `<p>Users were creating fake email addresses to get free trials. Friend groups shared passwords. One research participant paid for a VPN just to access cheaper regional pricing. The market was telling us something directly: premium tools — Grammarly at $180/year, Crunchbase at $600 — were priced for committed subscribers, not curious explorers. Free trials demanded a card, were easy to forget, and painful to cancel, so users grew suspicious of the entire category.</p>
 
 <div style="display: flex; gap: 24px; margin-top: 40px; flex-wrap: wrap;">
@@ -50,17 +51,19 @@ const caseStudies = {
       {
         id: 'started',
         title: '03 — Where I Started: Evidence over Instinct',
+        headline: "My job wasn't to execute the founders' instincts but to introduce user evidence into a team moving on momentum",
         content: `<p>My first task — the purchase flow — arrived with the founders' assumptions baked in: mandatory consent and a feedback survey embedded in checkout. Completion dropped 30% at those steps. I moved consent to signup, tested the survey in three placements (email: 80% ignored; in-checkout: confused buyers; post-access popup: finally right — users had just used the product and had something real to say). Drop-off fell 20% in one sprint.</p>
 
 <div style="width: 100%; height: 400px; background-color: #E5E7EB; border-radius: 8px; display: flex; align-items: center; justify-content: center; color: #9CA3AF; font-size: 14px; margin-top: 32px; margin-bottom: 32px;">Before/after checkout + the price-comparison product page</div>
 
 <p style="margin-top: 28px;">The hardest early call was removing product descriptions. Testing showed users scanning, not reading — so I led with imagery and a side-by-side price comparison ($4.99 access vs. $10.99/month subscription), pre-selecting the Keye option. Some users went on to buy full subscriptions through Keye after seeing the comparison — behavior we hadn't designed for but kept.</p>
 
-<p style="margin-top: 28px; font-size: 24px; font-style: italic; line-height: 1.4; color: #000000; font-family: 'Fraunces', serif;">The deeper lesson: my job wasn't to execute the founders' instincts but to introduce user evidence into a team moving on momentum — and prove it through results. With no research budget, I worked by signal saturation: once the same friction appeared across five or six independent users, it was real enough to act on.</p>`
+<div class="pull-quote" style="margin-top: 28px;">With no research budget, I worked by signal saturation: once the same friction appeared across five or six independent users, it was real enough to act on.</div>`
       },
       {
         id: 'credit-system',
         title: '04 — The Credit System: From Constraint to Intelligence',
+        headline: 'The credit cap turned price into a discovery mechanic and shaped the entire partnership strategy',
         content: `<p>The most important design decision in Keye's history — not for how it looked, but for what it revealed.</p>
 
 <p style="margin-top: 28px;"><span style="font-weight: 600;">Unlimited credits (MVP)</span> removed all friction — and all intentionality. FullStory showed users activating HBO, Hulu, and Tubi the same day, exhausting access before people who genuinely wanted a product could reach it.</p>
@@ -80,6 +83,7 @@ const caseStudies = {
       {
         id: 'features',
         title: '05 — Features Built from Signal',
+        headline: 'Every feature solved friction that users had already shown us, not friction we imagined',
         content: `<p><span style="font-weight: 600;">Buy Again</span> collapsed a three-step repurchase into one tap for returning users, keeping the full flow for first-timers. The friction wasn't stopping decisions — it was re-litigating ones already made.</p>
 
 <div style="width: 100%; height: 300px; background-color: #E5E7EB; border-radius: 8px; display: flex; align-items: center; justify-content: center; color: #9CA3AF; font-size: 14px; margin-top: 24px; margin-bottom: 32px;">Buy Again feature</div>
@@ -99,6 +103,7 @@ const caseStudies = {
       {
         id: 'extension',
         title: '06 — The Chrome Extension: An 18-Month Problem Solved in Ten Days',
+        headline: 'The breakthrough was recognizing we should live where the user already is',
         content: `<p>Users had to copy-paste credentials from Keye into partner sites. The plan was that partner integrations would solve it — but each required real engineering investment partners couldn't prioritize. Then our technical co-founder left, taking the backend capacity for a one-click login with him.</p>
 
 <p style="margin-top: 28px;">One evening, watching Honey apply coupons contextually at checkout, I saw the answer: <span style="font-weight: 600;">live where the user already is.</span> Engineering confirmed the effort was minimal. That weekend I built a Figma prototype with a walkthrough — visit a partner site, extension detects it, offers access, auto-fills credentials — and showed it at all-hands. We shipped in under ten days.</p>
@@ -110,6 +115,7 @@ const caseStudies = {
       {
         id: 'design-system',
         title: "07 — Design System: Built for a Team That Didn't Exist Yet",
+        headline: "The true measure of the system was that users couldn't tell where my work ended and the next designer's began",
         content: `<p>I came from architecture, where everything in Revit is a parametric component — change the object, every instance updates. I treated the product card the same way from day one. It evolved from a long-description carousel card to a compact, partner-neutral frame (Otter.ai's branding feedback taught us the card should be a frame, not a canvas), and engineering's constant question — <span style="font-style: italic;">can this be a state of the existing component rather than a new one?</span> — kept us reducing instead of adding. The mature card supported eight states — browseable, active with countdown and credentials, disabled, Buy Again, Featured, Coming Soon, Leaving Soon — all derived from behavioral signals, none speculative.</p>
 
 <div style="width: 100%; height: 500px; background-color: #E5E7EB; border-radius: 8px; display: flex; align-items: center; justify-content: center; color: #9CA3AF; font-size: 14px; margin-top: 32px; margin-bottom: 32px;">One component, eight states — MVP → launch evolution</div>
@@ -119,6 +125,7 @@ const caseStudies = {
       {
         id: 'tradeoffs',
         title: '08 — Tradeoffs & Hard Calls',
+        headline: 'Founding-designer roles expand to fill whatever you give them — I learned to define boundaries before the product demanded more than one person could sustainably give',
         content: `<p><span style="font-weight: 600;">The GIF decision.</span> I wanted animated characters for onboarding; engineering pushed back on performance. The resolution was research, not compromise — I brought evidence on Lottie's lightweight format, we learned it together, and the objection dissolved. Neither original position won; a better one did.</p>
 
 <p style="margin-top: 28px;"><span style="font-weight: 600;">The influencer debate.</span> Marketing wanted trend-borrowed features — influencer streams, social mechanics. I reframed: Keye's users were intentional, coming to access tools, not to be entertained. Building for behavior we didn't have would distract from behavior we did. The founders agreed.</p>
@@ -132,6 +139,7 @@ const caseStudies = {
       {
         id: 'impact',
         title: '09 — Impact & Reflection',
+        headline: "The most important thing a founding designer builds isn't the product — it's the foundation that lets the product grow without being rebuilt from scratch",
         content: `<p>Keye grew from three static screens to a funded, validated company during my two years as sole designer: 0 → 20K+ MAUs in under a year, 150+ products with 35+ direct partnerships, an extension shipped in ten days, and a design team built from scratch. By the company's third year the founding team had dispersed; the remaining founder took the company into YC W2024 and pivoted to financial analytics. The marketplace didn't survive the pivot — but the research, the partnerships, and the funding that made YC possible came from the product we built.</p>
 
 <p style="margin-top: 48px; font-weight: 600;">What mattered more than expected</p>
@@ -140,7 +148,7 @@ const caseStudies = {
 
 <p style="margin-top: 28px;">Keye compressed the feedback loop between design decision and consequence from months to days, and taught me to treat every decision as a hypothesis. The ones confirmed without testing are the ones that break in production.</p>
 
-<p style="margin-top: 48px; font-size: 24px; font-style: italic; line-height: 1.4; color: #000000; font-family: 'Fraunces', serif;">The most important thing a founding designer builds isn't the product. It's the foundation that lets the product grow without being rebuilt from scratch.</p>`
+<div class="pull-quote" style="margin-top: 48px;">Constraints aren't always about user experience — sometimes they create the conditions for a product to learn.</div>`
       },
     ]
   },
@@ -190,6 +198,7 @@ const caseStudies = {
       {
         id: 'context-problem',
         title: '02 — Context & Problem',
+        headline: 'Fragmented data was forcing humans to do the work a system should have done',
         content: `<p>The United States faces a $2.6 trillion infrastructure funding gap. Universities operate inside that pressure daily — managing research labs, dormitories, athletic centers, and historic buildings within a single portfolio, each with different governance layers, capital cycles, and maintenance volatility. Despite that complexity, daily operations ran on fragmented tools.</p>
 
 <p style="margin-top: 28px;">What fragmentation looked like on a Tuesday afternoon: a technician working underground loses network access and can't retrieve repair history — updates get logged later, sometimes from memory. A project manager prepares for a capital planning meeting by stitching together vendor calls, spreadsheets, emails, invoices, and consultant reports. By the time leadership convenes, decisions are made on partial visibility.</p>
@@ -209,7 +218,7 @@ const caseStudies = {
   </div>
 </div>
 
-<p style="margin-top: 48px; font-size: 24px; font-style: italic; line-height: 1.4; color: #000000; font-family: 'Fraunces', serif;">The institution wasn't lacking expertise. It was operating without a unified source of truth.</p>
+<div class="pull-quote" style="margin-top: 48px;">The institution wasn't lacking expertise. It was operating without a unified source of truth.</div>
 
 <p style="margin-top: 48px;"><span style="font-weight: 600;">Why existing tools failed</span></p>
 
@@ -218,6 +227,7 @@ const caseStudies = {
       {
         id: 'turning-point',
         title: '03 — The Turning Point',
+        headline: 'Research revealed we were redesigning a system of coordination',
         content: `<p>We initially believed we were customizing an existing product. Research revealed we were redesigning a <span style="font-weight: 600;">system of coordination.</span></p>
 
 <p style="margin-top: 28px;">The breakthrough wasn't the AI. It was recognizing that fragmented data was forcing humans to do system work: project managers stitching spreadsheets, technicians documenting from memory, capital planners reconciling incomplete records before high-stakes meetings. Everyone had access to data. What they lacked was context, prioritization, and trust — everyone saw everything, without structure.</p>
@@ -228,7 +238,8 @@ const caseStudies = {
       },
       {
         id: 'constraints',
-        title: '04 — Constraints',
+        title: '04 — Constraints & Design Responses',
+        headline: "The legacy ecosystem couldn't be disrupted, so LAT shipped as a modular layer alongside it",
         content: `<p><span style="font-weight: 600;">The legacy ecosystem couldn't be disrupted.</span> LAT shipped as a modular API layer alongside the existing stack — no forced migration, no workflow replacement. Incremental transparency without triggering organizational resistance.</p>
 
 <p style="margin-top: 28px;"><span style="font-weight: 600;">Data integrity had hard boundaries.</span> The university enforced strict governance, and we inherited duplicated, inconsistent records. This constraint produced the defining incident of the project (§07), and the response — validation states, multi-signal checks, confidence tiers — became the product's trust architecture.</p>
@@ -248,6 +259,7 @@ const caseStudies = {
       {
         id: 'strategy',
         title: '05 — Strategy',
+        headline: 'Product strategy worked backward from one measurable outcome: reduce unexpected maintenance costs by 25%',
         content: `<div style="display: flex; gap: 48px; align-items: flex-start;">
   <div style="flex: 1;">
     <p>We defined product strategy backward from one measurable outcome: <span style="font-weight: 700; color: #4B5563;">reduce unexpected maintenance costs by 25%.</span></p>
@@ -287,6 +299,7 @@ const caseStudies = {
       {
         id: 'solution',
         title: '06 — Solution',
+        headline: 'Three pillars turned operational signals into financial intelligence',
         content: `<p style="margin-top: 28px; font-size: 20px; font-weight: 600;">Pillar 1 — Reliable Field Intelligence</p>
 
 <p style="margin-top: 24px;"><span style="font-weight: 600;">The core decision:</span> automatically link <span style="font-weight: 600;">Work Orders ↔ Asset DNA ↔ Cost-to-Date</span>. Every repair updated the asset's financial story in real time; cost-to-date fed repair-vs-replace logic; that logic fed CapEx planning. Offline-first <span style="font-style: italic;">enabled</span> the system. Lifecycle linkage <span style="font-style: italic;">changed behavior</span> — the conversation moved from "we'll fix it again" to "this unit has cost $42K in three years; replacing now saves $18K."</p>
@@ -309,7 +322,9 @@ const caseStudies = {
 
 <div style="width: 100%; height: 350px; background-color: #E5E7EB; border-radius: 8px; display: flex; align-items: center; justify-content: center; color: #9CA3AF; font-size: 14px; margin-top: 32px; margin-bottom: 32px;">Alert card before/after — probability version next to consequence version. The single most important design decision in the project, shown, not told.</div>
 
-<p style="margin-top: 28px;"><span style="font-weight: 600;">When the AI was wrong — the boiler incident.</span> In month two of the pilot, the engine flagged a ~$180K boiler replacement as Critical. The alert escalated concern to finance — and inspection showed the risk was inflated by duplicated repair entries in the historical data. Three guardrails contained it: the alert required manager review (no auto-escalation), the visible drivers let the manager spot the suspicious repeat entries, and nothing triggered procurement automatically. The manager overrode; the override was logged; we paused broader rollout, reweighted signal inputs with the in-house data scientists, added duplicate detection before lifecycle roll-up, introduced a <span style="font-weight: 600;">"Needs Verification"</span> state for low-confidence outputs, and required multi-signal validation for high-cost alerts. False positives dropped in the next cycle, and adoption held at 95%. The lesson became the product's philosophy: <span style="font-weight: 600;">credibility before automation</span> — and the real AI risk in enterprise isn't model sophistication, it's dirty upstream data influencing downstream capital decisions.</p>
+<p style="margin-top: 28px;"><span style="font-weight: 600;">When the AI was wrong — the boiler incident.</span> In month two of the pilot, the engine flagged a ~$180K boiler replacement as Critical. The alert escalated concern to finance — and inspection showed the risk was inflated by duplicated repair entries in the historical data. Three guardrails contained it: the alert required manager review (no auto-escalation), the visible drivers let the manager spot the suspicious repeat entries, and nothing triggered procurement automatically. The manager overrode; the override was logged; we paused broader rollout, reweighted signal inputs with the in-house data scientists, added duplicate detection before lifecycle roll-up, introduced a <span style="font-weight: 600;">"Needs Verification"</span> state for low-confidence outputs, and required multi-signal validation for high-cost alerts. False positives dropped in the next cycle, and adoption held at 95%.</p>
+
+<div class="pull-quote">The real AI risk in enterprise isn't model sophistication — it's dirty upstream data influencing downstream capital decisions.</div>
 
 <div style="width: 100%; height: 350px; background-color: #E5E7EB; border-radius: 8px; display: flex; align-items: center; justify-content: center; color: #9CA3AF; font-size: 14px; margin-top: 32px; margin-bottom: 48px;">The boiler incident screen — Critical alert with visible contributing drivers and the Needs Verification state. The failure-containment moment.</div>
 
@@ -324,6 +339,7 @@ const caseStudies = {
       {
         id: 'tradeoffs',
         title: '07 — Tradeoffs',
+        headline: 'We chose human-in-the-loop over speed, accepting slower decisions to build trust',
         content: `<p><span style="font-weight: 600;">Automation vs. trust.</span> The engine could have auto-escalated failures and auto-scheduled maintenance. We chose human-in-the-loop, accepting slower short-term decisions. Result: 95% adoption, override frequency falling over time, and stable stakeholder trust. Pushing automation early would have collapsed adoption after the first visible mistake.</p>
 
 <div style="width: 100%; height: 280px; background-color: #E5E7EB; border-radius: 8px; display: flex; align-items: center; justify-content: center; color: #9CA3AF; font-size: 14px; margin-top: 24px; margin-bottom: 32px;">Human-in-the-loop architecture — approval gates, logged overrides, evidence-first reasoning</div>
@@ -347,6 +363,7 @@ const caseStudies = {
       {
         id: 'impact',
         title: '08 — Impact',
+        headline: "The biggest change wasn't cost savings — it was decision confidence",
         content: `<p><span style="font-weight: 600;">Operational.</span> Linking work orders to lifecycle cost made repair history visible in real time; managers began reviewing repair frequency before approving repeat fixes. Offline-first logging with server validation eliminated duplicate and incomplete records. Reporting per ticket fell from ~20 minutes to ~8; emergency incidents fell 12%; the lifecycle model projected a 25% reduction in unexpected maintenance costs.</p>
 
 <p style="margin-top: 28px;"><span style="font-weight: 600;">Decision-making.</span> Teams stopped entering meetings to reconcile facts and started entering them to decide. Budget revisions fell 36%, planning and reconciliation time fell ~60%, and pilot adoption reached 95% against a 70% benchmark.</p>
@@ -358,6 +375,7 @@ const caseStudies = {
       {
         id: 'reflection',
         title: '09 — Reflection',
+        headline: "Clarity drove action more than completeness — users didn't want more data, they wanted less to think about",
         content: `<p><span style="font-weight: 600;">What I got wrong.</span> I believed predictive accuracy would drive adoption. It didn't — data integrity and clarity of output mattered more. Strong predictions still failed when the underlying data was messy or the framing was hard to act on. I'd run a formal data audit before any predictive expansion, and lead with consequence framing from day one instead of arriving at it mid-project.</p>
 
 <p style="margin-top: 28px;"><span style="font-weight: 600;">What mattered more than expected.</span> The lifecycle linkage, not the AI. Once work orders, asset history, and cost-over-time were reliably connected, decision-making improved before the predictive layer matured.</p>
@@ -428,6 +446,7 @@ const caseStudies = {
       {
         id: 'problem',
         title: '02 — The Problem',
+        headline: 'After AI, the same problem arrived at a different scale — believability and volume in a fragile ecosystem',
         content: `<p>Before AI, misinformation was a human psychology problem. It thrived on speed, virality, and how people process information under social pressure — vaccine myths eroding trust in science, election conspiracies driving polarization, doctored disaster images misallocating resources, everyday scams creating "everything feels fake" fatigue. The common thread was never the content. It was the exploitation of human bias: believe what confirms your views, trust what feels familiar, share before verifying.</p>
 
 <p style="margin-top: 28px;">After AI, the same problem arrived at a different scale. Generative AI added believability and volume to a fragile ecosystem — while platform incentives still favored engagement over accuracy, and misinformation drives engagement.</p>
@@ -458,11 +477,12 @@ const caseStudies = {
   </div>
 </div>
 
-<p style="margin-top: 100px; font-size: 24px; font-style: italic; line-height: 1.4; color: #000000; font-family: 'Fraunces', serif;">The platform that spread the problem was structurally incapable of being trusted as its solution.</p>`
+<div class="pull-quote" style="margin-top: 100px;">The platform that spread the problem was structurally incapable of being trusted as its solution.</div>`
       },
       {
         id: 'market',
         title: '03 — Market Research',
+        headline: 'Verification had to live where misinformation spreads, but platform ownership destroyed trust',
         content: `<p>The existing landscape fell into two categories, and neither worked.</p>
 
 <p style="margin-top: 28px;"><span style="font-weight: 600;">Monetized platforms — credible but compromised.</span> Snopes had real trust and rigor, but ran ads and operated as a business, raising editorial-independence questions users were increasingly aware of. Facebook's labels and Twitter's Community Notes had scale but were perceived as politically biased by large portions of their audiences. Platform-owned verification carried a structural credibility problem: the entity profiting from misinformation's spread can't also be trusted to flag it.</p>
@@ -490,6 +510,7 @@ const caseStudies = {
       {
         id: 'research',
         title: '04 — User Research',
+        headline: 'Misinformation moves through trust networks — families, WhatsApp groups, neighborhood pages — in a specific generational pattern',
         content: `<p>Methods, phased deliberately rather than repeated at different scales: a 2,000-respondent discovery survey mapping habits across demographics; 16 team-phase interviews (four each; I recruited mine independently, paying participants and recruiting across channels to avoid a biased sample); a second solo phase of 12 interviews validating early design directions; a 14-participant moderated usability round that drove the rating-system iteration (§05); and Misinfo Day — ~1,800 attendees moving through sessions on viral misinformation, deepfakes, and escape rooms, where my booth put prototypes in front of unrecruited participants from high schoolers to seniors, alongside UW faculty and the creator of the SIFT methodology.</p>
 
 <p style="margin-top: 28px;"><span style="font-weight: 600;">The finding that changed the problem:</span> misinformation moves through a chain, not between strangers. It travels through trust networks — families, WhatsApp groups, neighborhood pages — in a specific generational pattern. Adults 55–80 receive it from people they trust deeply, in communities where belonging is tied to sharing the group's narratives. Teens 13–18 encounter it through peer dynamics where sharing signals belonging, and questioning carries social cost. Adults 25–40 sit between both — the most exhausted users in the research, not because they saw more misinformation but because they managed it for multiple generations at once.</p>
@@ -523,6 +544,7 @@ const caseStudies = {
       {
         id: 'features',
         title: '05 — Features',
+        headline: "The quiz builds the skill, Search and Scan provide the tool at the moment of need, Ask Us is the human fallback at the tool's limit",
         content: `<p>Each feature came from a specific gap the research exposed — not a feature list.</p>
 
 <p style="margin-top: 36px; font-size: 20px; font-weight: 600;">The pivot: from Facebook to standalone</p>
@@ -582,6 +604,7 @@ const caseStudies = {
       {
         id: 'truemedia',
         title: '06 — TrueMedia',
+        headline: 'Detection is the expensive end of the chain — authenticating content at creation is fundamentally more efficient, but nobody profits from implementing it',
         content: `<p>TrueMedia.org at the time had a direction and a small team building deepfake detection for the 2024 election cycle — a nonprofit chasing traction and data simultaneously. Through UW's partnership structure I contributed research synthesis: what features to prioritize, what user behaviors to design for. Their product shipped later in 2024, built by their in-house team for journalists and researchers — a dark, utilitarian interface for URL-based manipulation detection. My capstone served the opposite audience: a teenager at Ballard High asking "why should I care?" Two valid solutions to adjacent problems.</p>
 
 <p style="margin-top: 28px;">What happened to TrueMedia matters more than the collaboration itself. They analyzed 60,000+ pieces of media in under a year, launched publicly in September 2024, and shut down in January 2025 — open-sourcing the technology rather than chasing funding. Founder Oren Etzioni's closing assessment: "As a society, we are not prepared for a large-scale, concerted, generative AI attack. It did not materialize in 2024. That doesn't mean it's not coming."</p>
@@ -593,6 +616,7 @@ const caseStudies = {
       {
         id: 'reflection',
         title: '07 — Reflection',
+        headline: 'A designer who thinks only about what users see is a UI designer — a designer who thinks about everything required to make that experience real and sustainable is a product leader',
         content: `<p><span style="font-weight: 600;">What this project taught me that comfortable work couldn't.</span> Keye taught me to treat design decisions as hypotheses. This project taught me something harder: no matter how well-designed a product is, design alone cannot make a public good sustainable. TrueMedia was research-grounded, mission-complete, and it still closed — the design wasn't the problem; the economics were. The most important design question for any public good isn't "what should this look like." It's "what does this attach to that keeps it viable?" The compass is trusted because it has no business model — and it exists because the phone manufacturer absorbs the cost. Finding the attachment is as much a design problem as any interaction pattern. That's why the integration vision — Apple News, the share sheet, the native camera — isn't a nice-to-have in this case study. It's the sustainability answer.</p>
 
 <p style="margin-top: 28px;"><span style="font-weight: 600;">The builder mindset.</span> Coming back to school after working in the real market, my mind couldn't stay inside the boundaries of a class project. Every design decision triggered questions about moderation staffing, hosting costs, who updates the quiz when new manipulation formats emerge, who pays for all of it. My professors thought I was overcomplicating an academic exercise. I've come to see that instinct as the point: a designer who thinks only about what users see is a UI designer. A designer who thinks about everything required to make that experience real and sustainable is a product leader. This project clarified which one I intend to be.</p>
@@ -611,7 +635,7 @@ const caseStudies = {
 
 <p style="margin-top: 48px;"><span style="font-weight: 600;">If I built this in 2026.</span> In early 2024, this product required an organization — human moderators, institutional funding, a maintenance team. By 2026, AI infrastructure collapses that requirement: AI triage with editorial guardrails for Ask Us, AI monitoring to keep quiz content current, AI-augmented synthesis on research at scale. The sustainability problem remains, but the resources needed to attack it have shrunk from a fifteen-person nonprofit to a determined individual with the right tools. The problem Etzioni warned about hasn't gone away — it's grown more urgent while consumer-level defenses have stood still. The capstone answered the design question: what should a media literacy tool look like for an everyday person. The ecosystem question — how it reaches people at scale, in a form that outlives a funding cycle — is still open.</p>
 
-<p style="margin-top: 48px; font-size: 24px; font-style: italic; line-height: 1.4; color: #000000; font-family: 'Fraunces', serif;">That work is unfinished. This is one I'd return to.</p>`
+<div class="pull-quote" style="margin-top: 48px;">The capstone answered the design question: what should a media literacy tool look like for an everyday person. The ecosystem question — how it reaches people at scale, in a form that outlives a funding cycle — is still open.</div>`
       },
     ]
   }
