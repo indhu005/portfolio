@@ -181,8 +181,8 @@ const GroundMarker = ({ size = 60 }: { size?: number }) => {
         cy={size * 0.8}
         rx={ellipseWidth / 2}
         ry={ellipseHeight / 2}
-        fill="#999999"
-        opacity="0.6"
+        fill="#D1D1D1"
+        opacity="0.4"
       />
     </svg>
   )
