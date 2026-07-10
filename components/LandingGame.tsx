@@ -140,7 +140,9 @@ const BuildingIcon = ({ size = 60, variant = 0 }: { size?: number; variant?: num
   const buildingFile = buildingVariants[variant % 3]
 
   return (
-    <div
+    <img
+      src={`/images/home/${buildingFile}`}
+      alt="building"
       style={{
         position: 'absolute',
         width: size,
@@ -148,20 +150,10 @@ const BuildingIcon = ({ size = 60, variant = 0 }: { size?: number; variant?: num
         bottom: '20%',
         left: '50%',
         transform: 'translateX(-50%)',
+        objectFit: 'contain',
         zIndex: 5,
       }}
-    >
-      <img
-        src={`/images/home/${buildingFile}`}
-        alt="building"
-        style={{
-          width: '100%',
-          height: '100%',
-          objectFit: 'contain',
-          animation: 'buildingSpin 8s linear infinite',
-        }}
-      />
-    </div>
+    />
   )
 }
 
@@ -762,19 +754,6 @@ export default function LandingGame() {
           to {
             opacity: 1;
             transform: translate(-50%, -50%) scale(1);
-          }
-        }
-        @keyframes buildingSpin {
-          0% {
-            transform: rotateY(0deg) scale(0.3);
-            opacity: 0;
-          }
-          20% {
-            opacity: 1;
-            transform: rotateY(0deg) scale(1);
-          }
-          100% {
-            transform: rotateY(360deg) scale(1);
           }
         }
       `}</style>
