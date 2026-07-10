@@ -299,8 +299,25 @@ const useIsWideDesktop = () => {
   return isWideDesktop
 }
 
+// Hook to detect tablet viewport
+const useIsTablet = () => {
+  const [isTablet, setIsTablet] = useState(false)
+
+  useEffect(() => {
+    const checkTablet = () => {
+      setIsTablet(window.innerWidth >= 768 && window.innerWidth < 1024)
+    }
+    checkTablet()
+    window.addEventListener('resize', checkTablet)
+    return () => window.removeEventListener('resize', checkTablet)
+  }, [])
+
+  return isTablet
+}
+
 export default function LandingGame() {
   const isMobile = useIsMobile()
+  const isTablet = useIsTablet()
   const isWideDesktop = useIsWideDesktop()
   const currentRows = isWideDesktop ? 5 : GRID_ROWS
 
@@ -868,33 +885,62 @@ export default function LandingGame() {
         )}
       </div>
 
-      {/* Stats panel - positioned below header on mobile, top-right on desktop */}
+      {/* Stats panel - aligned with instruction text on desktop, below header on mobile/tablet */}
       {gameActive && !gameEnded && (
         <div
           style={{
             position: 'absolute',
-            top: isMobile ? '120px' : '20px',
-            right: isWideDesktop ? '80px' : isMobile ? '16px' : '40px',
-            backgroundColor: '#1C1917',
+            top: isMobile ? '140px' : isTablet ? '120px' : isWideDesktop ? '115px' : '95px',
+            right: isWideDesktop ? '80px' : isMobile ? '16px' : isTablet ? '32px' : '40px',
+            backgroundColor: 'rgba(255, 255, 255, 0.7)',
+            backdropFilter: 'blur(10px)',
+            WebkitBackdropFilter: 'blur(10px)',
+            border: '1px solid #D1D5DB',
             borderRadius: '12px',
             padding: isMobile ? '10px 16px' : '12px 20px',
             display: 'flex',
             flexDirection: 'column',
-            gap: '8px',
+            gap: '12px',
             zIndex: 100,
             fontFamily: 'DM Sans, sans-serif',
+            minWidth: isMobile ? '140px' : '160px',
+            boxShadow: '0 2px 8px rgba(0, 0, 0, 0.1)',
           }}
         >
-          {/* Time */}
-          <div
-            style={{
-              fontSize: '13px',
-              fontWeight: 500,
-              color: '#E5E5E5',
-              lineHeight: '1.2',
-            }}
-          >
-            Time: {timeLeft}s
+          {/* Time with progress bar */}
+          <div>
+            <div
+              style={{
+                fontSize: '13px',
+                fontWeight: 500,
+                color: '#1C1917',
+                lineHeight: '1.2',
+                marginBottom: '6px',
+              }}
+            >
+              Time: {timeLeft}s
+            </div>
+            {/* Progress bar container */}
+            <div
+              style={{
+                width: '100%',
+                height: '4px',
+                backgroundColor: 'rgba(28, 25, 23, 0.1)',
+                borderRadius: '2px',
+                overflow: 'hidden',
+              }}
+            >
+              {/* Progress bar fill - blue line that fills as time runs out */}
+              <div
+                style={{
+                  height: '100%',
+                  width: `${((ROUND_DURATION - timeLeft) / ROUND_DURATION) * 100}%`,
+                  backgroundColor: '#7EB3F5',
+                  transition: 'width 0.3s ease-out',
+                  borderRadius: '2px',
+                }}
+              />
+            </div>
           </div>
 
           {/* Planted count */}
@@ -902,7 +948,7 @@ export default function LandingGame() {
             style={{
               fontSize: '18px',
               fontWeight: 700,
-              color: '#FFFFFF',
+              color: '#1C1917',
               lineHeight: '1.2',
             }}
           >
