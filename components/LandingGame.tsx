@@ -930,8 +930,8 @@ export default function LandingGame() {
                     e.currentTarget.style.transform = 'scale(1)'
                   }}
                 >
-                  {/* Ground marker shown for all cells */}
-                  <GroundMarker size={isMobile ? 48 : 80} />
+                  {/* Ground marker shown only for empty cells */}
+                  {cell.state === 'empty' && <GroundMarker size={isMobile ? 48 : 80} />}
                   {cell.state === 'tree' && <TreeIcon hasBird={cell.hasBird} variant={cell.variant || 0} size={isMobile ? 36 : 60} />}
                   {cell.state === 'building' && <BuildingIcon variant={cell.variant || 0} size={isMobile ? 36 : 60} />}
                   {cell.state === 'sapling' && <SaplingIcon variant={cell.variant || 0} size={isMobile ? 24 : 40} />}
