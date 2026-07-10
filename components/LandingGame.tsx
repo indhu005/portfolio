@@ -191,9 +191,9 @@ const SaplingIcon = ({ size = 40, variant = 0 }: { size?: number; variant?: numb
 }
 
 const GroundMarker = ({ size = 60 }: { size?: number }) => {
-  // Simple grey ellipse ground marker for all cells
-  const ellipseWidth = size * 0.7
-  const ellipseHeight = size * 0.3
+  // Simple grey ellipse ground marker for all cells - reduced to 20% of original size
+  const ellipseWidth = size * 0.7 * 0.2
+  const ellipseHeight = size * 0.3 * 0.2
   return (
     <svg
       width={size}
