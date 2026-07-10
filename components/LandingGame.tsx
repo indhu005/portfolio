@@ -135,35 +135,33 @@ const TreeIcon = ({ hasBird = false, size = 60, variant = 0 }: { hasBird?: boole
 }
 
 const BuildingIcon = ({ size = 60, variant = 0 }: { size?: number; variant?: number }) => {
-  const [isAnimating, setIsAnimating] = useState(true)
-
   // Pick one of the 3 new 3D building SVGs based on stored variant
   const buildingVariants = ['building 01.svg', 'building 02.svg', 'building 03.svg']
   const buildingFile = buildingVariants[variant % 3]
 
-  // Trigger animation only once on mount
-  useEffect(() => {
-    const timer = setTimeout(() => setIsAnimating(false), 600) // Animation duration
-    return () => clearTimeout(timer)
-  }, [])
-
   return (
-    <img
-      src={`/images/home/${buildingFile}`}
-      alt="building"
+    <div
       style={{
         position: 'absolute',
         width: size,
         height: size,
         bottom: '20%',
         left: '50%',
-        transform: `translateX(-50%) ${isAnimating ? 'rotate(360deg) scale(0.3)' : 'rotate(0deg) scale(1)'}`,
-        transformOrigin: 'bottom center',
-        objectFit: 'contain',
+        transform: 'translateX(-50%)',
         zIndex: 5,
-        transition: 'transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1)',
       }}
-    />
+    >
+      <img
+        src={`/images/home/${buildingFile}`}
+        alt="building"
+        style={{
+          width: '100%',
+          height: '100%',
+          objectFit: 'contain',
+          animation: 'buildingSpin 8s linear infinite',
+        }}
+      />
+    </div>
   )
 }
 
@@ -750,7 +748,7 @@ export default function LandingGame() {
 
   return (
     <>
-      {/* Keyframe animations for end card */}
+      {/* Keyframe animations */}
       <style>{`
         @keyframes fadeIn {
           from { opacity: 0; }
@@ -764,6 +762,19 @@ export default function LandingGame() {
           to {
             opacity: 1;
             transform: translate(-50%, -50%) scale(1);
+          }
+        }
+        @keyframes buildingSpin {
+          0% {
+            transform: rotateY(0deg) scale(0.3);
+            opacity: 0;
+          }
+          20% {
+            opacity: 1;
+            transform: rotateY(0deg) scale(1);
+          }
+          100% {
+            transform: rotateY(360deg) scale(1);
           }
         }
       `}</style>
