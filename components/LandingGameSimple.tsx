@@ -9,13 +9,12 @@ interface Cell {
   plantedAt?: number
 }
 
-interface Truck {
+interface Bird {
   id: number
-  row: number
-  col: number
   x: number
   y: number
-  facingRight: boolean
+  vx: number
+  vy: number
 }
 
 const GRID_ROWS = 4
@@ -134,7 +133,7 @@ export default function LandingGameSimple() {
   const [isMobile, setIsMobile] = useState(false)
   const [grid, setGrid] = useState<Cell[][]>([])
   const [planted, setPlanted] = useState(0)
-  const [trucks, setTrucks] = useState<Truck[]>([])
+  const [birds, setBirds] = useState<Bird[]>([])
   const animationFrameRef = useRef<number>()
 
   useEffect(() => {
@@ -177,83 +176,56 @@ export default function LandingGameSimple() {
     return () => clearInterval(interval)
   }, [])
 
-  // Spawn trucks periodically
+  // Initialize birds
   useEffect(() => {
-    if (!mounted || grid.length === 0) return
+    if (!mounted) return
 
-    const spawnTruck = () => {
-      const cols = isMobile ? GRID_COLS_MOBILE : GRID_COLS_DESKTOP
-      const targetRow = Math.floor(Math.random() * GRID_ROWS)
-      const targetCol = Math.floor(Math.random() * cols)
-      const fromLeft = Math.random() < 0.5
-      const cellSize = isMobile ? 48 : 80
-      const gap = isMobile ? 8 : 16
+    const initialBirds = Array.from({ length: 3 }, (_, i) => ({
+      id: i,
+      x: Math.random() * 80 + 10, // 10-90%
+      y: Math.random() * 60 + 10, // 10-70%
+      vx: (Math.random() - 0.5) * 0.3,
+      vy: (Math.random() - 0.5) * 0.2,
+    }))
 
-      const newTruck: Truck = {
-        id: Date.now() + Math.random(),
-        row: targetRow,
-        col: targetCol,
-        x: fromLeft ? -100 : (cols * (cellSize + gap) + 100),
-        y: targetRow * (cellSize + gap),
-        facingRight: fromLeft,
-      }
+    setBirds(initialBirds)
+  }, [mounted])
 
-      setTrucks(prev => [...prev, newTruck])
-    }
-
-    const interval = setInterval(spawnTruck, 2000) // Spawn every 2 seconds
-    return () => clearInterval(interval)
-  }, [mounted, grid, isMobile])
-
-  // Animate trucks with requestAnimationFrame
+  // Animate birds
   useEffect(() => {
-    const cols = isMobile ? GRID_COLS_MOBILE : GRID_COLS_DESKTOP
-    const cellSize = isMobile ? 48 : 80
-    const gap = isMobile ? 8 : 16
+    if (birds.length === 0) return
 
     const animate = () => {
-      setTrucks(prevTrucks => {
-        if (prevTrucks.length === 0) return prevTrucks
+      setBirds(prev =>
+        prev
+          .map(bird => ({
+            ...bird,
+            x: bird.x + bird.vx,
+            y: bird.y + bird.vy,
+            vx: bird.vx + (Math.random() - 0.5) * 0.05,
+            vy: bird.vy + (Math.random() - 0.5) * 0.05,
+          }))
+          .filter(bird => bird.x > -10 && bird.x < 110 && bird.y > 0 && bird.y < 100)
+      )
 
-        return prevTrucks
-          .map(truck => {
-            const targetX = truck.col * (cellSize + gap)
-            const speed = 4
-            let newX = truck.x
+      // Scale bird count with tree count
+      const treeCount = grid.flat().filter(cell => cell.state === 'tree').length
+      const targetBirds = Math.min(Math.floor(treeCount / 3) + 2, 12)
 
-            if (truck.facingRight) {
-              newX += speed
-              if (newX >= targetX) {
-                // Reached target, drop building
-                setGrid(prevGrid => {
-                  const newGrid = [...prevGrid]
-                  if (newGrid[truck.row]?.[truck.col]) {
-                    const buildingVariant = Math.floor(Math.random() * 3)
-                    newGrid[truck.row][truck.col] = { state: 'building', variant: buildingVariant }
-                  }
-                  return newGrid
-                })
-                return null // Remove truck
-              }
-            } else {
-              newX -= speed
-              if (newX <= targetX) {
-                // Reached target, drop building
-                setGrid(prevGrid => {
-                  const newGrid = [...prevGrid]
-                  if (newGrid[truck.row]?.[truck.col]) {
-                    const buildingVariant = Math.floor(Math.random() * 3)
-                    newGrid[truck.row][truck.col] = { state: 'building', variant: buildingVariant }
-                  }
-                  return newGrid
-                })
-                return null // Remove truck
-              }
-            }
-
-            return { ...truck, x: newX }
-          })
-          .filter(truck => truck !== null) as Truck[]
+      setBirds(prev => {
+        if (prev.length < targetBirds && Math.random() < 0.1) {
+          return [
+            ...prev,
+            {
+              id: Date.now(),
+              x: Math.random() < 0.5 ? -5 : 105,
+              y: Math.random() * 60 + 10,
+              vx: (Math.random() - 0.5) * 0.3,
+              vy: (Math.random() - 0.5) * 0.2,
+            },
+          ]
+        }
+        return prev
       })
 
       animationFrameRef.current = requestAnimationFrame(animate)
@@ -266,7 +238,7 @@ export default function LandingGameSimple() {
         cancelAnimationFrame(animationFrameRef.current)
       }
     }
-  }, [isMobile])
+  }, [birds.length, grid])
 
   if (!mounted) {
     return (
@@ -346,8 +318,37 @@ export default function LandingGameSimple() {
         🌱 Planted: {planted}
       </div>
 
-      {/* Grid */}
+      {/* Game container with birds */}
       <div style={{
+        position: 'relative',
+        width: '100%',
+      }}>
+        {/* Birds layer */}
+        {birds.map(bird => (
+          <div
+            key={bird.id}
+            style={{
+              position: 'absolute',
+              left: `${bird.x}%`,
+              top: `${bird.y}%`,
+              pointerEvents: 'none',
+              zIndex: 1,
+            }}
+          >
+            <img
+              src="/images/home/Birds.svg"
+              alt="bird"
+              style={{
+                width: '24px',
+                height: '18px',
+                objectFit: 'contain',
+              }}
+            />
+          </div>
+        ))}
+
+        {/* Grid */}
+        <div style={{
         position: 'relative',
         display: 'grid',
         gridTemplateRows: `repeat(${GRID_ROWS}, ${cellSize}px)`,
@@ -383,34 +384,10 @@ export default function LandingGameSimple() {
               {cell.state === 'empty' && <GroundMarker size={cellSize} />}
               {cell.state === 'sapling' && <SaplingIcon variant={cell.variant || 0} size={isMobile ? 24 : 40} />}
               {cell.state === 'tree' && <TreeIcon variant={cell.variant || 0} size={isMobile ? 36 : 60} />}
-              {cell.state === 'building' && <BuildingIcon variant={cell.variant || 0} size={isMobile ? 36 : 60} />}
             </div>
           ))
         )}
-
-        {/* Trucks overlay */}
-        {trucks.map(truck => {
-          const truckWidth = isMobile ? 36 : 60
-          const truckHeight = isMobile ? 22 : 36
-
-          return (
-            <img
-              key={truck.id}
-              src="/images/home/truck.svg"
-              alt="truck"
-              style={{
-                position: 'absolute',
-                left: '0',
-                top: '0',
-                transform: `translate(${truck.x}px, ${truck.y}px) scaleX(${truck.facingRight ? 1 : -1})`,
-                width: `${truckWidth}px`,
-                height: `${truckHeight}px`,
-                willChange: 'transform',
-                zIndex: 20,
-              }}
-            />
-          )
-        })}
+        </div>
       </div>
 
       {/* Skip button */}
