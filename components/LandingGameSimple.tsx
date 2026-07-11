@@ -107,14 +107,14 @@ const SaplingIcon = ({ size = 40, variant = 0 }: { size?: number; variant?: numb
   )
 }
 
-// Building component with pop-in animation
+// Building component with fast pop-in animation
 const BuildingIcon = ({ size = 60, variant = 0 }: { size?: number; variant?: number }) => {
   const [isPopping, setIsPopping] = useState(true)
   const buildingVariants = ['building 01.svg', 'building 02.svg', 'building 03.svg']
   const buildingFile = buildingVariants[variant % 3]
 
   useEffect(() => {
-    const timer = setTimeout(() => setIsPopping(false), 500)
+    const timer = setTimeout(() => setIsPopping(false), 200)
     return () => clearTimeout(timer)
   }, [])
 
@@ -128,10 +128,10 @@ const BuildingIcon = ({ size = 60, variant = 0 }: { size?: number; variant?: num
         height: size,
         bottom: '20%',
         left: '50%',
-        transform: `translateX(-50%) scale(${isPopping ? 0.5 : 1})`,
+        transform: `translateX(-50%) scale(${isPopping ? 0.3 : 1})`,
         objectFit: 'contain',
         zIndex: 5,
-        transition: 'transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1)',
+        transition: 'transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1)',
       }}
     />
   )
@@ -301,7 +301,7 @@ export default function LandingGameSimple() {
       setTrucks(prev => [...prev, newTruck])
     }
 
-    const interval = setInterval(spawnTruck, 2000) // Truck every 2 seconds
+    const interval = setInterval(spawnTruck, 1200) // Truck every 1.2 seconds - competitive!
     return () => clearInterval(interval)
   }, [gameActive, mounted, isMobile])
 
@@ -318,7 +318,7 @@ export default function LandingGameSimple() {
 
         return prevTrucks
           .map(truck => {
-            const speed = 2
+            const speed = 4 // Faster trucks = more pressure!
             let newX = truck.x
             let newDelivered = truck.delivered
 
@@ -895,7 +895,7 @@ export default function LandingGameSimple() {
           return (
             <img
               key={truck.id}
-              src="/images/home/truck.svg"
+              src="/images/home/truck.svg?cache=updated"
               alt="truck"
               style={{
                 position: 'absolute',
