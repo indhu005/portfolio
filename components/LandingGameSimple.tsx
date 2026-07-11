@@ -355,6 +355,125 @@ export default function LandingGameSimple() {
         )}
       </div>
 
+      {/* Mobile/Tablet: Bottom horizontal strip */}
+      {isMobile && gameActive && !gameEnded && (
+        <div style={{
+          position: 'absolute',
+          bottom: '16px',
+          left: '16px',
+          right: '16px',
+          backgroundColor: 'rgba(255, 255, 255, 0.85)',
+          backdropFilter: 'blur(10px)',
+          WebkitBackdropFilter: 'blur(10px)',
+          border: '1px solid #D1D5DB',
+          borderRadius: '16px',
+          padding: '12px 16px',
+          display: 'flex',
+          alignItems: 'center',
+          gap: '12px',
+          zIndex: 100,
+          fontFamily: 'DM Sans, sans-serif',
+          boxShadow: '0 4px 16px rgba(0, 0, 0, 0.15)',
+        }}>
+          {/* Time and progress bar */}
+          <div style={{ flex: 1, minWidth: '60px' }}>
+            <div style={{
+              fontSize: '11px',
+              fontWeight: 500,
+              color: '#1C1917',
+              lineHeight: '1.2',
+              marginBottom: '4px',
+            }}>
+              Time: {timeLeft}s
+            </div>
+            <div style={{
+              width: '100%',
+              height: '3px',
+              backgroundColor: 'rgba(28, 25, 23, 0.1)',
+              borderRadius: '2px',
+              overflow: 'hidden',
+            }}>
+              <div style={{
+                height: '100%',
+                width: `${((ROUND_DURATION - timeLeft) / ROUND_DURATION) * 100}%`,
+                backgroundColor: '#7EB3F5',
+                transition: 'width 0.3s ease-out',
+                borderRadius: '2px',
+              }} />
+            </div>
+          </div>
+
+          {/* Planted count */}
+          <div style={{
+            fontSize: '14px',
+            fontWeight: 700,
+            color: '#1C1917',
+            whiteSpace: 'nowrap',
+          }}>
+            🌱 {planted}
+          </div>
+
+          {/* Skip button */}
+          <button
+            onClick={() => {
+              const workSection = document.getElementById('case-studies')
+              if (workSection) {
+                workSection.scrollIntoView({ behavior: 'smooth', block: 'start' })
+              }
+            }}
+            style={{
+              padding: '6px 10px',
+              backgroundColor: 'rgba(28, 25, 23, 0.9)',
+              color: '#FFFFFF',
+              border: 'none',
+              borderRadius: '8px',
+              fontSize: '11px',
+              fontWeight: 600,
+              cursor: 'pointer',
+              transition: 'all 0.2s ease',
+              fontFamily: 'DM Sans, sans-serif',
+              whiteSpace: 'nowrap',
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.backgroundColor = '#1C1917'
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.backgroundColor = 'rgba(28, 25, 23, 0.9)'
+            }}
+          >
+            Skip →
+          </button>
+
+          {/* Yellow ? button */}
+          <button
+            onClick={() => {
+              alert('Design is about small, deliberate choices under pressure. In this game, you plant trees before time runs out!')
+            }}
+            style={{
+              width: '40px',
+              height: '40px',
+              backgroundColor: '#FFF44F',
+              border: 'none',
+              borderRadius: '50%',
+              fontSize: '18px',
+              fontWeight: 700,
+              color: '#1C1917',
+              cursor: 'pointer',
+              fontFamily: 'DM Sans, sans-serif',
+              transition: 'all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1)',
+              boxShadow: '0 3px 10px rgba(255, 244, 79, 0.5), 0 2px 6px rgba(0, 0, 0, 0.1)',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              flexShrink: 0,
+            }}
+            aria-label="Learn more about the game"
+          >
+            ?
+          </button>
+        </div>
+      )}
+
       {/* Desktop: Stats panel on right side */}
       {!isMobile && gameActive && !gameEnded && (
         <div style={{
@@ -609,34 +728,6 @@ export default function LandingGameSimple() {
         </>
       )}
 
-      {/* Mobile: Skip button below game */}
-      {isMobile && !gameEnded && (
-        <button
-          onClick={() => {
-            const workSection = document.getElementById('case-studies')
-            if (workSection) {
-              workSection.scrollIntoView({ behavior: 'smooth', block: 'start' })
-            }
-          }}
-          style={{
-            marginTop: '40px',
-            padding: '12px 24px',
-            backgroundColor: 'rgba(28, 25, 23, 0.9)',
-            color: '#FFFFFF',
-            border: 'none',
-            borderRadius: '8px',
-            fontSize: '14px',
-            fontWeight: 600,
-            cursor: 'pointer',
-            transition: 'all 0.2s ease',
-            fontFamily: 'DM Sans, sans-serif',
-          }}
-          onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#1C1917'}
-          onMouseLeave={(e) => e.currentTarget.style.backgroundColor = 'rgba(28, 25, 23, 0.9)'}
-        >
-          Skip to Work →
-        </button>
-      )}
     </div>
   )
 }
