@@ -1,9 +1,39 @@
 'use client'
 import { useState, useEffect } from 'react'
 
+type CellState = 'empty' | 'tree'
+
+interface Cell {
+  state: CellState
+  variant?: number
+}
+
 const GRID_ROWS = 4
 const GRID_COLS_DESKTOP = 8
 const GRID_COLS_MOBILE = 6
+
+// Simple tree component
+const TreeIcon = ({ size = 60, variant = 0 }: { size?: number; variant?: number }) => {
+  const treeVariants = ['tree 01 (1).svg', 'tree 01 (2).svg', 'tree 01 (3).svg', 'tree 01 (4).svg', 'tree 01 (5).svg']
+  const treeFile = treeVariants[variant % 5]
+
+  return (
+    <img
+      src={`/images/home/${treeFile}`}
+      alt="tree"
+      style={{
+        position: 'absolute',
+        width: size,
+        height: size,
+        bottom: '20%',
+        left: '50%',
+        transform: 'translateX(-50%)',
+        objectFit: 'contain',
+        zIndex: 5,
+      }}
+    />
+  )
+}
 
 // Simple ground marker component
 const GroundMarker = ({ size = 60 }: { size?: number }) => {
@@ -38,6 +68,8 @@ const GroundMarker = ({ size = 60 }: { size?: number }) => {
 export default function LandingGameSimple() {
   const [mounted, setMounted] = useState(false)
   const [isMobile, setIsMobile] = useState(false)
+  const [grid, setGrid] = useState<Cell[][]>([])
+  const [planted, setPlanted] = useState(0)
 
   useEffect(() => {
     setMounted(true)
@@ -46,6 +78,17 @@ export default function LandingGameSimple() {
     window.addEventListener('resize', checkMobile)
     return () => window.removeEventListener('resize', checkMobile)
   }, [])
+
+  // Initialize grid
+  useEffect(() => {
+    if (!mounted) return
+    const cols = isMobile ? GRID_COLS_MOBILE : GRID_COLS_DESKTOP
+    setGrid(
+      Array(GRID_ROWS)
+        .fill(null)
+        .map(() => Array(cols).fill(null).map(() => ({ state: 'empty' })))
+    )
+  }, [mounted, isMobile])
 
   if (!mounted) {
     return (
@@ -65,6 +108,19 @@ export default function LandingGameSimple() {
   const cols = isMobile ? GRID_COLS_MOBILE : GRID_COLS_DESKTOP
   const cellSize = isMobile ? 48 : 80
   const gap = isMobile ? 8 : 16
+
+  const handleCellClick = (row: number, col: number) => {
+    const cell = grid[row]?.[col]
+    if (cell && cell.state === 'empty') {
+      setPlanted(prev => prev + 1)
+      const treeVariant = Math.floor(Math.random() * 5)
+      setGrid(prevGrid => {
+        const newGrid = [...prevGrid]
+        newGrid[row][col] = { state: 'tree', variant: treeVariant }
+        return newGrid
+      })
+    }
+  }
 
   return (
     <div style={{
@@ -101,6 +157,17 @@ export default function LandingGameSimple() {
         </div>
       </div>
 
+      {/* Planted count */}
+      <div style={{
+        fontSize: '16px',
+        fontWeight: 700,
+        color: '#1C1917',
+        marginBottom: '20px',
+        fontFamily: 'DM Sans, sans-serif',
+      }}>
+        🌱 Planted: {planted}
+      </div>
+
       {/* Grid */}
       <div style={{
         position: 'relative',
@@ -110,13 +177,11 @@ export default function LandingGameSimple() {
         gap: `${gap}px`,
         zIndex: 10,
       }}>
-        {Array.from({ length: GRID_ROWS * cols }).map((_, index) => {
-          const row = Math.floor(index / cols)
-          const col = index % cols
-
-          return (
+        {grid.map((row, rowIndex) =>
+          row.map((cell, colIndex) => (
             <div
-              key={`${row}-${col}`}
+              key={`${rowIndex}-${colIndex}`}
+              onClick={() => handleCellClick(rowIndex, colIndex)}
               style={{
                 position: 'relative',
                 width: `${cellSize}px`,
@@ -124,21 +189,24 @@ export default function LandingGameSimple() {
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
-                cursor: 'pointer',
+                cursor: cell.state === 'empty' ? 'pointer' : 'default',
                 borderRadius: '4px',
                 transition: 'transform 0.2s',
               }}
               onMouseEnter={(e) => {
-                e.currentTarget.style.transform = 'scale(1.05)'
+                if (cell.state === 'empty') {
+                  e.currentTarget.style.transform = 'scale(1.05)'
+                }
               }}
               onMouseLeave={(e) => {
                 e.currentTarget.style.transform = 'scale(1)'
               }}
             >
-              <GroundMarker size={cellSize} />
+              {cell.state === 'empty' && <GroundMarker size={cellSize} />}
+              {cell.state === 'tree' && <TreeIcon variant={cell.variant || 0} size={isMobile ? 36 : 60} />}
             </div>
-          )
-        })}
+          ))
+        )}
       </div>
 
       {/* Skip button */}
