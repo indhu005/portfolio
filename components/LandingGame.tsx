@@ -1184,7 +1184,7 @@ export default function LandingGame() {
           width: '100%',
           height: '100%',
           padding: isMobile ? '16px' : `${GAME_FIELD_PADDING}px`,
-          paddingBottom: isMobile ? '16px' : '20px',
+          paddingBottom: isMobile ? '90px' : isTablet ? '100px' : '20px',
           overflow: 'hidden',
           display: 'flex',
           flexDirection: 'column',
