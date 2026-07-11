@@ -1,18 +1,19 @@
 'use client'
 import { useState, useEffect } from 'react'
 
-type CellState = 'empty' | 'tree'
+type CellState = 'empty' | 'sapling' | 'tree'
 
 interface Cell {
   state: CellState
   variant?: number
+  plantedAt?: number
 }
 
 const GRID_ROWS = 4
 const GRID_COLS_DESKTOP = 8
 const GRID_COLS_MOBILE = 6
 
-// Simple tree component
+// Simple tree component - full grown tree
 const TreeIcon = ({ size = 60, variant = 0 }: { size?: number; variant?: number }) => {
   const treeVariants = ['tree 01 (1).svg', 'tree 01 (2).svg', 'tree 01 (3).svg', 'tree 01 (4).svg', 'tree 01 (5).svg']
   const treeFile = treeVariants[variant % 5]
@@ -30,6 +31,37 @@ const TreeIcon = ({ size = 60, variant = 0 }: { size?: number; variant?: number 
         transform: 'translateX(-50%)',
         objectFit: 'contain',
         zIndex: 5,
+      }}
+    />
+  )
+}
+
+// Sapling component - smaller tree with grow animation
+const SaplingIcon = ({ size = 40, variant = 0 }: { size?: number; variant?: number }) => {
+  const [isGrowing, setIsGrowing] = useState(true)
+  const treeVariants = ['tree 01 (1).svg', 'tree 01 (2).svg', 'tree 01 (3).svg', 'tree 01 (4).svg', 'tree 01 (5).svg']
+  const treeFile = treeVariants[variant % 5]
+
+  useEffect(() => {
+    const timer = setTimeout(() => setIsGrowing(false), 400)
+    return () => clearTimeout(timer)
+  }, [])
+
+  return (
+    <img
+      src={`/images/home/${treeFile}`}
+      alt="sapling"
+      style={{
+        position: 'absolute',
+        width: size,
+        height: size,
+        bottom: '20%',
+        left: '50%',
+        transform: `translateX(-50%) scale(${isGrowing ? 0.3 : 1})`,
+        objectFit: 'contain',
+        opacity: 0.7,
+        zIndex: 5,
+        transition: 'transform 0.4s ease-out',
       }}
     />
   )
@@ -90,6 +122,27 @@ export default function LandingGameSimple() {
     )
   }, [mounted, isMobile])
 
+  // Grow saplings into trees
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setGrid(prevGrid =>
+        prevGrid.map(row =>
+          row.map(cell => {
+            if (cell.state === 'sapling' && cell.plantedAt) {
+              const elapsed = Date.now() - cell.plantedAt
+              if (elapsed >= 1000) { // 1 second growth time
+                return { ...cell, state: 'tree' }
+              }
+            }
+            return cell
+          })
+        )
+      )
+    }, 100)
+
+    return () => clearInterval(interval)
+  }, [])
+
   if (!mounted) {
     return (
       <div style={{
@@ -116,7 +169,7 @@ export default function LandingGameSimple() {
       const treeVariant = Math.floor(Math.random() * 5)
       setGrid(prevGrid => {
         const newGrid = [...prevGrid]
-        newGrid[row][col] = { state: 'tree', variant: treeVariant }
+        newGrid[row][col] = { state: 'sapling', variant: treeVariant, plantedAt: Date.now() }
         return newGrid
       })
     }
@@ -203,6 +256,7 @@ export default function LandingGameSimple() {
               }}
             >
               {cell.state === 'empty' && <GroundMarker size={cellSize} />}
+              {cell.state === 'sapling' && <SaplingIcon variant={cell.variant || 0} size={isMobile ? 24 : 40} />}
               {cell.state === 'tree' && <TreeIcon variant={cell.variant || 0} size={isMobile ? 36 : 60} />}
             </div>
           ))
