@@ -855,6 +855,7 @@ export default function LandingGameSimple() {
         gridTemplateColumns: `repeat(${cols}, ${cellSize}px)`,
         gap: `${gap}px`,
         zIndex: 10,
+        margin: '0 auto',
       }}>
         {grid.map((row, rowIndex) =>
           row.map((cell, colIndex) => (
