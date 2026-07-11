@@ -200,6 +200,30 @@ export default function LandingGameSimple() {
     return () => clearInterval(interval)
   }, [gameActive])
 
+  // Spawn buildings automatically (city building pressure)
+  useEffect(() => {
+    if (!gameActive || !mounted || grid.length === 0) return
+
+    const spawnBuilding = () => {
+      const cols = isMobile ? GRID_COLS_MOBILE : GRID_COLS_DESKTOP
+      const targetRow = Math.floor(Math.random() * GRID_ROWS)
+      const targetCol = Math.floor(Math.random() * cols)
+
+      setGrid(prevGrid => {
+        const newGrid = [...prevGrid]
+        // Only place building on empty cells
+        if (newGrid[targetRow]?.[targetCol]?.state === 'empty') {
+          const buildingVariant = Math.floor(Math.random() * 3)
+          newGrid[targetRow][targetCol] = { state: 'building', variant: buildingVariant }
+        }
+        return newGrid
+      })
+    }
+
+    const interval = setInterval(spawnBuilding, 1500) // Building every 1.5 seconds
+    return () => clearInterval(interval)
+  }, [gameActive, mounted, grid, isMobile])
+
   // Restart game
   const restartGame = () => {
     const cols = isMobile ? GRID_COLS_MOBILE : GRID_COLS_DESKTOP
@@ -633,6 +657,7 @@ export default function LandingGameSimple() {
               {cell.state === 'empty' && <GroundMarker size={cellSize} />}
               {cell.state === 'sapling' && <SaplingIcon variant={cell.variant || 0} size={isMobile ? 24 : 40} />}
               {cell.state === 'tree' && <TreeIcon variant={cell.variant || 0} size={isMobile ? 36 : 60} />}
+              {cell.state === 'building' && <BuildingIcon variant={cell.variant || 0} size={isMobile ? 36 : 60} />}
             </div>
           ))
         )}
@@ -674,9 +699,24 @@ export default function LandingGameSimple() {
           >
             <div style={{ fontSize: '16px', fontWeight: 500, color: '#E5E5E5', marginBottom: '20px' }}>
               You planted {planted} {planted === 1 ? 'tree' : 'trees'}!
+              {(() => {
+                const trees = grid.flat().filter(cell => cell.state === 'tree' || cell.state === 'sapling').length
+                const buildings = grid.flat().filter(cell => cell.state === 'building').length
+                return (
+                  <div style={{ marginTop: '8px', fontSize: '14px', color: '#9CA3AF' }}>
+                    Trees: {trees} • Buildings: {buildings}
+                  </div>
+                )
+              })()}
             </div>
             <div style={{ fontSize: '14px', color: '#9CA3AF', marginBottom: '24px' }}>
-              Small, deliberate choices — that's the whole job.
+              {(() => {
+                const trees = grid.flat().filter(cell => cell.state === 'tree' || cell.state === 'sapling').length
+                const buildings = grid.flat().filter(cell => cell.state === 'building').length
+                return trees > buildings
+                  ? "Nature wins! Small, deliberate choices — that's the whole job."
+                  : "The city was faster this time. Try again!"
+              })()}
             </div>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
               <button
