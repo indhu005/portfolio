@@ -254,6 +254,7 @@ export default function LandingGameSimple() {
     const cols = isMobile ? GRID_COLS_MOBILE : GRID_COLS_DESKTOP
     const cellSize = isMobile ? 48 : 80
     const gap = isMobile ? 8 : 16
+    const gridWidth = cols * (cellSize + gap)
 
     const animate = () => {
       setTrucks(prevTrucks => {
@@ -261,15 +262,16 @@ export default function LandingGameSimple() {
 
         return prevTrucks
           .map(truck => {
-            if (truck.delivered) return truck
-
             const speed = 2
             let newX = truck.x
+            let newDelivered = truck.delivered
 
-            // Move toward target
+            // Move toward target, deliver, then exit
             if (truck.facingRight) {
               newX += speed
-              if (newX >= truck.targetX) {
+
+              // Check if reached target and not yet delivered
+              if (!truck.delivered && newX >= truck.targetX) {
                 // Deliver building
                 setGrid(prevGrid => {
                   if (prevGrid.length === 0) return prevGrid
@@ -280,11 +282,16 @@ export default function LandingGameSimple() {
                   }
                   return newGrid
                 })
-                return { ...truck, delivered: true, x: truck.targetX }
+                newDelivered = true
               }
+
+              // Remove if off screen right
+              if (newX > gridWidth + 100) return null
             } else {
               newX -= speed
-              if (newX <= truck.targetX) {
+
+              // Check if reached target and not yet delivered
+              if (!truck.delivered && newX <= truck.targetX) {
                 // Deliver building
                 setGrid(prevGrid => {
                   if (prevGrid.length === 0) return prevGrid
@@ -295,13 +302,16 @@ export default function LandingGameSimple() {
                   }
                   return newGrid
                 })
-                return { ...truck, delivered: true, x: truck.targetX }
+                newDelivered = true
               }
+
+              // Remove if off screen left
+              if (newX < -100) return null
             }
 
-            return { ...truck, x: newX }
+            return { ...truck, x: newX, delivered: newDelivered }
           })
-          .filter(truck => !truck.delivered || Math.abs(truck.x - truck.targetX) < 10)
+          .filter(truck => truck !== null) as Truck[]
       })
 
       truckAnimationRef.current = requestAnimationFrame(animate)
