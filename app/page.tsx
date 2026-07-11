@@ -121,12 +121,12 @@ export default function Home() {
             backgroundColor: '#FFFFFF',
           }}
         >
-          {/* Landing Game */}
-          <div style={{
+          {/* Landing Game - Temporarily disabled for debugging */}
+          {/* <div style={{
             marginBottom: '20px',
           }}>
             <LandingGame />
-          </div>
+          </div> */}
 
           {/* Home page content */}
           <div style={{
