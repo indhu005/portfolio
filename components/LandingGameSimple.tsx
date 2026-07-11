@@ -314,6 +314,7 @@ export default function LandingGameSimple() {
 
   return (
     <div style={{
+      position: 'relative',
       width: '100%',
       backgroundColor: '#FFFFFF',
       borderRadius: '4px',
