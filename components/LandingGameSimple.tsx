@@ -33,10 +33,29 @@ const GRID_COLS_DESKTOP = 8
 const GRID_COLS_MOBILE = 6
 const ROUND_DURATION = 10 // 10 seconds
 
-// Simple tree component - full grown tree
+// Simple tree component - full grown tree with sway animation
 const TreeIcon = ({ size = 60, variant = 0 }: { size?: number; variant?: number }) => {
+  const [isSwaying, setIsSwaying] = useState(false)
   const treeVariants = ['tree 01 (1).svg', 'tree 01 (2).svg', 'tree 01 (3).svg', 'tree 01 (4).svg', 'tree 01 (5).svg']
   const treeFile = treeVariants[variant % 5]
+
+  // Random sway animation
+  useEffect(() => {
+    const randomDelay = Math.random() * 5000
+    const swayDuration = 800
+
+    const startSwaying = () => {
+      const shouldSway = Math.random() < 0.3 // 30% chance
+      if (shouldSway) {
+        setIsSwaying(true)
+        setTimeout(() => setIsSwaying(false), swayDuration)
+      }
+      setTimeout(startSwaying, 3000 + Math.random() * 4000)
+    }
+
+    const initialTimeout = setTimeout(startSwaying, randomDelay)
+    return () => clearTimeout(initialTimeout)
+  }, [])
 
   return (
     <img
@@ -48,9 +67,10 @@ const TreeIcon = ({ size = 60, variant = 0 }: { size?: number; variant?: number 
         height: size,
         bottom: '20%',
         left: '50%',
-        transform: 'translateX(-50%)',
+        transform: isSwaying ? 'translateX(-50%) rotate(3deg)' : 'translateX(-50%)',
         objectFit: 'contain',
         zIndex: 5,
+        transition: 'transform 0.4s ease-in-out',
       }}
     />
   )
@@ -87,10 +107,16 @@ const SaplingIcon = ({ size = 40, variant = 0 }: { size?: number; variant?: numb
   )
 }
 
-// Building component
+// Building component with pop-in animation
 const BuildingIcon = ({ size = 60, variant = 0 }: { size?: number; variant?: number }) => {
+  const [isPopping, setIsPopping] = useState(true)
   const buildingVariants = ['building 01.svg', 'building 02.svg', 'building 03.svg']
   const buildingFile = buildingVariants[variant % 3]
+
+  useEffect(() => {
+    const timer = setTimeout(() => setIsPopping(false), 500)
+    return () => clearTimeout(timer)
+  }, [])
 
   return (
     <img
@@ -102,9 +128,10 @@ const BuildingIcon = ({ size = 60, variant = 0 }: { size?: number; variant?: num
         height: size,
         bottom: '20%',
         left: '50%',
-        transform: 'translateX(-50%)',
+        transform: `translateX(-50%) scale(${isPopping ? 0.5 : 1})`,
         objectFit: 'contain',
         zIndex: 5,
+        transition: 'transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1)',
       }}
     />
   )
