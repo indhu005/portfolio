@@ -324,47 +324,133 @@ export default function LandingGameSimple() {
       alignItems: 'center',
       justifyContent: 'center',
     }}>
-      {/* Header */}
+      {/* Center header */}
       <div style={{
+        position: 'absolute',
+        top: '24px',
+        left: '50%',
+        transform: 'translateX(-50%)',
         textAlign: 'center',
-        marginBottom: isMobile ? '40px' : '60px',
+        maxWidth: isMobile ? 'calc(100% - 32px)' : '600px',
+        zIndex: 50,
         fontFamily: 'DM Sans, sans-serif',
       }}>
         <div style={{
-          fontSize: isMobile ? '16px' : '18px',
+          fontSize: isMobile ? '12px' : '18px',
           fontWeight: 600,
           color: '#1C1917',
-          marginBottom: '12px',
+          marginBottom: isMobile ? '8px' : '16px',
           fontFamily: 'var(--font-fraunces), serif',
+          lineHeight: '1.4',
         }}>
           Plant faster than the city can build. Good luck.
         </div>
-        <div style={{
-          fontSize: isMobile ? '13px' : '14px',
-          color: '#6B7280',
-        }}>
-          {isMobile ? 'Tap' : 'Click'} to plant trees.
-        </div>
+        {!gameEnded && (
+          <div style={{
+            fontSize: isMobile ? '13px' : '14px',
+            color: '#6B7280',
+          }}>
+            {isMobile ? 'Tap' : 'Click'} to plant trees.
+          </div>
+        )}
       </div>
 
-      {/* Timer and Planted count */}
-      <div style={{
-        display: 'flex',
-        gap: '24px',
-        fontSize: '16px',
-        fontWeight: 700,
-        color: '#1C1917',
-        marginBottom: '20px',
-        fontFamily: 'DM Sans, sans-serif',
-      }}>
-        <div>⏱️ Time: {timeLeft}s</div>
-        <div>🌱 Planted: {planted}</div>
-      </div>
+      {/* Desktop: Stats panel on right side */}
+      {!isMobile && gameActive && !gameEnded && (
+        <div style={{
+          position: 'absolute',
+          top: '95px',
+          right: '40px',
+          backgroundColor: 'rgba(255, 255, 255, 0.7)',
+          backdropFilter: 'blur(10px)',
+          WebkitBackdropFilter: 'blur(10px)',
+          border: '1px solid #D1D5DB',
+          borderRadius: '12px',
+          padding: '12px 20px',
+          display: 'flex',
+          flexDirection: 'column',
+          gap: '12px',
+          zIndex: 100,
+          fontFamily: 'DM Sans, sans-serif',
+          minWidth: '160px',
+          boxShadow: '0 2px 8px rgba(0, 0, 0, 0.1)',
+        }}>
+          {/* Time with progress bar */}
+          <div>
+            <div style={{
+              fontSize: '13px',
+              fontWeight: 500,
+              color: '#1C1917',
+              lineHeight: '1.2',
+              marginBottom: '6px',
+            }}>
+              Time: {timeLeft}s
+            </div>
+            <div style={{
+              width: '100%',
+              height: '4px',
+              backgroundColor: 'rgba(28, 25, 23, 0.1)',
+              borderRadius: '2px',
+              overflow: 'hidden',
+            }}>
+              <div style={{
+                height: '100%',
+                width: `${((ROUND_DURATION - timeLeft) / ROUND_DURATION) * 100}%`,
+                backgroundColor: '#7EB3F5',
+                transition: 'width 0.3s ease-out',
+                borderRadius: '2px',
+              }} />
+            </div>
+          </div>
+
+          {/* Planted count */}
+          <div style={{
+            fontSize: '18px',
+            fontWeight: 700,
+            color: '#1C1917',
+            lineHeight: '1.2',
+          }}>
+            Planted: {planted}
+          </div>
+
+          {/* Skip to Work button */}
+          <button
+            onClick={() => {
+              const workSection = document.getElementById('case-studies')
+              if (workSection) {
+                workSection.scrollIntoView({ behavior: 'smooth', block: 'start' })
+              }
+            }}
+            style={{
+              marginTop: '8px',
+              padding: '8px 12px',
+              backgroundColor: 'rgba(28, 25, 23, 0.9)',
+              color: '#FFFFFF',
+              border: 'none',
+              borderRadius: '6px',
+              fontSize: '13px',
+              fontWeight: 600,
+              cursor: 'pointer',
+              transition: 'all 0.2s ease',
+              fontFamily: 'DM Sans, sans-serif',
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.backgroundColor = '#1C1917'
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.backgroundColor = 'rgba(28, 25, 23, 0.9)'
+            }}
+          >
+            Skip to Work →
+          </button>
+        </div>
+      )}
 
       {/* Game container with birds */}
       <div style={{
         position: 'relative',
         width: '100%',
+        marginTop: isMobile ? '140px' : '160px',
       }}>
         {/* Birds layer */}
         {birds.map(bird => (
@@ -523,8 +609,8 @@ export default function LandingGameSimple() {
         </>
       )}
 
-      {/* Skip button - only during game */}
-      {!gameEnded && (
+      {/* Mobile: Skip button below game */}
+      {isMobile && !gameEnded && (
         <button
           onClick={() => {
             const workSection = document.getElementById('case-studies')
