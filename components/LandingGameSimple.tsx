@@ -152,6 +152,8 @@ export default function LandingGameSimple() {
   const [gameEnded, setGameEnded] = useState(false)
   const [showLearnMore, setShowLearnMore] = useState(false)
   const [buttonActive, setButtonActive] = useState(false)
+  const [localTime, setLocalTime] = useState('')
+  const [localRegion, setLocalRegion] = useState('')
   const animationFrameRef = useRef<number>()
   const truckAnimationRef = useRef<number>()
 
@@ -161,6 +163,33 @@ export default function LandingGameSimple() {
     checkMobile()
     window.addEventListener('resize', checkMobile)
     return () => window.removeEventListener('resize', checkMobile)
+  }, [])
+
+  // Get local time and region
+  useEffect(() => {
+    const updateTime = () => {
+      const now = new Date()
+      setLocalTime(
+        now.toLocaleTimeString('en-US', {
+          hour: '2-digit',
+          minute: '2-digit',
+          hour12: true,
+        })
+      )
+    }
+    updateTime()
+    const interval = setInterval(updateTime, 1000)
+
+    try {
+      const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone
+      const parts = timezone.split('/')
+      const region = parts[parts.length - 1].replace('_', ' ')
+      setLocalRegion(region)
+    } catch {
+      setLocalRegion('Unknown')
+    }
+
+    return () => clearInterval(interval)
   }, [])
 
   // Initialize grid
@@ -462,8 +491,19 @@ export default function LandingGameSimple() {
         zIndex: 50,
         fontFamily: 'DM Sans, sans-serif',
       }}>
+        {/* Location and time */}
         <div style={{
-          fontSize: isMobile ? '12px' : '18px',
+          fontSize: isMobile ? '12px' : '12px',
+          color: '#6B7280',
+          marginBottom: isMobile ? '8px' : '16px',
+          lineHeight: '1.5',
+        }}>
+          {localRegion} • {localTime}
+        </div>
+
+        {/* Tagline */}
+        <div style={{
+          fontSize: isMobile ? '16px' : '18px',
           fontWeight: 600,
           color: '#1C1917',
           marginBottom: isMobile ? '8px' : '16px',
@@ -472,6 +512,8 @@ export default function LandingGameSimple() {
         }}>
           Plant faster than the city can build. Good luck.
         </div>
+
+        {/* Instruction */}
         {!gameEnded && (
           <div style={{
             fontSize: isMobile ? '13px' : '14px',
@@ -601,6 +643,58 @@ export default function LandingGameSimple() {
             ?
           </button>
         </div>
+      )}
+
+      {/* Desktop: Yellow ? button - bottom right */}
+      {!isMobile && (
+        <button
+          onClick={() => {
+            setShowLearnMore(true)
+            setButtonActive(true)
+            setTimeout(() => setButtonActive(false), 300)
+          }}
+          style={{
+            position: 'absolute',
+            bottom: '60px',
+            right: '40px',
+            width: '64px',
+            height: '64px',
+            backgroundColor: buttonActive ? '#FF6B35' : '#FFF44F',
+            border: 'none',
+            borderRadius: '50%',
+            fontSize: '24px',
+            fontWeight: 700,
+            color: '#1C1917',
+            cursor: 'pointer',
+            zIndex: 100,
+            fontFamily: 'DM Sans, sans-serif',
+            transition: 'all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1)',
+            boxShadow: buttonActive
+              ? '0 6px 20px rgba(255, 107, 53, 0.5), 0 3px 10px rgba(0, 0, 0, 0.15)'
+              : '0 4px 16px rgba(255, 244, 79, 0.5), 0 2px 8px rgba(0, 0, 0, 0.1)',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+          }}
+          onMouseEnter={(e) => {
+            if (!buttonActive) {
+              e.currentTarget.style.backgroundColor = '#FFF76B'
+              e.currentTarget.style.transform = 'scale(1.1) translateY(-4px)'
+              e.currentTarget.style.boxShadow = '0 8px 24px rgba(255, 244, 79, 0.65), 0 4px 12px rgba(0, 0, 0, 0.15)'
+            }
+          }}
+          onMouseLeave={(e) => {
+            if (!buttonActive) {
+              e.currentTarget.style.backgroundColor = '#FFF44F'
+              e.currentTarget.style.transform = 'scale(1) translateY(0)'
+              e.currentTarget.style.boxShadow = '0 4px 16px rgba(255, 244, 79, 0.5), 0 2px 8px rgba(0, 0, 0, 0.1)'
+            }
+          }}
+          aria-label="Learn more about the game"
+          title="Learn more about the game"
+        >
+          ?
+        </button>
       )}
 
       {/* Desktop: Stats panel on right side */}
@@ -814,8 +908,9 @@ export default function LandingGameSimple() {
             style={{
               position: 'fixed',
               top: '50%',
-              left: '50%',
-              transform: 'translate(-50%, -50%)',
+              left: isMobile ? '16px' : '50%',
+              right: isMobile ? '16px' : 'auto',
+              transform: isMobile ? 'translateY(-50%)' : 'translate(-50%, -50%)',
               backgroundColor: '#1C1917',
               borderRadius: '16px',
               padding: isMobile ? '32px 24px' : '40px 48px',
@@ -823,77 +918,81 @@ export default function LandingGameSimple() {
               zIndex: 101,
               fontFamily: 'DM Sans, sans-serif',
               boxShadow: '0 8px 32px rgba(0, 0, 0, 0.4)',
-              minWidth: isMobile ? '80%' : '360px',
+              minWidth: isMobile ? 'auto' : '360px',
+              maxWidth: isMobile ? '100%' : 'auto',
             }}
           >
-            <div style={{ fontSize: '16px', fontWeight: 500, color: '#E5E5E5', marginBottom: '20px' }}>
-              You planted {planted} {planted === 1 ? 'tree' : 'trees'}!
+            {/* Stats line */}
+            <div style={{ fontSize: '16px', fontWeight: 500, color: '#E5E5E5', lineHeight: '1.5', marginBottom: '20px' }}>
+              You planted {planted} {planted === 1 ? 'tree' : 'trees'}. {(() => {
+                const trees = grid.flat().filter(cell => cell.state === 'tree' || cell.state === 'sapling').length
+                return `${trees} ${trees === 1 ? 'is' : 'are'} still standing.`
+              })()}
+            </div>
+
+            {/* Bridge line */}
+            <div style={{ fontSize: '14px', fontWeight: 400, color: '#9CA3AF', lineHeight: '1.5', marginBottom: '20px' }}>
               {(() => {
                 const trees = grid.flat().filter(cell => cell.state === 'tree' || cell.state === 'sapling').length
                 const buildings = grid.flat().filter(cell => cell.state === 'building').length
-                return (
-                  <div style={{ marginTop: '8px', fontSize: '14px', color: '#9CA3AF' }}>
-                    Trees: {trees} • Buildings: {buildings}
-                  </div>
-                )
+                return trees >= buildings
+                  ? "Small, deliberate choices — that's the whole job."
+                  : "The buildings had a head start this time."
               })()}
             </div>
-            <div style={{ fontSize: '14px', color: '#9CA3AF', marginBottom: '24px' }}>
-              {(() => {
-                const trees = grid.flat().filter(cell => cell.state === 'tree' || cell.state === 'sapling').length
-                const buildings = grid.flat().filter(cell => cell.state === 'building').length
-                return trees > buildings
-                  ? "Nature wins! Small, deliberate choices — that's the whole job."
-                  : "The city was faster this time. Try again!"
-              })()}
-            </div>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
-              <button
-                onClick={() => {
-                  const workSection = document.getElementById('case-studies')
-                  if (workSection) {
-                    workSection.scrollIntoView({ behavior: 'smooth', block: 'start' })
-                  }
-                }}
-                style={{
-                  padding: '12px 24px',
-                  backgroundColor: '#86C232',
-                  color: '#1C1917',
-                  border: 'none',
-                  borderRadius: '8px',
-                  fontSize: '15px',
-                  fontWeight: 600,
-                  cursor: 'pointer',
-                  transition: 'opacity 0.2s ease',
-                }}
-                onMouseEnter={(e) => e.currentTarget.style.opacity = '0.8'}
-                onMouseLeave={(e) => e.currentTarget.style.opacity = '1'}
-              >
-                View my case studies
-              </button>
-              <button
-                onClick={restartGame}
-                style={{
-                  padding: '12px 24px',
-                  backgroundColor: 'transparent',
-                  color: '#9CA3AF',
-                  border: '1px solid #9CA3AF',
-                  borderRadius: '8px',
-                  fontSize: '13px',
-                  fontWeight: 500,
-                  cursor: 'pointer',
-                  transition: 'all 0.2s ease',
-                }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.backgroundColor = 'rgba(156, 163, 175, 0.1)'
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.backgroundColor = 'transparent'
-                }}
-              >
-                Play again
-              </button>
-            </div>
+
+            {/* View case studies link - green */}
+            <a
+              href="#case-studies"
+              onClick={(e) => {
+                e.preventDefault()
+                document.getElementById('case-studies')?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+              }}
+              style={{
+                display: 'block',
+                fontSize: '15px',
+                fontWeight: 500,
+                color: '#86C232',
+                textDecoration: 'none',
+                borderBottom: '1px solid transparent',
+                transition: 'border-color 0.2s',
+                cursor: 'pointer',
+                marginBottom: '16px',
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.borderBottomColor = '#86C232'
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.borderBottomColor = 'transparent'
+              }}
+            >
+              View my case studies
+            </a>
+
+            {/* Play again link - secondary grey */}
+            <button
+              onClick={restartGame}
+              style={{
+                fontSize: '13px',
+                fontWeight: 500,
+                color: '#9CA3AF',
+                background: 'none',
+                border: 'none',
+                textDecoration: 'none',
+                borderBottom: '1px solid transparent',
+                transition: 'border-color 0.2s',
+                cursor: 'pointer',
+                padding: 0,
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.borderBottomColor = '#9CA3AF'
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.borderBottomColor = 'transparent'
+              }}
+            >
+              Play again
+            </button>
           </div>
         </>
       )}
@@ -980,6 +1079,47 @@ export default function LandingGameSimple() {
               <p style={{ marginBottom: '16px', color: '#6B7280' }}>
                 <em>It's a metaphor for product design—balancing what's sustainable with what's urgent, making intentional choices before momentum decides for you.</em>
               </p>
+            </div>
+
+            {/* GIF Placeholder */}
+            <div style={{
+              width: '100%',
+              backgroundColor: '#F3F4F6',
+              borderRadius: '12px',
+              marginBottom: '24px',
+              overflow: 'hidden',
+              border: '1px solid #E5E7EB',
+            }}>
+              <div style={{
+                width: '100%',
+                height: isMobile ? '200px' : '320px',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                flexDirection: 'column',
+                gap: '12px',
+                color: '#9CA3AF',
+                fontSize: '14px',
+                padding: '20px',
+                textAlign: 'center',
+              }}>
+                <div style={{ fontSize: '48px' }}>🎮</div>
+                <div>Gameplay GIF placeholder</div>
+                <div style={{ fontSize: '12px', color: '#D1D5DB' }}>
+                  Add your game explanation GIF here
+                </div>
+              </div>
+              {/* Uncomment when GIF is ready:
+              <img
+                src="/images/game-explanation.gif"
+                alt="Game explanation"
+                style={{
+                  width: '100%',
+                  height: 'auto',
+                  display: 'block',
+                }}
+              />
+              */}
             </div>
 
             <button
