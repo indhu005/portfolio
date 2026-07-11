@@ -358,6 +358,7 @@ export default function LandingGame() {
   const [smokeOpacity, setSmokeOpacity] = useState(0)
   const [endingType, setEndingType] = useState<'smoke' | 'migration' | 'neutral' | null>(null)
   const [birdsMigrating, setBirdsMigrating] = useState(false)
+  const [showLearnMore, setShowLearnMore] = useState(false)
   const animationFrameRef = useRef<number>()
 
   // Update grid when screen size changes
@@ -885,6 +886,46 @@ export default function LandingGame() {
         )}
       </div>
 
+      {/* Learn More Button - Round, bright yellow, bottom right aligned with timer */}
+      <button
+        onClick={() => setShowLearnMore(true)}
+        style={{
+          position: 'absolute',
+          bottom: isWideDesktop ? '80px' : isMobile ? '24px' : isTablet ? '40px' : '60px',
+          right: isWideDesktop ? '80px' : isMobile ? '16px' : isTablet ? '32px' : '40px',
+          width: isMobile ? '56px' : isWideDesktop ? '72px' : '64px',
+          height: isMobile ? '56px' : isWideDesktop ? '72px' : '64px',
+          backgroundColor: '#F4C430',
+          border: 'none',
+          borderRadius: '50%',
+          fontSize: isMobile ? '20px' : isWideDesktop ? '26px' : '24px',
+          fontWeight: 700,
+          color: '#1C1917',
+          cursor: 'pointer',
+          zIndex: 100,
+          fontFamily: 'DM Sans, sans-serif',
+          transition: 'all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1)',
+          boxShadow: '0 4px 16px rgba(244, 196, 48, 0.4), 0 2px 8px rgba(0, 0, 0, 0.1)',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+        }}
+        onMouseEnter={(e) => {
+          e.currentTarget.style.backgroundColor = '#FFD700'
+          e.currentTarget.style.transform = 'scale(1.1) translateY(-4px)'
+          e.currentTarget.style.boxShadow = '0 8px 24px rgba(255, 215, 0, 0.5), 0 4px 12px rgba(0, 0, 0, 0.15)'
+        }}
+        onMouseLeave={(e) => {
+          e.currentTarget.style.backgroundColor = '#F4C430'
+          e.currentTarget.style.transform = 'scale(1) translateY(0)'
+          e.currentTarget.style.boxShadow = '0 4px 16px rgba(244, 196, 48, 0.4), 0 2px 8px rgba(0, 0, 0, 0.1)'
+        }}
+        aria-label="Learn more about the game"
+        title="Learn more about the game"
+      >
+        ?
+      </button>
+
       {/* Stats panel - aligned with instruction text on desktop, below header on mobile/tablet */}
       {gameActive && !gameEnded && (
         <div
@@ -954,6 +995,39 @@ export default function LandingGame() {
           >
             Planted: {planted}
           </div>
+
+          {/* Skip to Work button - aligned below stats */}
+          <button
+            onClick={() => {
+              const workSection = document.getElementById('case-studies')
+              if (workSection) {
+                workSection.scrollIntoView({ behavior: 'smooth', block: 'start' })
+              }
+            }}
+            style={{
+              marginTop: '8px',
+              padding: '8px 12px',
+              backgroundColor: 'rgba(28, 25, 23, 0.9)',
+              color: '#FFFFFF',
+              border: 'none',
+              borderRadius: '6px',
+              fontSize: '13px',
+              fontWeight: 600,
+              cursor: 'pointer',
+              transition: 'all 0.2s ease',
+              fontFamily: 'DM Sans, sans-serif',
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.backgroundColor = '#1C1917'
+              e.currentTarget.style.transform = 'translateY(-1px)'
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.backgroundColor = 'rgba(28, 25, 23, 0.9)'
+              e.currentTarget.style.transform = 'translateY(0)'
+            }}
+          >
+            Skip to Work →
+          </button>
         </div>
       )}
 
@@ -1178,6 +1252,172 @@ export default function LandingGame() {
           )}
         </div>
       </div>
+
+      {/* Learn More Popup Modal */}
+      {showLearnMore && (
+        <>
+          {/* Backdrop */}
+          <div
+            onClick={() => setShowLearnMore(false)}
+            style={{
+              position: 'fixed',
+              top: 0,
+              left: 0,
+              right: 0,
+              bottom: 0,
+              backgroundColor: 'rgba(0, 0, 0, 0.75)',
+              zIndex: 1000,
+              animation: 'fadeIn 0.3s ease-out',
+              cursor: 'pointer',
+            }}
+          />
+
+          {/* Modal Content */}
+          <div
+            style={{
+              position: 'fixed',
+              top: '50%',
+              left: '50%',
+              transform: 'translate(-50%, -50%)',
+              backgroundColor: '#FFFFFF',
+              borderRadius: '20px',
+              padding: isMobile ? '32px 24px' : '48px',
+              maxWidth: isMobile ? '90%' : '700px',
+              width: isMobile ? '90%' : 'auto',
+              zIndex: 1001,
+              boxShadow: '0 20px 60px rgba(0, 0, 0, 0.3)',
+              animation: 'scaleIn 0.4s cubic-bezier(0.34, 1.56, 0.64, 1)',
+              maxHeight: '90vh',
+              overflowY: 'auto',
+            }}
+          >
+            {/* Close button */}
+            <button
+              onClick={() => setShowLearnMore(false)}
+              style={{
+                position: 'absolute',
+                top: isMobile ? '16px' : '24px',
+                right: isMobile ? '16px' : '24px',
+                background: 'none',
+                border: 'none',
+                fontSize: '24px',
+                color: '#6B7280',
+                cursor: 'pointer',
+                padding: '8px',
+                lineHeight: '1',
+                transition: 'color 0.2s ease',
+              }}
+              onMouseEnter={(e) => e.currentTarget.style.color = '#1C1917'}
+              onMouseLeave={(e) => e.currentTarget.style.color = '#6B7280'}
+            >
+              ✕
+            </button>
+
+            {/* Title */}
+            <h2 style={{
+              fontSize: isMobile ? '24px' : '32px',
+              fontWeight: 700,
+              color: '#1C1917',
+              marginBottom: '20px',
+              fontFamily: 'var(--font-fraunces), serif',
+              lineHeight: '1.2',
+            }}>
+              About the Game
+            </h2>
+
+            {/* Description */}
+            <div style={{
+              fontSize: isMobile ? '15px' : '16px',
+              lineHeight: '1.7',
+              color: '#1C1917',
+              marginBottom: '32px',
+              fontFamily: 'DM Sans, sans-serif',
+            }}>
+              <p style={{ marginBottom: '16px' }}>
+                <strong>Design is about small, deliberate choices under pressure.</strong>
+              </p>
+              <p style={{ marginBottom: '16px' }}>
+                In this game, you're planting trees (sustainable design decisions) while trucks automatically build structures (commercial pressure, technical debt, competing priorities).
+              </p>
+              <p style={{ marginBottom: '16px' }}>
+                You have <strong>10 seconds</strong> to plant as many trees as you can. The trees grow, attract birds, and create an ecosystem. But if buildings take over, smoke fills the air.
+              </p>
+              <p style={{ marginBottom: '16px', color: '#6B7280' }}>
+                <em>It's a metaphor for product design—balancing what's sustainable with what's urgent, making intentional choices before momentum decides for you.</em>
+              </p>
+            </div>
+
+            {/* GIF Placeholder - Replace with your actual GIF */}
+            <div style={{
+              width: '100%',
+              backgroundColor: '#F3F4F6',
+              borderRadius: '12px',
+              marginBottom: '24px',
+              overflow: 'hidden',
+              border: '1px solid #E5E7EB',
+            }}>
+              <div style={{
+                width: '100%',
+                height: isMobile ? '200px' : '320px',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                flexDirection: 'column',
+                gap: '12px',
+                color: '#9CA3AF',
+                fontSize: '14px',
+                padding: '20px',
+                textAlign: 'center',
+              }}>
+                <div style={{ fontSize: '48px' }}>🎮</div>
+                <div>Replace this with your game explanation GIF</div>
+                <div style={{ fontSize: '12px', color: '#D1D5DB' }}>
+                  Add: &lt;img src="/images/game-explanation.gif" alt="How to play" /&gt;
+                </div>
+              </div>
+              {/* Uncomment when you have the GIF ready:
+              <img
+                src="/images/game-explanation.gif"
+                alt="Game explanation"
+                style={{
+                  width: '100%',
+                  height: 'auto',
+                  display: 'block',
+                }}
+              />
+              */}
+            </div>
+
+            {/* CTA Button */}
+            <button
+              onClick={() => setShowLearnMore(false)}
+              style={{
+                width: '100%',
+                padding: '14px 24px',
+                backgroundColor: '#1C1917',
+                color: '#FFFFFF',
+                border: 'none',
+                borderRadius: '8px',
+                fontSize: '15px',
+                fontWeight: 600,
+                cursor: 'pointer',
+                transition: 'all 0.2s ease',
+                fontFamily: 'DM Sans, sans-serif',
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.backgroundColor = '#000000'
+                e.currentTarget.style.transform = 'translateY(-2px)'
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.backgroundColor = '#1C1917'
+                e.currentTarget.style.transform = 'translateY(0)'
+              }}
+            >
+              Got it, let me play!
+            </button>
+          </div>
+        </>
+      )}
     </>
   )
 }

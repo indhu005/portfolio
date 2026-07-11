@@ -152,7 +152,7 @@ export default function About() {
               color: '#1C1917',
             }}>
               <p style={{ marginBottom: '36px' }}>
-                I'm a product designer who came to design through architecture — which mostly means I spent five years learning to care about how a space <em>feels</em> before I cared how it looks, then showed up to my first UX job and got asked to move a button 4 pixels to the left. I adapted.
+                I'm a product designer who came to design through architecture — which mostly means I spent five years learning to care about how a space <em>feels</em> before I cared about how it looks, then showed up to my first UX job and got asked to move a button 4 pixels to the left. I adapted.
               </p>
 
               <p style={{

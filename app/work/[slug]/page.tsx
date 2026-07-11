@@ -5,6 +5,13 @@ const caseStudies = {
     title: 'Keye',
     subtitle: 'Subscription Marketplace',
     description: 'From three static screens to a YC-backed company',
+    tldr: {
+      role: 'Founding Product Designer',
+      team: '5 (2 engineers, 1 PM, 2 designers I hired)',
+      timeline: '2 years (2021–2022)',
+      impact: '0→20K MAUs | $1.5M raised | YC W2024',
+      skills: 'Product strategy · Design systems · User research · PRDs · Chrome extension · Credit economics'
+    },
     sections: [
       {
         id: 'snapshot',
@@ -156,6 +163,13 @@ const caseStudies = {
     title: 'LAT',
     subtitle: 'Lifecycle Assessment Tracker',
     description: 'Turning fragmented campus maintenance into a trusted financial decision system',
+    tldr: {
+      role: 'Lead Product Designer (60% design, 40% strategy)',
+      team: '1 PM, 1 designer (me), 2 external engineers, client stakeholders',
+      timeline: '8 months',
+      impact: '95% pilot adoption | 70%→95% data accuracy | 25% cost reduction projected',
+      skills: 'Enterprise UX · ML/AI design · Stakeholder alignment · Field research · API-first architecture'
+    },
     sections: [
       {
         id: 'snapshot',
@@ -390,6 +404,13 @@ const caseStudies = {
     title: 'Misinformation Center',
     subtitle: 'Media Literacy Tools for the AI Age',
     description: 'University of Washington graduate capstone · Research collaboration with TrueMedia.org',
+    tldr: {
+      role: 'Sole Designer (Graduate Capstone)',
+      team: 'Solo (post-February 2024) · Research collaboration with TrueMedia.org',
+      timeline: '7 months (Jan–July 2024)',
+      impact: '~1,800 testers at Misinfo Day | 2,000-respondent survey | Concept validation',
+      skills: 'User research · Concept design · Gamification · Platform strategy · Academic rigor'
+    },
     sections: [
       {
         id: 'snapshot',
