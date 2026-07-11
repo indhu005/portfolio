@@ -9,6 +9,7 @@ interface Cell {
   stressed?: boolean
   treeColor?: string
   hasBird?: boolean
+  variant?: number
 }
 
 interface Truck {
@@ -317,6 +318,7 @@ const useIsTablet = () => {
 }
 
 export default function LandingGame() {
+  const [mounted, setMounted] = useState(false)
   const isMobile = useIsMobile()
   const isTablet = useIsTablet()
   const isWideDesktop = useIsWideDesktop()
@@ -363,6 +365,11 @@ export default function LandingGame() {
   const [showLearnMore, setShowLearnMore] = useState(false)
   const [buttonActive, setButtonActive] = useState(false) // Track active state for morning to evening
   const animationFrameRef = useRef<number>()
+
+  // Set mounted state on client-side
+  useEffect(() => {
+    setMounted(true)
+  }, [])
 
   // Update grid when screen size changes
   useEffect(() => {
@@ -794,6 +801,24 @@ export default function LandingGame() {
         return newGrid
       })
     }
+  }
+
+  // Prevent SSR/hydration mismatch by waiting for client mount
+  if (!mounted) {
+    return (
+      <div
+        style={{
+          width: '100%',
+          height: '580px',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          backgroundColor: '#FFFFFF',
+        }}
+      >
+        <div style={{ color: '#9CA3AF', fontSize: '14px' }}>Loading...</div>
+      </div>
+    )
   }
 
   return (
