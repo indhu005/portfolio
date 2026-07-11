@@ -223,87 +223,6 @@ export default function CaseStudyLayout({ caseStudy, slug }: CaseStudyLayoutProp
             backgroundColor: '#FFFFFF',
           }}
         >
-          {/* TL;DR Section */}
-          {caseStudy.tldr && (
-            <div style={{
-              maxWidth: '1100px',
-              marginLeft: 'auto',
-              marginRight: 'auto',
-              marginBottom: '60px',
-              padding: isMobile ? '24px' : '32px',
-              backgroundColor: '#F9FAFB',
-              borderRadius: '12px',
-              border: '1px solid #E5E7EB',
-            }}>
-              <div style={{
-                display: 'flex',
-                justifyContent: 'space-between',
-                alignItems: 'flex-start',
-                marginBottom: '24px',
-                flexWrap: 'wrap',
-                gap: '16px',
-              }}>
-                <h3 style={{
-                  fontSize: isMobile ? '16px' : '18px',
-                  fontWeight: 700,
-                  color: '#1C1917',
-                  margin: 0,
-                  letterSpacing: '0.02em',
-                  textTransform: 'uppercase',
-                }}>TL;DR</h3>
-
-                {/* Skip to Impact Button */}
-                <button
-                  onClick={() => scrollToSection('impact')}
-                  style={{
-                    backgroundColor: '#1C1917',
-                    color: '#FFFFFF',
-                    border: 'none',
-                    borderRadius: '6px',
-                    padding: '10px 18px',
-                    fontSize: '14px',
-                    fontWeight: 600,
-                    cursor: 'pointer',
-                    transition: 'opacity 0.2s ease',
-                  }}
-                  onMouseEnter={(e) => e.currentTarget.style.opacity = '0.8'}
-                  onMouseLeave={(e) => e.currentTarget.style.opacity = '1'}
-                >
-                  Skip to Impact →
-                </button>
-              </div>
-
-              <div style={{
-                display: 'grid',
-                gridTemplateColumns: isMobile ? '1fr' : 'repeat(2, 1fr)',
-                gap: isMobile ? '16px' : '24px',
-                fontSize: '15px',
-                lineHeight: '1.6',
-              }}>
-                <div>
-                  <div style={{ fontWeight: 600, color: '#6B7280', marginBottom: '4px' }}>Role</div>
-                  <div style={{ color: '#1C1917' }}>{caseStudy.tldr.role}</div>
-                </div>
-                <div>
-                  <div style={{ fontWeight: 600, color: '#6B7280', marginBottom: '4px' }}>Team</div>
-                  <div style={{ color: '#1C1917' }}>{caseStudy.tldr.team}</div>
-                </div>
-                <div>
-                  <div style={{ fontWeight: 600, color: '#6B7280', marginBottom: '4px' }}>Timeline</div>
-                  <div style={{ color: '#1C1917' }}>{caseStudy.tldr.timeline}</div>
-                </div>
-                <div>
-                  <div style={{ fontWeight: 600, color: '#6B7280', marginBottom: '4px' }}>Impact</div>
-                  <div style={{ color: '#1C1917', fontWeight: 600 }}>{caseStudy.tldr.impact}</div>
-                </div>
-                <div style={{ gridColumn: isMobile ? '1' : 'span 2' }}>
-                  <div style={{ fontWeight: 600, color: '#6B7280', marginBottom: '4px' }}>Key Skills</div>
-                  <div style={{ color: '#1C1917' }}>{caseStudy.tldr.skills}</div>
-                </div>
-              </div>
-            </div>
-          )}
-
           {caseStudy.sections.map((section, index) => (
             <div
               key={section.id}
@@ -331,6 +250,84 @@ export default function CaseStudyLayout({ caseStudy, slug }: CaseStudyLayoutProp
                   fontWeight: 700,
                 }}>
                   {caseStudy.title} Hero
+                </div>
+              )}
+
+              {/* TL;DR Section - appears after hero image */}
+              {index === 0 && caseStudy.tldr && (
+                <div style={{
+                  marginBottom: '60px',
+                  padding: isMobile ? '24px' : '32px',
+                  backgroundColor: '#F9FAFB',
+                  borderRadius: '12px',
+                  border: '1px solid #E5E7EB',
+                }}>
+                  <div style={{
+                    display: 'flex',
+                    justifyContent: 'space-between',
+                    alignItems: 'flex-start',
+                    marginBottom: '24px',
+                    flexWrap: 'wrap',
+                    gap: '16px',
+                  }}>
+                    <h3 style={{
+                      fontSize: isMobile ? '16px' : '18px',
+                      fontWeight: 700,
+                      color: '#1C1917',
+                      margin: 0,
+                      letterSpacing: '0.02em',
+                      textTransform: 'uppercase',
+                    }}>TL;DR</h3>
+
+                    {/* Skip to Impact Button */}
+                    <button
+                      onClick={() => scrollToSection('impact')}
+                      style={{
+                        backgroundColor: '#1C1917',
+                        color: '#FFFFFF',
+                        border: 'none',
+                        borderRadius: '6px',
+                        padding: '10px 18px',
+                        fontSize: '14px',
+                        fontWeight: 600,
+                        cursor: 'pointer',
+                        transition: 'opacity 0.2s ease',
+                      }}
+                      onMouseEnter={(e) => e.currentTarget.style.opacity = '0.8'}
+                      onMouseLeave={(e) => e.currentTarget.style.opacity = '1'}
+                    >
+                      Skip to Impact →
+                    </button>
+                  </div>
+
+                  <div style={{
+                    display: 'grid',
+                    gridTemplateColumns: isMobile ? '1fr' : 'repeat(2, 1fr)',
+                    gap: isMobile ? '16px' : '24px',
+                    fontSize: '15px',
+                    lineHeight: '1.6',
+                  }}>
+                    <div>
+                      <div style={{ fontWeight: 600, color: '#6B7280', marginBottom: '4px' }}>Role</div>
+                      <div style={{ color: '#1C1917' }}>{caseStudy.tldr.role}</div>
+                    </div>
+                    <div>
+                      <div style={{ fontWeight: 600, color: '#6B7280', marginBottom: '4px' }}>Team</div>
+                      <div style={{ color: '#1C1917' }}>{caseStudy.tldr.team}</div>
+                    </div>
+                    <div>
+                      <div style={{ fontWeight: 600, color: '#6B7280', marginBottom: '4px' }}>Timeline</div>
+                      <div style={{ color: '#1C1917' }}>{caseStudy.tldr.timeline}</div>
+                    </div>
+                    <div>
+                      <div style={{ fontWeight: 600, color: '#6B7280', marginBottom: '4px' }}>Impact</div>
+                      <div style={{ color: '#1C1917', fontWeight: 600 }}>{caseStudy.tldr.impact}</div>
+                    </div>
+                    <div style={{ gridColumn: isMobile ? '1' : 'span 2' }}>
+                      <div style={{ fontWeight: 600, color: '#6B7280', marginBottom: '4px' }}>Key Skills</div>
+                      <div style={{ color: '#1C1917' }}>{caseStudy.tldr.skills}</div>
+                    </div>
+                  </div>
                 </div>
               )}
 

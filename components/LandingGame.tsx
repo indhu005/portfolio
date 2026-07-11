@@ -40,6 +40,7 @@ interface Bird {
 
 const GRID_ROWS = 4
 const GRID_COLS = 8
+const GRID_COLS_MOBILE = 6 // Fewer columns on mobile to prevent overlap
 const SAPLING_GROW_TIME = 1000 // Fast tree growth
 const TRUCK_SPAWN_INTERVAL = 750 // Relentless truck spawning - dominates if idle
 const ROUND_DURATION = 10 // Quick 10-second rounds
@@ -320,12 +321,13 @@ export default function LandingGame() {
   const isTablet = useIsTablet()
   const isWideDesktop = useIsWideDesktop()
   const currentRows = isWideDesktop ? 5 : GRID_ROWS
+  const currentCols = isMobile ? GRID_COLS_MOBILE : GRID_COLS
 
   const [grid, setGrid] = useState<Cell[][]>(() =>
     Array(currentRows)
       .fill(null)
       .map(() =>
-        Array(GRID_COLS)
+        Array(currentCols)
           .fill(null)
           .map(() => ({ state: 'empty' }))
       )
@@ -359,27 +361,24 @@ export default function LandingGame() {
   const [endingType, setEndingType] = useState<'smoke' | 'migration' | 'neutral' | null>(null)
   const [birdsMigrating, setBirdsMigrating] = useState(false)
   const [showLearnMore, setShowLearnMore] = useState(false)
+  const [buttonActive, setButtonActive] = useState(false) // Track active state for morning to evening
   const animationFrameRef = useRef<number>()
 
   // Update grid when screen size changes
   useEffect(() => {
     setGrid(prevGrid => {
       const newRows = isWideDesktop ? 5 : GRID_ROWS
-      if (prevGrid.length === newRows) return prevGrid
+      const newCols = isMobile ? GRID_COLS_MOBILE : GRID_COLS
 
-      // Resize grid
-      if (newRows > prevGrid.length) {
-        // Add rows
-        const additionalRows = Array(newRows - prevGrid.length)
-          .fill(null)
-          .map(() => Array(GRID_COLS).fill(null).map(() => ({ state: 'empty' })))
-        return [...prevGrid, ...additionalRows]
-      } else {
-        // Remove rows
-        return prevGrid.slice(0, newRows)
-      }
+      // Check if both dimensions match
+      if (prevGrid.length === newRows && prevGrid[0]?.length === newCols) return prevGrid
+
+      // Rebuild grid with new dimensions
+      return Array(newRows)
+        .fill(null)
+        .map(() => Array(newCols).fill(null).map(() => ({ state: 'empty' })))
     })
-  }, [isWideDesktop])
+  }, [isWideDesktop, isMobile])
 
   // Get local time and region
   useEffect(() => {
@@ -411,6 +410,7 @@ export default function LandingGame() {
   // Start game
   const startGame = () => {
     const newRows = isWideDesktop ? 5 : GRID_ROWS
+    const newCols = isMobile ? GRID_COLS_MOBILE : GRID_COLS
     setGameActive(true)
     setGameEnded(false)
     setTimeLeft(ROUND_DURATION)
@@ -425,7 +425,7 @@ export default function LandingGame() {
       Array(newRows)
         .fill(null)
         .map(() =>
-          Array(GRID_COLS)
+          Array(newCols)
             .fill(null)
             .map(() => ({ state: 'empty' }))
         )
@@ -519,12 +519,12 @@ export default function LandingGame() {
 
     const spawnTruck = () => {
       const targetRow = Math.floor(Math.random() * currentRows)
-      const targetCol = Math.floor(Math.random() * GRID_COLS)
+      const targetCol = Math.floor(Math.random() * currentCols)
 
       // Start from a random edge (left or right)
       const fromLeft = Math.random() < 0.5
       const startRow = Math.floor(Math.random() * currentRows)
-      const startCol = fromLeft ? -1 : GRID_COLS
+      const startCol = fromLeft ? -1 : currentCols
 
       const newTruck: Truck = {
         id: Date.now() + Math.random(), // Unique ID
@@ -613,7 +613,7 @@ export default function LandingGame() {
               newX += speed * exitDirection
               newFacingRight = exitDirection > 0
 
-              if (newX < -100 || newX > (GRID_COLS + 1) * CELL_STRIDE) {
+              if (newX < -100 || newX > (currentCols + 1) * CELL_STRIDE) {
                 return null // Remove this truck
               }
             }
@@ -651,7 +651,7 @@ export default function LandingGame() {
     const buildings = grid.flat().filter(cell => cell.state === 'building').length
 
     // Calculate pollution ratio
-    const totalCells = currentRows * GRID_COLS
+    const totalCells = currentRows * currentCols
     const buildingRatio = buildings / totalCells
 
     // Update smoke opacity based on building ratio
@@ -725,7 +725,7 @@ export default function LandingGame() {
 
         // Scale bird count DRAMATICALLY with tree count
         const trees = grid.flat().filter(cell => cell.state === 'tree').length
-        const totalCells = currentRows * GRID_COLS
+        const totalCells = currentRows * currentCols
         const treeRatio = trees / totalCells
 
         // VERY wide range: 2-3 birds when no trees, 25-35 when full of trees
@@ -886,16 +886,20 @@ export default function LandingGame() {
         )}
       </div>
 
-      {/* Learn More Button - Round, bright yellow, bottom right aligned with timer */}
+      {/* Learn More Button - Round, Italy lemon yellow to evening orange on click */}
       <button
-        onClick={() => setShowLearnMore(true)}
+        onClick={() => {
+          setShowLearnMore(true)
+          setButtonActive(true)
+          setTimeout(() => setButtonActive(false), 300)
+        }}
         style={{
           position: 'absolute',
           bottom: isWideDesktop ? '80px' : isMobile ? '24px' : isTablet ? '40px' : '60px',
           right: isWideDesktop ? '80px' : isMobile ? '16px' : isTablet ? '32px' : '40px',
           width: isMobile ? '56px' : isWideDesktop ? '72px' : '64px',
           height: isMobile ? '56px' : isWideDesktop ? '72px' : '64px',
-          backgroundColor: '#F4C430',
+          backgroundColor: buttonActive ? '#FF6B35' : '#FFF44F',
           border: 'none',
           borderRadius: '50%',
           fontSize: isMobile ? '20px' : isWideDesktop ? '26px' : '24px',
@@ -905,20 +909,26 @@ export default function LandingGame() {
           zIndex: 100,
           fontFamily: 'DM Sans, sans-serif',
           transition: 'all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1)',
-          boxShadow: '0 4px 16px rgba(244, 196, 48, 0.4), 0 2px 8px rgba(0, 0, 0, 0.1)',
+          boxShadow: buttonActive
+            ? '0 6px 20px rgba(255, 107, 53, 0.5), 0 3px 10px rgba(0, 0, 0, 0.15)'
+            : '0 4px 16px rgba(255, 244, 79, 0.5), 0 2px 8px rgba(0, 0, 0, 0.1)',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
         }}
         onMouseEnter={(e) => {
-          e.currentTarget.style.backgroundColor = '#FFD700'
-          e.currentTarget.style.transform = 'scale(1.1) translateY(-4px)'
-          e.currentTarget.style.boxShadow = '0 8px 24px rgba(255, 215, 0, 0.5), 0 4px 12px rgba(0, 0, 0, 0.15)'
+          if (!buttonActive) {
+            e.currentTarget.style.backgroundColor = '#FFF76B'
+            e.currentTarget.style.transform = 'scale(1.1) translateY(-4px)'
+            e.currentTarget.style.boxShadow = '0 8px 24px rgba(255, 244, 79, 0.65), 0 4px 12px rgba(0, 0, 0, 0.15)'
+          }
         }}
         onMouseLeave={(e) => {
-          e.currentTarget.style.backgroundColor = '#F4C430'
-          e.currentTarget.style.transform = 'scale(1) translateY(0)'
-          e.currentTarget.style.boxShadow = '0 4px 16px rgba(244, 196, 48, 0.4), 0 2px 8px rgba(0, 0, 0, 0.1)'
+          if (!buttonActive) {
+            e.currentTarget.style.backgroundColor = '#FFF44F'
+            e.currentTarget.style.transform = 'scale(1) translateY(0)'
+            e.currentTarget.style.boxShadow = '0 4px 16px rgba(255, 244, 79, 0.5), 0 2px 8px rgba(0, 0, 0, 0.1)'
+          }
         }}
         aria-label="Learn more about the game"
         title="Learn more about the game"
@@ -1058,7 +1068,7 @@ export default function LandingGame() {
               position: 'relative',
               display: 'grid',
               gridTemplateRows: isMobile ? `repeat(${currentRows}, 48px)` : isWideDesktop ? `repeat(${currentRows}, 96px)` : `repeat(${currentRows}, 80px)`,
-              gridTemplateColumns: isMobile ? `repeat(${GRID_COLS}, 48px)` : isWideDesktop ? `repeat(${GRID_COLS}, 96px)` : `repeat(${GRID_COLS}, 80px)`,
+              gridTemplateColumns: isMobile ? `repeat(${currentCols}, 48px)` : isWideDesktop ? `repeat(${currentCols}, 96px)` : `repeat(${currentCols}, 80px)`,
               gap: isMobile ? '8px' : isWideDesktop ? '20px' : '16px',
               zIndex: 10,
               padding: 0,
