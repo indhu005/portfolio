@@ -820,6 +820,8 @@ export default function LandingGameSimple() {
         position: 'relative',
         width: '100%',
         marginTop: isMobile ? '140px' : '160px',
+        display: 'flex',
+        justifyContent: 'center',
       }}>
         {/* Birds layer */}
         {birds.map(bird => (
