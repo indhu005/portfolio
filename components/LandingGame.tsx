@@ -324,10 +324,10 @@ export default function LandingGame() {
   const currentCols = isMobile ? GRID_COLS_MOBILE : GRID_COLS
 
   const [grid, setGrid] = useState<Cell[][]>(() =>
-    Array(currentRows)
+    Array(GRID_ROWS)
       .fill(null)
       .map(() =>
-        Array(currentCols)
+        Array(GRID_COLS)
           .fill(null)
           .map(() => ({ state: 'empty' }))
       )
@@ -370,13 +370,13 @@ export default function LandingGame() {
       const newRows = isWideDesktop ? 5 : GRID_ROWS
       const newCols = isMobile ? GRID_COLS_MOBILE : GRID_COLS
 
-      // Check if both dimensions match
-      if (prevGrid.length === newRows && prevGrid[0]?.length === newCols) return prevGrid
+      // Check if both dimensions match - ensure prevGrid has at least one row
+      if (prevGrid.length === newRows && prevGrid.length > 0 && prevGrid[0].length === newCols) return prevGrid
 
       // Rebuild grid with new dimensions
       return Array(newRows)
         .fill(null)
-        .map(() => Array(newCols).fill(null).map(() => ({ state: 'empty' })))
+        .map(() => Array(newCols).fill(null).map(() => ({ state: 'empty' as CellState })))
     })
   }, [isWideDesktop, isMobile])
 
