@@ -966,7 +966,7 @@ export default function LandingGameSimple() {
                 e.currentTarget.style.borderBottomColor = 'transparent'
               }}
             >
-              View my case studies
+              Curious how I create real products
             </a>
 
             {/* Play again link - secondary grey */}
