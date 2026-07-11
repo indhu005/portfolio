@@ -20,6 +20,7 @@ interface Bird {
 const GRID_ROWS = 4
 const GRID_COLS_DESKTOP = 8
 const GRID_COLS_MOBILE = 6
+const ROUND_DURATION = 10 // 10 seconds
 
 // Simple tree component - full grown tree
 const TreeIcon = ({ size = 60, variant = 0 }: { size?: number; variant?: number }) => {
@@ -134,6 +135,9 @@ export default function LandingGameSimple() {
   const [grid, setGrid] = useState<Cell[][]>([])
   const [planted, setPlanted] = useState(0)
   const [birds, setBirds] = useState<Bird[]>([])
+  const [timeLeft, setTimeLeft] = useState(ROUND_DURATION)
+  const [gameActive, setGameActive] = useState(true)
+  const [gameEnded, setGameEnded] = useState(false)
   const animationFrameRef = useRef<number>()
 
   useEffect(() => {
@@ -155,8 +159,28 @@ export default function LandingGameSimple() {
     )
   }, [mounted, isMobile])
 
+  // Timer countdown
+  useEffect(() => {
+    if (!gameActive) return
+
+    const timer = setInterval(() => {
+      setTimeLeft(prev => {
+        if (prev <= 1) {
+          setGameActive(false)
+          setGameEnded(true)
+          return 0
+        }
+        return prev - 1
+      })
+    }, 1000)
+
+    return () => clearInterval(timer)
+  }, [gameActive])
+
   // Grow saplings into trees
   useEffect(() => {
+    if (!gameActive) return
+
     const interval = setInterval(() => {
       setGrid(prevGrid =>
         prevGrid.map(row =>
@@ -174,7 +198,21 @@ export default function LandingGameSimple() {
     }, 100)
 
     return () => clearInterval(interval)
-  }, [])
+  }, [gameActive])
+
+  // Restart game
+  const restartGame = () => {
+    const cols = isMobile ? GRID_COLS_MOBILE : GRID_COLS_DESKTOP
+    setTimeLeft(ROUND_DURATION)
+    setPlanted(0)
+    setGameActive(true)
+    setGameEnded(false)
+    setGrid(
+      Array(GRID_ROWS)
+        .fill(null)
+        .map(() => Array(cols).fill(null).map(() => ({ state: 'empty' })))
+    )
+  }
 
   // Initialize birds
   useEffect(() => {
@@ -260,6 +298,8 @@ export default function LandingGameSimple() {
   const gap = isMobile ? 8 : 16
 
   const handleCellClick = (row: number, col: number) => {
+    if (!gameActive) return
+
     const cell = grid[row]?.[col]
     if (cell && cell.state === 'empty') {
       setPlanted(prev => prev + 1)
@@ -307,15 +347,18 @@ export default function LandingGameSimple() {
         </div>
       </div>
 
-      {/* Planted count */}
+      {/* Timer and Planted count */}
       <div style={{
+        display: 'flex',
+        gap: '24px',
         fontSize: '16px',
         fontWeight: 700,
         color: '#1C1917',
         marginBottom: '20px',
         fontFamily: 'DM Sans, sans-serif',
       }}>
-        🌱 Planted: {planted}
+        <div>⏱️ Time: {timeLeft}s</div>
+        <div>🌱 Planted: {planted}</div>
       </div>
 
       {/* Game container with birds */}
@@ -390,32 +433,124 @@ export default function LandingGameSimple() {
         </div>
       </div>
 
-      {/* Skip button */}
-      <button
-        onClick={() => {
-          const workSection = document.getElementById('case-studies')
-          if (workSection) {
-            workSection.scrollIntoView({ behavior: 'smooth', block: 'start' })
-          }
-        }}
-        style={{
-          marginTop: '40px',
-          padding: '12px 24px',
-          backgroundColor: 'rgba(28, 25, 23, 0.9)',
-          color: '#FFFFFF',
-          border: 'none',
-          borderRadius: '8px',
-          fontSize: '14px',
-          fontWeight: 600,
-          cursor: 'pointer',
-          transition: 'all 0.2s ease',
-          fontFamily: 'DM Sans, sans-serif',
-        }}
-        onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#1C1917'}
-        onMouseLeave={(e) => e.currentTarget.style.backgroundColor = 'rgba(28, 25, 23, 0.9)'}
-      >
-        Skip to Work →
-      </button>
+      {/* End game modal */}
+      {gameEnded && (
+        <>
+          {/* Dark overlay */}
+          <div
+            style={{
+              position: 'fixed',
+              top: 0,
+              left: 0,
+              right: 0,
+              bottom: 0,
+              backgroundColor: 'rgba(0, 0, 0, 0.7)',
+              zIndex: 100,
+            }}
+          />
+
+          {/* End card */}
+          <div
+            style={{
+              position: 'fixed',
+              top: '50%',
+              left: '50%',
+              transform: 'translate(-50%, -50%)',
+              backgroundColor: '#1C1917',
+              borderRadius: '16px',
+              padding: isMobile ? '32px 24px' : '40px 48px',
+              textAlign: 'center',
+              zIndex: 101,
+              fontFamily: 'DM Sans, sans-serif',
+              boxShadow: '0 8px 32px rgba(0, 0, 0, 0.4)',
+              minWidth: isMobile ? '80%' : '360px',
+            }}
+          >
+            <div style={{ fontSize: '16px', fontWeight: 500, color: '#E5E5E5', marginBottom: '20px' }}>
+              You planted {planted} {planted === 1 ? 'tree' : 'trees'}!
+            </div>
+            <div style={{ fontSize: '14px', color: '#9CA3AF', marginBottom: '24px' }}>
+              Small, deliberate choices — that's the whole job.
+            </div>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
+              <button
+                onClick={() => {
+                  const workSection = document.getElementById('case-studies')
+                  if (workSection) {
+                    workSection.scrollIntoView({ behavior: 'smooth', block: 'start' })
+                  }
+                }}
+                style={{
+                  padding: '12px 24px',
+                  backgroundColor: '#86C232',
+                  color: '#1C1917',
+                  border: 'none',
+                  borderRadius: '8px',
+                  fontSize: '15px',
+                  fontWeight: 600,
+                  cursor: 'pointer',
+                  transition: 'opacity 0.2s ease',
+                }}
+                onMouseEnter={(e) => e.currentTarget.style.opacity = '0.8'}
+                onMouseLeave={(e) => e.currentTarget.style.opacity = '1'}
+              >
+                View my case studies
+              </button>
+              <button
+                onClick={restartGame}
+                style={{
+                  padding: '12px 24px',
+                  backgroundColor: 'transparent',
+                  color: '#9CA3AF',
+                  border: '1px solid #9CA3AF',
+                  borderRadius: '8px',
+                  fontSize: '13px',
+                  fontWeight: 500,
+                  cursor: 'pointer',
+                  transition: 'all 0.2s ease',
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.backgroundColor = 'rgba(156, 163, 175, 0.1)'
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.backgroundColor = 'transparent'
+                }}
+              >
+                Play again
+              </button>
+            </div>
+          </div>
+        </>
+      )}
+
+      {/* Skip button - only during game */}
+      {!gameEnded && (
+        <button
+          onClick={() => {
+            const workSection = document.getElementById('case-studies')
+            if (workSection) {
+              workSection.scrollIntoView({ behavior: 'smooth', block: 'start' })
+            }
+          }}
+          style={{
+            marginTop: '40px',
+            padding: '12px 24px',
+            backgroundColor: 'rgba(28, 25, 23, 0.9)',
+            color: '#FFFFFF',
+            border: 'none',
+            borderRadius: '8px',
+            fontSize: '14px',
+            fontWeight: 600,
+            cursor: 'pointer',
+            transition: 'all 0.2s ease',
+            fontFamily: 'DM Sans, sans-serif',
+          }}
+          onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#1C1917'}
+          onMouseLeave={(e) => e.currentTarget.style.backgroundColor = 'rgba(28, 25, 23, 0.9)'}
+        >
+          Skip to Work →
+        </button>
+      )}
     </div>
   )
 }
