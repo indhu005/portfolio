@@ -17,6 +17,17 @@ interface Bird {
   vy: number
 }
 
+interface Truck {
+  id: number
+  row: number
+  col: number
+  x: number
+  y: number
+  targetX: number
+  facingRight: boolean
+  delivered: boolean
+}
+
 const GRID_ROWS = 4
 const GRID_COLS_DESKTOP = 8
 const GRID_COLS_MOBILE = 6
@@ -135,10 +146,14 @@ export default function LandingGameSimple() {
   const [grid, setGrid] = useState<Cell[][]>([])
   const [planted, setPlanted] = useState(0)
   const [birds, setBirds] = useState<Bird[]>([])
+  const [trucks, setTrucks] = useState<Truck[]>([])
   const [timeLeft, setTimeLeft] = useState(ROUND_DURATION)
   const [gameActive, setGameActive] = useState(true)
   const [gameEnded, setGameEnded] = useState(false)
+  const [showLearnMore, setShowLearnMore] = useState(false)
+  const [buttonActive, setButtonActive] = useState(false)
   const animationFrameRef = useRef<number>()
+  const truckAnimationRef = useRef<number>()
 
   useEffect(() => {
     setMounted(true)
@@ -200,30 +215,106 @@ export default function LandingGameSimple() {
     return () => clearInterval(interval)
   }, [gameActive])
 
-  // Spawn buildings automatically (city building pressure)
+  // Spawn trucks (they deliver buildings)
   useEffect(() => {
     if (!gameActive || !mounted) return
 
-    const spawnBuilding = () => {
+    const spawnTruck = () => {
       const cols = isMobile ? GRID_COLS_MOBILE : GRID_COLS_DESKTOP
+      const cellSize = isMobile ? 48 : 80
+      const gap = isMobile ? 8 : 16
+
       const targetRow = Math.floor(Math.random() * GRID_ROWS)
       const targetCol = Math.floor(Math.random() * cols)
+      const fromLeft = Math.random() < 0.5
 
-      setGrid(prevGrid => {
-        if (prevGrid.length === 0) return prevGrid
-        const newGrid = [...prevGrid]
-        // Only place building on empty cells
-        if (newGrid[targetRow]?.[targetCol]?.state === 'empty') {
-          const buildingVariant = Math.floor(Math.random() * 3)
-          newGrid[targetRow][targetCol] = { state: 'building', variant: buildingVariant }
-        }
-        return newGrid
-      })
+      const targetX = targetCol * (cellSize + gap)
+      const startX = fromLeft ? -100 : (cols * (cellSize + gap) + 100)
+
+      const newTruck: Truck = {
+        id: Date.now() + Math.random(),
+        row: targetRow,
+        col: targetCol,
+        x: startX,
+        y: targetRow * (cellSize + gap),
+        targetX: targetX,
+        facingRight: fromLeft,
+        delivered: false,
+      }
+
+      setTrucks(prev => [...prev, newTruck])
     }
 
-    const interval = setInterval(spawnBuilding, 1500) // Building every 1.5 seconds
+    const interval = setInterval(spawnTruck, 2000) // Truck every 2 seconds
     return () => clearInterval(interval)
   }, [gameActive, mounted, isMobile])
+
+  // Animate trucks
+  useEffect(() => {
+    const cols = isMobile ? GRID_COLS_MOBILE : GRID_COLS_DESKTOP
+    const cellSize = isMobile ? 48 : 80
+    const gap = isMobile ? 8 : 16
+
+    const animate = () => {
+      setTrucks(prevTrucks => {
+        if (prevTrucks.length === 0) return prevTrucks
+
+        return prevTrucks
+          .map(truck => {
+            if (truck.delivered) return truck
+
+            const speed = 2
+            let newX = truck.x
+
+            // Move toward target
+            if (truck.facingRight) {
+              newX += speed
+              if (newX >= truck.targetX) {
+                // Deliver building
+                setGrid(prevGrid => {
+                  if (prevGrid.length === 0) return prevGrid
+                  const newGrid = [...prevGrid]
+                  if (newGrid[truck.row]?.[truck.col]?.state === 'empty') {
+                    const buildingVariant = Math.floor(Math.random() * 3)
+                    newGrid[truck.row][truck.col] = { state: 'building', variant: buildingVariant }
+                  }
+                  return newGrid
+                })
+                return { ...truck, delivered: true, x: truck.targetX }
+              }
+            } else {
+              newX -= speed
+              if (newX <= truck.targetX) {
+                // Deliver building
+                setGrid(prevGrid => {
+                  if (prevGrid.length === 0) return prevGrid
+                  const newGrid = [...prevGrid]
+                  if (newGrid[truck.row]?.[truck.col]?.state === 'empty') {
+                    const buildingVariant = Math.floor(Math.random() * 3)
+                    newGrid[truck.row][truck.col] = { state: 'building', variant: buildingVariant }
+                  }
+                  return newGrid
+                })
+                return { ...truck, delivered: true, x: truck.targetX }
+              }
+            }
+
+            return { ...truck, x: newX }
+          })
+          .filter(truck => !truck.delivered || Math.abs(truck.x - truck.targetX) < 10)
+      })
+
+      truckAnimationRef.current = requestAnimationFrame(animate)
+    }
+
+    truckAnimationRef.current = requestAnimationFrame(animate)
+
+    return () => {
+      if (truckAnimationRef.current) {
+        cancelAnimationFrame(truckAnimationRef.current)
+      }
+    }
+  }, [isMobile])
 
   // Restart game
   const restartGame = () => {
@@ -473,12 +564,14 @@ export default function LandingGameSimple() {
           {/* Yellow ? button */}
           <button
             onClick={() => {
-              alert('Design is about small, deliberate choices under pressure. In this game, you plant trees before time runs out!')
+              setShowLearnMore(true)
+              setButtonActive(true)
+              setTimeout(() => setButtonActive(false), 300)
             }}
             style={{
               width: '40px',
               height: '40px',
-              backgroundColor: '#FFF44F',
+              backgroundColor: buttonActive ? '#FF6B35' : '#FFF44F',
               border: 'none',
               borderRadius: '50%',
               fontSize: '18px',
@@ -662,6 +755,31 @@ export default function LandingGameSimple() {
             </div>
           ))
         )}
+
+        {/* Trucks overlay */}
+        {trucks.map(truck => {
+          const truckWidth = isMobile ? 36 : 60
+          const truckHeight = isMobile ? 22 : 36
+
+          return (
+            <img
+              key={truck.id}
+              src="/images/home/truck.svg"
+              alt="truck"
+              style={{
+                position: 'absolute',
+                left: '0',
+                top: '0',
+                transform: `translate(${truck.x}px, ${truck.y}px) scaleX(${truck.facingRight ? 1 : -1})`,
+                width: `${truckWidth}px`,
+                height: `${truckHeight}px`,
+                willChange: 'transform',
+                zIndex: 20,
+                pointerEvents: 'none',
+              }}
+            />
+          )
+        })}
         </div>
       </div>
 
@@ -766,6 +884,112 @@ export default function LandingGameSimple() {
                 Play again
               </button>
             </div>
+          </div>
+        </>
+      )}
+
+      {/* Learn More Modal */}
+      {showLearnMore && (
+        <>
+          <div
+            onClick={() => setShowLearnMore(false)}
+            style={{
+              position: 'fixed',
+              top: 0,
+              left: 0,
+              right: 0,
+              bottom: 0,
+              backgroundColor: 'rgba(0, 0, 0, 0.75)',
+              zIndex: 1000,
+              cursor: 'pointer',
+            }}
+          />
+
+          <div
+            style={{
+              position: 'fixed',
+              top: '50%',
+              left: '50%',
+              transform: 'translate(-50%, -50%)',
+              backgroundColor: '#FFFFFF',
+              borderRadius: '20px',
+              padding: isMobile ? '32px 24px' : '48px',
+              maxWidth: isMobile ? '90%' : '700px',
+              width: isMobile ? '90%' : 'auto',
+              zIndex: 1001,
+              boxShadow: '0 20px 60px rgba(0, 0, 0, 0.3)',
+              maxHeight: '90vh',
+              overflowY: 'auto',
+            }}
+          >
+            <button
+              onClick={() => setShowLearnMore(false)}
+              style={{
+                position: 'absolute',
+                top: isMobile ? '16px' : '24px',
+                right: isMobile ? '16px' : '24px',
+                background: 'none',
+                border: 'none',
+                fontSize: '24px',
+                color: '#6B7280',
+                cursor: 'pointer',
+                padding: '8px',
+                lineHeight: '1',
+              }}
+            >
+              ✕
+            </button>
+
+            <h2 style={{
+              fontSize: isMobile ? '24px' : '32px',
+              fontWeight: 700,
+              color: '#1C1917',
+              marginBottom: '20px',
+              fontFamily: 'var(--font-fraunces), serif',
+              lineHeight: '1.2',
+            }}>
+              About the Game
+            </h2>
+
+            <div style={{
+              fontSize: isMobile ? '15px' : '16px',
+              lineHeight: '1.7',
+              color: '#1C1917',
+              marginBottom: '32px',
+              fontFamily: 'DM Sans, sans-serif',
+            }}>
+              <p style={{ marginBottom: '16px' }}>
+                <strong>Design is about small, deliberate choices under pressure.</strong>
+              </p>
+              <p style={{ marginBottom: '16px' }}>
+                In this game, you're planting trees (sustainable design decisions) while trucks deliver buildings (commercial pressure, technical debt, competing priorities).
+              </p>
+              <p style={{ marginBottom: '16px' }}>
+                You have <strong>10 seconds</strong> to plant as many trees as you can. The trees grow and attract birds. But trucks keep coming with buildings.
+              </p>
+              <p style={{ marginBottom: '16px', color: '#6B7280' }}>
+                <em>It's a metaphor for product design—balancing what's sustainable with what's urgent, making intentional choices before momentum decides for you.</em>
+              </p>
+            </div>
+
+            <button
+              onClick={() => setShowLearnMore(false)}
+              style={{
+                width: '100%',
+                padding: '14px 24px',
+                backgroundColor: '#1C1917',
+                color: '#FFFFFF',
+                border: 'none',
+                borderRadius: '8px',
+                fontSize: '15px',
+                fontWeight: 600,
+                cursor: 'pointer',
+                transition: 'all 0.2s ease',
+                fontFamily: 'DM Sans, sans-serif',
+              }}
+            >
+              Got it, let me play!
+            </button>
           </div>
         </>
       )}
