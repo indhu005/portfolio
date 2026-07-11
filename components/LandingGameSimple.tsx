@@ -207,18 +207,18 @@ export default function LandingGameSimple() {
 
   // Animate trucks with requestAnimationFrame
   useEffect(() => {
-    if (trucks.length === 0) return
-
     const cols = isMobile ? GRID_COLS_MOBILE : GRID_COLS_DESKTOP
     const cellSize = isMobile ? 48 : 80
     const gap = isMobile ? 8 : 16
 
     const animate = () => {
       setTrucks(prevTrucks => {
+        if (prevTrucks.length === 0) return prevTrucks
+
         return prevTrucks
           .map(truck => {
             const targetX = truck.col * (cellSize + gap)
-            const speed = 3
+            const speed = 4
             let newX = truck.x
 
             if (truck.facingRight) {
@@ -266,7 +266,7 @@ export default function LandingGameSimple() {
         cancelAnimationFrame(animationFrameRef.current)
       }
     }
-  }, [trucks.length > 0, isMobile, grid])
+  }, [isMobile])
 
   if (!mounted) {
     return (
