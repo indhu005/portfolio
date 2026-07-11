@@ -1,7 +1,25 @@
 'use client'
 import Sidebar from '@/components/Sidebar'
-import LandingGame from '@/components/LandingGame'
+import dynamic from 'next/dynamic'
 import { useState, useEffect } from 'react'
+
+const LandingGame = dynamic(() => import('@/components/LandingGame'), {
+  ssr: false,
+  loading: () => (
+    <div
+      style={{
+        width: '100%',
+        height: '580px',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        backgroundColor: '#FFFFFF',
+      }}
+    >
+      <div style={{ color: '#9CA3AF', fontSize: '14px' }}>Loading game...</div>
+    </div>
+  ),
+})
 
 const useMediaQuery = (query: string) => {
   const [matches, setMatches] = useState(false)
