@@ -202,7 +202,7 @@ export default function LandingGameSimple() {
 
   // Spawn buildings automatically (city building pressure)
   useEffect(() => {
-    if (!gameActive || !mounted || grid.length === 0) return
+    if (!gameActive || !mounted) return
 
     const spawnBuilding = () => {
       const cols = isMobile ? GRID_COLS_MOBILE : GRID_COLS_DESKTOP
@@ -210,6 +210,7 @@ export default function LandingGameSimple() {
       const targetCol = Math.floor(Math.random() * cols)
 
       setGrid(prevGrid => {
+        if (prevGrid.length === 0) return prevGrid
         const newGrid = [...prevGrid]
         // Only place building on empty cells
         if (newGrid[targetRow]?.[targetCol]?.state === 'empty') {
@@ -222,7 +223,7 @@ export default function LandingGameSimple() {
 
     const interval = setInterval(spawnBuilding, 1500) // Building every 1.5 seconds
     return () => clearInterval(interval)
-  }, [gameActive, mounted, grid, isMobile])
+  }, [gameActive, mounted, isMobile])
 
   // Restart game
   const restartGame = () => {
