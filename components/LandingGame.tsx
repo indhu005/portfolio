@@ -886,75 +886,77 @@ export default function LandingGame() {
         )}
       </div>
 
-      {/* Learn More Button - Round, Italy lemon yellow to evening orange on click */}
-      <button
-        onClick={() => {
-          setShowLearnMore(true)
-          setButtonActive(true)
-          setTimeout(() => setButtonActive(false), 300)
-        }}
-        style={{
-          position: 'absolute',
-          bottom: isWideDesktop ? '80px' : isMobile ? '24px' : isTablet ? '40px' : '60px',
-          right: isWideDesktop ? '80px' : isMobile ? '16px' : isTablet ? '32px' : '40px',
-          width: isMobile ? '56px' : isWideDesktop ? '72px' : '64px',
-          height: isMobile ? '56px' : isWideDesktop ? '72px' : '64px',
-          backgroundColor: buttonActive ? '#FF6B35' : '#FFF44F',
-          border: 'none',
-          borderRadius: '50%',
-          fontSize: isMobile ? '20px' : isWideDesktop ? '26px' : '24px',
-          fontWeight: 700,
-          color: '#1C1917',
-          cursor: 'pointer',
-          zIndex: 100,
-          fontFamily: 'DM Sans, sans-serif',
-          transition: 'all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1)',
-          boxShadow: buttonActive
-            ? '0 6px 20px rgba(255, 107, 53, 0.5), 0 3px 10px rgba(0, 0, 0, 0.15)'
-            : '0 4px 16px rgba(255, 244, 79, 0.5), 0 2px 8px rgba(0, 0, 0, 0.1)',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-        }}
-        onMouseEnter={(e) => {
-          if (!buttonActive) {
-            e.currentTarget.style.backgroundColor = '#FFF76B'
-            e.currentTarget.style.transform = 'scale(1.1) translateY(-4px)'
-            e.currentTarget.style.boxShadow = '0 8px 24px rgba(255, 244, 79, 0.65), 0 4px 12px rgba(0, 0, 0, 0.15)'
-          }
-        }}
-        onMouseLeave={(e) => {
-          if (!buttonActive) {
-            e.currentTarget.style.backgroundColor = '#FFF44F'
-            e.currentTarget.style.transform = 'scale(1) translateY(0)'
-            e.currentTarget.style.boxShadow = '0 4px 16px rgba(255, 244, 79, 0.5), 0 2px 8px rgba(0, 0, 0, 0.1)'
-          }
-        }}
-        aria-label="Learn more about the game"
-        title="Learn more about the game"
-      >
-        ?
-      </button>
+      {/* Desktop-only: Learn More Button - Round, Italy lemon yellow to evening orange on click */}
+      {!isMobile && !isTablet && (
+        <button
+          onClick={() => {
+            setShowLearnMore(true)
+            setButtonActive(true)
+            setTimeout(() => setButtonActive(false), 300)
+          }}
+          style={{
+            position: 'absolute',
+            bottom: isWideDesktop ? '80px' : '60px',
+            right: isWideDesktop ? '80px' : '40px',
+            width: isWideDesktop ? '72px' : '64px',
+            height: isWideDesktop ? '72px' : '64px',
+            backgroundColor: buttonActive ? '#FF6B35' : '#FFF44F',
+            border: 'none',
+            borderRadius: '50%',
+            fontSize: isWideDesktop ? '26px' : '24px',
+            fontWeight: 700,
+            color: '#1C1917',
+            cursor: 'pointer',
+            zIndex: 100,
+            fontFamily: 'DM Sans, sans-serif',
+            transition: 'all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1)',
+            boxShadow: buttonActive
+              ? '0 6px 20px rgba(255, 107, 53, 0.5), 0 3px 10px rgba(0, 0, 0, 0.15)'
+              : '0 4px 16px rgba(255, 244, 79, 0.5), 0 2px 8px rgba(0, 0, 0, 0.1)',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+          }}
+          onMouseEnter={(e) => {
+            if (!buttonActive) {
+              e.currentTarget.style.backgroundColor = '#FFF76B'
+              e.currentTarget.style.transform = 'scale(1.1) translateY(-4px)'
+              e.currentTarget.style.boxShadow = '0 8px 24px rgba(255, 244, 79, 0.65), 0 4px 12px rgba(0, 0, 0, 0.15)'
+            }
+          }}
+          onMouseLeave={(e) => {
+            if (!buttonActive) {
+              e.currentTarget.style.backgroundColor = '#FFF44F'
+              e.currentTarget.style.transform = 'scale(1) translateY(0)'
+              e.currentTarget.style.boxShadow = '0 4px 16px rgba(255, 244, 79, 0.5), 0 2px 8px rgba(0, 0, 0, 0.1)'
+            }
+          }}
+          aria-label="Learn more about the game"
+          title="Learn more about the game"
+        >
+          ?
+        </button>
+      )}
 
-      {/* Stats panel - aligned with instruction text on desktop, below header on mobile/tablet */}
-      {gameActive && !gameEnded && (
+      {/* Desktop-only: Stats panel - aligned with instruction text on desktop */}
+      {gameActive && !gameEnded && !isMobile && !isTablet && (
         <div
           style={{
             position: 'absolute',
-            top: isMobile ? '140px' : isTablet ? '120px' : isWideDesktop ? '115px' : '95px',
-            right: isWideDesktop ? '80px' : isMobile ? '16px' : isTablet ? '32px' : '40px',
+            top: isWideDesktop ? '115px' : '95px',
+            right: isWideDesktop ? '80px' : '40px',
             backgroundColor: 'rgba(255, 255, 255, 0.7)',
             backdropFilter: 'blur(10px)',
             WebkitBackdropFilter: 'blur(10px)',
             border: '1px solid #D1D5DB',
             borderRadius: '12px',
-            padding: isMobile ? '10px 16px' : '12px 20px',
+            padding: '12px 20px',
             display: 'flex',
             flexDirection: 'column',
             gap: '12px',
             zIndex: 100,
             fontFamily: 'DM Sans, sans-serif',
-            minWidth: isMobile ? '140px' : '160px',
+            minWidth: '160px',
             boxShadow: '0 2px 8px rgba(0, 0, 0, 0.1)',
           }}
         >
@@ -1037,6 +1039,140 @@ export default function LandingGame() {
             }}
           >
             Skip to Work →
+          </button>
+        </div>
+      )}
+
+      {/* Mobile/Tablet: Bottom horizontal strip with timer, planted count, skip button, and yellow ? button */}
+      {(isMobile || isTablet) && gameActive && !gameEnded && (
+        <div
+          style={{
+            position: 'absolute',
+            bottom: isMobile ? '16px' : '24px',
+            left: isMobile ? '16px' : '32px',
+            right: isMobile ? '16px' : '32px',
+            backgroundColor: 'rgba(255, 255, 255, 0.85)',
+            backdropFilter: 'blur(10px)',
+            WebkitBackdropFilter: 'blur(10px)',
+            border: '1px solid #D1D5DB',
+            borderRadius: '16px',
+            padding: isMobile ? '12px 16px' : '16px 20px',
+            display: 'flex',
+            alignItems: 'center',
+            gap: isMobile ? '12px' : '16px',
+            zIndex: 100,
+            fontFamily: 'DM Sans, sans-serif',
+            boxShadow: '0 4px 16px rgba(0, 0, 0, 0.15)',
+          }}
+        >
+          {/* Time and progress bar */}
+          <div style={{ flex: 1, minWidth: isMobile ? '60px' : '80px' }}>
+            <div
+              style={{
+                fontSize: isMobile ? '11px' : '12px',
+                fontWeight: 500,
+                color: '#1C1917',
+                lineHeight: '1.2',
+                marginBottom: '4px',
+              }}
+            >
+              Time: {timeLeft}s
+            </div>
+            <div
+              style={{
+                width: '100%',
+                height: '3px',
+                backgroundColor: 'rgba(28, 25, 23, 0.1)',
+                borderRadius: '2px',
+                overflow: 'hidden',
+              }}
+            >
+              <div
+                style={{
+                  height: '100%',
+                  width: `${((ROUND_DURATION - timeLeft) / ROUND_DURATION) * 100}%`,
+                  backgroundColor: '#7EB3F5',
+                  transition: 'width 0.3s ease-out',
+                  borderRadius: '2px',
+                }}
+              />
+            </div>
+          </div>
+
+          {/* Planted count */}
+          <div
+            style={{
+              fontSize: isMobile ? '14px' : '16px',
+              fontWeight: 700,
+              color: '#1C1917',
+              whiteSpace: 'nowrap',
+            }}
+          >
+            🌱 {planted}
+          </div>
+
+          {/* Skip to Work button */}
+          <button
+            onClick={() => {
+              const workSection = document.getElementById('case-studies')
+              if (workSection) {
+                workSection.scrollIntoView({ behavior: 'smooth', block: 'start' })
+              }
+            }}
+            style={{
+              padding: isMobile ? '6px 10px' : '8px 12px',
+              backgroundColor: 'rgba(28, 25, 23, 0.9)',
+              color: '#FFFFFF',
+              border: 'none',
+              borderRadius: '8px',
+              fontSize: isMobile ? '11px' : '12px',
+              fontWeight: 600,
+              cursor: 'pointer',
+              transition: 'all 0.2s ease',
+              fontFamily: 'DM Sans, sans-serif',
+              whiteSpace: 'nowrap',
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.backgroundColor = '#1C1917'
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.backgroundColor = 'rgba(28, 25, 23, 0.9)'
+            }}
+          >
+            Skip →
+          </button>
+
+          {/* Yellow ? button */}
+          <button
+            onClick={() => {
+              setShowLearnMore(true)
+              setButtonActive(true)
+              setTimeout(() => setButtonActive(false), 300)
+            }}
+            style={{
+              width: isMobile ? '40px' : '48px',
+              height: isMobile ? '40px' : '48px',
+              backgroundColor: buttonActive ? '#FF6B35' : '#FFF44F',
+              border: 'none',
+              borderRadius: '50%',
+              fontSize: isMobile ? '18px' : '20px',
+              fontWeight: 700,
+              color: '#1C1917',
+              cursor: 'pointer',
+              fontFamily: 'DM Sans, sans-serif',
+              transition: 'all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1)',
+              boxShadow: buttonActive
+                ? '0 4px 12px rgba(255, 107, 53, 0.5), 0 2px 6px rgba(0, 0, 0, 0.15)'
+                : '0 3px 10px rgba(255, 244, 79, 0.5), 0 2px 6px rgba(0, 0, 0, 0.1)',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              flexShrink: 0,
+            }}
+            aria-label="Learn more about the game"
+            title="Learn more about the game"
+          >
+            ?
           </button>
         </div>
       )}
