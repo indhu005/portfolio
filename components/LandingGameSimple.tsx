@@ -28,6 +28,13 @@ interface Truck {
   delivered: boolean
 }
 
+interface Smoke {
+  id: number
+  x: number
+  y: number
+  facingRight: boolean
+}
+
 const GRID_ROWS = 4
 const GRID_COLS_DESKTOP = 8
 const GRID_COLS_MOBILE = 6
@@ -174,6 +181,7 @@ export default function LandingGameSimple() {
   const [planted, setPlanted] = useState(0)
   const [birds, setBirds] = useState<Bird[]>([])
   const [trucks, setTrucks] = useState<Truck[]>([])
+  const [smokes, setSmokes] = useState<Smoke[]>([])
   const [timeLeft, setTimeLeft] = useState(ROUND_DURATION)
   const [gameActive, setGameActive] = useState(true)
   const [gameEnded, setGameEnded] = useState(false)
@@ -263,6 +271,7 @@ export default function LandingGameSimple() {
                   .map(() => Array(cols).fill(null).map(() => ({ state: 'empty' })))
               )
               setTrucks([])
+              setSmokes([])
             }, 100)
           }
           return 0
@@ -313,18 +322,34 @@ export default function LandingGameSimple() {
       const targetX = targetCol * (cellSize + gap)
       const startX = fromLeft ? -100 : (cols * (cellSize + gap) + 100)
 
-      const newTruck: Truck = {
-        id: Date.now() + Math.random(),
-        row: targetRow,
-        col: targetCol,
-        x: startX,
-        y: targetRow * (cellSize + gap),
-        targetX: targetX,
+      // Spawn smoke 2 seconds before truck
+      const smokeId = Date.now() + Math.random()
+      const newSmoke: Smoke = {
+        id: smokeId,
+        x: fromLeft ? 0 : 100,
+        y: targetRow * (cellSize + gap) + (cellSize / 2),
         facingRight: fromLeft,
-        delivered: false,
       }
 
-      setTrucks(prev => [...prev, newTruck])
+      setSmokes(prev => [...prev, newSmoke])
+
+      // Remove smoke and spawn truck after 2 seconds
+      setTimeout(() => {
+        setSmokes(prev => prev.filter(s => s.id !== smokeId))
+
+        const newTruck: Truck = {
+          id: Date.now() + Math.random(),
+          row: targetRow,
+          col: targetCol,
+          x: startX,
+          y: targetRow * (cellSize + gap),
+          targetX: targetX,
+          facingRight: fromLeft,
+          delivered: false,
+        }
+
+        setTrucks(prev => [...prev, newTruck])
+      }, 2000)
     }
 
     // Adaptive difficulty: easier first time, harder on replay
@@ -425,6 +450,7 @@ export default function LandingGameSimple() {
         .map(() => Array(cols).fill(null).map(() => ({ state: 'empty' })))
     )
     setTrucks([]) // Clear trucks on restart
+    setSmokes([]) // Clear smokes on restart
   }
 
   // Initialize birds
@@ -953,6 +979,32 @@ export default function LandingGameSimple() {
             </div>
           ))
         )}
+
+        {/* Smoke overlay - appears before trucks */}
+        {smokes.map(smoke => {
+          const smokeSize = isMobile ? 20 : 30
+
+          return (
+            <img
+              key={smoke.id}
+              src="/images/home/smoke.svg"
+              alt="smoke"
+              style={{
+                position: 'absolute',
+                left: smoke.facingRight ? '0px' : 'auto',
+                right: smoke.facingRight ? 'auto' : '0px',
+                top: '0',
+                transform: `translateY(${smoke.y}px)`,
+                width: `${smokeSize}px`,
+                height: `${smokeSize}px`,
+                zIndex: 15,
+                pointerEvents: 'none',
+                opacity: 0.6,
+                animation: 'smokeFade 2s ease-in-out',
+              }}
+            />
+          )
+        })}
 
         {/* Trucks overlay */}
         {trucks.map(truck => {
