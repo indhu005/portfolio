@@ -16,11 +16,11 @@ const caseStudies = {
       {
         id: 'snapshot',
         title: '01 — Snapshot',
-        content: `<p><span style="font-weight: 600;">Product</span><br/>A credit-based B2C marketplace giving users flexible, low-commitment access to premium digital tools — Grammarly, Adobe, Otter.ai, MasterClass, Crunchbase, and a 150+ product catalog — without long-term subscriptions. ClassPass, but for digital tools.</p>
+        content: `<p><span style="font-weight: 600;">Product</span><br/>A credit-based marketplace giving users flexible access to premium tools — Grammarly, Adobe, Otter.ai, MasterClass, Crunchbase, and 150+ products — without long-term subscriptions. ClassPass for digital tools.</p>
 
-<p style="margin-top: 28px;"><span style="font-weight: 600;">My role — Founding Product Designer.</span> Keye's first and only designer for most of its life. When I joined, the product was three static screens — no flows, no credit architecture, no design system. I designed every user-facing surface across web, mobile web, and a Chrome extension; authored PRDs; ran continuous research and QA; contributed to VC pitch materials; and hired and mentored the two designers who succeeded me.</p>
+<p style="margin-top: 28px;"><span style="font-weight: 600;">My role — Founding Product Designer.</span> Keye's only designer for most of its life. When I joined: three static screens, no flows, no credit architecture, no design system. I designed every surface (web, mobile web, Chrome extension), authored PRDs, ran research and QA, contributed to VC pitches, and hired the two designers who succeeded me.</p>
 
-<p style="margin-top: 28px;"><span style="font-weight: 600;">Timeline</span> — 2 years (2021–2022): beta → credit system → marketplace expansion → Chrome extension → seed funding. The traction, research, and funding built during this period carried the company into Y Combinator (W2024) after the founding team dispersed and the remaining founder pivoted the business.</p>
+<p style="margin-top: 28px;"><span style="font-weight: 600;">Timeline</span> — 2 years (2021–2022): beta → credit system → marketplace expansion → extension → seed funding. After the founding team dispersed, the remaining founder took the company into YC W2024 and pivoted to financial analytics. The marketplace didn't survive the pivot — but the traction we built made YC possible.</p>
 
 <div style="width: 100%; min-height: 400px; background-color: #E5E7EB; border-radius: 8px; display: flex; align-items: center; justify-content: center; color: #9CA3AF; font-size: 14px; margin-top: 32px; margin-bottom: 32px;">Metrics table placeholder</div>
 
@@ -42,7 +42,7 @@ const caseStudies = {
         id: 'context-problem',
         title: '02 — The Problem',
         headline: 'Premium tools were priced for committed subscribers, not curious explorers',
-        content: `<p>Users were creating fake email addresses to get free trials. Friend groups shared passwords. One research participant paid for a VPN just to access cheaper regional pricing. The market was telling us something directly: premium tools — Grammarly at $180/year, Crunchbase at $600 — were priced for committed subscribers, not curious explorers. Free trials demanded a card, were easy to forget, and painful to cancel, so users grew suspicious of the entire category.</p>
+        content: `<p>Users created fake emails for free trials. Friend groups shared passwords. One participant paid for a VPN to access cheaper regional pricing. The market was telling us: premium tools — Grammarly at $180/year, Crunchbase at $600 — were priced for committed subscribers, not curious explorers.</p>
 
 <div style="display: flex; gap: 24px; margin-top: 40px; flex-wrap: wrap;">
   <div style="flex: 1; min-width: 250px; position: relative;">
@@ -59,13 +59,18 @@ const caseStudies = {
         id: 'started',
         title: '03 — Where I Started: Evidence over Instinct',
         headline: "My job wasn't to execute the founders' instincts but to introduce user evidence into a team moving on momentum",
-        content: `<p>My first task — the purchase flow — arrived with the founders' assumptions baked in: mandatory consent and a feedback survey embedded in checkout. Completion dropped 30% at those steps. I moved consent to signup, tested the survey in three placements (email: 80% ignored; in-checkout: confused buyers; post-access popup: finally right — users had just used the product and had something real to say). Drop-off fell 20% in one sprint.</p>
+        content: `<p>My first task: the purchase flow. Founders had baked in mandatory consent and a feedback survey at checkout. Completion dropped 30% at those steps. I moved consent to signup, tested the survey in three placements. Email: 80% ignored. In-checkout: confused buyers. Post-access popup: users had just used the product and had something real to say. Drop-off fell 20% in one sprint.</p>
 
-<div style="width: 100%; height: 400px; background-color: #E5E7EB; border-radius: 8px; display: flex; align-items: center; justify-content: center; color: #9CA3AF; font-size: 14px; margin-top: 32px; margin-bottom: 32px;">Before/after checkout + the price-comparison product page</div>
+<div style="width: 100%; height: 450px; background-color: #E5E7EB; border-radius: 8px; display: flex; align-items: center; justify-content: center; color: #9CA3AF; font-size: 14px; margin-top: 32px; margin-bottom: 32px;">
+  <div style="text-align: center; padding: 20px;">
+    <div style="font-weight: 600; margin-bottom: 8px;">IMAGE: Checkout Before/After</div>
+    <div style="font-size: 13px; line-height: 1.5;">Left: Checkout with consent + survey (30% drop-off)<br/>Right: Streamlined checkout (20% improvement)<br/>+ Price comparison card: $4.99 access vs $10.99/month subscription</div>
+  </div>
+</div>
 
-<p style="margin-top: 28px;">The hardest early call was removing product descriptions. Testing showed users scanning, not reading — so I led with imagery and a side-by-side price comparison ($4.99 access vs. $10.99/month subscription), pre-selecting the Keye option. Some users went on to buy full subscriptions through Keye after seeing the comparison — behavior we hadn't designed for but kept.</p>
+<p style="margin-top: 28px;">Hardest early call: removing product descriptions. Testing showed users scanning, not reading. I led with imagery and side-by-side price comparison, pre-selecting the Keye option. Some users bought full subscriptions through Keye after seeing the comparison — behavior we hadn't designed for but kept.</p>
 
-<div class="pull-quote" style="margin-top: 28px;">With no research budget, I worked by signal saturation: once the same friction appeared across five or six independent users, it was real enough to act on.</div>`
+<div class="pull-quote" style="margin-top: 28px;">With no research budget, I worked by signal saturation: once the same friction appeared across five or six users, it was real enough to act on.</div>`
       },
       {
         id: 'credit-system',
@@ -73,89 +78,136 @@ const caseStudies = {
         headline: 'The credit cap turned price into a discovery mechanic and shaped the entire partnership strategy',
         content: `<p>The most important design decision in Keye's history — not for how it looked, but for what it revealed.</p>
 
-<p style="margin-top: 28px;"><span style="font-weight: 600;">Unlimited credits (MVP)</span> removed all friction — and all intentionality. FullStory showed users activating HBO, Hulu, and Tubi the same day, exhausting access before people who genuinely wanted a product could reach it.</p>
+<p style="margin-top: 28px;"><span style="font-weight: 600;">Unlimited credits (MVP)</span> removed all friction — and all intentionality. Users activated HBO, Hulu, and Tubi the same day, exhausting access before people who actually wanted those products could reach them.</p>
 
-<div style="width: 100%; height: 350px; background-color: #E5E7EB; border-radius: 8px; display: flex; align-items: center; justify-content: center; color: #9CA3AF; font-size: 14px; margin-top: 32px; margin-bottom: 32px;">Unlimited usage behavior</div>
+<div style="width: 100%; height: 450px; background-color: #E5E7EB; border-radius: 8px; display: flex; align-items: center; justify-content: center; color: #9CA3AF; font-size: 14px; margin-top: 32px; margin-bottom: 32px;">
+  <div style="text-align: center; padding: 20px;">
+    <div style="font-weight: 600; margin-bottom: 8px;">IMAGE: Unlimited Usage Behavior</div>
+    <div style="font-size: 13px; line-height: 1.5;">FullStory heatmap showing 3+ activations per user same day<br/>Timeline: HBO → Hulu → Tubi within hours</div>
+  </div>
+</div>
 
-<p style="margin-top: 28px;"><span style="font-weight: 600;">A 200-credit cap</span> changed behavior immediately. The week it launched, a friend messaged me, frustrated her boyfriend had spent their credits on Hulu before she could watch HBO. Users now had a stake in their choices. The cap also turned <span style="font-weight: 600;">price into a discovery mechanic</span>: when credits ran low, users explored cheaper unfamiliar products they'd never have clicked.</p>
+<p style="margin-top: 28px;"><span style="font-weight: 600;">A 200-credit cap</span> changed behavior immediately. The week it launched, a friend messaged me, frustrated her boyfriend had spent their credits on Hulu before she could watch HBO. Users now had a stake. The cap turned <span style="font-weight: 600;">price into a discovery mechanic</span>: when credits ran low, users explored cheaper unfamiliar products they'd never have clicked.</p>
 
-<div style="width: 100%; height: 350px; background-color: #E5E7EB; border-radius: 8px; display: flex; align-items: center; justify-content: center; color: #9CA3AF; font-size: 14px; margin-top: 32px; margin-bottom: 32px;">Credit cap interface</div>
+<div style="width: 100%; height: 450px; background-color: #E5E7EB; border-radius: 8px; display: flex; align-items: center; justify-content: center; color: #9CA3AF; font-size: 14px; margin-top: 32px; margin-bottom: 48px;">
+  <div style="text-align: center; padding: 20px;">
+    <div style="font-weight: 600; margin-bottom: 8px;">IMAGE: Credit Cap Interface + Usage Chart</div>
+    <div style="font-size: 13px; line-height: 1.5;">Header showing persistent credit balance (87/200)<br/>Chart: Weekday (professional tools) vs Weekend (entertainment)<br/>Discovery pattern: Low credits → explore cheaper products</div>
+  </div>
+</div>
 
-<p style="margin-top: 28px;"><span style="font-weight: 600;">The data shaped our partnership strategy.</span> Weekdays skewed professional (Crunchbase, Grammarly, Adobe); weekends, entertainment. Spotify sold out daily — yet Spotify, Netflix, and YouTube all declined to partner, seeing us as a threat to their funnels. Hulu partnered early but didn't stay. Adobe, Grammarly, and emerging brands needing discovery said yes. The cap revealed exactly which partners Keye could win and why.</p>
+<div class="pull-quote">The cap revealed exactly which partners Keye could win and why. Spotify, Netflix, YouTube declined — seeing us as a threat. Adobe, Grammarly, emerging brands said yes.</div>
 
-<div style="width: 100%; height: 350px; background-color: #E5E7EB; border-radius: 8px; display: flex; align-items: center; justify-content: center; color: #9CA3AF; font-size: 14px; margin-top: 32px; margin-bottom: 32px;">Four-stage credit evolution + weekday/weekend usage chart</div>
-
-<p style="margin-top: 28px;"><span style="font-weight: 600;">Monetization followed the evidence:</span> $20/month for 200 credits, launched only once the mental model was established. Conversion improved 32% over the beta cohort. Alongside, we taught the model deliberately — persistent credit balance in the header, onboarding pop-ups, a How Keye Works page — cutting support requests 74%.</p>`
+<p style="margin-top: 48px;"><span style="font-weight: 600;">Monetization followed the evidence:</span> $20/month for 200 credits, launched only once the mental model was established. Conversion: +32% over beta cohort. We taught the model deliberately — credit balance in header, onboarding pop-ups, How Keye Works page. Support requests: ↓74%.</p>`
       },
       {
         id: 'features',
         title: '05 — Features Built from Signal',
         headline: 'Every feature solved friction that users had already shown us, not friction we imagined',
-        content: `<p><span style="font-weight: 600;">Buy Again</span> collapsed a three-step repurchase into one tap for returning users, keeping the full flow for first-timers. The friction wasn't stopping decisions — it was re-litigating ones already made.</p>
+        content: `<div style="display: grid; grid-template-columns: 1fr; gap: 32px; margin-bottom: 48px;">
+  <div>
+    <div style="font-weight: 600; font-size: 17px; color: #1C1917; margin-bottom: 8px;">Buy Again</div>
+    <div style="font-size: 15px; color: #57534E; line-height: 1.6;">Collapsed three-step repurchase into one tap for returning users. The friction wasn't stopping decisions — it was re-litigating ones already made.</div>
+  </div>
 
-<div style="width: 100%; height: 300px; background-color: #E5E7EB; border-radius: 8px; display: flex; align-items: center; justify-content: center; color: #9CA3AF; font-size: 14px; margin-top: 24px; margin-bottom: 32px;">Buy Again feature</div>
+  <div>
+    <div style="font-weight: 600; font-size: 17px; color: #1C1917; margin-bottom: 8px;">Request a Product</div>
+    <div style="font-size: 15px; color: #57534E; line-height: 1.6;">In live testing, I watched a user scroll four times looking for a product, give up, and ask me if it existed. We placed a Request card at that exact scroll depth. Requests became verified demand data for partnership pitches. Partner subscriptions: +44% YoY.</div>
+  </div>
 
-<p style="margin-top: 28px;"><span style="font-weight: 600;">Coming Soon + Request a Product.</span> In live testing I watched a user scroll four times looking for a product, give up, and ask me if it existed. We placed a Request card at that exact scroll depth, in the same visual unit as every product card. Requests became verified demand data for partnership pitches; partner subscriptions grew 44% YoY as that pipeline strengthened. Coming Soon gave unknown products the spotlight they couldn't generate alone.</p>
+  <div>
+    <div style="font-weight: 600; font-size: 17px; color: #1C1917; margin-bottom: 8px;">Featured</div>
+    <div style="font-size: 15px; color: #57534E; line-height: 1.6;">Mixed products we needed data on with products users requested — research and reward in one slot. Every alternative (ads, surveys, prompts) reduced engagement. The top had one job: get users to a product fast.</div>
+  </div>
 
-<div style="width: 100%; height: 300px; background-color: #E5E7EB; border-radius: 8px; display: flex; align-items: center; justify-content: center; color: #9CA3AF; font-size: 14px; margin-top: 24px; margin-bottom: 32px;">Request + Coming Soon cards</div>
+  <div>
+    <div style="font-weight: 600; font-size: 17px; color: #1C1917; margin-bottom: 8px;">Referrals</div>
+    <div style="font-size: 15px; color: #57534E; line-height: 1.6;">Launched ahead of winter holidays to ride natural gifting behavior. Became one of our fastest-growing loops with zero paid spend.</div>
+  </div>
+</div>
 
-<p style="margin-top: 28px;"><span style="font-weight: 600;">Featured</span> deliberately mixed products we needed behavioral data on with products users had requested — research and reward in one slot. Every alternative we tested at the top of the marketplace (ads, surveys, prompts) reduced engagement: the top had one job — get users to a product fast.</p>
-
-<div style="width: 100%; height: 300px; background-color: #E5E7EB; border-radius: 8px; display: flex; align-items: center; justify-content: center; color: #9CA3AF; font-size: 14px; margin-top: 24px; margin-bottom: 32px;">Featured slot</div>
-
-<p style="margin-top: 28px;"><span style="font-weight: 600;">Referrals</span> launched ahead of the winter holidays to ride natural gifting behavior and became one of our fastest-growing loops with zero paid spend.</p>
-
-<div style="width: 100%; height: 300px; background-color: #E5E7EB; border-radius: 8px; display: flex; align-items: center; justify-content: center; color: #9CA3AF; font-size: 14px; margin-top: 24px; margin-bottom: 32px;">Referrals</div>`
+<div style="width: 100%; height: 450px; background-color: #E5E7EB; border-radius: 8px; display: flex; align-items: center; justify-content: center; color: #9CA3AF; font-size: 14px; margin-bottom: 32px;">
+  <div style="text-align: center; padding: 20px;">
+    <div style="font-weight: 600; margin-bottom: 8px;">IMAGE: Four Feature Cards</div>
+    <div style="font-size: 13px; line-height: 1.5;">Buy Again (one-tap) | Request (at scroll depth) | Featured (top slot) | Referrals (gift flow)</div>
+  </div>
+</div>`
       },
       {
         id: 'extension',
         title: '06 — The Chrome Extension: An 18-Month Problem Solved in Ten Days',
         headline: 'The breakthrough was recognizing we should live where the user already is',
-        content: `<p>Users had to copy-paste credentials from Keye into partner sites. The plan was that partner integrations would solve it — but each required real engineering investment partners couldn't prioritize. Then our technical co-founder left, taking the backend capacity for a one-click login with him.</p>
+        content: `<p>Users copy-pasted credentials from Keye into partner sites. The plan: partner integrations would solve it. Reality: each required engineering investment partners couldn't prioritize. Then our technical co-founder left, taking the backend capacity with him.</p>
 
-<p style="margin-top: 28px;">One evening, watching Honey apply coupons contextually at checkout, I saw the answer: <span style="font-weight: 600;">live where the user already is.</span> Engineering confirmed the effort was minimal. That weekend I built a Figma prototype with a walkthrough — visit a partner site, extension detects it, offers access, auto-fills credentials — and showed it at all-hands. We shipped in under ten days.</p>
+<p style="margin-top: 28px;">One evening, watching Honey apply coupons at checkout, I saw it: <span style="font-weight: 600;">live where the user already is.</span> Engineering confirmed the effort was minimal. That weekend I built a Figma prototype — visit partner site, extension detects it, offers access, auto-fills credentials. Showed it at all-hands. Shipped in ten days.</p>
 
-<div style="width: 100%; height: 400px; background-color: #E5E7EB; border-radius: 8px; display: flex; align-items: center; justify-content: center; color: #9CA3AF; font-size: 14px; margin-top: 32px; margin-bottom: 32px;">Three-frame extension flow — detection → access → auto-login</div>
+<div style="width: 100%; height: 450px; background-color: #E5E7EB; border-radius: 8px; display: flex; align-items: center; justify-content: center; color: #9CA3AF; font-size: 14px; margin-top: 32px; margin-bottom: 32px;">
+  <div style="text-align: center; padding: 20px;">
+    <div style="font-weight: 600; margin-bottom: 8px;">IMAGE: Extension Flow (3 frames)</div>
+    <div style="font-size: 13px; line-height: 1.5;">1. User visits Grammarly.com<br/>2. Extension detects site, shows access popup<br/>3. Auto-fills credentials, user logged in</div>
+  </div>
+</div>
 
-<p style="margin-top: 28px;">The MVP was deliberately narrow: only purchased products, only auto-fill — validation before features. 60% of users installed within three months, login friction dropped 63%, repeat sessions rose 41%. V2 added in-extension purchasing, earned by that data rather than assumed.</p>`
+<p style="margin-top: 28px;">MVP was deliberately narrow: only purchased products, only auto-fill. Validation before features. Results: 60% installed within 3 months, login friction ↓63%, repeat sessions ↑41%. V2 added in-extension purchasing, earned by that data.</p>`
       },
       {
         id: 'design-system',
         title: "07 — Design System: Built for a Team That Didn't Exist Yet",
         headline: "The true measure of the system was that users couldn't tell where my work ended and the next designer's began",
-        content: `<p>I came from architecture, where everything in Revit is a parametric component — change the object, every instance updates. I treated the product card the same way from day one. It evolved from a long-description carousel card to a compact, partner-neutral frame (Otter.ai's branding feedback taught us the card should be a frame, not a canvas), and engineering's constant question — <span style="font-style: italic;">can this be a state of the existing component rather than a new one?</span> — kept us reducing instead of adding. The mature card supported eight states — browseable, active with countdown and credentials, disabled, Buy Again, Featured, Coming Soon, Leaving Soon — all derived from behavioral signals, none speculative.</p>
+        content: `<p>I came from architecture, where everything in Revit is a parametric component — change the object, every instance updates. I treated the product card the same way. It evolved from a long-description carousel to a compact, partner-neutral frame. Otter.ai's branding feedback taught us: the card should be a frame, not a canvas. Engineering's constant question — <span style="font-style: italic;">can this be a state of the existing component rather than a new one?</span> — kept us reducing instead of adding.</p>
 
-<div style="width: 100%; height: 500px; background-color: #E5E7EB; border-radius: 8px; display: flex; align-items: center; justify-content: center; color: #9CA3AF; font-size: 14px; margin-top: 32px; margin-bottom: 32px;">One component, eight states — MVP → launch evolution</div>
+<p style="margin-top: 28px;">The mature card supported eight states — browseable, active (with countdown and credentials), disabled, Buy Again, Featured, Coming Soon, Leaving Soon — all derived from behavioral signals, none speculative.</p>
 
-<p style="margin-top: 28px;">Frontend engineering sat twelve hours away in Asia; a bug found Thursday in Seattle wasn't fixed until Friday evening — once leaving a broken sticky nav visible through a weekend of VC testing. I rebuilt my handoff practice: annotated documents, precisely named assets, pre-answered edge cases, and Saturday-morning sessions overlapping their day. That documentation discipline later became the onboarding foundation for the junior designer I hired — and the true measure of the system was that when she took over my features, users couldn't tell where my work ended and hers began.</p>`
+<div style="width: 100%; height: 500px; background-color: #E5E7EB; border-radius: 8px; display: flex; align-items: center; justify-content: center; color: #9CA3AF; font-size: 14px; margin-top: 32px; margin-bottom: 48px;">
+  <div style="text-align: center; padding: 20px;">
+    <div style="font-weight: 600; margin-bottom: 8px;">IMAGE: Product Card Evolution</div>
+    <div style="font-size: 13px; line-height: 1.5;">One component, eight states shown side-by-side<br/>MVP carousel → Launch compact frame<br/>States: Browseable | Active | Disabled | Buy Again | Featured | Coming Soon | Leaving Soon</div>
+  </div>
+</div>
+
+<div class="pull-quote">Frontend engineering sat twelve hours away in Asia. A bug found Thursday in Seattle wasn't fixed until Friday evening — once leaving a broken sticky nav visible through a weekend of VC testing.</div>
+
+<p style="margin-top: 48px;">I rebuilt my handoff: annotated documents, precisely named assets, pre-answered edge cases, Saturday-morning sessions overlapping their day. That discipline became the onboarding foundation for the junior designer I hired. The true measure: when she took over my features, users couldn't tell where my work ended and hers began.</p>`
       },
       {
         id: 'tradeoffs',
         title: '08 — Tradeoffs & Hard Calls',
         headline: 'Founding-designer roles expand to fill whatever you give them — I learned to define boundaries before the product demanded more than one person could sustainably give',
-        content: `<p><span style="font-weight: 600;">The GIF decision.</span> I wanted animated characters for onboarding; engineering pushed back on performance. The resolution was research, not compromise — I brought evidence on Lottie's lightweight format, we learned it together, and the objection dissolved. Neither original position won; a better one did.</p>
+        content: `<div style="display: grid; grid-template-columns: 1fr; gap: 28px;">
+  <div>
+    <div style="font-weight: 600; font-size: 17px; color: #1C1917; margin-bottom: 8px;">The GIF Decision</div>
+    <div style="font-size: 15px; color: #57534E; line-height: 1.6;">I wanted animated characters for onboarding; engineering pushed back on performance. Resolution: I brought evidence on Lottie's lightweight format, we learned it together, objection dissolved. Neither original position won; a better one did.</div>
+  </div>
 
-<p style="margin-top: 28px;"><span style="font-weight: 600;">The influencer debate.</span> Marketing wanted trend-borrowed features — influencer streams, social mechanics. I reframed: Keye's users were intentional, coming to access tools, not to be entertained. Building for behavior we didn't have would distract from behavior we did. The founders agreed.</p>
+  <div>
+    <div style="font-weight: 600; font-size: 17px; color: #1C1917; margin-bottom: 8px;">The Influencer Debate</div>
+    <div style="font-size: 15px; color: #57534E; line-height: 1.6;">Marketing wanted influencer streams, social mechanics. I reframed: Keye's users came to access tools, not to be entertained. Building for behavior we didn't have would distract from behavior we did. Founders agreed.</div>
+  </div>
 
-<p style="margin-top: 28px;"><span style="font-weight: 600;">The mobile app concession.</span> I believed in a native app; founders and investors disagreed on cost grounds pre-funding. I conceded — and made the mobile web experience thorough enough that the concession cost users almost nothing.</p>
+  <div>
+    <div style="font-weight: 600; font-size: 17px; color: #1C1917; margin-bottom: 8px;">The Mobile App Concession</div>
+    <div style="font-size: 15px; color: #57534E; line-height: 1.6;">I believed in a native app; founders and investors disagreed on cost grounds. I conceded — and made the mobile web experience thorough enough that the concession cost users almost nothing.</div>
+  </div>
 
-<p style="margin-top: 28px;"><span style="font-weight: 600;">The mid-growth rebrand.</span> Changing palette and typography while the funnel was working was a real risk. We shipped it live rather than A/B testing — and it coincided with a 34% single-month growth spike, one of our strongest periods.</p>
+  <div>
+    <div style="font-weight: 600; font-size: 17px; color: #1C1917; margin-bottom: 8px;">The Mid-Growth Rebrand</div>
+    <div style="font-size: 15px; color: #57534E; line-height: 1.6;">Changing palette and typography while the funnel was working was a real risk. We shipped it live. It coincided with a 34% single-month growth spike, one of our strongest periods.</div>
+  </div>
+</div>
 
-<p style="margin-top: 28px;"><span style="font-weight: 600;">What I'd do differently</span> isn't a product decision — it's role design. Founding-designer roles expand to fill whatever you give them; I learned to define boundaries around scope before the product demands more than one person can sustainably give. That lesson now shapes how I'd structure any 0→1 role.</p>`
+<div class="pull-quote" style="margin-top: 48px;">What I'd do differently isn't a product decision — it's role design. Founding-designer roles expand to fill whatever you give them. I learned to define boundaries before the product demands more than one person can sustainably give.</div>`
       },
       {
         id: 'impact',
         title: '09 — Impact & Reflection',
         headline: "The most important thing a founding designer builds isn't the product — it's the foundation that lets the product grow without being rebuilt from scratch",
-        content: `<p>Keye grew from three static screens to a funded, validated company during my two years as sole designer: 0 → 20K+ MAUs in under a year, 150+ products with 35+ direct partnerships, an extension shipped in ten days, and a design team built from scratch. By the company's third year the founding team had dispersed; the remaining founder took the company into YC W2024 and pivoted to financial analytics. The marketplace didn't survive the pivot — but the research, the partnerships, and the funding that made YC possible came from the product we built.</p>
+        content: `<p>Keye grew from three static screens to a funded company during my two years: 0 → 20K+ MAUs in under a year, 150+ products with 35+ direct partnerships, an extension shipped in ten days, a design team built from scratch.</p>
 
-<p style="margin-top: 48px; font-weight: 600;">What mattered more than expected</p>
+<p style="margin-top: 28px;">By year three, the founding team dispersed. The remaining founder took the company into YC W2024 and pivoted to financial analytics. The marketplace didn't survive — but the research, partnerships, and funding that made YC possible came from the product we built.</p>
 
-<p style="margin-top: 16px;">The credit cap wasn't valuable because it monetized the product. It was valuable because it generated the behavioral data that shaped the entire partnership strategy. Constraints aren't always about user experience — sometimes they create the conditions for a product to learn.</p>
+<div class="pull-quote" style="margin-top: 48px;">The credit cap wasn't valuable because it monetized the product. It was valuable because it generated the behavioral data that shaped the entire partnership strategy.</div>
 
-<p style="margin-top: 28px;">Keye compressed the feedback loop between design decision and consequence from months to days, and taught me to treat every decision as a hypothesis. The ones confirmed without testing are the ones that break in production.</p>
-
-<div class="pull-quote" style="margin-top: 48px;">Constraints aren't always about user experience — sometimes they create the conditions for a product to learn.</div>`
+<p style="margin-top: 48px;">Keye compressed the feedback loop between design decision and consequence from months to days. It taught me to treat every decision as a hypothesis. The ones confirmed without testing are the ones that break in production.</p>`
       },
     ]
   },
@@ -483,11 +535,9 @@ const caseStudies = {
       {
         id: 'snapshot',
         title: '01 — Snapshot',
-        content: `<p>Misinformation spreads faster than most people can verify it. It shapes health decisions, voting behavior, and how much people trust anything they read. Platforms have attempted interventions — and those efforts are routinely met with distrust and accusations of bias.</p>
+        content: `<p>Platforms try to control misinformation. Users don't trust them. This capstone asked a different question: what if we equipped people to identify misinformation themselves?</p>
 
-<p style="margin-top: 28px;">This capstone started from a different question: instead of controlling content for users, how might we equip people with the literacy and tools to identify misinformation themselves?</p>
-
-<p style="margin-top: 28px;">The design philosophy — <span style="font-weight: 600;">agency over authority.</span> People resist being told what's true. They respond better when given tools to decide for themselves and shown why something is flagged. The goal wasn't another fact-check label. It was tools that help people pause, verify, and learn — folded into small daily habits rather than assigned as homework.</p>
+<p style="margin-top: 28px;"><span style="font-weight: 600;">Agency over authority.</span> People resist being told what's true. They respond better when given tools to decide for themselves. The goal wasn't another fact-check label — it was tools that help people pause, verify, and learn, folded into daily habits.</p>
 
 <div style="display: flex; gap: 24px; margin-top: 40px; flex-wrap: wrap;">
   <div style="flex: 1; min-width: 250px; position: relative;">
@@ -501,9 +551,9 @@ const caseStudies = {
 
 <div style="width: 100%; min-height: 500px; background-color: #E5E7EB; border-radius: 8px; display: flex; align-items: center; justify-content: center; color: #9CA3AF; font-size: 14px; margin-top: 48px; margin-bottom: 32px;">Hero — the four features as a connected system on one screen, in final visual polish</div>
 
-<p style="margin-top: 28px;"><span style="font-weight: 600;">My role — sole designer.</span> This was my graduate capstone at the University of Washington, January–July 2024, refined through late 2024. The project began as a team of four during initial research; after the team split into individual directions in early February, the product, design, and direction were entirely my own. I conducted the research, defined the archetypes, designed all four features, built the visual system, and tested the work at scale.</p>
+<p style="margin-top: 28px;"><span style="font-weight: 600;">My role — sole designer.</span> Graduate capstone at University of Washington (Jan–July 2024). Started as a team of four; after February, the product, design, and direction were entirely mine. I ran the research, defined archetypes, designed all four features, and tested with ~1,800 people at Misinfo Day.</p>
 
-<p style="margin-top: 28px;">From late March to May I collaborated with TrueMedia.org, a deepfake-detection nonprofit founded by Oren Etzioni, contributing user research and market assessment that informed their product direction. The collaboration was research-based, conducted through UW's Center for an Informed Public; TrueMedia built their own product with their in-house team, and no design assets were shared between the projects. Everything shown here is my own work — and what I learned from their market reality reshaped how I think about this entire product category (§06).</p>
+<p style="margin-top: 28px;">From March to May, I collaborated with TrueMedia.org (deepfake-detection nonprofit) on user research and market assessment. They built their own product; no design assets were shared. What I learned from their shutdown in Jan 2025 reshaped how I think about public-good products (§06).</p>
 
 <div style="margin-top: 40px; margin-bottom: 40px;">
   <table style="width: 100%; border-collapse: collapse;">
@@ -530,39 +580,33 @@ const caseStudies = {
   </table>
 </div>
 
-<p style="margin-top: 28px;"><span style="font-weight: 600;">Testing</span> — ~1,800 participants at Misinfo Day (April 2024), co-hosted with UW's Center for an Informed Public, plus two interview phases, a 2,000-respondent discovery survey, and moderated usability rounds.</p>`
+<p style="margin-top: 28px;"><span style="font-weight: 600;">Testing</span> — 2,000-respondent survey, two interview phases (28 participants), moderated usability (14 participants), Misinfo Day live testing (~1,800 people).</p>`
       },
       {
         id: 'problem',
         title: '02 — The Problem',
         headline: 'After AI, the same problem arrived at a different scale — believability and volume in a fragile ecosystem',
-        content: `<p>Before AI, misinformation was a human psychology problem. It thrived on speed, virality, and how people process information under social pressure — vaccine myths eroding trust in science, election conspiracies driving polarization, doctored disaster images misallocating resources, everyday scams creating "everything feels fake" fatigue. The common thread was never the content. It was the exploitation of human bias: believe what confirms your views, trust what feels familiar, share before verifying.</p>
+        content: `<p>Misinformation exploits human bias: believe what confirms your views, trust what feels familiar, share before verifying. After AI, the same problem arrived at a different scale — more believable, more volume, same fragile ecosystem.</p>
 
-<p style="margin-top: 28px;">After AI, the same problem arrived at a different scale. Generative AI added believability and volume to a fragile ecosystem — while platform incentives still favored engagement over accuracy, and misinformation drives engagement.</p>
-
-<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 100px; margin-top: 60px;">
+<div style="display: grid; grid-template-columns: 1fr; gap: 32px; margin-top: 40px; margin-bottom: 48px;">
   <div>
-    <div style="width: 100%; height: 200px; background-color: #E5E7EB; border-radius: 8px; display: flex; align-items: center; justify-content: center; color: #9CA3AF; font-size: 14px; margin-bottom: 24px;">Image placeholder</div>
-    <p style="margin-top: 0;"><span style="font-weight: 600;">What the discovery survey showed</span></p>
-    <p style="margin-top: 12px;">(n = 2,000): 74% encountered misinformation weekly. 62% of parents aged 25–40 felt overwhelmed by having to educate their kids about false content. 41% of seniors admitted unknowingly sharing misinformation at least once. And fewer than 20% trusted existing fact-checking platforms — too slow, too technical, too detached from where they actually consume information. Users didn't just want the truth. They wanted peace of mind.</p>
+    <div style="font-weight: 600; font-size: 17px; color: #1C1917; margin-bottom: 8px;">Survey Results (n=2,000)</div>
+    <div style="font-size: 15px; color: #57534E; line-height: 1.6;">74% encountered misinformation weekly. 62% of parents (25–40) felt overwhelmed educating their kids. 41% of seniors unknowingly shared false content. <20% trusted existing fact-checkers. Users didn't just want truth — they wanted peace of mind.</div>
   </div>
 
   <div>
-    <div style="width: 100%; height: 200px; background-color: #E5E7EB; border-radius: 8px; display: flex; align-items: center; justify-content: center; color: #9CA3AF; font-size: 14px; margin-bottom: 24px;">Image placeholder</div>
-    <p style="margin-top: 0;"><span style="font-weight: 600;">The generational sandwich.</span></p>
-    <p style="margin-top: 12px;">The most surprising interview finding wasn't about technology. Young mothers were educating their children about misinformation while simultaneously managing elderly parents who were the primary victims of scams — fielding chain messages from relatives who trusted everything they received, exhausted by filtering manipulative media on behalf of two generations at once. This wasn't an edge case; it was a consistent pattern that fundamentally shaped the archetypes.</p>
+    <div style="font-weight: 600; font-size: 17px; color: #1C1917; margin-bottom: 8px;">The Generational Sandwich</div>
+    <div style="font-size: 15px; color: #57534E; line-height: 1.6;">Young mothers educating their kids about misinformation while managing elderly parents falling for scams. Filtering manipulative media for two generations at once. This pattern shaped the entire archetype strategy.</div>
   </div>
 
   <div>
-    <div style="width: 100%; height: 200px; background-color: #E5E7EB; border-radius: 8px; display: flex; align-items: center; justify-content: center; color: #9CA3AF; font-size: 14px; margin-bottom: 24px;">Image placeholder</div>
-    <p style="margin-top: 0;"><span style="font-weight: 600;">The transparency demand.</span></p>
-    <p style="margin-top: 12px;">Multiple participants independently said that when they hit suspicious content, they wanted to know who was paying for it — not just whether it was true, but what agenda sat behind it. One participant put it precisely: media portrayed San Francisco as a hellscape while she lived there experiencing something completely different. She didn't want a fact-check label. She wanted to see the incentive structure. That insight became the transparency principle running through every feature.</p>
+    <div style="font-weight: 600; font-size: 17px; color: #1C1917; margin-bottom: 8px;">The Transparency Demand</div>
+    <div style="font-size: 15px; color: #57534E; line-height: 1.6;">When participants hit suspicious content, they wanted to know who was paying for it — not just whether it was true, but what agenda sat behind it. "I didn't want a fact-check label. I wanted to see the incentive structure." This became the transparency principle.</div>
   </div>
 
   <div>
-    <div style="width: 100%; height: 200px; background-color: #E5E7EB; border-radius: 8px; display: flex; align-items: center; justify-content: center; color: #9CA3AF; font-size: 14px; margin-bottom: 24px;">Image placeholder</div>
-    <p style="margin-top: 0;"><span style="font-weight: 600;">The platform trust problem.</span></p>
-    <p style="margin-top: 12px;">My first concept embedded a misinformation center inside Facebook — the platform where research showed the most misinformation spirals, so verification should live at the point of exposure. Testing with 20+ users rejected it immediately and specifically: they would not trust Facebook to tell them the truth about misinformation. The platform that spread the problem was structurally incapable of being trusted as its solution. That wasn't a UX finding — it was a product-market-fit finding, and it forced the harder question: if platform-embedded won't work, how does a standalone tool survive without a platform's distribution?</p>
+    <div style="font-weight: 600; font-size: 17px; color: #1C1917; margin-bottom: 8px;">The Platform Trust Problem</div>
+    <div style="font-size: 15px; color: #57534E; line-height: 1.6;">My first concept: a misinformation center inside Facebook. Testing rejected it immediately. Users wouldn't trust the platform spreading the problem to solve it. That wasn't a UX finding — it was product-market-fit. It forced the harder question: how does a standalone tool survive without platform distribution?</div>
   </div>
 </div>
 
@@ -572,17 +616,25 @@ const caseStudies = {
         id: 'market',
         title: '03 — Market Research',
         headline: 'Verification had to live where misinformation spreads, but platform ownership destroyed trust',
-        content: `<p>The existing landscape fell into two categories, and neither worked.</p>
+        content: `<p>Existing tools fell into two categories, neither worked:</p>
 
-<p style="margin-top: 28px;"><span style="font-weight: 600;">Monetized platforms — credible but compromised.</span> Snopes had real trust and rigor, but ran ads and operated as a business, raising editorial-independence questions users were increasingly aware of. Facebook's labels and Twitter's Community Notes had scale but were perceived as politically biased by large portions of their audiences. Platform-owned verification carried a structural credibility problem: the entity profiting from misinformation's spread can't also be trusted to flag it.</p>
+<div style="display: grid; grid-template-columns: 1fr; gap: 24px; margin-top: 32px; margin-bottom: 48px;">
+  <div>
+    <div style="font-weight: 600; font-size: 17px; color: #1C1917; margin-bottom: 8px;">Monetized Platforms — Credible but Compromised</div>
+    <div style="font-size: 15px; color: #57534E; line-height: 1.6;">Snopes had trust and rigor, but ran ads. Facebook labels and Twitter Community Notes had scale but were perceived as biased. The entity profiting from misinformation's spread can't be trusted to flag it.</div>
+  </div>
 
-<div style="width: 100%; min-height: 300px; background-color: #E5E7EB; border-radius: 8px; display: flex; align-items: center; justify-content: center; color: #9CA3AF; font-size: 14px; margin-top: 32px; margin-bottom: 32px;">Image placeholder</div>
+  <div>
+    <div style="font-weight: 600; font-size: 17px; color: #1C1917; margin-bottom: 8px;">Nonprofit Resources — Trustworthy but Invisible</div>
+    <div style="font-size: 15px; color: #57534E; line-height: 1.6;">Literacy initiatives had integrity but no engagement. Text-heavy resources in a short-form-video era. Browser extensions were desktop-bound and friction-heavy.</div>
+  </div>
+</div>
 
-<p style="margin-top: 28px;"><span style="font-weight: 600;">Nonprofit resources — trustworthy but invisible.</span> Literacy initiatives had integrity and no engagement: text-heavy resources in a short-form-video era, requiring users to seek them out. Browser extensions like NewsGuard were friction-heavy and desktop-bound.</p>
+<p>The gap: users who trusted Reuters and the Guardian, wanted multiple sources, and consumed news on phones inside apps they already trusted. Every existing tool asked them to leave, open something else, and do extra work. That friction was fatal.</p>
 
-<p style="margin-top: 28px;">The gap between them was exactly where users lived — people who trusted Reuters and the Guardian, wanted multiple sources rather than a single verdict, and consumed news on phones inside apps they already trusted. Every existing tool asked them to leave, open something else, and do extra work. In an environment already demanding constant attention, that friction was fatal.</p>
+<div class="pull-quote" style="margin-top: 48px; margin-bottom: 48px;">Verification had to live where misinformation spreads, but platform ownership destroyed trust.</div>
 
-<p style="margin-top: 36px;"><span style="font-weight: 600;">The integration insight — the hardest question in the project.</span> Verification had to live where misinformation spreads, but platform ownership destroyed trust. I brought this to all three of my professors; none could resolve it, and they thought I was digging too deep for an academic project. The resolution came from the compass: a trusted utility embedded in trusted surfaces, backed by institutions whose independence users can verify, owned by none of the platforms it lives in. Inside Safari as a share-sheet action. Inside Apple News as a story-verification option. Inside the native camera as scan-to-verify. Not another app competing for attention — infrastructure that makes verification a natural step in what users are already doing.</p>
+<p><span style="font-weight: 600;">The integration insight.</span> I brought this paradox to my professors. None could resolve it; they thought I was digging too deep for an academic project. The answer came from the compass: a trusted utility embedded in trusted surfaces, backed by institutions users can verify, owned by none of the platforms it lives in. Safari share sheet. Apple News. Native camera. Not another app — infrastructure that makes verification a natural step.</p>
 
 <div style="display: flex; gap: 24px; margin-top: 40px; flex-wrap: wrap;">
   <div style="flex: 1; min-width: 250px; position: relative;">
@@ -600,9 +652,11 @@ const caseStudies = {
         id: 'research',
         title: '04 — User Research',
         headline: 'Misinformation moves through trust networks — families, WhatsApp groups, neighborhood pages — in a specific generational pattern',
-        content: `<p>Methods, phased deliberately rather than repeated at different scales: a 2,000-respondent discovery survey mapping habits across demographics; 16 team-phase interviews (four each; I recruited mine independently, paying participants and recruiting across channels to avoid a biased sample); a second solo phase of 12 interviews validating early design directions; a 14-participant moderated usability round that drove the rating-system iteration (§05); and Misinfo Day — ~1,800 attendees moving through sessions on viral misinformation, deepfakes, and escape rooms, where my booth put prototypes in front of unrecruited participants from high schoolers to seniors, alongside UW faculty and the creator of the SIFT methodology.</p>
+        content: `<p><span style="font-weight: 600;">Methods:</span> 2,000-respondent survey, 28 interviews (paid, cross-channel recruitment), 14-participant usability testing, Misinfo Day with ~1,800 attendees (high schoolers to seniors, UW faculty, SIFT methodology creator).</p>
 
-<p style="margin-top: 28px;"><span style="font-weight: 600;">The finding that changed the problem:</span> misinformation moves through a chain, not between strangers. It travels through trust networks — families, WhatsApp groups, neighborhood pages — in a specific generational pattern. Adults 55–80 receive it from people they trust deeply, in communities where belonging is tied to sharing the group's narratives. Teens 13–18 encounter it through peer dynamics where sharing signals belonging, and questioning carries social cost. Adults 25–40 sit between both — the most exhausted users in the research, not because they saw more misinformation but because they managed it for multiple generations at once.</p>
+<div class="pull-quote" style="margin-top: 40px; margin-bottom: 40px;">Misinformation moves through trust networks — families, WhatsApp groups, neighborhood pages — in a specific generational pattern.</div>
+
+<p><span style="font-weight: 600;">The finding that changed the problem:</span> Adults 55–80 receive misinformation from people they trust deeply. Teens 13–18 encounter it through peer dynamics where questioning carries social cost. Adults 25–40 sit between both — the most exhausted users, managing it for two generations at once.</p>
 
 <div style="width: 100%; min-height: 350px; background-color: #E5E7EB; border-radius: 8px; display: flex; align-items: center; justify-content: center; color: #9CA3AF; font-size: 14px; margin-top: 32px; margin-bottom: 32px;">Image placeholder</div>
 
