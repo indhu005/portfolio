@@ -675,9 +675,6 @@ export default function LandingGameSimple() {
               backgroundColor: buttonActive ? '#FF6B35' : '#FFF44F',
               border: 'none',
               borderRadius: '50%',
-              fontSize: '7px',
-              fontWeight: 600,
-              color: '#1C1917',
               cursor: 'pointer',
               fontFamily: 'DM Sans, sans-serif',
               transition: 'all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1)',
@@ -686,14 +683,30 @@ export default function LandingGameSimple() {
               alignItems: 'center',
               justifyContent: 'center',
               flexShrink: 0,
-              padding: '2px',
-              textAlign: 'center',
-              lineHeight: '1.1',
-              letterSpacing: '0.01em',
+              padding: 0,
+              position: 'relative',
             }}
             aria-label="Learn more about the game"
           >
-            about game
+            <svg width="40" height="40" viewBox="0 0 40 40" style={{ transform: 'rotate(-90deg)' }}>
+              <defs>
+                <path
+                  id="circlePath-mobile"
+                  d="M 20, 20 m -16, 0 a 16,16 0 1,1 32,0 a 16,16 0 1,1 -32,0"
+                />
+              </defs>
+              <text
+                fill="#1C1917"
+                fontSize="6.5"
+                fontWeight="600"
+                fontFamily="DM Sans, sans-serif"
+                letterSpacing="0.5"
+              >
+                <textPath href="#circlePath-mobile" startOffset="50%" textAnchor="middle">
+                  about game
+                </textPath>
+              </text>
+            </svg>
           </button>
         </div>
       )}
@@ -715,9 +728,6 @@ export default function LandingGameSimple() {
             backgroundColor: buttonActive ? '#FF6B35' : '#FFF44F',
             border: 'none',
             borderRadius: '50%',
-            fontSize: '10px',
-            fontWeight: 600,
-            color: '#1C1917',
             cursor: 'pointer',
             zIndex: 100,
             fontFamily: 'DM Sans, sans-serif',
@@ -728,10 +738,7 @@ export default function LandingGameSimple() {
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
-            padding: '2px',
-            textAlign: 'center',
-            lineHeight: '1.1',
-            letterSpacing: '0.01em',
+            padding: 0,
           }}
           onMouseEnter={(e) => {
             if (!buttonActive) {
@@ -750,7 +757,25 @@ export default function LandingGameSimple() {
           aria-label="Learn more about the game"
           title="Learn more about the game"
         >
-          about game
+          <svg width="64" height="64" viewBox="0 0 64 64" style={{ transform: 'rotate(-90deg)' }}>
+            <defs>
+              <path
+                id="circlePath-desktop"
+                d="M 32, 32 m -26, 0 a 26,26 0 1,1 52,0 a 26,26 0 1,1 -52,0"
+              />
+            </defs>
+            <text
+              fill="#1C1917"
+              fontSize="10.5"
+              fontWeight="600"
+              fontFamily="DM Sans, sans-serif"
+              letterSpacing="0.8"
+            >
+              <textPath href="#circlePath-desktop" startOffset="50%" textAnchor="middle">
+                about game
+              </textPath>
+            </text>
+          </svg>
         </button>
       )}
 
