@@ -692,7 +692,7 @@ export default function LandingGameSimple() {
               <defs>
                 <path
                   id="circlePath-mobile"
-                  d="M 20, 20 m -18, 0 a 18,18 0 1,1 36,0 a 18,18 0 1,1 -36,0"
+                  d="M 20, 20 m -14, 0 a 14,14 0 1,1 28,0 a 14,14 0 1,1 -28,0"
                 />
               </defs>
               <text
@@ -761,7 +761,7 @@ export default function LandingGameSimple() {
             <defs>
               <path
                 id="circlePath-desktop"
-                d="M 32, 32 m -30, 0 a 30,30 0 1,1 60,0 a 30,30 0 1,1 -60,0"
+                d="M 32, 32 m -24, 0 a 24,24 0 1,1 48,0 a 24,24 0 1,1 -48,0"
               />
             </defs>
             <text
