@@ -301,7 +301,7 @@ export default function LandingGameSimple() {
       setTrucks(prev => [...prev, newTruck])
     }
 
-    const interval = setInterval(spawnTruck, 1200) // Truck every 1.2 seconds - competitive!
+    const interval = setInterval(spawnTruck, 850) // Truck every 0.85 seconds - VERY competitive!
     return () => clearInterval(interval)
   }, [gameActive, mounted, isMobile])
 
@@ -318,7 +318,7 @@ export default function LandingGameSimple() {
 
         return prevTrucks
           .map(truck => {
-            const speed = 4 // Faster trucks = more pressure!
+            const speed = 5.5 // MUCH faster trucks = intense pressure!
             let newX = truck.x
             let newDelivered = truck.delivered
 
@@ -855,7 +855,8 @@ export default function LandingGameSimple() {
         gridTemplateColumns: `repeat(${cols}, ${cellSize}px)`,
         gap: `${gap}px`,
         zIndex: 10,
-        margin: '0 auto',
+        marginLeft: isMobile ? 'auto' : '90px',
+        marginRight: isMobile ? 'auto' : 'auto',
       }}>
         {grid.map((row, rowIndex) =>
           row.map((cell, colIndex) => (
@@ -923,7 +924,7 @@ export default function LandingGameSimple() {
           {/* Dark overlay */}
           <div
             style={{
-              position: 'fixed',
+              position: 'absolute',
               top: 0,
               left: 0,
               right: 0,
@@ -936,7 +937,7 @@ export default function LandingGameSimple() {
           {/* End card */}
           <div
             style={{
-              position: 'fixed',
+              position: 'absolute',
               top: '50%',
               left: isMobile ? '16px' : '50%',
               right: isMobile ? '16px' : 'auto',
