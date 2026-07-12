@@ -213,7 +213,18 @@ const caseStudies = {
         id: 'context-problem',
         title: '02 — Context & Problem',
         headline: 'Fragmented data was forcing humans to do the work a system should have done',
-        content: `<p>The United States faces a $2.6 trillion infrastructure funding gap. Universities operate inside that pressure daily — managing research labs, dormitories, athletic centers, and historic buildings within a single portfolio, each with different governance layers, capital cycles, and maintenance volatility. Despite that complexity, daily operations ran on fragmented tools.</p>
+        content: `<div style="width: 100%; min-height: 400px; background-color: #1C1917; border-radius: 8px; display: flex; align-items: center; justify-content: center; color: #FFFFFF; font-size: 14px; margin-bottom: 32px; position: relative;">
+  <div style="position: absolute; width: 80px; height: 80px; border-radius: 50%; background-color: rgba(255, 255, 255, 0.2); display: flex; align-items: center; justify-content: center; cursor: pointer;">
+    <div style="width: 0; height: 0; border-top: 15px solid transparent; border-bottom: 15px solid transparent; border-left: 25px solid #FFFFFF; margin-left: 5px;"></div>
+  </div>
+  <div style="position: absolute; bottom: 16px; left: 16px; color: #9CA3AF; font-size: 13px;">Video placeholder — Overview of the problem</div>
+</div>
+
+<p>The United States faces a $2.6 trillion infrastructure funding gap. Universities operate inside that pressure daily — managing research labs, dormitories, athletic centers, and historic buildings within a single portfolio, each with different governance layers, capital cycles, and maintenance volatility. Despite that complexity, daily operations ran on fragmented tools.</p>
+
+<div style="width: 100%; margin-top: 32px; margin-bottom: 32px;">
+  <img src="/images/lat/Market Gap.webp" alt="Market Gap Analysis" style="width: 100%; border-radius: 8px;" />
+</div>
 
 <p style="margin-top: 28px;">What fragmentation looked like on a Tuesday afternoon: a technician working underground loses network access and can't retrieve repair history — updates get logged later, sometimes from memory. A project manager prepares for a capital planning meeting by stitching together vendor calls, spreadsheets, emails, invoices, and consultant reports. By the time leadership convenes, decisions are made on partial visibility.</p>
 
