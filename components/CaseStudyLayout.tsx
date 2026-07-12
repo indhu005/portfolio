@@ -23,6 +23,7 @@ interface Section {
   title: string
   headline?: string
   content: string
+  customComponent?: React.ReactNode
 }
 
 interface TldrData {
@@ -377,16 +378,30 @@ export default function CaseStudyLayout({ caseStudy, slug }: CaseStudyLayoutProp
               )}
 
               {/* Section Text */}
-              <div
-                className="case-study-content"
-                style={{
-                  marginBottom: '32px',
-                  maxWidth: '850px',
-                  marginLeft: 'auto',
-                  marginRight: 'auto',
-                }}
-                dangerouslySetInnerHTML={{ __html: section.content }}
-              />
+              {section.customComponent ? (
+                <div
+                  className="case-study-content"
+                  style={{
+                    marginBottom: '32px',
+                    maxWidth: '850px',
+                    marginLeft: 'auto',
+                    marginRight: 'auto',
+                  }}
+                >
+                  {section.customComponent}
+                </div>
+              ) : (
+                <div
+                  className="case-study-content"
+                  style={{
+                    marginBottom: '32px',
+                    maxWidth: '850px',
+                    marginLeft: 'auto',
+                    marginRight: 'auto',
+                  }}
+                  dangerouslySetInnerHTML={{ __html: section.content }}
+                />
+              )}
 
               {/* Visual Content Area - Hidden for strategy, constraints, tradeoffs, context-problem, and turning-point sections */}
               {section.id !== 'strategy' && section.id !== 'constraints' && section.id !== 'tradeoffs' && section.id !== 'context-problem' && section.id !== 'turning-point' && (

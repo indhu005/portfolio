@@ -1,4 +1,5 @@
 import CaseStudyLayout from '@/components/CaseStudyLayout'
+import MisinfoFeaturesContent from '@/components/MisinfoFeaturesContent'
 
 const caseStudies = {
   keye: {
@@ -688,61 +689,8 @@ const caseStudies = {
         id: 'features',
         title: '05 — Features',
         headline: "The quiz builds the skill, Search and Scan provide the tool at the moment of need, Ask Us is the human fallback at the tool's limit",
-        content: `<p>Each feature came from a specific gap the research exposed — not a feature list.</p>
-
-<p style="margin-top: 36px; font-size: 20px; font-weight: 600;">The pivot: from Facebook to standalone</p>
-
-<p style="margin-top: 20px;">The first iteration was a Facebook Misinformation Center — fact-check labels, community reporting, a hub in the feed. Functional wireframes, sound logic, and dead on arrival: users wouldn't trust the vector of the problem as its solution. The wireframes got a diagonal line through them and the project started over, toward something independent and institutionally backed. That reframe opened every decision that followed.</p>
-
-<div style="width: 100%; min-height: 350px; background-color: #E5E7EB; border-radius: 8px; display: flex; align-items: center; justify-content: center; color: #9CA3AF; font-size: 14px; margin-top: 32px; margin-bottom: 48px;">The crossed-out Facebook wireframes — the killed direction, shown as it was killed</div>
-
-<p style="margin-top: 36px; font-size: 20px; font-weight: 600;">Feature 01 — Literacy Quiz</p>
-
-<p style="margin-top: 20px;">Tutorials and explainers weren't changing behavior; testing on early "how to spot misinformation" modules showed users disengaging as if watching homework. The first quiz format — read a claim, type a response — lost users by question four. The constraint became the feature: under 40 seconds per session, one hand, something you'd pick up on a train. That produced a swipe-based True/False interaction using real social media content — a deliberate risk, because sanitized hypotheticals don't build recognition of the actual formats people encounter (in production this would need editorial oversight, which I documented explicitly). Level progression kept it a living resource, because misinformation formats never stop evolving.</p>
-
-<div style="display: flex; gap: 24px; margin-top: 32px; flex-wrap: wrap;">
-  <div style="flex: 1; min-width: 250px; position: relative;">
-    <div style="background-color: #F3F4F6; padding: 24px; border-radius: 16px; position: relative;">
-      <p style="font-style: italic; font-family: 'Fraunces', serif; color: #1F2937; margin: 0;">"I like the way you use TikTok language to create the UI experience."</p>
-      <p style="margin-top: 12px; font-size: 13px; color: #6B7280;">— capstone reviewer</p>
-    </div>
-    <div style="width: 0; height: 0; border-left: 12px solid transparent; border-right: 12px solid transparent; border-top: 12px solid #F3F4F6; position: absolute; bottom: -12px; left: 32px;"></div>
-  </div>
-</div>
-
-<p style="margin-top: 32px;">That quote captured the intent precisely: the quiz was designed in the visual register of the platforms where misinformation actually spreads, not the register of an educational tool.</p>
-
-<p style="margin-top: 28px;">After Misinfo Day, completion states were redesigned around skill progression rather than score — "You're getting better at spotting this" outperformed a percentage. Reviewer feedback pushed one more iteration: users wanted to know why an item was false, which conflicted with the 40-second constraint. The resolution was a post-answer reveal — speed for the question, depth for the reveal, sources one tap away.</p>
-
-<div style="width: 100%; min-height: 400px; background-color: #E5E7EB; border-radius: 8px; display: flex; align-items: center; justify-content: center; color: #9CA3AF; font-size: 14px; margin-top: 32px; margin-bottom: 48px;">Quiz progression — swipe interaction, level map, and the post-answer reveal state</div>
-
-<p style="margin-top: 36px; font-size: 20px; font-weight: 600;">Feature 02 — Search & Image Search</p>
-
-<p style="margin-top: 20px;">Verification had to come to users, not the reverse. A unified entry point handled both links and images so users didn't have to choose a tool at the moment of uncertainty. The rating system used four states — True, Misleading, False, Satire — because the Misleading state was the most important call in the feature: most misinformation isn't false, it's selectively true and context-stripped, and a binary would validate it. In the 14-participant usability round, users loved the color-coded clarity but feared "just red/green could feel like policing truth" — they wanted the why. That produced the layered approach: a fast badge upfront, one tap to reveal sources, fact-checkers, and reasoning. Results always showed multiple sources — Reuters, AP, a fact-check org side by side — because the research said users wanted institutional backing they could verify, not a verdict.</p>
-
-<div style="width: 100%; min-height: 350px; background-color: #E5E7EB; border-radius: 8px; display: flex; align-items: center; justify-content: center; color: #9CA3AF; font-size: 14px; margin-top: 32px; margin-bottom: 48px;">Rating iteration before/after — flat color verdict vs. layered badge-plus-evidence</div>
-
-<p style="margin-top: 36px; font-size: 20px; font-weight: 600;">Feature 03 — Scan</p>
-
-<p style="margin-top: 20px;">Scan came from Misinfo Day rather than preceding it: what happens when the misinformation is a printed flyer, a newspaper, a poster? The offline vector was real and completely unaddressed. The camera interaction came from observing older users — they hesitated and erred on forms, but scanned instantly and confidently, a behavior already learned from restaurant QR codes. OCR converted headlines to searchable text invisibly; the experience was point-and-get-an-answer. The same four-state rating kept the system coherent across features.</p>
-
-<div style="width: 100%; min-height: 350px; background-color: #E5E7EB; border-radius: 8px; display: flex; align-items: center; justify-content: center; color: #9CA3AF; font-size: 14px; margin-top: 32px; margin-bottom: 48px;">Image placeholder</div>
-
-<p style="margin-top: 36px; font-size: 20px; font-weight: 600;">Feature 04 — Ask Us</p>
-
-<p style="margin-top: 20px;">Some misinformation exists in no database — private WhatsApp forwards, local rumors, freshly manipulated images. Automated systems can't catch what they've never seen, and users who distrusted platform verdicts wouldn't trust an AI verdict on emotionally charged content either. Human judgment backed by journalistic expertise was the only answer matching what users said they'd trust. Testing exposed two trust gaps: people didn't know whether a human or a machine would answer, and didn't know how long it would take. The fixes were structural — a clear response-time expectation, a Pending / Under Review / Responded status system, and after Misinfo Day, a simplification from a multi-field form to three steps, because older participants were struggling with entry. I didn't pretend to resolve the staffing economics cleanly: the feature was explicitly conceived to live inside an existing news ecosystem where moderation infrastructure already exists. (In 2026, AI would handle triage with human editors on contested content — the trust benefit at viable economics.)</p>
-
-<p style="margin-top: 36px;">What connects all four: the quiz builds the skill, Search and Scan provide the tool at the moment of need, Ask Us is the human fallback at the tool's limit. None of them tell users what to think. They give users what they need to think better.</p>
-
-<div style="display: flex; gap: 24px; margin-top: 40px; flex-wrap: wrap;">
-  <div style="flex: 1; min-width: 250px; position: relative;">
-    <div style="background-color: #F3F4F6; padding: 24px; border-radius: 16px; position: relative;">
-      <p style="font-style: italic; font-family: 'Fraunces', serif; color: #1F2937; margin: 0;">"The prototype is very well crafted… the experience looks easy and also fun."</p>
-      <p style="margin-top: 12px; font-size: 13px; color: #6B7280;">— capstone reviewer</p>
-    </div>
-    <div style="width: 0; height: 0; border-left: 12px solid transparent; border-right: 12px solid transparent; border-top: 12px solid #F3F4F6; position: absolute; bottom: -12px; left: 32px;"></div>
-  </div>
-</div>`
+        content: '',
+        customComponent: <MisinfoFeaturesContent />
       },
       {
         id: 'truemedia',
