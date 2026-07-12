@@ -598,15 +598,17 @@ export default function LandingGameSimple() {
           Plant faster than the city can build. Good luck.
         </div>
 
-        {/* Explanation */}
-        <div style={{
-          fontSize: isMobile ? '13px' : '14px',
-          color: '#6B7280',
-          marginBottom: isMobile ? '8px' : '12px',
-          lineHeight: '1.5',
-        }}>
-          Trucks deliver buildings to empty spaces. Plant trees to keep the ecosystem alive.
-        </div>
+        {/* Explanation - desktop only */}
+        {!isMobile && (
+          <div style={{
+            fontSize: '14px',
+            color: '#6B7280',
+            marginBottom: '12px',
+            lineHeight: '1.5',
+          }}>
+            Trucks deliver buildings to empty spaces. Plant trees to keep the ecosystem alive.
+          </div>
+        )}
 
         {/* Instruction */}
         {!gameEnded && (
