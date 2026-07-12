@@ -44,6 +44,12 @@ a:active {
   line-height: 1.7;
 }
 
+/* Ensure images within case study content stay constrained to max-width */
+.case-study-content img {
+  max-width: 100%;
+  display: block;
+}
+
 /* Pull quote styling */
 .pull-quote {
   border-left: 3px solid var(--border-accent);

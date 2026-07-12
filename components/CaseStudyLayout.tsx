@@ -235,7 +235,7 @@ export default function CaseStudyLayout({ caseStudy, slug }: CaseStudyLayoutProp
               ref={(el) => { sectionRefs.current[section.id] = el }}
               style={{
                 marginBottom: index === caseStudy.sections.length - 1 ? '0' : '112px',
-                maxWidth: '1100px',
+                maxWidth: '850px',
                 marginLeft: 'auto',
                 marginRight: 'auto',
               }}
