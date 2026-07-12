@@ -393,7 +393,7 @@ export default function Home() {
               About
             </a>
             <a
-              href="https://www.linkedin.com/in/indhuvasanth"
+              href="https://www.linkedin.com/in/indhu05/"
               target="_blank"
               rel="noopener noreferrer"
               style={{
@@ -414,7 +414,7 @@ export default function Home() {
               LinkedIn ↗
             </a>
             <a
-              href="mailto:indhu.vasven@gmail.com"
+              href="mailto:indhuve05@gmail.com"
               style={{
                 fontSize: isMobile ? '15px' : '16px',
                 fontWeight: 500,

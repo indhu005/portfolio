@@ -183,6 +183,7 @@ export default function LandingGameSimple() {
   const [localRegion, setLocalRegion] = useState('')
   const [hasInteracted, setHasInteracted] = useState(false)
   const [playCount, setPlayCount] = useState(0) // Track replays for difficulty
+  const [isDaytime, setIsDaytime] = useState(true) // Track if it's day or night
   const animationFrameRef = useRef<number>()
   const truckAnimationRef = useRef<number>()
 
@@ -198,6 +199,11 @@ export default function LandingGameSimple() {
   useEffect(() => {
     const updateTime = () => {
       const now = new Date()
+      const hour = now.getHours()
+
+      // Daytime: 6am - 6pm (6-18), Nighttime: 6pm - 6am
+      setIsDaytime(hour >= 6 && hour < 18)
+
       setLocalTime(
         now.toLocaleTimeString('en-US', {
           hour: '2-digit',
@@ -859,6 +865,27 @@ export default function LandingGameSimple() {
         display: 'flex',
         justifyContent: 'center',
       }}>
+        {/* Sun/Moon - top right corner */}
+        <div
+          style={{
+            position: 'absolute',
+            top: '20px',
+            right: isMobile ? '20px' : '40px',
+            pointerEvents: 'none',
+            zIndex: 5,
+          }}
+        >
+          <img
+            src={isDaytime ? '/images/home/sun.svg' : '/images/home/moon.svg'}
+            alt={isDaytime ? 'sun' : 'moon'}
+            style={{
+              width: isMobile ? '20px' : '28px',
+              height: isMobile ? '20px' : '28px',
+              objectFit: 'contain',
+            }}
+          />
+        </div>
+
         {/* Birds layer */}
         {birds.map(bird => (
           <div
