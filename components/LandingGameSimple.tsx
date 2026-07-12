@@ -15,6 +15,10 @@ interface Bird {
   y: number
   vx: number
   vy: number
+  variant: number // 1, 2, or 3 for different bird SVGs
+  onTree?: boolean // true if sitting on a tree
+  treeRow?: number // which tree row
+  treeCol?: number // which tree column
 }
 
 interface Truck {
@@ -453,36 +457,45 @@ export default function LandingGameSimple() {
     setSmokes([]) // Clear smokes on restart
   }
 
-  // Initialize birds
+  // Initialize birds - mix of flying and sitting on trees
   useEffect(() => {
     if (!mounted) return
 
-    const initialBirds = Array.from({ length: 3 }, (_, i) => ({
+    const initialBirds = Array.from({ length: 5 }, (_, i) => ({
       id: i,
       x: Math.random() * 80 + 10, // 10-90%
       y: Math.random() * 60 + 10, // 10-70%
       vx: (Math.random() - 0.5) * 0.3,
       vy: (Math.random() - 0.5) * 0.2,
+      variant: Math.floor(Math.random() * 3) + 1, // 1, 2, or 3
+      onTree: false,
     }))
 
     setBirds(initialBirds)
   }, [mounted])
 
-  // Animate birds
+  // Animate birds and land some on trees
   useEffect(() => {
     if (birds.length === 0) return
 
     const animate = () => {
       setBirds(prev =>
         prev
-          .map(bird => ({
-            ...bird,
-            x: bird.x + bird.vx,
-            y: bird.y + bird.vy,
-            vx: bird.vx + (Math.random() - 0.5) * 0.05,
-            vy: bird.vy + (Math.random() - 0.5) * 0.05,
-          }))
-          .filter(bird => bird.x > -10 && bird.x < 110 && bird.y > 0 && bird.y < 100)
+          .map(bird => {
+            // Birds sitting on trees don't move
+            if (bird.onTree) {
+              return bird
+            }
+
+            return {
+              ...bird,
+              x: bird.x + bird.vx,
+              y: bird.y + bird.vy,
+              vx: bird.vx + (Math.random() - 0.5) * 0.05,
+              vy: bird.vy + (Math.random() - 0.5) * 0.05,
+            }
+          })
+          .filter(bird => bird.onTree || (bird.x > -10 && bird.x < 110 && bird.y > 0 && bird.y < 100))
       )
 
       // Scale bird count with tree count
@@ -499,6 +512,8 @@ export default function LandingGameSimple() {
               y: Math.random() * 60 + 10,
               vx: (Math.random() - 0.5) * 0.3,
               vy: (Math.random() - 0.5) * 0.2,
+              variant: Math.floor(Math.random() * 3) + 1,
+              onTree: false,
             },
           ]
         }
@@ -516,6 +531,55 @@ export default function LandingGameSimple() {
       }
     }
   }, [birds.length, grid])
+
+  // Land birds on trees randomly
+  useEffect(() => {
+    const interval = setInterval(() => {
+      const trees = grid.flat().reduce<Array<{row: number, col: number}>>((acc, cell, index) => {
+        if (cell.state === 'tree') {
+          const cols = isMobile ? GRID_COLS_MOBILE : GRID_COLS_DESKTOP
+          acc.push({ row: Math.floor(index / cols), col: index % cols })
+        }
+        return acc
+      }, [])
+
+      if (trees.length > 0 && Math.random() < 0.3) {
+        const tree = trees[Math.floor(Math.random() * trees.length)]
+        const flyingBirds = birds.filter(b => !b.onTree)
+
+        if (flyingBirds.length > 0) {
+          const birdToLand = flyingBirds[Math.floor(Math.random() * flyingBirds.length)]
+
+          setBirds(prev => prev.map(b =>
+            b.id === birdToLand.id
+              ? { ...b, onTree: true, treeRow: tree.row, treeCol: tree.col }
+              : b
+          ))
+        }
+      }
+
+      // Sometimes make sitting birds fly away
+      const sittingBirds = birds.filter(b => b.onTree)
+      if (sittingBirds.length > 0 && Math.random() < 0.2) {
+        const birdToFly = sittingBirds[Math.floor(Math.random() * sittingBirds.length)]
+
+        setBirds(prev => prev.map(b =>
+          b.id === birdToFly.id
+            ? {
+                ...b,
+                onTree: false,
+                treeRow: undefined,
+                treeCol: undefined,
+                vx: (Math.random() - 0.5) * 0.3,
+                vy: -Math.random() * 0.3, // Fly upward
+              }
+            : b
+        ))
+      }
+    }, 3000) // Check every 3 seconds
+
+    return () => clearInterval(interval)
+  }, [birds, grid, isMobile])
 
   if (!mounted) {
     return (
@@ -915,28 +979,54 @@ export default function LandingGameSimple() {
         </div>
 
         {/* Birds layer */}
-        {birds.map(bird => (
-          <div
-            key={bird.id}
-            style={{
-              position: 'absolute',
+        {birds.map(bird => {
+          const cellSize = isMobile ? 48 : 80
+          const gap = isMobile ? 8 : 16
+
+          // Calculate position for birds sitting on trees
+          let positionStyle = {}
+          if (bird.onTree && bird.treeRow !== undefined && bird.treeCol !== undefined) {
+            const treeX = bird.treeCol * (cellSize + gap) + cellSize / 2
+            const treeY = bird.treeRow * (cellSize + gap) + cellSize * 0.2 // Sit near top of tree
+
+            positionStyle = {
+              left: `${treeX}px`,
+              top: `${treeY}px`,
+              transform: 'translate(-50%, -50%)',
+            }
+          } else {
+            positionStyle = {
               left: `${bird.x}%`,
               top: `${bird.y}%`,
-              pointerEvents: 'none',
-              zIndex: 1,
-            }}
-          >
-            <img
-              src="/images/home/Birds.svg"
-              alt="bird"
+            }
+          }
+
+          const birdVariants = ['Birds.svg', 'Birds 02.svg', 'Birds 03.svg']
+          const birdSrc = `/images/home/${birdVariants[(bird.variant - 1) % 3]}`
+
+          return (
+            <div
+              key={bird.id}
               style={{
-                width: '24px',
-                height: '18px',
-                objectFit: 'contain',
+                position: 'absolute',
+                ...positionStyle,
+                pointerEvents: 'none',
+                zIndex: bird.onTree ? 25 : 1, // Higher z-index when on tree
+                transition: bird.onTree ? 'all 0.5s ease-out' : 'none',
               }}
-            />
-          </div>
-        ))}
+            >
+              <img
+                src={birdSrc}
+                alt="bird"
+                style={{
+                  width: '24px',
+                  height: '18px',
+                  objectFit: 'contain',
+                }}
+              />
+            </div>
+          )
+        })}
 
         {/* Grid */}
         <div style={{
