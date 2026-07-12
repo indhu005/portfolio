@@ -182,6 +182,7 @@ export default function LandingGameSimple() {
   const [localTime, setLocalTime] = useState('')
   const [localRegion, setLocalRegion] = useState('')
   const [hasInteracted, setHasInteracted] = useState(false)
+  const [playCount, setPlayCount] = useState(0) // Track replays for difficulty
   const animationFrameRef = useRef<number>()
   const truckAnimationRef = useRef<number>()
 
@@ -320,9 +321,11 @@ export default function LandingGameSimple() {
       setTrucks(prev => [...prev, newTruck])
     }
 
-    const interval = setInterval(spawnTruck, 850) // Truck every 0.85 seconds - VERY competitive!
+    // Adaptive difficulty: easier first time, harder on replay
+    const spawnInterval = playCount === 0 ? 1200 : 850 // 1.2s first time, 0.85s on replay
+    const interval = setInterval(spawnTruck, spawnInterval)
     return () => clearInterval(interval)
-  }, [gameActive, mounted, isMobile])
+  }, [gameActive, mounted, isMobile, playCount])
 
   // Animate trucks
   useEffect(() => {
@@ -337,7 +340,7 @@ export default function LandingGameSimple() {
 
         return prevTrucks
           .map(truck => {
-            const speed = 5.5 // MUCH faster trucks = intense pressure!
+            const speed = playCount === 0 ? 4 : 5.5 // Easier first time, harder on replay
             let newX = truck.x
             let newDelivered = truck.delivered
 
@@ -399,7 +402,7 @@ export default function LandingGameSimple() {
         cancelAnimationFrame(truckAnimationRef.current)
       }
     }
-  }, [isMobile])
+  }, [isMobile, playCount])
 
   // Restart game
   const restartGame = () => {
@@ -409,6 +412,7 @@ export default function LandingGameSimple() {
     setGameActive(true)
     setGameEnded(false)
     setHasInteracted(false) // Reset interaction tracking
+    setPlayCount(prev => prev + 1) // Increment for harder difficulty
     setGrid(
       Array(GRID_ROWS)
         .fill(null)
@@ -544,31 +548,70 @@ export default function LandingGameSimple() {
         <div style={{
           fontSize: isMobile ? '12px' : '12px',
           color: '#6B7280',
-          marginBottom: isMobile ? '8px' : '16px',
+          marginBottom: isMobile ? '6px' : '12px',
           lineHeight: '1.5',
         }}>
           {localRegion} • {localTime}
         </div>
 
+        {/* Context - design philosophy */}
+        <div style={{
+          fontSize: isMobile ? '14px' : '15px',
+          fontWeight: 500,
+          color: '#57534E',
+          marginBottom: isMobile ? '6px' : '10px',
+          lineHeight: '1.5',
+        }}>
+          Good design isn't about building fast — it's about building right.
+        </div>
+
         {/* Tagline */}
         <div style={{
-          fontSize: isMobile ? '16px' : '18px',
+          fontSize: isMobile ? '15px' : '17px',
           fontWeight: 600,
           color: '#1C1917',
-          marginBottom: isMobile ? '8px' : '16px',
+          marginBottom: isMobile ? '6px' : '12px',
           fontFamily: 'var(--font-fraunces), serif',
           lineHeight: '1.4',
         }}>
-          Plant faster than the city can build. Good luck.
+          Can you beat the clock?
         </div>
 
-        {/* Instruction */}
+        {/* Instruction with skip link */}
         {!gameEnded && (
           <div style={{
             fontSize: isMobile ? '13px' : '14px',
             color: '#6B7280',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            gap: '8px',
+            flexWrap: 'wrap',
           }}>
-            {isMobile ? 'Tap' : 'Click'} to plant trees.
+            <span>{isMobile ? 'Tap' : 'Click'} to plant trees</span>
+            <span style={{ color: '#D1D5DB' }}>•</span>
+            <a
+              href="#case-studies"
+              onClick={(e) => {
+                e.preventDefault()
+                document.getElementById('case-studies')?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+              }}
+              style={{
+                color: '#86C232',
+                textDecoration: 'none',
+                fontWeight: 500,
+                borderBottom: '1px solid transparent',
+                transition: 'border-color 0.2s',
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.borderBottomColor = '#86C232'
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.borderBottomColor = 'transparent'
+              }}
+            >
+              Skip to work ↓
+            </a>
           </div>
         )}
       </div>
@@ -983,14 +1026,18 @@ export default function LandingGameSimple() {
               })()}
             </div>
 
-            {/* Bridge line */}
-            <div style={{ fontSize: '14px', fontWeight: 400, color: '#9CA3AF', lineHeight: '1.5', marginBottom: '20px' }}>
+            {/* Bridge line - design philosophy */}
+            <div style={{ fontSize: '14px', fontWeight: 400, color: '#9CA3AF', lineHeight: '1.6', marginBottom: '24px' }}>
               {(() => {
                 const trees = grid.flat().filter(cell => cell.state === 'tree' || cell.state === 'sapling').length
                 const buildings = grid.flat().filter(cell => cell.state === 'building').length
-                return trees >= buildings
-                  ? "Small, deliberate choices — that's the whole job."
-                  : "The buildings had a head start this time."
+                if (trees >= buildings) {
+                  return "Every tree you planted mattered. That's how I design — small, deliberate choices that compound into something meaningful."
+                } else if (planted > 0) {
+                  return "The city moved fast, but you fought back. Real design isn't about perfection — it's about making thoughtful choices under pressure."
+                } else {
+                  return "Sometimes watching is learning too. I build products where every interaction counts."
+                }
               })()}
             </div>
 

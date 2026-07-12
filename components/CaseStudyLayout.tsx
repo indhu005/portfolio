@@ -119,7 +119,7 @@ export default function CaseStudyLayout({ caseStudy, slug }: CaseStudyLayoutProp
             top: '20px',
             left: '20px',
             zIndex: 1000,
-            background: '#F42E5F',
+            background: '#374151',
             color: 'white',
             border: 'none',
             borderRadius: '8px',
