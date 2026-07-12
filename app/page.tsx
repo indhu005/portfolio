@@ -1,7 +1,6 @@
 'use client'
 import Sidebar from '@/components/Sidebar'
 import LandingGameSimple from '@/components/LandingGameSimple'
-import IntroAnimation from '@/components/IntroAnimation'
 import { useState, useEffect } from 'react'
 
 const useMediaQuery = (query: string) => {
@@ -24,14 +23,11 @@ const useMediaQuery = (query: string) => {
 
 export default function Home() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
-  const [showIntro, setShowIntro] = useState(true)
   const isMobile = useMediaQuery('(max-width: 768px)')
   const isTablet = useMediaQuery('(max-width: 1024px)')
   const isWideDesktop = useMediaQuery('(min-width: 2200px)')
 
   return (
-    <>
-      {showIntro && <IntroAnimation onComplete={() => setShowIntro(false)} />}
 
     <div style={{
       display: 'flex',
@@ -53,7 +49,7 @@ export default function Home() {
             top: '20px',
             left: '20px',
             zIndex: 1000,
-            background: '#374151',
+            background: '#000000',
             color: 'white',
             border: 'none',
             borderRadius: '8px',
@@ -369,6 +365,5 @@ export default function Home() {
 
       </div>
     </div>
-    </>
   )
 }

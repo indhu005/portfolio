@@ -548,70 +548,31 @@ export default function LandingGameSimple() {
         <div style={{
           fontSize: isMobile ? '12px' : '12px',
           color: '#6B7280',
-          marginBottom: isMobile ? '6px' : '12px',
+          marginBottom: isMobile ? '8px' : '16px',
           lineHeight: '1.5',
         }}>
           {localRegion} • {localTime}
         </div>
 
-        {/* Context - design philosophy */}
-        <div style={{
-          fontSize: isMobile ? '14px' : '15px',
-          fontWeight: 500,
-          color: '#57534E',
-          marginBottom: isMobile ? '6px' : '10px',
-          lineHeight: '1.5',
-        }}>
-          Good design isn't about building fast — it's about building right.
-        </div>
-
         {/* Tagline */}
         <div style={{
-          fontSize: isMobile ? '15px' : '17px',
+          fontSize: isMobile ? '16px' : '18px',
           fontWeight: 600,
           color: '#1C1917',
-          marginBottom: isMobile ? '6px' : '12px',
+          marginBottom: isMobile ? '8px' : '16px',
           fontFamily: 'var(--font-fraunces), serif',
           lineHeight: '1.4',
         }}>
-          Can you beat the clock?
+          Plant faster than the city can build. Good luck.
         </div>
 
-        {/* Instruction with skip link */}
+        {/* Instruction */}
         {!gameEnded && (
           <div style={{
             fontSize: isMobile ? '13px' : '14px',
             color: '#6B7280',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            gap: '8px',
-            flexWrap: 'wrap',
           }}>
-            <span>{isMobile ? 'Tap' : 'Click'} to plant trees</span>
-            <span style={{ color: '#D1D5DB' }}>•</span>
-            <a
-              href="#case-studies"
-              onClick={(e) => {
-                e.preventDefault()
-                document.getElementById('case-studies')?.scrollIntoView({ behavior: 'smooth', block: 'start' })
-              }}
-              style={{
-                color: '#86C232',
-                textDecoration: 'none',
-                fontWeight: 500,
-                borderBottom: '1px solid transparent',
-                transition: 'border-color 0.2s',
-              }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.borderBottomColor = '#86C232'
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.borderBottomColor = 'transparent'
-              }}
-            >
-              Skip to work ↓
-            </a>
+            {isMobile ? 'Tap' : 'Click'} to plant trees.
           </div>
         )}
       </div>
