@@ -238,6 +238,7 @@ const GroundMarker = ({ size = 60 }: { size?: number }) => {
 export default function LandingGameSimple() {
   const [mounted, setMounted] = useState(false)
   const [isMobile, setIsMobile] = useState(false)
+  const [isTablet, setIsTablet] = useState(false)
   const [grid, setGrid] = useState<Cell[][]>([])
   const [planted, setPlanted] = useState(0)
   const [birds, setBirds] = useState<Bird[]>([])
@@ -258,10 +259,14 @@ export default function LandingGameSimple() {
 
   useEffect(() => {
     setMounted(true)
-    const checkMobile = () => setIsMobile(window.innerWidth < 768)
-    checkMobile()
-    window.addEventListener('resize', checkMobile)
-    return () => window.removeEventListener('resize', checkMobile)
+    const checkScreenSize = () => {
+      const width = window.innerWidth
+      setIsMobile(width < 768)
+      setIsTablet(width >= 768 && width <= 1024) // iPad range
+    }
+    checkScreenSize()
+    window.addEventListener('resize', checkScreenSize)
+    return () => window.removeEventListener('resize', checkScreenSize)
   }, [])
 
   // Get local time and region
@@ -680,7 +685,7 @@ export default function LandingGameSimple() {
       backgroundColor: '#FFFFFF',
       borderRadius: '4px',
       padding: isMobile ? '16px' : '20px',
-      paddingBottom: isMobile ? '90px' : '20px',
+      paddingBottom: (isMobile || isTablet) ? '90px' : '20px',
       display: 'flex',
       flexDirection: 'column',
       alignItems: 'center',
@@ -719,8 +724,8 @@ export default function LandingGameSimple() {
           Plant faster than the city can build. Good luck.
         </div>
 
-        {/* Explanation - desktop only */}
-        {!isMobile && (
+        {/* Explanation - desktop only (not tablet) */}
+        {!isMobile && !isTablet && (
           <div style={{
             fontSize: '14px',
             color: '#6B7280',
@@ -743,7 +748,7 @@ export default function LandingGameSimple() {
       </div>
 
       {/* Mobile/Tablet: Bottom horizontal strip */}
-      {isMobile && gameActive && !gameEnded && (
+      {(isMobile || isTablet) && gameActive && !gameEnded && (
         <div style={{
           position: 'absolute',
           bottom: '16px',
@@ -863,8 +868,8 @@ export default function LandingGameSimple() {
         </div>
       )}
 
-      {/* Desktop: Yellow ? button - bottom right */}
-      {!isMobile && (
+      {/* Desktop only: Yellow ? button - bottom right (tablets use mobile strip) */}
+      {!isMobile && !isTablet && (
         <button
           onClick={() => {
             setShowLearnMore(true)
@@ -915,8 +920,8 @@ export default function LandingGameSimple() {
         </button>
       )}
 
-      {/* Desktop: Stats panel on right side */}
-      {!isMobile && gameActive && !gameEnded && (
+      {/* Desktop only: Stats panel on right side (tablets use mobile bottom strip) */}
+      {!isMobile && !isTablet && gameActive && !gameEnded && (
         <div style={{
           position: 'absolute',
           top: '95px',
@@ -1093,8 +1098,8 @@ export default function LandingGameSimple() {
         gridTemplateColumns: `repeat(${cols}, ${cellSize}px)`,
         gap: `${gap}px`,
         zIndex: 10,
-        marginLeft: isMobile ? 'auto' : '90px',
-        marginRight: isMobile ? 'auto' : 'auto',
+        marginLeft: (isMobile || isTablet) ? 'auto' : '90px',
+        marginRight: (isMobile || isTablet) ? 'auto' : 'auto',
       }}>
         {grid.map((row, rowIndex) =>
           row.map((cell, colIndex) => (
