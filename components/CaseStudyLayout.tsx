@@ -188,11 +188,11 @@ export default function CaseStudyLayout({ caseStudy, slug }: CaseStudyLayoutProp
             <div style={{ display: 'flex', alignItems: 'baseline', gap: isMobile ? '8px' : '12px', flexWrap: 'wrap' }}>
               <span style={{
                 fontFamily: 'inherit',
-                fontSize: isMobile ? '14px' : '16px',
+                fontSize: isMobile ? '14px' : isTablet ? '14px' : '16px',
                 fontWeight: 700,
                 color: '#1C1917',
               }}>{caseStudy.title}</span>
-              {!isMobile && (
+              {!isMobile && !isTablet && (
                 <span style={{
                   fontSize: '14px',
                   fontWeight: 400,
@@ -200,7 +200,7 @@ export default function CaseStudyLayout({ caseStudy, slug }: CaseStudyLayoutProp
                 }}>— {caseStudy.subtitle}</span>
               )}
             </div>
-            {!isMobile && (
+            {!isMobile && !isTablet && (
               <span style={{
                 fontSize: '14px',
                 fontWeight: 400,
