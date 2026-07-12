@@ -45,7 +45,7 @@ const GRID_COLS_MOBILE = 6
 const ROUND_DURATION = 10 // 10 seconds
 
 // Simple tree component - full grown tree with sway animation
-const TreeIcon = ({ size = 60, variant = 0 }: { size?: number; variant?: number }) => {
+const TreeIcon = ({ size = 60, variant = 0, isDaytime = true }: { size?: number; variant?: number; isDaytime?: boolean }) => {
   const [isSwaying, setIsSwaying] = useState(false)
   const treeVariants = ['tree 01 (1).svg', 'tree 01 (2).svg', 'tree 01 (3).svg', 'tree 01 (4).svg', 'tree 01 (5).svg']
   const treeFile = treeVariants[variant % 5]
@@ -70,20 +70,22 @@ const TreeIcon = ({ size = 60, variant = 0 }: { size?: number; variant?: number 
 
   return (
     <>
-      {/* Shadow */}
-      <div
-        style={{
-          position: 'absolute',
-          width: size * 0.6,
-          height: size * 0.15,
-          bottom: '5%',
-          left: '50%',
-          transform: 'translateX(-50%)',
-          background: 'radial-gradient(ellipse, rgba(0, 0, 0, 0.3) 0%, transparent 70%)',
-          zIndex: 2,
-          filter: 'blur(2px)',
-        }}
-      />
+      {/* Shadow - only during daytime */}
+      {isDaytime && (
+        <div
+          style={{
+            position: 'absolute',
+            width: size * 0.6,
+            height: size * 0.15,
+            bottom: '0%',
+            left: '50%',
+            transform: 'translateX(-50%)',
+            background: 'radial-gradient(ellipse, rgba(0, 0, 0, 0.3) 0%, transparent 70%)',
+            zIndex: 2,
+            filter: 'blur(2px)',
+          }}
+        />
+      )}
       {/* Tree */}
       <img
         src={`/images/home/${treeFile}`}
@@ -105,7 +107,7 @@ const TreeIcon = ({ size = 60, variant = 0 }: { size?: number; variant?: number 
 }
 
 // Sapling component - smaller tree with grow animation
-const SaplingIcon = ({ size = 40, variant = 0 }: { size?: number; variant?: number }) => {
+const SaplingIcon = ({ size = 40, variant = 0, isDaytime = true }: { size?: number; variant?: number; isDaytime?: boolean }) => {
   const [isGrowing, setIsGrowing] = useState(true)
   const treeVariants = ['tree 01 (1).svg', 'tree 01 (2).svg', 'tree 01 (3).svg', 'tree 01 (4).svg', 'tree 01 (5).svg']
   const treeFile = treeVariants[variant % 5]
@@ -117,20 +119,22 @@ const SaplingIcon = ({ size = 40, variant = 0 }: { size?: number; variant?: numb
 
   return (
     <>
-      {/* Shadow */}
-      <div
-        style={{
-          position: 'absolute',
-          width: size * 0.5,
-          height: size * 0.12,
-          bottom: '5%',
-          left: '50%',
-          transform: 'translateX(-50%)',
-          background: 'radial-gradient(ellipse, rgba(0, 0, 0, 0.25) 0%, transparent 70%)',
-          zIndex: 2,
-          filter: 'blur(1.5px)',
-        }}
-      />
+      {/* Shadow - only during daytime */}
+      {isDaytime && (
+        <div
+          style={{
+            position: 'absolute',
+            width: size * 0.5,
+            height: size * 0.12,
+            bottom: '0%',
+            left: '50%',
+            transform: 'translateX(-50%)',
+            background: 'radial-gradient(ellipse, rgba(0, 0, 0, 0.25) 0%, transparent 70%)',
+            zIndex: 2,
+            filter: 'blur(1.5px)',
+          }}
+        />
+      )}
       {/* Sapling */}
       <img
         src={`/images/home/${treeFile}`}
@@ -153,7 +157,7 @@ const SaplingIcon = ({ size = 40, variant = 0 }: { size?: number; variant?: numb
 }
 
 // Building component with fast pop-in animation
-const BuildingIcon = ({ size = 60, variant = 0 }: { size?: number; variant?: number }) => {
+const BuildingIcon = ({ size = 60, variant = 0, isDaytime = true }: { size?: number; variant?: number; isDaytime?: boolean }) => {
   const [isPopping, setIsPopping] = useState(true)
   const buildingVariants = ['building 01.svg', 'building 02.svg', 'building 03.svg']
   const buildingFile = buildingVariants[variant % 3]
@@ -165,20 +169,22 @@ const BuildingIcon = ({ size = 60, variant = 0 }: { size?: number; variant?: num
 
   return (
     <>
-      {/* Shadow */}
-      <div
-        style={{
-          position: 'absolute',
-          width: size * 0.7,
-          height: size * 0.18,
-          bottom: '3%',
-          left: '50%',
-          transform: 'translateX(-50%)',
-          background: 'radial-gradient(ellipse, rgba(0, 0, 0, 0.35) 0%, transparent 70%)',
-          zIndex: 2,
-          filter: 'blur(2.5px)',
-        }}
-      />
+      {/* Shadow - only during daytime */}
+      {isDaytime && (
+        <div
+          style={{
+            position: 'absolute',
+            width: size * 0.7,
+            height: size * 0.18,
+            bottom: '0%',
+            left: '50%',
+            transform: 'translateX(-50%)',
+            background: 'radial-gradient(ellipse, rgba(0, 0, 0, 0.35) 0%, transparent 70%)',
+            zIndex: 2,
+            filter: 'blur(2.5px)',
+          }}
+        />
+      )}
       {/* Building */}
       <img
         src={`/images/home/${buildingFile}`}
@@ -1116,9 +1122,9 @@ export default function LandingGameSimple() {
               }}
             >
               {cell.state === 'empty' && <GroundMarker size={cellSize} />}
-              {cell.state === 'sapling' && <SaplingIcon variant={cell.variant || 0} size={isMobile ? 24 : 40} />}
-              {cell.state === 'tree' && <TreeIcon variant={cell.variant || 0} size={isMobile ? 36 : 60} />}
-              {cell.state === 'building' && <BuildingIcon variant={cell.variant || 0} size={isMobile ? 36 : 60} />}
+              {cell.state === 'sapling' && <SaplingIcon variant={cell.variant || 0} size={isMobile ? 24 : 40} isDaytime={isDaytime} />}
+              {cell.state === 'tree' && <TreeIcon variant={cell.variant || 0} size={isMobile ? 36 : 60} isDaytime={isDaytime} />}
+              {cell.state === 'building' && <BuildingIcon variant={cell.variant || 0} size={isMobile ? 36 : 60} isDaytime={isDaytime} />}
             </div>
           ))
         )}
