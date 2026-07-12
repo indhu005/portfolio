@@ -123,6 +123,7 @@ export default function Home() {
               fontWeight: 700,
               lineHeight: '1.1',
               color: '#1C1917',
+              marginTop: isWideDesktop ? '20px' : '0',
               marginBottom: isMobile ? '32px' : isWideDesktop ? '56px' : '48px',
               letterSpacing: '-0.02em',
             }}>

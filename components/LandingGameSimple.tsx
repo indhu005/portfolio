@@ -70,22 +70,6 @@ const TreeIcon = ({ size = 60, variant = 0, isDaytime = true }: { size?: number;
 
   return (
     <>
-      {/* Shadow - only during daytime */}
-      {isDaytime && (
-        <div
-          style={{
-            position: 'absolute',
-            width: size * 0.6,
-            height: size * 0.15,
-            bottom: '0%',
-            left: '50%',
-            transform: 'translateX(-50%)',
-            background: 'radial-gradient(ellipse, rgba(0, 0, 0, 0.3) 0%, transparent 70%)',
-            zIndex: 2,
-            filter: 'blur(2px)',
-          }}
-        />
-      )}
       {/* Tree */}
       <img
         src={`/images/home/${treeFile}`}
@@ -119,22 +103,6 @@ const SaplingIcon = ({ size = 40, variant = 0, isDaytime = true }: { size?: numb
 
   return (
     <>
-      {/* Shadow - only during daytime */}
-      {isDaytime && (
-        <div
-          style={{
-            position: 'absolute',
-            width: size * 0.5,
-            height: size * 0.12,
-            bottom: '0%',
-            left: '50%',
-            transform: 'translateX(-50%)',
-            background: 'radial-gradient(ellipse, rgba(0, 0, 0, 0.25) 0%, transparent 70%)',
-            zIndex: 2,
-            filter: 'blur(1.5px)',
-          }}
-        />
-      )}
       {/* Sapling */}
       <img
         src={`/images/home/${treeFile}`}
@@ -169,22 +137,6 @@ const BuildingIcon = ({ size = 60, variant = 0, isDaytime = true }: { size?: num
 
   return (
     <>
-      {/* Shadow - only during daytime */}
-      {isDaytime && (
-        <div
-          style={{
-            position: 'absolute',
-            width: size * 0.7,
-            height: size * 0.18,
-            bottom: '0%',
-            left: '50%',
-            transform: 'translateX(-50%)',
-            background: 'radial-gradient(ellipse, rgba(0, 0, 0, 0.35) 0%, transparent 70%)',
-            zIndex: 2,
-            filter: 'blur(2.5px)',
-          }}
-        />
-      )}
       {/* Building */}
       <img
         src={`/images/home/${buildingFile}`}
@@ -337,7 +289,6 @@ export default function LandingGameSimple() {
                   .map(() => Array(cols).fill(null).map(() => ({ state: 'empty' })))
               )
               setTrucks([])
-              setSmokes([])
             }, 100)
           }
           return 0
@@ -388,34 +339,19 @@ export default function LandingGameSimple() {
       const targetX = targetCol * (cellSize + gap)
       const startX = fromLeft ? -100 : (cols * (cellSize + gap) + 100)
 
-      // Spawn smoke 2 seconds before truck
-      const smokeId = Date.now() + Math.random()
-      const newSmoke: Smoke = {
-        id: smokeId,
-        x: fromLeft ? 0 : 100,
-        y: targetRow * (cellSize + gap) + (cellSize / 2),
+      // Spawn truck immediately (no smoke)
+      const newTruck: Truck = {
+        id: Date.now() + Math.random(),
+        row: targetRow,
+        col: targetCol,
+        x: startX,
+        y: targetRow * (cellSize + gap),
+        targetX: targetX,
         facingRight: fromLeft,
+        delivered: false,
       }
 
-      setSmokes(prev => [...prev, newSmoke])
-
-      // Remove smoke and spawn truck after 2 seconds
-      setTimeout(() => {
-        setSmokes(prev => prev.filter(s => s.id !== smokeId))
-
-        const newTruck: Truck = {
-          id: Date.now() + Math.random(),
-          row: targetRow,
-          col: targetCol,
-          x: startX,
-          y: targetRow * (cellSize + gap),
-          targetX: targetX,
-          facingRight: fromLeft,
-          delivered: false,
-        }
-
-        setTrucks(prev => [...prev, newTruck])
-      }, 2000)
+      setTrucks(prev => [...prev, newTruck])
     }
 
     // Adaptive difficulty: easier first time, harder on replay
@@ -516,7 +452,6 @@ export default function LandingGameSimple() {
         .map(() => Array(cols).fill(null).map(() => ({ state: 'empty' })))
     )
     setTrucks([]) // Clear trucks on restart
-    setSmokes([]) // Clear smokes on restart
   }
 
   // Initialize birds - mix of flying and sitting on trees
@@ -1098,8 +1033,8 @@ export default function LandingGameSimple() {
         gridTemplateColumns: `repeat(${cols}, ${cellSize}px)`,
         gap: `${gap}px`,
         zIndex: 10,
-        marginLeft: (isMobile || isTablet) ? 'auto' : '90px',
-        marginRight: (isMobile || isTablet) ? 'auto' : 'auto',
+        marginLeft: 'auto',
+        marginRight: 'auto',
       }}>
         {grid.map((row, rowIndex) =>
           row.map((cell, colIndex) => (
@@ -1134,31 +1069,6 @@ export default function LandingGameSimple() {
           ))
         )}
 
-        {/* Smoke overlay - appears before trucks */}
-        {smokes.map(smoke => {
-          const smokeSize = isMobile ? 20 : 30
-
-          return (
-            <img
-              key={smoke.id}
-              src="/images/home/smoke.svg"
-              alt="smoke"
-              style={{
-                position: 'absolute',
-                left: smoke.facingRight ? '0px' : 'auto',
-                right: smoke.facingRight ? 'auto' : '0px',
-                top: '0',
-                transform: `translateY(${smoke.y}px)`,
-                width: `${smokeSize}px`,
-                height: `${smokeSize}px`,
-                zIndex: 15,
-                pointerEvents: 'none',
-                opacity: 0.6,
-                animation: 'smokeFade 2s ease-in-out',
-              }}
-            />
-          )
-        })}
 
         {/* Trucks overlay */}
         {trucks.map(truck => {
