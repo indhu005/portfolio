@@ -891,12 +891,12 @@ export default function LandingGameSimple() {
         display: 'flex',
         justifyContent: 'center',
       }}>
-        {/* Sun/Moon - top right corner */}
+        {/* Sun/Moon - top left corner (opposite of timer) */}
         <div
           style={{
             position: 'absolute',
             top: '20px',
-            right: isMobile ? '20px' : '40px',
+            left: isMobile ? '20px' : '40px',
             pointerEvents: 'none',
             zIndex: 5,
           }}
