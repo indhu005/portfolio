@@ -1025,16 +1025,15 @@ export default function LandingGameSimple() {
                 fontWeight: 500,
                 color: '#86C232',
                 textDecoration: 'none',
-                borderBottom: '1px solid transparent',
-                transition: 'border-color 0.2s',
+                transition: 'color 0.2s',
                 cursor: 'pointer',
                 marginBottom: '16px',
               }}
               onMouseEnter={(e) => {
-                e.currentTarget.style.borderBottomColor = '#86C232'
+                e.currentTarget.style.color = '#FFFFFF'
               }}
               onMouseLeave={(e) => {
-                e.currentTarget.style.borderBottomColor = 'transparent'
+                e.currentTarget.style.color = '#86C232'
               }}
             >
               Curious how I create real products
