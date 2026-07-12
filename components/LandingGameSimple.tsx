@@ -662,7 +662,7 @@ export default function LandingGameSimple() {
             Skip →
           </button>
 
-          {/* Yellow ? button */}
+          {/* Yellow about game button */}
           <button
             onClick={() => {
               setShowLearnMore(true)
@@ -675,8 +675,8 @@ export default function LandingGameSimple() {
               backgroundColor: buttonActive ? '#FF6B35' : '#FFF44F',
               border: 'none',
               borderRadius: '50%',
-              fontSize: '18px',
-              fontWeight: 700,
+              fontSize: '7px',
+              fontWeight: 600,
               color: '#1C1917',
               cursor: 'pointer',
               fontFamily: 'DM Sans, sans-serif',
@@ -686,15 +686,19 @@ export default function LandingGameSimple() {
               alignItems: 'center',
               justifyContent: 'center',
               flexShrink: 0,
+              padding: '2px',
+              textAlign: 'center',
+              lineHeight: '1.1',
+              letterSpacing: '0.01em',
             }}
             aria-label="Learn more about the game"
           >
-            ?
+            about game
           </button>
         </div>
       )}
 
-      {/* Desktop: Yellow ? button - bottom right */}
+      {/* Desktop: Yellow about game button - bottom right */}
       {!isMobile && (
         <button
           onClick={() => {
@@ -711,8 +715,8 @@ export default function LandingGameSimple() {
             backgroundColor: buttonActive ? '#FF6B35' : '#FFF44F',
             border: 'none',
             borderRadius: '50%',
-            fontSize: '24px',
-            fontWeight: 700,
+            fontSize: '10px',
+            fontWeight: 600,
             color: '#1C1917',
             cursor: 'pointer',
             zIndex: 100,
@@ -724,6 +728,10 @@ export default function LandingGameSimple() {
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
+            padding: '2px',
+            textAlign: 'center',
+            lineHeight: '1.1',
+            letterSpacing: '0.01em',
           }}
           onMouseEnter={(e) => {
             if (!buttonActive) {
@@ -742,7 +750,7 @@ export default function LandingGameSimple() {
           aria-label="Learn more about the game"
           title="Learn more about the game"
         >
-          ?
+          about game
         </button>
       )}
 
