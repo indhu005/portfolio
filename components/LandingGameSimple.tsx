@@ -662,7 +662,7 @@ export default function LandingGameSimple() {
             Skip →
           </button>
 
-          {/* Yellow about game button */}
+          {/* Yellow ? button */}
           <button
             onClick={() => {
               setShowLearnMore(true)
@@ -675,6 +675,9 @@ export default function LandingGameSimple() {
               backgroundColor: buttonActive ? '#FF6B35' : '#FFF44F',
               border: 'none',
               borderRadius: '50%',
+              fontSize: '18px',
+              fontWeight: 700,
+              color: '#1C1917',
               cursor: 'pointer',
               fontFamily: 'DM Sans, sans-serif',
               transition: 'all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1)',
@@ -683,30 +686,10 @@ export default function LandingGameSimple() {
               alignItems: 'center',
               justifyContent: 'center',
               flexShrink: 0,
-              padding: 0,
-              position: 'relative',
             }}
             aria-label="Learn more about the game"
           >
-            <svg width="40" height="40" viewBox="0 0 40 40" style={{ transform: 'rotate(-90deg)' }}>
-              <defs>
-                <path
-                  id="circlePath-mobile"
-                  d="M 20, 20 m -14, 0 a 14,14 0 1,1 28,0 a 14,14 0 1,1 -28,0"
-                />
-              </defs>
-              <text
-                fill="#1C1917"
-                fontSize="6.5"
-                fontWeight="600"
-                fontFamily="DM Sans, sans-serif"
-                letterSpacing="0.5"
-              >
-                <textPath href="#circlePath-mobile" startOffset="50%" textAnchor="middle">
-                  about game
-                </textPath>
-              </text>
-            </svg>
+            ?
           </button>
         </div>
       )}
@@ -761,7 +744,7 @@ export default function LandingGameSimple() {
             <defs>
               <path
                 id="circlePath-desktop"
-                d="M 32, 32 m -24, 0 a 24,24 0 1,1 48,0 a 24,24 0 1,1 -48,0"
+                d="M 32, 32 m -20, 0 a 20,20 0 1,1 40,0 a 20,20 0 1,1 -40,0"
               />
             </defs>
             <text
