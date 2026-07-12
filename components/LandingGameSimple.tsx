@@ -1000,15 +1000,26 @@ export default function LandingGameSimple() {
             {/* Bridge line - design philosophy */}
             <div style={{ fontSize: '14px', fontWeight: 400, color: '#9CA3AF', lineHeight: '1.6', marginBottom: '24px' }}>
               {(() => {
-                const trees = grid.flat().filter(cell => cell.state === 'tree' || cell.state === 'sapling').length
+                const stillStanding = grid.flat().filter(cell => cell.state === 'tree' || cell.state === 'sapling').length
                 const buildings = grid.flat().filter(cell => cell.state === 'building').length
-                if (trees >= buildings) {
-                  return "Every tree you planted mattered. That's how I design — small, deliberate choices that compound into something meaningful."
-                } else if (planted > 0) {
-                  return "The city moved fast, but you fought back. Real design isn't about perfection — it's about making thoughtful choices under pressure."
-                } else {
+
+                // Didn't play at all
+                if (planted === 0) {
                   return "Sometimes watching is learning too. I build products where every interaction counts."
                 }
+
+                // Perfect round - nothing was lost
+                if (stillStanding === planted) {
+                  return "Every tree held. Nothing got past you this time."
+                }
+
+                // Good round - most survived (more than 50%)
+                if (stillStanding >= planted * 0.5) {
+                  return "Every tree you planted mattered — small, deliberate choices that compound."
+                }
+
+                // Bad round - most were lost or overwhelmed
+                return "The city moved fast this round. Design isn't about perfection — it's about thoughtful choices under pressure."
               })()}
             </div>
 
