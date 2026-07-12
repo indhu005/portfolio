@@ -181,6 +181,7 @@ export default function LandingGameSimple() {
   const [buttonActive, setButtonActive] = useState(false)
   const [localTime, setLocalTime] = useState('')
   const [localRegion, setLocalRegion] = useState('')
+  const [hasInteracted, setHasInteracted] = useState(false)
   const animationFrameRef = useRef<number>()
   const truckAnimationRef = useRef<number>()
 
@@ -238,7 +239,25 @@ export default function LandingGameSimple() {
       setTimeLeft(prev => {
         if (prev <= 1) {
           setGameActive(false)
-          setGameEnded(true)
+          // Only show end modal if user interacted, otherwise silently reset
+          if (hasInteracted) {
+            setGameEnded(true)
+          } else {
+            // Silent reset - restart the game
+            setTimeout(() => {
+              const cols = isMobile ? GRID_COLS_MOBILE : GRID_COLS_DESKTOP
+              setTimeLeft(ROUND_DURATION)
+              setPlanted(0)
+              setGameActive(true)
+              setGameEnded(false)
+              setGrid(
+                Array(GRID_ROWS)
+                  .fill(null)
+                  .map(() => Array(cols).fill(null).map(() => ({ state: 'empty' })))
+              )
+              setTrucks([])
+            }, 100)
+          }
           return 0
         }
         return prev - 1
@@ -246,7 +265,7 @@ export default function LandingGameSimple() {
     }, 1000)
 
     return () => clearInterval(timer)
-  }, [gameActive])
+  }, [gameActive, hasInteracted, isMobile])
 
   // Grow saplings into trees
   useEffect(() => {
@@ -389,11 +408,13 @@ export default function LandingGameSimple() {
     setPlanted(0)
     setGameActive(true)
     setGameEnded(false)
+    setHasInteracted(false) // Reset interaction tracking
     setGrid(
       Array(GRID_ROWS)
         .fill(null)
         .map(() => Array(cols).fill(null).map(() => ({ state: 'empty' })))
     )
+    setTrucks([]) // Clear trucks on restart
   }
 
   // Initialize birds
@@ -484,6 +505,7 @@ export default function LandingGameSimple() {
 
     const cell = grid[row]?.[col]
     if (cell && cell.state === 'empty') {
+      setHasInteracted(true) // Mark that user has interacted
       setPlanted(prev => prev + 1)
       const treeVariant = Math.floor(Math.random() * 5)
       setGrid(prevGrid => {
