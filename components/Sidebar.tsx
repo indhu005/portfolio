@@ -1,6 +1,7 @@
 'use client'
 import { useState, useEffect } from 'react'
 import { useRouter } from 'next/navigation'
+import Link from 'next/link'
 
 const projects = [
   { name: 'Keye', slug: 'keye' },
@@ -89,21 +90,22 @@ export default function Sidebar({
     }}>
 
       {/* NAME */}
-      <div
-        onClick={() => router.push('/')}
-        onMouseDown={(e) => e.currentTarget.style.opacity = '0.6'}
-        onMouseUp={(e) => e.currentTarget.style.opacity = '1'}
-        onMouseLeave={(e) => e.currentTarget.style.opacity = '1'}
+      <Link
+        href="/"
         style={{
           fontSize: isLargeDesktop ? '20px' : '16px',
           fontWeight: 700,
           color: '#1C1917',
           cursor: 'pointer',
-          transition: 'opacity 0.15s ease, color 0.2s ease',
+          transition: 'opacity 0.2s ease-out',
+          textDecoration: 'none',
+          display: 'block',
         }}
+        onMouseEnter={(e) => e.currentTarget.style.opacity = '0.7'}
+        onMouseLeave={(e) => e.currentTarget.style.opacity = '1'}
       >
         Indhu
-      </div>
+      </Link>
 
       {/* SUBTITLE */}
       <div style={{ marginTop: '8px' }}>
@@ -135,20 +137,13 @@ export default function Sidebar({
 
           return (
             <div key={project.name}>
-              <div
+              <Link
+                href={project.slug === 'play' ? '/play' : `/work/${project.slug}`}
                 onClick={() => {
-                  if (project.slug === 'play') {
-                    router.push('/play')
-                  } else {
-                    router.push(`/work/${project.slug}`)
-                  }
                   setExpandedProject(
                     expandedProject === project.slug ? null : project.slug
                   )
                 }}
-                onMouseDown={(e) => e.currentTarget.style.opacity = '0.6'}
-                onMouseUp={(e) => e.currentTarget.style.opacity = '1'}
-                onMouseLeave={(e) => e.currentTarget.style.opacity = '1'}
                 style={{
                   fontSize: isLargeDesktop ? '18px' : '15px',
                   fontWeight: isActiveProject ? 600 : 400,
@@ -156,11 +151,15 @@ export default function Sidebar({
                   cursor: 'pointer',
                   paddingTop: '6px',
                   paddingBottom: '6px',
-                  transition: 'color 0.2s ease, opacity 0.15s ease, font-weight 0.2s ease',
+                  transition: 'color 0.2s ease-out, opacity 0.2s ease-out, font-weight 0.2s ease-out',
+                  textDecoration: 'none',
+                  display: 'block',
                 }}
+                onMouseEnter={(e) => e.currentTarget.style.opacity = '0.7'}
+                onMouseLeave={(e) => e.currentTarget.style.opacity = '1'}
               >
                 {project.name}
-              </div>
+              </Link>
 
               {/* TOC */}
               {isExpanded && project.slug !== 'play' && (
@@ -212,22 +211,23 @@ export default function Sidebar({
 
       {/* ABOUT PINNED TO BOTTOM */}
       <div style={{ marginTop: 'auto' }}>
-        <div
-          onClick={() => router.push('/about')}
-          onMouseDown={(e) => e.currentTarget.style.opacity = '0.6'}
-          onMouseUp={(e) => e.currentTarget.style.opacity = '1'}
-          onMouseLeave={(e) => e.currentTarget.style.opacity = '1'}
+        <Link
+          href="/about"
           style={{
             fontSize: isLargeDesktop ? '18px' : '15px',
             fontWeight: 700,
             color: '#1C1917',
             marginBottom: '12px',
             cursor: 'pointer',
-            transition: 'opacity 0.15s ease',
+            transition: 'opacity 0.2s ease-out',
+            textDecoration: 'none',
+            display: 'block',
           }}
+          onMouseEnter={(e) => e.currentTarget.style.opacity = '0.7'}
+          onMouseLeave={(e) => e.currentTarget.style.opacity = '1'}
         >
           About
-        </div>
+        </Link>
         {[
           { label: 'Email', href: 'mailto:indhuve05@gmail.com' },
           { label: 'Resume', href: null },
