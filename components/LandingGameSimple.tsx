@@ -69,21 +69,38 @@ const TreeIcon = ({ size = 60, variant = 0 }: { size?: number; variant?: number 
   }, [])
 
   return (
-    <img
-      src={`/images/home/${treeFile}`}
-      alt="tree"
-      style={{
-        position: 'absolute',
-        width: size,
-        height: size,
-        bottom: '20%',
-        left: '50%',
-        transform: isSwaying ? 'translateX(-50%) rotate(3deg)' : 'translateX(-50%)',
-        objectFit: 'contain',
-        zIndex: 5,
-        transition: 'transform 0.4s ease-in-out',
-      }}
-    />
+    <>
+      {/* Shadow */}
+      <div
+        style={{
+          position: 'absolute',
+          width: size * 0.6,
+          height: size * 0.15,
+          bottom: '5%',
+          left: '50%',
+          transform: 'translateX(-50%)',
+          background: 'radial-gradient(ellipse, rgba(0, 0, 0, 0.3) 0%, transparent 70%)',
+          zIndex: 2,
+          filter: 'blur(2px)',
+        }}
+      />
+      {/* Tree */}
+      <img
+        src={`/images/home/${treeFile}`}
+        alt="tree"
+        style={{
+          position: 'absolute',
+          width: size,
+          height: size,
+          bottom: '20%',
+          left: '50%',
+          transform: isSwaying ? 'translateX(-50%) rotate(3deg)' : 'translateX(-50%)',
+          objectFit: 'contain',
+          zIndex: 5,
+          transition: 'transform 0.4s ease-in-out',
+        }}
+      />
+    </>
   )
 }
 
@@ -99,22 +116,39 @@ const SaplingIcon = ({ size = 40, variant = 0 }: { size?: number; variant?: numb
   }, [])
 
   return (
-    <img
-      src={`/images/home/${treeFile}`}
-      alt="sapling"
-      style={{
-        position: 'absolute',
-        width: size,
-        height: size,
-        bottom: '20%',
-        left: '50%',
-        transform: `translateX(-50%) scale(${isGrowing ? 0.3 : 1})`,
-        objectFit: 'contain',
+    <>
+      {/* Shadow */}
+      <div
+        style={{
+          position: 'absolute',
+          width: size * 0.5,
+          height: size * 0.12,
+          bottom: '5%',
+          left: '50%',
+          transform: 'translateX(-50%)',
+          background: 'radial-gradient(ellipse, rgba(0, 0, 0, 0.25) 0%, transparent 70%)',
+          zIndex: 2,
+          filter: 'blur(1.5px)',
+        }}
+      />
+      {/* Sapling */}
+      <img
+        src={`/images/home/${treeFile}`}
+        alt="sapling"
+        style={{
+          position: 'absolute',
+          width: size,
+          height: size,
+          bottom: '20%',
+          left: '50%',
+          transform: `translateX(-50%) scale(${isGrowing ? 0.3 : 1})`,
+          objectFit: 'contain',
         opacity: 0.7,
         zIndex: 5,
         transition: 'transform 0.4s ease-out',
       }}
     />
+    </>
   )
 }
 
@@ -130,21 +164,38 @@ const BuildingIcon = ({ size = 60, variant = 0 }: { size?: number; variant?: num
   }, [])
 
   return (
-    <img
-      src={`/images/home/${buildingFile}`}
-      alt="building"
-      style={{
-        position: 'absolute',
-        width: size,
-        height: size,
-        bottom: '20%',
-        left: '50%',
-        transform: `translateX(-50%) scale(${isPopping ? 0.3 : 1})`,
-        objectFit: 'contain',
-        zIndex: 5,
-        transition: 'transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1)',
+    <>
+      {/* Shadow */}
+      <div
+        style={{
+          position: 'absolute',
+          width: size * 0.7,
+          height: size * 0.18,
+          bottom: '3%',
+          left: '50%',
+          transform: 'translateX(-50%)',
+          background: 'radial-gradient(ellipse, rgba(0, 0, 0, 0.35) 0%, transparent 70%)',
+          zIndex: 2,
+          filter: 'blur(2.5px)',
+        }}
+      />
+      {/* Building */}
+      <img
+        src={`/images/home/${buildingFile}`}
+        alt="building"
+        style={{
+          position: 'absolute',
+          width: size,
+          height: size,
+          bottom: '20%',
+          left: '50%',
+          transform: `translateX(-50%) scale(${isPopping ? 0.3 : 1})`,
+          objectFit: 'contain',
+          zIndex: 5,
+          transition: 'transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1)',
       }}
     />
+    </>
   )
 }
 
@@ -1001,7 +1052,7 @@ export default function LandingGameSimple() {
             }
           }
 
-          const birdVariants = ['Birds.svg', 'Birds 02.svg', 'Birds 03.svg']
+          const birdVariants = ['Birds.svg', 'birds 02.svg', 'birds 03.svg']
           const birdSrc = `/images/home/${birdVariants[(bird.variant - 1) % 3]}`
 
           return (
