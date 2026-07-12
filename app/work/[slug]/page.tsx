@@ -174,13 +174,13 @@ const caseStudies = {
       {
         id: 'snapshot',
         title: '01 — Snapshot',
-        content: `<p><span style="font-weight: 600;">Product</span><br/>A machine-learning-driven asset lifecycle management platform: a modular, multi-tenant API layer operating alongside legacy infrastructure systems across three campuses of a major Pacific Northwest public university — 60–80+ buildings spanning labs, dormitories, athletic facilities, historic buildings, and mixed-use assets.</p>
+        content: `<p><span style="font-weight: 600;">Product</span><br/>An ML-driven platform that helped a major Pacific Northwest university manage 60–80+ buildings across three campuses. LAT shipped as a modular API layer alongside their legacy CMMS/ERP — turning fragmented operational data into financial intelligence without forcing a system replacement.</p>
 
-<p style="margin-top: 28px;"><span style="font-weight: 600;">My Role — Lead Product Designer</span><br/>(≈60% product & system design, 40% strategy & cross-functional leadership). I owned the post-RFP product vision and roadmap, designed the workflows and foundational design system, and led alignment across CAPEX planning, accounting, field technicians, project managers, and executives. Because the PM was non-technical, I also translated institutional needs into functional requirements for external developers — and made the case for field research in an environment where stakeholders initially preferred assumptions.</p>
+<p style="margin-top: 28px;"><span style="font-weight: 600;">My Role — Lead Product Designer</span><br/>I owned product vision, workflows, and the design system. Led alignment across field technicians, project managers, accountants, and executives. Because the PM was non-technical, I translated institutional needs into functional requirements and made the case for field research when stakeholders wanted to skip it.</p>
 
-<p style="margin-top: 28px;"><span style="font-weight: 600;">Timeline — 8 months</span><br/>Discovery → data consolidation strategy → ML recommendation framework → vertical pilot → beta → initial release with an extensible roadmap. (Eight months covers my tenure and the initial phase; the platform continued beyond it.)</p>
+<p style="margin-top: 28px;"><span style="font-weight: 600;">Timeline — 8 months</span><br/>Discovery → data consolidation → ML framework → pilot → beta → release. The platform continued beyond my tenure.</p>
 
-<p style="margin-top: 28px;"><span style="font-weight: 600;">Team</span><br/>1 project manager · 1 product designer (me) · 2 engineering consultants · 1 real-estate marketing consultant · client-side CAPEX planning, data science, accounting, and property management teams</p>
+<p style="margin-top: 28px;"><span style="font-weight: 600;">Team</span><br/>1 PM · 1 designer (me) · 2 external engineers · client-side CAPEX, data science, accounting, and property management teams</p>
 
 <div style="width: 100%; min-height: 450px; background-color: #E5E7EB; border-radius: 8px; display: flex; align-items: center; justify-content: center; color: #9CA3AF; font-size: 14px; margin-top: 32px; margin-bottom: 32px;">Hero — role-based dashboard split: the same asset rendered for a technician (mobile, offline-first), a manager (priority queue), and an executive (filtered summary). One data model, three cognitive surfaces.</div>
 
@@ -213,18 +213,9 @@ const caseStudies = {
         id: 'context-problem',
         title: '02 — Context & Problem',
         headline: 'Fragmented data was forcing humans to do the work a system should have done',
-        content: `<div style="width: 100%; min-height: 400px; background-color: #1C1917; border-radius: 8px; display: flex; align-items: center; justify-content: center; color: #FFFFFF; font-size: 14px; margin-bottom: 32px; position: relative;">
-  <div style="position: absolute; width: 80px; height: 80px; border-radius: 50%; background-color: rgba(255, 255, 255, 0.2); display: flex; align-items: center; justify-content: center; cursor: pointer;">
-    <div style="width: 0; height: 0; border-top: 15px solid transparent; border-bottom: 15px solid transparent; border-left: 25px solid #FFFFFF; margin-left: 5px;"></div>
-  </div>
-  <div style="position: absolute; bottom: 16px; left: 16px; color: #9CA3AF; font-size: 13px;">Video placeholder — Overview of the problem</div>
-</div>
-
-<p>The United States faces a $2.6 trillion infrastructure funding gap. Universities operate inside that pressure daily — managing research labs, dormitories, athletic centers, and historic buildings within a single portfolio, each with different governance layers, capital cycles, and maintenance volatility. Despite that complexity, daily operations ran on fragmented tools.</p>
+        content: `<p>Universities manage billions in infrastructure with fragmented tools. A technician underground can't access repair history. A project manager stitches together spreadsheets, vendor calls, and invoices before capital planning meetings. Leadership makes decisions on partial data.</p>
 
 <img src="/images/lat/User%20Issues.webp" alt="User Issues" style="width: 100%; border-radius: 8px; margin-top: 32px; margin-bottom: 32px; display: block;" />
-
-<p style="margin-top: 28px;">What fragmentation looked like on a Tuesday afternoon: a technician working underground loses network access and can't retrieve repair history — updates get logged later, sometimes from memory. A project manager prepares for a capital planning meeting by stitching together vendor calls, spreadsheets, emails, invoices, and consultant reports. By the time leadership convenes, decisions are made on partial visibility.</p>
 
 <div style="display: flex; gap: 24px; margin-top: 40px; flex-wrap: wrap;">
   <div style="flex: 1; min-width: 250px; position: relative;">
@@ -245,7 +236,7 @@ const caseStudies = {
 
 <p style="margin-top: 48px;"><span style="font-weight: 600;">Why existing tools failed</span></p>
 
-<p style="margin-top: 20px;">PMS and CMMS platforms optimize daily tasks — tickets, leases, payments — but don't model asset lifespan, depreciation, or portfolio-level CapEx tradeoffs. Preventive maintenance was time-based, not risk-based, producing both over-maintenance and surprise failures. Field tools assumed stable connectivity and patient form-filling; when digital reporting is slower than paper, adoption doesn't stall — it fails. And a full system replacement wasn't politically viable: the legacy CMMS/ERP stack was wired into procurement, accounting, and budgeting, and leadership wouldn't risk operational downtime. They didn't need another silo, and they couldn't afford an overhaul.</p>
+<p style="margin-top: 20px;">CMMS platforms handle tickets and leases but don't model asset lifespan or portfolio-level CapEx tradeoffs. Preventive maintenance ran on time-based schedules, not risk — producing over-maintenance and surprise failures. Field tools assumed stable connectivity; when digital reporting is slower than paper, adoption fails. And replacing the legacy stack wasn't viable — it was wired into procurement, accounting, and budgeting. They didn't need another silo; they needed a layer that worked with what existed.</p>
 
 <img src="/images/lat/Market%20Gap.webp" alt="Market Gap Analysis" style="width: 100%; border-radius: 8px; margin-top: 40px; margin-bottom: 32px; display: block;" />`
       },
@@ -253,11 +244,11 @@ const caseStudies = {
         id: 'turning-point',
         title: '03 — The Turning Point',
         headline: 'Research revealed we were redesigning a system of coordination',
-        content: `<p>We initially believed we were customizing an existing product. Research revealed we were redesigning a <span style="font-weight: 600;">system of coordination.</span></p>
+        content: `<p>We thought we were customizing a product. Research showed we were redesigning <span style="font-weight: 600;">a system of coordination.</span></p>
 
-<p style="margin-top: 28px;">The breakthrough wasn't the AI. It was recognizing that fragmented data was forcing humans to do system work: project managers stitching spreadsheets, technicians documenting from memory, capital planners reconciling incomplete records before high-stakes meetings. Everyone had access to data. What they lacked was context, prioritization, and trust — everyone saw everything, without structure.</p>
+<p style="margin-top: 28px;">The breakthrough wasn't the AI. It was recognizing that fragmented data was forcing humans to do system work. Everyone had access to data. What they lacked was context, prioritization, and trust.</p>
 
-<p style="margin-top: 28px;">That reframed the direction entirely. Instead of one dashboard for everyone, we built a modular API layer that reduced cognitive load per role, surfaced only what was actionable, preserved a shared source of truth underneath, and turned operational signals into financial intelligence.</p>
+<p style="margin-top: 28px;">That reframed everything. Instead of one dashboard for everyone, we built role-based surfaces over a shared foundation — surfacing only what was actionable, turning operational signals into financial intelligence.</p>
 
 <img src="/images/lat/pROBLEM.webp" alt="System architecture diagram — modular API layer, role-based surfaces, shared data foundation" style="width: 100%; border-radius: 8px; margin-top: 32px; margin-bottom: 32px; display: block;" />`
       },
@@ -265,149 +256,215 @@ const caseStudies = {
         id: 'constraints',
         title: '04 — Constraints & Design Responses',
         headline: "The legacy ecosystem couldn't be disrupted, so LAT shipped as a modular layer alongside it",
-        content: `<p><span style="font-weight: 600;">The legacy ecosystem couldn't be disrupted.</span> LAT shipped as a modular API layer alongside the existing stack — no forced migration, no workflow replacement. Incremental transparency without triggering organizational resistance.</p>
+        content: `<div style="display: grid; grid-template-columns: 1fr; gap: 28px; margin-bottom: 48px;">
+  <div>
+    <div style="font-weight: 600; font-size: 17px; color: #1C1917; margin-bottom: 8px;">Legacy Ecosystem Couldn't Be Disrupted</div>
+    <div style="font-size: 15px; color: #57534E; line-height: 1.6;">LAT shipped as a modular API layer alongside existing CMMS/ERP stack — no forced migration, no workflow replacement. Incremental transparency without triggering organizational resistance.</div>
+  </div>
 
-<p style="margin-top: 28px;"><span style="font-weight: 600;">Data integrity had hard boundaries.</span> The university enforced strict governance, and we inherited duplicated, inconsistent records. This constraint produced the defining incident of the project (§07), and the response — validation states, multi-signal checks, confidence tiers — became the product's trust architecture.</p>
+  <div>
+    <div style="font-weight: 600; font-size: 17px; color: #1C1917; margin-bottom: 8px;">Data Integrity Had Hard Boundaries</div>
+    <div style="font-size: 15px; color: #57534E; line-height: 1.6;">University enforced strict governance; we inherited duplicated, inconsistent records. This constraint produced the defining incident of the project (§07). The response — validation states, multi-signal checks, confidence tiers — became the product's trust architecture.</div>
+  </div>
 
-<p style="margin-top: 28px;"><span style="font-weight: 600;">Capital decisions were political.</span> Layered approvals, public accountability, donor influence. In that environment automation isn't neutral — it's political. We deliberately kept managers as approval gatekeepers, made the AI show its reasoning rather than just scores, and logged every override.</p>
+  <div>
+    <div style="font-weight: 600; font-size: 17px; color: #1C1917; margin-bottom: 8px;">Capital Decisions Were Political</div>
+    <div style="font-size: 15px; color: #57534E; line-height: 1.6;">Layered approvals, public accountability, donor influence. In that environment automation isn't neutral — it's political. We kept managers as approval gatekeepers, made AI show its reasoning (not just scores), and logged every override.</div>
+  </div>
+</div>
 
-<div style="width: 100%; height: 300px; background-color: #E5E7EB; border-radius: 8px; display: flex; align-items: center; justify-content: center; color: #9CA3AF; font-size: 14px; margin-top: 32px; margin-bottom: 32px;">Approval workflow — manager review gates, AI reasoning display, override logging</div>
+<div style="width: 100%; height: 450px; background-color: #E5E7EB; border-radius: 8px; display: flex; align-items: center; justify-content: center; color: #9CA3AF; font-size: 14px; margin-bottom: 48px;">
+  <div style="text-align: center; padding: 20px;">
+    <div style="font-weight: 600; margin-bottom: 8px;">IMAGE: Approval Workflow</div>
+    <div style="font-size: 13px; line-height: 1.5;">Manager review gates → AI reasoning display → Override logging<br/>Shows human-in-the-loop design</div>
+  </div>
+</div>
 
-<p style="margin-top: 28px;"><span style="font-weight: 600;">Roles had wildly different needs and tech comfort.</span> Technicians wanted to finish on site and go home — voice-to-text, big touch targets, no forms designed for a desk. Managers ran up to 15 jobs a day in peak season and needed delegation, not dashboards. Accountants managed 20–30 stakeholders and needed brief-with-drill-down. Executives needed two options, not a back-study. Role-based surfaces over one universal view.</p>
+<div style="display: grid; grid-template-columns: 1fr; gap: 28px; margin-bottom: 48px;">
+  <div>
+    <div style="font-weight: 600; font-size: 17px; color: #1C1917; margin-bottom: 8px;">Roles Had Wildly Different Needs</div>
+    <div style="font-size: 15px; color: #57534E; line-height: 1.6;">Technicians wanted to finish on site and go home — voice-to-text, big touch targets, no forms designed for a desk. Managers ran 15 jobs a day and needed delegation, not dashboards. Accountants managed 20–30 stakeholders and needed brief-with-drill-down. Executives needed two options, not a back-study. Role-based surfaces over one universal view.</div>
+  </div>
 
-<p style="margin-top: 28px;"><span style="font-weight: 600;">Field reality: connectivity and devices.</span> Technicians worked underground and on swing stages with unstable connections. We shipped offline-first capture with queued auto-sync, and staged phone-first refinement to a later phase — a real tradeoff, since field users wanted it sooner, but organizational trust had to come first.</p>
+  <div>
+    <div style="font-weight: 600; font-size: 17px; color: #1C1917; margin-bottom: 8px;">Field Reality: Connectivity & Devices</div>
+    <div style="font-size: 15px; color: #57534E; line-height: 1.6;">Technicians worked underground and on swing stages with unstable connections. We shipped offline-first capture with queued auto-sync, and staged phone-first refinement to a later phase — a real tradeoff, since field users wanted it sooner, but organizational trust had to come first.</div>
+  </div>
 
-<div style="width: 100%; height: 300px; background-color: #E5E7EB; border-radius: 8px; display: flex; align-items: center; justify-content: center; color: #9CA3AF; font-size: 14px; margin-top: 32px; margin-bottom: 32px;">Offline-first architecture — local queue, auto-sync, retry logic for unstable connectivity</div>
+  <div>
+    <div style="font-weight: 600; font-size: 17px; color: #1C1917; margin-bottom: 8px;">Eight Months Forced Scope Discipline</div>
+    <div style="font-size: 15px; color: #57534E; line-height: 1.6;">AI auto-scheduling, deep ESG modeling, digital twins, and a live multi-campus map were all tempting. The filter: one north star (reduce unexpected maintenance costs) plus two supporting drivers (planning accuracy and adoption velocity). If a feature didn't serve one of the three, it moved to the roadmap. The sequence: data unification → offline field workflows → lifecycle visibility → predictive modeling → scenario simulation. AI credibility depends on data quality.</div>
+  </div>
+</div>
 
-<p style="margin-top: 28px;"><span style="font-weight: 600;">Eight months forced scope discipline.</span> AI auto-scheduling, deep ESG modeling, digital twins, and a live multi-campus map were all tempting. The filter was one north star — reduce unexpected maintenance costs — plus two supporting drivers: planning accuracy and adoption velocity. If a feature didn't serve one of the three, it moved to the roadmap. The sequence: data unification → offline field workflows → lifecycle visibility → predictive modeling → scenario simulation. AI credibility depends on data quality, so we sequenced accordingly.</p>`
+<div style="width: 100%; height: 450px; background-color: #E5E7EB; border-radius: 8px; display: flex; align-items: center; justify-content: center; color: #9CA3AF; font-size: 14px; margin-bottom: 32px;">
+  <div style="text-align: center; padding: 20px;">
+    <div style="font-weight: 600; margin-bottom: 8px;">IMAGE: Offline-First Architecture</div>
+    <div style="font-size: 13px; line-height: 1.5;">Mobile workflow: Local queue → Capture → Auto-sync → Retry logic<br/>Shows connectivity resilience design</div>
+  </div>
+</div>`
       },
       {
         id: 'strategy',
         title: '05 — Strategy',
-        headline: 'Product strategy worked backward from one measurable outcome: reduce unexpected maintenance costs by 25%',
-        content: `<div style="display: flex; gap: 48px; align-items: flex-start;">
-  <div style="flex: 1;">
-    <p>We defined product strategy backward from one measurable outcome: <span style="font-weight: 700; color: #4B5563;">reduce unexpected maintenance costs by 25%.</span></p>
+        headline: 'One north star: reduce unexpected maintenance costs by 25%',
+        content: `<p>Every feature mapped to one of three drivers: <span style="font-weight: 600;">cost reduction, planning accuracy, or adoption velocity.</span> If it didn't serve one, it didn't ship.</p>
 
-    <p style="margin-top: 28px;">Every feature had to map to at least one of three drivers: cost reduction, planning accuracy, or adoption velocity. If it didn't, it didn't ship.</p>
-
-    <p style="margin-top: 28px;"><span style="font-weight: 600;">Four principles governed every major decision:</span></p>
-
-    <p style="margin-top: 28px;"><span style="font-weight: 600;">1. Trust Precedes Automation</span></p>
-
-    <p style="margin-top: 16px;">In a politically sensitive institutional environment, automation without trust erodes credibility. We designed AI as decision support, not decision authority — with human approval gates, evidence-backed recommendations, logged overrides, and confidence-aware outputs. Automation was phased in only after data integrity and adoption stabilized.</p>
-
-    <p style="margin-top: 28px;"><span style="font-weight: 600;">2. Adoption Before Expansion</span></p>
-
-    <p style="margin-top: 16px;">Advanced features mean nothing without usage. We prioritized offline-first technician workflows, repair vs. replace clarity, and unified asset cost visibility. We deliberately deprioritized AI auto-rescheduling, deep ESG modules, and low-frequency executive analytics.</p>
-
-    <p style="margin-top: 28px;"><span style="font-weight: 600;">3. Data Integrity Before AI Sophistication</span></p>
-
-    <p style="margin-top: 16px;">Shipping predictive models before stabilizing data would have damaged trust. We built the data foundation first and earned the right to expand the predictive layer.</p>
-
-    <p style="margin-top: 28px;"><span style="font-weight: 600;">4. Reduce Cognitive Load Per Role</span></p>
-
-    <p style="margin-top: 16px;">One dashboard for everyone creates overwhelm. We surfaced signals, not noise — tailored to each role's decision context.</p>
+<div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 32px; margin-top: 40px; margin-bottom: 48px;">
+  <div>
+    <div style="font-weight: 600; font-size: 17px; color: #1C1917; margin-bottom: 8px;">Trust Precedes Automation</div>
+    <div style="font-size: 15px; color: #57534E; line-height: 1.6;">AI as decision support, not authority. Human approval gates, logged overrides, confidence-aware outputs.</div>
   </div>
 
-  <div style="flex: 1; min-height: 600px; background-color: #E5E7EB; border-radius: 8px; display: flex; align-items: center; justify-content: center; color: #9CA3AF; font-size: 14px;">
-    Image placeholder
+  <div>
+    <div style="font-weight: 600; font-size: 17px; color: #1C1917; margin-bottom: 8px;">Adoption Before Expansion</div>
+    <div style="font-size: 15px; color: #57534E; line-height: 1.6;">Offline workflows and repair clarity first. AI auto-scheduling and ESG modules second.</div>
+  </div>
+
+  <div>
+    <div style="font-weight: 600; font-size: 17px; color: #1C1917; margin-bottom: 8px;">Data Integrity Before AI</div>
+    <div style="font-size: 15px; color: #57534E; line-height: 1.6;">Stabilized data foundation first, predictive sophistication second.</div>
+  </div>
+
+  <div>
+    <div style="font-weight: 600; font-size: 17px; color: #1C1917; margin-bottom: 8px;">Reduce Cognitive Load</div>
+    <div style="font-size: 15px; color: #57534E; line-height: 1.6;">Role-tailored surfaces surfacing signals, not noise.</div>
   </div>
 </div>
 
-<p style="margin-top: 48px;"><span style="font-weight: 600;">Platform Thinking</span></p>
-
-<p style="margin-top: 16px;">LAT was built as a lifecycle intelligence layer, not a feature. Key architectural decisions — modular API-first design, multi-tenant structure, canonical asset ID system, standardized repair vs. replace logic — were made to protect prediction reliability, reporting consistency, and engineering velocity at scale.</p>
-
-<p style="margin-top: 28px; font-weight: 700; color: #4B5563;">The predictive engine improves as override data accumulates. More campuses → more lifecycle data → smarter predictions → higher switching cost. LAT isn't static software. It compounds intelligence through use.</p>`
+<div style="background-color: #F9FAFB; padding: 28px; border-radius: 12px; border-left: 3px solid #7EB3F5;">
+  <div style="font-weight: 600; font-size: 16px; color: #1C1917; margin-bottom: 12px;">Platform Thinking</div>
+  <div style="font-size: 15px; color: #57534E; line-height: 1.7;">The predictive engine improves as override data accumulates. More campuses → more lifecycle data → smarter predictions → higher switching cost. LAT compounds intelligence through use.</div>
+</div>`
       },
       {
         id: 'solution',
         title: '06 — Solution',
         headline: 'Three pillars turned operational signals into financial intelligence',
-        content: `<p style="margin-top: 28px; font-size: 20px; font-weight: 600;">Pillar 1 — Reliable Field Intelligence</p>
+        content: `<div style="margin-top: 32px; margin-bottom: 48px;">
+  <div style="font-size: 20px; font-weight: 600; color: #1C1917; margin-bottom: 16px;">Pillar 1 — Reliable Field Intelligence</div>
+  <p>Automatically link <span style="font-weight: 600;">Work Orders ↔ Asset DNA ↔ Cost-to-Date</span>. The conversation shifted from "we'll fix it again" to "this unit cost $42K in three years; replacing now saves $18K."</p>
+</div>
 
-<p style="margin-top: 24px;"><span style="font-weight: 600;">The core decision:</span> automatically link <span style="font-weight: 600;">Work Orders ↔ Asset DNA ↔ Cost-to-Date</span>. Every repair updated the asset's financial story in real time; cost-to-date fed repair-vs-replace logic; that logic fed CapEx planning. Offline-first <span style="font-style: italic;">enabled</span> the system. Lifecycle linkage <span style="font-style: italic;">changed behavior</span> — the conversation moved from "we'll fix it again" to "this unit has cost $42K in three years; replacing now saves $18K."</p>
+<div style="width: 100%; height: 400px; background-color: #E5E7EB; border-radius: 8px; display: flex; align-items: center; justify-content: center; color: #9CA3AF; font-size: 14px; margin-bottom: 48px;">
+  <div style="text-align: center; padding: 20px;">
+    <div style="font-weight: 600; margin-bottom: 8px;">IMAGE 1: Field Workflow Evolution</div>
+    <div style="font-size: 13px; line-height: 1.5;">Mobile interface showing: offline queue → capture with voice input → auto-sync confirmation<br/>Annotation: "Reporting time: 20min → 8min"</div>
+  </div>
+</div>
 
-<div style="width: 100%; height: 350px; background-color: #E5E7EB; border-radius: 8px; display: flex; align-items: center; justify-content: center; color: #9CA3AF; font-size: 14px; margin-top: 32px; margin-bottom: 32px;">Offline-first field workflow — queue, capture, sync architecture</div>
+<div style="background-color: #FFF9F5; padding: 24px; border-radius: 12px; border-left: 3px solid #FF6B35; margin-bottom: 48px;">
+  <div style="font-weight: 600; font-size: 15px; color: #1C1917; margin-bottom: 12px;">The "Everything Dashboard" Failed</div>
+  <p style="font-size: 15px; color: #57534E; line-height: 1.6; margin: 0;">Multiple graphs looked impressive; managers scanned without acting. We replaced it with a ranked priority queue — action first, analysis second.</p>
+</div>
 
-<p style="margin-top: 28px;"><span style="font-weight: 600;">What we tried and fixed along the way:</span></p>
+<div style="width: 100%; height: 400px; background-color: #E5E7EB; border-radius: 8px; display: flex; align-items: center; justify-content: center; color: #9CA3AF; font-size: 14px; margin-bottom: 64px;">
+  <div style="text-align: center; padding: 20px;">
+    <div style="font-weight: 600; margin-bottom: 8px;">IMAGE 2: Dashboard Before/After</div>
+    <div style="font-size: 13px; line-height: 1.5;">Left: Dense "Everything Dashboard" with 8+ graphs<br/>Right: Clean priority queue with contextual side panels<br/>Annotation: "Decision time: 14min → 4min"</div>
+  </div>
+</div>
 
-<p style="margin-top: 16px;">The <span style="font-weight: 600;">"Everything Dashboard" failed</span> — multiple graphs and live feeds looked impressive, and managers scanned without acting. We replaced it with a ranked priority queue, contextual side panels, and progressive disclosure. Action first, analysis second. <span style="font-weight: 600;">Notification overload eroded trust</span> — real-time alerts for every update were muted within days; we introduced urgency tiers, digests, and threshold-based escalation. <span style="font-weight: 600;">Complex tagging failed with technicians</span> — they skipped it or reverted to paper; we cut to high-frequency categories, smart pre-fills, and optional voice input.</p>
+<div style="margin-bottom: 48px;">
+  <div style="font-size: 20px; font-weight: 600; color: #1C1917; margin-bottom: 16px;">Pillar 2 — Predictive Lifecycle Intelligence</div>
+  <p>Turn predictive signals into ranked, decision-oriented alerts. Early alerts said <span style="font-style: italic;">"Boiler failure risk: 68%."</span> Managers hesitated. We shifted to consequence framing: <span style="font-style: italic;">"High vibration + 9 years in service → delaying replacement may cost $18K."</span></p>
+  <p style="margin-top: 16px; color: #57534E;">Humans act on consequences, not probabilities.</p>
+</div>
 
-<div style="width: 100%; height: 350px; background-color: #E5E7EB; border-radius: 8px; display: flex; align-items: center; justify-content: center; color: #9CA3AF; font-size: 14px; margin-top: 32px; margin-bottom: 32px;">Before/after — the dense Everything Dashboard next to the ranked priority queue, annotated with decision time dropping from ~14 min to ~4 min</div>
+<div style="width: 100%; height: 400px; background-color: #E5E7EB; border-radius: 8px; display: flex; align-items: center; justify-content: center; color: #9CA3AF; font-size: 14px; margin-bottom: 48px;">
+  <div style="text-align: center; padding: 20px;">
+    <div style="font-weight: 600; margin-bottom: 8px;">IMAGE 3: Alert Card Before/After ⭐</div>
+    <div style="font-size: 13px; line-height: 1.5;">Left: "Boiler failure risk: 68%" (probability framing)<br/>Right: "High vibration + 9yr service → $18K savings if replaced now" (consequence framing)<br/>Shows: Critical/Monitor/Safe tiers + top 3 drivers</div>
+  </div>
+</div>
 
-<p style="margin-top: 28px;">The edge case that almost broke the system: if a technician closed a ticket offline and sync failed, the lifecycle model could corrupt silently — bad data flowing straight into the predictive engine. We redesigned completion as a two-step state: locally logged, then server-verified, with visible sync confirmation, retry logic, and audit flags. Not a UX nicety — architectural containment.</p>
-
-<p style="margin-top: 56px; font-size: 20px; font-weight: 600;">Pillar 2 — Predictive Lifecycle Intelligence</p>
-
-<p style="margin-top: 24px;"><span style="font-weight: 600;">The core decision:</span> turn predictive signals into ranked, decision-oriented alerts — not sensor dashboards. A prioritized queue, repair-vs-replace comparison, time-to-impact, and one clear action per card: Approve / Monitor / Ignore.</p>
-
-<p style="margin-top: 28px;"><span style="font-weight: 600;">The framing that changed behavior.</span> Early alerts said "Boiler failure risk: 68%." Managers hesitated — is 68% high? What if it's wrong? We shifted to consequence framing: <span style="font-style: italic;">"High vibration + 9 years in service → delaying replacement may cost $18K."</span> Three tiers (Critical / Monitor / Safe), the top 2–3 contributing drivers, full signal breakdown behind a drill-down. Humans act on consequences, not probabilities.</p>
-
-<div style="width: 100%; height: 350px; background-color: #E5E7EB; border-radius: 8px; display: flex; align-items: center; justify-content: center; color: #9CA3AF; font-size: 14px; margin-top: 32px; margin-bottom: 32px;">Alert card before/after — probability version next to consequence version. The single most important design decision in the project, shown, not told.</div>
-
-<p style="margin-top: 28px;"><span style="font-weight: 600;">When the AI was wrong — the boiler incident.</span> In month two of the pilot, the engine flagged a ~$180K boiler replacement as Critical. The alert escalated concern to finance — and inspection showed the risk was inflated by duplicated repair entries in the historical data. Three guardrails contained it: the alert required manager review (no auto-escalation), the visible drivers let the manager spot the suspicious repeat entries, and nothing triggered procurement automatically. The manager overrode; the override was logged; we paused broader rollout, reweighted signal inputs with the in-house data scientists, added duplicate detection before lifecycle roll-up, introduced a <span style="font-weight: 600;">"Needs Verification"</span> state for low-confidence outputs, and required multi-signal validation for high-cost alerts. False positives dropped in the next cycle, and adoption held at 95%.</p>
+<div style="background-color: #FFF9F5; padding: 24px; border-radius: 12px; border-left: 3px solid #FF6B35; margin-bottom: 32px;">
+  <div style="font-weight: 600; font-size: 15px; color: #1C1917; margin-bottom: 12px;">The Boiler Incident — When AI Was Wrong</div>
+  <p style="font-size: 15px; color: #57534E; line-height: 1.6; margin: 0;">Month 2: Engine flagged a $180K boiler replacement as Critical. Inspection showed duplicated repair entries inflated the risk. Three guardrails contained it: manager review gate, visible drivers (manager spotted duplicates), no auto-procurement. We added "Needs Verification" state and multi-signal validation. Adoption held at 95%.</p>
+</div>
 
 <div class="pull-quote">The real AI risk in enterprise isn't model sophistication — it's dirty upstream data influencing downstream capital decisions.</div>
 
-<div style="width: 100%; height: 350px; background-color: #E5E7EB; border-radius: 8px; display: flex; align-items: center; justify-content: center; color: #9CA3AF; font-size: 14px; margin-top: 32px; margin-bottom: 48px;">The boiler incident screen — Critical alert with visible contributing drivers and the Needs Verification state. The failure-containment moment.</div>
+<div style="width: 100%; height: 400px; background-color: #E5E7EB; border-radius: 8px; display: flex; align-items: center; justify-content: center; color: #9CA3AF; font-size: 14px; margin-top: 32px; margin-bottom: 64px;">
+  <div style="text-align: center; padding: 20px;">
+    <div style="font-weight: 600; margin-bottom: 8px;">IMAGE 4: Boiler Incident Screen</div>
+    <div style="font-size: 13px; line-height: 1.5;">Critical alert showing visible contributing drivers (with duplicate entries highlighted)<br/>"Needs Verification" state badge<br/>Manager override logged in timeline</div>
+  </div>
+</div>
 
-<p style="margin-top: 56px; font-size: 20px; font-weight: 600;">Pillar 3 — Strategic Simulation & Governance</p>
+<div style="margin-bottom: 32px;">
+  <div style="font-size: 20px; font-weight: 600; color: #1C1917; margin-bottom: 16px;">Pillar 3 — Strategic Simulation & Governance</div>
+  <p>In-house scenario comparison with side-by-side cost/timeline deltas. Before LAT, feasibility questions meant commissioning external studies. After, teams ran three scenarios instantly and exported board-ready outputs.</p>
+  <p style="margin-top: 16px; color: #57534E;">Decision velocity over spectacle.</p>
+</div>
 
-<p style="margin-top: 24px;"><span style="font-weight: 600;">The core decision:</span> in-house scenario comparison with side-by-side visual tradeoffs — user-input or AI-suggested scenarios, cost and timeline deltas, exportable CapEx-ready reports. Not Excel tables, not digital twins: decision surfaces.</p>
-
-<p style="margin-top: 28px;">Before LAT, feasibility questions meant commissioning external studies — long turnarounds and politically charged budget debates. After, teams ran three scenarios instantly and exported board-ready outputs. Comparing scenario A against B de-personalized decisions: Ops vs. Finance arguments became cost deltas. What we deliberately cut from v1 — 3D digital twins, deep multi-variable sliders, predictive ESG scoring — looked impressive and didn't reduce reactive spending. Decision velocity over spectacle.</p>
-
-<div style="width: 100%; height: 350px; background-color: #E5E7EB; border-radius: 8px; display: flex; align-items: center; justify-content: center; color: #9CA3AF; font-size: 14px; margin-top: 32px; margin-bottom: 32px;">Simulation view — two scenarios side by side with cost/timeline deltas and export action</div>`
+<div style="width: 100%; height: 400px; background-color: #E5E7EB; border-radius: 8px; display: flex; align-items: center; justify-content: center; color: #9CA3AF; font-size: 14px; margin-bottom: 32px;">
+  <div style="text-align: center; padding: 20px;">
+    <div style="font-weight: 600; margin-bottom: 8px;">IMAGE 5: Scenario Comparison</div>
+    <div style="font-size: 13px; line-height: 1.5;">Two scenarios side-by-side: "Repair" vs "Replace"<br/>Shows: Cost delta, timeline delta, risk comparison<br/>Export button for board-ready CapEx reports</div>
+  </div>
+</div>`
       },
       {
         id: 'tradeoffs',
         title: '07 — Tradeoffs',
         headline: 'We chose human-in-the-loop over speed, accepting slower decisions to build trust',
-        content: `<p><span style="font-weight: 600;">Automation vs. trust.</span> The engine could have auto-escalated failures and auto-scheduled maintenance. We chose human-in-the-loop, accepting slower short-term decisions. Result: 95% adoption, override frequency falling over time, and stable stakeholder trust. Pushing automation early would have collapsed adoption after the first visible mistake.</p>
+        content: `<div style="display: grid; grid-template-columns: 1fr; gap: 32px; margin-bottom: 48px;">
+  <div>
+    <div style="font-weight: 600; font-size: 17px; color: #1C1917; margin-bottom: 8px;">Automation vs. Trust</div>
+    <div style="font-size: 15px; color: #57534E; line-height: 1.6;">The engine could have auto-escalated failures and auto-scheduled maintenance. We chose human-in-the-loop. Result: 95% adoption, override frequency falling over time. Pushing automation early would have collapsed adoption after the first visible mistake.</div>
+  </div>
 
-<div style="width: 100%; height: 280px; background-color: #E5E7EB; border-radius: 8px; display: flex; align-items: center; justify-content: center; color: #9CA3AF; font-size: 14px; margin-top: 24px; margin-bottom: 32px;">Human-in-the-loop architecture — approval gates, logged overrides, evidence-first reasoning</div>
+  <div>
+    <div style="font-weight: 600; font-size: 17px; color: #1C1917; margin-bottom: 8px;">Signal Richness vs. Decision Speed</div>
+    <div style="font-size: 15px; color: #57534E; line-height: 1.6;">Engineering wanted 10+ predictive inputs visible per asset. Testing showed the opposite: users focused on risk, time-to-impact, and cost. Everything else created hesitation. We showed the top drivers and moved depth to drill-down.</div>
+  </div>
 
-<p style="margin-top: 28px;"><span style="font-weight: 600;">Signal richness vs. decision speed.</span> Engineering had invested in 10+ predictive inputs per asset and wanted them visible — more transparency, more credibility, from their view. Testing showed the opposite: users focused on risk level, time-to-impact, and cost, and everything else created hesitation. We limited the primary view to the top drivers and moved depth to drill-down, and validated the call by measuring decision time on both versions.</p>
+  <div>
+    <div style="font-weight: 600; font-size: 17px; color: #1C1917; margin-bottom: 8px;">Transparency vs. Organizational Comfort</div>
+    <div style="font-size: 15px; color: #57534E; line-height: 1.6;">Some stakeholders wanted curated weekly summaries. Real-time visibility exposed inefficiencies and shifted narrative control. I pushed for role-based dashboards with threshold-based notifications. Meetings became strategic, not status-driven.</div>
+  </div>
 
-<img src="/images/lat/AB%20Testing.webp" alt="AB Testing" style="width: 100%; border-radius: 8px; margin-top: 24px; margin-bottom: 32px; display: block;" />
+  <div>
+    <div style="font-weight: 600; font-size: 17px; color: #1C1917; margin-bottom: 8px;">AI Expansion vs. Data Integrity</div>
+    <div style="font-size: 15px; color: #57534E; line-height: 1.6;">After early results, there was momentum to widen predictive coverage fast. We slowed it — validation states, inventory checks, override logging first. Data accuracy: 70% → 95%.</div>
+  </div>
+</div>
 
-<p style="margin-top: 28px;"><span style="font-weight: 600;">Transparency vs. organizational comfort.</span> Some stakeholders preferred curated weekly summaries; real-time operational visibility exposed inefficiencies and shifted narrative control. I pushed for role-based dashboards with threshold-based notifications instead of suppression. Meetings became strategic rather than status-driven — a behavioral decision wearing a UI decision's clothes.</p>
+<img src="/images/lat/AB%20Testing.webp" alt="AB Testing comparison showing simplified vs detailed alert views" style="width: 100%; border-radius: 8px; margin-bottom: 48px; display: block;" />
 
-<div style="width: 100%; height: 280px; background-color: #E5E7EB; border-radius: 8px; display: flex; align-items: center; justify-content: center; color: #9CA3AF; font-size: 14px; margin-top: 24px; margin-bottom: 32px;">Role-based dashboards — manager priority view vs. executive filtered summary</div>
+<div class="pull-quote">The failure mode is never the UI. It's adoption, trust, and behavior — once those break, the metrics follow.</div>
 
-<p style="margin-top: 28px;"><span style="font-weight: 600;">AI expansion speed vs. data integrity.</span> Once early results landed, there was momentum to widen predictive coverage fast. We slowed it — validation states, inventory checks, override logging first. Data accuracy rose from 70% to 95%, and trust rose with it.</p>
-
-<div style="width: 100%; height: 280px; background-color: #E5E7EB; border-radius: 8px; display: flex; align-items: center; justify-content: center; color: #9CA3AF; font-size: 14px; margin-top: 24px; margin-bottom: 32px;">Data validation pipeline — needs verification states, duplicate detection, inventory checks</div>
-
-<p style="margin-top: 48px;">The failure mode in systems like this is never really the UI. It's adoption, trust, and behavior — and once those break, the metrics follow.</p>
-
-<div style="width: 100%; height: 350px; background-color: #E5E7EB; border-radius: 8px; display: flex; align-items: center; justify-content: center; color: #9CA3AF; font-size: 14px; margin-top: 32px; margin-bottom: 32px;">Trust-over-time chart — override rate 61% → 19%, decision time 14 → 4 min, adoption climbing to 95%, with interventions marked: boiler incident month 2, confidence tiers month 3, consequence framing, feedback loop visible month 7. Trust as a designed, measured outcome.</div>`
+<div style="width: 100%; height: 450px; background-color: #E5E7EB; border-radius: 8px; display: flex; align-items: center; justify-content: center; color: #9CA3AF; font-size: 14px; margin-top: 32px; margin-bottom: 32px;">
+  <div style="text-align: center; padding: 20px;">
+    <div style="font-weight: 600; margin-bottom: 8px;">IMAGE: Trust Over Time Chart</div>
+    <div style="font-size: 13px; line-height: 1.5;">Override rate: 61% → 19% | Decision time: 14min → 4min | Adoption: climbing to 95%<br/>Interventions marked: Boiler incident (Mo 2), Confidence tiers (Mo 3), Consequence framing (Mo 5), Feedback loop (Mo 7)</div>
+  </div>
+</div>`
       },
       {
         id: 'impact',
         title: '08 — Impact',
         headline: "The biggest change wasn't cost savings — it was decision confidence",
-        content: `<p><span style="font-weight: 600;">Operational.</span> Linking work orders to lifecycle cost made repair history visible in real time; managers began reviewing repair frequency before approving repeat fixes. Offline-first logging with server validation eliminated duplicate and incomplete records. Reporting per ticket fell from ~20 minutes to ~8; emergency incidents fell 12%; the lifecycle model projected a 25% reduction in unexpected maintenance costs.</p>
+        content: `<p><span style="font-weight: 600;">Operational.</span> Linking work orders to lifecycle cost made repair history visible in real time. Managers started reviewing repair frequency before approving repeat fixes. Reporting per ticket: 20min → 8min. Emergency incidents: ↓12%. Projected cost reduction: 25%.</p>
 
-<p style="margin-top: 28px;"><span style="font-weight: 600;">Decision-making.</span> Teams stopped entering meetings to reconcile facts and started entering them to decide. Budget revisions fell 36%, planning and reconciliation time fell ~60%, and pilot adoption reached 95% against a 70% benchmark.</p>
+<p style="margin-top: 28px;"><span style="font-weight: 600;">Decision-making.</span> Teams stopped entering meetings to reconcile facts and started entering them to decide. Budget revisions: ↓36%. Planning time: ↓60%. Pilot adoption: 95% (vs. 70% benchmark).</p>
 
-<p style="margin-top: 28px;"><span style="font-weight: 600;">Strategic.</span> Scenario simulation moved feasibility analysis in-house (↓4% consultant spend in year one) and generated expansion interest from other institutional property operators — for the client, a signal of a path from project-based consulting toward a scalable product platform. The platform continued beyond my eight-month tenure; the roadmap I left covered mobile refinement, the visible override-feedback loop (which shipped ~7 months post-launch), and multi-campus expansion.</p>
+<p style="margin-top: 28px;"><span style="font-weight: 600;">Strategic.</span> Scenario simulation moved feasibility analysis in-house (↓4% consultant spend). Generated expansion interest from other universities — signaling a path from consulting project to scalable platform.</p>
 
-<p style="margin-top: 48px;">The biggest change wasn't cost savings. It was decision confidence.</p>`
+<div class="pull-quote" style="margin-top: 48px;">The biggest change wasn't cost savings. It was decision confidence.</div>`
       },
       {
         id: 'reflection',
         title: '09 — Reflection',
         headline: "Clarity drove action more than completeness — users didn't want more data, they wanted less to think about",
-        content: `<p><span style="font-weight: 600;">What I got wrong.</span> I believed predictive accuracy would drive adoption. It didn't — data integrity and clarity of output mattered more. Strong predictions still failed when the underlying data was messy or the framing was hard to act on. I'd run a formal data audit before any predictive expansion, and lead with consequence framing from day one instead of arriving at it mid-project.</p>
+        content: `<p><span style="font-weight: 600;">What I got wrong.</span> I thought predictive accuracy would drive adoption. It didn't. Data integrity and clarity mattered more. Strong predictions failed when the underlying data was messy or the framing was hard to act on. Next time: run a data audit before any predictive expansion, and lead with consequence framing from day one.</p>
 
-<p style="margin-top: 28px;"><span style="font-weight: 600;">What mattered more than expected.</span> The lifecycle linkage, not the AI. Once work orders, asset history, and cost-over-time were reliably connected, decision-making improved before the predictive layer matured.</p>
+<p style="margin-top: 28px;"><span style="font-weight: 600;">What mattered more than expected.</span> The lifecycle linkage, not the AI. Once work orders, asset history, and cost-over-time were reliably connected, decision-making improved before the predictive layer even matured.</p>
 
-<p style="margin-top: 28px;"><span style="font-weight: 600;">The design lesson.</span> Users didn't want more data — they wanted less to think about. Simplifying alerts to cost plus top drivers moved behavior more than exposing the full model ever did. Clarity drove action more than completeness. Sophistication doesn't build trust; clarity does.</p>
+<p style="margin-top: 28px;"><span style="font-weight: 600;">The design lesson.</span> Users didn't want more data — they wanted less to think about. Clarity drove action more than completeness. Sophistication doesn't build trust; clarity does.</p>
 
-<p style="margin-top: 28px;"><span style="font-weight: 600;">What I learned about AI in enterprise.</span> Adoption depends less on model sophistication than on trust architecture: visible reasoning, human control, confidence-aware outputs, and failure containment designed in from the start. One wrong high-visibility alert can undo months of adoption — so design for the failure, not the demo. Building LAT today, I'd hold the same principles and move faster on the mechanics: AI-assisted data hygiene at ingestion, and the override-feedback loop visible to users from v1 rather than month seven — because showing people the system learning from their judgment is the fastest trust-builder we found.</p>`
+<p style="margin-top: 28px;"><span style="font-weight: 600;">What I learned about AI in enterprise.</span> Adoption depends less on model sophistication than on trust architecture: visible reasoning, human control, confidence-aware outputs, failure containment designed in from the start. One wrong high-visibility alert can undo months of adoption. Design for the failure, not the demo.</p>`
       },
     ]
   },
