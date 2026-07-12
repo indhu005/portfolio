@@ -361,6 +361,78 @@ export default function Home() {
               </div>
             </div>
           </div>
+
+          {/* Footer Links */}
+          <div style={{
+            maxWidth: isWideDesktop ? '1400px' : '1200px',
+            marginTop: isMobile ? '60px' : isWideDesktop ? '100px' : '80px',
+            paddingLeft: isMobile ? '0' : isWideDesktop ? '64px' : '48px',
+            paddingBottom: isMobile ? '40px' : '60px',
+            display: 'flex',
+            gap: isMobile ? '24px' : '32px',
+            flexWrap: 'wrap',
+            alignItems: 'center',
+          }}>
+            <a
+              href="/about"
+              style={{
+                fontSize: isMobile ? '15px' : '16px',
+                fontWeight: 500,
+                color: '#1C1917',
+                textDecoration: 'none',
+                borderBottom: '1px solid transparent',
+                transition: 'border-color 0.2s',
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.borderBottomColor = '#1C1917'
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.borderBottomColor = 'transparent'
+              }}
+            >
+              About
+            </a>
+            <a
+              href="https://www.linkedin.com/in/indhuvasanth"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                fontSize: isMobile ? '15px' : '16px',
+                fontWeight: 500,
+                color: '#1C1917',
+                textDecoration: 'none',
+                borderBottom: '1px solid transparent',
+                transition: 'border-color 0.2s',
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.borderBottomColor = '#1C1917'
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.borderBottomColor = 'transparent'
+              }}
+            >
+              LinkedIn ↗
+            </a>
+            <a
+              href="mailto:indhu.vasven@gmail.com"
+              style={{
+                fontSize: isMobile ? '15px' : '16px',
+                fontWeight: 500,
+                color: '#1C1917',
+                textDecoration: 'none',
+                borderBottom: '1px solid transparent',
+                transition: 'border-color 0.2s',
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.borderBottomColor = '#1C1917'
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.borderBottomColor = 'transparent'
+              }}
+            >
+              Email
+            </a>
+          </div>
         </div>
 
       </div>
