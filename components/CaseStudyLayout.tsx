@@ -173,30 +173,35 @@ export default function CaseStudyLayout({ caseStudy, slug }: CaseStudyLayoutProp
           height: isMobile ? '60px' : '72px',
           borderBottom: '1px solid rgba(0,0,0,0.08)',
           padding: isMobile ? '0 20px' : isTablet ? '0 32px' : '0 48px 0 48px',
-          paddingTop: isMobile ? '20px' : '24px',
+          paddingBottom: isMobile ? '16px' : '20px',
           flexShrink: 0,
           backgroundColor: '#FFFFFF',
+          display: 'flex',
+          alignItems: 'flex-end',
         }}>
           <div style={{
             display: 'flex',
             alignItems: 'baseline',
             justifyContent: 'space-between',
-            maxWidth: '1100px',
+            maxWidth: '850px',
             marginLeft: 'auto',
             marginRight: 'auto',
+            width: '100%',
           }}>
-            <div style={{ display: 'flex', alignItems: 'baseline', gap: isMobile ? '8px' : '12px', flexWrap: 'wrap' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: isMobile ? '8px' : '12px', flexWrap: 'wrap' }}>
               <span style={{
                 fontFamily: 'inherit',
                 fontSize: isMobile ? '14px' : isTablet ? '14px' : '16px',
                 fontWeight: 700,
                 color: '#1C1917',
+                lineHeight: '1',
               }}>{caseStudy.title}</span>
               {!isMobile && !isTablet && (
                 <span style={{
                   fontSize: '14px',
                   fontWeight: 400,
                   color: '#9CA3AF',
+                  lineHeight: '1',
                 }}>— {caseStudy.subtitle}</span>
               )}
             </div>
@@ -205,6 +210,7 @@ export default function CaseStudyLayout({ caseStudy, slug }: CaseStudyLayoutProp
                 fontSize: '14px',
                 fontWeight: 400,
                 color: '#9CA3AF',
+                lineHeight: '1',
               }}>{caseStudy.description}</span>
             )}
           </div>
@@ -228,7 +234,7 @@ export default function CaseStudyLayout({ caseStudy, slug }: CaseStudyLayoutProp
               key={section.id}
               ref={(el) => { sectionRefs.current[section.id] = el }}
               style={{
-                marginBottom: index === caseStudy.sections.length - 1 ? '0' : '160px',
+                marginBottom: index === caseStudy.sections.length - 1 ? '0' : '112px',
                 maxWidth: '1100px',
                 marginLeft: 'auto',
                 marginRight: 'auto',
@@ -238,10 +244,13 @@ export default function CaseStudyLayout({ caseStudy, slug }: CaseStudyLayoutProp
               {index === 0 && (
                 <div style={{
                   width: '100%',
+                  maxWidth: '850px',
                   height: '580px',
                   backgroundColor: '#7EB3F5',
                   borderRadius: '12px',
                   marginBottom: '50px',
+                  marginLeft: 'auto',
+                  marginRight: 'auto',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
@@ -261,6 +270,9 @@ export default function CaseStudyLayout({ caseStudy, slug }: CaseStudyLayoutProp
                   backgroundColor: '#F9FAFB',
                   borderRadius: '12px',
                   border: '1px solid #E5E7EB',
+                  maxWidth: '850px',
+                  marginLeft: 'auto',
+                  marginRight: 'auto',
                 }}>
                   <div style={{
                     display: 'flex',
@@ -340,6 +352,9 @@ export default function CaseStudyLayout({ caseStudy, slug }: CaseStudyLayoutProp
                 textTransform: 'uppercase',
                 marginBottom: '12px',
                 fontFamily: 'inherit',
+                maxWidth: '850px',
+                marginLeft: 'auto',
+                marginRight: 'auto',
               }}>
                 {section.title}
               </div>
@@ -353,6 +368,9 @@ export default function CaseStudyLayout({ caseStudy, slug }: CaseStudyLayoutProp
                   marginBottom: '24px',
                   lineHeight: '1.3',
                   fontFamily: 'var(--font-fraunces), serif',
+                  maxWidth: '850px',
+                  marginLeft: 'auto',
+                  marginRight: 'auto',
                 }}>
                   {section.headline}
                 </h2>
@@ -363,13 +381,15 @@ export default function CaseStudyLayout({ caseStudy, slug }: CaseStudyLayoutProp
                 className="case-study-content"
                 style={{
                   marginBottom: '32px',
-                  width: '100%',
+                  maxWidth: '850px',
+                  marginLeft: 'auto',
+                  marginRight: 'auto',
                 }}
                 dangerouslySetInnerHTML={{ __html: section.content }}
               />
 
-              {/* Visual Content Area - Hidden for strategy, constraints, and tradeoffs sections */}
-              {section.id !== 'strategy' && section.id !== 'constraints' && section.id !== 'tradeoffs' && (
+              {/* Visual Content Area - Hidden for strategy, constraints, tradeoffs, context-problem, and turning-point sections */}
+              {section.id !== 'strategy' && section.id !== 'constraints' && section.id !== 'tradeoffs' && section.id !== 'context-problem' && section.id !== 'turning-point' && (
                 <div style={{
                   width: '100%',
                   minHeight: '500px',

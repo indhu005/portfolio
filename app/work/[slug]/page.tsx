@@ -222,9 +222,7 @@ const caseStudies = {
 
 <p>The United States faces a $2.6 trillion infrastructure funding gap. Universities operate inside that pressure daily — managing research labs, dormitories, athletic centers, and historic buildings within a single portfolio, each with different governance layers, capital cycles, and maintenance volatility. Despite that complexity, daily operations ran on fragmented tools.</p>
 
-<div style="width: 100%; margin-top: 32px; margin-bottom: 32px;">
-  <img src="/images/lat/Market Gap.webp" alt="Market Gap Analysis" style="width: 100%; border-radius: 8px;" />
-</div>
+<img src="/images/lat/User%20Issues.webp" alt="User Issues" style="width: 100%; border-radius: 8px; margin-top: 32px; margin-bottom: 32px; display: block;" />
 
 <p style="margin-top: 28px;">What fragmentation looked like on a Tuesday afternoon: a technician working underground loses network access and can't retrieve repair history — updates get logged later, sometimes from memory. A project manager prepares for a capital planning meeting by stitching together vendor calls, spreadsheets, emails, invoices, and consultant reports. By the time leadership convenes, decisions are made on partial visibility.</p>
 
@@ -247,7 +245,9 @@ const caseStudies = {
 
 <p style="margin-top: 48px;"><span style="font-weight: 600;">Why existing tools failed</span></p>
 
-<p style="margin-top: 20px;">PMS and CMMS platforms optimize daily tasks — tickets, leases, payments — but don't model asset lifespan, depreciation, or portfolio-level CapEx tradeoffs. Preventive maintenance was time-based, not risk-based, producing both over-maintenance and surprise failures. Field tools assumed stable connectivity and patient form-filling; when digital reporting is slower than paper, adoption doesn't stall — it fails. And a full system replacement wasn't politically viable: the legacy CMMS/ERP stack was wired into procurement, accounting, and budgeting, and leadership wouldn't risk operational downtime. They didn't need another silo, and they couldn't afford an overhaul.</p>`
+<p style="margin-top: 20px;">PMS and CMMS platforms optimize daily tasks — tickets, leases, payments — but don't model asset lifespan, depreciation, or portfolio-level CapEx tradeoffs. Preventive maintenance was time-based, not risk-based, producing both over-maintenance and surprise failures. Field tools assumed stable connectivity and patient form-filling; when digital reporting is slower than paper, adoption doesn't stall — it fails. And a full system replacement wasn't politically viable: the legacy CMMS/ERP stack was wired into procurement, accounting, and budgeting, and leadership wouldn't risk operational downtime. They didn't need another silo, and they couldn't afford an overhaul.</p>
+
+<img src="/images/lat/Market%20Gap.webp" alt="Market Gap Analysis" style="width: 100%; border-radius: 8px; margin-top: 40px; margin-bottom: 32px; display: block;" />`
       },
       {
         id: 'turning-point',
@@ -259,7 +259,7 @@ const caseStudies = {
 
 <p style="margin-top: 28px;">That reframed the direction entirely. Instead of one dashboard for everyone, we built a modular API layer that reduced cognitive load per role, surfaced only what was actionable, preserved a shared source of truth underneath, and turned operational signals into financial intelligence.</p>
 
-<div style="width: 100%; min-height: 400px; background-color: #E5E7EB; border-radius: 8px; display: flex; align-items: center; justify-content: center; color: #9CA3AF; font-size: 14px; margin-top: 32px; margin-bottom: 32px;">System architecture diagram — modular API layer, role-based surfaces, shared data foundation</div>`
+<img src="/images/lat/pROBLEM.webp" alt="System architecture diagram — modular API layer, role-based surfaces, shared data foundation" style="width: 100%; border-radius: 8px; margin-top: 32px; margin-bottom: 32px; display: block;" />`
       },
       {
         id: 'constraints',
@@ -371,7 +371,7 @@ const caseStudies = {
 
 <p style="margin-top: 28px;"><span style="font-weight: 600;">Signal richness vs. decision speed.</span> Engineering had invested in 10+ predictive inputs per asset and wanted them visible — more transparency, more credibility, from their view. Testing showed the opposite: users focused on risk level, time-to-impact, and cost, and everything else created hesitation. We limited the primary view to the top drivers and moved depth to drill-down, and validated the call by measuring decision time on both versions.</p>
 
-<div style="width: 100%; height: 280px; background-color: #E5E7EB; border-radius: 8px; display: flex; align-items: center; justify-content: center; color: #9CA3AF; font-size: 14px; margin-top: 24px; margin-bottom: 32px;">Alert simplification — 10+ signals reduced to 3 tiers + top 2-3 drivers with drill-down</div>
+<img src="/images/lat/AB%20Testing.webp" alt="AB Testing" style="width: 100%; border-radius: 8px; margin-top: 24px; margin-bottom: 32px; display: block;" />
 
 <p style="margin-top: 28px;"><span style="font-weight: 600;">Transparency vs. organizational comfort.</span> Some stakeholders preferred curated weekly summaries; real-time operational visibility exposed inefficiencies and shifted narrative control. I pushed for role-based dashboards with threshold-based notifications instead of suppression. Meetings became strategic rather than status-driven — a behavioral decision wearing a UI decision's clothes.</p>
 
