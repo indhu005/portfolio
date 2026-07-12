@@ -694,7 +694,7 @@ export default function LandingGameSimple() {
         </div>
       )}
 
-      {/* Desktop: Yellow about game button - bottom right */}
+      {/* Desktop: Yellow ? button - bottom right */}
       {!isMobile && (
         <button
           onClick={() => {
@@ -711,6 +711,9 @@ export default function LandingGameSimple() {
             backgroundColor: buttonActive ? '#FF6B35' : '#FFF44F',
             border: 'none',
             borderRadius: '50%',
+            fontSize: '24px',
+            fontWeight: 700,
+            color: '#1C1917',
             cursor: 'pointer',
             zIndex: 100,
             fontFamily: 'DM Sans, sans-serif',
@@ -721,7 +724,6 @@ export default function LandingGameSimple() {
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
-            padding: 0,
           }}
           onMouseEnter={(e) => {
             if (!buttonActive) {
@@ -740,25 +742,7 @@ export default function LandingGameSimple() {
           aria-label="Learn more about the game"
           title="Learn more about the game"
         >
-          <svg width="64" height="64" viewBox="0 0 64 64" style={{ transform: 'rotate(-90deg)' }}>
-            <defs>
-              <path
-                id="circlePath-desktop"
-                d="M 32, 32 m -20, 0 a 20,20 0 1,1 40,0 a 20,20 0 1,1 -40,0"
-              />
-            </defs>
-            <text
-              fill="#1C1917"
-              fontSize="10.5"
-              fontWeight="600"
-              fontFamily="DM Sans, sans-serif"
-              letterSpacing="0.8"
-            >
-              <textPath href="#circlePath-desktop" startOffset="50%" textAnchor="middle">
-                about game
-              </textPath>
-            </text>
-          </svg>
+          ?
         </button>
       )}
 
