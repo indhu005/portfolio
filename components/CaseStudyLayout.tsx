@@ -1,6 +1,7 @@
 'use client'
 import { useState, useEffect, useRef } from 'react'
 import Sidebar from './Sidebar'
+import { CaseStudyStructuredData } from './StructuredData'
 
 const useMediaQuery = (query: string) => {
   const [matches, setMatches] = useState(false)
@@ -94,22 +95,29 @@ export default function CaseStudyLayout({ caseStudy, slug }: CaseStudyLayoutProp
   }
 
   return (
-    <div style={{
-      display: 'flex',
-      height: '100vh',
-      backgroundColor: '#FFFFFF',
-      overflow: 'hidden',
-      width: '100vw',
-    }}>
-      {/* SIDEBAR - Hidden on mobile/tablet */}
-      {!isTablet && (
-        <Sidebar
-          activeProject={slug}
-          activeSection={activeSection}
-          onSectionClick={scrollToSection}
-          sections={caseStudy.sections}
-        />
-      )}
+    <>
+      <CaseStudyStructuredData
+        title={`${caseStudy.title} — ${caseStudy.subtitle}`}
+        description={caseStudy.description}
+        url={`https://indhu.design/work/${slug}`}
+        imageUrl={`https://indhu.design/og-${slug}.png`}
+      />
+      <div style={{
+        display: 'flex',
+        height: '100vh',
+        backgroundColor: '#FFFFFF',
+        overflow: 'hidden',
+        width: '100vw',
+      }}>
+        {/* SIDEBAR - Hidden on mobile/tablet */}
+        {!isTablet && (
+          <Sidebar
+            activeProject={slug}
+            activeSection={activeSection}
+            onSectionClick={scrollToSection}
+            sections={caseStudy.sections}
+          />
+        )}
 
       {/* MOBILE MENU BUTTON */}
       {isTablet && (
@@ -501,5 +509,6 @@ export default function CaseStudyLayout({ caseStudy, slug }: CaseStudyLayoutProp
         </div>
       </div>
     </div>
+    </>
   )
 }

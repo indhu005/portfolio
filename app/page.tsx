@@ -112,7 +112,7 @@ export default function Home() {
           </div>
 
           {/* Home page content */}
-          <div style={{
+          <main style={{
             maxWidth: isWideDesktop ? '1100px' : '920px',
             marginTop: '0px',
             paddingLeft: isMobile ? '0' : isWideDesktop ? '64px' : '48px',
@@ -143,10 +143,10 @@ export default function Home() {
                 My work lives somewhere between structure and storytelling — building systems that scale while keeping the details that make things feel human.
               </p>
             </div>
-          </div>
+          </main>
 
           {/* Case Studies Section */}
-          <div id="case-studies" style={{
+          <section id="case-studies" style={{
             maxWidth: isWideDesktop ? '1400px' : '1200px',
             marginTop: isMobile ? '60px' : isWideDesktop ? '120px' : '100px',
             paddingLeft: isMobile ? '0' : isWideDesktop ? '64px' : '48px',
@@ -170,7 +170,7 @@ export default function Home() {
               gap: isMobile ? '60px' : isWideDesktop ? '100px' : '80px',
             }}>
               {/* Card 1 - LAT */}
-              <div style={{
+              <article style={{
                 display: 'flex',
                 flexDirection: 'column',
               }}>
@@ -224,10 +224,10 @@ export default function Home() {
                   }}
                   />
                 </a>
-              </div>
+              </article>
 
               {/* Card 2 - Keye */}
-              <div style={{
+              <article style={{
                 display: 'flex',
                 flexDirection: 'column',
               }}>
@@ -281,10 +281,10 @@ export default function Home() {
                   }}
                   />
                 </a>
-              </div>
+              </article>
 
               {/* Card 3 - Misinformation Center */}
-              <div style={{
+              <article style={{
                 display: 'flex',
                 flexDirection: 'column',
               }}>
@@ -338,12 +338,12 @@ export default function Home() {
                   }}
                   />
                 </a>
-              </div>
+              </article>
             </div>
-          </div>
+          </section>
 
           {/* Footer Links */}
-          <div style={{
+          <footer style={{
             maxWidth: isWideDesktop ? '1400px' : '1200px',
             marginTop: isMobile ? '60px' : isWideDesktop ? '100px' : '80px',
             paddingLeft: isMobile ? '0' : isWideDesktop ? '64px' : '48px',
@@ -412,7 +412,7 @@ export default function Home() {
             >
               Email
             </a>
-          </div>
+          </footer>
         </div>
 
       </div>

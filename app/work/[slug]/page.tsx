@@ -1,5 +1,6 @@
 import CaseStudyLayout from '@/components/CaseStudyLayout'
 import MisinfoFeaturesContent from '@/components/MisinfoFeaturesContent'
+import { Metadata } from 'next'
 
 const caseStudies = {
   keye: {
@@ -729,6 +730,64 @@ const caseStudies = {
 <div class="pull-quote" style="margin-top: 48px;">The capstone answered the design question: what should a media literacy tool look like for an everyday person. The ecosystem question — how it reaches people at scale, in a form that outlives a funding cycle — is still open.</div>`
       },
     ]
+  }
+}
+
+export async function generateMetadata({
+  params
+}: {
+  params: Promise<{ slug: string }>
+}): Promise<Metadata> {
+  const { slug } = await params
+  const caseStudy = caseStudies[slug as keyof typeof caseStudies]
+
+  if (!caseStudy) {
+    return {
+      title: 'Case Study Not Found',
+    }
+  }
+
+  const metadataMap: Record<string, { description: string; keywords: string[] }> = {
+    keye: {
+      description: 'Founding Product Designer at Keye — from three static screens to YC W2024. Built credit-based marketplace, Chrome extension, and design system. 0→20K MAUs, $1.5M raised.',
+      keywords: ['YC startup designer', 'founding designer', 'startup product design', 'credit marketplace', 'Chrome extension design', 'design systems', 'subscription marketplace', 'SaaS design']
+    },
+    lat: {
+      description: 'Lead Product Designer for LAT Platform — ML-driven lifecycle assessment for university campus maintenance. 95% pilot adoption, 70%→95% data accuracy, 25% cost reduction.',
+      keywords: ['enterprise UX', 'ML product design', 'AI design', 'university technology', 'predictive maintenance', 'lifecycle assessment', 'B2B design', 'decision intelligence']
+    },
+    'misinformation-center': {
+      description: 'UW graduate capstone on media literacy tools for the AI age. Research collaboration with TrueMedia.org. Tested with ~1,800 people at Misinfo Day.',
+      keywords: ['media literacy', 'misinformation design', 'AI ethics', 'fact-checking UX', 'educational design', 'UW capstone', 'civic tech design', 'deepfake detection']
+    }
+  }
+
+  const meta = metadataMap[slug] || { description: caseStudy.description, keywords: [] }
+
+  return {
+    title: `${caseStudy.title} — ${caseStudy.subtitle}`,
+    description: meta.description,
+    keywords: meta.keywords,
+    openGraph: {
+      title: `${caseStudy.title} — ${caseStudy.subtitle}`,
+      description: meta.description,
+      url: `https://indhu.design/work/${slug}`,
+      images: [
+        {
+          url: `/og-${slug}.png`,
+          width: 1200,
+          height: 630,
+          alt: `${caseStudy.title} case study`,
+        }
+      ],
+      type: 'article',
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: `${caseStudy.title} — ${caseStudy.subtitle}`,
+      description: meta.description,
+      images: [`/og-${slug}.png`],
+    }
   }
 }
 
