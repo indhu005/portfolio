@@ -252,46 +252,19 @@ export default function Play() {
                   style={{
                     marginBottom: isMobile ? '64px' : isWideDesktop ? '120px' : '96px',
                     display: 'flex',
-                    flexDirection: isMobile ? 'column' : imageOnLeft ? 'row' : 'row-reverse',
-                    gap: isMobile ? '24px' : isTablet ? '40px' : isWideDesktop ? '140px' : '100px',
+                    flexDirection: 'row',
+                    justifyContent: isMobile ? 'flex-start' : 'space-between',
                     alignItems: 'flex-start',
                     position: 'relative',
                     zIndex: 2,
                   }}
                 >
-                  {/* Image */}
+                  {/* Text - always on left, aligned with "Play" */}
                   <div style={{
                     flex: isMobile ? '0 0 auto' : '0 0 48%',
                     width: isMobile ? '100%' : '48%',
-                  }}>
-                    <div style={{
-                      width: '100%',
-                      height: isMobile ? '280px' : isTablet ? '320px' : isWideDesktop ? '500px' : '420px',
-                      backgroundColor: '#E5E7EB',
-                      borderRadius: '4px',
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      color: '#9CA3AF',
-                      fontSize: '14px',
-                      transition: 'transform 0.3s ease',
-                      cursor: 'pointer',
-                    }}
-                    onMouseEnter={(e) => {
-                      if (!isMobile) e.currentTarget.style.transform = 'scale(1.02)'
-                    }}
-                    onMouseLeave={(e) => {
-                      if (!isMobile) e.currentTarget.style.transform = 'scale(1)'
-                    }}
-                    >
-                      Image placeholder
-                    </div>
-                  </div>
-
-                  {/* Text */}
-                  <div style={{
-                    flex: isMobile ? '0 0 auto' : '0 0 48%',
-                    width: isMobile ? '100%' : '48%',
+                    order: isMobile ? 2 : 1,
+                    marginTop: isMobile ? '24px' : 0,
                   }}>
                     {/* Tags */}
                     <div style={{
@@ -347,6 +320,36 @@ export default function Play() {
                     }}>
                       {project.description}
                     </p>
+                  </div>
+
+                  {/* Image - alternates left/right */}
+                  <div style={{
+                    flex: isMobile ? '0 0 auto' : '0 0 48%',
+                    width: isMobile ? '100%' : '48%',
+                    order: isMobile ? 1 : imageOnLeft ? 1 : 2,
+                  }}>
+                    <div style={{
+                      width: '100%',
+                      height: isMobile ? '280px' : isTablet ? '320px' : isWideDesktop ? '500px' : '420px',
+                      backgroundColor: '#E5E7EB',
+                      borderRadius: '4px',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      color: '#9CA3AF',
+                      fontSize: '14px',
+                      transition: 'transform 0.3s ease',
+                      cursor: 'pointer',
+                    }}
+                    onMouseEnter={(e) => {
+                      if (!isMobile) e.currentTarget.style.transform = 'scale(1.02)'
+                    }}
+                    onMouseLeave={(e) => {
+                      if (!isMobile) e.currentTarget.style.transform = 'scale(1)'
+                    }}
+                    >
+                      Image placeholder
+                    </div>
                   </div>
                 </div>
               )
