@@ -141,41 +141,41 @@ export default function Play() {
             backgroundColor: '#FFFFFF',
           }}
         >
-          {/* Header */}
+          {/* Container for everything - single alignment grid */}
           <div style={{
             maxWidth: isWideDesktop ? '1400px' : '1100px',
             marginLeft: 'auto',
             marginRight: 'auto',
-            marginBottom: isMobile ? '48px' : isWideDesktop ? '80px' : '64px',
           }}>
-            <h1 style={{
-              fontFamily: 'var(--font-fraunces), serif',
-              fontSize: isMobile ? '42px' : isTablet ? '56px' : isWideDesktop ? '72px' : '64px',
-              fontWeight: 700,
-              lineHeight: '1.1',
-              color: '#1C1917',
-              marginBottom: isMobile ? '20px' : '24px',
-              letterSpacing: '-0.02em',
+            {/* Header */}
+            <div style={{
+              marginBottom: isMobile ? '48px' : isWideDesktop ? '80px' : '64px',
+              width: isMobile ? '100%' : '48%',
             }}>
-              Play
-            </h1>
-            <p style={{
-              fontSize: isMobile ? '17px' : isWideDesktop ? '20px' : '18px',
-              lineHeight: '1.7',
-              color: '#57534E',
-              maxWidth: '680px',
-            }}>
-              Side projects and experiments. Some finished, some in progress, all made while learning something new or just having fun.
-            </p>
-          </div>
+              <h1 style={{
+                fontFamily: 'var(--font-fraunces), serif',
+                fontSize: isMobile ? '42px' : isTablet ? '56px' : isWideDesktop ? '72px' : '64px',
+                fontWeight: 700,
+                lineHeight: '1.1',
+                color: '#1C1917',
+                marginBottom: isMobile ? '20px' : '24px',
+                letterSpacing: '-0.02em',
+              }}>
+                Play
+              </h1>
+              <p style={{
+                fontSize: isMobile ? '17px' : isWideDesktop ? '20px' : '18px',
+                lineHeight: '1.7',
+                color: '#57534E',
+              }}>
+                Side projects and experiments. Some finished, some in progress, all made while learning something new or just having fun.
+              </p>
+            </div>
 
-          {/* Projects - New Yorker style layout with ladder */}
-          <div style={{
-            maxWidth: isWideDesktop ? '1400px' : '1100px',
-            marginLeft: 'auto',
-            marginRight: 'auto',
-            position: 'relative',
-          }}>
+            {/* Projects - New Yorker style layout with ladder */}
+            <div style={{
+              position: 'relative',
+            }}>
             {/* Ladder SVG - runs through entire page */}
             {!isMobile && (
               <div style={{
@@ -292,7 +292,6 @@ export default function Play() {
                   <div style={{
                     flex: isMobile ? '0 0 auto' : '0 0 48%',
                     width: isMobile ? '100%' : '48%',
-                    paddingTop: isMobile ? '0' : isTablet ? '8px' : '16px',
                   }}>
                     {/* Tags */}
                     <div style={{
@@ -352,6 +351,7 @@ export default function Play() {
                 </div>
               )
             })}
+            </div>
           </div>
         </div>
 
