@@ -25,8 +25,8 @@ export const metadata: Metadata = {
   },
   description: 'Product designer in Seattle specializing in AI/ML products, design systems, and user research. Previously founding designer at YC-backed Keye, enterprise UX for universities.',
   keywords: ['product designer', 'UX designer', 'UI designer', 'Seattle designer', 'AI product design', 'ML design', 'design systems', 'user research', 'enterprise UX', 'YC designer'],
-  authors: [{ name: 'Indhumathi Venkatachalam', url: 'https://indhu.design' }],
-  creator: 'Indhumathi Venkatachalam',
+  authors: [{ name: 'Indhu V', url: 'https://indhu.design' }],
+  creator: 'Indhu V',
   openGraph: {
     type: 'website',
     locale: 'en_US',
