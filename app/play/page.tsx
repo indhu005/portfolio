@@ -172,76 +172,10 @@ export default function Play() {
               </p>
             </div>
 
-            {/* Projects - New Yorker style layout with ladder */}
+            {/* Projects - New Yorker style layout */}
             <div style={{
               position: 'relative',
             }}>
-            {/* Ladder SVG - runs through entire page */}
-            {!isMobile && (
-              <div style={{
-                position: 'absolute',
-                left: '50%',
-                top: '0',
-                height: '100%',
-                transform: 'translateX(-50%)',
-                width: isWideDesktop ? '240px' : '200px',
-                pointerEvents: 'none',
-                zIndex: 1,
-              }}>
-                {/* Placeholder for climbing girl ladder SVG */}
-                <svg
-                  width={isWideDesktop ? "240" : "200"}
-                  height="100%"
-                  viewBox={isWideDesktop ? "0 0 240 5000" : "0 0 200 5000"}
-                  preserveAspectRatio="xMidYMin slice"
-                  style={{
-                    position: 'absolute',
-                    top: 0,
-                    left: 0,
-                    height: '100%',
-                  }}
-                >
-                  {/* Vertical ladder - placeholder */}
-                  <line
-                    x1={isWideDesktop ? "120" : "100"}
-                    y1="0"
-                    x2={isWideDesktop ? "120" : "100"}
-                    y2="5000"
-                    stroke="#E5E7EB"
-                    strokeWidth="3"
-                    strokeDasharray="30,15"
-                  />
-                  <text
-                    x={isWideDesktop ? "120" : "100"}
-                    y="100"
-                    textAnchor="middle"
-                    fontSize="14"
-                    fill="#9CA3AF"
-                  >
-                    Girl climbing
-                  </text>
-                  <text
-                    x={isWideDesktop ? "120" : "100"}
-                    y="120"
-                    textAnchor="middle"
-                    fontSize="14"
-                    fill="#9CA3AF"
-                  >
-                    ladder SVG
-                  </text>
-                  <text
-                    x={isWideDesktop ? "120" : "100"}
-                    y="140"
-                    textAnchor="middle"
-                    fontSize="14"
-                    fill="#9CA3AF"
-                  >
-                    goes here
-                  </text>
-                </svg>
-              </div>
-            )}
-
             {projects.map((project, index) => {
               // Alternate layout: even indices = image left, odd = image right
               const imageOnLeft = index % 2 === 0
