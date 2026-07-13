@@ -1,6 +1,6 @@
 # SEO Optimization Guide
 
-This portfolio has been optimized for search engines. Here's what was implemented:
+This portfolio (Indhu V — Product Designer) has been optimized for search engines. Here's what was implemented:
 
 ## ✅ Completed SEO Features
 

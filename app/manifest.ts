@@ -2,7 +2,7 @@ import { MetadataRoute } from 'next'
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: 'Indhu Vasan — Product Designer',
+    name: 'Indhu V — Product Designer',
     short_name: 'Indhu Design',
     description: 'Product designer in Seattle specializing in AI/ML products, design systems, and user research.',
     start_url: '/',

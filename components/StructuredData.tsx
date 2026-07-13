@@ -4,7 +4,8 @@ export function PersonStructuredData() {
   const structuredData = {
     '@context': 'https://schema.org',
     '@type': 'Person',
-    name: 'Indhu Vasan',
+    name: 'Indhumathi Venkatachalam',
+    alternateName: 'Indhu V',
     jobTitle: 'Product Designer',
     url: 'https://indhu.design',
     email: 'indhu.vasven@gmail.com',
@@ -50,16 +51,18 @@ export function PortfolioStructuredData() {
   const structuredData = {
     '@context': 'https://schema.org',
     '@type': 'WebSite',
-    name: 'Indhu Vasan — Product Designer',
+    name: 'Indhu V — Product Designer',
     url: 'https://indhu.design',
     description: 'Product designer in Seattle specializing in AI/ML products, design systems, and user research.',
     author: {
       '@type': 'Person',
-      name: 'Indhu Vasan'
+      name: 'Indhumathi Venkatachalam',
+      alternateName: 'Indhu V'
     },
     mainEntity: {
       '@type': 'Person',
-      name: 'Indhu Vasan',
+      name: 'Indhumathi Venkatachalam',
+      alternateName: 'Indhu V',
       jobTitle: 'Product Designer'
     }
   }
@@ -96,7 +99,8 @@ export function CaseStudyStructuredData({
     description: description,
     author: {
       '@type': 'Person',
-      name: 'Indhu Vasan',
+      name: 'Indhumathi Venkatachalam',
+      alternateName: 'Indhu V',
       url: 'https://indhu.design'
     },
     datePublished,
