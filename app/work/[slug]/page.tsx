@@ -166,7 +166,7 @@ const caseStudies = {
   </div>
 </div>
 
-<div class="pull-quote">Frontend engineering sat twelve hours away in Asia. A bug found Thursday in Seattle wasn't fixed until Friday evening — once leaving a broken sticky nav visible through a weekend of VC testing.</div>
+<div class="pull-quote">Frontend engineering was twelve hours away in Asia. A bug found Thursday in Seattle wasn't fixed until Friday evening — once leaving a broken sticky nav visible through a weekend of VC testing.</div>
 
 <p style="margin-top: 48px;">I rebuilt my handoff: annotated documents, precisely named assets, pre-answered edge cases, Saturday-morning sessions overlapping their day. That discipline became the onboarding foundation for the junior designer I hired. The true measure: when she took over my features, users couldn't tell where my work ended and hers began.</p>`
       },
@@ -602,7 +602,7 @@ const caseStudies = {
 
   <div>
     <div style="font-weight: 600; font-size: 17px; color: #1C1917; margin-bottom: 8px;">The Transparency Demand</div>
-    <div style="font-size: 15px; color: #57534E; line-height: 1.6;">When participants hit suspicious content, they wanted to know who was paying for it — not just whether it was true, but what agenda sat behind it. "I didn't want a fact-check label. I wanted to see the incentive structure." This became the transparency principle.</div>
+    <div style="font-size: 15px; color: #57534E; line-height: 1.6;">When participants hit suspicious content, they wanted to know who was paying for it — not just whether it was true, but what agenda sat behind it. One user put it bluntly: "I didn't want a fact-check label. I wanted to see the incentive structure." This became the transparency principle.</div>
   </div>
 
   <div>

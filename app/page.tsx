@@ -194,7 +194,7 @@ export default function Home() {
                   marginBottom: isMobile ? '24px' : isWideDesktop ? '40px' : '32px',
                   maxWidth: '800px',
                 }}>
-                  Redesigning mental health assessment tools to reduce clinician burnout and improve patient care outcomes.
+                  Turning fragmented campus maintenance into a trusted financial decision system through ML-driven lifecycle intelligence.
                 </p>
 
                 {/* Large Image Placeholder */}
@@ -251,7 +251,7 @@ export default function Home() {
                   marginBottom: isMobile ? '24px' : isWideDesktop ? '40px' : '32px',
                   maxWidth: '800px',
                 }}>
-                  Building a community-driven platform that helps people discover and share authentic local experiences.
+                  From three static screens to a YC-backed subscription marketplace — designing ClassPass for digital tools.
                 </p>
 
                 {/* Large Image Placeholder */}
@@ -308,7 +308,7 @@ export default function Home() {
                   marginBottom: isMobile ? '24px' : isWideDesktop ? '40px' : '32px',
                   maxWidth: '800px',
                 }}>
-                  Designing tools to help users identify and combat misinformation through AI-powered fact checking.
+                  Media literacy tools for the AI age — equipping people to identify misinformation themselves through verification, education, and trust.
                 </p>
 
                 {/* Large Image Placeholder */}

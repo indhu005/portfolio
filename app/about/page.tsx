@@ -152,7 +152,7 @@ export default function About() {
               color: '#1C1917',
             }}>
               <p style={{ marginBottom: '36px' }}>
-                I'm a product designer who came to design through architecture — which mostly means I spent five years learning to care about how a space <em>feels</em> before I cared about how it looks, then showed up to my first UX job and got asked to move a button 4 pixels to the left. I adapted.
+                I'm a product designer who came to design from architecture — which mostly means I spent five years learning to care about how a space <em>feels</em> before I cared about how it looks, then showed up to my first UX job and got asked to move a button 4 pixels to the left. I adapted.
               </p>
 
               <p style={{
@@ -174,7 +174,11 @@ export default function About() {
               </p>
 
               <p style={{ marginBottom: '36px' }}>
-                I'm endlessly curious about AI quietly rewriting how the world works, about what users actually do versus what we confidently assumed they'd do in the last design review, about tall trees, water reflections, and whatever strange little object made someone stop and go "wait, what is that." I've lived in Chicago, Milwaukee, Los Angeles, New York, and now Seattle, and each city left something behind in how I see people and places — mostly opinions about public transit. I collect things that make people lean in for a second look. And I lose sleep over problems that were never actually part of the assignment, which is either a design superpower or a boundary-setting problem, depending on who you ask.
+                I'm endlessly curious about AI quietly rewriting how the world works, about what users actually do versus what we confidently assumed they'd do in the last design review, about tall trees, water reflections, and whatever strange little object made someone stop and go "wait, what is that."
+              </p>
+
+              <p style={{ marginBottom: '36px' }}>
+                I've lived in Chicago, Milwaukee, Los Angeles, New York, and now Seattle, and each city left something behind in how I see people and places — mostly opinions about public transit. I collect things that make people lean in for a second look. And I lose sleep over problems that were never actually part of the assignment, which is either a design superpower or a boundary-setting problem, depending on who you ask.
               </p>
 
               <p style={{ marginBottom: '48px' }}>
