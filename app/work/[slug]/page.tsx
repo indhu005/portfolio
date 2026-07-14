@@ -611,7 +611,14 @@ const caseStudies = {
         id: 'problem',
         title: '02 — The Problem',
         headline: 'After AI, the same problem arrived at a different scale — believability and volume in a fragile ecosystem',
-        content: `<p>Misinformation exploits human bias: believe what confirms your views, trust what feels familiar, share before verifying. After AI, the same problem arrived at a different scale — more believable, more volume, same fragile ecosystem.</p>
+        content: `<div style="width: 100%; max-width: 1200px; aspect-ratio: 16/9; margin-bottom: 48px; border-radius: 8px; overflow: hidden;">
+  <video autoplay loop muted playsinline preload="auto" style="width: 102%; height: 102%; display: block; object-fit: cover; border: none; outline: none; transform: translate(-1%, -1%);">
+    <source src="/videos/misinformationcenter/Flow%201%20misinfo%20(1).mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+</div>
+
+<p>Misinformation exploits human bias: believe what confirms your views, trust what feels familiar, share before verifying. After AI, the same problem arrived at a different scale — more believable, more volume, same fragile ecosystem.</p>
 
 <div style="display: grid; grid-template-columns: 1fr; gap: 32px; margin-top: 40px; margin-bottom: 48px;">
   <div>
@@ -677,7 +684,14 @@ const caseStudies = {
         id: 'research',
         title: '04 — User Research',
         headline: 'Misinformation moves through trust networks — families, WhatsApp groups, neighborhood pages — in a specific generational pattern',
-        content: `<p><span style="font-weight: 600;">Methods:</span> 2,000-respondent survey, 28 interviews (paid, cross-channel recruitment), 14-participant usability testing, Misinfo Day with ~1,800 attendees (high schoolers to seniors, UW faculty, SIFT methodology creator).</p>
+        content: `<div style="width: 100%; max-width: 1200px; aspect-ratio: 16/9; margin-bottom: 48px; border-radius: 8px; overflow: hidden;">
+  <video autoplay loop muted playsinline preload="auto" style="width: 102%; height: 102%; display: block; object-fit: cover; border: none; outline: none; transform: translate(-1%, -1%);">
+    <source src="/videos/misinformationcenter/Flow%2002%20Compressed%20MIS.webm" type="video/webm">
+    Your browser does not support the video tag.
+  </video>
+</div>
+
+<p><span style="font-weight: 600;">Methods:</span> 2,000-respondent survey, 28 interviews (paid, cross-channel recruitment), 14-participant usability testing, Misinfo Day with ~1,800 attendees (high schoolers to seniors, UW faculty, SIFT methodology creator).</p>
 
 <div class="pull-quote" style="margin-top: 40px; margin-bottom: 40px;">Misinformation moves through trust networks — families, WhatsApp groups, neighborhood pages — in a specific generational pattern.</div>
 
