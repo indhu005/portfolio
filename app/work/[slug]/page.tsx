@@ -267,7 +267,103 @@ const caseStudies = {
         id: 'context-problem',
         title: '02 — Context & Problem',
         headline: 'Fragmented data was forcing humans to do the work a system should have done',
-        content: `<p>Universities manage billions in infrastructure with fragmented tools. A technician underground can't access repair history. A project manager stitches together spreadsheets, vendor calls, and invoices before capital planning meetings. Leadership makes decisions on partial data.</p>
+        content: `<div style="width: 100%; margin-bottom: 48px; position: relative;">
+  <div style="width: 100%; overflow: hidden; border-radius: 8px; position: relative; border: none; outline: none; box-shadow: none; line-height: 0; background-color: #000; -webkit-backface-visibility: hidden; backface-visibility: hidden;">
+    <video
+      id="lat-flow-video"
+      style="width: 100%; height: auto; display: block; cursor: pointer; border: none; outline: none; vertical-align: middle; -webkit-backface-visibility: hidden; backface-visibility: hidden;"
+      loop
+      autoplay
+      muted
+      playsinline
+    >
+      <source src="/videos/lat/Flow%2001%20compressed.mp4" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+  </div>
+  <div id="lat-video-controls" style="margin-top: 16px; display: flex; align-items: center; gap: 12px;">
+    <button
+      id="lat-play-pause"
+      style="background: none; border: none; cursor: pointer; padding: 8px; display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; border-radius: 50%; transition: background-color 0.2s;"
+      onmouseover="this.style.backgroundColor='#F3F4F6'"
+      onmouseout="this.style.backgroundColor='transparent'"
+      aria-label="Play/Pause"
+    >
+      <svg id="lat-pause-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <rect x="6" y="4" width="4" height="16"></rect>
+        <rect x="14" y="4" width="4" height="16"></rect>
+      </svg>
+      <svg id="lat-play-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display: none;">
+        <polygon points="5 3 19 12 5 21 5 3"></polygon>
+      </svg>
+    </button>
+    <button
+      id="lat-replay"
+      style="background: none; border: none; cursor: pointer; padding: 8px; display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; border-radius: 50%; transition: background-color 0.2s;"
+      onmouseover="this.style.backgroundColor='#F3F4F6'"
+      onmouseout="this.style.backgroundColor='transparent'"
+      aria-label="Replay"
+    >
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <polyline points="1 4 1 10 7 10"></polyline>
+        <path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"></path>
+      </svg>
+    </button>
+    <div style="flex: 1; height: 4px; background-color: #E5E7EB; border-radius: 2px; position: relative; cursor: pointer;" id="lat-progress-container">
+      <div id="lat-progress-bar" style="height: 100%; background-color: #1C1917; border-radius: 2px; width: 0%; transition: width 0.1s;"></div>
+    </div>
+  </div>
+</div>
+
+<script>
+  (function() {
+    const video = document.getElementById('lat-flow-video');
+    const playPauseBtn = document.getElementById('lat-play-pause');
+    const replayBtn = document.getElementById('lat-replay');
+    const progressContainer = document.getElementById('lat-progress-container');
+    const progressBar = document.getElementById('lat-progress-bar');
+    const playIcon = document.getElementById('lat-play-icon');
+    const pauseIcon = document.getElementById('lat-pause-icon');
+
+    function togglePlayPause() {
+      if (video.paused) {
+        video.play();
+        playIcon.style.display = 'none';
+        pauseIcon.style.display = 'block';
+      } else {
+        video.pause();
+        playIcon.style.display = 'block';
+        pauseIcon.style.display = 'none';
+      }
+    }
+
+    function replay() {
+      video.currentTime = 0;
+      video.play();
+      playIcon.style.display = 'none';
+      pauseIcon.style.display = 'block';
+    }
+
+    function updateProgress() {
+      const progress = (video.currentTime / video.duration) * 100;
+      progressBar.style.width = progress + '%';
+    }
+
+    function seek(e) {
+      const rect = progressContainer.getBoundingClientRect();
+      const pos = (e.clientX - rect.left) / rect.width;
+      video.currentTime = pos * video.duration;
+    }
+
+    playPauseBtn.addEventListener('click', togglePlayPause);
+    video.addEventListener('click', togglePlayPause);
+    replayBtn.addEventListener('click', replay);
+    video.addEventListener('timeupdate', updateProgress);
+    progressContainer.addEventListener('click', seek);
+  })();
+</script>
+
+<p>Universities manage billions in infrastructure with fragmented tools. A technician underground can't access repair history. A project manager stitches together spreadsheets, vendor calls, and invoices before capital planning meetings. Leadership makes decisions on partial data.</p>
 
 <img src="/images/lat/User%20Issues.webp" alt="User Issues" style="width: 100%; border-radius: 8px; margin-top: 32px; margin-bottom: 32px; display: block;" />
 
