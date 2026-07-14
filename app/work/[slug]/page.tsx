@@ -613,7 +613,7 @@ const caseStudies = {
         headline: 'After AI, the same problem arrived at a different scale — believability and volume in a fragile ecosystem',
         content: `<div style="width: 100%; max-width: 1200px; aspect-ratio: 16/9; margin-bottom: 48px; border-radius: 8px; overflow: hidden;">
   <video autoplay loop muted playsinline preload="auto" style="width: 102%; height: 102%; display: block; object-fit: cover; border: none; outline: none; transform: translate(-1%, -1%);">
-    <source src="/videos/misinformationcenter/Flow%201%20misinfo%20(1).mp4" type="video/mp4">
+    <source src="/videos/misinformationcenter/Flow%2001%20Misinformation%20(1).mp4" type="video/mp4">
     Your browser does not support the video tag.
   </video>
 </div>
