@@ -394,7 +394,103 @@ const caseStudies = {
         id: 'turning-point',
         title: '03 — The Turning Point',
         headline: 'Research revealed we were redesigning a system of coordination',
-        content: `<p>We thought we were customizing a product. Research showed we were redesigning <span style="font-weight: 600;">a system of coordination.</span></p>
+        content: `<div style="width: 100%; margin-bottom: 48px; position: relative;">
+  <div style="width: 100%; overflow: hidden; border-radius: 8px; position: relative; border: none; outline: none; box-shadow: none; line-height: 0; background-color: #000; -webkit-backface-visibility: hidden; backface-visibility: hidden;">
+    <video
+      id="lat-flow-video-2"
+      style="width: 100%; height: auto; display: block; cursor: pointer; border: none; outline: none; vertical-align: middle; -webkit-backface-visibility: hidden; backface-visibility: hidden;"
+      loop
+      autoplay
+      muted
+      playsinline
+    >
+      <source src="/videos/lat/Flow%2002%20compressed.mp4" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+  </div>
+  <div id="lat-video-controls-2" style="margin-top: 16px; display: flex; align-items: center; gap: 12px;">
+    <button
+      id="lat-play-pause-2"
+      style="background: none; border: none; cursor: pointer; padding: 8px; display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; border-radius: 50%; transition: background-color 0.2s;"
+      onmouseover="this.style.backgroundColor='#F3F4F6'"
+      onmouseout="this.style.backgroundColor='transparent'"
+      aria-label="Play/Pause"
+    >
+      <svg id="lat-pause-icon-2" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <rect x="6" y="4" width="4" height="16"></rect>
+        <rect x="14" y="4" width="4" height="16"></rect>
+      </svg>
+      <svg id="lat-play-icon-2" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display: none;">
+        <polygon points="5 3 19 12 5 21 5 3"></polygon>
+      </svg>
+    </button>
+    <button
+      id="lat-replay-2"
+      style="background: none; border: none; cursor: pointer; padding: 8px; display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; border-radius: 50%; transition: background-color 0.2s;"
+      onmouseover="this.style.backgroundColor='#F3F4F6'"
+      onmouseout="this.style.backgroundColor='transparent'"
+      aria-label="Replay"
+    >
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <polyline points="1 4 1 10 7 10"></polyline>
+        <path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"></path>
+      </svg>
+    </button>
+    <div style="flex: 1; height: 4px; background-color: #E5E7EB; border-radius: 2px; position: relative; cursor: pointer;" id="lat-progress-container-2">
+      <div id="lat-progress-bar-2" style="height: 100%; background-color: #1C1917; border-radius: 2px; width: 0%; transition: width 0.1s;"></div>
+    </div>
+  </div>
+</div>
+
+<script>
+  (function() {
+    const video = document.getElementById('lat-flow-video-2');
+    const playPauseBtn = document.getElementById('lat-play-pause-2');
+    const replayBtn = document.getElementById('lat-replay-2');
+    const progressContainer = document.getElementById('lat-progress-container-2');
+    const progressBar = document.getElementById('lat-progress-bar-2');
+    const playIcon = document.getElementById('lat-play-icon-2');
+    const pauseIcon = document.getElementById('lat-pause-icon-2');
+
+    function togglePlayPause() {
+      if (video.paused) {
+        video.play();
+        playIcon.style.display = 'none';
+        pauseIcon.style.display = 'block';
+      } else {
+        video.pause();
+        playIcon.style.display = 'block';
+        pauseIcon.style.display = 'none';
+      }
+    }
+
+    function replay() {
+      video.currentTime = 0;
+      video.play();
+      playIcon.style.display = 'none';
+      pauseIcon.style.display = 'block';
+    }
+
+    function updateProgress() {
+      const progress = (video.currentTime / video.duration) * 100;
+      progressBar.style.width = progress + '%';
+    }
+
+    function seek(e) {
+      const rect = progressContainer.getBoundingClientRect();
+      const pos = (e.clientX - rect.left) / rect.width;
+      video.currentTime = pos * video.duration;
+    }
+
+    playPauseBtn.addEventListener('click', togglePlayPause);
+    video.addEventListener('click', togglePlayPause);
+    replayBtn.addEventListener('click', replay);
+    video.addEventListener('timeupdate', updateProgress);
+    progressContainer.addEventListener('click', seek);
+  })();
+</script>
+
+<p>We thought we were customizing a product. Research showed we were redesigning <span style="font-weight: 600;">a system of coordination.</span></p>
 
 <p style="margin-top: 28px;">The breakthrough wasn't the AI. It was recognizing that fragmented data was forcing humans to do system work. Everyone had access to data. What they lacked was context, prioritization, and trust.</p>
 
