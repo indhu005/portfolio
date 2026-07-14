@@ -267,8 +267,8 @@ const caseStudies = {
         id: 'context-problem',
         title: '02 — Context & Problem',
         headline: 'Fragmented data was forcing humans to do the work a system should have done',
-        content: `<div style="width: 100%; aspect-ratio: 16/9; margin-bottom: 48px;">
-  <video controls loop muted playsinline preload="auto" style="width: 100%; height: 100%; border-radius: 8px; display: block; object-fit: contain; transform: translateZ(0); -webkit-transform: translateZ(0);">
+        content: `<div style="width: 100%; max-width: 1200px; aspect-ratio: 16/9; margin-bottom: 48px; border-radius: 8px; overflow: hidden;">
+  <video autoplay loop muted playsinline preload="auto" style="width: 100%; height: 100%; display: block; object-fit: contain; border: none; outline: none;">
     <source src="/videos/lat/Flow%2001%20compressed.webm" type="video/webm">
     Your browser does not support the video tag.
   </video>
@@ -278,8 +278,8 @@ const caseStudies = {
 
 <p style="margin-top: 28px;">Without a unified system, everyone operates in their own flow with no common path:</p>
 
-<div style="width: 100%; aspect-ratio: 16/9; margin-top: 32px; margin-bottom: 48px;">
-  <video controls loop muted playsinline preload="auto" style="width: 100%; height: 100%; border-radius: 8px; display: block; object-fit: contain; transform: translateZ(0); -webkit-transform: translateZ(0);">
+<div style="width: 100%; max-width: 1200px; aspect-ratio: 16/9; margin-top: 32px; margin-bottom: 48px; border-radius: 8px; overflow: hidden;">
+  <video autoplay loop muted playsinline preload="auto" style="width: 100%; height: 100%; display: block; object-fit: contain; border: none; outline: none;">
     <source src="/videos/lat/Flow%2003%20compressed.webm" type="video/webm">
     Your browser does not support the video tag.
   </video>
@@ -314,14 +314,14 @@ const caseStudies = {
         id: 'turning-point',
         title: '03 — The Turning Point',
         headline: 'Research revealed we were redesigning a system of coordination',
-        content: `<div style="width: 100%; aspect-ratio: 16/9; margin-bottom: 48px;">
-  <video controls loop muted playsinline preload="auto" style="width: 100%; height: 100%; border-radius: 8px; display: block; object-fit: contain; transform: translateZ(0); -webkit-transform: translateZ(0);">
+        content: `<div style="width: 100%; max-width: 1200px; aspect-ratio: 16/9; margin-bottom: 48px; border-radius: 8px; overflow: hidden;">
+  <video autoplay loop muted playsinline preload="auto" style="width: 100%; height: 100%; display: block; object-fit: contain; border: none; outline: none;">
     <source src="/videos/lat/Flow%2002%20compressed.webm" type="video/webm">
     Your browser does not support the video tag.
   </video>
 </div>
 
-<p>We thought we were customizing a product. Research showed we were redesigning <span style="font-weight: 60 0;">a system of coordination.</span></p>
+<p>We thought we were customizing a product. Research showed we were redesigning <span style="font-weight: 600;">a system of coordination.</span></p>
 
 <p style="margin-top: 28px;">The breakthrough wasn't the AI. It was recognizing that fragmented data was forcing humans to do system work. Everyone had access to data. What they lacked was context, prioritization, and trust.</p>
 
