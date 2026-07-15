@@ -91,8 +91,8 @@ export default function VideoPlayer({ src, id }: VideoPlayerProps) {
           playsInline
           preload="metadata"
           style={{
-            width: 'calc(100% + 4px)',
-            height: 'calc(100% + 4px)',
+            width: 'calc(100% + 8px)',
+            height: 'calc(100% + 8px)',
             display: 'block',
             objectFit: 'cover',
             border: 'none',
@@ -100,8 +100,10 @@ export default function VideoPlayer({ src, id }: VideoPlayerProps) {
             willChange: 'auto',
             transform: 'translateZ(0)',
             position: 'absolute',
-            top: '-2px',
-            left: '-2px',
+            top: '-4px',
+            left: '-4px',
+            right: '-4px',
+            bottom: '-4px',
           }}
         >
           <source src={src} type="video/webm" />
