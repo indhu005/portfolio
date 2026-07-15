@@ -268,7 +268,7 @@ const caseStudies = {
         title: '02 — Context & Problem',
         headline: 'Fragmented data was forcing humans to do the work a system should have done',
         content: `<div style="width: 100%; max-width: 1200px; aspect-ratio: 16/9; margin-bottom: 48px; border-radius: 8px; overflow: hidden;">
-  <video autoplay loop muted playsinline preload="auto" style="width: 100%; height: 100%; display: block; object-fit: cover; border: none; outline: none; vertical-align: middle;">
+  <video autoplay loop muted playsinline preload="auto" style="width: 100%; height: 100%; display: block; object-fit: contain; border: none; outline: none; vertical-align: middle;">
     <source src="/videos/lat/Flow%2001.mp4" type="video/mp4">
     Your browser does not support the video tag.
   </video>
@@ -279,7 +279,7 @@ const caseStudies = {
 <p style="margin-top: 28px;">Without a unified system, everyone operates in their own flow with no common path:</p>
 
 <div style="width: 100%; max-width: 1200px; aspect-ratio: 16/9; margin-top: 32px; margin-bottom: 48px; border-radius: 8px; overflow: hidden;">
-  <video autoplay loop muted playsinline preload="auto" style="width: 100%; height: 100%; display: block; object-fit: cover; border: none; outline: none; vertical-align: middle;">
+  <video autoplay loop muted playsinline preload="auto" style="width: 100%; height: 100%; display: block; object-fit: contain; border: none; outline: none; vertical-align: middle;">
     <source src="/videos/lat/Flow%2003.mp4" type="video/mp4">
     Your browser does not support the video tag.
   </video>
@@ -315,7 +315,7 @@ const caseStudies = {
         title: '03 — The Turning Point',
         headline: 'Research revealed we were redesigning a system of coordination',
         content: `<div style="width: 100%; max-width: 1200px; aspect-ratio: 16/9; margin-bottom: 48px; border-radius: 8px; overflow: hidden;">
-  <video autoplay loop muted playsinline preload="auto" style="width: 100%; height: 100%; display: block; object-fit: cover; border: none; outline: none; vertical-align: middle;">
+  <video autoplay loop muted playsinline preload="auto" style="width: 100%; height: 100%; display: block; object-fit: contain; border: none; outline: none; vertical-align: middle;">
     <source src="/videos/lat/Flow%2002.mp4" type="video/mp4">
     Your browser does not support the video tag.
   </video>
@@ -612,7 +612,7 @@ const caseStudies = {
         title: '02 — The Problem',
         headline: 'After AI, the same problem arrived at a different scale — believability and volume in a fragile ecosystem',
         content: `<div style="width: 100%; max-width: 1200px; aspect-ratio: 16/9; margin-bottom: 48px; border-radius: 8px; overflow: hidden;">
-  <video autoplay loop muted playsinline preload="auto" style="width: 100%; height: 100%; display: block; object-fit: cover; border: none; outline: none; vertical-align: middle;">
+  <video autoplay loop muted playsinline preload="auto" style="width: 100%; height: 100%; display: block; object-fit: contain; border: none; outline: none; vertical-align: middle;">
     <source src="/videos/misinformationcenter/Flow%2001%20Misinformation.mp4" type="video/mp4">
     Your browser does not support the video tag.
   </video>
@@ -685,7 +685,7 @@ const caseStudies = {
         title: '04 — User Research',
         headline: 'Misinformation moves through trust networks — families, WhatsApp groups, neighborhood pages — in a specific generational pattern',
         content: `<div style="width: 100%; max-width: 1200px; aspect-ratio: 16/9; margin-bottom: 48px; border-radius: 8px; overflow: hidden;">
-  <video autoplay loop muted playsinline preload="auto" style="width: 100%; height: 100%; display: block; object-fit: cover; border: none; outline: none; vertical-align: middle;">
+  <video autoplay loop muted playsinline preload="auto" style="width: 100%; height: 100%; display: block; object-fit: contain; border: none; outline: none; vertical-align: middle;">
     <source src="/videos/misinformationcenter/flow%2002.mp4" type="video/mp4">
     Your browser does not support the video tag.
   </video>
