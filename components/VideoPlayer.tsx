@@ -80,8 +80,6 @@ export default function VideoPlayer({ src, id }: VideoPlayerProps) {
           borderRadius: '8px',
           overflow: 'hidden',
           cursor: 'pointer',
-          position: 'relative',
-          backgroundColor: '#000',
         }}
         onClick={togglePlayPause}
       >
@@ -95,7 +93,7 @@ export default function VideoPlayer({ src, id }: VideoPlayerProps) {
             width: '100%',
             height: '100%',
             display: 'block',
-            objectFit: 'contain',
+            objectFit: 'cover',
             border: 'none',
             outline: 'none',
             verticalAlign: 'middle',
