@@ -81,6 +81,7 @@ export default function VideoPlayer({ src, id }: VideoPlayerProps) {
           overflow: 'hidden',
           cursor: 'pointer',
           position: 'relative',
+          backgroundColor: '#000',
         }}
         onClick={togglePlayPause}
       >
@@ -91,19 +92,13 @@ export default function VideoPlayer({ src, id }: VideoPlayerProps) {
           playsInline
           preload="metadata"
           style={{
-            width: 'calc(100% + 8px)',
-            height: 'calc(100% + 8px)',
+            width: '100%',
+            height: '100%',
             display: 'block',
-            objectFit: 'cover',
+            objectFit: 'contain',
             border: 'none',
             outline: 'none',
-            willChange: 'auto',
-            transform: 'translateZ(0)',
-            position: 'absolute',
-            top: '-4px',
-            left: '-4px',
-            right: '-4px',
-            bottom: '-4px',
+            verticalAlign: 'middle',
           }}
         >
           <source src={src} type={src.endsWith('.mp4') ? 'video/mp4' : 'video/webm'} />
