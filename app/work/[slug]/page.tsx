@@ -269,7 +269,7 @@ const caseStudies = {
         headline: 'Fragmented data was forcing humans to do the work a system should have done',
         content: `<div style="width: 100%; max-width: 1200px; aspect-ratio: 16/9; margin-bottom: 48px; border-radius: 8px; overflow: hidden;">
   <video autoplay loop muted playsinline preload="auto" style="width: 100%; height: 100%; display: block; object-fit: cover; border: none; outline: none; transform: translateZ(0); backface-visibility: hidden;">
-    <source src="/videos/lat/Flow%2001%20compressed.webm" type="video/webm">
+    <source src="/videos/lat/Flow%2001.mp4" type="video/mp4">
     Your browser does not support the video tag.
   </video>
 </div>
@@ -280,7 +280,7 @@ const caseStudies = {
 
 <div style="width: 100%; max-width: 1200px; aspect-ratio: 16/9; margin-top: 32px; margin-bottom: 48px; border-radius: 8px; overflow: hidden;">
   <video autoplay loop muted playsinline preload="auto" style="width: 100%; height: 100%; display: block; object-fit: cover; border: none; outline: none; transform: translateZ(0); backface-visibility: hidden;">
-    <source src="/videos/lat/Flow%2003%20compressed.webm" type="video/webm">
+    <source src="/videos/lat/Flow%2003.mp4" type="video/mp4">
     Your browser does not support the video tag.
   </video>
 </div>
@@ -316,7 +316,7 @@ const caseStudies = {
         headline: 'Research revealed we were redesigning a system of coordination',
         content: `<div style="width: 100%; max-width: 1200px; aspect-ratio: 16/9; margin-bottom: 48px; border-radius: 8px; overflow: hidden;">
   <video autoplay loop muted playsinline preload="auto" style="width: 100%; height: 100%; display: block; object-fit: cover; border: none; outline: none; transform: translateZ(0); backface-visibility: hidden;">
-    <source src="/videos/lat/Flow%2002%20compressed.webm" type="video/webm">
+    <source src="/videos/lat/Flow%2002.mp4" type="video/mp4">
     Your browser does not support the video tag.
   </video>
 </div>
@@ -613,7 +613,7 @@ const caseStudies = {
         headline: 'After AI, the same problem arrived at a different scale — believability and volume in a fragile ecosystem',
         content: `<div style="width: 100%; max-width: 1200px; aspect-ratio: 16/9; margin-bottom: 48px; border-radius: 8px; overflow: hidden;">
   <video autoplay loop muted playsinline preload="auto" style="width: 102%; height: 102%; display: block; object-fit: cover; border: none; outline: none; transform: translate(-1%, -1%);">
-    <source src="/videos/misinformationcenter/Flow%2001%20Misinformation%20(1).mp4" type="video/mp4">
+    <source src="/videos/misinformationcenter/Flow%2001%20Misinformation.mp4" type="video/mp4">
     Your browser does not support the video tag.
   </video>
 </div>
@@ -686,7 +686,7 @@ const caseStudies = {
         headline: 'Misinformation moves through trust networks — families, WhatsApp groups, neighborhood pages — in a specific generational pattern',
         content: `<div style="width: 100%; max-width: 1200px; aspect-ratio: 16/9; margin-bottom: 48px; border-radius: 8px; overflow: hidden;">
   <video autoplay loop muted playsinline preload="auto" style="width: 102%; height: 102%; display: block; object-fit: cover; border: none; outline: none; transform: translate(-1%, -1%);">
-    <source src="/videos/misinformationcenter/Flow%2002%20Compressed%20MIS.webm" type="video/webm">
+    <source src="/videos/misinformationcenter/flow%2002.mp4" type="video/mp4">
     Your browser does not support the video tag.
   </video>
 </div>

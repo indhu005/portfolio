@@ -106,7 +106,7 @@ export default function VideoPlayer({ src, id }: VideoPlayerProps) {
             bottom: '-4px',
           }}
         >
-          <source src={src} type="video/webm" />
+          <source src={src} type={src.endsWith('.mp4') ? 'video/mp4' : 'video/webm'} />
           Your browser does not support the video tag.
         </video>
       </div>
