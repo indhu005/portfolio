@@ -297,7 +297,7 @@ export default function Home() {
                   marginBottom: isMobile ? '12px' : '16px',
                   letterSpacing: '-0.01em',
                 }}>
-                  True Media
+                  Misinformation Center
                 </h3>
 
                 {/* Description */}
