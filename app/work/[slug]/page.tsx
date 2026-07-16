@@ -548,7 +548,7 @@ const caseStudies = {
   'misinformation-center': {
     title: 'Misinformation Center',
     subtitle: 'Media Literacy Tools for the AI Age',
-    description: 'University of Washington graduate capstone · Research collaboration with TrueMedia.org',
+    description: 'Research collaboration with TrueMedia.org',
     tldr: {
       role: 'Sole Designer (Graduate Capstone)',
       team: 'Solo (post-February 2024) · Research collaboration with TrueMedia.org',
