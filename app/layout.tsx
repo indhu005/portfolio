@@ -3,6 +3,7 @@ import { DM_Sans, Fraunces } from 'next/font/google'
 import './globals.css'
 import ScrollRestoration from '@/components/ScrollRestoration'
 import { Analytics } from '@vercel/analytics/react'
+import { SpeedInsights } from '@vercel/speed-insights/next'
 import { PersonStructuredData, PortfolioStructuredData } from '@/components/StructuredData'
 
 const dmSans = DM_Sans({
@@ -84,6 +85,7 @@ export default function RootLayout({
         <ScrollRestoration />
         {children}
         <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   )
