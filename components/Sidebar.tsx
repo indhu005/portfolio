@@ -4,8 +4,8 @@ import { useRouter } from 'next/navigation'
 import Link from 'next/link'
 
 const projects = [
-  { name: 'Keye', slug: 'keye' },
   { name: 'LAT', slug: 'lat' },
+  { name: 'Keye', slug: 'keye' },
   { name: 'Misinformation Center', slug: 'misinformation-center' },
   { name: 'Play', slug: 'play' },
 ]
