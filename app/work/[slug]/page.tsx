@@ -613,7 +613,7 @@ const caseStudies = {
         headline: 'After AI, the same problem arrived at a different scale — believability and volume in a fragile ecosystem',
         content: `<div style="width: 100%; max-width: 1200px; margin: 0 auto 48px;">
   <video autoplay loop muted playsinline preload="auto" style="display: block; width: 100%; height: auto; border-radius: 8px;">
-    <source src="/videos/misinformationcenter/Flow%2001%20Misinformation.mp4" type="video/mp4">
+    <source src="/videos/misinformationcenter/flow%2002.mp4" type="video/mp4">
     Your browser does not support the video tag.
   </video>
 </div>
@@ -686,7 +686,7 @@ const caseStudies = {
         headline: 'Misinformation moves through trust networks — families, WhatsApp groups, neighborhood pages — in a specific generational pattern',
         content: `<div style="width: 100%; max-width: 1200px; margin: 0 auto 48px;">
   <video autoplay loop muted playsinline preload="auto" style="display: block; width: 100%; height: auto; border-radius: 8px;">
-    <source src="/videos/misinformationcenter/flow%2002.mp4" type="video/mp4">
+    <source src="/videos/misinformationcenter/Flow%2001%20Misinformation.mp4" type="video/mp4">
     Your browser does not support the video tag.
   </video>
 </div>
