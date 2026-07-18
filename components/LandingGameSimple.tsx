@@ -84,6 +84,8 @@ const TreeIcon = ({ size = 60, variant = 0, isDaytime = true }: { size?: number;
           objectFit: 'contain',
           zIndex: 5,
           transition: 'transform 0.4s ease-in-out',
+          willChange: 'transform',
+          backfaceVisibility: 'hidden',
         }}
       />
     </>
@@ -115,11 +117,13 @@ const SaplingIcon = ({ size = 40, variant = 0, isDaytime = true }: { size?: numb
           left: '50%',
           transform: `translateX(-50%) scale(${isGrowing ? 0.3 : 1})`,
           objectFit: 'contain',
-        opacity: 0.7,
-        zIndex: 5,
-        transition: 'transform 0.4s ease-out',
-      }}
-    />
+          opacity: 0.7,
+          zIndex: 5,
+          transition: 'transform 0.4s ease-out',
+          willChange: 'transform',
+          backfaceVisibility: 'hidden',
+        }}
+      />
     </>
   )
 }
@@ -151,8 +155,10 @@ const BuildingIcon = ({ size = 60, variant = 0, isDaytime = true }: { size?: num
           objectFit: 'contain',
           zIndex: 5,
           transition: 'transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1)',
-      }}
-    />
+          willChange: 'transform',
+          backfaceVisibility: 'hidden',
+        }}
+      />
     </>
   )
 }
@@ -475,7 +481,16 @@ export default function LandingGameSimple() {
   useEffect(() => {
     if (birds.length === 0) return
 
-    const animate = () => {
+    let lastFrame = 0
+    const frameDelay = isMobile ? 50 : 16 // Throttle on mobile for better scroll performance
+
+    const animate = (timestamp: number) => {
+      if (timestamp - lastFrame < frameDelay) {
+        animationFrameRef.current = requestAnimationFrame(animate)
+        return
+      }
+      lastFrame = timestamp
+
       setBirds(prev =>
         prev
           .map(bird => {
@@ -527,7 +542,7 @@ export default function LandingGameSimple() {
         cancelAnimationFrame(animationFrameRef.current)
       }
     }
-  }, [birds.length, grid])
+  }, [birds.length, grid, isMobile])
 
   // Land birds on trees randomly
   useEffect(() => {
@@ -1088,6 +1103,7 @@ export default function LandingGameSimple() {
                 width: `${truckWidth}px`,
                 height: `${truckHeight}px`,
                 willChange: 'transform',
+                backfaceVisibility: 'hidden',
                 zIndex: 20,
                 pointerEvents: 'none',
               }}

@@ -78,7 +78,6 @@ export default function RootLayout({
         margin: 0,
         padding: 0,
         backgroundColor: '#FFFFFF',
-        overflow: 'hidden'
       }}>
         <PersonStructuredData />
         <PortfolioStructuredData />
