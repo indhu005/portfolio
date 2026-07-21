@@ -129,15 +129,17 @@ export default function CaseStudyLayout({ caseStudy, slug }: CaseStudyLayoutProp
             top: '20px',
             left: '20px',
             zIndex: 1000,
-            background: '#000000',
+            background: 'rgba(0, 0, 0, 0.6)',
+            backdropFilter: 'blur(8px)',
+            WebkitBackdropFilter: 'blur(8px)',
             color: 'white',
-            border: 'none',
+            border: '1px solid rgba(255, 255, 255, 0.1)',
             borderRadius: '8px',
             padding: '12px 16px',
             fontSize: '14px',
             fontWeight: 600,
             cursor: 'pointer',
-            boxShadow: '0 2px 8px rgba(0,0,0,0.1)',
+            boxShadow: '0 2px 8px rgba(0,0,0,0.2)',
           }}
         >
           {mobileMenuOpen ? '✕ Close' : '☰ Menu'}
