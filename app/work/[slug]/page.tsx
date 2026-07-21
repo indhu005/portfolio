@@ -624,25 +624,25 @@ const caseStudies = {
   <div>
     <div style="width: 100%; min-height: 200px; background-color: #E5E7EB; border-radius: 8px; margin-bottom: 16px; display: flex; align-items: center; justify-content: center; color: #9CA3AF; font-size: 14px;">Survey Results Image</div>
     <div style="font-weight: 600; font-size: 17px; color: #1C1917; margin-bottom: 8px;">Survey Results (n=2,000)</div>
-    <div style="font-size: 15px; color: #57534E; line-height: 1.6;">74% encountered misinformation weekly. 62% of parents (25–40) felt overwhelmed educating their kids. 41% of seniors unknowingly shared false content. <20% trusted existing fact-checkers. Users didn't just want truth — they wanted peace of mind.</div>
+    <div style="font-size: 15px; color: #57534E; line-height: 1.6;">74% encountered misinformation weekly. 62% of parents felt overwhelmed. <20% trusted existing fact-checkers. Users wanted peace of mind, not just truth.</div>
   </div>
 
   <div>
     <div style="width: 100%; min-height: 200px; background-color: #E5E7EB; border-radius: 8px; margin-bottom: 16px; display: flex; align-items: center; justify-content: center; color: #9CA3AF; font-size: 14px;">Generational Sandwich Image</div>
     <div style="font-weight: 600; font-size: 17px; color: #1C1917; margin-bottom: 8px;">The Generational Sandwich</div>
-    <div style="font-size: 15px; color: #57534E; line-height: 1.6;">Young mothers educating their kids about misinformation while managing elderly parents falling for scams. Filtering manipulative media for two generations at once. This pattern shaped the entire archetype strategy.</div>
+    <div style="font-size: 15px; color: #57534E; line-height: 1.6;">Mothers filtering misinformation for kids while protecting elderly parents from scams. Managing media literacy for two generations at once shaped the archetype strategy.</div>
   </div>
 
   <div>
     <div style="width: 100%; min-height: 200px; background-color: #E5E7EB; border-radius: 8px; margin-bottom: 16px; display: flex; align-items: center; justify-content: center; color: #9CA3AF; font-size: 14px;">Transparency Demand Image</div>
     <div style="font-weight: 600; font-size: 17px; color: #1C1917; margin-bottom: 8px;">The Transparency Demand</div>
-    <div style="font-size: 15px; color: #57534E; line-height: 1.6;">When participants hit suspicious content, they wanted to know who was paying for it — not just whether it was true, but what agenda sat behind it. One user put it bluntly: "I didn't want a fact-check label. I wanted to see the incentive structure." This became the transparency principle.</div>
+    <div style="font-size: 15px; color: #57534E; line-height: 1.6;">Users wanted to see the incentive structure behind content, not just fact-check labels. Understanding who benefits mattered as much as knowing what's true.</div>
   </div>
 
   <div>
     <div style="width: 100%; min-height: 200px; background-color: #E5E7EB; border-radius: 8px; margin-bottom: 16px; display: flex; align-items: center; justify-content: center; color: #9CA3AF; font-size: 14px;">Platform Trust Problem Image</div>
     <div style="font-weight: 600; font-size: 17px; color: #1C1917; margin-bottom: 8px;">The Platform Trust Problem</div>
-    <div style="font-size: 15px; color: #57534E; line-height: 1.6;">My first concept: a misinformation center inside Facebook. Testing rejected it immediately. Users wouldn't trust the platform spreading the problem to solve it. That wasn't a UX finding — it was product-market-fit. It forced the harder question: how does a standalone tool survive without platform distribution?</div>
+    <div style="font-size: 15px; color: #57534E; line-height: 1.6;">Testing rejected a Facebook-integrated solution immediately. Users wouldn't trust the platform spreading misinformation to also solve it. The tool had to be independent.</div>
   </div>
 </div>
 
