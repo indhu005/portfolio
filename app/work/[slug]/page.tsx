@@ -574,7 +574,7 @@ const caseStudies = {
   </div>
 </div>
 
-<div style="width: 100%; min-height: 500px; background-color: #E5E7EB; border-radius: 8px; display: flex; align-items: center; justify-content: center; color: #9CA3AF; font-size: 14px; margin-top: 48px; margin-bottom: 32px;">Hero — the four features as a connected system on one screen, in final visual polish</div>
+<img src="/images/misinformation-center/Hero.png" alt="Misinformation Center interface showing the four features as a connected system" style="width: 100%; height: auto; border-radius: 8px; display: block; margin-top: 48px; margin-bottom: 32px;" />
 
 <p style="margin-top: 28px;"><span style="font-weight: 600;">My role — sole designer.</span> Graduate capstone at University of Washington (Jan–July 2024). Started as a team of four; after February, the product, design, and direction were entirely mine. I ran the research, defined archetypes, designed all four features, and tested with ~1,800 people at Misinfo Day.</p>
 
