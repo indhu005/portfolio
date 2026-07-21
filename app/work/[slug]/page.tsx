@@ -618,7 +618,14 @@ const caseStudies = {
         id: 'problem',
         title: '02 — The Problem',
         headline: 'After AI, the same problem arrived at a different scale — believability and volume in a fragile ecosystem',
-        content: `<p>Misinformation exploits human bias: believe what confirms your views, trust what feels familiar, share before verifying. After AI, the same problem arrived at a different scale — more believable, more volume, same fragile ecosystem.</p>
+        content: `<div style="width: 100%; max-width: 1200px; margin: 0 auto 48px;">
+  <video autoplay loop muted playsinline preload="auto" style="display: block; width: 100%; height: auto; border-radius: 8px;">
+    <source src="/videos/misinformationcenter/flow%2002.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+</div>
+
+<p>Misinformation exploits human bias: believe what confirms your views, trust what feels familiar, share before verifying. After AI, the same problem arrived at a different scale — more believable, more volume, same fragile ecosystem.</p>
 
 <div style="display: grid; grid-template-columns: 1fr; gap: 32px; margin-top: 40px; margin-bottom: 48px;">
   <div>
