@@ -608,7 +608,11 @@ const caseStudies = {
   </table>
 </div>
 
-<p style="margin-top: 28px;"><span style="font-weight: 600;">Testing</span> — 2,000-respondent survey, two interview phases (28 participants), moderated usability (14 participants), Misinfo Day live testing (~1,800 people).</p>`
+<p style="margin-top: 28px;"><span style="font-weight: 600;">Testing</span> — 2,000-respondent survey, two interview phases (28 participants), moderated usability (14 participants), Misinfo Day live testing (~1,800 people).</p>
+
+<div style="width: 100%; margin-top: 48px; margin-bottom: 0;">
+  <img src="/images/misinformation-center/User quote.png" alt="User quote" style="width: 100%; height: auto; border-radius: 8px; display: block;" />
+</div>`
       },
       {
         id: 'problem',
