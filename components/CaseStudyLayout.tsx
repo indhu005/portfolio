@@ -431,8 +431,8 @@ export default function CaseStudyLayout({ caseStudy, slug }: CaseStudyLayoutProp
                 />
               )}
 
-              {/* Visual Content Area - Hidden for strategy, constraints, tradeoffs, context-problem, and turning-point sections */}
-              {section.id !== 'strategy' && section.id !== 'constraints' && section.id !== 'tradeoffs' && section.id !== 'context-problem' && section.id !== 'turning-point' && (
+              {/* Visual Content Area - Hidden for strategy, constraints, tradeoffs, context-problem, turning-point, and snapshot sections */}
+              {section.id !== 'strategy' && section.id !== 'constraints' && section.id !== 'tradeoffs' && section.id !== 'context-problem' && section.id !== 'turning-point' && section.id !== 'snapshot' && (
                 <div style={{
                   width: '100%',
                   minHeight: '500px',
