@@ -620,7 +620,7 @@ const caseStudies = {
         headline: 'After AI, the same problem arrived at a different scale — believability and volume in a fragile ecosystem',
         content: `<p>Misinformation exploits human bias: believe what confirms your views, trust what feels familiar, share before verifying. After AI, the same problem arrived at a different scale — more believable, more volume, same fragile ecosystem.</p>
 
-<div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 48px; margin-top: 60px; margin-bottom: 60px;">
+<div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 40px; margin-top: 60px; margin-bottom: 60px;">
   <div>
     <img src="/images/misinformation-center/Problem 01.webp" alt="Survey Results" style="width: 100%; height: auto; border-radius: 8px; margin-bottom: 24px; display: block;" />
     <div style="font-weight: 600; font-size: 14px; color: #1C1917; margin-bottom: 12px;">Survey Results (n=2,000)</div>
