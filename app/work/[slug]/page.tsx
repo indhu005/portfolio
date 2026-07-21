@@ -620,29 +620,29 @@ const caseStudies = {
         headline: 'After AI, the same problem arrived at a different scale — believability and volume in a fragile ecosystem',
         content: `<p>Misinformation exploits human bias: believe what confirms your views, trust what feels familiar, share before verifying. After AI, the same problem arrived at a different scale — more believable, more volume, same fragile ecosystem.</p>
 
-<div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 32px; margin-top: 40px; margin-bottom: 48px;">
+<div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 48px; margin-top: 60px; margin-bottom: 60px;">
   <div>
-    <div style="width: 100%; min-height: 200px; background-color: #E5E7EB; border-radius: 8px; margin-bottom: 16px; display: flex; align-items: center; justify-content: center; color: #9CA3AF; font-size: 14px;">Survey Results Image</div>
-    <div style="font-weight: 600; font-size: 17px; color: #1C1917; margin-bottom: 8px;">Survey Results (n=2,000)</div>
-    <div style="font-size: 15px; color: #57534E; line-height: 1.6;">74% encountered misinformation weekly. 62% of parents felt overwhelmed. <20% trusted existing fact-checkers. Users wanted peace of mind, not just truth.</div>
+    <div style="width: 100%; min-height: 200px; background-color: #E5E7EB; border-radius: 8px; margin-bottom: 24px; display: flex; align-items: center; justify-content: center; color: #9CA3AF; font-size: 14px;">Survey Results Image</div>
+    <div style="font-weight: 600; font-size: 14px; color: #1C1917; margin-bottom: 12px;">Survey Results (n=2,000)</div>
+    <div style="font-size: 13px; color: #57534E; line-height: 1.6;">74% encountered misinformation weekly. 62% of parents felt overwhelmed. <20% trusted existing fact-checkers. Users wanted peace of mind, not just truth.</div>
   </div>
 
   <div>
-    <div style="width: 100%; min-height: 200px; background-color: #E5E7EB; border-radius: 8px; margin-bottom: 16px; display: flex; align-items: center; justify-content: center; color: #9CA3AF; font-size: 14px;">Generational Sandwich Image</div>
-    <div style="font-weight: 600; font-size: 17px; color: #1C1917; margin-bottom: 8px;">The Generational Sandwich</div>
-    <div style="font-size: 15px; color: #57534E; line-height: 1.6;">Mothers filtering misinformation for kids while protecting elderly parents from scams. Managing media literacy for two generations at once shaped the archetype strategy.</div>
+    <div style="width: 100%; min-height: 200px; background-color: #E5E7EB; border-radius: 8px; margin-bottom: 24px; display: flex; align-items: center; justify-content: center; color: #9CA3AF; font-size: 14px;">Generational Sandwich Image</div>
+    <div style="font-weight: 600; font-size: 14px; color: #1C1917; margin-bottom: 12px;">The Generational Sandwich</div>
+    <div style="font-size: 13px; color: #57534E; line-height: 1.6;">Mothers filtering misinformation for kids while protecting elderly parents from scams. Managing media literacy for two generations at once shaped the archetype strategy.</div>
   </div>
 
   <div>
-    <div style="width: 100%; min-height: 200px; background-color: #E5E7EB; border-radius: 8px; margin-bottom: 16px; display: flex; align-items: center; justify-content: center; color: #9CA3AF; font-size: 14px;">Transparency Demand Image</div>
-    <div style="font-weight: 600; font-size: 17px; color: #1C1917; margin-bottom: 8px;">The Transparency Demand</div>
-    <div style="font-size: 15px; color: #57534E; line-height: 1.6;">Users wanted to see the incentive structure behind content, not just fact-check labels. Understanding who benefits mattered as much as knowing what's true.</div>
+    <div style="width: 100%; min-height: 200px; background-color: #E5E7EB; border-radius: 8px; margin-bottom: 24px; display: flex; align-items: center; justify-content: center; color: #9CA3AF; font-size: 14px;">Transparency Demand Image</div>
+    <div style="font-weight: 600; font-size: 14px; color: #1C1917; margin-bottom: 12px;">The Transparency Demand</div>
+    <div style="font-size: 13px; color: #57534E; line-height: 1.6;">Users wanted to see the incentive structure behind content, not just fact-check labels. Understanding who benefits mattered as much as knowing what's true.</div>
   </div>
 
   <div>
-    <div style="width: 100%; min-height: 200px; background-color: #E5E7EB; border-radius: 8px; margin-bottom: 16px; display: flex; align-items: center; justify-content: center; color: #9CA3AF; font-size: 14px;">Platform Trust Problem Image</div>
-    <div style="font-weight: 600; font-size: 17px; color: #1C1917; margin-bottom: 8px;">The Platform Trust Problem</div>
-    <div style="font-size: 15px; color: #57534E; line-height: 1.6;">Testing rejected a Facebook-integrated solution immediately. Users wouldn't trust the platform spreading misinformation to also solve it. The tool had to be independent.</div>
+    <div style="width: 100%; min-height: 200px; background-color: #E5E7EB; border-radius: 8px; margin-bottom: 24px; display: flex; align-items: center; justify-content: center; color: #9CA3AF; font-size: 14px;">Platform Trust Problem Image</div>
+    <div style="font-weight: 600; font-size: 14px; color: #1C1917; margin-bottom: 12px;">The Platform Trust Problem</div>
+    <div style="font-size: 13px; color: #57534E; line-height: 1.6;">Testing rejected a Facebook-integrated solution immediately. Users wouldn't trust the platform spreading misinformation to also solve it. The tool had to be independent.</div>
   </div>
 </div>
 
