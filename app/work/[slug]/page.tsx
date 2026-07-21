@@ -677,7 +677,7 @@ const caseStudies = {
   </div>
 </div>
 
-<div style="width: 100%; min-height: 400px; background-color: #E5E7EB; border-radius: 8px; display: flex; align-items: center; justify-content: center; color: #9CA3AF; font-size: 14px; margin-top: 32px; margin-bottom: 32px;">The integration vision — the same verification layer shown living in Safari's share sheet, Apple News, and the native camera</div>`
+`
       },
       {
         id: 'research',
@@ -715,8 +715,6 @@ const caseStudies = {
     <div style="width: 0; height: 0; border-left: 12px solid transparent; border-right: 12px solid transparent; border-top: 12px solid #F3F4F6; position: absolute; bottom: -12px; left: 32px;"></div>
   </div>
 </div>
-
-<div style="width: 100%; min-height: 400px; background-color: #E5E7EB; border-radius: 8px; display: flex; align-items: center; justify-content: center; color: #9CA3AF; font-size: 14px; margin-top: 32px; margin-bottom: 32px;">The generational chain diagram + three archetype cards with real interview quotes</div>
 
 <p style="margin-top: 36px;"><span style="font-weight: 600;">What Misinfo Day revealed that recruited testing couldn't.</span> Small-scale testing shows what people say; live testing with unrecruited crowds shows what they do. Younger participants abandoned any flow that felt like reading within seconds. Older participants trusted Ask Us over automated ratings — a person's judgment over an algorithm's output. Both loved the quiz for different reasons: younger users competitively, older users because it felt like learning rather than being corrected. The parallel escape-room sessions surfaced the sharpest insight: engagement spiked when detection was framed as a skill, not a correction. People didn't want to be told they were wrong. They wanted to feel smart for getting it right.</p>`
       },
