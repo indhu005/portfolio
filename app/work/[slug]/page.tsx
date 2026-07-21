@@ -604,11 +604,7 @@ const caseStudies = {
   </table>
 </div>
 
-<p style="margin-top: 28px;"><span style="font-weight: 600;">Testing</span> — 2,000-respondent survey, two interview phases (28 participants), moderated usability (14 participants), Misinfo Day live testing (~1,800 people).</p>
-
-<div style="width: 100%; max-width: 1200px; margin: 60px auto 0;">
-  <iframe style="border: 1px solid rgba(0, 0, 0, 0.1); border-radius: 8px;" width="100%" height="450" src="https://embed.figma.com/proto/5SuxUGsaCvOVUiRdXa7uNl/Misinformation-Center?page-id=12%3A7585&node-id=20-3800&p=f&viewport=1079%2C560%2C0.06&scaling=scale-down&content-scaling=fixed&starting-point-node-id=20%3A3748&show-proto-sidebar=1&embed-host=share" allowfullscreen></iframe>
-</div>`
+<p style="margin-top: 28px;"><span style="font-weight: 600;">Testing</span> — 2,000-respondent survey, two interview phases (28 participants), moderated usability (14 participants), Misinfo Day live testing (~1,800 people).</p>`
       },
       {
         id: 'problem',
@@ -700,7 +696,9 @@ const caseStudies = {
 
 <p><span style="font-weight: 600;">The finding that changed the problem:</span> Adults 55–80 receive misinformation from people they trust deeply. Teens 13–18 encounter it through peer dynamics where questioning carries social cost. Adults 25–40 sit between both — the most exhausted users, managing it for two generations at once.</p>
 
-<div style="width: 100%; min-height: 350px; background-color: #E5E7EB; border-radius: 8px; display: flex; align-items: center; justify-content: center; color: #9CA3AF; font-size: 14px; margin-top: 32px; margin-bottom: 32px;">Image placeholder</div>
+<div style="width: 100%; max-width: 600px; margin: 48px auto;">
+  <iframe style="border: 1px solid rgba(0, 0, 0, 0.1); border-radius: 8px;" width="100%" height="800" src="https://embed.figma.com/proto/5SuxUGsaCvOVUiRdXa7uNl/Misinformation-Center?page-id=12%3A7585&node-id=20-3800&p=f&viewport=1079%2C560%2C0.06&scaling=scale-down&content-scaling=fixed&starting-point-node-id=20%3A3748&show-proto-sidebar=1&embed-host=share" allowfullscreen></iframe>
+</div>
 
 <p style="margin-top: 28px;">The archetypes emerged from the chain, not from a persona template:</p>
 
