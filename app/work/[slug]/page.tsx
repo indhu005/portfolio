@@ -579,6 +579,10 @@ const caseStudies = {
 
 <p style="margin-top: 28px;">From March to May, I collaborated with TrueMedia.org (deepfake-detection nonprofit) on user research and market assessment. They built their own product; no design assets were shared. What I learned from their shutdown in Jan 2025 reshaped how I think about public-good products (§06).</p>
 
+<div style="width: 100%; max-width: 600px; margin: 48px auto;">
+  <iframe style="border: 1px solid rgba(0, 0, 0, 0.1); border-radius: 8px;" width="100%" height="800" src="https://embed.figma.com/proto/5SuxUGsaCvOVUiRdXa7uNl/Misinformation-Center?page-id=12%3A7585&node-id=20-3800&p=f&viewport=1079%2C560%2C0.06&scaling=scale-down&content-scaling=fixed&starting-point-node-id=20%3A3748&show-proto-sidebar=1&embed-host=share" allowfullscreen></iframe>
+</div>
+
 <div style="margin-top: 40px; margin-bottom: 40px;">
   <table style="width: 100%; border-collapse: collapse;">
     <tr style="border-bottom: 1px solid #E5E7EB;">
@@ -677,7 +681,7 @@ const caseStudies = {
   </div>
 </div>
 
-`
+<div style="width: 100%; min-height: 400px; background-color: #E5E7EB; border-radius: 8px; display: flex; align-items: center; justify-content: center; color: #9CA3AF; font-size: 14px; margin-top: 32px; margin-bottom: 32px;">The integration vision — the same verification layer shown living in Safari's share sheet, Apple News, and the native camera</div>`
       },
       {
         id: 'research',
@@ -715,6 +719,8 @@ const caseStudies = {
     <div style="width: 0; height: 0; border-left: 12px solid transparent; border-right: 12px solid transparent; border-top: 12px solid #F3F4F6; position: absolute; bottom: -12px; left: 32px;"></div>
   </div>
 </div>
+
+<div style="width: 100%; min-height: 400px; background-color: #E5E7EB; border-radius: 8px; display: flex; align-items: center; justify-content: center; color: #9CA3AF; font-size: 14px; margin-top: 32px; margin-bottom: 32px;">The generational chain diagram + three archetype cards with real interview quotes</div>
 
 <p style="margin-top: 36px;"><span style="font-weight: 600;">What Misinfo Day revealed that recruited testing couldn't.</span> Small-scale testing shows what people say; live testing with unrecruited crowds shows what they do. Younger participants abandoned any flow that felt like reading within seconds. Older participants trusted Ask Us over automated ratings — a person's judgment over an algorithm's output. Both loved the quiz for different reasons: younger users competitively, older users because it felt like learning rather than being corrected. The parallel escape-room sessions surfaced the sharpest insight: engagement spiked when detection was framed as a skill, not a correction. People didn't want to be told they were wrong. They wanted to feel smart for getting it right.</p>`
       },
