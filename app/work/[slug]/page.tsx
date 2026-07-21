@@ -611,6 +611,10 @@ const caseStudies = {
         title: '02 — The Problem',
         headline: 'After AI, the same problem arrived at a different scale — believability and volume in a fragile ecosystem',
         content: `<div style="width: 100%; max-width: 1200px; margin: 0 auto 48px;">
+  <iframe style="border: 1px solid rgba(0, 0, 0, 0.1); border-radius: 8px;" width="100%" height="450" src="https://embed.figma.com/proto/5SuxUGsaCvOVUiRdXa7uNl/Misinformation-Center?page-id=12%3A7585&node-id=20-3800&p=f&viewport=1079%2C560%2C0.06&scaling=scale-down&content-scaling=fixed&starting-point-node-id=20%3A3748&show-proto-sidebar=1&embed-host=share" allowfullscreen></iframe>
+</div>
+
+<div style="width: 100%; max-width: 1200px; margin: 0 auto 48px;">
   <video autoplay loop muted playsinline preload="auto" style="display: block; width: 100%; height: auto; border-radius: 8px;">
     <source src="/videos/misinformationcenter/flow%2002.mp4" type="video/mp4">
     Your browser does not support the video tag.
