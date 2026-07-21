@@ -759,11 +759,7 @@ const caseStudies = {
 
 <p style="margin-top: 48px;"><span style="font-weight: 600;">If I built this in 2026.</span> In early 2024, this product required an organization — human moderators, institutional funding, a maintenance team. By 2026, AI infrastructure collapses that requirement: AI triage with editorial guardrails for Ask Us, AI monitoring to keep quiz content current, AI-augmented synthesis on research at scale. The sustainability problem remains, but the resources needed to attack it have shrunk from a fifteen-person nonprofit to a determined individual with the right tools. The problem Etzioni warned about hasn't gone away — it's grown more urgent while consumer-level defenses have stood still. The capstone answered the design question: what should a media literacy tool look like for an everyday person. The ecosystem question — how it reaches people at scale, in a form that outlives a funding cycle — is still open.</p>
 
-<div class="pull-quote" style="margin-top: 48px;">The capstone answered the design question: what should a media literacy tool look like for an everyday person. The ecosystem question — how it reaches people at scale, in a form that outlives a funding cycle — is still open.</div>
-
-<div style="width: 100%; max-width: 600px; margin: 60px auto 0;">
-  <iframe style="border: 1px solid rgba(0, 0, 0, 0.1); border-radius: 8px;" width="100%" height="800" src="https://embed.figma.com/proto/5SuxUGsaCvOVUiRdXa7uNl/Misinformation-Center?page-id=12%3A7585&node-id=20-3800&p=f&viewport=1079%2C560%2C0.06&scaling=scale-down&content-scaling=fixed&starting-point-node-id=20%3A3748&show-proto-sidebar=1&embed-host=share" allowfullscreen></iframe>
-</div>`
+<div class="pull-quote" style="margin-top: 48px;">The capstone answered the design question: what should a media literacy tool look like for an everyday person. The ecosystem question — how it reaches people at scale, in a form that outlives a funding cycle — is still open.</div>`
       },
     ]
   }
