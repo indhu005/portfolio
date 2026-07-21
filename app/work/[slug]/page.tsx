@@ -549,6 +549,7 @@ const caseStudies = {
     title: 'Misinformation Center',
     subtitle: 'Media Literacy Tools for the AI Age',
     description: 'Research collaboration with TrueMedia.org',
+    heroImage: '/images/misinformation-center/Hero.png',
     tldr: {
       role: 'Sole Designer (Graduate Capstone)',
       team: 'Solo (post-February 2024) · Research collaboration with TrueMedia.org',
@@ -573,8 +574,6 @@ const caseStudies = {
     <div style="width: 0; height: 0; border-left: 12px solid transparent; border-right: 12px solid transparent; border-top: 12px solid #F3F4F6; position: absolute; bottom: -12px; left: 32px;"></div>
   </div>
 </div>
-
-<img src="/images/misinformation-center/Hero.png" alt="Misinformation Center interface showing the four features as a connected system" style="width: 100%; height: auto; border-radius: 8px; display: block; margin-top: 48px; margin-bottom: 32px;" />
 
 <p style="margin-top: 28px;"><span style="font-weight: 600;">My role — sole designer.</span> Graduate capstone at University of Washington (Jan–July 2024). Started as a team of four; after February, the product, design, and direction were entirely mine. I ran the research, defined archetypes, designed all four features, and tested with ~1,800 people at Misinfo Day.</p>
 

@@ -41,6 +41,7 @@ interface CaseStudy {
   description: string
   tldr?: TldrData
   sections: Section[]
+  heroImage?: string
 }
 
 interface CaseStudyLayoutProps {
@@ -251,24 +252,41 @@ export default function CaseStudyLayout({ caseStudy, slug }: CaseStudyLayoutProp
             >
               {/* Hero Image for first section (Snapshot) */}
               {index === 0 && (
-                <div style={{
-                  width: '100%',
-                  maxWidth: '850px',
-                  height: '580px',
-                  backgroundColor: '#7EB3F5',
-                  borderRadius: '12px',
-                  marginBottom: '50px',
-                  marginLeft: 'auto',
-                  marginRight: 'auto',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  color: '#FFFFFF',
-                  fontSize: '48px',
-                  fontWeight: 700,
-                }}>
-                  {caseStudy.title} Hero
-                </div>
+                caseStudy.heroImage ? (
+                  <img
+                    src={caseStudy.heroImage}
+                    alt={`${caseStudy.title} hero`}
+                    style={{
+                      width: '100%',
+                      maxWidth: '850px',
+                      height: 'auto',
+                      borderRadius: '12px',
+                      marginBottom: '50px',
+                      marginLeft: 'auto',
+                      marginRight: 'auto',
+                      display: 'block',
+                    }}
+                  />
+                ) : (
+                  <div style={{
+                    width: '100%',
+                    maxWidth: '850px',
+                    height: '580px',
+                    backgroundColor: '#7EB3F5',
+                    borderRadius: '12px',
+                    marginBottom: '50px',
+                    marginLeft: 'auto',
+                    marginRight: 'auto',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    color: '#FFFFFF',
+                    fontSize: '48px',
+                    fontWeight: 700,
+                  }}>
+                    {caseStudy.title} Hero
+                  </div>
+                )
               )}
 
               {/* TL;DR Section - appears after hero image */}
