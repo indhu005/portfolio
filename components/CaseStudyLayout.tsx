@@ -192,7 +192,7 @@ export default function CaseStudyLayout({ caseStudy, slug }: CaseStudyLayoutProp
           <div style={{
             display: 'flex',
             alignItems: 'baseline',
-            justifyContent: 'space-between',
+            justifyContent: isMobile ? 'center' : 'space-between',
             maxWidth: '850px',
             marginLeft: 'auto',
             marginRight: 'auto',
