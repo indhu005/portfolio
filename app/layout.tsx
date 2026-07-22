@@ -74,6 +74,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={fraunces.variable}>
+      <head>
+        <link rel="dns-prefetch" href="https://embed.figma.com" />
+        <link rel="preconnect" href="https://embed.figma.com" crossOrigin="anonymous" />
+      </head>
       <body className={dmSans.className} style={{
         margin: 0,
         padding: 0,
