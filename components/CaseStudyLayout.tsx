@@ -57,6 +57,13 @@ export default function CaseStudyLayout({ caseStudy, slug }: CaseStudyLayoutProp
   const isMobile = useMediaQuery('(max-width: 768px)')
   const isTablet = useMediaQuery('(max-width: 1024px)')
 
+  // Scroll to top on mount
+  useEffect(() => {
+    if (contentRef.current) {
+      contentRef.current.scrollTo({ top: 0, behavior: 'instant' })
+    }
+  }, [])
+
   useEffect(() => {
     const handleScroll = () => {
       if (!contentRef.current) return
