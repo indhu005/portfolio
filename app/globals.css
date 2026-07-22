@@ -83,3 +83,32 @@ a:active {
     filter: blur(0px);
   }
 }
+
+/* Figma embed responsive sizing */
+.figma-embed-container {
+  width: 100%;
+  max-width: 600px;
+  margin: 48px auto;
+}
+
+.figma-embed-iframe {
+  height: 800px;
+}
+
+/* Tablet: reduce height */
+@media (max-width: 1024px) {
+  .figma-embed-iframe {
+    height: 600px;
+  }
+}
+
+/* Phone: further reduce height */
+@media (max-width: 768px) {
+  .figma-embed-iframe {
+    height: 500px;
+  }
+
+  .figma-embed-container {
+    margin: 32px auto;
+  }
+}
