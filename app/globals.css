@@ -102,10 +102,10 @@ a:active {
   }
 }
 
-/* Phone: further reduce height */
+/* Phone: keep substantial height for visibility */
 @media (max-width: 768px) {
   .figma-embed-iframe {
-    height: 500px;
+    height: 700px;
   }
 
   .figma-embed-container {
