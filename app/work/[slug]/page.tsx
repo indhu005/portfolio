@@ -554,7 +554,9 @@ const caseStudies = {
       {
         id: 'snapshot',
         title: '01 — Snapshot',
-        content: `<p>Platforms try to control misinformation. Users don't trust them. This capstone asked a different question: what if we equipped people to identify misinformation themselves?</p>
+        content: `<div class="snapshot-content-wrapper">
+<div class="snapshot-text-content">
+<p>Platforms try to control misinformation. Users don't trust them. This capstone asked a different question: what if we equipped people to identify misinformation themselves?</p>
 
 <p style="margin-top: 28px;"><span style="font-weight: 600;">Agency over authority.</span> People resist being told what's true. They respond better when given tools to decide for themselves. The goal wasn't another fact-check label — it was tools that help people pause, verify, and learn, folded into daily habits.</p>
 
@@ -571,11 +573,13 @@ const caseStudies = {
 <p style="margin-top: 28px;"><span style="font-weight: 600;">My role — sole designer.</span> Graduate capstone at University of Washington (Jan–July 2024). Started as a team of four; after February, the product, design, and direction were entirely mine. I ran the research, defined archetypes, designed all four features, and tested with ~1,800 people at Misinfo Day.</p>
 
 <p style="margin-top: 28px;">From March to May, I collaborated with TrueMedia.org (deepfake-detection nonprofit) on user research and market assessment. They built their own product; no design assets were shared. What I learned from their shutdown in Jan 2025 reshaped how I think about public-good products (§06).</p>
-
-<div class="figma-embed-container">
-  <iframe style="border: 1px solid rgba(0, 0, 0, 0.1); border-radius: 8px;" width="100%" class="figma-embed-iframe" src="https://embed.figma.com/proto/5SuxUGsaCvOVUiRdXa7uNl/Misinformation-Center?page-id=12%3A7585&node-id=20-3800&p=f&viewport=1079%2C560%2C0.06&scaling=scale-down&content-scaling=fixed&starting-point-node-id=20%3A3748&show-proto-sidebar=1&embed-host=share" allowfullscreen></iframe>
 </div>
 
+<div class="figma-embed-container">
+  <iframe style="border: 1px solid rgba(0, 0, 0, 0.1); border-radius: 8px;" width="100%" class="figma-embed-iframe" src="https://embed.figma.com/proto/5SuxUGsaCvOVUiRdXa7uNl/Misinformation-Center?page-id=12%3A7585&node-id=20-3800&p=f&viewport=1079%2C560%2C0.06&scaling=scale-down&content-scaling=fixed&starting-point-node-id=20%3A3748&show-proto-sidebar=1&embed-host=share" allowfullscreen loading="lazy"></iframe>
+</div>
+
+<div class="snapshot-bottom-content">
 <div style="margin-top: 40px; margin-bottom: 40px;">
   <table style="width: 100%; border-collapse: collapse;">
     <tr style="border-bottom: 1px solid #E5E7EB;">
@@ -605,6 +609,8 @@ const caseStudies = {
 
 <div style="width: 100%; margin-top: 48px; margin-bottom: 0;">
   <img src="/images/misinformation-center/User quote.png" alt="User quote" style="width: 100%; height: auto; border-radius: 8px; display: block;" />
+</div>
+</div>
 </div>`
       },
       {

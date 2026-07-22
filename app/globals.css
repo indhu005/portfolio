@@ -102,7 +102,7 @@ a:active {
   }
 }
 
-/* Phone: match iPhone 14 Pro proportions (390x844) */
+/* Phone: match iPhone 14 Pro proportions (390x844) and reorder content */
 @media (max-width: 768px) {
   .figma-embed-iframe {
     height: 844px;
@@ -111,5 +111,19 @@ a:active {
   .figma-embed-container {
     margin: 32px auto;
     max-width: 390px;
+    order: 3;
+  }
+
+  .snapshot-content-wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .snapshot-text-content {
+    order: 1;
+  }
+
+  .snapshot-bottom-content {
+    order: 2;
   }
 }
