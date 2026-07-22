@@ -102,10 +102,10 @@ a:active {
   }
 }
 
-/* Phone: keep substantial height for visibility */
+/* Phone: match iPhone 14 Pro viewport height */
 @media (max-width: 768px) {
   .figma-embed-iframe {
-    height: 700px;
+    height: 844px;
   }
 
   .figma-embed-container {
