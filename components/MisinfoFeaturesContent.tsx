@@ -12,9 +12,7 @@ export default function MisinfoFeaturesContent() {
 
       <p style={{ marginTop: '16px' }}>Functional wireframes, sound logic, and dead on arrival: users wouldn't trust the vector of the problem as its solution.</p>
 
-      <div style={{ width: '100%', minHeight: '350px', backgroundColor: '#E5E7EB', borderRadius: '8px', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#9CA3AF', fontSize: '14px', marginTop: '28px', marginBottom: '32px' }}>
-        The crossed-out Facebook wireframes — the killed direction, shown as it was killed
-      </div>
+      <img src="/images/misinformation-center/Facebook misinformation center.png" alt="Facebook Misinformation Center wireframes — the killed direction" style={{ width: '100%', borderRadius: '8px', marginTop: '28px', marginBottom: '32px', display: 'block' }} />
 
       <p style={{ marginTop: '36px', fontSize: '20px', fontWeight: 600 }}>Feature 01 — Literacy Quiz</p>
 
