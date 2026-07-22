@@ -63,13 +63,6 @@ const caseStudies = {
         headline: "My job wasn't to execute the founders' instincts but to introduce user evidence into a team moving on momentum",
         content: `<p>My first task: the purchase flow. Founders had baked in mandatory consent and a feedback survey at checkout. Completion dropped 30% at those steps. I moved consent to signup, tested the survey in three placements. Email: 80% ignored. In-checkout: confused buyers. Post-access popup: users had just used the product and had something real to say. Drop-off fell 20% in one sprint.</p>
 
-<div style="width: 100%; height: 450px; background-color: #E5E7EB; border-radius: 8px; display: flex; align-items: center; justify-content: center; color: #9CA3AF; font-size: 14px; margin-top: 32px; margin-bottom: 32px;">
-  <div style="text-align: center; padding: 20px;">
-    <div style="font-weight: 600; margin-bottom: 8px;">IMAGE: Checkout Before/After</div>
-    <div style="font-size: 13px; line-height: 1.5;">Left: Checkout with consent + survey (30% drop-off)<br/>Right: Streamlined checkout (20% improvement)<br/>+ Price comparison card: $4.99 access vs $10.99/month subscription</div>
-  </div>
-</div>
-
 <p style="margin-top: 28px;">Hardest early call: removing product descriptions. Testing showed users scanning, not reading. I led with imagery and side-by-side price comparison, pre-selecting the Keye option. Some users bought full subscriptions through Keye after seeing the comparison — behavior we hadn't designed for but kept.</p>
 
 <div class="pull-quote" style="margin-top: 28px;">With no research budget, I worked by signal saturation: once the same friction appeared across five or six users, it was real enough to act on.</div>`
