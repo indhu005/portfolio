@@ -95,10 +95,10 @@ a:active {
   height: 800px;
 }
 
-/* Tablet: reduce height */
+/* Tablet: reduce height by 20% from desktop */
 @media (max-width: 1024px) {
   .figma-embed-iframe {
-    height: 600px;
+    height: 480px;
   }
 }
 

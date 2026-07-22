@@ -18,11 +18,11 @@ const caseStudies = {
       {
         id: 'snapshot',
         title: '01 — Snapshot',
-        content: `<p><span style="font-weight: 600;">Product</span><br/>A credit-based marketplace giving users flexible access to premium tools — Grammarly, Adobe, Otter.ai, MasterClass, Crunchbase, and 150+ products — without long-term subscriptions. ClassPass for digital tools.</p>
+        content: `<p><span style="font-weight: 600;">Product</span><br/>A credit-based marketplace giving users flexible access to premium tools like Grammarly, Adobe, Otter.ai, MasterClass, Crunchbase, and 150+ others without long-term subscriptions. Think ClassPass for digital tools.</p>
 
-<p style="margin-top: 28px;"><span style="font-weight: 600;">My role — Founding Product Designer.</span> Keye's only designer for most of its life. When I joined: three static screens, no flows, no credit architecture, no design system. I designed every surface (web, mobile web, Chrome extension), authored PRDs, ran research and QA, contributed to VC pitches, and hired the two designers who succeeded me.</p>
+<p style="margin-top: 28px;"><span style="font-weight: 600;">My role as Founding Product Designer.</span> I was Keye's only designer for most of its life. When I joined, we had three static screens, no flows, no credit architecture, no design system. I designed every surface (web, mobile web, Chrome extension), wrote PRDs, ran research and QA, contributed to VC pitches, and hired the two designers who replaced me.</p>
 
-<p style="margin-top: 28px;"><span style="font-weight: 600;">Timeline</span> — 2 years (2021–2022): beta → credit system → marketplace expansion → extension → seed funding. After the founding team dispersed, the remaining founder took the company into YC W2024 and pivoted to financial analytics. The marketplace didn't survive the pivot — but the traction we built made YC possible.</p>
+<p style="margin-top: 28px;"><span style="font-weight: 600;">Timeline.</span> 2 years (2021 to 2022). We went from beta to credit system to marketplace expansion to extension to seed funding. After the founding team dispersed, the remaining founder took the company into YC W2024 and pivoted to financial analytics. The marketplace didn't survive the pivot, but the traction we built made YC possible.</p>
 
 <div style="width: 100%; min-height: 400px; background-color: #E5E7EB; border-radius: 8px; display: flex; align-items: center; justify-content: center; color: #9CA3AF; font-size: 14px; margin-top: 32px; margin-bottom: 32px;">Metrics table placeholder</div>
 
@@ -44,7 +44,7 @@ const caseStudies = {
         id: 'context-problem',
         title: '02 — The Problem',
         headline: 'Premium tools were priced for committed subscribers, not curious explorers',
-        content: `<p>Users created fake emails for free trials. Friend groups shared passwords. One participant paid for a VPN to access cheaper regional pricing. The market was telling us: premium tools — Grammarly at $180/year, Crunchbase at $600 — were priced for committed subscribers, not curious explorers.</p>
+        content: `<p>Users created fake emails for free trials. Friend groups shared passwords. One participant paid for a VPN to access cheaper regional pricing. The market was telling us something clear. Premium tools (Grammarly at $180/year, Crunchbase at $600) were priced for committed subscribers, not curious explorers.</p>
 
 <div style="display: flex; gap: 24px; margin-top: 40px; flex-wrap: wrap;">
   <div style="flex: 1; min-width: 250px; position: relative;">
@@ -61,9 +61,9 @@ const caseStudies = {
         id: 'started',
         title: '03 — Where I Started: Evidence over Instinct',
         headline: "My job wasn't to execute the founders' instincts but to introduce user evidence into a team moving on momentum",
-        content: `<p>My first task: the purchase flow. Founders had baked in mandatory consent and a feedback survey at checkout. Completion dropped 30% at those steps. I moved consent to signup, tested the survey in three placements. Email: 80% ignored. In-checkout: confused buyers. Post-access popup: users had just used the product and had something real to say. Drop-off fell 20% in one sprint.</p>
+        content: `<p>My first task was the purchase flow. Founders had baked in mandatory consent and a feedback survey at checkout. Completion dropped 30% at those steps. I moved consent to signup and tested the survey in three placements. Email got 80% ignored. In-checkout confused buyers. Post-access popup worked because users had just used the product and had something real to say. Drop-off fell 20% in one sprint.</p>
 
-<p style="margin-top: 28px;">Hardest early call: removing product descriptions. Testing showed users scanning, not reading. I led with imagery and side-by-side price comparison, pre-selecting the Keye option. Some users bought full subscriptions through Keye after seeing the comparison — behavior we hadn't designed for but kept.</p>
+<p style="margin-top: 28px;">Hardest early call was removing product descriptions. Testing showed users scanning, not reading. I led with imagery and side-by-side price comparison, pre-selecting the Keye option. Some users bought full subscriptions through Keye after seeing the comparison (behavior we hadn't designed for but kept).</p>
 
 <div class="pull-quote" style="margin-top: 28px;">With no research budget, I worked by signal saturation: once the same friction appeared across five or six users, it was real enough to act on.</div>`
       },
@@ -71,9 +71,9 @@ const caseStudies = {
         id: 'credit-system',
         title: '04 — The Credit System: From Constraint to Intelligence',
         headline: 'The credit cap turned price into a discovery mechanic and shaped the entire partnership strategy',
-        content: `<p>The most important design decision in Keye's history — not for how it looked, but for what it revealed.</p>
+        content: `<p>The most important design decision in Keye's history. Not for how it looked, but for what it revealed.</p>
 
-<p style="margin-top: 28px;"><span style="font-weight: 600;">Unlimited credits (MVP)</span> removed all friction — and all intentionality. Users activated HBO, Hulu, and Tubi the same day, exhausting access before people who actually wanted those products could reach them.</p>
+<p style="margin-top: 28px;"><span style="font-weight: 600;">Unlimited credits (MVP)</span> removed all friction and all intentionality. Users activated HBO, Hulu, and Tubi the same day, exhausting access before people who actually wanted those products could reach them.</p>
 
 <div style="width: 100%; height: 450px; background-color: #E5E7EB; border-radius: 8px; display: flex; align-items: center; justify-content: center; color: #9CA3AF; font-size: 14px; margin-top: 32px; margin-bottom: 32px;">
   <div style="text-align: center; padding: 20px;">
@@ -82,7 +82,7 @@ const caseStudies = {
   </div>
 </div>
 
-<p style="margin-top: 28px;"><span style="font-weight: 600;">A 200-credit cap</span> changed behavior immediately. The week it launched, a friend messaged me, frustrated her boyfriend had spent their credits on Hulu before she could watch HBO. Users now had a stake. The cap turned <span style="font-weight: 600;">price into a discovery mechanic</span>: when credits ran low, users explored cheaper unfamiliar products they'd never have clicked.</p>
+<p style="margin-top: 28px;"><span style="font-weight: 600;">A 200-credit cap</span> changed behavior immediately. The week it launched, a friend messaged me frustrated that her boyfriend had spent their credits on Hulu before she could watch HBO. Users now had a stake. The cap turned <span style="font-weight: 600;">price into a discovery mechanic</span>. When credits ran low, users explored cheaper unfamiliar products they'd never have clicked.</p>
 
 <div style="width: 100%; height: 450px; background-color: #E5E7EB; border-radius: 8px; display: flex; align-items: center; justify-content: center; color: #9CA3AF; font-size: 14px; margin-top: 32px; margin-bottom: 48px;">
   <div style="text-align: center; padding: 20px;">
@@ -91,9 +91,9 @@ const caseStudies = {
   </div>
 </div>
 
-<div class="pull-quote">The cap revealed exactly which partners Keye could win and why. Spotify, Netflix, YouTube declined — seeing us as a threat. Adobe, Grammarly, emerging brands said yes.</div>
+<div class="pull-quote">The cap revealed exactly which partners Keye could win and why. Spotify, Netflix, YouTube declined because they saw us as a threat. Adobe, Grammarly, and emerging brands said yes.</div>
 
-<p style="margin-top: 48px;"><span style="font-weight: 600;">Monetization followed the evidence:</span> $20/month for 200 credits, launched only once the mental model was established. Conversion: +32% over beta cohort. We taught the model deliberately — credit balance in header, onboarding pop-ups, How Keye Works page. Support requests: ↓74%.</p>`
+<p style="margin-top: 48px;"><span style="font-weight: 600;">Monetization followed the evidence.</span> We charged $20/month for 200 credits, launched only once the mental model was established. Conversion went up 32% over the beta cohort. We taught the model deliberately with credit balance in the header, onboarding pop-ups, and a How Keye Works page. Support requests dropped 74%.</p>`
       },
       {
         id: 'features',
@@ -102,7 +102,7 @@ const caseStudies = {
         content: `<div style="display: grid; grid-template-columns: 1fr; gap: 32px; margin-bottom: 48px;">
   <div>
     <div style="font-weight: 600; font-size: 17px; color: #1C1917; margin-bottom: 8px;">Buy Again</div>
-    <div style="font-size: 15px; color: #57534E; line-height: 1.6;">Collapsed three-step repurchase into one tap for returning users. The friction wasn't stopping decisions — it was re-litigating ones already made.</div>
+    <div style="font-size: 15px; color: #57534E; line-height: 1.6;">Collapsed three-step repurchase into one tap for returning users. The friction wasn't stopping decisions. It was re-litigating ones already made.</div>
   </div>
 
   <div>
@@ -112,7 +112,7 @@ const caseStudies = {
 
   <div>
     <div style="font-weight: 600; font-size: 17px; color: #1C1917; margin-bottom: 8px;">Featured</div>
-    <div style="font-size: 15px; color: #57534E; line-height: 1.6;">Mixed products we needed data on with products users requested — research and reward in one slot. Every alternative (ads, surveys, prompts) reduced engagement. The top had one job: get users to a product fast.</div>
+    <div style="font-size: 15px; color: #57534E; line-height: 1.6;">Mixed products we needed data on with products users requested. Research and reward in one slot. Every alternative (ads, surveys, prompts) reduced engagement. The top had one job, get users to a product fast.</div>
   </div>
 
   <div>
@@ -132,9 +132,9 @@ const caseStudies = {
         id: 'extension',
         title: '06 — The Chrome Extension: An 18-Month Problem Solved in Ten Days',
         headline: 'The breakthrough was recognizing we should live where the user already is',
-        content: `<p>Users copy-pasted credentials from Keye into partner sites. The plan: partner integrations would solve it. Reality: each required engineering investment partners couldn't prioritize. Then our technical co-founder left, taking the backend capacity with him.</p>
+        content: `<p>Users were copy-pasting credentials from Keye into partner sites. The plan was that partner integrations would solve it. Reality was that each one required engineering investment partners couldn't prioritize. Then our technical co-founder left, taking the backend capacity with him.</p>
 
-<p style="margin-top: 28px;">One evening, watching Honey apply coupons at checkout, I saw it: <span style="font-weight: 600;">live where the user already is.</span> Engineering confirmed the effort was minimal. That weekend I built a Figma prototype — visit partner site, extension detects it, offers access, auto-fills credentials. Showed it at all-hands. Shipped in ten days.</p>
+<p style="margin-top: 28px;">One evening I was watching Honey apply coupons at checkout and I saw it. <span style="font-weight: 600;">Live where the user already is.</span> Engineering confirmed the effort was minimal. That weekend I built a Figma prototype. User visits partner site, extension detects it, offers access, auto-fills credentials. I showed it at all-hands. We shipped in ten days.</p>
 
 <div style="width: 100%; height: 450px; background-color: #E5E7EB; border-radius: 8px; display: flex; align-items: center; justify-content: center; color: #9CA3AF; font-size: 14px; margin-top: 32px; margin-bottom: 32px;">
   <div style="text-align: center; padding: 20px;">
@@ -143,15 +143,15 @@ const caseStudies = {
   </div>
 </div>
 
-<p style="margin-top: 28px;">MVP was deliberately narrow: only purchased products, only auto-fill. Validation before features. Results: 60% installed within 3 months, login friction ↓63%, repeat sessions ↑41%. V2 added in-extension purchasing, earned by that data.</p>`
+<p style="margin-top: 28px;">MVP was deliberately narrow. Only purchased products, only auto-fill. Validation before features. Results were 60% installed within 3 months, login friction down 63%, repeat sessions up 41%. V2 added in-extension purchasing, earned by that data.</p>`
       },
       {
         id: 'design-system',
         title: "07 — Design System: Built for a Team That Didn't Exist Yet",
         headline: "The true measure of the system was that users couldn't tell where my work ended and the next designer's began",
-        content: `<p>I came from architecture, where everything in Revit is a parametric component — change the object, every instance updates. I treated the product card the same way. It evolved from a long-description carousel to a compact, partner-neutral frame. Otter.ai's branding feedback taught us: the card should be a frame, not a canvas. Engineering's constant question — <span style="font-style: italic;">can this be a state of the existing component rather than a new one?</span> — kept us reducing instead of adding.</p>
+        content: `<p>I came from architecture, where everything in Revit is a parametric component. Change the object, every instance updates. I treated the product card the same way. It evolved from a long-description carousel to a compact, partner-neutral frame. Otter.ai's branding feedback taught us the card should be a frame, not a canvas. Engineering kept asking <span style="font-style: italic;">can this be a state of the existing component rather than a new one?</span> That question kept us reducing instead of adding.</p>
 
-<p style="margin-top: 28px;">The mature card supported eight states — browseable, active (with countdown and credentials), disabled, Buy Again, Featured, Coming Soon, Leaving Soon — all derived from behavioral signals, none speculative.</p>
+<p style="margin-top: 28px;">The mature card supported eight states (browseable, active with countdown and credentials, disabled, Buy Again, Featured, Coming Soon, Leaving Soon), all derived from behavioral signals, none speculative.</p>
 
 <div style="width: 100%; height: 500px; background-color: #E5E7EB; border-radius: 8px; display: flex; align-items: center; justify-content: center; color: #9CA3AF; font-size: 14px; margin-top: 32px; margin-bottom: 48px;">
   <div style="text-align: center; padding: 20px;">
@@ -160,14 +160,14 @@ const caseStudies = {
   </div>
 </div>
 
-<div class="pull-quote">Frontend engineering was twelve hours away in Asia. A bug found Thursday in Seattle wasn't fixed until Friday evening — once leaving a broken sticky nav visible through a weekend of VC testing.</div>
+<div class="pull-quote">Frontend engineering was twelve hours away in Asia. A bug found Thursday in Seattle wasn't fixed until Friday evening. Once that left a broken sticky nav visible through an entire weekend of VC testing.</div>
 
-<p style="margin-top: 48px;">I rebuilt my handoff: annotated documents, precisely named assets, pre-answered edge cases, Saturday-morning sessions overlapping their day. That discipline became the onboarding foundation for the junior designer I hired. The true measure: when she took over my features, users couldn't tell where my work ended and hers began.</p>`
+<p style="margin-top: 48px;">I rebuilt my handoff. Annotated documents, precisely named assets, pre-answered edge cases, Saturday-morning sessions overlapping their day. That discipline became the onboarding foundation for the junior designer I hired. The true measure was when she took over my features, users couldn't tell where my work ended and hers began.</p>`
       },
       {
         id: 'tradeoffs',
         title: '08 — Tradeoffs & Hard Calls',
-        headline: 'Founding-designer roles expand to fill whatever you give them — I learned to define boundaries before the product demanded more than one person could sustainably give',
+        headline: 'Founding-designer roles expand to fill whatever you give them. I learned to define boundaries before the product demanded more than one person could sustainably give',
         content: `<div style="display: grid; grid-template-columns: 1fr; gap: 28px;">
   <div>
     <div style="font-weight: 600; font-size: 17px; color: #1C1917; margin-bottom: 8px;">The GIF Decision</div>
@@ -181,7 +181,7 @@ const caseStudies = {
 
   <div>
     <div style="font-weight: 600; font-size: 17px; color: #1C1917; margin-bottom: 8px;">The Mobile App Concession</div>
-    <div style="font-size: 15px; color: #57534E; line-height: 1.6;">I believed in a native app; founders and investors disagreed on cost grounds. I conceded — and made the mobile web experience thorough enough that the concession cost users almost nothing.</div>
+    <div style="font-size: 15px; color: #57534E; line-height: 1.6;">I believed in a native app. Founders and investors disagreed on cost grounds. I conceded and made the mobile web experience thorough enough that the concession cost users almost nothing.</div>
   </div>
 
   <div>
@@ -190,19 +190,19 @@ const caseStudies = {
   </div>
 </div>
 
-<div class="pull-quote" style="margin-top: 48px;">What I'd do differently isn't a product decision — it's role design. Founding-designer roles expand to fill whatever you give them. I learned to define boundaries before the product demands more than one person can sustainably give.</div>`
+<div class="pull-quote" style="margin-top: 48px;">What I'd do differently isn't a product decision. It's role design. Founding-designer roles expand to fill whatever you give them. I learned to define boundaries before the product demands more than one person can sustainably give.</div>`
       },
       {
         id: 'impact',
         title: '09 — Impact & Reflection',
-        headline: "The most important thing a founding designer builds isn't the product — it's the foundation that lets the product grow without being rebuilt from scratch",
-        content: `<p>Keye grew from three static screens to a funded company during my two years: 0 → 20K+ MAUs in under a year, 150+ products with 35+ direct partnerships, an extension shipped in ten days, a design team built from scratch.</p>
+        headline: "The most important thing a founding designer builds isn't the product. It's the foundation that lets the product grow without being rebuilt from scratch",
+        content: `<p>Keye grew from three static screens to a funded company during my two years. 0 to 20K+ MAUs in under a year, 150+ products with 35+ direct partnerships, an extension shipped in ten days, a design team built from scratch.</p>
 
-<p style="margin-top: 28px;">By year three, the founding team dispersed. The remaining founder took the company into YC W2024 and pivoted to financial analytics. The marketplace didn't survive — but the research, partnerships, and funding that made YC possible came from the product we built.</p>
+<p style="margin-top: 28px;">By year three, the founding team dispersed. The remaining founder took the company into YC W2024 and pivoted to financial analytics. The marketplace didn't survive, but the research, partnerships, and funding that made YC possible came from the product we built.</p>
 
 <div class="pull-quote" style="margin-top: 48px;">The credit cap wasn't valuable because it monetized the product. It was valuable because it generated the behavioral data that shaped the entire partnership strategy.</div>
 
-<p style="margin-top: 48px;">Keye compressed the feedback loop between design decision and consequence from months to days. It taught me to treat every decision as a hypothesis. The ones confirmed without testing are the ones that break in production.</p>`
+<p style="margin-top: 48px;">Keye compressed the feedback loop between design decision and consequence from months to days. It taught me to treat every decision as a hypothesis. The ones I confirmed without testing were the ones that broke in production.</p>`
       },
     ]
   },
@@ -221,13 +221,13 @@ const caseStudies = {
       {
         id: 'snapshot',
         title: '01 — Snapshot',
-        content: `<p><span style="font-weight: 600;">Product</span><br/>An ML-driven platform that helped a major Pacific Northwest university manage 60–80+ buildings across three campuses. LAT shipped as a modular API layer alongside their legacy CMMS/ERP — turning fragmented operational data into financial intelligence without forcing a system replacement.</p>
+        content: `<p><span style="font-weight: 600;">Product</span><br/>An ML-driven platform that helped a major Pacific Northwest university manage 60 to 80+ buildings across three campuses. LAT shipped as a modular API layer alongside their legacy CMMS/ERP, turning fragmented operational data into financial intelligence without forcing a system replacement.</p>
 
-<p style="margin-top: 28px;"><span style="font-weight: 600;">My Role — Lead Product Designer</span><br/>I owned product vision, workflows, and the design system. Led alignment across field technicians, project managers, accountants, and executives. Because the PM was non-technical, I translated institutional needs into functional requirements and made the case for field research when stakeholders wanted to skip it.</p>
+<p style="margin-top: 28px;"><span style="font-weight: 600;">My Role as Lead Product Designer</span><br/>I owned product vision, workflows, and the design system. I led alignment across field technicians, project managers, accountants, and executives. Because the PM was non-technical, I translated institutional needs into functional requirements and made the case for field research when stakeholders wanted to skip it.</p>
 
-<p style="margin-top: 28px;"><span style="font-weight: 600;">Timeline — 8 months</span><br/>Discovery → data consolidation → ML framework → pilot → beta → release. The platform continued beyond my tenure.</p>
+<p style="margin-top: 28px;"><span style="font-weight: 600;">Timeline was 8 months</span><br/>Discovery to data consolidation to ML framework to pilot to beta to release. The platform continued beyond my tenure.</p>
 
-<p style="margin-top: 28px;"><span style="font-weight: 600;">Team</span><br/>1 PM · 1 designer (me) · 2 external engineers · client-side CAPEX, data science, accounting, and property management teams</p>
+<p style="margin-top: 28px;"><span style="font-weight: 600;">Team</span><br/>1 PM, 1 designer (me), 2 external engineers, plus client-side CAPEX, data science, accounting, and property management teams</p>
 
 <div style="width: 100%; min-height: 450px; background-color: #E5E7EB; border-radius: 8px; display: flex; align-items: center; justify-content: center; color: #9CA3AF; font-size: 14px; margin-top: 32px; margin-bottom: 32px;">Hero — role-based dashboard split: the same asset rendered for a technician (mobile, offline-first), a manager (priority queue), and an executive (filtered summary). One data model, three cognitive surfaces.</div>
 
@@ -254,7 +254,7 @@ const caseStudies = {
   </div>
 </div>
 
-<p style="font-size: 14px; color: #6B7280;">Adoption, data accuracy, and reporting time are the numbers I'm most confident in — they were directly observed. The cost figures came from the platform's own forecasting layer, so I hold them more loosely and say so when asked.</p>`
+<p style="font-size: 14px; color: #6B7280;">Adoption, data accuracy, and reporting time are the numbers I'm most confident in because they were directly observed. The cost figures came from the platform's own forecasting layer, so I hold them more loosely and say so when asked.</p>`
       },
       {
         id: 'context-problem',
@@ -318,7 +318,7 @@ const caseStudies = {
 
 <p style="margin-top: 28px;">The breakthrough wasn't the AI. It was recognizing that fragmented data was forcing humans to do system work. Everyone had access to data. What they lacked was context, prioritization, and trust.</p>
 
-<p style="margin-top: 28px;">That reframed everything. Instead of one dashboard for everyone, we built role-based surfaces over a shared foundation — surfacing only what was actionable, turning operational signals into financial intelligence.</p>
+<p style="margin-top: 28px;">That reframed everything. Instead of one dashboard for everyone, we built role-based surfaces over a shared foundation. Surfacing only what was actionable, turning operational signals into financial intelligence.</p>
 
 <img src="/images/lat/pROBLEM.webp" alt="System architecture diagram — modular API layer, role-based surfaces, shared data foundation" style="width: 100%; border-radius: 8px; margin-top: 32px; margin-bottom: 32px; display: block;" />`
       },
@@ -329,17 +329,17 @@ const caseStudies = {
         content: `<div style="display: grid; grid-template-columns: 1fr; gap: 28px; margin-bottom: 48px;">
   <div>
     <div style="font-weight: 600; font-size: 17px; color: #1C1917; margin-bottom: 8px;">Legacy Ecosystem Couldn't Be Disrupted</div>
-    <div style="font-size: 15px; color: #57534E; line-height: 1.6;">LAT shipped as a modular API layer alongside existing CMMS/ERP stack — no forced migration, no workflow replacement. Incremental transparency without triggering organizational resistance.</div>
+    <div style="font-size: 15px; color: #57534E; line-height: 1.6;">LAT shipped as a modular API layer alongside existing CMMS/ERP stack. No forced migration, no workflow replacement. Incremental transparency without triggering organizational resistance.</div>
   </div>
 
   <div>
     <div style="font-weight: 600; font-size: 17px; color: #1C1917; margin-bottom: 8px;">Data Integrity Had Hard Boundaries</div>
-    <div style="font-size: 15px; color: #57534E; line-height: 1.6;">University enforced strict governance; we inherited duplicated, inconsistent records. This constraint produced the defining incident of the project (§07). The response — validation states, multi-signal checks, confidence tiers — became the product's trust architecture.</div>
+    <div style="font-size: 15px; color: #57534E; line-height: 1.6;">University enforced strict governance. We inherited duplicated, inconsistent records. This constraint produced the defining incident of the project (see section 07). The response (validation states, multi-signal checks, confidence tiers) became the product's trust architecture.</div>
   </div>
 
   <div>
     <div style="font-weight: 600; font-size: 17px; color: #1C1917; margin-bottom: 8px;">Capital Decisions Were Political</div>
-    <div style="font-size: 15px; color: #57534E; line-height: 1.6;">Layered approvals, public accountability, donor influence. In that environment automation isn't neutral — it's political. We kept managers as approval gatekeepers, made AI show its reasoning (not just scores), and logged every override.</div>
+    <div style="font-size: 15px; color: #57534E; line-height: 1.6;">Layered approvals, public accountability, donor influence. In that environment automation isn't neutral. It's political. We kept managers as approval gatekeepers, made AI show its reasoning (not just scores), and logged every override.</div>
   </div>
 </div>
 
@@ -353,7 +353,7 @@ const caseStudies = {
 <div style="display: grid; grid-template-columns: 1fr; gap: 28px; margin-bottom: 48px;">
   <div>
     <div style="font-weight: 600; font-size: 17px; color: #1C1917; margin-bottom: 8px;">Roles Had Wildly Different Needs</div>
-    <div style="font-size: 15px; color: #57534E; line-height: 1.6;">Technicians wanted to finish on site and go home — voice-to-text, big touch targets, no forms designed for a desk. Managers ran 15 jobs a day and needed delegation, not dashboards. Accountants managed 20–30 stakeholders and needed brief-with-drill-down. Executives needed two options, not a back-study. Role-based surfaces over one universal view.</div>
+    <div style="font-size: 15px; color: #57534E; line-height: 1.6;">Technicians wanted to finish on site and go home. Voice-to-text, big touch targets, no forms designed for a desk. Managers ran 15 jobs a day and needed delegation, not dashboards. Accountants managed 20 to 30 stakeholders and needed brief-with-drill-down. Executives needed two options, not a back-study. Role-based surfaces over one universal view.</div>
   </div>
 
   <div>
@@ -556,9 +556,9 @@ const caseStudies = {
         title: '01 — Snapshot',
         content: `<div class="snapshot-content-wrapper">
 <div class="snapshot-text-content">
-<p>Platforms try to control misinformation. Users don't trust them. This capstone asked a different question: what if we equipped people to identify misinformation themselves?</p>
+<p>Platforms try to control misinformation. Users don't trust them. This capstone asked a different question. What if we equipped people to identify misinformation themselves?</p>
 
-<p style="margin-top: 28px;"><span style="font-weight: 600;">Agency over authority.</span> People resist being told what's true. They respond better when given tools to decide for themselves. The goal wasn't another fact-check label — it was tools that help people pause, verify, and learn, folded into daily habits.</p>
+<p style="margin-top: 28px;"><span style="font-weight: 600;">Agency over authority.</span> People resist being told what's true. They respond better when given tools to decide for themselves. The goal wasn't another fact-check label. It was tools that help people pause, verify, and learn, folded into daily habits.</p>
 
 <div style="display: flex; gap: 24px; margin-top: 40px; flex-wrap: wrap;">
   <div style="flex: 1; min-width: 250px; position: relative;">
@@ -570,9 +570,9 @@ const caseStudies = {
   </div>
 </div>
 
-<p style="margin-top: 28px;"><span style="font-weight: 600;">My role — sole designer.</span> Graduate capstone at University of Washington (Jan–July 2024). Started as a team of four; after February, the product, design, and direction were entirely mine. I ran the research, defined archetypes, designed all four features, and tested with ~1,800 people at Misinfo Day.</p>
+<p style="margin-top: 28px;"><span style="font-weight: 600;">My role as sole designer.</span> Graduate capstone at University of Washington (Jan to July 2024). Started as a team of four. After February, the product, design, and direction were entirely mine. I ran the research, defined archetypes, designed all four features, and tested with around 1,800 people at Misinfo Day.</p>
 
-<p style="margin-top: 28px;">From March to May, I collaborated with TrueMedia.org (deepfake-detection nonprofit) on user research and market assessment. They built their own product; no design assets were shared. What I learned from their shutdown in Jan 2025 reshaped how I think about public-good products (§06).</p>
+<p style="margin-top: 28px;">From March to May, I collaborated with TrueMedia.org (deepfake-detection nonprofit) on user research and market assessment. They built their own product. No design assets were shared. What I learned from their shutdown in Jan 2025 reshaped how I think about public-good products (see section 06).</p>
 </div>
 
 <div class="figma-embed-container">
@@ -605,7 +605,7 @@ const caseStudies = {
   </table>
 </div>
 
-<p style="margin-top: 28px;"><span style="font-weight: 600;">Testing</span> — 2,000-respondent survey, two interview phases (28 participants), moderated usability (14 participants), Misinfo Day live testing (~1,800 people).</p>
+<p style="margin-top: 28px;"><span style="font-weight: 600;">Testing.</span> 2,000-respondent survey, two interview phases (28 participants), moderated usability (14 participants), Misinfo Day live testing (around 1,800 people).</p>
 
 <div style="width: 100%; margin-top: 48px; margin-bottom: 0;">
   <img src="/images/misinformation-center/User quote.png" alt="User quote" style="width: 100%; height: auto; border-radius: 8px; display: block;" />
@@ -616,8 +616,8 @@ const caseStudies = {
       {
         id: 'problem',
         title: '02 — The Problem',
-        headline: 'After AI, the same problem arrived at a different scale — believability and volume in a fragile ecosystem',
-        content: `<p>Misinformation exploits human bias: believe what confirms your views, trust what feels familiar, share before verifying. After AI, the same problem arrived at a different scale — more believable, more volume, same fragile ecosystem.</p>
+        headline: 'After AI, the same problem arrived at a different scale',
+        content: `<p>Misinformation exploits human bias. Believe what confirms your views, trust what feels familiar, share before verifying. After AI, the same problem arrived at a different scale. More believable, more volume, same fragile ecosystem.</p>
 
 <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 40px; margin-top: 60px; margin-bottom: 60px;">
   <div>
@@ -751,12 +751,12 @@ const caseStudies = {
       {
         id: 'reflection',
         title: '07 — Reflection',
-        headline: 'A designer who thinks only about what users see is a UI designer — a designer who thinks about everything required to make that experience real and sustainable is a product leader',
-        content: `<p><span style="font-weight: 600;">What this project taught me that comfortable work couldn't.</span> Keye taught me to treat design decisions as hypotheses. This project taught me something harder: no matter how well-designed a product is, design alone cannot make a public good sustainable. TrueMedia was research-grounded, mission-complete, and it still closed — the design wasn't the problem; the economics were. The most important design question for any public good isn't "what should this look like." It's "what does this attach to that keeps it viable?" The compass is trusted because it has no business model — and it exists because the phone manufacturer absorbs the cost. Finding the attachment is as much a design problem as any interaction pattern. That's why the integration vision — Apple News, the share sheet, the native camera — isn't a nice-to-have in this case study. It's the sustainability answer.</p>
+        headline: 'A designer who thinks only about what users see is a UI designer. A designer who thinks about everything required to make that experience real and sustainable is a product leader',
+        content: `<p><span style="font-weight: 600;">What this project taught me that comfortable work couldn't.</span> Keye taught me to treat design decisions as hypotheses. This project taught me something harder. No matter how well-designed a product is, design alone cannot make a public good sustainable. TrueMedia was research-grounded, mission-complete, and it still closed. The design wasn't the problem. The economics were. The most important design question for any public good isn't "what should this look like." It's "what does this attach to that keeps it viable?" The compass is trusted because it has no business model, and it exists because the phone manufacturer absorbs the cost. Finding the attachment is as much a design problem as any interaction pattern. That's why the integration vision (Apple News, the share sheet, the native camera) isn't a nice-to-have in this case study. It's the sustainability answer.</p>
 
-<p style="margin-top: 28px;"><span style="font-weight: 600;">The builder mindset.</span> Coming back to school after working in the real market, my mind couldn't stay inside the boundaries of a class project. Every design decision triggered questions about moderation staffing, hosting costs, who updates the quiz when new manipulation formats emerge, who pays for all of it. My professors thought I was overcomplicating an academic exercise. I've come to see that instinct as the point: a designer who thinks only about what users see is a UI designer. A designer who thinks about everything required to make that experience real and sustainable is a product leader. This project clarified which one I intend to be.</p>
+<p style="margin-top: 28px;"><span style="font-weight: 600;">The builder mindset.</span> Coming back to school after working in the real market, my mind couldn't stay inside the boundaries of a class project. Every design decision triggered questions about moderation staffing, hosting costs, who updates the quiz when new manipulation formats emerge, who pays for all of it. My professors thought I was overcomplicating an academic exercise. I've come to see that instinct as the point. A designer who thinks only about what users see is a UI designer. A designer who thinks about everything required to make that experience real and sustainable is a product leader. This project clarified which one I intend to be.</p>
 
-<p style="margin-top: 28px;"><span style="font-weight: 600;">What reviewers pushed on, and what changed.</span> The showcase feedback was strong on craft and narrative — and the critical notes mattered more. Reviewers wanted the quiz to teach the why behind each answer; that tension with the 40-second constraint produced the post-answer reveal. Two flagged visual issues — background/content contrast merging, a couple of busy screens — were fixed in the post-showcase refinement pass, along with missing back-navigation on several screens. Presenting the critique alongside the fixes is deliberate: the work improved because people pushed on it.</p>
+<p style="margin-top: 28px;"><span style="font-weight: 600;">What reviewers pushed on, and what changed.</span> The showcase feedback was strong on craft and narrative, and the critical notes mattered more. Reviewers wanted the quiz to teach the why behind each answer. That tension with the 40-second constraint produced the post-answer reveal. Two flagged visual issues (background/content contrast merging, a couple of busy screens) were fixed in the post-showcase refinement pass, along with missing back-navigation on several screens. Presenting the critique alongside the fixes is deliberate. The work improved because people pushed on it.</p>
 
 <div style="display: flex; gap: 24px; margin-top: 40px; flex-wrap: wrap;">
   <div style="flex: 1; min-width: 250px; position: relative;">
@@ -768,9 +768,9 @@ const caseStudies = {
   </div>
 </div>
 
-<p style="margin-top: 48px;"><span style="font-weight: 600;">If I built this in 2026.</span> In early 2024, this product required an organization — human moderators, institutional funding, a maintenance team. By 2026, AI infrastructure collapses that requirement: AI triage with editorial guardrails for Ask Us, AI monitoring to keep quiz content current, AI-augmented synthesis on research at scale. The sustainability problem remains, but the resources needed to attack it have shrunk from a fifteen-person nonprofit to a determined individual with the right tools. The problem Etzioni warned about hasn't gone away — it's grown more urgent while consumer-level defenses have stood still. The capstone answered the design question: what should a media literacy tool look like for an everyday person. The ecosystem question — how it reaches people at scale, in a form that outlives a funding cycle — is still open.</p>
+<p style="margin-top: 48px;"><span style="font-weight: 600;">If I built this in 2026.</span> In early 2024, this product required an organization. Human moderators, institutional funding, a maintenance team. By 2026, AI infrastructure collapses that requirement. AI triage with editorial guardrails for Ask Us, AI monitoring to keep quiz content current, AI-augmented synthesis on research at scale. The sustainability problem remains, but the resources needed to attack it have shrunk from a fifteen-person nonprofit to a determined individual with the right tools. The problem Etzioni warned about hasn't gone away. It's grown more urgent while consumer-level defenses have stood still. The capstone answered the design question. What should a media literacy tool look like for an everyday person. The ecosystem question (how it reaches people at scale, in a form that outlives a funding cycle) is still open.</p>
 
-<div class="pull-quote" style="margin-top: 48px;">The capstone answered the design question: what should a media literacy tool look like for an everyday person. The ecosystem question — how it reaches people at scale, in a form that outlives a funding cycle — is still open.</div>
+<div class="pull-quote" style="margin-top: 48px;">The capstone answered the design question. What should a media literacy tool look like for an everyday person. The ecosystem question (how it reaches people at scale, in a form that outlives a funding cycle) is still open.</div>
 
 <img src="/images/misinformation-center/Truth.png" alt="Truth visual" style="width: 100%; border-radius: 8px; margin-top: 48px; margin-bottom: 32px; display: block;" />`
       },
