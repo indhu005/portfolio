@@ -227,17 +227,20 @@ export default function LandingGameSimple() {
     return () => window.removeEventListener('resize', checkScreenSize)
   }, [])
 
-  // Get local time and region
+  // Get local time and region (Seattle-based)
   useEffect(() => {
     const updateTime = () => {
       const now = new Date()
-      const hour = now.getHours()
+
+      // Get Seattle time (America/Los_Angeles timezone)
+      const seattleTime = new Date(now.toLocaleString('en-US', { timeZone: 'America/Los_Angeles' }))
+      const hour = seattleTime.getHours()
 
       // Daytime: 6am - 6pm (6-18), Nighttime: 6pm - 6am
       setIsDaytime(hour >= 6 && hour < 18)
 
       setLocalTime(
-        now.toLocaleTimeString('en-US', {
+        seattleTime.toLocaleTimeString('en-US', {
           hour: '2-digit',
           minute: '2-digit',
           hour12: true,
@@ -247,14 +250,8 @@ export default function LandingGameSimple() {
     updateTime()
     const interval = setInterval(updateTime, 1000)
 
-    try {
-      const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone
-      const parts = timezone.split('/')
-      const region = parts[parts.length - 1].replace('_', ' ')
-      setLocalRegion(region)
-    } catch {
-      setLocalRegion('Unknown')
-    }
+    // Always show Seattle
+    setLocalRegion('Seattle')
 
     return () => clearInterval(interval)
   }, [])
@@ -338,7 +335,11 @@ export default function LandingGameSimple() {
       const cellSize = isMobile ? 48 : 80
       const gap = isMobile ? 8 : 16
 
-      const targetRow = Math.floor(Math.random() * GRID_ROWS)
+      // Exclude top row on tablet to prevent overlap with instruction text
+      const minRow = isTablet ? 1 : 0
+      const availableRows = GRID_ROWS - minRow
+
+      const targetRow = minRow + Math.floor(Math.random() * availableRows)
       const targetCol = Math.floor(Math.random() * cols)
       const fromLeft = Math.random() < 0.5
 
@@ -364,7 +365,7 @@ export default function LandingGameSimple() {
     const spawnInterval = playCount === 0 ? 1200 : 850 // 1.2s first time, 0.85s on replay
     const interval = setInterval(spawnTruck, spawnInterval)
     return () => clearInterval(interval)
-  }, [gameActive, mounted, isMobile, playCount])
+  }, [gameActive, mounted, isMobile, isTablet, playCount])
 
   // Animate trucks
   useEffect(() => {
@@ -651,6 +652,7 @@ export default function LandingGameSimple() {
         maxWidth: isMobile ? 'calc(100% - 32px)' : '600px',
         zIndex: 50,
         fontFamily: 'DM Sans, sans-serif',
+        paddingBottom: isTablet ? '24px' : '0', // Extra padding on tablet to prevent overlap with stat card
       }}>
         {/* Location and time */}
         <div style={{
