@@ -35,7 +35,7 @@ export default function About() {
     <div style={{
       display: 'flex',
       height: '100vh',
-      backgroundColor: '#F7F4F0',
+      backgroundColor: '#FFFFFF',
       overflow: 'hidden',
       width: '100vw',
     }}>
@@ -76,7 +76,7 @@ export default function About() {
             left: 0,
             width: '100vw',
             height: '100vh',
-            backgroundColor: '#F7F4F0',
+            backgroundColor: '#FFFFFF',
             zIndex: 999,
             overflowY: 'auto',
             padding: '80px 20px 20px 20px',
@@ -101,7 +101,7 @@ export default function About() {
           borderBottom: '1px solid rgba(0,0,0,0.08)',
           display: 'flex',
           alignItems: 'baseline',
-          padding: isMobile ? '0 20px' : isTablet ? '0 32px' : '0 48px 0 0px',
+          padding: isMobile ? '0 20px' : isTablet ? '0 32px 0 20px' : '0 48px 0 48px',
           paddingTop: isMobile ? '20px' : '24px',
           flexShrink: 0,
         }}>
@@ -118,7 +118,7 @@ export default function About() {
           style={{
             flex: 1,
             overflowY: 'auto',
-            padding: isMobile ? '0 20px 40px 20px' : isTablet ? '0 32px 50px 32px' : '0 48px 60px 0px',
+            padding: isMobile ? '0 20px 40px 20px' : isTablet ? '0 32px 50px 20px' : '0 48px 60px 48px',
             minWidth: 0,
           }}
         >
