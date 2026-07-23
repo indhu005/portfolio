@@ -610,8 +610,9 @@ export default function LandingGameSimple() {
   }
 
   const cols = isMobile ? GRID_COLS_MOBILE : GRID_COLS_DESKTOP
-  const cellSize = isMobile ? 48 : 80
-  const gap = isMobile ? 8 : 16
+  // Responsive cell sizes: mobile (48), tablet (64), laptop (100), monitor (120)
+  const cellSize = isMobile ? 48 : isTablet ? 64 : (typeof window !== 'undefined' && window.innerWidth >= 1800 ? 120 : 100)
+  const gap = isMobile ? 8 : isTablet ? 12 : 16
 
   const handleCellClick = (row: number, col: number) => {
     if (!gameActive) return
@@ -636,7 +637,7 @@ export default function LandingGameSimple() {
       backgroundColor: '#FFFFFF',
       borderRadius: '4px',
       padding: isMobile ? '16px' : '20px',
-      paddingBottom: (isMobile || isTablet) ? '90px' : '20px',
+      paddingBottom: isMobile ? '90px' : isTablet ? '140px' : '20px', // More padding on tablet to prevent overlap
       display: 'flex',
       flexDirection: 'column',
       alignItems: 'center',
