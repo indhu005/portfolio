@@ -254,7 +254,7 @@ export default function Home() {
                   From three static screens to a YC-backed subscription marketplace — designing ClassPass for digital tools.
                 </p>
 
-                {/* Large Image Placeholder */}
+                {/* Landing Video */}
                 <a
                   href="/work/keye"
                   style={{
@@ -264,21 +264,32 @@ export default function Home() {
                     cursor: 'pointer',
                   }}
                 >
-                  <div style={{
-                    width: '100%',
-                    height: isMobile ? '280px' : isWideDesktop ? '600px' : '500px',
-                    backgroundColor: '#E5E5E5',
-                    borderRadius: '12px',
-                    transition: 'transform 0.3s ease, box-shadow 0.3s ease',
-                  }}
-                  onMouseEnter={(e) => {
-                    e.currentTarget.style.transform = 'translateY(-4px)'
-                    e.currentTarget.style.boxShadow = '0 12px 40px rgba(0, 0, 0, 0.12)'
-                  }}
-                  onMouseLeave={(e) => {
-                    e.currentTarget.style.transform = 'translateY(0)'
-                    e.currentTarget.style.boxShadow = 'none'
-                  }}
+                  <video
+                    src="/videos/Keye/Home page Landing.mp4"
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    preload="auto"
+                    style={{
+                      display: 'block',
+                      width: '100%',
+                      height: isMobile ? '280px' : isWideDesktop ? '600px' : '500px',
+                      objectFit: 'cover',
+                      backgroundColor: '#E5E5E5',
+                      borderRadius: '12px',
+                      transition: 'transform 0.3s ease, box-shadow 0.3s ease',
+                      willChange: 'transform',
+                      backfaceVisibility: 'hidden',
+                    }}
+                    onMouseEnter={(e) => {
+                      e.currentTarget.style.transform = 'translateY(-4px)'
+                      e.currentTarget.style.boxShadow = '0 12px 40px rgba(0, 0, 0, 0.12)'
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.style.transform = 'translateY(0)'
+                      e.currentTarget.style.boxShadow = 'none'
+                    }}
                   />
                 </a>
               </article>
