@@ -112,8 +112,11 @@ export default function MisinfoFeaturesContent() {
         </div>
       </div>
 
-      <div style={{ width: '100%', minHeight: '350px', backgroundColor: '#E5E7EB', borderRadius: '8px', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#9CA3AF', fontSize: '14px', marginTop: '28px', marginBottom: '48px' }}>
-        Ask Us flow — simplified submission to human reviewer response
+      <div style={{ width: '100%', maxWidth: '1200px', margin: '28px auto 48px' }}>
+        <video autoPlay loop muted playsInline preload="auto" style={{ display: 'block', width: '100%', height: 'auto', borderRadius: '8px' }}>
+          <source src="/videos/misinformationcenter/Submit.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
       </div>
 
       <div className="pull-quote" style={{ marginTop: '48px', marginBottom: '32px' }}>
