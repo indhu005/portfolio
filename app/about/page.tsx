@@ -18,11 +18,10 @@ const useMediaQuery = (query: string) => {
   return matches
 }
 
-// Placeholder photo data - replace with your actual image URLs
-const photos = Array.from({ length: 24 }, (_, i) => ({
+const photos = Array.from({ length: 36 }, (_, i) => ({
   id: i + 1,
-  src: `https://via.placeholder.com/400x400/E5D9C6/1C1917?text=Photo+${i + 1}`,
-  caption: `Photo caption ${i + 1} — replace with your tagline`
+  src: `/images/about/photo-${String(i + 1).padStart(2, '0')}.jpg`,
+  caption: ''
 }))
 
 export default function About() {
@@ -285,7 +284,7 @@ export default function About() {
                         }}
                       />
                     </div>
-                    {isExpanded && (
+                    {isExpanded && photo.caption && (
                       <div style={{
                         marginTop: '16px',
                         fontSize: isMobile ? '14px' : '15px',
