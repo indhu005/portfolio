@@ -49,7 +49,7 @@ export default function MisinfoFeaturesContent() {
 
       <div style={{ width: '100%', maxWidth: '1200px', margin: '32px auto 48px' }}>
         <video autoPlay loop muted playsInline preload="auto" style={{ display: 'block', width: '100%', height: 'auto', borderRadius: '8px' }}>
-          <source src="/videos/misinformationcenter/Literacy quiz.mp4" type="video/mp4" />
+          <source src="/videos/misinformationcenter/Literacy quiz.webm" type="video/webm" />
           Your browser does not support the video tag.
         </video>
       </div>
