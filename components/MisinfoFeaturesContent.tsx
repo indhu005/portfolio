@@ -73,8 +73,11 @@ export default function MisinfoFeaturesContent() {
         </div>
       </div>
 
-      <div style={{ width: '100%', minHeight: '350px', backgroundColor: '#E5E7EB', borderRadius: '8px', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#9CA3AF', fontSize: '14px', marginTop: '32px', marginBottom: '48px' }}>
-        Rating iteration before/after — flat color verdict vs. layered badge-plus-evidence
+      <div style={{ width: '100%', maxWidth: '1200px', margin: '32px auto 48px' }}>
+        <video autoPlay loop muted playsInline preload="auto" style={{ display: 'block', width: '100%', height: 'auto', borderRadius: '8px' }}>
+          <source src="/videos/misinformationcenter/Search%20.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
       </div>
 
       <p style={{ marginTop: '36px', fontSize: '20px', fontWeight: 600 }}>Feature 03 — Scan</p>
