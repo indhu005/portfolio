@@ -47,7 +47,7 @@ export default function MisinfoFeaturesContent() {
 
       <p style={{ marginTop: '16px' }}>Users wanted to know why an item was false, which conflicted with the 40-second constraint. The resolution: speed for the question, depth for the reveal, sources one tap away.</p>
 
-      <div style={{ width: '100%', maxWidth: '1200px', margin: '32px auto 48px' }}>
+      <div style={{ width: '100%', maxWidth: '600px', margin: '32px auto 48px' }}>
         <video autoPlay loop muted playsInline preload="auto" style={{ display: 'block', width: '100%', height: 'auto', borderRadius: '8px' }}>
           <source src="/videos/misinformationcenter/Literacy quiz.webm" type="video/webm" />
           Your browser does not support the video tag.
