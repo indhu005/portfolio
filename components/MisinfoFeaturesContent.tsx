@@ -47,8 +47,11 @@ export default function MisinfoFeaturesContent() {
 
       <p style={{ marginTop: '16px' }}>Users wanted to know why an item was false, which conflicted with the 40-second constraint. The resolution: speed for the question, depth for the reveal, sources one tap away.</p>
 
-      <div style={{ width: '100%', minHeight: '400px', backgroundColor: '#E5E7EB', borderRadius: '8px', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#9CA3AF', fontSize: '14px', marginTop: '32px', marginBottom: '48px' }}>
-        Quiz progression — swipe interaction, level map, and the post-answer reveal state
+      <div style={{ width: '100%', maxWidth: '1200px', margin: '32px auto 48px' }}>
+        <video autoPlay loop muted playsInline preload="auto" style={{ display: 'block', width: '100%', height: 'auto', borderRadius: '8px' }}>
+          <source src="/videos/misinformationcenter/Literacy%20quiz.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
       </div>
 
       <p style={{ marginTop: '36px', fontSize: '20px', fontWeight: 600 }}>Feature 02 — Search & Image Search</p>
