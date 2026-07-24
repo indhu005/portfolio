@@ -86,12 +86,11 @@ export default function MisinfoFeaturesContent() {
 
       <p style={{ marginTop: '16px' }}>Older users hesitated and erred on forms, but scanned instantly and confidently — a behavior already learned from restaurant QR codes. OCR converted headlines to searchable text invisibly.</p>
 
-      <div style={{ width: '100%', height: '400px', backgroundColor: '#E5E7EB', borderRadius: '8px', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', margin: '28px auto 48px', maxWidth: '1200px' }}>
-        <div style={{ fontSize: '48px', marginBottom: '16px' }}>📹</div>
-        <div style={{ fontSize: '14px', color: '#6B7280', textAlign: 'center' }}>
-          <div>Video placeholder</div>
-          <div style={{ marginTop: '8px', fontSize: '12px' }}>Replace with: /videos/misinformationcenter/Scan.webm</div>
-        </div>
+      <div style={{ width: '100%', maxWidth: '360px', margin: '60px auto 60px' }}>
+        <video autoPlay loop muted playsInline preload="auto" style={{ display: 'block', width: '100%', height: 'auto', borderRadius: '8px' }}>
+          <source src="/videos/misinformationcenter/Scan.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
       </div>
 
       <p style={{ marginTop: '36px', fontSize: '20px', fontWeight: 600 }}>Feature 04 — Ask Us</p>
