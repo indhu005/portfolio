@@ -73,11 +73,27 @@ export default function MisinfoFeaturesContent() {
         </div>
       </div>
 
+      <div style={{ width: '100%', height: '400px', backgroundColor: '#E5E7EB', borderRadius: '8px', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', margin: '32px auto 48px', maxWidth: '1200px' }}>
+        <div style={{ fontSize: '48px', marginBottom: '16px' }}>📹</div>
+        <div style={{ fontSize: '14px', color: '#6B7280', textAlign: 'center' }}>
+          <div>Video placeholder</div>
+          <div style={{ marginTop: '8px', fontSize: '12px' }}>Replace with: /videos/misinformationcenter/Search .webm</div>
+        </div>
+      </div>
+
       <p style={{ marginTop: '36px', fontSize: '20px', fontWeight: 600 }}>Feature 03 — Scan</p>
 
       <p style={{ marginTop: '20px' }}>Scan came from Misinfo Day: what happens when the misinformation is a printed flyer, a newspaper, a poster?</p>
 
       <p style={{ marginTop: '16px' }}>Older users hesitated and erred on forms, but scanned instantly and confidently — a behavior already learned from restaurant QR codes. OCR converted headlines to searchable text invisibly.</p>
+
+      <div style={{ width: '100%', height: '400px', backgroundColor: '#E5E7EB', borderRadius: '8px', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', margin: '28px auto 48px', maxWidth: '1200px' }}>
+        <div style={{ fontSize: '48px', marginBottom: '16px' }}>📹</div>
+        <div style={{ fontSize: '14px', color: '#6B7280', textAlign: 'center' }}>
+          <div>Video placeholder</div>
+          <div style={{ marginTop: '8px', fontSize: '12px' }}>Replace with: /videos/misinformationcenter/Scan.webm</div>
+        </div>
+      </div>
 
       <p style={{ marginTop: '36px', fontSize: '20px', fontWeight: 600 }}>Feature 04 — Ask Us</p>
 
@@ -98,6 +114,14 @@ export default function MisinfoFeaturesContent() {
         </div>
       </div>
 
+      <div style={{ width: '100%', height: '400px', backgroundColor: '#E5E7EB', borderRadius: '8px', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', margin: '28px auto 48px', maxWidth: '1200px' }}>
+        <div style={{ fontSize: '48px', marginBottom: '16px' }}>📹</div>
+        <div style={{ fontSize: '14px', color: '#6B7280', textAlign: 'center' }}>
+          <div>Video placeholder</div>
+          <div style={{ marginTop: '8px', fontSize: '12px' }}>Replace with: /videos/misinformationcenter/Submit.webm</div>
+        </div>
+      </div>
+
       <div className="pull-quote" style={{ marginTop: '48px', marginBottom: '32px' }}>
         The quiz builds the skill, Search and Scan provide the tool at the moment of need, Ask Us is the human fallback at the tool's limit. None of them tell users what to think.
       </div>
@@ -109,6 +133,14 @@ export default function MisinfoFeaturesContent() {
             <p style={{ marginTop: '12px', fontSize: '13px', color: '#6B7280' }}>— capstone reviewer</p>
           </div>
           <div style={{ width: 0, height: 0, borderLeft: '12px solid transparent', borderRight: '12px solid transparent', borderTop: '12px solid #F3F4F6', position: 'absolute', bottom: '-12px', left: '32px' }}></div>
+        </div>
+      </div>
+
+      <div style={{ width: '100%', height: '400px', backgroundColor: '#E5E7EB', borderRadius: '8px', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', margin: '48px auto 0', maxWidth: '1200px' }}>
+        <div style={{ fontSize: '48px', marginBottom: '16px' }}>📹</div>
+        <div style={{ fontSize: '14px', color: '#6B7280', textAlign: 'center' }}>
+          <div>Video placeholder</div>
+          <div style={{ marginTop: '8px', fontSize: '12px' }}>Replace with: /videos/misinformationcenter/Notifications.webm</div>
         </div>
       </div>
     </div>
