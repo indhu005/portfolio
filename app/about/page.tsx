@@ -208,7 +208,7 @@ export default function About() {
               color: '#1C1917',
             }}>
               <p style={{ marginBottom: '36px' }}>
-                I'm a product designer who came to design from architecture — which mostly means I spent five years learning to care about how a space <em>feels</em> before I cared about how it looks, then showed up to my first UX job and got asked to move a button 4 pixels to the left. I adapted.
+                I'm a product designer who came to design from architecture. A couple of summers interning in New York, then a long stretch of school, learning to care about how a space <em>feels</em> before I cared about how it looks. Then I showed up to my first UX job and got asked to move a button 4 pixels to the left. I adapted, and kept adapting for years after.
               </p>
 
               <p style={{
@@ -222,19 +222,15 @@ export default function About() {
               </p>
 
               <p style={{ marginBottom: '36px' }}>
-                The best products I know are invisible. An Apple Watch that detects a heartbeat and calls for help. A tool that fits so naturally into someone's day they forget they're using it. That's the bar. Pretty isn't enough — if someone notices they're using your product, it hasn't done its job yet. (I notice I'm using most apps roughly the way I notice I'm wearing shoes with a rock in them.)
+                The best products I know are invisible. An Apple Watch that detects a heartbeat and calls for help. A tool that fits so naturally into someone's day they forget they're using it. That's the bar I actually care about. Pretty isn't enough. If someone notices they're using your product, it hasn't done its job yet. (I notice I'm using most apps about as much as I notice I'm wearing shoes with a rock in them. Which is to say: constantly, and with growing resentment.)
               </p>
 
               <p style={{ marginBottom: '36px' }}>
-                I take a lot of photos of things most people walk past — fog swallowing a road through sequoias, a library that looks like it's about to unfold itself onto the sidewalk. I'm drawn to structure and stillness before I notice anything else, which is either the architecture background talking or just how my eyes default to working.
+                I take a lot of photos of stuff most people just walk past. Fog swallowing a road through sequoias. A library that looks like it's about to unfold itself onto the sidewalk. Not sure if that's the architecture background talking or just how my eyes default to working, but either way, I can't turn it off.
               </p>
 
               <p style={{ marginBottom: '36px' }}>
-                I'm endlessly curious about AI quietly rewriting how the world works, about what users actually do versus what we confidently assumed they'd do in the last design review, about tall trees, water reflections, and whatever strange little object made someone stop and go "wait, what is that."
-              </p>
-
-              <p style={{ marginBottom: '36px' }}>
-                I've lived in Chicago, Milwaukee, Los Angeles, New York, and now Seattle, and each city left something behind in how I see people and places — mostly opinions about public transit. I collect things that make people lean in for a second look. And I lose sleep over problems that were never actually part of the assignment, which is either a design superpower or a boundary-setting problem, depending on who you ask.
+                I've lived in Chicago, Milwaukee, LA, New York, and now Seattle. Each city left something behind, mostly strong opinions about public transit that nobody asked for. I collect things that make people lean in for a second look, and I lose sleep over problems that were never actually part of the assignment. Design superpower or boundary-setting problem, depending who you ask. Probably both.
               </p>
 
               <p style={{ marginBottom: '48px' }}>
