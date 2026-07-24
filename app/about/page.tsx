@@ -72,7 +72,16 @@ export default function About() {
   useEffect(() => {
     if (!selectedPhoto) return
     const onKeyDown = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') setSelectedPhoto(null)
+      if (e.key === 'Escape') {
+        setSelectedPhoto(null)
+        return
+      }
+      if (e.key === 'ArrowRight' || e.key === 'ArrowLeft') {
+        const currentIndex = photos.findIndex((p) => p.id === selectedPhoto.id)
+        const delta = e.key === 'ArrowRight' ? 1 : -1
+        const nextIndex = (currentIndex + delta + photos.length) % photos.length
+        setSelectedPhoto(photos[nextIndex])
+      }
     }
     window.addEventListener('keydown', onKeyDown)
     return () => window.removeEventListener('keydown', onKeyDown)
@@ -358,6 +367,66 @@ export default function About() {
                         >
                           ×
                         </button>
+                      )}
+                      {isExpanded && (
+                        <>
+                          <button
+                            onClick={(e) => {
+                              e.stopPropagation()
+                              const currentIndex = photos.findIndex((p) => p.id === photo.id)
+                              setSelectedPhoto(photos[(currentIndex - 1 + photos.length) % photos.length])
+                            }}
+                            aria-label="Previous photo"
+                            style={{
+                              position: 'absolute',
+                              top: '50%',
+                              left: '12px',
+                              transform: 'translateY(-50%)',
+                              width: '36px',
+                              height: '36px',
+                              borderRadius: '50%',
+                              border: 'none',
+                              backgroundColor: 'rgba(0, 0, 0, 0.5)',
+                              color: '#FFFFFF',
+                              fontSize: '18px',
+                              lineHeight: 1,
+                              cursor: 'pointer',
+                              display: 'flex',
+                              alignItems: 'center',
+                              justifyContent: 'center',
+                            }}
+                          >
+                            ‹
+                          </button>
+                          <button
+                            onClick={(e) => {
+                              e.stopPropagation()
+                              const currentIndex = photos.findIndex((p) => p.id === photo.id)
+                              setSelectedPhoto(photos[(currentIndex + 1) % photos.length])
+                            }}
+                            aria-label="Next photo"
+                            style={{
+                              position: 'absolute',
+                              top: '50%',
+                              right: '12px',
+                              transform: 'translateY(-50%)',
+                              width: '36px',
+                              height: '36px',
+                              borderRadius: '50%',
+                              border: 'none',
+                              backgroundColor: 'rgba(0, 0, 0, 0.5)',
+                              color: '#FFFFFF',
+                              fontSize: '18px',
+                              lineHeight: 1,
+                              cursor: 'pointer',
+                              display: 'flex',
+                              alignItems: 'center',
+                              justifyContent: 'center',
+                            }}
+                          >
+                            ›
+                          </button>
+                        </>
                       )}
                     </div>
                     {isExpanded && photo.caption && (
