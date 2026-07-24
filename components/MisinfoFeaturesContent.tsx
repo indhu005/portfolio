@@ -73,25 +73,11 @@ export default function MisinfoFeaturesContent() {
         </div>
       </div>
 
-      <div style={{ width: '100%', maxWidth: '1200px', margin: '32px auto 48px' }}>
-        <video autoPlay loop muted playsInline preload="auto" style={{ display: 'block', width: '100%', height: 'auto', borderRadius: '8px' }}>
-          <source src="/videos/misinformationcenter/Search .mp4" type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
-      </div>
-
       <p style={{ marginTop: '36px', fontSize: '20px', fontWeight: 600 }}>Feature 03 — Scan</p>
 
       <p style={{ marginTop: '20px' }}>Scan came from Misinfo Day: what happens when the misinformation is a printed flyer, a newspaper, a poster?</p>
 
       <p style={{ marginTop: '16px' }}>Older users hesitated and erred on forms, but scanned instantly and confidently — a behavior already learned from restaurant QR codes. OCR converted headlines to searchable text invisibly.</p>
-
-      <div style={{ width: '100%', maxWidth: '1200px', margin: '28px auto 48px' }}>
-        <video autoPlay loop muted playsInline preload="auto" style={{ display: 'block', width: '100%', height: 'auto', borderRadius: '8px' }}>
-          <source src="/videos/misinformationcenter/Scan.mp4" type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
-      </div>
 
       <p style={{ marginTop: '36px', fontSize: '20px', fontWeight: 600 }}>Feature 04 — Ask Us</p>
 
@@ -112,13 +98,6 @@ export default function MisinfoFeaturesContent() {
         </div>
       </div>
 
-      <div style={{ width: '100%', maxWidth: '1200px', margin: '28px auto 48px' }}>
-        <video autoPlay loop muted playsInline preload="auto" style={{ display: 'block', width: '100%', height: 'auto', borderRadius: '8px' }}>
-          <source src="/videos/misinformationcenter/Submit.mp4" type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
-      </div>
-
       <div className="pull-quote" style={{ marginTop: '48px', marginBottom: '32px' }}>
         The quiz builds the skill, Search and Scan provide the tool at the moment of need, Ask Us is the human fallback at the tool's limit. None of them tell users what to think.
       </div>
@@ -131,13 +110,6 @@ export default function MisinfoFeaturesContent() {
           </div>
           <div style={{ width: 0, height: 0, borderLeft: '12px solid transparent', borderRight: '12px solid transparent', borderTop: '12px solid #F3F4F6', position: 'absolute', bottom: '-12px', left: '32px' }}></div>
         </div>
-      </div>
-
-      <div style={{ width: '100%', maxWidth: '1200px', margin: '48px auto 0' }}>
-        <video autoPlay loop muted playsInline preload="auto" style={{ display: 'block', width: '100%', height: 'auto', borderRadius: '8px' }}>
-          <source src="/videos/misinformationcenter/Notifications.mp4" type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
       </div>
     </div>
   )
