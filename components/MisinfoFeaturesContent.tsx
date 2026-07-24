@@ -86,8 +86,11 @@ export default function MisinfoFeaturesContent() {
 
       <p style={{ marginTop: '16px' }}>Older users hesitated and erred on forms, but scanned instantly and confidently — a behavior already learned from restaurant QR codes. OCR converted headlines to searchable text invisibly.</p>
 
-      <div style={{ width: '100%', minHeight: '350px', backgroundColor: '#E5E7EB', borderRadius: '8px', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#9CA3AF', fontSize: '14px', marginTop: '28px', marginBottom: '48px' }}>
-        Scan flow — camera point, OCR processing, instant verification badge
+      <div style={{ width: '100%', maxWidth: '1200px', margin: '28px auto 48px' }}>
+        <video autoPlay loop muted playsInline preload="auto" style={{ display: 'block', width: '100%', height: 'auto', borderRadius: '8px' }}>
+          <source src="/videos/misinformationcenter/Scan.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
       </div>
 
       <p style={{ marginTop: '36px', fontSize: '20px', fontWeight: 600 }}>Feature 04 — Ask Us</p>
