@@ -65,7 +65,10 @@ export default function CaseStudyLayout({ caseStudy, slug }: CaseStudyLayoutProp
   }, [])
 
   useEffect(() => {
-    const handleScroll = () => {
+    let ticking = false
+
+    const updateActiveSection = () => {
+      ticking = false
       if (!contentRef.current) return
 
       const scrollPosition = contentRef.current.scrollTop + 150
@@ -78,15 +81,22 @@ export default function CaseStudyLayout({ caseStudy, slug }: CaseStudyLayoutProp
         const offsetBottom = offsetTop + element.offsetHeight
 
         if (scrollPosition >= offsetTop && scrollPosition < offsetBottom) {
-          setActiveSection(section.id)
+          setActiveSection(prev => (prev === section.id ? prev : section.id))
           break
         }
       }
     }
 
+    const handleScroll = () => {
+      if (!ticking) {
+        ticking = true
+        requestAnimationFrame(updateActiveSection)
+      }
+    }
+
     const contentElement = contentRef.current
     if (contentElement) {
-      contentElement.addEventListener('scroll', handleScroll)
+      contentElement.addEventListener('scroll', handleScroll, { passive: true })
       return () => contentElement.removeEventListener('scroll', handleScroll)
     }
   }, [caseStudy.sections])
