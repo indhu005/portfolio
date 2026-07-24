@@ -18,10 +18,49 @@ const useMediaQuery = (query: string) => {
   return matches
 }
 
+const photoCaptions = [
+  "The road, in no hurry to become a metaphor",
+  "A building on wheels, still deciding what it wants to be",
+  "Even the fog stopped in for a little retail therapy",
+  "Nature's way of saying there's a chance of drama",
+  "The boots, doing their best impression of standing on water",
+  "A serious meeting between sneakers and caution tape",
+  "Grayland Beach, moonlighting as the actual moon",
+  "A man, a path, and several thousand unbothered leaves",
+  "A hundred tiny suns, none of them on speaking terms",
+  "A corgi conducting urgent business at the shoreline",
+  "Trees, holding a very tall and very quiet meeting",
+  "Everyone waiting on a wave with other plans",
+  "Birds, apparently the only ones with somewhere to be",
+  "A man and a dog, both convinced they're winning",
+  "A shipwreck, still dressed for the occasion",
+  "Strangers, evenly spaced, pretending not to notice each other",
+  "A parking lot, viewed through several hundred tiny lenses",
+  "A barn, blurred just enough to seem like a good idea",
+  "One person, a coastline, no immediate plans",
+  "A parking lot, briefly forgiven by the light",
+  "The sky, showing off in two places at once",
+  "A room of puppets, mid-argument about who's in charge",
+  "A building leaning in like it has gossip",
+  "Snow, performing for an audience of one streetlamp",
+  "A church that clearly did not believe in small gestures",
+  "A commute reimagined as a trip down someone's throat",
+  "A car, parked with tremendous confidence, in the middle of nowhere",
+  "The city, refusing to hold still for the photo",
+  "A cathedral that's been 'almost done' since 1882",
+  "A library that looks mid-collapse and rather pleased about it",
+  "Skyscrapers, playing a modest game of hide and seek",
+  "One small human, negotiating with the entire Pacific",
+  "A house quietly returning the property to the prairie",
+  "A ceiling with clear main-character energy",
+  "Another ceiling, equally sure of itself",
+  "Foam, doing the most for a Tuesday",
+]
+
 const photos = Array.from({ length: 36 }, (_, i) => ({
   id: i + 1,
   src: `/images/about/photo-${String(i + 1).padStart(2, '0')}.jpg`,
-  caption: ''
+  caption: photoCaptions[i] ?? ''
 }))
 
 export default function About() {
@@ -29,6 +68,15 @@ export default function About() {
   const [selectedPhoto, setSelectedPhoto] = useState<typeof photos[0] | null>(null)
   const isMobile = useMediaQuery('(max-width: 768px)')
   const isTablet = useMediaQuery('(max-width: 1024px)')
+
+  useEffect(() => {
+    if (!selectedPhoto) return
+    const onKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') setSelectedPhoto(null)
+    }
+    window.addEventListener('keydown', onKeyDown)
+    return () => window.removeEventListener('keydown', onKeyDown)
+  }, [selectedPhoto])
 
   return (
     <div style={{
@@ -283,6 +331,34 @@ export default function About() {
                           transition: 'transform 0.3s ease',
                         }}
                       />
+                      {isExpanded && (
+                        <button
+                          onClick={(e) => {
+                            e.stopPropagation()
+                            setSelectedPhoto(null)
+                          }}
+                          aria-label="Close"
+                          style={{
+                            position: 'absolute',
+                            top: '12px',
+                            right: '12px',
+                            width: '32px',
+                            height: '32px',
+                            borderRadius: '50%',
+                            border: 'none',
+                            backgroundColor: 'rgba(0, 0, 0, 0.5)',
+                            color: '#FFFFFF',
+                            fontSize: '18px',
+                            lineHeight: 1,
+                            cursor: 'pointer',
+                            display: 'flex',
+                            alignItems: 'center',
+                            justifyContent: 'center',
+                          }}
+                        >
+                          ×
+                        </button>
+                      )}
                     </div>
                     {isExpanded && photo.caption && (
                       <div style={{
