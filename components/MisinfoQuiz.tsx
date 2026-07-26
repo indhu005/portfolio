@@ -13,43 +13,43 @@ interface QuizQuestion {
 const questions: QuizQuestion[] = [
   {
     id: 1,
-    image: '/images/misinfo/quiz-1.jpg',
+    image: '/images/misinformation-center/Quiz01Seattle%20Flooding.png',
     claim: 'This photo shows recent flooding in Seattle caused by climate change.',
     answer: false,
-    explanation: 'This is a manipulated image. The original photo was taken in 2015 and shows a different location.',
-    source: 'Reverse image search reveals original context'
+    explanation: 'This photo is a year old and shows flooding elsewhere in Western Washington, not Seattle. It resurfaces on social media every rainy season, recaptioned as current and local.',
+    source: 'Reverse image search reveals original date and location'
   },
   {
     id: 2,
-    image: '/images/misinfo/quiz-2.jpg',
-    claim: 'Breaking: New study shows drinking coffee reduces cancer risk by 50%.',
+    image: '/images/misinformation-center/Quiz02Tylenol.png',
+    claim: 'Taking Tylenol during pregnancy has been scientifically proven to cause autism.',
     answer: false,
-    explanation: 'Misleading headline. The study showed correlation, not causation, and only applied to a specific type of cancer in a small sample.',
-    source: 'Original study context missing'
+    explanation: 'No major health authority has confirmed a causal link. The studies behind this claim show correlation at most, and larger sibling-controlled studies found no connection once confounding factors were accounted for.',
+    source: 'FDA and ACOG statements on acetaminophen safety'
   },
   {
     id: 3,
-    image: '/images/misinfo/quiz-3.jpg',
-    claim: 'Screenshot of a verified Twitter account announcing major policy change.',
+    image: '/images/misinformation-center/Quiz03Skincare%20myth.png',
+    claim: 'This face mask gives an instant face lift and glowing skin after just one use.',
     answer: false,
-    explanation: 'The verification badge was digitally added. The account doesn\'t exist.',
-    source: 'Visual manipulation detected'
+    explanation: 'Topical masks can hydrate and temporarily plump skin, but they can\'t lift facial structure. The dramatic "after" look in ads like this typically comes from lighting, filters, and editing, not the product.',
+    source: 'Dermatologist review of marketing claims'
   },
   {
     id: 4,
-    image: '/images/misinfo/quiz-4.jpg',
-    claim: 'This graph accurately represents unemployment data from government sources.',
+    image: '/images/misinformation-center/Quiz04Coffee.png',
+    claim: 'Breaking: New study proves drinking coffee cures cancer.',
     answer: false,
-    explanation: 'The Y-axis is manipulated to exaggerate trends. Official data shows a different pattern.',
-    source: 'Bureau of Labor Statistics comparison'
+    explanation: 'The underlying study showed a correlation between coffee consumption and lower risk for one specific cancer type in a limited sample. Correlation was rewritten as "cures" for a viral headline.',
+    source: 'Original study context missing from the shared post'
   },
   {
     id: 5,
-    image: '/images/misinfo/quiz-5.jpg',
-    claim: 'Quote from a public figure shared on social media.',
+    image: '/images/misinformation-center/Quiz05job.png',
+    claim: 'This chart shows the job market officially peaking in 2026, based on government data.',
     answer: false,
-    explanation: 'Fabricated quote. No record of this statement in speeches, interviews, or public records.',
-    source: 'Fact-checking database search'
+    explanation: 'The chart tracks how often layoff and job-insecurity keywords appear in Glassdoor reviews, not official labor statistics. Rising keyword mentions signal growing worker anxiety, not a job market "peak" — the claim borrows the credibility of a data chart to assert something the data doesn\'t actually say.',
+    source: 'Glassdoor keyword-trend data vs. Bureau of Labor Statistics figures'
   }
 ]
 
@@ -166,24 +166,23 @@ export default function MisinfoQuiz() {
         Question {currentQuestion + 1} of {questions.length}
       </div>
 
-      {/* Image placeholder */}
+      {/* Quiz image */}
       <div style={{
         width: '100%',
         height: '320px',
         backgroundColor: '#E5E7EB',
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        color: '#9CA3AF',
-        fontSize: '14px',
-        flexDirection: 'column',
-        gap: '8px',
+        overflow: 'hidden',
       }}>
-        <div style={{ fontSize: '48px' }}>📷</div>
-        <div>Image placeholder</div>
-        <div style={{ fontSize: '12px', textAlign: 'center', padding: '0 20px' }}>
-          Replace with: {question.image}
-        </div>
+        <img
+          src={question.image}
+          alt={question.claim}
+          style={{
+            width: '100%',
+            height: '100%',
+            objectFit: 'cover',
+            display: 'block',
+          }}
+        />
       </div>
 
       {/* Claim */}

@@ -161,12 +161,19 @@ export default function About() {
           paddingTop: isMobile ? '20px' : '24px',
           flexShrink: 0,
         }}>
-          <span style={{
-            fontFamily: 'inherit',
-            fontSize: isMobile ? '14px' : '16px',
-            fontWeight: 700,
-            color: '#1C1917',
-          }}>About</span>
+          <div style={{
+            maxWidth: '920px',
+            marginLeft: 'auto',
+            marginRight: 'auto',
+            width: '100%',
+          }}>
+            <span style={{
+              fontFamily: 'inherit',
+              fontSize: isMobile ? '14px' : '16px',
+              fontWeight: 700,
+              color: '#1C1917',
+            }}>About</span>
+          </div>
         </div>
 
         {/* CONTENT AREA */}
@@ -174,21 +181,26 @@ export default function About() {
           style={{
             flex: 1,
             overflowY: 'auto',
-            padding: isMobile ? '0 20px 40px 20px' : isTablet ? '0 32px 50px 20px' : '0 48px 60px 48px',
+            padding: isMobile ? '24px 20px 40px 20px' : isTablet ? '32px 32px 50px 20px' : '40px 48px 60px 48px',
             minWidth: 0,
           }}
         >
           {/* Blue placeholder - same as home page */}
           <div style={{
             width: '100%',
+            maxWidth: '920px',
             height: '580px',
             backgroundColor: '#7EB3F5',
             borderRadius: '4px',
             marginBottom: isMobile ? '48px' : '64px',
+            marginLeft: 'auto',
+            marginRight: 'auto',
           }} />
 
           <div style={{
             maxWidth: '920px',
+            marginLeft: 'auto',
+            marginRight: 'auto',
           }}>
             <h1 style={{
               fontFamily: 'var(--font-fraunces), serif',
@@ -279,9 +291,12 @@ export default function About() {
             </div>
           </div>
 
-          {/* PHOTO GRID - FULL WIDTH */}
+          {/* PHOTO GRID */}
           <div style={{
             marginTop: isMobile ? '60px' : '80px',
+            maxWidth: '920px',
+            marginLeft: 'auto',
+            marginRight: 'auto',
           }}>
             <div style={{
               display: 'grid',
