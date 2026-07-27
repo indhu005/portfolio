@@ -14,9 +14,7 @@ export default function MisinfoFeaturesContent() {
 
       <p style={{ marginTop: '36px', fontSize: '20px', fontWeight: 600 }}>The pivot: from Facebook to standalone</p>
 
-      <p style={{ marginTop: '20px' }}>The first iteration was a Facebook Misinformation Center — fact-check labels, community reporting, a hub in the feed.</p>
-
-      <p style={{ marginTop: '16px' }}>Functional wireframes, sound logic, and dead on arrival: users wouldn't trust the vector of the problem as its solution.</p>
+      <p style={{ marginTop: '20px' }}>The first iteration was a Facebook Misinformation Center — fact-check labels, community reporting, a hub in the feed. Functional wireframes, sound logic, and dead on arrival: users wouldn't trust the vector of the problem as its solution.</p>
 
       <img src="/images/misinformation-center/Facebook misinformation center.png" alt="Facebook Misinformation Center wireframes — the killed direction" style={{ width: '100%', borderRadius: '8px', marginTop: '28px', marginBottom: '32px', display: 'block' }} />
 
