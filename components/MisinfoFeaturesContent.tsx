@@ -152,13 +152,6 @@ export default function MisinfoFeaturesContent() {
           <div style={{ width: 0, height: 0, borderLeft: '12px solid transparent', borderRight: '12px solid transparent', borderTop: '12px solid #F3F4F6', position: 'absolute', bottom: '-12px', left: '32px' }}></div>
         </div>
       </div>
-
-      <div style={{ width: '100%', maxWidth: '360px', margin: '60px auto 60px' }}>
-        <video autoPlay loop muted playsInline preload="auto" style={{ display: 'block', width: '100%', aspectRatio: '454 / 896', borderRadius: '8px' }}>
-          <source src="/videos/misinformationcenter/Notifications.mp4" type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
-      </div>
     </div>
   )
 }
