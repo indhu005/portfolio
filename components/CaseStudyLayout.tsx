@@ -212,7 +212,7 @@ export default function CaseStudyLayout({ caseStudy, slug }: CaseStudyLayoutProp
             display: 'flex',
             alignItems: 'baseline',
             justifyContent: (isMobile || isTablet) ? 'center' : 'space-between',
-            maxWidth: '850px',
+            maxWidth: isMobile || isTablet ? '850px' : '1020px',
             marginLeft: 'auto',
             marginRight: 'auto',
             width: '100%',
@@ -264,7 +264,7 @@ export default function CaseStudyLayout({ caseStudy, slug }: CaseStudyLayoutProp
               ref={(el) => { sectionRefs.current[section.id] = el }}
               style={{
                 marginBottom: index === caseStudy.sections.length - 1 ? '0' : '112px',
-                maxWidth: '850px',
+                maxWidth: isMobile || isTablet ? '850px' : '1020px',
                 marginLeft: 'auto',
                 marginRight: 'auto',
               }}
@@ -277,7 +277,7 @@ export default function CaseStudyLayout({ caseStudy, slug }: CaseStudyLayoutProp
                     alt={`${caseStudy.title} hero`}
                     style={{
                       width: '100%',
-                      maxWidth: '850px',
+                      maxWidth: isMobile || isTablet ? '850px' : '1020px',
                       height: 'auto',
                       borderRadius: '12px',
                       marginBottom: '50px',
@@ -289,7 +289,7 @@ export default function CaseStudyLayout({ caseStudy, slug }: CaseStudyLayoutProp
                 ) : (
                   <div style={{
                     width: '100%',
-                    maxWidth: '850px',
+                    maxWidth: isMobile || isTablet ? '850px' : '1020px',
                     height: '580px',
                     backgroundColor: '#7EB3F5',
                     borderRadius: '12px',
@@ -316,7 +316,7 @@ export default function CaseStudyLayout({ caseStudy, slug }: CaseStudyLayoutProp
                   backgroundColor: '#F9FAFB',
                   borderRadius: '12px',
                   border: '1px solid #E5E7EB',
-                  maxWidth: '850px',
+                  maxWidth: isMobile || isTablet ? '850px' : '1020px',
                   marginLeft: 'auto',
                   marginRight: 'auto',
                 }}>
@@ -398,7 +398,7 @@ export default function CaseStudyLayout({ caseStudy, slug }: CaseStudyLayoutProp
                 textTransform: 'uppercase',
                 marginBottom: '12px',
                 fontFamily: 'inherit',
-                maxWidth: '850px',
+                maxWidth: isMobile || isTablet ? '850px' : '1020px',
                 marginLeft: 'auto',
                 marginRight: 'auto',
               }}>
@@ -414,7 +414,7 @@ export default function CaseStudyLayout({ caseStudy, slug }: CaseStudyLayoutProp
                   marginBottom: '24px',
                   lineHeight: '1.3',
                   fontFamily: 'var(--font-fraunces), serif',
-                  maxWidth: '850px',
+                  maxWidth: isMobile || isTablet ? '850px' : '1020px',
                   marginLeft: 'auto',
                   marginRight: 'auto',
                 }}>
@@ -428,7 +428,7 @@ export default function CaseStudyLayout({ caseStudy, slug }: CaseStudyLayoutProp
                   className="case-study-content"
                   style={{
                     marginBottom: '32px',
-                    maxWidth: '850px',
+                    maxWidth: isMobile || isTablet ? '850px' : '1020px',
                     marginLeft: 'auto',
                     marginRight: 'auto',
                   }}
@@ -440,7 +440,7 @@ export default function CaseStudyLayout({ caseStudy, slug }: CaseStudyLayoutProp
                   className="case-study-content"
                   style={{
                     marginBottom: '32px',
-                    maxWidth: '850px',
+                    maxWidth: isMobile || isTablet ? '850px' : '1020px',
                     marginLeft: 'auto',
                     marginRight: 'auto',
                   }}

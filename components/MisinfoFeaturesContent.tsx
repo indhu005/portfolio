@@ -18,7 +18,7 @@ export default function MisinfoFeaturesContent() {
 
       <img src="/images/misinformation-center/Facebook misinformation center.png" alt="Facebook Misinformation Center wireframes — the killed direction" style={{ width: '100%', borderRadius: '8px', marginTop: '28px', marginBottom: '32px', display: 'block' }} />
 
-      <p style={{ marginTop: '36px', fontSize: '20px', fontWeight: 600 }}>Feature 01 — Literacy Quiz</p>
+      <p style={{ marginTop: '120px', fontSize: '20px', fontWeight: 600 }}>Feature 01 — Literacy Quiz</p>
 
       <p style={{ marginTop: '20px' }}>Tutorials and explainers weren't changing behavior. Testing on early "how to spot misinformation" modules showed users disengaging as if watching homework.</p>
 
@@ -48,17 +48,16 @@ export default function MisinfoFeaturesContent() {
       </div>
 
       <p style={{ marginTop: '20px' }}>After Misinfo Day, completion states were redesigned around skill progression rather than score — "You're getting better at spotting this" outperformed a percentage.</p>
-
       <p style={{ marginTop: '16px' }}>Users wanted to know why an item was false, which conflicted with the 40-second constraint. The resolution: speed for the question, depth for the reveal, sources one tap away.</p>
 
-      <div style={{ width: '100%', maxWidth: '360px', margin: '60px auto 60px' }}>
+      <div style={{ width: '100%', maxWidth: '288px', margin: '48px auto 0' }}>
         <video autoPlay loop muted playsInline preload="auto" style={{ display: 'block', width: '100%', aspectRatio: '456 / 910', borderRadius: '8px' }}>
           <source src="/videos/misinformationcenter/Literacyquiz.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
       </div>
 
-      <p style={{ marginTop: '36px', fontSize: '20px', fontWeight: 600 }}>Feature 02 — Search & Image Search</p>
+      <p style={{ marginTop: '120px', fontSize: '20px', fontWeight: 600 }}>Feature 02 — Search & Image Search</p>
 
       <p style={{ marginTop: '20px' }}>Verification had to come to users, not the reverse. A unified entry point handled both links and images so users didn't have to choose a tool at the moment of uncertainty.</p>
 
@@ -77,27 +76,26 @@ export default function MisinfoFeaturesContent() {
         </div>
       </div>
 
-      <div style={{ width: '100%', maxWidth: '360px', margin: '60px auto 60px' }}>
+      <div style={{ width: '100%', maxWidth: '288px', margin: '20px auto 0' }}>
         <video autoPlay loop muted playsInline preload="auto" style={{ display: 'block', width: '100%', aspectRatio: '458 / 900', borderRadius: '8px' }}>
           <source src="/videos/misinformationcenter/Search .mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
       </div>
 
-      <p style={{ marginTop: '36px', fontSize: '20px', fontWeight: 600 }}>Feature 03 — Scan</p>
+      <p style={{ marginTop: '120px', fontSize: '20px', fontWeight: 600 }}>Feature 03 — Scan</p>
 
       <p style={{ marginTop: '20px' }}>Scan came from Misinfo Day: what happens when the misinformation is a printed flyer, a newspaper, a poster?</p>
-
       <p style={{ marginTop: '16px' }}>Older users hesitated and erred on forms, but scanned instantly and confidently — a behavior already learned from restaurant QR codes. OCR converted headlines to searchable text invisibly.</p>
 
-      <div style={{ width: '100%', maxWidth: '360px', margin: '60px auto 60px' }}>
+      <div style={{ width: '100%', maxWidth: '288px', margin: '48px auto 0' }}>
         <video autoPlay loop muted playsInline preload="auto" style={{ display: 'block', width: '100%', aspectRatio: '448 / 906', borderRadius: '8px' }}>
           <source src="/videos/misinformationcenter/Scan.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
       </div>
 
-      <p style={{ marginTop: '36px', fontSize: '20px', fontWeight: 600 }}>Feature 04 — Ask Us</p>
+      <p style={{ marginTop: '120px', fontSize: '20px', fontWeight: 600 }}>Feature 04 — Ask Us</p>
 
       <p style={{ marginTop: '20px' }}>Some misinformation exists in no database — private WhatsApp forwards, local rumors, freshly manipulated images.</p>
 
@@ -116,7 +114,7 @@ export default function MisinfoFeaturesContent() {
         </div>
       </div>
 
-      <div style={{ width: '100%', maxWidth: '360px', margin: '60px auto 60px' }}>
+      <div style={{ width: '100%', maxWidth: '288px', margin: '20px auto 0' }}>
         <video autoPlay loop muted playsInline preload="auto" style={{ display: 'block', width: '100%', aspectRatio: '444 / 906', borderRadius: '8px' }}>
           <source src="/videos/misinformationcenter/Submit.mp4" type="video/mp4" />
           Your browser does not support the video tag.
