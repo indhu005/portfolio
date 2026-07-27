@@ -6,6 +6,12 @@ export default function MisinfoFeaturesContent() {
     <div>
       <p>Each feature came from a specific gap the research exposed — not a feature list.</p>
 
+      <img src="/images/misinformation-center/Annotation 01.png" alt="Annotated home screen — message cards, features to debunk content, trending news cards" style={{ width: '100%', borderRadius: '8px', marginTop: '32px', marginBottom: '16px', display: 'block' }} />
+
+      <img src="/images/misinformation-center/Annotation 03.png" alt="Annotated quiz screen — quiz cards on a no-noise background, minimal true/false buttons" style={{ width: '100%', borderRadius: '8px', marginTop: '16px', marginBottom: '16px', display: 'block' }} />
+
+      <img src="/images/misinformation-center/Annotation 02.png" alt="Annotated Ask Us screen — content submission, scan-to-check, and community post callouts" style={{ width: '100%', borderRadius: '8px', marginTop: '16px', marginBottom: '32px', display: 'block' }} />
+
       <p style={{ marginTop: '36px', fontSize: '20px', fontWeight: 600 }}>The pivot: from Facebook to standalone</p>
 
       <p style={{ marginTop: '20px' }}>The first iteration was a Facebook Misinformation Center — fact-check labels, community reporting, a hub in the feed.</p>
@@ -117,6 +123,20 @@ export default function MisinfoFeaturesContent() {
           <source src="/videos/misinformationcenter/Submit.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
+      </div>
+
+      <p style={{ marginTop: '36px', fontSize: '20px', fontWeight: 600 }}>The design system holding it together</p>
+
+      <p style={{ marginTop: '20px' }}>Four features, one visual language — component states, spacing, and color built to scale across the app rather than to each screen individually.</p>
+
+      <div style={{ marginTop: '32px' }}>
+        <div style={{ fontSize: '13px', color: '#6B7280', marginBottom: '12px' }}>Design system — scroll to see more →</div>
+        <div style={{ display: 'flex', gap: '16px', overflowX: 'auto', scrollSnapType: 'x mandatory', WebkitOverflowScrolling: 'touch', paddingBottom: '8px' }}>
+          <img src="/images/misinformation-center/Design%20System%2001.png" alt="Design system, board 1" style={{ flex: '0 0 auto', scrollSnapAlign: 'start', width: '85%', maxWidth: '640px', height: 'auto', borderRadius: '8px', display: 'block' }} />
+          <img src="/images/misinformation-center/Design%20System%2002.png" alt="Design system, board 2" style={{ flex: '0 0 auto', scrollSnapAlign: 'start', width: '85%', maxWidth: '640px', height: 'auto', borderRadius: '8px', display: 'block' }} />
+          <img src="/images/misinformation-center/Design%20System%2003.png" alt="Design system, board 3" style={{ flex: '0 0 auto', scrollSnapAlign: 'start', width: '85%', maxWidth: '640px', height: 'auto', borderRadius: '8px', display: 'block' }} />
+          <img src="/images/misinformation-center/Design%20System%2004.png" alt="Design system, board 4" style={{ flex: '0 0 auto', scrollSnapAlign: 'start', width: '85%', maxWidth: '640px', height: 'auto', borderRadius: '8px', display: 'block' }} />
+        </div>
       </div>
 
       <div className="pull-quote" style={{ marginTop: '48px', marginBottom: '32px' }}>

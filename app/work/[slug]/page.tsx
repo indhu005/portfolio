@@ -686,6 +686,11 @@ const caseStudies = {
     </div>
     <div style="width: 0; height: 0; border-left: 12px solid transparent; border-right: 12px solid transparent; border-top: 12px solid #F3F4F6; position: absolute; bottom: -12px; left: 32px;"></div>
   </div>
+</div>
+
+<div style="width: 100%; background-color: #FFFFFF; border-radius: 8px; padding: 32px; margin-top: 40px; display: flex; gap: 24px; justify-content: center; flex-wrap: wrap;">
+  <img src="/images/misinformation-center/Apple%20News%2001.png" alt="Apple News integration concept, screen 1" style="width: 260px; height: auto; display: block; border-radius: 8px;" />
+  <img src="/images/misinformation-center/Apple%20News%2002.png" alt="Apple News integration concept, screen 2" style="width: 260px; height: auto; display: block; border-radius: 8px;" />
 </div>`
       },
       {
