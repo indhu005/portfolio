@@ -64,38 +64,6 @@ export default function CaseStudyLayout({ caseStudy, slug }: CaseStudyLayoutProp
     }
   }, [])
 
-  // Only fetch/play videos once they scroll into view, and pause them when they leave
-  useEffect(() => {
-    const container = contentRef.current
-    if (!container) return
-
-    const videos = container.querySelectorAll('video')
-    if (videos.length === 0) return
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          const video = entry.target as HTMLVideoElement
-          if (entry.isIntersecting) {
-            const source = video.querySelector('source[data-src]') as HTMLSourceElement | null
-            if (source) {
-              source.src = source.dataset.src!
-              source.removeAttribute('data-src')
-              video.load()
-            }
-            video.play().catch(() => {})
-          } else {
-            video.pause()
-          }
-        })
-      },
-      { rootMargin: '200px 0px', threshold: 0.1 }
-    )
-
-    videos.forEach((video) => observer.observe(video))
-    return () => observer.disconnect()
-  }, [caseStudy])
-
   useEffect(() => {
     let ticking = false
 
