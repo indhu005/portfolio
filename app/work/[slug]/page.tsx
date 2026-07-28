@@ -262,7 +262,7 @@ const caseStudies = {
         headline: 'Fragmented data was forcing humans to do the work a system should have done',
         content: `<div style="width: 100%; max-width: 1200px; margin: 0 auto 48px;">
   <video loop muted playsinline preload="none" style="display: block; width: 100%; height: auto; aspect-ratio: 1882 / 1060; border-radius: 8px;">
-    <source src="/videos/lat/Flow%2001.mp4" type="video/mp4">
+    <source data-src="/videos/lat/Flow%2001.mp4" type="video/mp4">
     Your browser does not support the video tag.
   </video>
 </div>
@@ -273,7 +273,7 @@ const caseStudies = {
 
 <div style="width: 100%; max-width: 1200px; margin: 0 auto 48px; margin-top: 32px;">
   <video loop muted playsinline preload="none" style="display: block; width: 100%; height: auto; aspect-ratio: 1878 / 1030; border-radius: 8px;">
-    <source src="/videos/lat/Flow%2003.mp4" type="video/mp4">
+    <source data-src="/videos/lat/Flow%2003.mp4" type="video/mp4">
     Your browser does not support the video tag.
   </video>
 </div>
@@ -309,7 +309,7 @@ const caseStudies = {
         headline: 'Research revealed we were redesigning a system of coordination',
         content: `<div style="width: 100%; max-width: 1200px; margin: 0 auto 48px;">
   <video loop muted playsinline preload="none" style="display: block; width: 100%; height: auto; aspect-ratio: 1882 / 1046; border-radius: 8px;">
-    <source src="/videos/lat/Flow%2002.mp4" type="video/mp4">
+    <source data-src="/videos/lat/Flow%2002.mp4" type="video/mp4">
     Your browser does not support the video tag.
   </video>
 </div>
@@ -649,7 +649,7 @@ const caseStudies = {
 
 <div style="width: 100%; max-width: 1200px; margin: 60px auto 0;">
   <video loop muted playsinline preload="none" style="display: block; width: 100%; height: auto; aspect-ratio: 2248 / 1388; border-radius: 8px;">
-    <source src="/videos/misinformationcenter/flow%2002.mp4" type="video/mp4">
+    <source data-src="/videos/misinformationcenter/flow%2002.mp4" type="video/mp4">
     Your browser does not support the video tag.
   </video>
 </div>`
@@ -694,7 +694,7 @@ const caseStudies = {
         headline: 'Misinformation moves through trust networks — families, WhatsApp groups, neighborhood pages — in a specific generational pattern',
         content: `<div style="width: 100%; max-width: 1200px; margin: 0 auto 48px;">
   <video loop muted playsinline preload="none" style="display: block; width: 100%; height: auto; aspect-ratio: 2256 / 1384; border-radius: 8px;">
-    <source src="/videos/misinformationcenter/Flow%2001%20Misinformation.mp4" type="video/mp4">
+    <source data-src="/videos/misinformationcenter/Flow%2001%20Misinformation.mp4" type="video/mp4">
     Your browser does not support the video tag.
   </video>
 </div>
@@ -743,7 +743,7 @@ const caseStudies = {
 
 <div style="background-color: #000000; border-radius: 8px; padding: 40px 24px; margin-top: 40px; display: flex; justify-content: center;">
   <video loop muted playsinline preload="none" style="width: 100%; max-width: 300px; aspect-ratio: 580 / 1040; border-radius: 8px; display: block; object-fit: cover;">
-    <source src="/videos/misinformationcenter/Testing%20Image%20upload.mp4" type="video/mp4">
+    <source data-src="/videos/misinformationcenter/Testing%20Image%20upload.mp4" type="video/mp4">
     Your browser does not support the video tag.
   </video>
 </div>`

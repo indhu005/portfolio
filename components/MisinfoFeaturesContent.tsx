@@ -52,7 +52,7 @@ export default function MisinfoFeaturesContent() {
 
       <div style={{ width: '100%', maxWidth: '288px', margin: '48px auto 0' }}>
         <video loop muted playsInline preload="none" style={{ display: 'block', width: '100%', aspectRatio: '456 / 910', borderRadius: '8px' }}>
-          <source src="/videos/misinformationcenter/Literacyquiz.mp4" type="video/mp4" />
+          <source data-src="/videos/misinformationcenter/Literacyquiz.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
       </div>
@@ -78,7 +78,7 @@ export default function MisinfoFeaturesContent() {
 
       <div style={{ width: '100%', maxWidth: '288px', margin: '20px auto 0' }}>
         <video loop muted playsInline preload="none" style={{ display: 'block', width: '100%', aspectRatio: '458 / 900', borderRadius: '8px' }}>
-          <source src="/videos/misinformationcenter/Search .mp4" type="video/mp4" />
+          <source data-src="/videos/misinformationcenter/Search .mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
       </div>
@@ -90,7 +90,7 @@ export default function MisinfoFeaturesContent() {
 
       <div style={{ width: '100%', maxWidth: '288px', margin: '48px auto 0' }}>
         <video loop muted playsInline preload="none" style={{ display: 'block', width: '100%', aspectRatio: '448 / 906', borderRadius: '8px' }}>
-          <source src="/videos/misinformationcenter/Scan.mp4" type="video/mp4" />
+          <source data-src="/videos/misinformationcenter/Scan.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
       </div>
@@ -116,7 +116,7 @@ export default function MisinfoFeaturesContent() {
 
       <div style={{ width: '100%', maxWidth: '288px', margin: '20px auto 0' }}>
         <video loop muted playsInline preload="none" style={{ display: 'block', width: '100%', aspectRatio: '444 / 906', borderRadius: '8px' }}>
-          <source src="/videos/misinformationcenter/Submit.mp4" type="video/mp4" />
+          <source data-src="/videos/misinformationcenter/Submit.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
       </div>
