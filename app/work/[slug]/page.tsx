@@ -261,7 +261,7 @@ const caseStudies = {
         title: '02 — Context & Problem',
         headline: 'Fragmented data was forcing humans to do the work a system should have done',
         content: `<div style="width: 100%; max-width: 1200px; margin: 0 auto 48px;">
-  <video autoplay loop muted playsinline preload="auto" style="display: block; width: 100%; height: auto; border-radius: 8px;">
+  <video loop muted playsinline preload="none" style="display: block; width: 100%; height: auto; border-radius: 8px;">
     <source src="/videos/lat/Flow%2001.mp4" type="video/mp4">
     Your browser does not support the video tag.
   </video>
@@ -272,7 +272,7 @@ const caseStudies = {
 <p style="margin-top: 28px;">Without a unified system, everyone operates in their own flow with no common path:</p>
 
 <div style="width: 100%; max-width: 1200px; margin: 0 auto 48px; margin-top: 32px;">
-  <video autoplay loop muted playsinline preload="auto" style="display: block; width: 100%; height: auto; border-radius: 8px;">
+  <video loop muted playsinline preload="none" style="display: block; width: 100%; height: auto; border-radius: 8px;">
     <source src="/videos/lat/Flow%2003.mp4" type="video/mp4">
     Your browser does not support the video tag.
   </video>
@@ -308,7 +308,7 @@ const caseStudies = {
         title: '03 — The Turning Point',
         headline: 'Research revealed we were redesigning a system of coordination',
         content: `<div style="width: 100%; max-width: 1200px; margin: 0 auto 48px;">
-  <video autoplay loop muted playsinline preload="auto" style="display: block; width: 100%; height: auto; border-radius: 8px;">
+  <video loop muted playsinline preload="none" style="display: block; width: 100%; height: auto; border-radius: 8px;">
     <source src="/videos/lat/Flow%2002.mp4" type="video/mp4">
     Your browser does not support the video tag.
   </video>
@@ -648,7 +648,7 @@ const caseStudies = {
 <div class="pull-quote" style="margin-top: 100px;">The platform that spread the problem was structurally incapable of being trusted as its solution.</div>
 
 <div style="width: 100%; max-width: 1200px; margin: 60px auto 0;">
-  <video autoplay loop muted playsinline preload="auto" style="display: block; width: 100%; height: auto; border-radius: 8px;">
+  <video loop muted playsinline preload="none" style="display: block; width: 100%; height: auto; border-radius: 8px;">
     <source src="/videos/misinformationcenter/flow%2002.mp4" type="video/mp4">
     Your browser does not support the video tag.
   </video>
@@ -686,11 +686,6 @@ const caseStudies = {
     </div>
     <div style="width: 0; height: 0; border-left: 12px solid transparent; border-right: 12px solid transparent; border-top: 12px solid #F3F4F6; position: absolute; bottom: -12px; left: 32px;"></div>
   </div>
-</div>
-
-<div style="width: 100%; background-color: #FFFFFF; border-radius: 8px; padding: 32px; margin-top: 40px; display: flex; gap: 24px; justify-content: center; flex-wrap: wrap;">
-  <img src="/images/misinformation-center/Apple%20News%2001.png" alt="Apple News integration concept, screen 1" style="width: 260px; height: auto; display: block; border-radius: 8px;" />
-  <img src="/images/misinformation-center/Apple%20News%2002.png" alt="Apple News integration concept, screen 2" style="width: 260px; height: auto; display: block; border-radius: 8px;" />
 </div>`
       },
       {
@@ -698,7 +693,7 @@ const caseStudies = {
         title: '04 — User Research',
         headline: 'Misinformation moves through trust networks — families, WhatsApp groups, neighborhood pages — in a specific generational pattern',
         content: `<div style="width: 100%; max-width: 1200px; margin: 0 auto 48px;">
-  <video autoplay loop muted playsinline preload="auto" style="display: block; width: 100%; height: auto; border-radius: 8px;">
+  <video loop muted playsinline preload="none" style="display: block; width: 100%; height: auto; border-radius: 8px;">
     <source src="/videos/misinformationcenter/Flow%2001%20Misinformation.mp4" type="video/mp4">
     Your browser does not support the video tag.
   </video>
@@ -747,7 +742,7 @@ const caseStudies = {
 </div>
 
 <div style="background-color: #000000; border-radius: 8px; padding: 40px 24px; margin-top: 40px; display: flex; justify-content: center;">
-  <video autoplay loop muted playsinline preload="auto" style="width: 100%; max-width: 300px; aspect-ratio: 580 / 1040; border-radius: 8px; display: block; object-fit: cover;">
+  <video loop muted playsinline preload="none" style="width: 100%; max-width: 300px; aspect-ratio: 580 / 1040; border-radius: 8px; display: block; object-fit: cover;">
     <source src="/videos/misinformationcenter/Testing%20Image%20upload.mp4" type="video/mp4">
     Your browser does not support the video tag.
   </video>
