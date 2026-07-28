@@ -83,7 +83,7 @@ export default function CaseStudyLayout({ caseStudy, slug }: CaseStudyLayoutProp
           }
         })
       },
-      { root: container, rootMargin: '200px 0px', threshold: 0.1 }
+      { rootMargin: '200px 0px', threshold: 0.1 }
     )
 
     videos.forEach((video) => observer.observe(video))
