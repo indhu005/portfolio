@@ -575,10 +575,6 @@ const caseStudies = {
 <p style="margin-top: 28px;">From March to May, I collaborated with TrueMedia.org (deepfake-detection nonprofit) on user research and market assessment. They built their own product, analyzed 60,000+ pieces of media, and shut down in January 2025 — not from bad design, but because nobody profits from deepfake detection. That's the throughline of this case study: design alone can't make a public good sustainable (see section 06).</p>
 </div>
 
-<div class="figma-embed-container">
-  <iframe style="border: 1px solid rgba(0, 0, 0, 0.1); border-radius: 8px;" width="100%" class="figma-embed-iframe" src="https://embed.figma.com/proto/5SuxUGsaCvOVUiRdXa7uNl/Misinformation-Center?page-id=12%3A7585&node-id=20-3800&p=f&viewport=1079%2C560%2C0.06&scaling=scale-down&content-scaling=fixed&starting-point-node-id=20%3A3748&show-proto-sidebar=1&embed-host=share" allowfullscreen loading="lazy"></iframe>
-</div>
-
 <div class="snapshot-bottom-content">
 <div style="margin-top: 40px; margin-bottom: 40px;">
   <table style="width: 100%; border-collapse: collapse;">

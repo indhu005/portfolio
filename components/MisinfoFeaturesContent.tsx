@@ -148,6 +148,17 @@ export default function MisinfoFeaturesContent() {
           <div style={{ width: 0, height: 0, borderLeft: '12px solid transparent', borderRight: '12px solid transparent', borderTop: '12px solid #F3F4F6', position: 'absolute', bottom: '-12px', left: '32px' }}></div>
         </div>
       </div>
+
+      <div className="figma-embed-container" style={{ marginTop: '48px' }}>
+        <iframe
+          style={{ border: '1px solid rgba(0, 0, 0, 0.1)', borderRadius: '8px' }}
+          width="100%"
+          className="figma-embed-iframe"
+          src="https://embed.figma.com/proto/5SuxUGsaCvOVUiRdXa7uNl/Misinformation-Center?page-id=12%3A7585&node-id=20-3800&p=f&viewport=1079%2C560%2C0.06&scaling=scale-down&content-scaling=fixed&starting-point-node-id=20%3A3748&show-proto-sidebar=1&embed-host=share"
+          allowFullScreen
+          loading="lazy"
+        ></iframe>
+      </div>
     </div>
   )
 }

@@ -111,7 +111,6 @@ a:active {
   .figma-embed-container {
     margin: 32px auto;
     max-width: 390px;
-    order: 3;
   }
 
   .snapshot-content-wrapper {
