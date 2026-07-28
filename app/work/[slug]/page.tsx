@@ -570,13 +570,6 @@ const caseStudies = {
   </div>
 </div>
 
-<div style="width: 100%; max-width: 1200px; margin: 40px auto 0;">
-  <video autoplay loop muted playsinline preload="auto" style="display: block; width: 100%; height: auto; border-radius: 8px;">
-    <source src="/videos/misinformationcenter/flow%2002.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-  </video>
-</div>
-
 <p style="margin-top: 40px;"><span style="font-weight: 600;">My role as sole designer.</span> Graduate capstone at University of Washington (Jan to July 2024). Started as a team of four. After February, the product, design, and direction were entirely mine. I ran the research, defined archetypes, designed all four features, and tested with around 1,800 people at Misinfo Day.</p>
 
 <p style="margin-top: 28px;">From March to May, I collaborated with TrueMedia.org (deepfake-detection nonprofit) on user research and market assessment. They built their own product, analyzed 60,000+ pieces of media, and shut down in January 2025 — not from bad design, but because nobody profits from deepfake detection. That's the throughline of this case study: design alone can't make a public good sustainable (see section 06).</p>
@@ -621,6 +614,13 @@ const caseStudies = {
         title: '02 — The Problem',
         headline: 'After AI, the same problem arrived at a different scale',
         content: `<p>Misinformation exploits human bias. Believe what confirms your views, trust what feels familiar, share before verifying. After AI, the same problem arrived at a different scale. More believable, more volume, same fragile ecosystem.</p>
+
+<div style="width: 100%; max-width: 1200px; margin: 40px auto 0;">
+  <video autoplay loop muted playsinline preload="auto" style="display: block; width: 100%; height: auto; border-radius: 8px;">
+    <source src="/videos/misinformationcenter/flow%2002.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+</div>
 
 <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 40px; margin-top: 60px; margin-bottom: 60px;">
   <div>
