@@ -102,9 +102,11 @@ export default function CaseStudyLayout({ caseStudy, slug }: CaseStudyLayoutProp
   }, [caseStudy.sections])
 
   const scrollToSection = (sectionId: string) => {
-    const element = sectionRefs.current[sectionId]
+    const element = sectionRefs.current[sectionId] || document.getElementById(sectionId)
     if (element && contentRef.current) {
-      const offsetTop = element.offsetTop - 100
+      const containerRect = contentRef.current.getBoundingClientRect()
+      const elementRect = element.getBoundingClientRect()
+      const offsetTop = contentRef.current.scrollTop + (elementRect.top - containerRect.top) - 100
       contentRef.current.scrollTo({
         top: offsetTop,
         behavior: 'smooth'
@@ -337,9 +339,9 @@ export default function CaseStudyLayout({ caseStudy, slug }: CaseStudyLayoutProp
                       textTransform: 'uppercase',
                     }}>TL;DR</h3>
 
-                    {/* Skip to Impact Button */}
+                    {/* Skip to Impact / See Prototype Button */}
                     <button
-                      onClick={() => scrollToSection('impact')}
+                      onClick={() => scrollToSection(slug === 'misinformation-center' ? 'prototype' : 'impact')}
                       style={{
                         backgroundColor: '#1C1917',
                         color: '#FFFFFF',
@@ -354,7 +356,7 @@ export default function CaseStudyLayout({ caseStudy, slug }: CaseStudyLayoutProp
                       onMouseEnter={(e) => e.currentTarget.style.opacity = '0.8'}
                       onMouseLeave={(e) => e.currentTarget.style.opacity = '1'}
                     >
-                      Skip to Impact →
+                      {slug === 'misinformation-center' ? 'See Prototype →' : 'Skip to Impact →'}
                     </button>
                   </div>
 

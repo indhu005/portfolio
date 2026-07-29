@@ -785,7 +785,7 @@ const caseStudies = {
 
 <img src="/images/misinformation-center/Truth.png" alt="Truth visual" style="width: 100%; border-radius: 8px; margin-top: 48px; margin-bottom: 32px; display: block;" />
 
-<div class="figma-embed-container" style="margin-top: 48px;">
+<div id="prototype" class="figma-embed-container" style="margin-top: 48px;">
   <div class="figma-embed-iframe figma-embed-placeholder" style="border: 1px solid rgba(0, 0, 0, 0.1); border-radius: 8px; width: 100%; background-color: #F3F4F6; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px; cursor: pointer;" onclick="var f=document.createElement('iframe'); f.style.border='1px solid rgba(0, 0, 0, 0.1)'; f.style.borderRadius='8px'; f.width='100%'; f.className='figma-embed-iframe'; f.src='https://embed.figma.com/proto/5SuxUGsaCvOVUiRdXa7uNl/Misinformation-Center?page-id=12%3A7585&node-id=20-3800&p=f&viewport=1079%2C560%2C0.06&scaling=scale-down&content-scaling=fixed&starting-point-node-id=20%3A3748&show-proto-sidebar=1&embed-host=share'; f.allowFullscreen=true; f.loading='lazy'; this.replaceWith(f);">
     <div style="width: 56px; height: 56px; border-radius: 50%; background-color: #1C1917; display: flex; align-items: center; justify-content: center;">
       <div style="width: 0; height: 0; border-top: 10px solid transparent; border-bottom: 10px solid transparent; border-left: 16px solid #FFFFFF; margin-left: 4px;"></div>
