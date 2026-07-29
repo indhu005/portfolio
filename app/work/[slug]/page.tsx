@@ -706,6 +706,8 @@ const caseStudies = {
 
 <p><span style="font-weight: 600;">Methods:</span> 2,000-respondent survey, 28 interviews (paid, cross-channel recruitment), 14-participant usability testing, Misinfo Day with ~1,800 attendees (high schoolers to seniors, UW faculty, SIFT methodology creator).</p>
 
+<p style="margin-top: 20px;">Early task-based testing — asking participants to verify a headline in under 30 seconds — surfaced friction points like ambiguous button labels and slow search response times. That friction directly shaped later iterations: the shift to color-coded ratings and a single, unified search/image-search entry point.</p>
+
 <div class="pull-quote" style="margin-top: 40px; margin-bottom: 40px;">Misinformation moves through trust networks — families, WhatsApp groups, neighborhood pages — in a specific generational pattern.</div>
 
 <p><span style="font-weight: 600;">The finding that changed the problem:</span> Adults 55–80 receive misinformation from people they trust deeply. Teens 13–18 encounter it through peer dynamics where questioning carries social cost. Adults 25–40 sit between both — the most exhausted users, managing it for two generations at once.</p>
@@ -761,7 +763,9 @@ const caseStudies = {
 
 <p style="margin-top: 28px;">What happened to TrueMedia matters more than the collaboration. They analyzed 60,000+ pieces of media, launched publicly in September 2024, and shut down in January 2025 — open-sourcing the technology rather than chasing funding. Founder Oren Etzioni: "We are not prepared for a large-scale, generative AI attack. It hasn't come yet. That doesn't mean it won't."</p>
 
-<p style="margin-top: 28px;">Two lessons reframed how I see this market: platforms are ambivalent about deepfake detection because it drives engagement and community fact-checking is nearly free. The real unaddressed threat is personalized scams that never reach a community to verify them. And detection is the expensive end of the chain — authenticating content at creation is more efficient, but C2PA proposed exactly that and stalled on incentives. That gap is economic, not a design problem.</p>`
+<p style="margin-top: 28px;">Two lessons reframed how I see this market: platforms are ambivalent about deepfake detection because it drives engagement and community fact-checking is nearly free. The real unaddressed threat is personalized scams that never reach a community to verify them. And detection is the expensive end of the chain — authenticating content at creation is more efficient, but C2PA proposed exactly that and stalled on incentives. That gap is economic, not a design problem.</p>
+
+<p style="margin-top: 28px;">A third lesson was about distribution, not detection. Early testing (~20 participants) rejected the Facebook-embedded concept outright — it felt too tied to one platform and too easy to write off as biased. Coming from industry, that pushed the harder question: would anyone actually go download a freestanding app just for misinformation? The honest answer was probably not, which is what settled the case for the integration vision over a standalone hub — the tool needed a natural entry point inside surfaces people already used, not one more icon competing for attention.</p>`
       },
       {
         id: 'reflection',
@@ -772,6 +776,8 @@ const caseStudies = {
 <p style="margin-top: 28px;"><span style="font-weight: 600;">The builder mindset.</span> Coming back to school after working in the real market, my mind couldn't stay inside a class project's boundaries. Every decision triggered questions about moderation staffing, hosting costs, who updates the quiz, who pays for it. My professors thought I was overcomplicating an exercise — I've come to see that instinct as the point. A designer who thinks only about what users see is a UI designer. One who thinks about what makes it real and sustainable is a product leader.</p>
 
 <p style="margin-top: 28px;"><span style="font-weight: 600;">What reviewers pushed on, and what changed.</span> The showcase feedback was strong on craft and narrative — the critical notes mattered more. Reviewers wanted the quiz to teach the why behind each answer, which is what produced the post-answer reveal. Two flagged visual issues and missing back-navigation were fixed in the post-showcase refinement pass. The work improved because people pushed on it.</p>
+
+<p style="margin-top: 28px;"><span style="font-weight: 600;">What testing validated.</span> Usability sessions showed people liked the clarity of the color-coded credibility badges but wanted to know why something was rated that way, not just the verdict. That's what pushed the rating system from a flat green/yellow/red badge into a layered one — a quick signal upfront, sources and reasoning a tap away. It confirmed the original bet on a simple visual scale over dense text, while showing that speed alone wasn't the whole answer.</p>
 
 <div style="display: flex; gap: 24px; margin-top: 40px; flex-wrap: wrap;">
   <div style="flex: 1; min-width: 250px; position: relative;">
