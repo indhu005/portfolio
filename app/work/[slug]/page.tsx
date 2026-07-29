@@ -578,32 +578,43 @@ const caseStudies = {
 </div>
 
 <div class="snapshot-bottom-content">
-<div style="margin-top: 40px; margin-bottom: 40px;">
-  <table style="width: 100%; border-collapse: collapse;">
-    <tr style="border-bottom: 1px solid #E5E7EB;">
-      <td style="padding: 16px 0; font-weight: 600; width: 35%;">Feature</td>
-      <td style="padding: 16px 0; font-weight: 600;">Purpose</td>
-    </tr>
-    <tr style="border-bottom: 1px solid #E5E7EB;">
-      <td style="padding: 16px 0;">Search & Image Search</td>
-      <td style="padding: 16px 0;">Verify links, headlines, and images with layered credibility ratings</td>
-    </tr>
-    <tr style="border-bottom: 1px solid #E5E7EB;">
-      <td style="padding: 16px 0;">Scan</td>
-      <td style="padding: 16px 0;">Camera-based verification for printed content — flyers, newspapers, ads</td>
-    </tr>
-    <tr style="border-bottom: 1px solid #E5E7EB;">
-      <td style="padding: 16px 0;">Literacy Quiz</td>
-      <td style="padding: 16px 0;">A level-based game teaching users to spot manipulated content</td>
-    </tr>
-    <tr>
-      <td style="padding: 16px 0;">Ask Us</td>
-      <td style="padding: 16px 0;">Human-backed fact-checking for gray-area content algorithms miss</td>
-    </tr>
-  </table>
+<div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin-top: 40px; margin-bottom: 40px;">
+  <div style="background-color: #F3F4F6; border-radius: 12px; padding: 20px 24px;">
+    <div style="font-weight: 600; font-size: 15px; color: #1C1917; margin-bottom: 6px;">Search & Image Search</div>
+    <div style="font-size: 14px; color: #57534E; line-height: 1.5;">Verify links, headlines, and images with layered credibility ratings</div>
+  </div>
+  <div style="background-color: #F3F4F6; border-radius: 12px; padding: 20px 24px;">
+    <div style="font-weight: 600; font-size: 15px; color: #1C1917; margin-bottom: 6px;">Scan</div>
+    <div style="font-size: 14px; color: #57534E; line-height: 1.5;">Camera-based verification for printed content — flyers, newspapers, ads</div>
+  </div>
+  <div style="background-color: #F3F4F6; border-radius: 12px; padding: 20px 24px;">
+    <div style="font-weight: 600; font-size: 15px; color: #1C1917; margin-bottom: 6px;">Literacy Quiz</div>
+    <div style="font-size: 14px; color: #57534E; line-height: 1.5;">A level-based game teaching users to spot manipulated content</div>
+  </div>
+  <div style="background-color: #F3F4F6; border-radius: 12px; padding: 20px 24px;">
+    <div style="font-weight: 600; font-size: 15px; color: #1C1917; margin-bottom: 6px;">Ask Us</div>
+    <div style="font-size: 14px; color: #57534E; line-height: 1.5;">Human-backed fact-checking for gray-area content algorithms miss</div>
+  </div>
 </div>
 
-<p style="margin-top: 28px;"><span style="font-weight: 600;">Testing.</span> 2,000-respondent survey, two interview phases (28 participants), moderated usability (14 participants), Misinfo Day live testing (around 1,800 people).</p>
+<div style="display: flex; flex-wrap: wrap; gap: 40px; margin-top: 28px; padding: 24px 0; border-top: 1px solid #E5E7EB; border-bottom: 1px solid #E5E7EB;">
+  <div>
+    <div style="font-size: 26px; font-weight: 700; color: #1C1917;">2,000</div>
+    <div style="font-size: 13px; color: #6B7280; margin-top: 4px;">survey respondents</div>
+  </div>
+  <div>
+    <div style="font-size: 26px; font-weight: 700; color: #1C1917;">28</div>
+    <div style="font-size: 13px; color: #6B7280; margin-top: 4px;">interview participants, two phases</div>
+  </div>
+  <div>
+    <div style="font-size: 26px; font-weight: 700; color: #1C1917;">14</div>
+    <div style="font-size: 13px; color: #6B7280; margin-top: 4px;">moderated usability participants</div>
+  </div>
+  <div>
+    <div style="font-size: 26px; font-weight: 700; color: #1C1917;">~1,800</div>
+    <div style="font-size: 13px; color: #6B7280; margin-top: 4px;">tested live at Misinfo Day</div>
+  </div>
+</div>
 
 <div style="width: 100%; margin-top: 48px; margin-bottom: 0;">
   <img src="/images/misinformation-center/User quote.png" alt="User quote" style="width: 100%; height: auto; border-radius: 8px; display: block;" />
@@ -704,7 +715,24 @@ const caseStudies = {
   </video>
 </div>
 
-<p><span style="font-weight: 600;">Methods:</span> 2,000-respondent survey, 28 interviews (paid, cross-channel recruitment), 14-participant usability testing, Misinfo Day with ~1,800 attendees (high schoolers to seniors, UW faculty, SIFT methodology creator).</p>
+<div style="display: flex; flex-wrap: wrap; gap: 40px; padding: 20px 0; border-top: 1px solid #E5E7EB; border-bottom: 1px solid #E5E7EB;">
+  <div>
+    <div style="font-size: 26px; font-weight: 700; color: #1C1917;">2,000</div>
+    <div style="font-size: 13px; color: #6B7280; margin-top: 4px;">survey respondents</div>
+  </div>
+  <div>
+    <div style="font-size: 26px; font-weight: 700; color: #1C1917;">28</div>
+    <div style="font-size: 13px; color: #6B7280; margin-top: 4px;">paid interviews, cross-channel recruitment</div>
+  </div>
+  <div>
+    <div style="font-size: 26px; font-weight: 700; color: #1C1917;">14</div>
+    <div style="font-size: 13px; color: #6B7280; margin-top: 4px;">participant usability testing</div>
+  </div>
+  <div>
+    <div style="font-size: 26px; font-weight: 700; color: #1C1917;">~1,800</div>
+    <div style="font-size: 13px; color: #6B7280; margin-top: 4px;">at Misinfo Day — high schoolers to seniors, UW faculty, SIFT methodology creator</div>
+  </div>
+</div>
 
 <p style="margin-top: 20px;">Early task-based testing — asking participants to verify a headline in under 30 seconds — surfaced friction points like ambiguous button labels and slow search response times. That friction directly shaped later iterations: the shift to color-coded ratings and a single, unified search/image-search entry point.</p>
 
