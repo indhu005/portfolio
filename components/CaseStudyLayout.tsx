@@ -101,6 +101,84 @@ export default function CaseStudyLayout({ caseStudy, slug }: CaseStudyLayoutProp
     }
   }, [caseStudy.sections])
 
+  // Load the Figma prototype embed as soon as it's within reach of scrolling,
+  // not on click — hides the embed's own ~10s load time behind normal reading time.
+  useEffect(() => {
+    let attached = false
+    let cleanupListeners: (() => void) | null = null
+
+    const attachTo = (placeholder: HTMLElement) => {
+      if (attached) return
+      attached = true
+
+      let loaded = false
+
+      const loadEmbed = () => {
+        if (loaded) return
+        loaded = true
+
+        const src = placeholder.getAttribute('data-figma-src')
+        if (!src) return
+
+        const overlay = document.createElement('div')
+        overlay.className = 'figma-embed-spinner-overlay'
+        overlay.innerHTML = '<div class="spinner"></div><div style="font-size: 13px; color: #6B7280;">Loading prototype…</div>'
+
+        const iframe = document.createElement('iframe')
+        iframe.src = src
+        iframe.allowFullscreen = true
+        iframe.className = 'figma-embed-iframe'
+        iframe.style.border = '1px solid rgba(0, 0, 0, 0.1)'
+        iframe.style.borderRadius = '8px'
+        iframe.style.width = '100%'
+
+        placeholder.replaceWith(iframe)
+        iframe.insertAdjacentElement('afterend', overlay)
+
+        // Figma's canvas render can't be observed from a cross-origin iframe,
+        // so this is a timed estimate rather than a true "ready" signal.
+        window.setTimeout(() => {
+          overlay.style.opacity = '0'
+          setTimeout(() => overlay.remove(), 300)
+        }, 9000)
+      }
+
+      placeholder.addEventListener('click', loadEmbed)
+
+      const observer = new IntersectionObserver(
+        (entries) => {
+          if (entries[0].isIntersecting) loadEmbed()
+        },
+        { root: contentRef.current, rootMargin: '600px 0px', threshold: 0 }
+      )
+      observer.observe(placeholder)
+
+      cleanupListeners = () => {
+        placeholder.removeEventListener('click', loadEmbed)
+        observer.disconnect()
+      }
+
+      mutationObserver.disconnect()
+    }
+
+    const existing = document.querySelector('.figma-embed-placeholder') as HTMLElement | null
+    const mutationObserver = new MutationObserver(() => {
+      const placeholder = document.querySelector('.figma-embed-placeholder') as HTMLElement | null
+      if (placeholder) attachTo(placeholder)
+    })
+
+    if (existing) {
+      attachTo(existing)
+    } else {
+      mutationObserver.observe(document.body, { childList: true, subtree: true })
+    }
+
+    return () => {
+      mutationObserver.disconnect()
+      cleanupListeners?.()
+    }
+  }, [slug])
+
   const scrollToSection = (sectionId: string) => {
     const element = sectionRefs.current[sectionId] || document.getElementById(sectionId)
     if (element && contentRef.current) {
