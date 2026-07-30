@@ -1,7 +1,7 @@
 'use client'
 import Sidebar from '@/components/Sidebar'
 import LandingGameSimple from '@/components/LandingGameSimple'
-import { useState, useEffect } from 'react'
+import { useState, useEffect, type CSSProperties } from 'react'
 
 const useMediaQuery = (query: string) => {
   const [matches, setMatches] = useState(false)
@@ -23,9 +23,21 @@ const useMediaQuery = (query: string) => {
 
 export default function Home() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const [revealed, setRevealed] = useState(false)
   const isMobile = useMediaQuery('(max-width: 768px)')
   const isTablet = useMediaQuery('(max-width: 1024px)')
   const isWideDesktop = useMediaQuery('(min-width: 2200px)')
+
+  useEffect(() => {
+    const timer = setTimeout(() => setRevealed(true), 50)
+    return () => clearTimeout(timer)
+  }, [])
+
+  const revealStyle = (delayMs: number): CSSProperties => ({
+    opacity: revealed ? 1 : 0,
+    transform: revealed ? 'translateY(0)' : 'translateY(18px)',
+    transition: `opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1) ${delayMs}ms, transform 0.7s cubic-bezier(0.16, 1, 0.3, 1) ${delayMs}ms`,
+  })
 
   return (
 
@@ -126,6 +138,7 @@ export default function Home() {
               marginTop: isWideDesktop ? '20px' : '0',
               marginBottom: isMobile ? '32px' : isWideDesktop ? '56px' : '48px',
               letterSpacing: '-0.02em',
+              ...revealStyle(0),
             }}>
               Hi, I'm Indhu
             </h1>
@@ -135,11 +148,11 @@ export default function Home() {
               lineHeight: '1.8',
               color: '#1C1917',
             }}>
-              <p style={{ marginBottom: isWideDesktop ? '32px' : '28px' }}>
+              <p style={{ marginBottom: isWideDesktop ? '32px' : '28px', ...revealStyle(120) }}>
                 I'm a product designer based in Seattle, exploring the space between architecture and digital products. Currently working on projects that feel more like spaces you want to stay in than apps you have to use.
               </p>
 
-              <p style={{ marginBottom: isWideDesktop ? '32px' : '28px' }}>
+              <p style={{ marginBottom: isWideDesktop ? '32px' : '28px', ...revealStyle(220) }}>
                 My work lives somewhere between structure and storytelling — building systems that scale while keeping the details that make things feel human.
               </p>
             </div>

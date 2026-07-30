@@ -196,13 +196,11 @@ const caseStudies = {
         id: 'impact',
         title: '09 — Impact & Reflection',
         headline: "The most important thing a founding designer builds isn't the product. It's the foundation that lets the product grow without being rebuilt from scratch",
-        content: `<p>Keye grew from three static screens to a funded company during my two years. 0 to 20K+ MAUs in under a year, 150+ products with 35+ direct partnerships, an extension shipped in ten days, a design team built from scratch.</p>
-
-<p style="margin-top: 28px;">By year three, the founding team dispersed. The remaining founder took the company into YC W2024 and pivoted to financial analytics. The marketplace didn't survive, but the research, partnerships, and funding that made YC possible came from the product we built.</p>
+        content: `<p>By year three, the founding team dispersed. The remaining founder took the company into YC W2024 and pivoted to financial analytics — the marketplace didn't survive, but the research, partnerships, and funding that made YC possible came from the product we built.</p>
 
 <div class="pull-quote" style="margin-top: 48px;">The credit cap wasn't valuable because it monetized the product. It was valuable because it generated the behavioral data that shaped the entire partnership strategy.</div>
 
-<p style="margin-top: 48px;">Keye compressed the feedback loop between design decision and consequence from months to days. It taught me to treat every decision as a hypothesis. The ones I confirmed without testing were the ones that broke in production.</p>`
+<p style="margin-top: 48px;">Keye compressed the feedback loop between design decision and consequence from months to days. It taught me to treat every decision as a hypothesis — the ones I confirmed without testing were the ones that broke in production.</p>`
       },
     ]
   },
@@ -528,11 +526,9 @@ const caseStudies = {
         id: 'reflection',
         title: '09 — Reflection',
         headline: "Clarity drove action more than completeness — users didn't want more data, they wanted less to think about",
-        content: `<p><span style="font-weight: 600;">What I got wrong.</span> I thought predictive accuracy would drive adoption. It didn't. Data integrity and clarity mattered more. Strong predictions failed when the underlying data was messy or the framing was hard to act on. Next time: run a data audit before any predictive expansion, and lead with consequence framing from day one.</p>
+        content: `<p><span style="font-weight: 600;">What I got wrong.</span> I thought predictive accuracy would drive adoption. It didn't — data integrity and clarity mattered more. Strong predictions failed when the underlying data was messy or the framing was hard to act on. Next time: run a data audit before any predictive expansion, and lead with consequence framing from day one.</p>
 
-<p style="margin-top: 28px;"><span style="font-weight: 600;">What mattered more than expected.</span> The lifecycle linkage, not the AI. Once work orders, asset history, and cost-over-time were reliably connected, decision-making improved before the predictive layer even matured.</p>
-
-<p style="margin-top: 28px;"><span style="font-weight: 600;">The design lesson.</span> Users didn't want more data — they wanted less to think about. Clarity drove action more than completeness. Sophistication doesn't build trust; clarity does.</p>
+<p style="margin-top: 28px;"><span style="font-weight: 600;">What mattered more than expected.</span> The lifecycle linkage, not the AI. Once work orders, asset history, and cost-over-time were reliably connected, decision-making improved before the predictive layer even matured — users didn't want more data, they wanted less to think about.</p>
 
 <p style="margin-top: 28px;"><span style="font-weight: 600;">What I learned about AI in enterprise.</span> Adoption depends less on model sophistication than on trust architecture: visible reasoning, human control, confidence-aware outputs, failure containment designed in from the start. One wrong high-visibility alert can undo months of adoption. Design for the failure, not the demo.</p>`
       },
@@ -787,25 +783,17 @@ const caseStudies = {
         id: 'truemedia',
         title: '06 — TrueMedia',
         headline: 'Detection is the expensive end of the chain — authenticating content at creation is fundamentally more efficient, but nobody profits from implementing it',
-        content: `<p>TrueMedia.org was a nonprofit building deepfake detection for the 2024 election cycle. Through UW's partnership I contributed research synthesis on what to prioritize and design for. Their product shipped later in 2024: dark and utilitarian, for journalists. Mine served the opposite audience — a teenager asking "why should I care?" Two valid solutions to adjacent problems.</p>
+        content: `<p>TrueMedia.org was a nonprofit building deepfake detection for the 2024 election. Through UW's partnership, I contributed research synthesis on what to prioritize. They shipped a dark, utilitarian tool for journalists; mine served a teenager asking "why should I care?" — two solutions to adjacent problems. They analyzed 60,000+ pieces of media, launched in September 2024, and shut down in January 2025, open-sourcing the technology rather than chasing funding. Founder Oren Etzioni: "We are not prepared for a large-scale, generative AI attack. It hasn't come yet. That doesn't mean it won't."</p>
 
-<p style="margin-top: 28px;">What happened to TrueMedia matters more than the collaboration. They analyzed 60,000+ pieces of media, launched publicly in September 2024, and shut down in January 2025 — open-sourcing the technology rather than chasing funding. Founder Oren Etzioni: "We are not prepared for a large-scale, generative AI attack. It hasn't come yet. That doesn't mean it won't."</p>
-
-<p style="margin-top: 28px;">Two lessons reframed how I see this market: platforms are ambivalent about deepfake detection because it drives engagement and community fact-checking is nearly free. The real unaddressed threat is personalized scams that never reach a community to verify them. And detection is the expensive end of the chain — authenticating content at creation is more efficient, but C2PA proposed exactly that and stalled on incentives. That gap is economic, not a design problem.</p>
-
-<p style="margin-top: 28px;">A third lesson was about distribution, not detection. Early testing (~20 participants) rejected the Facebook-embedded concept outright — it felt too tied to one platform and too easy to write off as biased. Coming from industry, that pushed the harder question: would anyone actually go download a freestanding app just for misinformation? The honest answer was probably not, which is what settled the case for the integration vision over a standalone hub — the tool needed a natural entry point inside surfaces people already used, not one more icon competing for attention.</p>`
+<p style="margin-top: 28px;">Two lessons reframed the market for me: platforms are ambivalent about detection because it drives engagement, and the real unaddressed threat — personalized scams — never reaches a community to verify it. Detection is also the expensive end of the chain; authenticating content at creation is more efficient, but C2PA proposed exactly that and stalled on incentives. A third lesson came from testing: early participants rejected a Facebook-embedded concept as too platform-tied and easy to dismiss as biased, which settled the case for the integration vision over a standalone app — nobody was downloading one more icon just for misinformation.</p>`
       },
       {
         id: 'reflection',
         title: '07 — Reflection',
         headline: 'A designer who thinks only about what users see is a UI designer. A designer who thinks about everything required to make that experience real and sustainable is a product leader',
-        content: `<p><span style="font-weight: 600;">What this project taught me that comfortable work couldn't.</span> Keye taught me to treat design decisions as hypotheses. This taught me something harder: design alone cannot make a public good sustainable. TrueMedia was research-grounded, mission-complete, and it still closed — the economics were the problem, not the design. The real question for any public good isn't "what should this look like," it's "what does this attach to that keeps it viable?" The compass is trusted because it has no business model — the phone manufacturer absorbs the cost. That's why the integration vision (Apple News, the share sheet, the native camera) is the sustainability answer, not a nice-to-have.</p>
+        content: `<p><span style="font-weight: 600;">What this project taught me.</span> Design alone cannot make a public good sustainable. TrueMedia was research-grounded and mission-complete, and it still closed — the economics were the problem, not the design. The compass is trusted because it has no business model; the phone manufacturer absorbs the cost. That's why the integration vision (Apple News, the share sheet, the native camera) is the sustainability answer, not a nice-to-have. Coming back to school after industry, I couldn't stay inside a class project's boundaries — every decision triggered questions about moderation staffing, hosting costs, who pays. My professors thought I was overcomplicating an exercise. I've come to see that instinct as the point: a designer who thinks only about what users see is a UI designer; one who thinks about what makes it real and sustainable is a product leader.</p>
 
-<p style="margin-top: 28px;"><span style="font-weight: 600;">The builder mindset.</span> Coming back to school after working in the real market, my mind couldn't stay inside a class project's boundaries. Every decision triggered questions about moderation staffing, hosting costs, who updates the quiz, who pays for it. My professors thought I was overcomplicating an exercise — I've come to see that instinct as the point. A designer who thinks only about what users see is a UI designer. One who thinks about what makes it real and sustainable is a product leader.</p>
-
-<p style="margin-top: 28px;"><span style="font-weight: 600;">What reviewers pushed on, and what changed.</span> The showcase feedback was strong on craft and narrative — the critical notes mattered more. Reviewers wanted the quiz to teach the why behind each answer, which is what produced the post-answer reveal. Two flagged visual issues and missing back-navigation were fixed in the post-showcase refinement pass. The work improved because people pushed on it.</p>
-
-<p style="margin-top: 28px;"><span style="font-weight: 600;">What testing validated.</span> Usability sessions showed people liked the clarity of the color-coded credibility badges but wanted to know why something was rated that way, not just the verdict. That's what pushed the rating system from a flat green/yellow/red badge into a layered one — a quick signal upfront, sources and reasoning a tap away. It confirmed the original bet on a simple visual scale over dense text, while showing that speed alone wasn't the whole answer.</p>
+<p style="margin-top: 28px;"><span style="font-weight: 600;">What changed from feedback and testing.</span> Reviewers pushed the quiz to teach the why behind each answer, producing the post-answer reveal, and flagged visual issues and missing back-navigation that got fixed in the refinement pass. Usability testing showed people liked the clarity of the color-coded credibility badges but wanted to know why — pushing the rating system from a flat badge into a layered one: a quick signal upfront, reasoning a tap away.</p>
 
 <div style="display: flex; gap: 24px; margin-top: 40px; flex-wrap: wrap;">
   <div style="flex: 1; min-width: 250px; position: relative;">
@@ -817,7 +805,7 @@ const caseStudies = {
   </div>
 </div>
 
-<p style="margin-top: 48px;"><span style="font-weight: 600;">If I built this in 2026.</span> In early 2024, this product required an organization — human moderators, institutional funding, a maintenance team. By 2026, AI infrastructure collapses that requirement: AI triage for Ask Us, AI monitoring to keep quiz content current, AI-augmented research synthesis at scale. The resources needed have shrunk from a fifteen-person nonprofit to a determined individual with the right tools. Etzioni's warning hasn't gone away — it's grown more urgent while consumer defenses have stood still. The capstone answered the design question. The ecosystem question — reaching people at scale, in a form that outlives a funding cycle — is still open.</p>
+<p style="margin-top: 48px;"><span style="font-weight: 600;">If I built this in 2026.</span> In 2024 this needed an organization — moderators, funding, a maintenance team. By 2026, AI collapses that requirement: AI triage for Ask Us, AI monitoring to keep quiz content current, AI-augmented research at scale. What took a fifteen-person nonprofit now takes a determined individual. The capstone answered the design question. The ecosystem question — reaching people at scale, in a form that outlives a funding cycle — is still open.</p>
 
 <div id="prototype" class="figma-embed-container" style="margin-top: 48px;">
   <iframe style="border: 1px solid rgba(0, 0, 0, 0.1); border-radius: 8px;" width="100%" class="figma-embed-iframe" src="https://embed.figma.com/proto/5SuxUGsaCvOVUiRdXa7uNl/Misinformation-Center?page-id=12%3A7585&node-id=20-3800&p=f&viewport=1079%2C560%2C0.06&scaling=scale-down&content-scaling=fixed&starting-point-node-id=20%3A3748&show-proto-sidebar=1&embed-host=share" allowfullscreen loading="lazy"></iframe>
