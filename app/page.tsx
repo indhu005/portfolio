@@ -197,7 +197,7 @@ export default function Home() {
                   Turning fragmented campus maintenance into a trusted financial decision system through ML-driven lifecycle intelligence.
                 </p>
 
-                {/* Large Image Placeholder */}
+                {/* Landing Image */}
                 <a
                   href="/work/lat"
                   style={{
@@ -207,21 +207,26 @@ export default function Home() {
                     cursor: 'pointer',
                   }}
                 >
-                  <div style={{
-                    width: '100%',
-                    height: isMobile ? '280px' : isWideDesktop ? '600px' : '500px',
-                    backgroundColor: '#E5E5E5',
-                    borderRadius: '12px',
-                    transition: 'transform 0.3s ease, box-shadow 0.3s ease',
-                  }}
-                  onMouseEnter={(e) => {
-                    e.currentTarget.style.transform = 'translateY(-4px)'
-                    e.currentTarget.style.boxShadow = '0 12px 40px rgba(0, 0, 0, 0.12)'
-                  }}
-                  onMouseLeave={(e) => {
-                    e.currentTarget.style.transform = 'translateY(0)'
-                    e.currentTarget.style.boxShadow = 'none'
-                  }}
+                  <img
+                    src="/images/home/Landing LAT.png"
+                    alt="LAT Platform"
+                    style={{
+                      display: 'block',
+                      width: '100%',
+                      height: isMobile ? '280px' : isWideDesktop ? '600px' : '500px',
+                      objectFit: 'cover',
+                      backgroundColor: '#E5E5E5',
+                      borderRadius: '12px',
+                      transition: 'transform 0.3s ease, box-shadow 0.3s ease',
+                    }}
+                    onMouseEnter={(e) => {
+                      e.currentTarget.style.transform = 'translateY(-4px)'
+                      e.currentTarget.style.boxShadow = '0 12px 40px rgba(0, 0, 0, 0.12)'
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.style.transform = 'translateY(0)'
+                      e.currentTarget.style.boxShadow = 'none'
+                    }}
                   />
                 </a>
               </article>
@@ -322,7 +327,7 @@ export default function Home() {
                   Media literacy tools for the AI age — equipping people to identify misinformation themselves through verification, education, and trust.
                 </p>
 
-                {/* Large Image Placeholder */}
+                {/* Landing Image */}
                 <a
                   href="/work/misinformation-center"
                   style={{
@@ -332,21 +337,26 @@ export default function Home() {
                     cursor: 'pointer',
                   }}
                 >
-                  <div style={{
-                    width: '100%',
-                    height: isMobile ? '280px' : isWideDesktop ? '600px' : '500px',
-                    backgroundColor: '#E5E5E5',
-                    borderRadius: '12px',
-                    transition: 'transform 0.3s ease, box-shadow 0.3s ease',
-                  }}
-                  onMouseEnter={(e) => {
-                    e.currentTarget.style.transform = 'translateY(-4px)'
-                    e.currentTarget.style.boxShadow = '0 12px 40px rgba(0, 0, 0, 0.12)'
-                  }}
-                  onMouseLeave={(e) => {
-                    e.currentTarget.style.transform = 'translateY(0)'
-                    e.currentTarget.style.boxShadow = 'none'
-                  }}
+                  <img
+                    src="/images/home/Landing misinformation.png"
+                    alt="Misinformation Center"
+                    style={{
+                      display: 'block',
+                      width: '100%',
+                      height: isMobile ? '280px' : isWideDesktop ? '600px' : '500px',
+                      objectFit: 'cover',
+                      backgroundColor: '#E5E5E5',
+                      borderRadius: '12px',
+                      transition: 'transform 0.3s ease, box-shadow 0.3s ease',
+                    }}
+                    onMouseEnter={(e) => {
+                      e.currentTarget.style.transform = 'translateY(-4px)'
+                      e.currentTarget.style.boxShadow = '0 12px 40px rgba(0, 0, 0, 0.12)'
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.style.transform = 'translateY(0)'
+                      e.currentTarget.style.boxShadow = 'none'
+                    }}
                   />
                 </a>
               </article>
