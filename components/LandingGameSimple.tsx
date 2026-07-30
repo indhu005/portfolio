@@ -374,13 +374,22 @@ export default function LandingGameSimple() {
     const gap = isMobile ? 8 : 16
     const gridWidth = cols * (cellSize + gap)
 
-    const animate = () => {
+    let lastTruckFrame = 0
+    const truckFrameDelay = 32 // ~30fps is plenty for truck movement, halves React work vs 60fps
+
+    const animate = (timestamp: number) => {
+      if (timestamp - lastTruckFrame < truckFrameDelay) {
+        truckAnimationRef.current = requestAnimationFrame(animate)
+        return
+      }
+      lastTruckFrame = timestamp
+
       setTrucks(prevTrucks => {
         if (prevTrucks.length === 0) return prevTrucks
 
         return prevTrucks
           .map(truck => {
-            const speed = playCount === 0 ? 4 : 5.5 // Easier first time, harder on replay
+            const speed = (playCount === 0 ? 4 : 5.5) * 2 // Compensate for half frame rate to keep same visual speed
             let newX = truck.x
             let newDelivered = truck.delivered
 
@@ -483,7 +492,7 @@ export default function LandingGameSimple() {
     if (birds.length === 0) return
 
     let lastFrame = 0
-    const frameDelay = isMobile ? 50 : 16 // Throttle on mobile for better scroll performance
+    const frameDelay = isMobile ? 50 : 32 // ~30fps is plenty for ambient bird movement, reduces main-thread load
 
     const animate = (timestamp: number) => {
       if (timestamp - lastFrame < frameDelay) {
@@ -667,7 +676,7 @@ export default function LandingGameSimple() {
 
         {/* Tagline */}
         <div style={{
-          fontSize: isMobile ? '16px' : '18px',
+          fontSize: isMobile ? '19px' : '22px',
           fontWeight: 600,
           color: '#1C1917',
           marginBottom: isMobile ? '8px' : '12px',
@@ -681,7 +690,7 @@ export default function LandingGameSimple() {
         {!isMobile && !isTablet && (
           <div style={{
             fontSize: '14px',
-            color: '#6B7280',
+            color: '#4B5563',
             marginBottom: '12px',
             lineHeight: '1.5',
           }}>
@@ -872,6 +881,7 @@ export default function LandingGameSimple() {
           ?
         </button>
       )}
+
 
       {/* Desktop only: Stats panel on right side (tablets use mobile bottom strip) */}
       {!isMobile && !isTablet && gameActive && !gameEnded && (

@@ -343,7 +343,7 @@ export default function CaseStudyLayout({ caseStudy, slug }: CaseStudyLayoutProp
                     <button
                       onClick={() => scrollToSection(slug === 'misinformation-center' ? 'prototype' : 'impact')}
                       style={{
-                        backgroundColor: '#1C1917',
+                        backgroundColor: 'var(--accent)',
                         color: '#FFFFFF',
                         border: 'none',
                         borderRadius: '6px',
@@ -353,7 +353,7 @@ export default function CaseStudyLayout({ caseStudy, slug }: CaseStudyLayoutProp
                         cursor: 'pointer',
                         transition: 'opacity 0.2s ease',
                       }}
-                      onMouseEnter={(e) => e.currentTarget.style.opacity = '0.8'}
+                      onMouseEnter={(e) => e.currentTarget.style.opacity = '0.85'}
                       onMouseLeave={(e) => e.currentTarget.style.opacity = '1'}
                     >
                       {slug === 'misinformation-center' ? 'See Prototype →' : 'Skip to Impact →'}
@@ -381,7 +381,7 @@ export default function CaseStudyLayout({ caseStudy, slug }: CaseStudyLayoutProp
                     </div>
                     <div>
                       <div style={{ fontWeight: 600, color: '#6B7280', marginBottom: '4px' }}>Impact</div>
-                      <div style={{ color: '#1C1917', fontWeight: 600 }}>{caseStudy.tldr.impact}</div>
+                      <div style={{ color: '#1C1917', fontWeight: 700 }}>{caseStudy.tldr.impact}</div>
                     </div>
                     <div style={{ gridColumn: isMobile ? '1' : 'span 2' }}>
                       <div style={{ fontWeight: 600, color: '#6B7280', marginBottom: '4px' }}>Key Skills</div>
@@ -394,8 +394,8 @@ export default function CaseStudyLayout({ caseStudy, slug }: CaseStudyLayoutProp
               {/* Section Label */}
               <div style={{
                 fontSize: '12px',
-                fontWeight: 400,
-                color: 'var(--text-muted)',
+                fontWeight: 700,
+                color: 'var(--accent)',
                 letterSpacing: '0.08em',
                 textTransform: 'uppercase',
                 marginBottom: '12px',
@@ -410,7 +410,7 @@ export default function CaseStudyLayout({ caseStudy, slug }: CaseStudyLayoutProp
               {/* Section Headline */}
               {section.headline && (
                 <h2 style={{
-                  fontSize: isMobile ? '22px' : '26px',
+                  fontSize: isMobile ? '23px' : '28px',
                   fontWeight: 700,
                   color: 'var(--text-primary)',
                   marginBottom: '24px',
@@ -504,16 +504,18 @@ export default function CaseStudyLayout({ caseStudy, slug }: CaseStudyLayoutProp
                     justifyContent: 'space-between',
                     textDecoration: 'none',
                     color: '#1C1917',
-                    transition: 'opacity 0.2s ease',
+                    transition: 'opacity 0.2s ease, transform 0.2s ease',
                   }}
-                  onMouseEnter={(e) => e.currentTarget.style.opacity = '0.6'}
-                  onMouseLeave={(e) => e.currentTarget.style.opacity = '1'}
+                  onMouseEnter={(e) => { e.currentTarget.style.opacity = '0.75'; e.currentTarget.style.transform = 'translateX(4px)' }}
+                  onMouseLeave={(e) => { e.currentTarget.style.opacity = '1'; e.currentTarget.style.transform = 'translateX(0)' }}
                 >
                   <div>
                     <div style={{
                       fontSize: isMobile ? '14px' : '15px',
-                      fontWeight: 400,
-                      color: '#6B7280',
+                      fontWeight: 700,
+                      color: 'var(--accent)',
+                      letterSpacing: '0.04em',
+                      textTransform: 'uppercase',
                       marginBottom: '8px',
                     }}>
                       Next Case Study
@@ -537,7 +539,7 @@ export default function CaseStudyLayout({ caseStudy, slug }: CaseStudyLayoutProp
                   <div style={{
                     fontSize: isMobile ? '32px' : '48px',
                     fontWeight: 300,
-                    color: '#1C1917',
+                    color: 'var(--accent)',
                   }}>
                     →
                   </div>

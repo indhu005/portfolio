@@ -6,6 +6,11 @@ export default function ScrollRestoration() {
   const pathname = usePathname()
 
   useEffect(() => {
+    // Case study pages always start at the top (see CaseStudyLayout) —
+    // restoring a saved position here fought that and caused a visible
+    // double-jump to wherever the user last scrolled (e.g. Tradeoffs).
+    if (pathname.startsWith('/work/')) return
+
     // Save scroll position before unload
     const handleBeforeUnload = () => {
       const scrollableElements = document.querySelectorAll('[data-scroll-container]')

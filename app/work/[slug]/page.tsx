@@ -259,7 +259,7 @@ const caseStudies = {
         title: '02 — Context & Problem',
         headline: 'Fragmented data was forcing humans to do the work a system should have done',
         content: `<div style="width: 100%; max-width: 1200px; margin: 0 auto 48px;">
-  <video autoplay loop muted playsinline preload="auto" style="display: block; width: 100%; height: auto; border-radius: 8px;">
+  <video autoplay loop muted playsinline preload="metadata" style="display: block; width: 100%; height: auto; border-radius: 8px;">
     <source src="/videos/lat/Flow%2001.mp4" type="video/mp4">
     Your browser does not support the video tag.
   </video>
@@ -270,13 +270,13 @@ const caseStudies = {
 <p style="margin-top: 28px;">Without a unified system, everyone operates in their own flow with no common path:</p>
 
 <div style="width: 100%; max-width: 1200px; margin: 0 auto 48px; margin-top: 32px;">
-  <video autoplay loop muted playsinline preload="auto" style="display: block; width: 100%; height: auto; border-radius: 8px;">
+  <video autoplay loop muted playsinline preload="metadata" style="display: block; width: 100%; height: auto; border-radius: 8px;">
     <source src="/videos/lat/Flow%2003.mp4" type="video/mp4">
     Your browser does not support the video tag.
   </video>
 </div>
 
-<img src="/images/lat/User%20Issues.webp" alt="User Issues" style="width: 100%; border-radius: 8px; margin-top: 32px; margin-bottom: 32px; display: block;" />
+<img loading="lazy" decoding="async" src="/images/lat/User%20Issues.webp" alt="User Issues" style="width: 100%; border-radius: 8px; margin-top: 32px; margin-bottom: 32px; display: block;" />
 
 <div style="display: flex; gap: 24px; margin-top: 40px; flex-wrap: wrap;">
   <div style="flex: 1; min-width: 250px; position: relative;">
@@ -299,14 +299,14 @@ const caseStudies = {
 
 <p style="margin-top: 20px;">CMMS platforms handle tickets and leases but don't model asset lifespan or portfolio-level CapEx tradeoffs. Preventive maintenance ran on time-based schedules, not risk — producing over-maintenance and surprise failures. Field tools assumed stable connectivity; when digital reporting is slower than paper, adoption fails. And replacing the legacy stack wasn't viable — it was wired into procurement, accounting, and budgeting. They didn't need another silo; they needed a layer that worked with what existed.</p>
 
-<img src="/images/lat/Market%20Gap.webp" alt="Market Gap Analysis" style="width: 100%; border-radius: 8px; margin-top: 40px; margin-bottom: 32px; display: block;" />`
+<img loading="lazy" decoding="async" src="/images/lat/Market%20Gap.webp" alt="Market Gap Analysis" style="width: 100%; border-radius: 8px; margin-top: 40px; margin-bottom: 32px; display: block;" />`
       },
       {
         id: 'turning-point',
         title: '03 — The Turning Point',
         headline: 'Research revealed we were redesigning a system of coordination',
         content: `<div style="width: 100%; max-width: 1200px; margin: 0 auto 48px;">
-  <video autoplay loop muted playsinline preload="auto" style="display: block; width: 100%; height: auto; border-radius: 8px;">
+  <video autoplay loop muted playsinline preload="metadata" style="display: block; width: 100%; height: auto; border-radius: 8px;">
     <source src="/videos/lat/Flow%2002.mp4" type="video/mp4">
     Your browser does not support the video tag.
   </video>
@@ -318,7 +318,7 @@ const caseStudies = {
 
 <p style="margin-top: 28px;">That reframed everything. Instead of one dashboard for everyone, we built role-based surfaces over a shared foundation. Surfacing only what was actionable, turning operational signals into financial intelligence.</p>
 
-<img src="/images/lat/pROBLEM.webp" alt="System architecture diagram — modular API layer, role-based surfaces, shared data foundation" style="width: 100%; border-radius: 8px; margin-top: 32px; margin-bottom: 32px; display: block;" />`
+<img loading="lazy" decoding="async" src="/images/lat/pROBLEM.webp" alt="System architecture diagram — modular API layer, role-based surfaces, shared data foundation" style="width: 100%; border-radius: 8px; margin-top: 32px; margin-bottom: 32px; display: block;" />`
       },
       {
         id: 'constraints',
@@ -499,7 +499,7 @@ const caseStudies = {
   </div>
 </div>
 
-<img src="/images/lat/AB%20Testing.webp" alt="AB Testing comparison showing simplified vs detailed alert views" style="width: 100%; border-radius: 8px; margin-bottom: 48px; display: block;" />
+<img loading="lazy" decoding="async" src="/images/lat/AB%20Testing.webp" alt="AB Testing comparison showing simplified vs detailed alert views" style="width: 100%; border-radius: 8px; margin-bottom: 48px; display: block;" />
 
 <div class="pull-quote">The failure mode is never the UI. It's adoption, trust, and behavior — once those break, the metrics follow.</div>
 
@@ -554,7 +554,7 @@ const caseStudies = {
 <div class="snapshot-text-content">
 <p>Platforms try to control misinformation. Users don't trust them. This capstone asked a different question. What if we equipped people to identify misinformation themselves?</p>
 
-<img src="/images/misinformation-center/Truth.png" alt="Truth visual" style="width: 100%; border-radius: 8px; margin-top: 32px; margin-bottom: 8px; display: block;" />
+<img loading="lazy" decoding="async" src="/images/misinformation-center/Truth.png" alt="Truth visual" style="width: 100%; border-radius: 8px; margin-top: 32px; margin-bottom: 8px; display: block;" />
 
 <p style="margin-top: 28px;"><span style="font-weight: 600;">Agency over authority.</span> People resist being told what's true. They respond better when given tools to decide for themselves. The goal wasn't another fact-check label. It was tools that help people pause, verify, and learn, folded into daily habits.</p>
 
@@ -613,7 +613,7 @@ const caseStudies = {
 </div>
 
 <div style="width: 100%; margin-top: 48px; margin-bottom: 0;">
-  <img src="/images/misinformation-center/User quote.png" alt="User quote" style="width: 100%; height: auto; border-radius: 8px; display: block;" />
+  <img loading="lazy" decoding="async" src="/images/misinformation-center/User quote.png" alt="User quote" style="width: 100%; height: auto; border-radius: 8px; display: block;" />
 </div>
 </div>
 </div>`
@@ -626,25 +626,25 @@ const caseStudies = {
 
 <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 40px; margin-top: 60px; margin-bottom: 60px;">
   <div>
-    <img src="/images/misinformation-center/Problem 01.webp" alt="Survey Results" style="width: 100%; height: auto; border-radius: 8px; margin-bottom: 24px; display: block;" />
+    <img loading="lazy" decoding="async" src="/images/misinformation-center/Problem 01.webp" alt="Survey Results" style="width: 100%; height: auto; border-radius: 8px; margin-bottom: 24px; display: block;" />
     <div style="font-weight: 600; font-size: 14px; color: #1C1917; margin-bottom: 12px;">Survey Results (n=2,000)</div>
     <div style="font-size: 13px; color: #57534E; line-height: 1.6;">74% encountered misinformation weekly. 62% of parents felt overwhelmed. <20% trusted existing fact-checkers. Users wanted peace of mind, not just truth.</div>
   </div>
 
   <div>
-    <img src="/images/misinformation-center/Problem 02.webp" alt="The Generational Sandwich" style="width: 100%; height: auto; border-radius: 8px; margin-bottom: 24px; display: block;" />
+    <img loading="lazy" decoding="async" src="/images/misinformation-center/Problem 02.webp" alt="The Generational Sandwich" style="width: 100%; height: auto; border-radius: 8px; margin-bottom: 24px; display: block;" />
     <div style="font-weight: 600; font-size: 14px; color: #1C1917; margin-bottom: 12px;">The Generational Sandwich</div>
     <div style="font-size: 13px; color: #57534E; line-height: 1.6;">Mothers filtering misinformation for kids while protecting elderly parents from scams. Managing media literacy for two generations at once shaped the archetype strategy.</div>
   </div>
 
   <div>
-    <img src="/images/misinformation-center/Problem 03.webp" alt="The Transparency Demand" style="width: 100%; height: auto; border-radius: 8px; margin-bottom: 24px; display: block;" />
+    <img loading="lazy" decoding="async" src="/images/misinformation-center/Problem 03.webp" alt="The Transparency Demand" style="width: 100%; height: auto; border-radius: 8px; margin-bottom: 24px; display: block;" />
     <div style="font-weight: 600; font-size: 14px; color: #1C1917; margin-bottom: 12px;">The Transparency Demand</div>
     <div style="font-size: 13px; color: #57534E; line-height: 1.6;">Users wanted to see the incentive structure behind content, not just fact-check labels. Understanding who benefits mattered as much as knowing what's true.</div>
   </div>
 
   <div>
-    <img src="/images/misinformation-center/Problem 04.webp" alt="The Platform Trust Problem" style="width: 100%; height: auto; border-radius: 8px; margin-bottom: 24px; display: block;" />
+    <img loading="lazy" decoding="async" src="/images/misinformation-center/Problem 04.webp" alt="The Platform Trust Problem" style="width: 100%; height: auto; border-radius: 8px; margin-bottom: 24px; display: block;" />
     <div style="font-weight: 600; font-size: 14px; color: #1C1917; margin-bottom: 12px;">The Platform Trust Problem</div>
     <div style="font-size: 13px; color: #57534E; line-height: 1.6;">Testing rejected a Facebook-integrated solution immediately. Users wouldn't trust the platform spreading misinformation to also solve it. The tool had to be independent.</div>
   </div>
@@ -653,7 +653,7 @@ const caseStudies = {
 <div class="pull-quote" style="margin-top: 100px;">The platform that spread the problem was structurally incapable of being trusted as its solution.</div>
 
 <div style="width: 100%; max-width: 1200px; margin: 60px auto 0;">
-  <video autoplay loop muted playsinline preload="auto" style="display: block; width: 100%; height: auto; border-radius: 8px;">
+  <video autoplay loop muted playsinline preload="metadata" style="display: block; width: 100%; height: auto; border-radius: 8px;">
     <source src="/videos/misinformationcenter/flow%2002.mp4" type="video/mp4">
     Your browser does not support the video tag.
   </video>
@@ -705,7 +705,7 @@ const caseStudies = {
         title: '05 — User Research',
         headline: 'Misinformation moves through trust networks — families, WhatsApp groups, neighborhood pages — in a specific generational pattern',
         content: `<div style="width: 100%; max-width: 1200px; margin: 0 auto 48px;">
-  <video autoplay loop muted playsinline preload="auto" style="display: block; width: 100%; height: auto; border-radius: 8px;">
+  <video autoplay loop muted playsinline preload="metadata" style="display: block; width: 100%; height: auto; border-radius: 8px;">
     <source src="/videos/misinformationcenter/Flow%2001%20Misinformation.mp4" type="video/mp4">
     Your browser does not support the video tag.
   </video>
@@ -756,7 +756,7 @@ const caseStudies = {
   </div>
 </div>
 
-<img src="/images/misinformation-center/User thinking.png" alt="The generational chain diagram and three archetype cards with real interview quotes" style="width: 100%; border-radius: 8px; margin-top: 32px; margin-bottom: 32px; display: block;" />
+<img loading="lazy" decoding="async" src="/images/misinformation-center/User thinking.png" alt="The generational chain diagram and three archetype cards with real interview quotes" style="width: 100%; border-radius: 8px; margin-top: 32px; margin-bottom: 32px; display: block;" />
 
 <p style="margin-top: 36px;"><span style="font-weight: 600;">What Misinfo Day revealed that recruited testing couldn't.</span> Small-scale testing shows what people say; live testing with unrecruited crowds shows what they do. Younger participants abandoned any flow that felt like reading within seconds. Older participants trusted Ask Us over automated ratings — a person's judgment over an algorithm's output. The sharpest insight: engagement spiked when detection was framed as a skill, not a correction. People didn't want to be told they were wrong. They wanted to feel smart for getting it right.</p>
 
@@ -765,15 +765,15 @@ const caseStudies = {
 <div style="margin-top: 40px;">
   <div style="font-size: 13px; color: #6B7280; margin-bottom: 12px;">Misinfo Day — live testing with ~1,800 participants · scroll to see more →</div>
   <div style="display: flex; gap: 16px; overflow-x: auto; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; padding-bottom: 8px;">
-    <img src="/images/misinformation-center/Misinfo%20day%20%281%29.jpg" alt="Misinfo Day live testing, photo 1" style="flex: 0 0 auto; scroll-snap-align: start; width: 85%; max-width: 460px; height: 340px; object-fit: cover; border-radius: 8px; display: block;" />
-    <img src="/images/misinformation-center/Misinfo%20day%20%282%29.jpg" alt="Misinfo Day live testing, photo 2" style="flex: 0 0 auto; scroll-snap-align: start; width: 85%; max-width: 460px; height: 340px; object-fit: cover; border-radius: 8px; display: block;" />
-    <img src="/images/misinformation-center/Misinfo%20day%20%283%29.jpg" alt="Misinfo Day live testing, photo 3" style="flex: 0 0 auto; scroll-snap-align: start; width: 85%; max-width: 460px; height: 340px; object-fit: cover; border-radius: 8px; display: block;" />
-    <img src="/images/misinformation-center/Misinfo%20day%20%284%29.jpg" alt="Misinfo Day live testing, photo 4" style="flex: 0 0 auto; scroll-snap-align: start; width: 85%; max-width: 460px; height: 340px; object-fit: cover; border-radius: 8px; display: block;" />
+    <img loading="lazy" decoding="async" src="/images/misinformation-center/Misinfo%20day%20%281%29.jpg" alt="Misinfo Day live testing, photo 1" style="flex: 0 0 auto; scroll-snap-align: start; width: 85%; max-width: 460px; height: 340px; object-fit: cover; border-radius: 8px; display: block;" />
+    <img loading="lazy" decoding="async" src="/images/misinformation-center/Misinfo%20day%20%282%29.jpg" alt="Misinfo Day live testing, photo 2" style="flex: 0 0 auto; scroll-snap-align: start; width: 85%; max-width: 460px; height: 340px; object-fit: cover; border-radius: 8px; display: block;" />
+    <img loading="lazy" decoding="async" src="/images/misinformation-center/Misinfo%20day%20%283%29.jpg" alt="Misinfo Day live testing, photo 3" style="flex: 0 0 auto; scroll-snap-align: start; width: 85%; max-width: 460px; height: 340px; object-fit: cover; border-radius: 8px; display: block;" />
+    <img loading="lazy" decoding="async" src="/images/misinformation-center/Misinfo%20day%20%284%29.jpg" alt="Misinfo Day live testing, photo 4" style="flex: 0 0 auto; scroll-snap-align: start; width: 85%; max-width: 460px; height: 340px; object-fit: cover; border-radius: 8px; display: block;" />
   </div>
 </div>
 
 <div style="background-color: #000000; border-radius: 8px; padding: 40px 24px; margin-top: 40px; display: flex; justify-content: center;">
-  <video autoplay loop muted playsinline preload="auto" style="width: 100%; max-width: 300px; aspect-ratio: 580 / 1040; border-radius: 8px; display: block; object-fit: cover;">
+  <video autoplay loop muted playsinline preload="metadata" style="width: 100%; max-width: 300px; aspect-ratio: 580 / 1040; border-radius: 8px; display: block; object-fit: cover;">
     <source src="/videos/misinformationcenter/Testing%20Image%20upload.mp4" type="video/mp4">
     Your browser does not support the video tag.
   </video>

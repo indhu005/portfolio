@@ -74,7 +74,8 @@ export default function Sidebar({
   }, [])
 
   return (
-    <div style={{
+    <div
+      style={{
       flex: '0 0 320px',
       width: '320px',
       minWidth: '320px',
@@ -97,12 +98,12 @@ export default function Sidebar({
           fontWeight: 700,
           color: '#1C1917',
           cursor: 'pointer',
-          transition: 'opacity 0.2s ease-out',
+          transition: 'color 0.12s ease-out',
           textDecoration: 'none',
           display: 'block',
         }}
-        onMouseEnter={(e) => e.currentTarget.style.opacity = '0.7'}
-        onMouseLeave={(e) => e.currentTarget.style.opacity = '1'}
+        onMouseEnter={(e) => e.currentTarget.style.color = 'var(--accent)'}
+        onMouseLeave={(e) => e.currentTarget.style.color = '#1C1917'}
       >
         Indhu
       </Link>
@@ -147,16 +148,18 @@ export default function Sidebar({
                 style={{
                   fontSize: isLargeDesktop ? '18px' : '15px',
                   fontWeight: isActiveProject ? 600 : 400,
-                  color: isActiveProject ? '#1C1917' : '#6B7280',
+                  color: isActiveProject ? 'var(--accent)' : '#6B7280',
                   cursor: 'pointer',
                   paddingTop: '6px',
                   paddingBottom: '6px',
-                  transition: 'color 0.2s ease-out, opacity 0.2s ease-out, font-weight 0.2s ease-out',
+                  paddingLeft: isActiveProject ? '10px' : '0px',
+                  borderLeft: isActiveProject ? '2px solid var(--accent)' : '2px solid transparent',
+                  transition: 'color 0.12s ease-out, font-weight 0.12s ease-out, padding-left 0.12s ease-out, border-color 0.12s ease-out',
                   textDecoration: 'none',
                   display: 'block',
                 }}
-                onMouseEnter={(e) => e.currentTarget.style.opacity = '0.7'}
-                onMouseLeave={(e) => e.currentTarget.style.opacity = '1'}
+                onMouseEnter={(e) => { if (!isActiveProject) e.currentTarget.style.color = 'var(--accent)' }}
+                onMouseLeave={(e) => { if (!isActiveProject) e.currentTarget.style.color = '#6B7280' }}
               >
                 {project.name}
               </Link>
@@ -176,9 +179,8 @@ export default function Sidebar({
                             onSectionClick(item.id)
                           }
                         }}
-                        onMouseDown={(e) => { if (onSectionClick) e.currentTarget.style.opacity = '0.6' }}
-                        onMouseUp={(e) => e.currentTarget.style.opacity = '1'}
-                        onMouseLeave={(e) => e.currentTarget.style.opacity = '1'}
+                        onMouseEnter={(e) => { if (!isActiveSection) e.currentTarget.style.color = '#1C1917' }}
+                        onMouseLeave={(e) => { if (!isActiveSection) e.currentTarget.style.color = '#6B7280' }}
                         style={{
                           fontSize: isLargeDesktop ? '17px' : '14px',
                           color: isActiveSection ? '#1C1917' : '#6B7280',
@@ -189,11 +191,11 @@ export default function Sidebar({
                           alignItems: 'center',
                           gap: '8px',
                           cursor: onSectionClick ? 'pointer' : 'default',
-                          transition: 'color 0.2s ease, opacity 0.15s ease, font-weight 0.2s ease',
+                          transition: 'color 0.12s ease, font-weight 0.12s ease',
                         }}
                       >
                         <span style={{
-                          color: isActiveSection ? '#1C1917' : '#9CA3AF',
+                          color: isActiveSection ? 'var(--accent)' : '#9CA3AF',
                           fontWeight: isActiveSection ? 700 : 400,
                         }}>
                           —
@@ -209,8 +211,8 @@ export default function Sidebar({
         })}
       </div>
 
-      {/* ABOUT PINNED TO BOTTOM */}
-      <div style={{ marginTop: 'auto' }}>
+      {/* ABOUT */}
+      <div style={{ marginTop: '40px' }}>
         <Link
           href="/about"
           style={{
@@ -219,12 +221,12 @@ export default function Sidebar({
             color: '#1C1917',
             marginBottom: '12px',
             cursor: 'pointer',
-            transition: 'opacity 0.2s ease-out',
+            transition: 'color 0.12s ease-out',
             textDecoration: 'none',
             display: 'block',
           }}
-          onMouseEnter={(e) => e.currentTarget.style.opacity = '0.7'}
-          onMouseLeave={(e) => e.currentTarget.style.opacity = '1'}
+          onMouseEnter={(e) => e.currentTarget.style.color = 'var(--accent)'}
+          onMouseLeave={(e) => e.currentTarget.style.color = '#1C1917'}
         >
           About
         </Link>
@@ -239,9 +241,8 @@ export default function Sidebar({
               href={item.href}
               target={item.href.startsWith('mailto:') ? undefined : '_blank'}
               rel={item.href.startsWith('mailto:') ? undefined : 'noopener noreferrer'}
-              onMouseDown={(e) => e.currentTarget.style.opacity = '0.6'}
-              onMouseUp={(e) => e.currentTarget.style.opacity = '1'}
-              onMouseLeave={(e) => e.currentTarget.style.opacity = '1'}
+              onMouseEnter={(e) => e.currentTarget.style.color = 'var(--accent)'}
+              onMouseLeave={(e) => e.currentTarget.style.color = '#6B7280'}
               style={{
                 fontSize: isLargeDesktop ? '18px' : '15px',
                 fontWeight: 400,
@@ -251,7 +252,7 @@ export default function Sidebar({
                 cursor: 'pointer',
                 textDecoration: 'none',
                 display: 'block',
-                transition: 'color 0.2s ease, opacity 0.15s ease',
+                transition: 'color 0.12s ease',
               }}
             >
               {item.label}
@@ -259,9 +260,8 @@ export default function Sidebar({
           ) : (
             <div
               key={item.label}
-              onMouseDown={(e) => e.currentTarget.style.opacity = '0.6'}
-              onMouseUp={(e) => e.currentTarget.style.opacity = '1'}
-              onMouseLeave={(e) => e.currentTarget.style.opacity = '1'}
+              onMouseEnter={(e) => e.currentTarget.style.color = 'var(--accent)'}
+              onMouseLeave={(e) => e.currentTarget.style.color = '#6B7280'}
               style={{
                 fontSize: isLargeDesktop ? '18px' : '15px',
                 fontWeight: 400,
@@ -269,7 +269,7 @@ export default function Sidebar({
                 paddingTop: '4px',
                 paddingBottom: '4px',
                 cursor: 'pointer',
-                transition: 'color 0.2s ease, opacity 0.15s ease',
+                transition: 'color 0.12s ease',
               }}
             >
               {item.label}

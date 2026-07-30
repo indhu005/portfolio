@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { DM_Sans, Fraunces } from 'next/font/google'
 import './globals.css'
 import ScrollRestoration from '@/components/ScrollRestoration'
+import PixelCursor from '@/components/PixelCursor'
 import { Analytics } from '@vercel/analytics/react'
 import { SpeedInsights } from '@vercel/speed-insights/next'
 import { PersonStructuredData, PortfolioStructuredData } from '@/components/StructuredData'
@@ -86,6 +87,7 @@ export default function RootLayout({
         <PersonStructuredData />
         <PortfolioStructuredData />
         <ScrollRestoration />
+        <PixelCursor />
         {children}
         <Analytics />
         <SpeedInsights />

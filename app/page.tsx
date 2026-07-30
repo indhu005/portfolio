@@ -110,7 +110,7 @@ export default function Home() {
           style={{
             flex: 1,
             overflowY: 'auto',
-            padding: isMobile ? '0 20px 40px 20px' : isTablet ? '0 32px 50px 20px' : isWideDesktop ? '0 80px 80px 80px' : '0 48px 60px 20px',
+            padding: isMobile ? '0 20px 40px 20px' : isTablet ? '0 32px 50px 32px' : isWideDesktop ? '0 80px 80px 80px' : '0 48px 60px 48px',
             minWidth: 0,
             scrollBehavior: 'smooth',
             backgroundColor: '#FFFFFF',
@@ -123,28 +123,36 @@ export default function Home() {
             <LandingGameSimple />
           </div>
 
+          {/* Shared centered wrapper so intro and Selected Work share the same left edge */}
+          <div style={{
+            maxWidth: isWideDesktop ? '1400px' : '1200px',
+            marginLeft: 'auto',
+            marginRight: 'auto',
+          }}>
           {/* Home page content */}
           <main style={{
             maxWidth: isWideDesktop ? '1100px' : '920px',
             marginTop: '0px',
-            paddingLeft: isMobile ? '0' : isWideDesktop ? '64px' : '48px',
+            marginLeft: '0',
+            marginRight: 'auto',
+            textAlign: 'left',
           }}>
             <h1 style={{
               fontFamily: 'var(--font-fraunces), serif',
-              fontSize: isMobile ? '34px' : isTablet ? '45px' : isWideDesktop ? '67px' : '56px',
+              fontSize: isMobile ? '38px' : isTablet ? '50px' : isWideDesktop ? '74px' : '62px',
               fontWeight: 700,
-              lineHeight: '1.1',
+              lineHeight: '1.08',
               color: '#1C1917',
               marginTop: isWideDesktop ? '20px' : '0',
               marginBottom: isMobile ? '32px' : isWideDesktop ? '56px' : '48px',
               letterSpacing: '-0.02em',
               ...revealStyle(0),
             }}>
-              Hi, I'm Indhu
+              Hi, I'm <span style={{ color: 'var(--accent)' }}>Indhu</span>
             </h1>
 
             <div style={{
-              fontSize: isMobile ? '17px' : isWideDesktop ? '20px' : '18px',
+              fontSize: isMobile ? '20px' : isWideDesktop ? '24px' : '22px',
               lineHeight: '1.8',
               color: '#1C1917',
             }}>
@@ -160,59 +168,50 @@ export default function Home() {
 
           {/* Case Studies Section */}
           <section id="case-studies" style={{
-            maxWidth: isWideDesktop ? '1400px' : '1200px',
             marginTop: isMobile ? '60px' : isWideDesktop ? '120px' : '100px',
-            paddingLeft: isMobile ? '0' : isWideDesktop ? '64px' : '48px',
           }}>
             {/* Section Header */}
-            <h2 style={{
-              fontFamily: 'var(--font-fraunces), serif',
-              fontSize: isMobile ? '22px' : isWideDesktop ? '39px' : '34px',
-              fontWeight: 700,
-              color: '#1C1917',
+            <div style={{
+              display: 'flex',
+              alignItems: 'center',
+              gap: '12px',
               marginBottom: isMobile ? '32px' : isWideDesktop ? '64px' : '48px',
-              letterSpacing: '-0.01em',
             }}>
-              Selected Work
-            </h2>
+              <span style={{
+                width: '10px',
+                height: '10px',
+                borderRadius: '50%',
+                backgroundColor: 'var(--accent)',
+                flexShrink: 0,
+              }} />
+              <h2 style={{
+                fontFamily: 'var(--font-fraunces), serif',
+                fontSize: isMobile ? '22px' : isWideDesktop ? '39px' : '34px',
+                fontWeight: 700,
+                color: '#1C1917',
+                letterSpacing: '-0.01em',
+                margin: 0,
+              }}>
+                Selected Work
+              </h2>
+            </div>
 
             {/* Case Study Cards */}
             <div style={{
               display: 'flex',
               flexDirection: 'column',
-              gap: isMobile ? '60px' : isWideDesktop ? '100px' : '80px',
+              gap: isMobile ? '90px' : isWideDesktop ? '160px' : '130px',
             }}>
               {/* Card 1 - LAT */}
               <article style={{
                 display: 'flex',
                 flexDirection: 'column',
               }}>
-                {/* Title */}
-                <h3 style={{
-                  fontFamily: 'var(--font-fraunces), serif',
-                  fontSize: isMobile ? '24px' : isWideDesktop ? '34px' : '28px',
-                  fontWeight: 700,
-                  color: '#1C1917',
-                  marginBottom: isMobile ? '12px' : '16px',
-                  letterSpacing: '-0.01em',
-                }}>
-                  LAT Platform
-                </h3>
-
-                {/* Description */}
-                <p style={{
-                  fontSize: isMobile ? '16px' : isWideDesktop ? '19px' : '18px',
-                  lineHeight: '1.6',
-                  color: '#57534E',
-                  marginBottom: isMobile ? '24px' : isWideDesktop ? '40px' : '32px',
-                  maxWidth: '800px',
-                }}>
-                  Turning fragmented campus maintenance into a trusted financial decision system through ML-driven lifecycle intelligence.
-                </p>
-
-                {/* Landing Image */}
+                {/* Large Image Placeholder */}
                 <a
                   href="/work/lat"
+                  data-bird-target="true"
+                  data-cursor-color="#1F5D3A"
                   style={{
                     display: 'block',
                     width: '100%',
@@ -220,28 +219,62 @@ export default function Home() {
                     cursor: 'pointer',
                   }}
                 >
-                  <img
-                    src="/images/home/Landing LAT.png"
-                    alt="LAT Platform"
-                    style={{
-                      display: 'block',
-                      width: '100%',
-                      height: isMobile ? '280px' : isWideDesktop ? '600px' : '500px',
-                      objectFit: 'cover',
-                      backgroundColor: '#E5E5E5',
-                      borderRadius: '12px',
-                      transition: 'transform 0.3s ease, box-shadow 0.3s ease',
-                    }}
-                    onMouseEnter={(e) => {
-                      e.currentTarget.style.transform = 'translateY(-4px)'
-                      e.currentTarget.style.boxShadow = '0 12px 40px rgba(0, 0, 0, 0.12)'
-                    }}
-                    onMouseLeave={(e) => {
-                      e.currentTarget.style.transform = 'translateY(0)'
-                      e.currentTarget.style.boxShadow = 'none'
-                    }}
+                  <div style={{
+                    width: '100%',
+                    height: isMobile ? '320px' : isWideDesktop ? '760px' : '620px',
+                    backgroundColor: '#E5E5E5',
+                    borderRadius: '16px',
+                    transition: 'transform 0.3s ease, box-shadow 0.3s ease',
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.transform = 'translateY(-4px)'
+                    e.currentTarget.style.boxShadow = '0 12px 40px rgba(0, 0, 0, 0.12)'
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.transform = 'translateY(0)'
+                    e.currentTarget.style.boxShadow = 'none'
+                  }}
                   />
                 </a>
+
+                {/* Meta */}
+                <div style={{
+                  display: 'flex',
+                  gap: isMobile ? '16px' : '32px',
+                  alignItems: 'flex-start',
+                  marginTop: isMobile ? '20px' : '28px',
+                }}>
+                  <div style={{
+                    fontSize: isWideDesktop ? '15px' : '13px',
+                    fontWeight: 700,
+                    color: 'var(--accent)',
+                    letterSpacing: '0.08em',
+                    flexShrink: 0,
+                    paddingTop: '6px',
+                  }}>
+                    01
+                  </div>
+                  <div>
+                    <h3 style={{
+                      fontFamily: 'var(--font-fraunces), serif',
+                      fontSize: isMobile ? '24px' : isWideDesktop ? '34px' : '28px',
+                      fontWeight: 700,
+                      color: '#1C1917',
+                      marginBottom: isMobile ? '12px' : '16px',
+                      letterSpacing: '-0.01em',
+                    }}>
+                      LAT Platform
+                    </h3>
+                    <p style={{
+                      fontSize: isMobile ? '19px' : isWideDesktop ? '23px' : '22px',
+                      lineHeight: '1.6',
+                      color: '#57534E',
+                      maxWidth: '800px',
+                    }}>
+                      Turning fragmented campus maintenance into a trusted financial decision system through ML-driven lifecycle intelligence.
+                    </p>
+                  </div>
+                </div>
               </article>
 
               {/* Card 2 - Keye */}
@@ -249,32 +282,11 @@ export default function Home() {
                 display: 'flex',
                 flexDirection: 'column',
               }}>
-                {/* Title */}
-                <h3 style={{
-                  fontFamily: 'var(--font-fraunces), serif',
-                  fontSize: isMobile ? '24px' : isWideDesktop ? '34px' : '28px',
-                  fontWeight: 700,
-                  color: '#1C1917',
-                  marginBottom: isMobile ? '12px' : '16px',
-                  letterSpacing: '-0.01em',
-                }}>
-                  Keye
-                </h3>
-
-                {/* Description */}
-                <p style={{
-                  fontSize: isMobile ? '16px' : isWideDesktop ? '19px' : '18px',
-                  lineHeight: '1.6',
-                  color: '#57534E',
-                  marginBottom: isMobile ? '24px' : isWideDesktop ? '40px' : '32px',
-                  maxWidth: '800px',
-                }}>
-                  From three static screens to a YC-backed subscription marketplace — designing ClassPass for digital tools.
-                </p>
-
-                {/* Landing Video */}
+                {/* Large Image Placeholder */}
                 <a
                   href="/work/keye"
+                  data-bird-target="true"
+                  data-cursor-color="#D97B29"
                   style={{
                     display: 'block',
                     width: '100%',
@@ -282,34 +294,62 @@ export default function Home() {
                     cursor: 'pointer',
                   }}
                 >
-                  <video
-                    src="/videos/Keye/Home page Landing.mp4"
-                    autoPlay
-                    loop
-                    muted
-                    playsInline
-                    preload="auto"
-                    style={{
-                      display: 'block',
-                      width: '100%',
-                      height: isMobile ? '280px' : isWideDesktop ? '600px' : '500px',
-                      objectFit: 'cover',
-                      backgroundColor: '#E5E5E5',
-                      borderRadius: '12px',
-                      transition: 'transform 0.3s ease, box-shadow 0.3s ease',
-                      willChange: 'transform',
-                      backfaceVisibility: 'hidden',
-                    }}
-                    onMouseEnter={(e) => {
-                      e.currentTarget.style.transform = 'translateY(-4px)'
-                      e.currentTarget.style.boxShadow = '0 12px 40px rgba(0, 0, 0, 0.12)'
-                    }}
-                    onMouseLeave={(e) => {
-                      e.currentTarget.style.transform = 'translateY(0)'
-                      e.currentTarget.style.boxShadow = 'none'
-                    }}
+                  <div style={{
+                    width: '100%',
+                    height: isMobile ? '320px' : isWideDesktop ? '760px' : '620px',
+                    backgroundColor: '#E5E5E5',
+                    borderRadius: '16px',
+                    transition: 'transform 0.3s ease, box-shadow 0.3s ease',
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.transform = 'translateY(-4px)'
+                    e.currentTarget.style.boxShadow = '0 12px 40px rgba(0, 0, 0, 0.12)'
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.transform = 'translateY(0)'
+                    e.currentTarget.style.boxShadow = 'none'
+                  }}
                   />
                 </a>
+
+                {/* Meta */}
+                <div style={{
+                  display: 'flex',
+                  gap: isMobile ? '16px' : '32px',
+                  alignItems: 'flex-start',
+                  marginTop: isMobile ? '20px' : '28px',
+                }}>
+                  <div style={{
+                    fontSize: isWideDesktop ? '15px' : '13px',
+                    fontWeight: 700,
+                    color: 'var(--accent)',
+                    letterSpacing: '0.08em',
+                    flexShrink: 0,
+                    paddingTop: '6px',
+                  }}>
+                    02
+                  </div>
+                  <div>
+                    <h3 style={{
+                      fontFamily: 'var(--font-fraunces), serif',
+                      fontSize: isMobile ? '24px' : isWideDesktop ? '34px' : '28px',
+                      fontWeight: 700,
+                      color: '#1C1917',
+                      marginBottom: isMobile ? '12px' : '16px',
+                      letterSpacing: '-0.01em',
+                    }}>
+                      Keye
+                    </h3>
+                    <p style={{
+                      fontSize: isMobile ? '19px' : isWideDesktop ? '23px' : '22px',
+                      lineHeight: '1.6',
+                      color: '#57534E',
+                      maxWidth: '800px',
+                    }}>
+                      From three static screens to a YC-backed subscription marketplace — designing ClassPass for digital tools.
+                    </p>
+                  </div>
+                </div>
               </article>
 
               {/* Card 3 - Misinformation Center */}
@@ -317,32 +357,11 @@ export default function Home() {
                 display: 'flex',
                 flexDirection: 'column',
               }}>
-                {/* Title */}
-                <h3 style={{
-                  fontFamily: 'var(--font-fraunces), serif',
-                  fontSize: isMobile ? '24px' : isWideDesktop ? '34px' : '28px',
-                  fontWeight: 700,
-                  color: '#1C1917',
-                  marginBottom: isMobile ? '12px' : '16px',
-                  letterSpacing: '-0.01em',
-                }}>
-                  Misinformation Center
-                </h3>
-
-                {/* Description */}
-                <p style={{
-                  fontSize: isMobile ? '16px' : isWideDesktop ? '19px' : '18px',
-                  lineHeight: '1.6',
-                  color: '#57534E',
-                  marginBottom: isMobile ? '24px' : isWideDesktop ? '40px' : '32px',
-                  maxWidth: '800px',
-                }}>
-                  Media literacy tools for the AI age — equipping people to identify misinformation themselves through verification, education, and trust.
-                </p>
-
-                {/* Landing Image */}
+                {/* Large Image Placeholder */}
                 <a
                   href="/work/misinformation-center"
+                  data-bird-target="true"
+                  data-cursor-color="#B23A3A"
                   style={{
                     display: 'block',
                     width: '100%',
@@ -350,31 +369,66 @@ export default function Home() {
                     cursor: 'pointer',
                   }}
                 >
-                  <img
-                    src="/images/home/Landing misinformation.png"
-                    alt="Misinformation Center"
-                    style={{
-                      display: 'block',
-                      width: '100%',
-                      height: isMobile ? '280px' : isWideDesktop ? '600px' : '500px',
-                      objectFit: 'cover',
-                      backgroundColor: '#E5E5E5',
-                      borderRadius: '12px',
-                      transition: 'transform 0.3s ease, box-shadow 0.3s ease',
-                    }}
-                    onMouseEnter={(e) => {
-                      e.currentTarget.style.transform = 'translateY(-4px)'
-                      e.currentTarget.style.boxShadow = '0 12px 40px rgba(0, 0, 0, 0.12)'
-                    }}
-                    onMouseLeave={(e) => {
-                      e.currentTarget.style.transform = 'translateY(0)'
-                      e.currentTarget.style.boxShadow = 'none'
-                    }}
+                  <div style={{
+                    width: '100%',
+                    height: isMobile ? '320px' : isWideDesktop ? '760px' : '620px',
+                    backgroundColor: '#E5E5E5',
+                    borderRadius: '16px',
+                    transition: 'transform 0.3s ease, box-shadow 0.3s ease',
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.transform = 'translateY(-4px)'
+                    e.currentTarget.style.boxShadow = '0 12px 40px rgba(0, 0, 0, 0.12)'
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.transform = 'translateY(0)'
+                    e.currentTarget.style.boxShadow = 'none'
+                  }}
                   />
                 </a>
+
+                {/* Meta */}
+                <div style={{
+                  display: 'flex',
+                  gap: isMobile ? '16px' : '32px',
+                  alignItems: 'flex-start',
+                  marginTop: isMobile ? '20px' : '28px',
+                }}>
+                  <div style={{
+                    fontSize: isWideDesktop ? '15px' : '13px',
+                    fontWeight: 700,
+                    color: 'var(--accent)',
+                    letterSpacing: '0.08em',
+                    flexShrink: 0,
+                    paddingTop: '6px',
+                  }}>
+                    03
+                  </div>
+                  <div>
+                    <h3 style={{
+                      fontFamily: 'var(--font-fraunces), serif',
+                      fontSize: isMobile ? '24px' : isWideDesktop ? '34px' : '28px',
+                      fontWeight: 700,
+                      color: '#1C1917',
+                      marginBottom: isMobile ? '12px' : '16px',
+                      letterSpacing: '-0.01em',
+                    }}>
+                      Misinformation Center
+                    </h3>
+                    <p style={{
+                      fontSize: isMobile ? '19px' : isWideDesktop ? '23px' : '22px',
+                      lineHeight: '1.6',
+                      color: '#57534E',
+                      maxWidth: '800px',
+                    }}>
+                      Media literacy tools for the AI age — equipping people to identify misinformation themselves through verification, education, and trust.
+                    </p>
+                  </div>
+                </div>
               </article>
             </div>
           </section>
+          </div>
 
           {/* Footer Links */}
           <footer style={{
@@ -398,7 +452,7 @@ export default function Home() {
                 transition: 'border-color 0.2s',
               }}
               onMouseEnter={(e) => {
-                e.currentTarget.style.borderBottomColor = '#1C1917'
+                e.currentTarget.style.borderBottomColor = 'var(--accent)'
               }}
               onMouseLeave={(e) => {
                 e.currentTarget.style.borderBottomColor = 'transparent'
@@ -419,7 +473,7 @@ export default function Home() {
                 transition: 'border-color 0.2s',
               }}
               onMouseEnter={(e) => {
-                e.currentTarget.style.borderBottomColor = '#1C1917'
+                e.currentTarget.style.borderBottomColor = 'var(--accent)'
               }}
               onMouseLeave={(e) => {
                 e.currentTarget.style.borderBottomColor = 'transparent'
@@ -438,7 +492,7 @@ export default function Home() {
                 transition: 'border-color 0.2s',
               }}
               onMouseEnter={(e) => {
-                e.currentTarget.style.borderBottomColor = '#1C1917'
+                e.currentTarget.style.borderBottomColor = 'var(--accent)'
               }}
               onMouseLeave={(e) => {
                 e.currentTarget.style.borderBottomColor = 'transparent'
