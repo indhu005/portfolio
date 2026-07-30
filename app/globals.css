@@ -2,10 +2,10 @@
   --text-primary: #1C1917;
   --text-secondary: #44403C;
   --text-muted: #78716C;
-  --border-accent: #3F6212;
-  --accent: #3F6212;
-  --accent-soft: rgba(63, 98, 18, 0.08);
-  --accent-hover: #365610;
+  --border-accent: #1C1917;
+  --accent: #1C1917;
+  --accent-soft: rgba(28, 25, 23, 0.08);
+  --accent-hover: #000000;
 }
 
 * {
@@ -120,6 +120,334 @@ a:active {
   inset: 0;
   pointer-events: none;
   z-index: 9998;
+}
+
+/* Case study body copy: shared subheading styles (replaces per-instance inline styles) */
+.case-study-subhead {
+  font-weight: 600;
+  font-size: 17px;
+  color: #1C1917;
+  margin: 28px 0 0;
+}
+
+.cs-card-title {
+  font-weight: 600;
+  font-size: 17px;
+  color: #1C1917;
+  margin-bottom: 8px;
+}
+
+.cs-card-title--md {
+  font-size: 16px;
+  margin-bottom: 12px;
+}
+
+.cs-card-title--sm {
+  font-size: 15px;
+  margin-bottom: 12px;
+}
+
+.cs-card-title--sm-tight {
+  font-size: 15px;
+  margin-bottom: 6px;
+}
+
+.cs-card-title--xs {
+  font-size: 14px;
+  margin-bottom: 12px;
+}
+
+/* Inline video pause/play toggle used on autoplaying case study demo videos */
+.cs-video-wrap {
+  position: relative;
+}
+
+.cs-video-toggle {
+  position: absolute;
+  bottom: 12px;
+  right: 12px;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(0, 0, 0, 0.6);
+  color: #FFFFFF;
+  font-size: 14px;
+  line-height: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+
+.cs-video-toggle:hover {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+/* /play page: CSS-driven responsive layout (no JS breakpoint state) so the
+   correct layout renders on first paint instead of flashing desktop-then-mobile. */
+.play-shell {
+  display: flex;
+  height: 100vh;
+  background-color: #FFFFFF;
+  overflow: hidden;
+  width: 100vw;
+}
+
+.play-sidebar-desktop {
+  display: block;
+}
+
+.play-mobile-menu-btn {
+  display: none;
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 1000;
+  background: #000000;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 16px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.play-mobile-overlay {
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #FFFFFF;
+  z-index: 999;
+  overflow-y: auto;
+  padding: 80px 20px 20px 20px;
+}
+
+.play-right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.play-content {
+  flex: 1;
+  overflow-y: auto;
+  padding: 80px 48px 60px 48px;
+  min-width: 0;
+  scroll-behavior: smooth;
+  background-color: #FFFFFF;
+}
+
+.play-container {
+  max-width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.play-header {
+  margin-bottom: 64px;
+  width: 48%;
+}
+
+.play-title {
+  font-family: var(--font-fraunces), serif;
+  font-size: 64px;
+  font-weight: 700;
+  line-height: 1.1;
+  color: #1C1917;
+  margin-bottom: 24px;
+  letter-spacing: -0.02em;
+}
+
+.play-subtitle {
+  font-size: 18px;
+  line-height: 1.7;
+  color: #57534E;
+}
+
+.play-project-row {
+  margin-bottom: 96px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  position: relative;
+  z-index: 2;
+}
+
+.play-project-text {
+  flex: 0 0 48%;
+  width: 48%;
+  order: 1;
+  margin-top: 0;
+}
+
+.play-project-title {
+  font-family: var(--font-fraunces), serif;
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 1.2;
+  color: #1C1917;
+  margin-bottom: 20px;
+  letter-spacing: -0.01em;
+}
+
+.play-project-desc {
+  font-size: 17px;
+  line-height: 1.7;
+  color: #57534E;
+}
+
+.play-project-image-col {
+  flex: 0 0 48%;
+  width: 48%;
+}
+
+.play-project-image-box {
+  width: 100%;
+  height: 420px;
+  background-color: #E5E7EB;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #9CA3AF;
+  font-size: 14px;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.play-project-image-box:hover {
+  transform: scale(1.02);
+}
+
+/* Tablet (includes mobile range; mobile media query below wins at <=768 via source order) */
+@media (max-width: 1024px) {
+  .play-sidebar-desktop {
+    display: none;
+  }
+
+  .play-mobile-menu-btn {
+    display: block;
+  }
+
+  .play-content {
+    padding: 60px 32px 50px 32px;
+  }
+
+  .play-project-title {
+    font-size: 32px;
+  }
+
+  .play-project-image-box {
+    height: 320px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .play-content {
+    padding: 40px 20px 40px 20px;
+  }
+
+  .play-header {
+    margin-bottom: 48px;
+    width: 100%;
+  }
+
+  .play-title {
+    font-size: 42px;
+    margin-bottom: 20px;
+  }
+
+  .play-subtitle {
+    font-size: 17px;
+  }
+
+  .play-project-row {
+    margin-bottom: 64px;
+    justify-content: flex-start;
+  }
+
+  .play-project-text {
+    flex: 0 0 auto;
+    width: 100%;
+    order: 2;
+    margin-top: 24px;
+  }
+
+  .play-project-title {
+    font-size: 28px;
+    margin-bottom: 16px;
+  }
+
+  .play-project-desc {
+    font-size: 16px;
+  }
+
+  .play-project-image-col {
+    flex: 0 0 auto;
+    width: 100%;
+    order: 1 !important;
+  }
+
+  .play-project-image-box {
+    height: 280px;
+  }
+
+  .play-project-image-box:hover {
+    transform: none;
+  }
+}
+
+/* Desktop: hide the mobile overlay if it's still mounted after a resize past tablet */
+@media (min-width: 1025px) {
+  .play-mobile-overlay {
+    display: none;
+  }
+}
+
+/* Wide desktop */
+@media (min-width: 2200px) {
+  .play-content {
+    padding: 80px 80px 80px 80px;
+  }
+
+  .play-container {
+    max-width: 1400px;
+  }
+
+  .play-header {
+    margin-bottom: 80px;
+  }
+
+  .play-title {
+    font-size: 72px;
+  }
+
+  .play-subtitle {
+    font-size: 20px;
+  }
+
+  .play-project-row {
+    margin-bottom: 120px;
+  }
+
+  .play-project-title {
+    font-size: 42px;
+  }
+
+  .play-project-image-box {
+    height: 500px;
+  }
 }
 
 .pixel-hover-bird {

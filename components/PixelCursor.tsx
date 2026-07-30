@@ -1,7 +1,7 @@
 'use client'
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 
-const DEFAULT_COLOR = '#2F7A3D'
+const DEFAULT_COLOR = '#1C1917'
 
 export default function PixelCursor() {
   const cursorRef = useRef<HTMLDivElement>(null)
@@ -9,11 +9,27 @@ export default function PixelCursor() {
   const birdsLayerRef = useRef<HTMLDivElement>(null)
   const mousePos = useRef({ x: -100, y: -100 })
   const birdSpawnIntervalRef = useRef<ReturnType<typeof setInterval> | null>(null)
+  const [enabled, setEnabled] = useState(false)
 
   useEffect(() => {
-    const isFinePointer = window.matchMedia('(pointer: fine)').matches
-    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
-    if (!isFinePointer || reducedMotion) return
+    const pointerQuery = window.matchMedia('(pointer: fine)')
+    const motionQuery = window.matchMedia('(prefers-reduced-motion: reduce)')
+
+    const updateEnabled = () => {
+      setEnabled(pointerQuery.matches && !motionQuery.matches)
+    }
+
+    updateEnabled()
+    pointerQuery.addEventListener('change', updateEnabled)
+    motionQuery.addEventListener('change', updateEnabled)
+    return () => {
+      pointerQuery.removeEventListener('change', updateEnabled)
+      motionQuery.removeEventListener('change', updateEnabled)
+    }
+  }, [])
+
+  useEffect(() => {
+    if (!enabled) return
 
     document.documentElement.classList.add('pixel-cursor-active')
 
@@ -101,7 +117,9 @@ export default function PixelCursor() {
       window.removeEventListener('mouseout', handleMouseOut)
       if (birdSpawnIntervalRef.current) clearInterval(birdSpawnIntervalRef.current)
     }
-  }, [])
+  }, [enabled])
+
+  if (!enabled) return null
 
   return (
     <>

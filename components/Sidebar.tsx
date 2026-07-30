@@ -63,15 +63,22 @@ export default function Sidebar({
   const router = useRouter()
   const [expandedProject, setExpandedProject] = useState<string | null>(activeProjectProp)
   const [isLargeDesktop, setIsLargeDesktop] = useState(false)
+  // Sidebar renders inside the mobile/tablet overlay (see page.tsx `isTablet &&` gate),
+  // so <=1024px here means touch context — bump tap targets to meet the 44px minimum.
+  const [isCompact, setIsCompact] = useState(false)
 
   useEffect(() => {
     const checkLargeDesktop = () => {
       setIsLargeDesktop(window.innerWidth >= 1600)
+      setIsCompact(window.innerWidth <= 1024)
     }
     checkLargeDesktop()
     window.addEventListener('resize', checkLargeDesktop)
     return () => window.removeEventListener('resize', checkLargeDesktop)
   }, [])
+
+  const navPaddingY = isCompact ? '12px' : '6px'
+  const navFontSize = isCompact ? '17px' : isLargeDesktop ? '18px' : '15px'
 
   return (
     <div
@@ -146,12 +153,12 @@ export default function Sidebar({
                   )
                 }}
                 style={{
-                  fontSize: isLargeDesktop ? '18px' : '15px',
+                  fontSize: navFontSize,
                   fontWeight: isActiveProject ? 600 : 400,
                   color: isActiveProject ? 'var(--accent)' : '#6B7280',
                   cursor: 'pointer',
-                  paddingTop: '6px',
-                  paddingBottom: '6px',
+                  paddingTop: navPaddingY,
+                  paddingBottom: navPaddingY,
                   paddingLeft: isActiveProject ? '10px' : '0px',
                   borderLeft: isActiveProject ? '2px solid var(--accent)' : '2px solid transparent',
                   transition: 'color 0.12s ease-out, font-weight 0.12s ease-out, padding-left 0.12s ease-out, border-color 0.12s ease-out',
@@ -172,8 +179,10 @@ export default function Sidebar({
                     const displayTitle = sections ? getShortTitle(item.title) : item.title
 
                     return (
-                      <div
+                      <button
                         key={item.id}
+                        type="button"
+                        aria-current={isActiveSection ? 'true' : undefined}
                         onClick={() => {
                           if (onSectionClick) {
                             onSectionClick(item.id)
@@ -182,16 +191,22 @@ export default function Sidebar({
                         onMouseEnter={(e) => { if (!isActiveSection) e.currentTarget.style.color = '#1C1917' }}
                         onMouseLeave={(e) => { if (!isActiveSection) e.currentTarget.style.color = '#6B7280' }}
                         style={{
-                          fontSize: isLargeDesktop ? '17px' : '14px',
+                          fontSize: isCompact ? '16px' : isLargeDesktop ? '17px' : '14px',
                           color: isActiveSection ? '#1C1917' : '#6B7280',
                           fontWeight: isActiveSection ? 500 : 400,
-                          paddingTop: '4px',
-                          paddingBottom: '4px',
                           display: 'flex',
                           alignItems: 'center',
                           gap: '8px',
                           cursor: onSectionClick ? 'pointer' : 'default',
                           transition: 'color 0.12s ease, font-weight 0.12s ease',
+                          background: 'none',
+                          border: 'none',
+                          padding: 0,
+                          paddingTop: isCompact ? '10px' : '4px',
+                          paddingBottom: isCompact ? '10px' : '4px',
+                          width: '100%',
+                          textAlign: 'left',
+                          fontFamily: 'inherit',
                         }}
                       >
                         <span style={{
@@ -201,7 +216,7 @@ export default function Sidebar({
                           —
                         </span>
                         {displayTitle}
-                      </div>
+                      </button>
                     )
                   })}
                 </div>
@@ -216,7 +231,7 @@ export default function Sidebar({
         <Link
           href="/about"
           style={{
-            fontSize: isLargeDesktop ? '18px' : '15px',
+            fontSize: navFontSize,
             fontWeight: 700,
             color: '#1C1917',
             marginBottom: '12px',
@@ -244,11 +259,11 @@ export default function Sidebar({
               onMouseEnter={(e) => e.currentTarget.style.color = 'var(--accent)'}
               onMouseLeave={(e) => e.currentTarget.style.color = '#6B7280'}
               style={{
-                fontSize: isLargeDesktop ? '18px' : '15px',
+                fontSize: navFontSize,
                 fontWeight: 400,
                 color: '#6B7280',
-                paddingTop: '4px',
-                paddingBottom: '4px',
+                paddingTop: navPaddingY,
+                paddingBottom: navPaddingY,
                 cursor: 'pointer',
                 textDecoration: 'none',
                 display: 'block',
@@ -263,11 +278,11 @@ export default function Sidebar({
               onMouseEnter={(e) => e.currentTarget.style.color = 'var(--accent)'}
               onMouseLeave={(e) => e.currentTarget.style.color = '#6B7280'}
               style={{
-                fontSize: isLargeDesktop ? '18px' : '15px',
+                fontSize: navFontSize,
                 fontWeight: 400,
                 color: '#6B7280',
-                paddingTop: '4px',
-                paddingBottom: '4px',
+                paddingTop: navPaddingY,
+                paddingBottom: navPaddingY,
                 cursor: 'pointer',
                 transition: 'color 0.12s ease',
               }}

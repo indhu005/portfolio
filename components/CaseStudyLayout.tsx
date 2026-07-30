@@ -203,7 +203,9 @@ export default function CaseStudyLayout({ caseStudy, slug }: CaseStudyLayoutProp
         <div style={{
           height: isMobile ? '60px' : '72px',
           borderBottom: '1px solid rgba(0,0,0,0.08)',
-          padding: isMobile ? '0 20px' : isTablet ? '0 32px' : '0 48px 0 48px',
+          paddingLeft: isMobile ? '20px' : isTablet ? '32px' : '48px',
+          paddingRight: isMobile ? '20px' : isTablet ? '32px' : '48px',
+          paddingTop: 0,
           paddingBottom: isMobile ? '16px' : '20px',
           flexShrink: 0,
           backgroundColor: '#FFFFFF',
@@ -220,18 +222,19 @@ export default function CaseStudyLayout({ caseStudy, slug }: CaseStudyLayoutProp
             width: '100%',
           }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: isMobile ? '8px' : '12px', flexWrap: 'wrap' }}>
-              <span style={{
+              <h1 style={{
                 fontFamily: 'inherit',
                 fontSize: isMobile ? '14px' : isTablet ? '14px' : '16px',
                 fontWeight: 700,
                 color: '#1C1917',
                 lineHeight: '1',
-              }}>{caseStudy.title}</span>
+                margin: 0,
+              }}>{caseStudy.title}</h1>
               {!isMobile && !isTablet && (
                 <span style={{
                   fontSize: '14px',
                   fontWeight: 400,
-                  color: '#9CA3AF',
+                  color: '#6B7280',
                   lineHeight: '1',
                 }}>— {caseStudy.subtitle}</span>
               )}
@@ -240,7 +243,7 @@ export default function CaseStudyLayout({ caseStudy, slug }: CaseStudyLayoutProp
               <span style={{
                 fontSize: '14px',
                 fontWeight: 400,
-                color: '#9CA3AF',
+                color: '#6B7280',
                 lineHeight: '1',
               }}>{caseStudy.description}</span>
             )}
@@ -330,14 +333,14 @@ export default function CaseStudyLayout({ caseStudy, slug }: CaseStudyLayoutProp
                     flexWrap: 'wrap',
                     gap: '16px',
                   }}>
-                    <h3 style={{
+                    <h2 style={{
                       fontSize: isMobile ? '16px' : '18px',
                       fontWeight: 700,
                       color: '#1C1917',
                       margin: 0,
                       letterSpacing: '0.02em',
                       textTransform: 'uppercase',
-                    }}>TL;DR</h3>
+                    }}>TL;DR</h2>
 
                     {/* Skip to Impact / See Prototype Button */}
                     <button
@@ -392,24 +395,25 @@ export default function CaseStudyLayout({ caseStudy, slug }: CaseStudyLayoutProp
               )}
 
               {/* Section Label */}
-              <div style={{
+              <h2 style={{
                 fontSize: '12px',
                 fontWeight: 700,
                 color: 'var(--accent)',
                 letterSpacing: '0.08em',
                 textTransform: 'uppercase',
                 marginBottom: '12px',
+                marginTop: 0,
                 fontFamily: 'inherit',
                 maxWidth: isMobile || isTablet ? '850px' : '1020px',
                 marginLeft: 'auto',
                 marginRight: 'auto',
               }}>
                 {section.title}
-              </div>
+              </h2>
 
               {/* Section Headline */}
               {section.headline && (
-                <h2 style={{
+                <h3 style={{
                   fontSize: isMobile ? '23px' : '28px',
                   fontWeight: 700,
                   color: 'var(--text-primary)',
@@ -421,7 +425,7 @@ export default function CaseStudyLayout({ caseStudy, slug }: CaseStudyLayoutProp
                   marginRight: 'auto',
                 }}>
                   {section.headline}
-                </h2>
+                </h3>
               )}
 
               {/* Section Text */}

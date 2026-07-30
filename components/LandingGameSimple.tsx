@@ -1195,7 +1195,7 @@ export default function LandingGameSimple() {
               })()}
             </div>
 
-            {/* View case studies link - green */}
+            {/* View case studies link */}
             <a
               href="#case-studies"
               onClick={(e) => {
@@ -1206,7 +1206,7 @@ export default function LandingGameSimple() {
                 display: 'block',
                 fontSize: '15px',
                 fontWeight: 500,
-                color: '#86C232',
+                color: '#E5E5E5',
                 textDecoration: 'none',
                 transition: 'color 0.2s',
                 cursor: 'pointer',
@@ -1216,7 +1216,7 @@ export default function LandingGameSimple() {
                 e.currentTarget.style.color = '#FFFFFF'
               }}
               onMouseLeave={(e) => {
-                e.currentTarget.style.color = '#86C232'
+                e.currentTarget.style.color = '#E5E5E5'
               }}
             >
               Curious how I create real products

@@ -26,7 +26,7 @@ const caseStudies = {
 
 <div style="width: 100%; min-height: 400px; background-color: #E5E7EB; border-radius: 8px; display: flex; align-items: center; justify-content: center; color: #9CA3AF; font-size: 14px; margin-top: 32px; margin-bottom: 32px;">Metrics table placeholder</div>
 
-<p style="margin-top: 28px;"><span style="font-weight: 600;">Impact</span></p>
+<h4 class="case-study-subhead">Impact</h4>
 
 <p style="margin-top: 16px;">• User growth: 0 → 20K+ MAUs in under 12 months<br/>
 • Engagement: +45% within 3 months<br/>
@@ -101,22 +101,22 @@ const caseStudies = {
         headline: 'Every feature solved friction that users had already shown us, not friction we imagined',
         content: `<div style="display: grid; grid-template-columns: 1fr; gap: 32px; margin-bottom: 48px;">
   <div>
-    <div style="font-weight: 600; font-size: 17px; color: #1C1917; margin-bottom: 8px;">Buy Again</div>
+    <div class="cs-card-title">Buy Again</div>
     <div style="font-size: 15px; color: #57534E; line-height: 1.6;">Collapsed three-step repurchase into one tap for returning users. The friction wasn't stopping decisions. It was re-litigating ones already made.</div>
   </div>
 
   <div>
-    <div style="font-weight: 600; font-size: 17px; color: #1C1917; margin-bottom: 8px;">Request a Product</div>
+    <div class="cs-card-title">Request a Product</div>
     <div style="font-size: 15px; color: #57534E; line-height: 1.6;">In live testing, I watched a user scroll four times looking for a product, give up, and ask me if it existed. We placed a Request card at that exact scroll depth. Requests became verified demand data for partnership pitches. Partner subscriptions: +44% YoY.</div>
   </div>
 
   <div>
-    <div style="font-weight: 600; font-size: 17px; color: #1C1917; margin-bottom: 8px;">Featured</div>
+    <div class="cs-card-title">Featured</div>
     <div style="font-size: 15px; color: #57534E; line-height: 1.6;">Mixed products we needed data on with products users requested. Research and reward in one slot. Every alternative (ads, surveys, prompts) reduced engagement. The top had one job, get users to a product fast.</div>
   </div>
 
   <div>
-    <div style="font-weight: 600; font-size: 17px; color: #1C1917; margin-bottom: 8px;">Referrals</div>
+    <div class="cs-card-title">Referrals</div>
     <div style="font-size: 15px; color: #57534E; line-height: 1.6;">Launched ahead of winter holidays to ride natural gifting behavior. Became one of our fastest-growing loops with zero paid spend.</div>
   </div>
 </div>
@@ -170,22 +170,22 @@ const caseStudies = {
         headline: 'Founding-designer roles expand to fill whatever you give them. I learned to define boundaries before the product demanded more than one person could sustainably give',
         content: `<div style="display: grid; grid-template-columns: 1fr; gap: 28px;">
   <div>
-    <div style="font-weight: 600; font-size: 17px; color: #1C1917; margin-bottom: 8px;">The GIF Decision</div>
+    <div class="cs-card-title">The GIF Decision</div>
     <div style="font-size: 15px; color: #57534E; line-height: 1.6;">I wanted animated characters for onboarding; engineering pushed back on performance. Resolution: I brought evidence on Lottie's lightweight format, we learned it together, objection dissolved. Neither original position won; a better one did.</div>
   </div>
 
   <div>
-    <div style="font-weight: 600; font-size: 17px; color: #1C1917; margin-bottom: 8px;">The Influencer Debate</div>
+    <div class="cs-card-title">The Influencer Debate</div>
     <div style="font-size: 15px; color: #57534E; line-height: 1.6;">Marketing wanted influencer streams, social mechanics. I reframed: Keye's users came to access tools, not to be entertained. Building for behavior we didn't have would distract from behavior we did. Founders agreed.</div>
   </div>
 
   <div>
-    <div style="font-weight: 600; font-size: 17px; color: #1C1917; margin-bottom: 8px;">The Mobile App Concession</div>
+    <div class="cs-card-title">The Mobile App Concession</div>
     <div style="font-size: 15px; color: #57534E; line-height: 1.6;">I believed in a native app. Founders and investors disagreed on cost grounds. I conceded and made the mobile web experience thorough enough that the concession cost users almost nothing.</div>
   </div>
 
   <div>
-    <div style="font-weight: 600; font-size: 17px; color: #1C1917; margin-bottom: 8px;">The Mid-Growth Rebrand</div>
+    <div class="cs-card-title">The Mid-Growth Rebrand</div>
     <div style="font-size: 15px; color: #57534E; line-height: 1.6;">Changing palette and typography while the funnel was working was a real risk. We shipped it live. It coincided with a 34% single-month growth spike, one of our strongest periods.</div>
   </div>
 </div>
@@ -229,7 +229,7 @@ const caseStudies = {
 
 <div style="width: 100%; min-height: 450px; background-color: #E5E7EB; border-radius: 8px; display: flex; align-items: center; justify-content: center; color: #9CA3AF; font-size: 14px; margin-top: 32px; margin-bottom: 32px;">Hero — role-based dashboard split: the same asset rendered for a technician (mobile, offline-first), a manager (priority queue), and an executive (filtered summary). One data model, three cognitive surfaces.</div>
 
-<p style="margin-top: 28px;"><span style="font-weight: 600;">Impact</span></p>
+<h4 class="case-study-subhead">Impact</h4>
 
 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 16px; margin-bottom: 32px;">
   <div>
@@ -258,22 +258,24 @@ const caseStudies = {
         id: 'context-problem',
         title: '02 — Context & Problem',
         headline: 'Fragmented data was forcing humans to do the work a system should have done',
-        content: `<div style="width: 100%; max-width: 1200px; margin: 0 auto 48px;">
-  <video autoplay loop muted playsinline preload="metadata" style="display: block; width: 100%; height: auto; border-radius: 8px;">
+        content: `<div class="cs-video-wrap" style="width: 100%; max-width: 1200px; margin: 0 auto 48px;">
+  <video autoplay loop muted playsinline preload="metadata" aria-label="Screen recording demonstrating a technician, manager, and leadership each working from fragmented, disconnected tools" style="display: block; width: 100%; height: auto; border-radius: 8px;">
     <source src="/videos/lat/Flow%2001.mp4" type="video/mp4">
     Your browser does not support the video tag.
   </video>
+  <button type="button" class="cs-video-toggle" aria-label="Pause video" onclick="var v=this.previousElementSibling;if(v.paused){v.play();this.textContent='⏸';this.setAttribute('aria-label','Pause video');}else{v.pause();this.textContent='▶';this.setAttribute('aria-label','Play video');}">⏸</button>
 </div>
 
 <p>Universities manage billions in infrastructure with fragmented tools. A technician underground can't access repair history. A project manager stitches together spreadsheets, vendor calls, and invoices before capital planning meetings. Leadership makes decisions on partial data.</p>
 
 <p style="margin-top: 28px;">Without a unified system, everyone operates in their own flow with no common path:</p>
 
-<div style="width: 100%; max-width: 1200px; margin: 0 auto 48px; margin-top: 32px;">
-  <video autoplay loop muted playsinline preload="metadata" style="display: block; width: 100%; height: auto; border-radius: 8px;">
+<div class="cs-video-wrap" style="width: 100%; max-width: 1200px; margin: 0 auto 48px; margin-top: 32px;">
+  <video autoplay loop muted playsinline preload="metadata" aria-label="Screen recording showing each role's separate, uncoordinated workflow path through the old tools" style="display: block; width: 100%; height: auto; border-radius: 8px;">
     <source src="/videos/lat/Flow%2003.mp4" type="video/mp4">
     Your browser does not support the video tag.
   </video>
+  <button type="button" class="cs-video-toggle" aria-label="Pause video" onclick="var v=this.previousElementSibling;if(v.paused){v.play();this.textContent='⏸';this.setAttribute('aria-label','Pause video');}else{v.pause();this.textContent='▶';this.setAttribute('aria-label','Play video');}">⏸</button>
 </div>
 
 <img loading="lazy" decoding="async" src="/images/lat/User%20Issues.webp" alt="User Issues" style="width: 100%; border-radius: 8px; margin-top: 32px; margin-bottom: 32px; display: block;" />
@@ -295,7 +297,7 @@ const caseStudies = {
 
 <div class="pull-quote" style="margin-top: 48px;">The institution wasn't lacking expertise. It was operating without a unified source of truth.</div>
 
-<p style="margin-top: 48px;"><span style="font-weight: 600;">Why existing tools failed</span></p>
+<h4 class="case-study-subhead">Why existing tools failed</h4>
 
 <p style="margin-top: 20px;">CMMS platforms handle tickets and leases but don't model asset lifespan or portfolio-level CapEx tradeoffs. Preventive maintenance ran on time-based schedules, not risk — producing over-maintenance and surprise failures. Field tools assumed stable connectivity; when digital reporting is slower than paper, adoption fails. And replacing the legacy stack wasn't viable — it was wired into procurement, accounting, and budgeting. They didn't need another silo; they needed a layer that worked with what existed.</p>
 
@@ -305,11 +307,12 @@ const caseStudies = {
         id: 'turning-point',
         title: '03 — The Turning Point',
         headline: 'Research revealed we were redesigning a system of coordination',
-        content: `<div style="width: 100%; max-width: 1200px; margin: 0 auto 48px;">
-  <video autoplay loop muted playsinline preload="metadata" style="display: block; width: 100%; height: auto; border-radius: 8px;">
+        content: `<div class="cs-video-wrap" style="width: 100%; max-width: 1200px; margin: 0 auto 48px;">
+  <video autoplay loop muted playsinline preload="metadata" aria-label="Screen recording of the role-based dashboard surfaces built over a shared data foundation" style="display: block; width: 100%; height: auto; border-radius: 8px;">
     <source src="/videos/lat/Flow%2002.mp4" type="video/mp4">
     Your browser does not support the video tag.
   </video>
+  <button type="button" class="cs-video-toggle" aria-label="Pause video" onclick="var v=this.previousElementSibling;if(v.paused){v.play();this.textContent='⏸';this.setAttribute('aria-label','Pause video');}else{v.pause();this.textContent='▶';this.setAttribute('aria-label','Play video');}">⏸</button>
 </div>
 
 <p>We thought we were customizing a product. Research showed we were redesigning <span style="font-weight: 600;">a system of coordination.</span></p>
@@ -326,17 +329,17 @@ const caseStudies = {
         headline: "The legacy ecosystem couldn't be disrupted, so LAT shipped as a modular layer alongside it",
         content: `<div style="display: grid; grid-template-columns: 1fr; gap: 28px; margin-bottom: 48px;">
   <div>
-    <div style="font-weight: 600; font-size: 17px; color: #1C1917; margin-bottom: 8px;">Legacy Ecosystem Couldn't Be Disrupted</div>
+    <div class="cs-card-title">Legacy Ecosystem Couldn't Be Disrupted</div>
     <div style="font-size: 15px; color: #57534E; line-height: 1.6;">LAT shipped as a modular API layer alongside existing CMMS/ERP stack. No forced migration, no workflow replacement. Incremental transparency without triggering organizational resistance.</div>
   </div>
 
   <div>
-    <div style="font-weight: 600; font-size: 17px; color: #1C1917; margin-bottom: 8px;">Data Integrity Had Hard Boundaries</div>
+    <div class="cs-card-title">Data Integrity Had Hard Boundaries</div>
     <div style="font-size: 15px; color: #57534E; line-height: 1.6;">University enforced strict governance. We inherited duplicated, inconsistent records. This constraint produced the defining incident of the project (see section 07). The response (validation states, multi-signal checks, confidence tiers) became the product's trust architecture.</div>
   </div>
 
   <div>
-    <div style="font-weight: 600; font-size: 17px; color: #1C1917; margin-bottom: 8px;">Capital Decisions Were Political</div>
+    <div class="cs-card-title">Capital Decisions Were Political</div>
     <div style="font-size: 15px; color: #57534E; line-height: 1.6;">Layered approvals, public accountability, donor influence. In that environment automation isn't neutral. It's political. We kept managers as approval gatekeepers, made AI show its reasoning (not just scores), and logged every override.</div>
   </div>
 </div>
@@ -350,17 +353,17 @@ const caseStudies = {
 
 <div style="display: grid; grid-template-columns: 1fr; gap: 28px; margin-bottom: 48px;">
   <div>
-    <div style="font-weight: 600; font-size: 17px; color: #1C1917; margin-bottom: 8px;">Roles Had Wildly Different Needs</div>
+    <div class="cs-card-title">Roles Had Wildly Different Needs</div>
     <div style="font-size: 15px; color: #57534E; line-height: 1.6;">Technicians wanted to finish on site and go home. Voice-to-text, big touch targets, no forms designed for a desk. Managers ran 15 jobs a day and needed delegation, not dashboards. Accountants managed 20 to 30 stakeholders and needed brief-with-drill-down. Executives needed two options, not a back-study. Role-based surfaces over one universal view.</div>
   </div>
 
   <div>
-    <div style="font-weight: 600; font-size: 17px; color: #1C1917; margin-bottom: 8px;">Field Reality: Connectivity & Devices</div>
+    <div class="cs-card-title">Field Reality: Connectivity & Devices</div>
     <div style="font-size: 15px; color: #57534E; line-height: 1.6;">Technicians worked underground and on swing stages with unstable connections. We shipped offline-first capture with queued auto-sync, and staged phone-first refinement to a later phase — a real tradeoff, since field users wanted it sooner, but organizational trust had to come first.</div>
   </div>
 
   <div>
-    <div style="font-weight: 600; font-size: 17px; color: #1C1917; margin-bottom: 8px;">Eight Months Forced Scope Discipline</div>
+    <div class="cs-card-title">Eight Months Forced Scope Discipline</div>
     <div style="font-size: 15px; color: #57534E; line-height: 1.6;">AI auto-scheduling, deep ESG modeling, digital twins, and a live multi-campus map were all tempting. The filter: one north star (reduce unexpected maintenance costs) plus two supporting drivers (planning accuracy and adoption velocity). If a feature didn't serve one of the three, it moved to the roadmap. The sequence: data unification → offline field workflows → lifecycle visibility → predictive modeling → scenario simulation. AI credibility depends on data quality.</div>
   </div>
 </div>
@@ -380,28 +383,28 @@ const caseStudies = {
 
 <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 32px; margin-top: 40px; margin-bottom: 48px;">
   <div>
-    <div style="font-weight: 600; font-size: 17px; color: #1C1917; margin-bottom: 8px;">Trust Precedes Automation</div>
+    <div class="cs-card-title">Trust Precedes Automation</div>
     <div style="font-size: 15px; color: #57534E; line-height: 1.6;">AI as decision support, not authority. Human approval gates, logged overrides, confidence-aware outputs.</div>
   </div>
 
   <div>
-    <div style="font-weight: 600; font-size: 17px; color: #1C1917; margin-bottom: 8px;">Adoption Before Expansion</div>
+    <div class="cs-card-title">Adoption Before Expansion</div>
     <div style="font-size: 15px; color: #57534E; line-height: 1.6;">Offline workflows and repair clarity first. AI auto-scheduling and ESG modules second.</div>
   </div>
 
   <div>
-    <div style="font-weight: 600; font-size: 17px; color: #1C1917; margin-bottom: 8px;">Data Integrity Before AI</div>
+    <div class="cs-card-title">Data Integrity Before AI</div>
     <div style="font-size: 15px; color: #57534E; line-height: 1.6;">Stabilized data foundation first, predictive sophistication second.</div>
   </div>
 
   <div>
-    <div style="font-weight: 600; font-size: 17px; color: #1C1917; margin-bottom: 8px;">Reduce Cognitive Load</div>
+    <div class="cs-card-title">Reduce Cognitive Load</div>
     <div style="font-size: 15px; color: #57534E; line-height: 1.6;">Role-tailored surfaces surfacing signals, not noise.</div>
   </div>
 </div>
 
 <div style="background-color: #F9FAFB; padding: 28px; border-radius: 12px; border-left: 3px solid #7EB3F5;">
-  <div style="font-weight: 600; font-size: 16px; color: #1C1917; margin-bottom: 12px;">Platform Thinking</div>
+  <div class="cs-card-title cs-card-title--md">Platform Thinking</div>
   <div style="font-size: 15px; color: #57534E; line-height: 1.7;">The predictive engine improves as override data accumulates. More campuses → more lifecycle data → smarter predictions → higher switching cost. LAT compounds intelligence through use.</div>
 </div>`
       },
@@ -422,7 +425,7 @@ const caseStudies = {
 </div>
 
 <div style="background-color: #FFF9F5; padding: 24px; border-radius: 12px; border-left: 3px solid #FF6B35; margin-bottom: 48px;">
-  <div style="font-weight: 600; font-size: 15px; color: #1C1917; margin-bottom: 12px;">The "Everything Dashboard" Failed</div>
+  <div class="cs-card-title cs-card-title--sm">The "Everything Dashboard" Failed</div>
   <p style="font-size: 15px; color: #57534E; line-height: 1.6; margin: 0;">Multiple graphs looked impressive; managers scanned without acting. We replaced it with a ranked priority queue — action first, analysis second.</p>
 </div>
 
@@ -447,7 +450,7 @@ const caseStudies = {
 </div>
 
 <div style="background-color: #FFF9F5; padding: 24px; border-radius: 12px; border-left: 3px solid #FF6B35; margin-bottom: 32px;">
-  <div style="font-weight: 600; font-size: 15px; color: #1C1917; margin-bottom: 12px;">The Boiler Incident — When AI Was Wrong</div>
+  <div class="cs-card-title cs-card-title--sm">The Boiler Incident — When AI Was Wrong</div>
   <p style="font-size: 15px; color: #57534E; line-height: 1.6; margin: 0;">Month 2: Engine flagged a $180K boiler replacement as Critical. Inspection showed duplicated repair entries inflated the risk. Three guardrails contained it: manager review gate, visible drivers (manager spotted duplicates), no auto-procurement. We added "Needs Verification" state and multi-signal validation. Adoption held at 95%.</p>
 </div>
 
@@ -479,22 +482,22 @@ const caseStudies = {
         headline: 'We chose human-in-the-loop over speed, accepting slower decisions to build trust',
         content: `<div style="display: grid; grid-template-columns: 1fr; gap: 32px; margin-bottom: 48px;">
   <div>
-    <div style="font-weight: 600; font-size: 17px; color: #1C1917; margin-bottom: 8px;">Automation vs. Trust</div>
+    <div class="cs-card-title">Automation vs. Trust</div>
     <div style="font-size: 15px; color: #57534E; line-height: 1.6;">The engine could have auto-escalated failures and auto-scheduled maintenance. We chose human-in-the-loop. Result: 95% adoption, override frequency falling over time. Pushing automation early would have collapsed adoption after the first visible mistake.</div>
   </div>
 
   <div>
-    <div style="font-weight: 600; font-size: 17px; color: #1C1917; margin-bottom: 8px;">Signal Richness vs. Decision Speed</div>
+    <div class="cs-card-title">Signal Richness vs. Decision Speed</div>
     <div style="font-size: 15px; color: #57534E; line-height: 1.6;">Engineering wanted 10+ predictive inputs visible per asset. Testing showed the opposite: users focused on risk, time-to-impact, and cost. Everything else created hesitation. We showed the top drivers and moved depth to drill-down.</div>
   </div>
 
   <div>
-    <div style="font-weight: 600; font-size: 17px; color: #1C1917; margin-bottom: 8px;">Transparency vs. Organizational Comfort</div>
+    <div class="cs-card-title">Transparency vs. Organizational Comfort</div>
     <div style="font-size: 15px; color: #57534E; line-height: 1.6;">Some stakeholders wanted curated weekly summaries. Real-time visibility exposed inefficiencies and shifted narrative control. I pushed for role-based dashboards with threshold-based notifications. Meetings became strategic, not status-driven.</div>
   </div>
 
   <div>
-    <div style="font-weight: 600; font-size: 17px; color: #1C1917; margin-bottom: 8px;">AI Expansion vs. Data Integrity</div>
+    <div class="cs-card-title">AI Expansion vs. Data Integrity</div>
     <div style="font-size: 15px; color: #57534E; line-height: 1.6;">After early results, there was momentum to widen predictive coverage fast. We slowed it — validation states, inventory checks, override logging first. Data accuracy: 70% → 95%.</div>
   </div>
 </div>
@@ -576,19 +579,19 @@ const caseStudies = {
 <div class="snapshot-bottom-content">
 <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin-top: 40px; margin-bottom: 40px;">
   <div style="background-color: #F3F4F6; border-radius: 12px; padding: 20px 24px;">
-    <div style="font-weight: 600; font-size: 15px; color: #1C1917; margin-bottom: 6px;">Search & Image Search</div>
+    <div class="cs-card-title cs-card-title--sm-tight">Search & Image Search</div>
     <div style="font-size: 14px; color: #57534E; line-height: 1.5;">Verify links, headlines, and images with layered credibility ratings</div>
   </div>
   <div style="background-color: #F3F4F6; border-radius: 12px; padding: 20px 24px;">
-    <div style="font-weight: 600; font-size: 15px; color: #1C1917; margin-bottom: 6px;">Scan</div>
+    <div class="cs-card-title cs-card-title--sm-tight">Scan</div>
     <div style="font-size: 14px; color: #57534E; line-height: 1.5;">Camera-based verification for printed content — flyers, newspapers, ads</div>
   </div>
   <div style="background-color: #F3F4F6; border-radius: 12px; padding: 20px 24px;">
-    <div style="font-weight: 600; font-size: 15px; color: #1C1917; margin-bottom: 6px;">Literacy Quiz</div>
+    <div class="cs-card-title cs-card-title--sm-tight">Literacy Quiz</div>
     <div style="font-size: 14px; color: #57534E; line-height: 1.5;">A level-based game teaching users to spot manipulated content</div>
   </div>
   <div style="background-color: #F3F4F6; border-radius: 12px; padding: 20px 24px;">
-    <div style="font-weight: 600; font-size: 15px; color: #1C1917; margin-bottom: 6px;">Ask Us</div>
+    <div class="cs-card-title cs-card-title--sm-tight">Ask Us</div>
     <div style="font-size: 14px; color: #57534E; line-height: 1.5;">Human-backed fact-checking for gray-area content algorithms miss</div>
   </div>
 </div>
@@ -627,36 +630,37 @@ const caseStudies = {
 <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 40px; margin-top: 60px; margin-bottom: 60px;">
   <div>
     <img loading="lazy" decoding="async" src="/images/misinformation-center/Problem 01.webp" alt="Survey Results" style="width: 100%; height: auto; border-radius: 8px; margin-bottom: 24px; display: block;" />
-    <div style="font-weight: 600; font-size: 14px; color: #1C1917; margin-bottom: 12px;">Survey Results (n=2,000)</div>
+    <div class="cs-card-title cs-card-title--xs">Survey Results (n=2,000)</div>
     <div style="font-size: 13px; color: #57534E; line-height: 1.6;">74% encountered misinformation weekly. 62% of parents felt overwhelmed. <20% trusted existing fact-checkers. Users wanted peace of mind, not just truth.</div>
   </div>
 
   <div>
     <img loading="lazy" decoding="async" src="/images/misinformation-center/Problem 02.webp" alt="The Generational Sandwich" style="width: 100%; height: auto; border-radius: 8px; margin-bottom: 24px; display: block;" />
-    <div style="font-weight: 600; font-size: 14px; color: #1C1917; margin-bottom: 12px;">The Generational Sandwich</div>
+    <div class="cs-card-title cs-card-title--xs">The Generational Sandwich</div>
     <div style="font-size: 13px; color: #57534E; line-height: 1.6;">Mothers filtering misinformation for kids while protecting elderly parents from scams. Managing media literacy for two generations at once shaped the archetype strategy.</div>
   </div>
 
   <div>
     <img loading="lazy" decoding="async" src="/images/misinformation-center/Problem 03.webp" alt="The Transparency Demand" style="width: 100%; height: auto; border-radius: 8px; margin-bottom: 24px; display: block;" />
-    <div style="font-weight: 600; font-size: 14px; color: #1C1917; margin-bottom: 12px;">The Transparency Demand</div>
+    <div class="cs-card-title cs-card-title--xs">The Transparency Demand</div>
     <div style="font-size: 13px; color: #57534E; line-height: 1.6;">Users wanted to see the incentive structure behind content, not just fact-check labels. Understanding who benefits mattered as much as knowing what's true.</div>
   </div>
 
   <div>
     <img loading="lazy" decoding="async" src="/images/misinformation-center/Problem 04.webp" alt="The Platform Trust Problem" style="width: 100%; height: auto; border-radius: 8px; margin-bottom: 24px; display: block;" />
-    <div style="font-weight: 600; font-size: 14px; color: #1C1917; margin-bottom: 12px;">The Platform Trust Problem</div>
+    <div class="cs-card-title cs-card-title--xs">The Platform Trust Problem</div>
     <div style="font-size: 13px; color: #57534E; line-height: 1.6;">Testing rejected a Facebook-integrated solution immediately. Users wouldn't trust the platform spreading misinformation to also solve it. The tool had to be independent.</div>
   </div>
 </div>
 
 <div class="pull-quote" style="margin-top: 100px;">The platform that spread the problem was structurally incapable of being trusted as its solution.</div>
 
-<div style="width: 100%; max-width: 1200px; margin: 60px auto 0;">
-  <video autoplay loop muted playsinline preload="metadata" style="display: block; width: 100%; height: auto; border-radius: 8px;">
+<div class="cs-video-wrap" style="width: 100%; max-width: 1200px; margin: 60px auto 0;">
+  <video autoplay loop muted playsinline preload="metadata" aria-label="Screen recording of the verification tool embedded in trusted surfaces like the share sheet and lock screen widget" style="display: block; width: 100%; height: auto; border-radius: 8px;">
     <source src="/videos/misinformationcenter/flow%2002.mp4" type="video/mp4">
     Your browser does not support the video tag.
   </video>
+  <button type="button" class="cs-video-toggle" aria-label="Pause video" onclick="var v=this.previousElementSibling;if(v.paused){v.play();this.textContent='⏸';this.setAttribute('aria-label','Pause video');}else{v.pause();this.textContent='▶';this.setAttribute('aria-label','Play video');}">⏸</button>
 </div>`
       },
       {
@@ -674,12 +678,12 @@ const caseStudies = {
 
 <div style="display: grid; grid-template-columns: 1fr; gap: 24px; margin-top: 32px; margin-bottom: 48px;">
   <div>
-    <div style="font-weight: 600; font-size: 17px; color: #1C1917; margin-bottom: 8px;">Monetized Platforms — Credible but Compromised</div>
+    <div class="cs-card-title">Monetized Platforms — Credible but Compromised</div>
     <div style="font-size: 15px; color: #57534E; line-height: 1.6;">Snopes had trust and rigor, but ran ads. Facebook labels and Twitter Community Notes had scale but were perceived as biased. The entity profiting from misinformation's spread can't be trusted to flag it.</div>
   </div>
 
   <div>
-    <div style="font-weight: 600; font-size: 17px; color: #1C1917; margin-bottom: 8px;">Nonprofit Resources — Trustworthy but Invisible</div>
+    <div class="cs-card-title">Nonprofit Resources — Trustworthy but Invisible</div>
     <div style="font-size: 15px; color: #57534E; line-height: 1.6;">Literacy initiatives had integrity but no engagement. Text-heavy resources in a short-form-video era. Browser extensions were desktop-bound and friction-heavy.</div>
   </div>
 </div>
@@ -704,11 +708,12 @@ const caseStudies = {
         id: 'research',
         title: '05 — User Research',
         headline: 'Misinformation moves through trust networks — families, WhatsApp groups, neighborhood pages — in a specific generational pattern',
-        content: `<div style="width: 100%; max-width: 1200px; margin: 0 auto 48px;">
-  <video autoplay loop muted playsinline preload="metadata" style="display: block; width: 100%; height: auto; border-radius: 8px;">
+        content: `<div class="cs-video-wrap" style="width: 100%; max-width: 1200px; margin: 0 auto 48px;">
+  <video autoplay loop muted playsinline preload="metadata" aria-label="Screen recording of the color-coded rating system and unified search/image-search entry point" style="display: block; width: 100%; height: auto; border-radius: 8px;">
     <source src="/videos/misinformationcenter/Flow%2001%20Misinformation.mp4" type="video/mp4">
     Your browser does not support the video tag.
   </video>
+  <button type="button" class="cs-video-toggle" aria-label="Pause video" onclick="var v=this.previousElementSibling;if(v.paused){v.play();this.textContent='⏸';this.setAttribute('aria-label','Pause video');}else{v.pause();this.textContent='▶';this.setAttribute('aria-label','Play video');}">⏸</button>
 </div>
 
 <div style="display: flex; flex-wrap: wrap; gap: 40px; padding: 20px 0; border-top: 1px solid #E5E7EB; border-bottom: 1px solid #E5E7EB;">
@@ -773,10 +778,13 @@ const caseStudies = {
 </div>
 
 <div style="background-color: #000000; border-radius: 8px; padding: 40px 24px; margin-top: 40px; display: flex; justify-content: center;">
-  <video autoplay loop muted playsinline preload="metadata" style="width: 100%; max-width: 300px; aspect-ratio: 580 / 1040; border-radius: 8px; display: block; object-fit: cover;">
-    <source src="/videos/misinformationcenter/Testing%20Image%20upload.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-  </video>
+  <div class="cs-video-wrap" style="width: 100%; max-width: 300px;">
+    <video autoplay loop muted playsinline preload="metadata" aria-label="Screen recording of a user uploading an image for camera-based verification" style="width: 100%; aspect-ratio: 580 / 1040; border-radius: 8px; display: block; object-fit: cover;">
+      <source src="/videos/misinformationcenter/Testing%20Image%20upload.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    <button type="button" class="cs-video-toggle" aria-label="Pause video" onclick="var v=this.previousElementSibling;if(v.paused){v.play();this.textContent='⏸';this.setAttribute('aria-label','Pause video');}else{v.pause();this.textContent='▶';this.setAttribute('aria-label','Play video');}">⏸</button>
+  </div>
 </div>`
       },
       {
