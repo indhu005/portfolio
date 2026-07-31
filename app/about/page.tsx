@@ -220,7 +220,7 @@ export default function About() {
               color: '#1C1917',
             }}>
               <p style={{ marginBottom: '36px' }}>
-                I'm a product designer who came to design from architecture. A couple of summers interning in New York, then a long stretch of school, learning to care about how a space <em>feels</em> before I cared about how it looks. Then I showed up to my first UX job and got asked to move a button 4 pixels to the left. I adapted, and kept adapting for years after.
+                I'm a product designer who thinks in systems — less interested in what a screen looks like than in why it exists, how the pieces underneath it hold together, and whether people can actually trust it. That's taken me from a three-screen prototype to a founding-designer role, and from a university research project to an ML platform that earned 95% adoption inside a skeptical institution.
               </p>
 
               <p style={{
@@ -230,7 +230,11 @@ export default function About() {
                 lineHeight: '1.7',
                 marginBottom: '36px',
               }}>
-                I still can't look at a product without asking <em>why</em> it exists before I let myself get excited about what it should be. It's a compulsion.
+                I still can't look at a product without asking <em>why</em> it exists — and lately, <em>why now</em> — before I let myself get excited about what it should be. It's a compulsion.
+              </p>
+
+              <p style={{ marginBottom: '36px' }}>
+                Most recently that's pulled me toward a harder question: what guardrails and accessibility should look like as AI decides more of what people see, trust, and act on. Building an enterprise ML platform that had to earn trust inside a cautious institution, and a media-literacy tool built on the idea that people should be equipped to judge for themselves, taught me the same lesson twice — the interface is rarely the hard part. Deciding who the system should defer to is.
               </p>
 
               <p style={{ marginBottom: '36px' }}>
@@ -238,7 +242,7 @@ export default function About() {
               </p>
 
               <p style={{ marginBottom: '36px' }}>
-                I take a lot of photos of stuff most people just walk past. Fog swallowing a road through sequoias. A library that looks like it's about to unfold itself onto the sidewalk. Not sure if that's the architecture background talking or just how my eyes default to working, but either way, I can't turn it off.
+                I take a lot of photos of stuff most people just walk past. Fog swallowing a road through sequoias. A library that looks like it's about to unfold itself onto the sidewalk. I'm not sure why my eyes default to working that way, but I can't turn it off.
               </p>
 
               <p style={{ marginBottom: '36px' }}>

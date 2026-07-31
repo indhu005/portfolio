@@ -157,11 +157,11 @@ export default function Home() {
               color: '#1C1917',
             }}>
               <p style={{ marginBottom: isWideDesktop ? '32px' : '28px', ...revealStyle(120) }}>
-                I'm a product designer based in Seattle, exploring the space between architecture and digital products. Currently working on projects that feel more like spaces you want to stay in than apps you have to use.
+                I'm a product designer who builds trust into systems — from a founding role that took a marketplace from three screens to funded, to an enterprise ML platform that earned 95% adoption inside a politically sensitive institution.
               </p>
 
               <p style={{ marginBottom: isWideDesktop ? '32px' : '28px', ...revealStyle(220) }}>
-                My work lives somewhere between structure and storytelling — building systems that scale while keeping the details that make things feel human.
+                I think in the how and the why, and lately the why now — most recently, what accessibility and safety guardrails should look like as AI decides more of what people see and trust.
               </p>
             </div>
           </main>
@@ -426,6 +426,88 @@ export default function Home() {
                   </div>
                 </div>
               </article>
+            </div>
+          </section>
+
+          {/* Experience */}
+          <section style={{
+            marginTop: isMobile ? '80px' : isWideDesktop ? '140px' : '120px',
+          }}>
+            <div style={{
+              display: 'flex',
+              alignItems: 'center',
+              gap: '12px',
+              marginBottom: isMobile ? '28px' : '40px',
+            }}>
+              <span style={{
+                width: '10px',
+                height: '10px',
+                borderRadius: '50%',
+                backgroundColor: 'var(--accent)',
+                flexShrink: 0,
+              }} />
+              <h2 style={{
+                fontFamily: 'var(--font-fraunces), serif',
+                fontSize: isMobile ? '22px' : isWideDesktop ? '39px' : '34px',
+                fontWeight: 700,
+                color: '#1C1917',
+                letterSpacing: '-0.01em',
+                margin: 0,
+              }}>
+                Experience
+              </h2>
+            </div>
+
+            <div style={{ display: 'flex', flexDirection: 'column' }}>
+              {[
+                { title: 'Independent Product Designer', company: 'Freelance', years: '2024 – Present' },
+                { title: 'Senior Product Designer', company: 'Amento', years: '2023 – 2024' },
+                { title: 'Graduate Capstone Designer', company: 'University of Washington', years: '2024' },
+                { title: 'Product Designer II', company: 'Handel Architects', years: '2022 – 2023' },
+                { title: 'Founding Product Designer', company: 'Keye', years: '2021 – 2022' },
+                { title: 'Senior Product Designer', company: 'Flock.ai', years: '2021 – 2022' },
+                { title: 'Product Designer (Volunteer)', company: 'Distribute Aid', years: '2020' },
+                { title: 'User Experience Designer', company: 'Gensler', years: '2018 – 2020' },
+              ].map((role, i) => (
+                <div
+                  key={i}
+                  style={{
+                    display: 'flex',
+                    justifyContent: 'space-between',
+                    alignItems: 'baseline',
+                    gap: '24px',
+                    padding: isMobile ? '18px 0' : '22px 0',
+                    borderBottom: '1px solid rgba(0,0,0,0.08)',
+                    flexWrap: isMobile ? 'wrap' : 'nowrap',
+                  }}
+                >
+                  <div style={{ display: 'flex', flexWrap: 'wrap', columnGap: '10px', rowGap: '2px' }}>
+                    <span style={{
+                      fontSize: isMobile ? '16px' : isWideDesktop ? '19px' : '17px',
+                      fontWeight: 600,
+                      color: '#1C1917',
+                    }}>
+                      {role.title}
+                    </span>
+                    <span style={{
+                      fontSize: isMobile ? '16px' : isWideDesktop ? '19px' : '17px',
+                      fontWeight: 400,
+                      color: '#6B7280',
+                    }}>
+                      — {role.company}
+                    </span>
+                  </div>
+                  <span style={{
+                    fontSize: isMobile ? '13px' : '14px',
+                    fontWeight: 500,
+                    color: '#9CA3AF',
+                    flexShrink: 0,
+                    whiteSpace: 'nowrap',
+                  }}>
+                    {role.years}
+                  </span>
+                </div>
+              ))}
             </div>
           </section>
           </div>
