@@ -462,7 +462,7 @@ export default function Home() {
               {[
                 { title: 'Independent Product Designer', company: 'Freelance', years: '2024 – Present' },
                 { title: 'Senior Product Designer', company: 'Amento', years: '2023 – 2024' },
-                { title: 'Graduate Capstone Designer', company: 'University of Washington', years: '2024' },
+                { title: 'Graduate Capstone Designer', company: 'University of Washington', years: '2024 – 2025' },
                 { title: 'Product Designer II', company: 'Handel Architects', years: '2022 – 2023' },
                 { title: 'Founding Product Designer', company: 'Keye', years: '2021 – 2022' },
                 { title: 'Senior Product Designer', company: 'Flock.ai', years: '2021 – 2022' },
