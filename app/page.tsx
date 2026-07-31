@@ -460,7 +460,7 @@ export default function Home() {
 
             <div style={{ display: 'flex', flexDirection: 'column' }}>
               {[
-                { title: 'Independent Product Designer', company: 'Freelance', years: '2024 – Present' },
+                { title: 'Independent Product Designer', company: 'Freelance', years: '2025 – Present' },
                 { title: 'Senior Product Designer', company: 'Amento', years: '2023 – 2024' },
                 { title: 'Graduate Capstone Designer', company: 'University of Washington', years: '2024 – 2025' },
                 { title: 'Product Designer II', company: 'Handel Architects', years: '2022 – 2023' },
