@@ -8,6 +8,8 @@ export default function PixelCursor() {
   const cursorInnerRef = useRef<HTMLDivElement>(null)
   const birdsLayerRef = useRef<HTMLDivElement>(null)
   const mousePos = useRef({ x: -100, y: -100 })
+  const renderPos = useRef({ x: -100, y: -100 })
+  const rafRef = useRef<number | null>(null)
   const birdSpawnIntervalRef = useRef<ReturnType<typeof setInterval> | null>(null)
   const [enabled, setEnabled] = useState(false)
 
@@ -35,10 +37,19 @@ export default function PixelCursor() {
 
     const handleMouseMove = (e: MouseEvent) => {
       mousePos.current = { x: e.clientX, y: e.clientY }
-      if (cursorRef.current) {
-        cursorRef.current.style.transform = `translate(${e.clientX - 10}px, ${e.clientY - 10}px)`
-      }
     }
+
+    // Ease the rendered position toward the real cursor each frame instead of
+    // snapping to it — a touch of lag/spring reads as alive, not a dead dot.
+    const tick = () => {
+      renderPos.current.x += (mousePos.current.x - renderPos.current.x) * 0.35
+      renderPos.current.y += (mousePos.current.y - renderPos.current.y) * 0.35
+      if (cursorRef.current) {
+        cursorRef.current.style.transform = `translate(${renderPos.current.x - 10}px, ${renderPos.current.y - 10}px)`
+      }
+      rafRef.current = requestAnimationFrame(tick)
+    }
+    rafRef.current = requestAnimationFrame(tick)
 
     const birdVariants = ['Birds.svg', 'birds 02.svg', 'birds 03.svg']
 
@@ -79,6 +90,7 @@ export default function PixelCursor() {
 
       const color = cardTarget.getAttribute('data-cursor-color') || DEFAULT_COLOR
       if (cursorInnerRef.current) {
+        cursorInnerRef.current.classList.add('is-hover')
         cursorInnerRef.current.style.backgroundColor = color
         cursorInnerRef.current.style.transform = 'scale(1.6)'
       }
@@ -96,8 +108,9 @@ export default function PixelCursor() {
       if (related && related.closest('[data-bird-target]')) return
 
       if (cursorInnerRef.current) {
+        cursorInnerRef.current.classList.remove('is-hover')
         cursorInnerRef.current.style.backgroundColor = DEFAULT_COLOR
-        cursorInnerRef.current.style.transform = 'scale(1)'
+        cursorInnerRef.current.style.transform = ''
       }
 
       if (birdSpawnIntervalRef.current) {
@@ -116,6 +129,7 @@ export default function PixelCursor() {
       window.removeEventListener('mouseover', handleMouseOver)
       window.removeEventListener('mouseout', handleMouseOut)
       if (birdSpawnIntervalRef.current) clearInterval(birdSpawnIntervalRef.current)
+      if (rafRef.current) cancelAnimationFrame(rafRef.current)
     }
   }, [enabled])
 

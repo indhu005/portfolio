@@ -199,57 +199,6 @@ export default function CaseStudyLayout({ caseStudy, slug }: CaseStudyLayoutProp
         flexDirection: 'column',
         height: '100vh',
       }}>
-        {/* TOPBAR - Same as home page for "channel switching" feel */}
-        <div style={{
-          height: isMobile ? '60px' : '72px',
-          borderBottom: '1px solid rgba(0,0,0,0.08)',
-          paddingLeft: isMobile ? '20px' : isTablet ? '32px' : '48px',
-          paddingRight: isMobile ? '20px' : isTablet ? '32px' : '48px',
-          paddingTop: 0,
-          paddingBottom: isMobile ? '16px' : '20px',
-          flexShrink: 0,
-          backgroundColor: '#FFFFFF',
-          display: 'flex',
-          alignItems: 'flex-end',
-        }}>
-          <div style={{
-            display: 'flex',
-            alignItems: 'baseline',
-            justifyContent: (isMobile || isTablet) ? 'center' : 'space-between',
-            maxWidth: isMobile || isTablet ? '850px' : '1020px',
-            marginLeft: 'auto',
-            marginRight: 'auto',
-            width: '100%',
-          }}>
-            <div style={{ display: 'flex', alignItems: 'center', gap: isMobile ? '8px' : '12px', flexWrap: 'wrap' }}>
-              <h1 style={{
-                fontFamily: 'inherit',
-                fontSize: isMobile ? '14px' : isTablet ? '14px' : '16px',
-                fontWeight: 700,
-                color: '#1C1917',
-                lineHeight: '1',
-                margin: 0,
-              }}>{caseStudy.title}</h1>
-              {!isMobile && !isTablet && (
-                <span style={{
-                  fontSize: '14px',
-                  fontWeight: 400,
-                  color: '#6B7280',
-                  lineHeight: '1',
-                }}>— {caseStudy.subtitle}</span>
-              )}
-            </div>
-            {!isMobile && !isTablet && (
-              <span style={{
-                fontSize: '14px',
-                fontWeight: 400,
-                color: '#6B7280',
-                lineHeight: '1',
-              }}>{caseStudy.description}</span>
-            )}
-          </div>
-        </div>
-
         {/* CONTENT AREA - The "TV" that scrolls */}
         <div
           ref={contentRef}
@@ -257,12 +206,43 @@ export default function CaseStudyLayout({ caseStudy, slug }: CaseStudyLayoutProp
           style={{
             flex: 1,
             overflowY: 'auto',
-            padding: isMobile ? '24px 20px 40px 20px' : isTablet ? '32px 32px 50px 32px' : '40px 48px 60px 48px',
+            padding: isMobile ? '88px 20px 40px 20px' : isTablet ? '96px 32px 50px 32px' : '56px 48px 60px 48px',
             minWidth: 0,
             scrollBehavior: 'smooth',
             backgroundColor: '#FFFFFF',
           }}
         >
+          {/* Case study header — replaces the old thin topbar */}
+          <div style={{
+            maxWidth: isMobile || isTablet ? '850px' : '1020px',
+            marginLeft: 'auto',
+            marginRight: 'auto',
+            marginBottom: isMobile ? '40px' : isTablet ? '56px' : '64px',
+          }}>
+            <h1 style={{
+              fontFamily: 'inherit',
+              fontSize: '13px',
+              fontWeight: 700,
+              color: 'var(--accent)',
+              letterSpacing: '0.08em',
+              textTransform: 'uppercase',
+              margin: 0,
+              marginBottom: isMobile ? '14px' : '18px',
+            }}>{caseStudy.title}</h1>
+            <p style={{
+              fontFamily: 'var(--font-fraunces), serif',
+              fontSize: isMobile ? '28px' : isTablet ? '36px' : '46px',
+              fontWeight: 600,
+              color: '#1C1917',
+              lineHeight: '1.2',
+              letterSpacing: '-0.02em',
+              margin: 0,
+            }}>
+              {caseStudy.subtitle}
+              {caseStudy.description ? ` — ${caseStudy.description}` : ''}
+            </p>
+          </div>
+
           {caseStudy.sections.map((section, index) => (
             <div
               key={section.id}
@@ -551,6 +531,45 @@ export default function CaseStudyLayout({ caseStudy, slug }: CaseStudyLayoutProp
               </div>
             )
           })()}
+
+          {/* Bottom bar — quick contact links */}
+          <div style={{
+            maxWidth: isMobile || isTablet ? '850px' : '1020px',
+            marginLeft: 'auto',
+            marginRight: 'auto',
+            marginTop: '64px',
+            paddingTop: '28px',
+            borderTop: '1px solid rgba(0,0,0,0.08)',
+            display: 'flex',
+            gap: isMobile ? '20px' : '32px',
+            flexWrap: 'wrap',
+            alignItems: 'center',
+          }}>
+            {[
+              { label: 'Email', href: 'mailto:indhuve05@gmail.com' },
+              { label: 'LinkedIn ↗', href: 'https://www.linkedin.com/in/indhu05/' },
+              { label: 'Resume ↗', href: '/resume.pdf' },
+            ].map((item) => (
+              <a
+                key={item.label}
+                href={item.href}
+                target={item.href.startsWith('mailto:') ? undefined : '_blank'}
+                rel={item.href.startsWith('mailto:') ? undefined : 'noopener noreferrer'}
+                style={{
+                  fontSize: isMobile ? '15px' : '16px',
+                  fontWeight: 500,
+                  color: '#1C1917',
+                  textDecoration: 'none',
+                  borderBottom: '1px solid transparent',
+                  transition: 'border-color 0.2s',
+                }}
+                onMouseEnter={(e) => { e.currentTarget.style.borderBottomColor = 'var(--accent)' }}
+                onMouseLeave={(e) => { e.currentTarget.style.borderBottomColor = 'transparent' }}
+              >
+                {item.label}
+              </a>
+            ))}
+          </div>
         </div>
       </div>
     </div>

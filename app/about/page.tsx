@@ -157,12 +157,12 @@ export default function About() {
           borderBottom: '1px solid rgba(0,0,0,0.08)',
           display: 'flex',
           alignItems: 'baseline',
-          padding: isMobile ? '0 20px' : isTablet ? '0 32px 0 20px' : '0 48px 0 48px',
+          padding: isMobile ? '0 20px' : isTablet ? '0 32px' : '0 48px 0 48px',
           paddingTop: isMobile ? '20px' : '24px',
           flexShrink: 0,
         }}>
           <div style={{
-            maxWidth: '920px',
+            maxWidth: isMobile || isTablet ? '850px' : '1020px',
             marginLeft: 'auto',
             marginRight: 'auto',
             width: '100%',
@@ -181,14 +181,14 @@ export default function About() {
           style={{
             flex: 1,
             overflowY: 'auto',
-            padding: isMobile ? '24px 20px 40px 20px' : isTablet ? '32px 32px 50px 20px' : '40px 48px 60px 48px',
+            padding: isMobile ? '24px 20px 40px 20px' : isTablet ? '32px 32px 50px 32px' : '40px 48px 60px 48px',
             minWidth: 0,
           }}
         >
           {/* Blue placeholder - same as home page */}
           <div style={{
             width: '100%',
-            maxWidth: '920px',
+            maxWidth: isMobile || isTablet ? '850px' : '1020px',
             height: '580px',
             backgroundColor: '#7EB3F5',
             borderRadius: '4px',
@@ -198,7 +198,7 @@ export default function About() {
           }} />
 
           <div style={{
-            maxWidth: '920px',
+            maxWidth: isMobile || isTablet ? '850px' : '1020px',
             marginLeft: 'auto',
             marginRight: 'auto',
           }}>
@@ -294,7 +294,7 @@ export default function About() {
           {/* PHOTO GRID */}
           <div style={{
             marginTop: isMobile ? '60px' : '80px',
-            maxWidth: '920px',
+            maxWidth: isMobile || isTablet ? '850px' : '1020px',
             marginLeft: 'auto',
             marginRight: 'auto',
           }}>

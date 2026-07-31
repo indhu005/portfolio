@@ -6,17 +6,17 @@ export default function MisinfoFeaturesContent() {
     <div>
       <p>Each feature came from a specific gap the research exposed — not a feature list.</p>
 
-      <img src="/images/misinformation-center/Annotation 01.png" alt="Annotated home screen — message cards, features to debunk content, trending news cards" style={{ width: '100%', borderRadius: '8px', marginTop: '32px', marginBottom: '16px', display: 'block' }} />
+      <img src="/images/misinformation-center/Annotation 01.png" alt="Annotated home screen — message cards, features to debunk content, trending news cards" style={{ width: '100%', borderRadius: '8px', marginTop: '48px', marginBottom: '32px', display: 'block' }} />
 
-      <img src="/images/misinformation-center/Annotation 03.png" alt="Annotated quiz screen — quiz cards on a no-noise background, minimal true/false buttons" style={{ width: '100%', borderRadius: '8px', marginTop: '16px', marginBottom: '16px', display: 'block' }} />
+      <img src="/images/misinformation-center/Annotation 03.png" alt="Annotated quiz screen — quiz cards on a no-noise background, minimal true/false buttons" style={{ width: '100%', borderRadius: '8px', marginTop: '32px', marginBottom: '32px', display: 'block' }} />
 
-      <img src="/images/misinformation-center/Annotation 02.png" alt="Annotated Ask Us screen — content submission, scan-to-check, and community post callouts" style={{ width: '100%', borderRadius: '8px', marginTop: '16px', marginBottom: '32px', display: 'block' }} />
+      <img src="/images/misinformation-center/Annotation 02.png" alt="Annotated Ask Us screen — content submission, scan-to-check, and community post callouts" style={{ width: '100%', borderRadius: '8px', marginTop: '32px', marginBottom: '48px', display: 'block' }} />
 
       <p style={{ marginTop: '36px', fontSize: '20px', fontWeight: 600 }}>The pivot: from Facebook to standalone</p>
 
-      <p style={{ marginTop: '20px' }}>The first iteration was a Facebook Misinformation Center — fact-check labels, community reporting, a hub in the feed. Functional wireframes, sound logic, and dead on arrival: users wouldn't trust the vector of the problem as its solution.</p>
+      <p style={{ marginTop: '20px' }}>The first iteration was a Facebook Misinformation Center — fact-check labels, community reporting, a hub in the feed. Functional, logical, and dead on arrival: users wouldn't trust the vector of the problem as its solution.</p>
 
-      <img src="/images/misinformation-center/Facebook misinformation center.png" alt="Facebook Misinformation Center wireframes — the killed direction" style={{ width: '100%', borderRadius: '8px', marginTop: '28px', marginBottom: '32px', display: 'block' }} />
+      <img src="/images/misinformation-center/Facebook misinformation center.png" alt="Facebook Misinformation Center wireframes — the killed direction" style={{ width: '100%', borderRadius: '8px', marginTop: '32px', marginBottom: '48px', display: 'block' }} />
 
       <p style={{ marginTop: '120px', fontSize: '20px', fontWeight: 600 }}>Feature 01 — Literacy Quiz</p>
 
