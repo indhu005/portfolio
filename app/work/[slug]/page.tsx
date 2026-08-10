@@ -7,6 +7,7 @@ const caseStudies = {
     title: 'Keye',
     subtitle: 'Subscription Marketplace',
     description: 'From three static screens to a YC-backed company',
+    heroImage: '/images/keye/HERO.webp',
     tldr: {
       role: 'Founding Product Designer',
       team: '5 (2 engineers, 1 PM, 2 designers I hired)',
@@ -36,9 +37,7 @@ const caseStudies = {
 • Extension adoption: 60% of users within 3 months<br/>
 • Login friction: −63% via auto-login</p>
 
-<p style="margin-top: 28px;">$1.5M pre-seed · $30K in grants and competition wins · Featured in Forbes, BulletPitch, UPenn Venture Lab · Accepted to YC W2024</p>
-
-<div style="width: 100%; min-height: 500px; background-color: #E5E7EB; border-radius: 8px; display: flex; align-items: center; justify-content: center; color: #9CA3AF; font-size: 14px; margin-top: 48px; margin-bottom: 48px;">Hero — the original three Wharton screens beside the final marketplace, mobile web, and extension</div>`
+<p style="margin-top: 28px;">$1.5M pre-seed · $30K in grants and competition wins · Featured in Forbes, BulletPitch, UPenn Venture Lab · Accepted to YC W2024</p>`
       },
       {
         id: 'context-problem',
@@ -54,6 +53,10 @@ const caseStudies = {
     <div style="width: 0; height: 0; border-left: 12px solid transparent; border-right: 12px solid transparent; border-top: 12px solid #F3F4F6; position: absolute; bottom: -12px; left: 32px;"></div>
   </div>
 </div>
+
+<img loading="lazy" decoding="async" src="/images/keye/Sharing%20Subscription.webp" alt="Screenshots of real group chat conversations across UPenn — students splitting and sharing subscription costs for MasterClass, Crunchbase, Grammarly, and streaming services" style="width: 100%; border-radius: 8px; margin-top: 48px; margin-bottom: 16px; display: block;" />
+
+<div style="font-size: 13px; color: #9CA3AF; margin-bottom: 8px;">Snippets from real conversations across UPenn.</div>
 
 <p style="margin-top: 48px;">ClassPass proved flexible multi-provider access worked; Apple One bundled someone else's services. Neither filled the gap between free trial and full subscription — that gap was Keye's opportunity.</p>`
       },
