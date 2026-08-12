@@ -54,7 +54,7 @@ const caseStudies = {
   </div>
 </div>
 
-<img loading="lazy" decoding="async" src="/images/keye/Sharing%20Subscription.webp" alt="Screenshots of real group chat conversations across UPenn — students splitting and sharing subscription costs for MasterClass, Crunchbase, Grammarly, and streaming services" style="width: 100%; border-radius: 8px; margin-top: 48px; margin-bottom: 16px; display: block;" />
+<img loading="lazy" decoding="async" src="/images/keye/Sharing%20Subscription.png" alt="Screenshots of real group chat conversations across UPenn — students splitting and sharing subscription costs for MasterClass, Crunchbase, Grammarly, and streaming services" style="width: 100%; border-radius: 8px; margin-top: 48px; margin-bottom: 16px; display: block;" />
 
 <div style="font-size: 13px; color: #9CA3AF; margin-bottom: 8px;">Snippets from real conversations across UPenn.</div>
 
