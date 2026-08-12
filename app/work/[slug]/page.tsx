@@ -25,19 +25,44 @@ const caseStudies = {
 
 <p style="margin-top: 28px;"><span style="font-weight: 600;">Timeline.</span> 2 years (2021–2022): beta to credit system to marketplace to extension to seed funding. After the founding team dispersed, the company pivoted into YC W2024 on the traction we built.</p>
 
-<div style="width: 100%; min-height: 400px; background-color: #E5E7EB; border-radius: 8px; display: flex; align-items: center; justify-content: center; color: #9CA3AF; font-size: 14px; margin-top: 48px; margin-bottom: 48px;">Metrics table placeholder</div>
-
 <h4 class="case-study-subhead">Impact</h4>
 
-<p style="margin-top: 16px;">• User growth: 0 → 20K+ MAUs in under 12 months<br/>
-• Engagement: +45% within 3 months<br/>
-• Trial-to-paid conversion: +32% post monetization<br/>
-• Catalog & partnerships: 150+ products; 35+ direct partnerships incl. Adobe, Grammarly, Otter.ai<br/>
-• Partner subscriptions: +44% YoY<br/>
-• Extension adoption: 60% of users within 3 months<br/>
-• Login friction: −63% via auto-login</p>
-
-<p style="margin-top: 28px;">$1.5M pre-seed · $30K in grants and competition wins · Featured in Forbes, BulletPitch, UPenn Venture Lab · Accepted to YC W2024</p>`
+<div class="metrics-grid" style="margin-bottom: 48px;">
+  <div class="metrics-cell metrics-cell--hero">
+    <div class="metrics-num">0 → 20K+</div>
+    <div class="metrics-label">Monthly active users in under 12 months</div>
+  </div>
+  <div class="metrics-cell">
+    <div class="metrics-num">+45%</div>
+    <div class="metrics-label">Engagement, within 3 months</div>
+  </div>
+  <div class="metrics-cell">
+    <div class="metrics-num">+32%</div>
+    <div class="metrics-label">Trial-to-paid conversion post monetization</div>
+  </div>
+  <div class="metrics-cell">
+    <div class="metrics-num">150+ / 35+</div>
+    <div class="metrics-label">Products · direct partnerships incl. Adobe, Grammarly, Otter.ai</div>
+  </div>
+  <div class="metrics-cell">
+    <div class="metrics-num">+44%</div>
+    <div class="metrics-label">Partner subscriptions, year over year</div>
+  </div>
+  <div class="metrics-cell">
+    <div class="metrics-num">60%</div>
+    <div class="metrics-label">Extension adoption, within 3 months</div>
+  </div>
+  <div class="metrics-cell">
+    <div class="metrics-num">−63%</div>
+    <div class="metrics-label">Login friction, via auto-login</div>
+  </div>
+  <div class="metrics-funding">
+    <span>$1.5M pre-seed</span><span class="metrics-sep">·</span>
+    <span>$30K in grants &amp; competition wins</span><span class="metrics-sep">·</span>
+    <span>Featured in Forbes, BulletPitch, UPenn Venture Lab</span><span class="metrics-sep">·</span>
+    <span>Accepted to YC W2024</span>
+  </div>
+</div>`
       },
       {
         id: 'context-problem',
