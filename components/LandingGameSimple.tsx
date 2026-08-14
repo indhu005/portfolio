@@ -1343,36 +1343,18 @@ export default function LandingGameSimple() {
               overflow: 'hidden',
               border: '1px solid #E5E7EB',
             }}>
-              <div style={{
-                width: '100%',
-                height: isMobile ? '200px' : '320px',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                flexDirection: 'column',
-                gap: '12px',
-                color: '#9CA3AF',
-                fontSize: '14px',
-                padding: '20px',
-                textAlign: 'center',
-              }}>
-                <div style={{ fontSize: '48px' }}>🎮</div>
-                <div>Gameplay GIF placeholder</div>
-                <div style={{ fontSize: '12px', color: '#D1D5DB' }}>
-                  Add your game explanation GIF here
-                </div>
-              </div>
-              {/* Uncomment when GIF is ready:
-              <img
-                src="/images/game-explanation.gif"
-                alt="Game explanation"
+              <video
+                src="/videos/home/game-story.mp4"
+                autoPlay
+                loop
+                muted
+                playsInline
                 style={{
                   width: '100%',
                   height: 'auto',
                   display: 'block',
                 }}
               />
-              */}
             </div>
 
             <button
