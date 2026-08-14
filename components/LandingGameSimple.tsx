@@ -1344,7 +1344,7 @@ export default function LandingGameSimple() {
               border: '1px solid #E5E7EB',
             }}>
               <video
-                src="/videos/home/game-story.mp4"
+                src="/videos/home/gameplay-gif.mp4"
                 autoPlay
                 loop
                 muted
