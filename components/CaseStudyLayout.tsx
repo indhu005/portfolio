@@ -35,11 +35,19 @@ interface TldrData {
   skills: string
 }
 
+interface BriefData {
+  context: string
+  constraint: string
+  decision: string
+  tradeoff: string
+}
+
 interface CaseStudy {
   title: string
   subtitle: string
   description: string
   tldr?: TldrData
+  brief?: BriefData
   sections: Section[]
   heroImage?: string
 }
@@ -291,6 +299,48 @@ export default function CaseStudyLayout({ caseStudy, slug }: CaseStudyLayoutProp
                     {caseStudy.title} Hero
                   </div>
                 )
+              )}
+
+              {/* Brief Section - Context/Constraint/Decision/Tradeoff, appears before TL;DR */}
+              {index === 0 && caseStudy.brief && (
+                <div style={{
+                  display: 'grid',
+                  gridTemplateColumns: isMobile ? '1fr' : 'repeat(4, 1fr)',
+                  gap: isMobile ? '20px' : '0',
+                  borderTop: '1px solid #E5E7EB',
+                  borderBottom: '1px solid #E5E7EB',
+                  padding: '28px 0',
+                  marginBottom: '40px',
+                  maxWidth: isMobile || isTablet ? '850px' : '1020px',
+                  marginLeft: 'auto',
+                  marginRight: 'auto',
+                }}>
+                  {([
+                    ['Context', caseStudy.brief.context],
+                    ['Constraint', caseStudy.brief.constraint],
+                    ['Decision', caseStudy.brief.decision],
+                    ['Tradeoff', caseStudy.brief.tradeoff],
+                  ] as [string, string][]).map(([label, text], i) => (
+                    <div key={label} style={{
+                      padding: isMobile ? '0' : '0 24px',
+                      borderLeft: !isMobile && i > 0 ? '1px solid #E5E7EB' : 'none',
+                    }}>
+                      <div style={{
+                        fontSize: '11px',
+                        fontWeight: 700,
+                        textTransform: 'uppercase',
+                        letterSpacing: '0.06em',
+                        color: '#A8A29E',
+                        marginBottom: '8px',
+                      }}>{label}</div>
+                      <div style={{
+                        fontSize: '14px',
+                        lineHeight: 1.55,
+                        color: '#44403C',
+                      }}>{text}</div>
+                    </div>
+                  ))}
+                </div>
               )}
 
               {/* TL;DR Section - appears after hero image */}

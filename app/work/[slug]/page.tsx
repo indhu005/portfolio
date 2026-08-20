@@ -8,6 +8,12 @@ const caseStudies = {
     subtitle: 'Subscription Marketplace',
     description: 'From three static screens to a YC-backed company',
     heroImage: '/images/keye/HERO.webp',
+    brief: {
+      context: 'Founding designer on a credit-based marketplace giving flexible access to premium tools — built with no research budget and a team that dispersed mid-build.',
+      constraint: 'Frontend engineering was 12 hours away in Asia; a technical co-founder\'s exit left zero backend capacity for a planned 18-month partner integration.',
+      decision: 'Capped unlimited credits at 200/month, turning price into a discovery mechanic — and built a Chrome extension instead of the integrations we couldn\'t staff.',
+      tradeoff: 'Conceded a native mobile app to preserve runway, making mobile web thorough enough that it barely cost users anything.'
+    },
     tldr: {
       role: 'Founding Product Designer',
       team: '5 (2 engineers, 1 PM, 2 designers I hired)',
@@ -236,6 +242,12 @@ const caseStudies = {
     title: 'LAT',
     subtitle: 'Lifecycle Assessment Tracker',
     description: 'Turning fragmented campus maintenance into a trusted financial decision system',
+    brief: {
+      context: 'Lead designer for an ML-driven platform helping a university manage 60–80+ buildings across three campuses — layered onto their existing tools, not replacing them.',
+      constraint: 'The legacy CMMS/ERP stack couldn\'t be disrupted, data integrity had hard boundaries from duplicated records, and capital decisions were politically sensitive.',
+      decision: 'Shipped as a modular API layer with human-in-the-loop AI — approval gates, visible reasoning, logged overrides — instead of full automation.',
+      tradeoff: 'Chose slower, trust-building decisions over speed; a wrong high-visibility alert (the boiler incident) validated staying cautious.'
+    },
     tldr: {
       role: 'Lead Product Designer (60% design, 40% strategy)',
       team: '1 PM, 1 designer (me), 2 external engineers, client stakeholders',
@@ -568,6 +580,12 @@ const caseStudies = {
     subtitle: 'Media Literacy Tools for the AI Age',
     description: 'Research collaboration with TrueMedia.org',
     heroImage: '/images/misinformation-center/Hero.png',
+    brief: {
+      context: 'UW graduate capstone (solo after month two) asking whether people could be equipped to identify misinformation themselves, in research partnership with TrueMedia.org.',
+      constraint: 'No engineering resourcing beyond a prototype, and testing showed users rejected any platform-integrated solution outright — the tool had to stand alone.',
+      decision: 'Built four independent tools (Search, Scan, Quiz, Ask Us) that help people verify and learn, instead of another fact-check label.',
+      tradeoff: 'Concept validated with ~1,800 testers, but TrueMedia shut down mid-collaboration — proof that sound design alone can\'t make a public good sustainable.'
+    },
     tldr: {
       role: 'Sole Designer (Graduate Capstone)',
       team: 'Solo (post-February 2024) · Research collaboration with TrueMedia.org',
