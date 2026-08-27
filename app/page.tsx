@@ -255,16 +255,36 @@ export default function Home() {
                     01
                   </div>
                   <div>
-                    <h3 style={{
-                      fontFamily: 'var(--font-fraunces), serif',
-                      fontSize: isMobile ? '24px' : isWideDesktop ? '34px' : '28px',
-                      fontWeight: 700,
-                      color: '#1C1917',
-                      marginBottom: isMobile ? '12px' : '16px',
-                      letterSpacing: '-0.01em',
+                    <div style={{
+                      display: 'flex',
+                      alignItems: 'center',
+                      gap: '10px',
+                      marginBottom: isMobile ? '8px' : '10px',
                     }}>
-                      LAT Platform
-                    </h3>
+                      <h3 style={{
+                        fontFamily: 'var(--font-fraunces), serif',
+                        fontSize: isMobile ? '24px' : isWideDesktop ? '34px' : '28px',
+                        fontWeight: 700,
+                        color: '#1C1917',
+                        letterSpacing: '-0.01em',
+                        margin: 0,
+                      }}>
+                        LAT Platform
+                      </h3>
+                      <span style={{
+                        fontSize: '11px',
+                        fontWeight: 700,
+                        textTransform: 'uppercase',
+                        letterSpacing: '0.06em',
+                        color: '#57534E',
+                        border: '1px solid #E5E7EB',
+                        borderRadius: '100px',
+                        padding: '4px 10px',
+                        flexShrink: 0,
+                      }}>
+                        Shipped
+                      </span>
+                    </div>
                     <p style={{
                       fontSize: isMobile ? '19px' : isWideDesktop ? '23px' : '22px',
                       lineHeight: '1.6',
@@ -330,16 +350,36 @@ export default function Home() {
                     02
                   </div>
                   <div>
-                    <h3 style={{
-                      fontFamily: 'var(--font-fraunces), serif',
-                      fontSize: isMobile ? '24px' : isWideDesktop ? '34px' : '28px',
-                      fontWeight: 700,
-                      color: '#1C1917',
-                      marginBottom: isMobile ? '12px' : '16px',
-                      letterSpacing: '-0.01em',
+                    <div style={{
+                      display: 'flex',
+                      alignItems: 'center',
+                      gap: '10px',
+                      marginBottom: isMobile ? '8px' : '10px',
                     }}>
-                      Keye
-                    </h3>
+                      <h3 style={{
+                        fontFamily: 'var(--font-fraunces), serif',
+                        fontSize: isMobile ? '24px' : isWideDesktop ? '34px' : '28px',
+                        fontWeight: 700,
+                        color: '#1C1917',
+                        letterSpacing: '-0.01em',
+                        margin: 0,
+                      }}>
+                        Keye
+                      </h3>
+                      <span style={{
+                        fontSize: '11px',
+                        fontWeight: 700,
+                        textTransform: 'uppercase',
+                        letterSpacing: '0.06em',
+                        color: '#57534E',
+                        border: '1px solid #E5E7EB',
+                        borderRadius: '100px',
+                        padding: '4px 10px',
+                        flexShrink: 0,
+                      }}>
+                        Shipped
+                      </span>
+                    </div>
                     <p style={{
                       fontSize: isMobile ? '19px' : isWideDesktop ? '23px' : '22px',
                       lineHeight: '1.6',

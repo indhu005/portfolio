@@ -387,10 +387,16 @@ export default function CaseStudyLayout({ caseStudy, slug }: CaseStudyLayoutProp
                         fontSize: '14px',
                         fontWeight: 600,
                         cursor: 'pointer',
-                        transition: 'opacity 0.2s ease',
+                        transition: 'transform 0.15s ease, box-shadow 0.15s ease',
                       }}
-                      onMouseEnter={(e) => e.currentTarget.style.opacity = '0.85'}
-                      onMouseLeave={(e) => e.currentTarget.style.opacity = '1'}
+                      onMouseEnter={(e) => {
+                        e.currentTarget.style.transform = 'translateY(-2px)'
+                        e.currentTarget.style.boxShadow = '0 6px 16px rgba(28, 25, 23, 0.25)'
+                      }}
+                      onMouseLeave={(e) => {
+                        e.currentTarget.style.transform = 'translateY(0)'
+                        e.currentTarget.style.boxShadow = 'none'
+                      }}
                     >
                       {slug === 'misinformation-center' ? 'See Prototype →' : 'Skip to Impact →'}
                     </button>
@@ -417,7 +423,7 @@ export default function CaseStudyLayout({ caseStudy, slug }: CaseStudyLayoutProp
                     </div>
                     <div>
                       <div style={{ fontWeight: 600, color: '#6B7280', marginBottom: '4px' }}>Impact</div>
-                      <div style={{ color: '#1C1917', fontWeight: 700 }}>{caseStudy.tldr.impact}</div>
+                      <div className="tldr-impact-badge">{caseStudy.tldr.impact}</div>
                     </div>
                     <div style={{ gridColumn: isMobile ? '1' : 'span 2' }}>
                       <div style={{ fontWeight: 600, color: '#6B7280', marginBottom: '4px' }}>Key Skills</div>
@@ -488,7 +494,7 @@ export default function CaseStudyLayout({ caseStudy, slug }: CaseStudyLayoutProp
               )}
 
               {/* Visual Content Area - Hidden for strategy, constraints, tradeoffs, context-problem, turning-point, snapshot, problem, research, and reflection sections, and for sections that already embed real media via customComponent */}
-              {!section.customComponent && section.id !== 'strategy' && section.id !== 'constraints' && section.id !== 'tradeoffs' && section.id !== 'context-problem' && section.id !== 'turning-point' && section.id !== 'snapshot' && section.id !== 'problem' && section.id !== 'research' && section.id !== 'reflection' && section.id !== 'market' && section.id !== 'truemedia' && section.id !== 'credit-system' && section.id !== 'product-card' && section.id !== 'extension' && section.id !== 'feature-index' && (
+              {!section.customComponent && section.id !== 'strategy' && section.id !== 'constraints' && section.id !== 'tradeoffs' && section.id !== 'context-problem' && section.id !== 'turning-point' && section.id !== 'snapshot' && section.id !== 'problem' && section.id !== 'research' && section.id !== 'reflection' && section.id !== 'market' && section.id !== 'truemedia' && section.id !== 'credit-system' && section.id !== 'product-card' && section.id !== 'extension' && section.id !== 'feature-index' && section.id !== 'impact' && (
                 <div style={{
                   width: '100%',
                   minHeight: '500px',

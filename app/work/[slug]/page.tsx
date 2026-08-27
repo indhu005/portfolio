@@ -609,11 +609,44 @@ const caseStudies = {
         id: 'impact',
         title: '08 — Impact',
         headline: "The biggest change wasn't cost savings — it was decision confidence",
-        content: `<p><span style="font-weight: 600;">Operational.</span> Linking work orders to lifecycle cost made repair history visible in real time — managers began reviewing repair frequency before approving repeat fixes. Reporting per ticket: 20min → 8min. Emergency incidents: ↓12%. Projected cost reduction: 25%.</p>
+        content: `<p><span style="font-weight: 600;">Operational.</span> Linking work orders to lifecycle cost made repair history visible in real time — managers began reviewing repair frequency before approving repeat fixes.</p>
 
-<p style="margin-top: 28px;"><span style="font-weight: 600;">Decision-making.</span> Teams stopped entering meetings to reconcile facts and started entering them to decide. Budget revisions: ↓36%. Planning time: ↓60%. Pilot adoption: 95% (vs. 70% benchmark).</p>
+<p style="margin-top: 28px;"><span style="font-weight: 600;">Decision-making.</span> Teams stopped entering meetings to reconcile facts and started entering them to decide.</p>
 
-<p style="margin-top: 28px;"><span style="font-weight: 600;">Strategic.</span> Scenario simulation moved feasibility analysis in-house (↓4% consultant spend) and drew expansion interest from other universities — a path from consulting project to scalable platform.</p>
+<p style="margin-top: 28px;"><span style="font-weight: 600;">Strategic.</span> Scenario simulation moved feasibility analysis in-house and drew expansion interest from other universities — a path from consulting project to scalable platform.</p>
+
+<h4 class="case-study-subhead">Impact</h4>
+
+<div class="metrics-grid metrics-grid--dark" style="margin-bottom: 48px;">
+  <div class="metrics-cell metrics-cell--hero">
+    <div class="metrics-num">70% → 95%</div>
+    <div class="metrics-label">Data accuracy across the pilot</div>
+  </div>
+  <div class="metrics-cell">
+    <div class="metrics-num">95%</div>
+    <div class="metrics-label">Pilot adoption, vs. a 70% benchmark</div>
+  </div>
+  <div class="metrics-cell">
+    <div class="metrics-num">25%</div>
+    <div class="metrics-label">Projected maintenance cost reduction</div>
+  </div>
+  <div class="metrics-cell">
+    <div class="metrics-num">20min → 8min</div>
+    <div class="metrics-label">Reporting time, per ticket</div>
+  </div>
+  <div class="metrics-cell">
+    <div class="metrics-num">−36%</div>
+    <div class="metrics-label">Budget revisions</div>
+  </div>
+  <div class="metrics-cell">
+    <div class="metrics-num">−60%</div>
+    <div class="metrics-label">Planning time</div>
+  </div>
+  <div class="metrics-cell">
+    <div class="metrics-num">−12%</div>
+    <div class="metrics-label">Emergency incidents</div>
+  </div>
+</div>
 
 <div class="pull-quote" style="margin-top: 48px;">The biggest change wasn't cost savings. It was decision confidence.</div>`
       },
