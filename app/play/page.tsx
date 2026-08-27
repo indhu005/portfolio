@@ -104,7 +104,7 @@ export default function Play() {
                               color: '#6B7280',
                               padding: '4px 10px',
                               backgroundColor: '#F3F4F6',
-                              borderRadius: '4px',
+                              borderRadius: '0px',
                               letterSpacing: '0.02em',
                             }}
                           >

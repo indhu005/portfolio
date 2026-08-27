@@ -50,6 +50,7 @@ interface CaseStudy {
   brief?: BriefData
   sections: Section[]
   heroImage?: string
+  figmaPrototypeUrl?: string
 }
 
 interface CaseStudyLayoutProps {
@@ -161,7 +162,7 @@ export default function CaseStudyLayout({ caseStudy, slug }: CaseStudyLayoutProp
             WebkitBackdropFilter: 'blur(8px)',
             color: 'white',
             border: '1px solid rgba(255, 255, 255, 0.1)',
-            borderRadius: '8px',
+            borderRadius: '0px',
             padding: '12px 16px',
             fontSize: '14px',
             fontWeight: 600,
@@ -249,6 +250,38 @@ export default function CaseStudyLayout({ caseStudy, slug }: CaseStudyLayoutProp
               {caseStudy.subtitle}
               {caseStudy.description ? ` — ${caseStudy.description}` : ''}
             </p>
+
+            {caseStudy.figmaPrototypeUrl && (
+              <a
+                href={caseStudy.figmaPrototypeUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: '8px',
+                  marginTop: isMobile ? '20px' : '28px',
+                  backgroundColor: 'var(--accent)',
+                  color: '#FFFFFF',
+                  borderRadius: '0px',
+                  padding: '10px 18px',
+                  fontSize: '14px',
+                  fontWeight: 600,
+                  textDecoration: 'none',
+                  transition: 'transform 0.15s ease, box-shadow 0.15s ease',
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.transform = 'translateY(-2px)'
+                  e.currentTarget.style.boxShadow = '0 6px 16px rgba(28, 25, 23, 0.25)'
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.transform = 'translateY(0)'
+                  e.currentTarget.style.boxShadow = 'none'
+                }}
+              >
+                See Prototype →
+              </a>
+            )}
           </div>
 
           {caseStudy.sections.map((section, index) => (
@@ -273,7 +306,7 @@ export default function CaseStudyLayout({ caseStudy, slug }: CaseStudyLayoutProp
                       width: '100%',
                       maxWidth: isMobile || isTablet ? '850px' : '1020px',
                       height: 'auto',
-                      borderRadius: '12px',
+                      borderRadius: '0px',
                       marginBottom: '50px',
                       marginLeft: 'auto',
                       marginRight: 'auto',
@@ -286,7 +319,7 @@ export default function CaseStudyLayout({ caseStudy, slug }: CaseStudyLayoutProp
                     maxWidth: isMobile || isTablet ? '850px' : '1020px',
                     height: '580px',
                     backgroundColor: '#7EB3F5',
-                    borderRadius: '12px',
+                    borderRadius: '0px',
                     marginBottom: '50px',
                     marginLeft: 'auto',
                     marginRight: 'auto',
@@ -312,7 +345,7 @@ export default function CaseStudyLayout({ caseStudy, slug }: CaseStudyLayoutProp
                   backgroundColor: '#FFFFFF',
                   border: '1px solid #E5E7EB',
                   borderBottom: 'none',
-                  borderRadius: '12px 12px 0 0',
+                  borderRadius: '0px',
                   maxWidth: isMobile || isTablet ? '850px' : '1020px',
                   marginLeft: 'auto',
                   marginRight: 'auto',
@@ -351,7 +384,7 @@ export default function CaseStudyLayout({ caseStudy, slug }: CaseStudyLayoutProp
                   marginBottom: '60px',
                   padding: isMobile ? '24px' : '32px',
                   backgroundColor: '#F9FAFB',
-                  borderRadius: caseStudy.brief ? '0 0 12px 12px' : '12px',
+                  borderRadius: '0px',
                   border: '1px solid #E5E7EB',
                   borderTop: caseStudy.brief ? '1px solid #E5E7EB' : undefined,
                   maxWidth: isMobile || isTablet ? '850px' : '1020px',
@@ -382,7 +415,7 @@ export default function CaseStudyLayout({ caseStudy, slug }: CaseStudyLayoutProp
                         backgroundColor: 'var(--accent)',
                         color: '#FFFFFF',
                         border: 'none',
-                        borderRadius: '6px',
+                        borderRadius: '0px',
                         padding: '10px 18px',
                         fontSize: '14px',
                         fontWeight: 600,
@@ -499,7 +532,7 @@ export default function CaseStudyLayout({ caseStudy, slug }: CaseStudyLayoutProp
                   width: '100%',
                   minHeight: '500px',
                   backgroundColor: '#E5E7EB',
-                  borderRadius: '8px',
+                  borderRadius: '0px',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',

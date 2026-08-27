@@ -24,7 +24,7 @@ export default function CaseStudyMedia({
           style={{
             width: '100%',
             height: 'auto',
-            borderRadius: '8px',
+            borderRadius: '0px',
             display: 'block',
           }}
         />
@@ -51,7 +51,7 @@ export default function CaseStudyMedia({
           style={{
             width: '100%',
             height: 'auto',
-            borderRadius: '8px',
+            borderRadius: '0px',
             display: 'block',
           }}
         />
@@ -75,7 +75,7 @@ export default function CaseStudyMedia({
         <div style={{
           width: '100%',
           aspectRatio: aspectRatio,
-          borderRadius: '8px',
+          borderRadius: '0px',
           overflow: 'hidden',
         }}>
           <iframe

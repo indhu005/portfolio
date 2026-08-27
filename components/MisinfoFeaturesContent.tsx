@@ -6,17 +6,17 @@ export default function MisinfoFeaturesContent() {
     <div>
       <p>Each feature came from a specific gap the research exposed — not a feature list.</p>
 
-      <img src="/images/misinformation-center/Annotation 01.png" alt="Annotated home screen — message cards, features to debunk content, trending news cards" style={{ width: '100%', borderRadius: '8px', marginTop: '48px', marginBottom: '32px', display: 'block' }} />
+      <img src="/images/misinformation-center/Annotation 01.png" alt="Annotated home screen — message cards, features to debunk content, trending news cards" style={{ width: '100%', borderRadius: '0px', marginTop: '48px', marginBottom: '32px', display: 'block' }} />
 
-      <img src="/images/misinformation-center/Annotation 03.png" alt="Annotated quiz screen — quiz cards on a no-noise background, minimal true/false buttons" style={{ width: '100%', borderRadius: '8px', marginTop: '32px', marginBottom: '32px', display: 'block' }} />
+      <img src="/images/misinformation-center/Annotation 03.png" alt="Annotated quiz screen — quiz cards on a no-noise background, minimal true/false buttons" style={{ width: '100%', borderRadius: '0px', marginTop: '32px', marginBottom: '32px', display: 'block' }} />
 
-      <img src="/images/misinformation-center/Annotation 02.png" alt="Annotated Ask Us screen — content submission, scan-to-check, and community post callouts" style={{ width: '100%', borderRadius: '8px', marginTop: '32px', marginBottom: '48px', display: 'block' }} />
+      <img src="/images/misinformation-center/Annotation 02.png" alt="Annotated Ask Us screen — content submission, scan-to-check, and community post callouts" style={{ width: '100%', borderRadius: '0px', marginTop: '32px', marginBottom: '48px', display: 'block' }} />
 
       <p style={{ marginTop: '36px', fontSize: '20px', fontWeight: 600 }}>The pivot: from Facebook to standalone</p>
 
       <p style={{ marginTop: '20px' }}>The first iteration was a Facebook Misinformation Center — fact-check labels, community reporting, a hub in the feed. Functional, logical, and dead on arrival: users wouldn't trust the vector of the problem as its solution.</p>
 
-      <img src="/images/misinformation-center/Facebook misinformation center.png" alt="Facebook Misinformation Center wireframes — the killed direction" style={{ width: '100%', borderRadius: '8px', marginTop: '32px', marginBottom: '48px', display: 'block' }} />
+      <img src="/images/misinformation-center/Facebook misinformation center.png" alt="Facebook Misinformation Center wireframes — the killed direction" style={{ width: '100%', borderRadius: '0px', marginTop: '32px', marginBottom: '48px', display: 'block' }} />
 
       <p style={{ marginTop: '120px', fontSize: '20px', fontWeight: 600 }}>Feature 01 — Literacy Quiz</p>
 
@@ -36,7 +36,7 @@ export default function MisinfoFeaturesContent() {
       {/* Interactive Quiz */}
       <div style={{ marginTop: '48px', marginBottom: '48px' }}>
         <div style={{ textAlign: 'center', marginBottom: '24px' }}>
-          <div style={{ display: 'inline-block', padding: '8px 16px', backgroundColor: '#FFF44F', borderRadius: '6px', fontSize: '14px', fontWeight: 600, color: '#1C1917' }}>
+          <div style={{ display: 'inline-block', padding: '8px 16px', backgroundColor: '#FFF44F', borderRadius: '0px', fontSize: '14px', fontWeight: 600, color: '#1C1917' }}>
             Try it yourself ↓
           </div>
         </div>
@@ -51,7 +51,7 @@ export default function MisinfoFeaturesContent() {
       <p style={{ marginTop: '16px' }}>Users wanted to know why an item was false, which conflicted with the 40-second constraint. The resolution: speed for the question, depth for the reveal, sources one tap away.</p>
 
       <div style={{ width: '100%', maxWidth: '288px', margin: '48px auto 0' }}>
-        <video autoPlay loop muted playsInline preload="auto" style={{ display: 'block', width: '100%', aspectRatio: '456 / 910', borderRadius: '8px' }}>
+        <video autoPlay loop muted playsInline preload="auto" style={{ display: 'block', width: '100%', aspectRatio: '456 / 910', borderRadius: '0px' }}>
           <source src="/videos/misinformationcenter/Literacyquiz.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
@@ -77,7 +77,7 @@ export default function MisinfoFeaturesContent() {
       </div>
 
       <div style={{ width: '100%', maxWidth: '288px', margin: '20px auto 0' }}>
-        <video autoPlay loop muted playsInline preload="auto" style={{ display: 'block', width: '100%', aspectRatio: '458 / 900', borderRadius: '8px' }}>
+        <video autoPlay loop muted playsInline preload="auto" style={{ display: 'block', width: '100%', aspectRatio: '458 / 900', borderRadius: '0px' }}>
           <source src="/videos/misinformationcenter/Search .mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
@@ -89,7 +89,7 @@ export default function MisinfoFeaturesContent() {
       <p style={{ marginTop: '16px' }}>Older users hesitated and erred on forms, but scanned instantly and confidently — a behavior already learned from restaurant QR codes. OCR converted headlines to searchable text invisibly.</p>
 
       <div style={{ width: '100%', maxWidth: '288px', margin: '48px auto 0' }}>
-        <video autoPlay loop muted playsInline preload="auto" style={{ display: 'block', width: '100%', aspectRatio: '448 / 906', borderRadius: '8px' }}>
+        <video autoPlay loop muted playsInline preload="auto" style={{ display: 'block', width: '100%', aspectRatio: '448 / 906', borderRadius: '0px' }}>
           <source src="/videos/misinformationcenter/Scan.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
@@ -115,7 +115,7 @@ export default function MisinfoFeaturesContent() {
       </div>
 
       <div style={{ width: '100%', maxWidth: '288px', margin: '20px auto 0' }}>
-        <video autoPlay loop muted playsInline preload="auto" style={{ display: 'block', width: '100%', aspectRatio: '444 / 906', borderRadius: '8px' }}>
+        <video autoPlay loop muted playsInline preload="auto" style={{ display: 'block', width: '100%', aspectRatio: '444 / 906', borderRadius: '0px' }}>
           <source src="/videos/misinformationcenter/Submit.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
@@ -128,10 +128,10 @@ export default function MisinfoFeaturesContent() {
       <div style={{ marginTop: '32px' }}>
         <div style={{ fontSize: '13px', color: '#6B7280', marginBottom: '12px' }}>Design system — scroll to see more →</div>
         <div style={{ display: 'flex', gap: '16px', overflowX: 'auto', scrollSnapType: 'x mandatory', WebkitOverflowScrolling: 'touch', paddingBottom: '8px' }}>
-          <img src="/images/misinformation-center/Design%20System%2001.png" alt="Design system, board 1" style={{ flex: '0 0 auto', scrollSnapAlign: 'start', width: '85%', maxWidth: '640px', height: 'auto', borderRadius: '8px', display: 'block' }} />
-          <img src="/images/misinformation-center/Design%20System%2002.png" alt="Design system, board 2" style={{ flex: '0 0 auto', scrollSnapAlign: 'start', width: '85%', maxWidth: '640px', height: 'auto', borderRadius: '8px', display: 'block' }} />
-          <img src="/images/misinformation-center/Design%20System%2003.png" alt="Design system, board 3" style={{ flex: '0 0 auto', scrollSnapAlign: 'start', width: '85%', maxWidth: '640px', height: 'auto', borderRadius: '8px', display: 'block' }} />
-          <img src="/images/misinformation-center/Design%20System%2004.png" alt="Design system, board 4" style={{ flex: '0 0 auto', scrollSnapAlign: 'start', width: '85%', maxWidth: '640px', height: 'auto', borderRadius: '8px', display: 'block' }} />
+          <img src="/images/misinformation-center/Design%20System%2001.png" alt="Design system, board 1" style={{ flex: '0 0 auto', scrollSnapAlign: 'start', width: '85%', maxWidth: '640px', height: 'auto', borderRadius: '0px', display: 'block' }} />
+          <img src="/images/misinformation-center/Design%20System%2002.png" alt="Design system, board 2" style={{ flex: '0 0 auto', scrollSnapAlign: 'start', width: '85%', maxWidth: '640px', height: 'auto', borderRadius: '0px', display: 'block' }} />
+          <img src="/images/misinformation-center/Design%20System%2003.png" alt="Design system, board 3" style={{ flex: '0 0 auto', scrollSnapAlign: 'start', width: '85%', maxWidth: '640px', height: 'auto', borderRadius: '0px', display: 'block' }} />
+          <img src="/images/misinformation-center/Design%20System%2004.png" alt="Design system, board 4" style={{ flex: '0 0 auto', scrollSnapAlign: 'start', width: '85%', maxWidth: '640px', height: 'auto', borderRadius: '0px', display: 'block' }} />
         </div>
       </div>
 
@@ -141,7 +141,7 @@ export default function MisinfoFeaturesContent() {
 
       <div style={{ display: 'flex', gap: '24px', marginTop: '40px', flexWrap: 'wrap' }}>
         <div style={{ flex: 1, minWidth: '250px', position: 'relative' }}>
-          <div style={{ backgroundColor: '#F3F4F6', padding: '24px', borderRadius: '16px', position: 'relative' }}>
+          <div style={{ backgroundColor: '#F3F4F6', padding: '24px', borderRadius: '0px', position: 'relative' }}>
             <p style={{ fontStyle: 'italic', fontFamily: 'var(--font-fraunces), serif', color: '#1F2937', margin: 0 }}>"The prototype is very well crafted… the experience looks easy and also fun."</p>
             <p style={{ marginTop: '12px', fontSize: '13px', color: '#6B7280' }}>— capstone reviewer</p>
           </div>

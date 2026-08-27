@@ -90,7 +90,7 @@ export default function VideoPlayer({ src, id }: VideoPlayerProps) {
             display: 'block',
             width: '100%',
             height: 'auto',
-            borderRadius: '8px',
+            borderRadius: '0px',
           }}
         >
           <source src={src} type={src.endsWith('.mp4') ? 'video/mp4' : 'video/webm'} />
@@ -134,7 +134,7 @@ export default function VideoPlayer({ src, id }: VideoPlayerProps) {
             flex: 1,
             height: '4px',
             backgroundColor: '#E5E7EB',
-            borderRadius: '2px',
+            borderRadius: '0px',
             position: 'relative',
             cursor: 'pointer',
           }}
@@ -143,7 +143,7 @@ export default function VideoPlayer({ src, id }: VideoPlayerProps) {
             style={{
               height: '100%',
               backgroundColor: '#1C1917',
-              borderRadius: '2px',
+              borderRadius: '0px',
               width: `${progress}%`,
             }}
           ></div>

@@ -64,7 +64,7 @@ export default function Home() {
             background: '#000000',
             color: 'white',
             border: 'none',
-            borderRadius: '8px',
+            borderRadius: '0px',
             padding: '12px 16px',
             fontSize: '14px',
             fontWeight: 600,
@@ -223,7 +223,7 @@ export default function Home() {
                     width: '100%',
                     height: isMobile ? '320px' : isWideDesktop ? '760px' : '620px',
                     backgroundColor: '#E5E5E5',
-                    borderRadius: '16px',
+                    borderRadius: '0px',
                     transition: 'transform 0.3s ease, box-shadow 0.3s ease',
                   }}
                   onMouseEnter={(e) => {
@@ -278,7 +278,7 @@ export default function Home() {
                         letterSpacing: '0.06em',
                         color: '#57534E',
                         border: '1px solid #E5E7EB',
-                        borderRadius: '100px',
+                        borderRadius: '0px',
                         padding: '4px 10px',
                         flexShrink: 0,
                       }}>
@@ -318,7 +318,7 @@ export default function Home() {
                     width: '100%',
                     height: isMobile ? '320px' : isWideDesktop ? '760px' : '620px',
                     backgroundColor: '#E5E5E5',
-                    borderRadius: '16px',
+                    borderRadius: '0px',
                     transition: 'transform 0.3s ease, box-shadow 0.3s ease',
                   }}
                   onMouseEnter={(e) => {
@@ -373,7 +373,7 @@ export default function Home() {
                         letterSpacing: '0.06em',
                         color: '#57534E',
                         border: '1px solid #E5E7EB',
-                        borderRadius: '100px',
+                        borderRadius: '0px',
                         padding: '4px 10px',
                         flexShrink: 0,
                       }}>
@@ -413,7 +413,7 @@ export default function Home() {
                     width: '100%',
                     height: isMobile ? '320px' : isWideDesktop ? '760px' : '620px',
                     backgroundColor: '#E5E5E5',
-                    borderRadius: '16px',
+                    borderRadius: '0px',
                     transition: 'transform 0.3s ease, box-shadow 0.3s ease',
                   }}
                   onMouseEnter={(e) => {

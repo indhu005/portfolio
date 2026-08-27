@@ -93,7 +93,7 @@ export default function MisinfoQuiz() {
     return (
       <div style={{
         backgroundColor: '#1C1917',
-        borderRadius: '16px',
+        borderRadius: '0px',
         padding: '48px 32px',
         textAlign: 'center',
         color: '#FFFFFF',
@@ -117,7 +117,7 @@ export default function MisinfoQuiz() {
             backgroundColor: '#FFF44F',
             color: '#1C1917',
             border: 'none',
-            borderRadius: '8px',
+            borderRadius: '0px',
             fontSize: '16px',
             fontWeight: 600,
             cursor: 'pointer',
@@ -135,7 +135,7 @@ export default function MisinfoQuiz() {
   return (
     <div style={{
       backgroundColor: '#FFFFFF',
-      borderRadius: '16px',
+      borderRadius: '0px',
       border: '1px solid #E5E7EB',
       overflow: 'hidden',
       maxWidth: '600px',
@@ -215,7 +215,7 @@ export default function MisinfoQuiz() {
                 backgroundColor: '#10B981',
                 color: '#FFFFFF',
                 border: 'none',
-                borderRadius: '8px',
+                borderRadius: '0px',
                 fontSize: '16px',
                 fontWeight: 600,
                 cursor: 'pointer',
@@ -234,7 +234,7 @@ export default function MisinfoQuiz() {
                 backgroundColor: '#EF4444',
                 color: '#FFFFFF',
                 border: 'none',
-                borderRadius: '8px',
+                borderRadius: '0px',
                 fontSize: '16px',
                 fontWeight: 600,
                 cursor: 'pointer',
@@ -286,7 +286,7 @@ export default function MisinfoQuiz() {
               backgroundColor: '#1C1917',
               color: '#FFFFFF',
               border: 'none',
-              borderRadius: '8px',
+              borderRadius: '0px',
               fontSize: '14px',
               fontWeight: 600,
               cursor: 'pointer',

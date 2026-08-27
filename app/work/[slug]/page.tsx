@@ -78,14 +78,14 @@ const caseStudies = {
 
 <div style="display: flex; gap: 24px; margin-top: 48px; margin-bottom: 8px; flex-wrap: wrap;">
   <div style="flex: 1; min-width: 250px; position: relative;">
-    <div style="background-color: #F3F4F6; padding: 24px; border-radius: 16px; position: relative;">
+    <div style="background-color: #F3F4F6; padding: 24px; border-radius: 0px; position: relative;">
       <p style="font-style: italic; font-family: 'Fraunces', serif; color: #1F2937; margin: 0;">"I keep creating new email accounts to get free trials. It's the only way to try things without committing."</p>
     </div>
     <div style="width: 0; height: 0; border-left: 12px solid transparent; border-right: 12px solid transparent; border-top: 12px solid #F3F4F6; position: absolute; bottom: -12px; left: 32px;"></div>
   </div>
 </div>
 
-<img loading="lazy" decoding="async" src="/images/keye/Sharing%20Subscription.png" alt="Screenshots of real group chat conversations across UPenn — students splitting and sharing subscription costs for MasterClass, Crunchbase, Grammarly, and streaming services" style="width: 100%; border-radius: 8px; margin-top: 40px; margin-bottom: 16px; display: block;" />
+<img loading="lazy" decoding="async" src="/images/keye/Sharing%20Subscription.png" alt="Screenshots of real group chat conversations across UPenn — students splitting and sharing subscription costs for MasterClass, Crunchbase, Grammarly, and streaming services" style="width: 100%; border-radius: 0px; margin-top: 40px; margin-bottom: 16px; display: block;" />
 
 <div style="font-size: 13px; color: #9CA3AF; margin-bottom: 40px;">Snippets from real conversations across UPenn.</div>
 
@@ -127,7 +127,7 @@ const caseStudies = {
         id: 'credit-system',
         title: '05 — Feature 01: The Credit System',
         headline: 'Designed with the founders and PM, proven by users — five pricing models in ten months',
-        content: `<div style="width: 100%; height: 480px; background-color: #E5E7EB; border-radius: 8px; display: flex; align-items: center; justify-content: center; color: #9CA3AF; font-size: 14px; margin-top: 40px; margin-bottom: 40px;">
+        content: `<div style="width: 100%; height: 480px; background-color: #E5E7EB; border-radius: 0px; display: flex; align-items: center; justify-content: center; color: #9CA3AF; font-size: 14px; margin-top: 40px; margin-bottom: 40px;">
   <div style="text-align: center; padding: 20px;">
     <div style="font-weight: 600; margin-bottom: 8px;">IMAGE: 5-Frame Version Timeline</div>
     <div style="font-size: 13px; line-height: 1.5;">One icon-driven frame per version, v1 → v5<br/>Credit counter animating ∞ → 200 → tier badges</div>
@@ -153,7 +153,7 @@ const caseStudies = {
 
 <div class="pull-quote">We didn't design the credit system. We discovered it — together, one killed model at a time.</div>
 
-<div style="width: 100%; height: 300px; background-color: #E5E7EB; border-radius: 8px; display: flex; align-items: center; justify-content: center; color: #9CA3AF; font-size: 14px; margin-top: 40px; margin-bottom: 40px;">
+<div style="width: 100%; height: 300px; background-color: #E5E7EB; border-radius: 0px; display: flex; align-items: center; justify-content: center; color: #9CA3AF; font-size: 14px; margin-top: 40px; margin-bottom: 40px;">
   <div style="text-align: center; padding: 20px;">
     <div style="font-weight: 600; margin-bottom: 8px;">IMAGE: Low-Credit Pop-up + Notification</div>
     <div style="font-size: 13px; line-height: 1.5;">v4 low-credit pop-up banner shown alongside the matching push notification/email</div>
@@ -168,7 +168,7 @@ const caseStudies = {
         id: 'product-card',
         title: '06 — Feature 02: The Product Card',
         headline: "Shaped as much by engineering's constraint as by design intent",
-        content: `<div style="width: 100%; height: 480px; background-color: #E5E7EB; border-radius: 8px; display: flex; align-items: center; justify-content: center; color: #9CA3AF; font-size: 14px; margin-top: 40px; margin-bottom: 40px;">
+        content: `<div style="width: 100%; height: 480px; background-color: #E5E7EB; border-radius: 0px; display: flex; align-items: center; justify-content: center; color: #9CA3AF; font-size: 14px; margin-top: 40px; margin-bottom: 40px;">
   <div style="text-align: center; padding: 20px;">
     <div style="font-weight: 600; margin-bottom: 8px;">IMAGE: 6-Frame Evolution Strip</div>
     <div style="font-size: 13px; line-height: 1.5;">Visual diff per version, each tagged with its one-word trigger:<br/>system → states → scale → support → growth → mobile</div>
@@ -195,7 +195,7 @@ const caseStudies = {
 
 <div class="pull-quote">Getting the component right early is what let six features ship without six redesigns.</div>
 
-<div style="width: 100%; height: 300px; background-color: #E5E7EB; border-radius: 8px; display: flex; align-items: center; justify-content: center; color: #9CA3AF; font-size: 14px; margin-top: 40px; margin-bottom: 40px;">
+<div style="width: 100%; height: 300px; background-color: #E5E7EB; border-radius: 0px; display: flex; align-items: center; justify-content: center; color: #9CA3AF; font-size: 14px; margin-top: 40px; margin-bottom: 40px;">
   <div style="text-align: center; padding: 20px;">
     <div style="font-weight: 600; margin-bottom: 8px;">VIDEO: Morph/Motion Version</div>
     <div style="font-size: 13px; line-height: 1.5;">Same six frames, shape and content shifting version to version</div>
@@ -203,10 +203,10 @@ const caseStudies = {
 </div>
 
 <div style="display: flex; gap: 16px; flex-wrap: wrap;">
-  <div style="flex: 1; min-width: 200px; height: 200px; background-color: #E5E7EB; border-radius: 8px; display: flex; align-items: center; justify-content: center; color: #9CA3AF; font-size: 13px;">
+  <div style="flex: 1; min-width: 200px; height: 200px; background-color: #E5E7EB; border-radius: 0px; display: flex; align-items: center; justify-content: center; color: #9CA3AF; font-size: 13px;">
     <div style="text-align: center; padding: 16px;">IMAGE: Credit-cost badge (v3) close-up</div>
   </div>
-  <div style="flex: 1; min-width: 200px; height: 200px; background-color: #E5E7EB; border-radius: 8px; display: flex; align-items: center; justify-content: center; color: #9CA3AF; font-size: 13px;">
+  <div style="flex: 1; min-width: 200px; height: 200px; background-color: #E5E7EB; border-radius: 0px; display: flex; align-items: center; justify-content: center; color: #9CA3AF; font-size: 13px;">
     <div style="text-align: center; padding: 16px;">IMAGE: Countdown timer (v2) close-up</div>
   </div>
 </div>`
@@ -215,7 +215,7 @@ const caseStudies = {
         id: 'extension',
         title: '07 — Feature 03: The Chrome Extension',
         headline: "A constraint the team couldn't engineer around — until the idea came from buying a rain jacket",
-        content: `<div style="width: 100%; height: 480px; background-color: #E5E7EB; border-radius: 8px; display: flex; align-items: center; justify-content: center; color: #9CA3AF; font-size: 14px; margin-top: 40px; margin-bottom: 40px;">
+        content: `<div style="width: 100%; height: 480px; background-color: #E5E7EB; border-radius: 0px; display: flex; align-items: center; justify-content: center; color: #9CA3AF; font-size: 14px; margin-top: 40px; margin-bottom: 40px;">
   <div style="text-align: center; padding: 20px;">
     <div style="font-weight: 600; margin-bottom: 8px;">IMAGE: Before/After Split</div>
     <div style="font-size: 13px; line-height: 1.5;">Old copy-paste flow (7+ steps, tab switches) vs. extension auto-fill (1 motion)<br/>Annotate step count to make −63% concrete</div>
@@ -239,14 +239,14 @@ const caseStudies = {
 
 <div class="pull-quote">The fix wasn't a partnership we finally got — it was a pattern that already existed somewhere else.</div>
 
-<div style="width: 100%; height: 300px; background-color: #E5E7EB; border-radius: 8px; display: flex; align-items: center; justify-content: center; color: #9CA3AF; font-size: 14px; margin-top: 40px; margin-bottom: 40px;">
+<div style="width: 100%; height: 300px; background-color: #E5E7EB; border-radius: 0px; display: flex; align-items: center; justify-content: center; color: #9CA3AF; font-size: 14px; margin-top: 40px; margin-bottom: 40px;">
   <div style="text-align: center; padding: 20px;">
     <div style="font-weight: 600; margin-bottom: 8px;">VIDEO: Split-Screen Motion</div>
     <div style="font-size: 13px; line-height: 1.5;">Same before/after playing in real time side by side — pacing contrast sells the stat better than a caption</div>
   </div>
 </div>
 
-<div style="width: 100%; height: 200px; background-color: #E5E7EB; border-radius: 8px; display: flex; align-items: center; justify-content: center; color: #9CA3AF; font-size: 13px;">
+<div style="width: 100%; height: 200px; background-color: #E5E7EB; border-radius: 0px; display: flex; align-items: center; justify-content: center; color: #9CA3AF; font-size: 13px;">
   <div style="text-align: center; padding: 16px;">IMAGE: 3-step evolution strip — auto-fill → suggestion → in-context purchase</div>
 </div>`
       },
@@ -321,7 +321,7 @@ const caseStudies = {
 
 <p style="margin-top: 28px;"><span style="font-weight: 600;">Team</span><br/>1 PM, 1 designer (me), 2 external engineers, plus client-side CAPEX, data science, accounting, and property management teams</p>
 
-<div style="width: 100%; min-height: 450px; background-color: #E5E7EB; border-radius: 8px; display: flex; align-items: center; justify-content: center; color: #9CA3AF; font-size: 14px; margin-top: 40px; margin-bottom: 40px;">Hero — role-based dashboard split: the same asset rendered for a technician (mobile, offline-first), a manager (priority queue), and an executive (filtered summary). One data model, three cognitive surfaces.</div>
+<div style="width: 100%; min-height: 450px; background-color: #E5E7EB; border-radius: 0px; display: flex; align-items: center; justify-content: center; color: #9CA3AF; font-size: 14px; margin-top: 40px; margin-bottom: 40px;">Hero — role-based dashboard split: the same asset rendered for a technician (mobile, offline-first), a manager (priority queue), and an executive (filtered summary). One data model, three cognitive surfaces.</div>
 
 <h4 class="case-study-subhead">Impact</h4>
 
@@ -353,7 +353,7 @@ const caseStudies = {
         title: '02 — Context & Problem',
         headline: 'Fragmented data was forcing humans to do the work a system should have done',
         content: `<div class="cs-video-wrap" style="width: 100%; max-width: 1200px; margin: 0 auto 48px;">
-  <video autoplay loop muted playsinline preload="metadata" aria-label="Screen recording demonstrating a technician, manager, and leadership each working from fragmented, disconnected tools" style="display: block; width: 100%; height: auto; border-radius: 8px;">
+  <video autoplay loop muted playsinline preload="metadata" aria-label="Screen recording demonstrating a technician, manager, and leadership each working from fragmented, disconnected tools" style="display: block; width: 100%; height: auto; border-radius: 0px;">
     <source src="/videos/lat/Flow%2001.mp4" type="video/mp4">
     Your browser does not support the video tag.
   </video>
@@ -365,24 +365,24 @@ const caseStudies = {
 <p style="margin-top: 28px;">Without a unified system, everyone operates in their own flow with no common path:</p>
 
 <div class="cs-video-wrap" style="width: 100%; max-width: 1200px; margin: 48px auto 48px;">
-  <video autoplay loop muted playsinline preload="metadata" aria-label="Screen recording showing each role's separate, uncoordinated workflow path through the old tools" style="display: block; width: 100%; height: auto; border-radius: 8px;">
+  <video autoplay loop muted playsinline preload="metadata" aria-label="Screen recording showing each role's separate, uncoordinated workflow path through the old tools" style="display: block; width: 100%; height: auto; border-radius: 0px;">
     <source src="/videos/lat/Flow%2003.mp4" type="video/mp4">
     Your browser does not support the video tag.
   </video>
   <button type="button" class="cs-video-toggle" aria-label="Pause video" onclick="var v=this.previousElementSibling;if(v.paused){v.play();this.textContent='⏸';this.setAttribute('aria-label','Pause video');}else{v.pause();this.textContent='▶';this.setAttribute('aria-label','Play video');}">⏸</button>
 </div>
 
-<img loading="lazy" decoding="async" src="/images/lat/User%20Issues.webp" alt="User Issues" style="width: 100%; border-radius: 8px; margin-top: 40px; margin-bottom: 40px; display: block;" />
+<img loading="lazy" decoding="async" src="/images/lat/User%20Issues.webp" alt="User Issues" style="width: 100%; border-radius: 0px; margin-top: 40px; margin-bottom: 40px; display: block;" />
 
 <div style="display: flex; gap: 24px; margin-top: 8px; margin-bottom: 8px; flex-wrap: wrap;">
   <div style="flex: 1; min-width: 250px; position: relative;">
-    <div style="background-color: #F3F4F6; padding: 24px; border-radius: 16px; position: relative;">
+    <div style="background-color: #F3F4F6; padding: 24px; border-radius: 0px; position: relative;">
       <p style="font-style: italic; font-family: 'Fraunces', serif; color: #1F2937; margin: 0;">"I do the physical work in 30 minutes, but reporting takes another 20."</p>
     </div>
     <div style="width: 0; height: 0; border-left: 12px solid transparent; border-right: 12px solid transparent; border-top: 12px solid #F3F4F6; position: absolute; bottom: -12px; left: 32px;"></div>
   </div>
   <div style="flex: 1; min-width: 250px; position: relative;">
-    <div style="background-color: #F3F4F6; padding: 24px; border-radius: 16px; position: relative;">
+    <div style="background-color: #F3F4F6; padding: 24px; border-radius: 0px; position: relative;">
       <p style="font-style: italic; font-family: 'Fraunces', serif; color: #1F2937; margin: 0;">"Each year I'm choosing between urgent-now and smart-long-term with partial data."</p>
     </div>
     <div style="width: 0; height: 0; border-left: 12px solid transparent; border-right: 12px solid transparent; border-top: 12px solid #F3F4F6; position: absolute; bottom: -12px; left: 32px;"></div>
@@ -395,14 +395,14 @@ const caseStudies = {
 
 <p style="margin-top: 20px;">CMMS platforms handle tickets and leases but don't model asset lifespan or CapEx tradeoffs. Preventive maintenance ran on time, not risk, causing over-maintenance and surprise failures. Field tools assumed stable connectivity, so slow digital reporting killed adoption. And replacing the legacy stack wasn't viable — it was wired into procurement and budgeting. They didn't need another silo; they needed a layer that worked with what existed.</p>
 
-<img loading="lazy" decoding="async" src="/images/lat/Market%20Gap.webp" alt="Market Gap Analysis" style="width: 100%; border-radius: 8px; margin-top: 40px; margin-bottom: 40px; display: block;" />`
+<img loading="lazy" decoding="async" src="/images/lat/Market%20Gap.webp" alt="Market Gap Analysis" style="width: 100%; border-radius: 0px; margin-top: 40px; margin-bottom: 40px; display: block;" />`
       },
       {
         id: 'turning-point',
         title: '03 — The Turning Point',
         headline: 'Research revealed we were redesigning a system of coordination',
         content: `<div class="cs-video-wrap" style="width: 100%; max-width: 1200px; margin: 0 auto 48px;">
-  <video autoplay loop muted playsinline preload="metadata" aria-label="Screen recording of the role-based dashboard surfaces built over a shared data foundation" style="display: block; width: 100%; height: auto; border-radius: 8px;">
+  <video autoplay loop muted playsinline preload="metadata" aria-label="Screen recording of the role-based dashboard surfaces built over a shared data foundation" style="display: block; width: 100%; height: auto; border-radius: 0px;">
     <source src="/videos/lat/Flow%2002.mp4" type="video/mp4">
     Your browser does not support the video tag.
   </video>
@@ -415,7 +415,7 @@ const caseStudies = {
 
 <p style="margin-top: 28px;">That reframed everything. Instead of one dashboard for everyone, we built role-based surfaces over a shared foundation, surfacing only what was actionable.</p>
 
-<img loading="lazy" decoding="async" src="/images/lat/pROBLEM.webp" alt="System architecture diagram — modular API layer, role-based surfaces, shared data foundation" style="width: 100%; border-radius: 8px; margin-top: 40px; margin-bottom: 40px; display: block;" />`
+<img loading="lazy" decoding="async" src="/images/lat/pROBLEM.webp" alt="System architecture diagram — modular API layer, role-based surfaces, shared data foundation" style="width: 100%; border-radius: 0px; margin-top: 40px; margin-bottom: 40px; display: block;" />`
       },
       {
         id: 'constraints',
@@ -438,7 +438,7 @@ const caseStudies = {
   </div>
 </div>
 
-<div style="width: 100%; height: 450px; background-color: #E5E7EB; border-radius: 8px; display: flex; align-items: center; justify-content: center; color: #9CA3AF; font-size: 14px; margin-top: 40px; margin-bottom: 40px;">
+<div style="width: 100%; height: 450px; background-color: #E5E7EB; border-radius: 0px; display: flex; align-items: center; justify-content: center; color: #9CA3AF; font-size: 14px; margin-top: 40px; margin-bottom: 40px;">
   <div style="text-align: center; padding: 20px;">
     <div style="font-weight: 600; margin-bottom: 8px;">IMAGE: Approval Workflow</div>
     <div style="font-size: 13px; line-height: 1.5;">Manager review gates → AI reasoning display → Override logging<br/>Shows human-in-the-loop design</div>
@@ -462,7 +462,7 @@ const caseStudies = {
   </div>
 </div>
 
-<div style="width: 100%; height: 450px; background-color: #E5E7EB; border-radius: 8px; display: flex; align-items: center; justify-content: center; color: #9CA3AF; font-size: 14px; margin-top: 40px; margin-bottom: 40px;">
+<div style="width: 100%; height: 450px; background-color: #E5E7EB; border-radius: 0px; display: flex; align-items: center; justify-content: center; color: #9CA3AF; font-size: 14px; margin-top: 40px; margin-bottom: 40px;">
   <div style="text-align: center; padding: 20px;">
     <div style="font-weight: 600; margin-bottom: 8px;">IMAGE: Offline-First Architecture</div>
     <div style="font-size: 13px; line-height: 1.5;">Mobile workflow: Local queue → Capture → Auto-sync → Retry logic<br/>Shows connectivity resilience design</div>
@@ -497,7 +497,7 @@ const caseStudies = {
   </div>
 </div>
 
-<div style="background-color: #F9FAFB; padding: 28px; border-radius: 12px; border-left: 3px solid #7EB3F5;">
+<div style="background-color: #F9FAFB; padding: 28px; border-radius: 0px; border-left: 3px solid #7EB3F5;">
   <div class="cs-card-title cs-card-title--md">Platform Thinking</div>
   <div style="font-size: 15px; color: #57534E; line-height: 1.7;">The predictive engine improves as override data accumulates: more campuses → more lifecycle data → smarter predictions → higher switching cost. LAT compounds intelligence through use.</div>
 </div>`
@@ -511,19 +511,19 @@ const caseStudies = {
   <p>Automatically link <span style="font-weight: 600;">Work Orders ↔ Asset DNA ↔ Cost-to-Date</span>. The conversation shifted from "we'll fix it again" to "this unit cost $42K in three years; replacing now saves $18K."</p>
 </div>
 
-<div style="width: 100%; height: 400px; background-color: #E5E7EB; border-radius: 8px; display: flex; align-items: center; justify-content: center; color: #9CA3AF; font-size: 14px; margin-top: 40px; margin-bottom: 40px;">
+<div style="width: 100%; height: 400px; background-color: #E5E7EB; border-radius: 0px; display: flex; align-items: center; justify-content: center; color: #9CA3AF; font-size: 14px; margin-top: 40px; margin-bottom: 40px;">
   <div style="text-align: center; padding: 20px;">
     <div style="font-weight: 600; margin-bottom: 8px;">IMAGE 1: Field Workflow Evolution</div>
     <div style="font-size: 13px; line-height: 1.5;">Mobile interface showing: offline queue → capture with voice input → auto-sync confirmation<br/>Annotation: "Reporting time: 20min → 8min"</div>
   </div>
 </div>
 
-<div style="background-color: #FFF9F5; padding: 24px; border-radius: 12px; border-left: 3px solid #FF6B35; margin-bottom: 48px;">
+<div style="background-color: #FFF9F5; padding: 24px; border-radius: 0px; border-left: 3px solid #FF6B35; margin-bottom: 48px;">
   <div class="cs-card-title cs-card-title--sm">The "Everything Dashboard" Failed</div>
   <p style="font-size: 15px; color: #57534E; line-height: 1.6; margin: 0;">Multiple graphs looked impressive; managers scanned without acting. We replaced it with a ranked priority queue — action first, analysis second.</p>
 </div>
 
-<div style="width: 100%; height: 400px; background-color: #E5E7EB; border-radius: 8px; display: flex; align-items: center; justify-content: center; color: #9CA3AF; font-size: 14px; margin-top: 40px; margin-bottom: 40px;">
+<div style="width: 100%; height: 400px; background-color: #E5E7EB; border-radius: 0px; display: flex; align-items: center; justify-content: center; color: #9CA3AF; font-size: 14px; margin-top: 40px; margin-bottom: 40px;">
   <div style="text-align: center; padding: 20px;">
     <div style="font-weight: 600; margin-bottom: 8px;">IMAGE 2: Dashboard Before/After</div>
     <div style="font-size: 13px; line-height: 1.5;">Left: Dense "Everything Dashboard" with 8+ graphs<br/>Right: Clean priority queue with contextual side panels<br/>Annotation: "Decision time: 14min → 4min"</div>
@@ -535,21 +535,21 @@ const caseStudies = {
   <p>Turn predictive signals into ranked alerts. Early alerts said <span style="font-style: italic;">"Boiler failure risk: 68%"</span> — managers hesitated. We shifted to consequence framing: <span style="font-style: italic;">"High vibration + 9 years in service → delaying replacement may cost $18K."</span> Humans act on consequences, not probabilities.</p>
 </div>
 
-<div style="width: 100%; height: 400px; background-color: #E5E7EB; border-radius: 8px; display: flex; align-items: center; justify-content: center; color: #9CA3AF; font-size: 14px; margin-top: 40px; margin-bottom: 40px;">
+<div style="width: 100%; height: 400px; background-color: #E5E7EB; border-radius: 0px; display: flex; align-items: center; justify-content: center; color: #9CA3AF; font-size: 14px; margin-top: 40px; margin-bottom: 40px;">
   <div style="text-align: center; padding: 20px;">
     <div style="font-weight: 600; margin-bottom: 8px;">IMAGE 3: Alert Card Before/After ⭐</div>
     <div style="font-size: 13px; line-height: 1.5;">Left: "Boiler failure risk: 68%" (probability framing)<br/>Right: "High vibration + 9yr service → $18K savings if replaced now" (consequence framing)<br/>Shows: Critical/Monitor/Safe tiers + top 3 drivers</div>
   </div>
 </div>
 
-<div style="background-color: #FFF9F5; padding: 24px; border-radius: 12px; border-left: 3px solid #FF6B35; margin-bottom: 32px;">
+<div style="background-color: #FFF9F5; padding: 24px; border-radius: 0px; border-left: 3px solid #FF6B35; margin-bottom: 32px;">
   <div class="cs-card-title cs-card-title--sm">The Boiler Incident — When AI Was Wrong</div>
   <p style="font-size: 15px; color: #57534E; line-height: 1.6; margin: 0;">Month 2: the engine flagged a $180K boiler replacement as Critical. Inspection showed duplicated repair entries had inflated the risk. Three guardrails contained it — manager review gate, visible drivers, no auto-procurement. We added a "Needs Verification" state and multi-signal validation. Adoption held at 95%.</p>
 </div>
 
 <div class="pull-quote">The real AI risk in enterprise isn't model sophistication — it's dirty upstream data influencing downstream capital decisions.</div>
 
-<div style="width: 100%; height: 400px; background-color: #E5E7EB; border-radius: 8px; display: flex; align-items: center; justify-content: center; color: #9CA3AF; font-size: 14px; margin-top: 40px; margin-bottom: 40px;">
+<div style="width: 100%; height: 400px; background-color: #E5E7EB; border-radius: 0px; display: flex; align-items: center; justify-content: center; color: #9CA3AF; font-size: 14px; margin-top: 40px; margin-bottom: 40px;">
   <div style="text-align: center; padding: 20px;">
     <div style="font-weight: 600; margin-bottom: 8px;">IMAGE 4: Boiler Incident Screen</div>
     <div style="font-size: 13px; line-height: 1.5;">Critical alert showing visible contributing drivers (with duplicate entries highlighted)<br/>"Needs Verification" state badge<br/>Manager override logged in timeline</div>
@@ -561,7 +561,7 @@ const caseStudies = {
   <p>In-house scenario comparison with side-by-side cost/timeline deltas. Before LAT, feasibility questions meant commissioning external studies; after, teams ran three scenarios instantly and exported board-ready outputs. Decision velocity over spectacle.</p>
 </div>
 
-<div style="width: 100%; height: 400px; background-color: #E5E7EB; border-radius: 8px; display: flex; align-items: center; justify-content: center; color: #9CA3AF; font-size: 14px; margin-top: 40px; margin-bottom: 40px;">
+<div style="width: 100%; height: 400px; background-color: #E5E7EB; border-radius: 0px; display: flex; align-items: center; justify-content: center; color: #9CA3AF; font-size: 14px; margin-top: 40px; margin-bottom: 40px;">
   <div style="text-align: center; padding: 20px;">
     <div style="font-weight: 600; margin-bottom: 8px;">IMAGE 5: Scenario Comparison</div>
     <div style="font-size: 13px; line-height: 1.5;">Two scenarios side-by-side: "Repair" vs "Replace"<br/>Shows: Cost delta, timeline delta, risk comparison<br/>Export button for board-ready CapEx reports</div>
@@ -594,11 +594,11 @@ const caseStudies = {
   </div>
 </div>
 
-<img loading="lazy" decoding="async" src="/images/lat/AB%20Testing.webp" alt="AB Testing comparison showing simplified vs detailed alert views" style="width: 100%; border-radius: 8px; margin-top: 40px; margin-bottom: 40px; display: block;" />
+<img loading="lazy" decoding="async" src="/images/lat/AB%20Testing.webp" alt="AB Testing comparison showing simplified vs detailed alert views" style="width: 100%; border-radius: 0px; margin-top: 40px; margin-bottom: 40px; display: block;" />
 
 <div class="pull-quote">The failure mode is never the UI. It's adoption, trust, and behavior — once those break, the metrics follow.</div>
 
-<div style="width: 100%; height: 450px; background-color: #E5E7EB; border-radius: 8px; display: flex; align-items: center; justify-content: center; color: #9CA3AF; font-size: 14px; margin-top: 40px; margin-bottom: 40px;">
+<div style="width: 100%; height: 450px; background-color: #E5E7EB; border-radius: 0px; display: flex; align-items: center; justify-content: center; color: #9CA3AF; font-size: 14px; margin-top: 40px; margin-bottom: 40px;">
   <div style="text-align: center; padding: 20px;">
     <div style="font-weight: 600; margin-bottom: 8px;">IMAGE: Trust Over Time Chart</div>
     <div style="font-size: 13px; line-height: 1.5;">Override rate: 61% → 19% | Decision time: 14min → 4min | Adoption: climbing to 95%<br/>Interventions marked: Boiler incident (Mo 2), Confidence tiers (Mo 3), Consequence framing (Mo 5), Feedback loop (Mo 7)</div>
@@ -667,6 +667,7 @@ const caseStudies = {
     subtitle: 'Media Literacy Tools for the AI Age',
     description: 'Research collaboration with TrueMedia.org',
     heroImage: '/images/misinformation-center/Hero.png',
+    figmaPrototypeUrl: 'https://www.figma.com/proto/5SuxUGsaCvOVUiRdXa7uNl/Misinformation-Center?page-id=12%3A7585&node-id=20-3800&p=f&viewport=1079%2C560%2C0.06&scaling=scale-down&content-scaling=fixed&starting-point-node-id=20%3A3748&show-proto-sidebar=1',
     brief: {
       context: 'UW graduate capstone (solo after month two) asking whether people could be equipped to identify misinformation themselves, in research partnership with TrueMedia.org.',
       constraint: 'No engineering resourcing beyond a prototype, and testing showed users rejected any platform-integrated solution outright — the tool had to stand alone.',
@@ -688,13 +689,13 @@ const caseStudies = {
 <div class="snapshot-text-content">
 <p>Platforms try to control misinformation, but users don't trust them. This capstone asked a different question: what if we equipped people to identify it themselves?</p>
 
-<img loading="lazy" decoding="async" src="/images/misinformation-center/Truth.png" alt="Truth visual" style="width: 100%; border-radius: 8px; margin-top: 40px; margin-bottom: 40px; display: block;" />
+<img loading="lazy" decoding="async" src="/images/misinformation-center/Truth.png" alt="Truth visual" style="width: 100%; border-radius: 0px; margin-top: 40px; margin-bottom: 40px; display: block;" />
 
 <p style="margin-top: 28px;"><span style="font-weight: 600;">Agency over authority.</span> People resist being told what's true, but respond better when given tools to decide for themselves. Not another fact-check label — tools that help people pause, verify, and learn, folded into daily habits.</p>
 
 <div style="display: flex; gap: 24px; margin-top: 48px; margin-bottom: 8px; flex-wrap: wrap;">
   <div style="flex: 1; min-width: 250px; position: relative;">
-    <div style="background-color: #F3F4F6; padding: 24px; border-radius: 16px; position: relative;">
+    <div style="background-color: #F3F4F6; padding: 24px; border-radius: 0px; position: relative;">
       <p style="font-style: italic; font-family: 'Fraunces', serif; color: #1F2937; margin: 0;">"She took us along on her journey of learning from users as she went."</p>
       <p style="margin-top: 12px; font-size: 13px; color: #6B7280;">— capstone reviewer</p>
     </div>
@@ -709,19 +710,19 @@ const caseStudies = {
 
 <div class="snapshot-bottom-content">
 <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin-top: 48px; margin-bottom: 48px;">
-  <div style="background-color: #F3F4F6; border-radius: 12px; padding: 20px 24px;">
+  <div style="background-color: #F3F4F6; border-radius: 0px; padding: 20px 24px;">
     <div class="cs-card-title cs-card-title--sm-tight">Search & Image Search</div>
     <div style="font-size: 14px; color: #57534E; line-height: 1.5;">Verify links, headlines, and images with layered credibility ratings</div>
   </div>
-  <div style="background-color: #F3F4F6; border-radius: 12px; padding: 20px 24px;">
+  <div style="background-color: #F3F4F6; border-radius: 0px; padding: 20px 24px;">
     <div class="cs-card-title cs-card-title--sm-tight">Scan</div>
     <div style="font-size: 14px; color: #57534E; line-height: 1.5;">Camera-based verification for printed content — flyers, newspapers, ads</div>
   </div>
-  <div style="background-color: #F3F4F6; border-radius: 12px; padding: 20px 24px;">
+  <div style="background-color: #F3F4F6; border-radius: 0px; padding: 20px 24px;">
     <div class="cs-card-title cs-card-title--sm-tight">Literacy Quiz</div>
     <div style="font-size: 14px; color: #57534E; line-height: 1.5;">A level-based game teaching users to spot manipulated content</div>
   </div>
-  <div style="background-color: #F3F4F6; border-radius: 12px; padding: 20px 24px;">
+  <div style="background-color: #F3F4F6; border-radius: 0px; padding: 20px 24px;">
     <div class="cs-card-title cs-card-title--sm-tight">Ask Us</div>
     <div style="font-size: 14px; color: #57534E; line-height: 1.5;">Human-backed fact-checking for gray-area content algorithms miss</div>
   </div>
@@ -747,7 +748,7 @@ const caseStudies = {
 </div>
 
 <div style="width: 100%; margin-top: 40px; margin-bottom: 40px;">
-  <img loading="lazy" decoding="async" src="/images/misinformation-center/User quote.png" alt="User quote" style="width: 100%; height: auto; border-radius: 8px; display: block;" />
+  <img loading="lazy" decoding="async" src="/images/misinformation-center/User quote.png" alt="User quote" style="width: 100%; height: auto; border-radius: 0px; display: block;" />
 </div>
 </div>
 </div>`
@@ -760,25 +761,25 @@ const caseStudies = {
 
 <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 40px; margin-top: 64px; margin-bottom: 64px;">
   <div>
-    <img loading="lazy" decoding="async" src="/images/misinformation-center/Problem 01.webp" alt="Survey Results" style="width: 100%; height: auto; border-radius: 8px; margin-bottom: 24px; display: block;" />
+    <img loading="lazy" decoding="async" src="/images/misinformation-center/Problem 01.webp" alt="Survey Results" style="width: 100%; height: auto; border-radius: 0px; margin-bottom: 24px; display: block;" />
     <div class="cs-card-title cs-card-title--xs">Survey Results (n=2,000)</div>
     <div style="font-size: 13px; color: #57534E; line-height: 1.6;">74% encountered misinformation weekly. 62% of parents felt overwhelmed. <20% trusted existing fact-checkers. Users wanted peace of mind, not just truth.</div>
   </div>
 
   <div>
-    <img loading="lazy" decoding="async" src="/images/misinformation-center/Problem 02.webp" alt="The Generational Sandwich" style="width: 100%; height: auto; border-radius: 8px; margin-bottom: 24px; display: block;" />
+    <img loading="lazy" decoding="async" src="/images/misinformation-center/Problem 02.webp" alt="The Generational Sandwich" style="width: 100%; height: auto; border-radius: 0px; margin-bottom: 24px; display: block;" />
     <div class="cs-card-title cs-card-title--xs">The Generational Sandwich</div>
     <div style="font-size: 13px; color: #57534E; line-height: 1.6;">Mothers filtering misinformation for kids while protecting elderly parents from scams. Managing media literacy for two generations at once shaped the archetype strategy.</div>
   </div>
 
   <div>
-    <img loading="lazy" decoding="async" src="/images/misinformation-center/Problem 03.webp" alt="The Transparency Demand" style="width: 100%; height: auto; border-radius: 8px; margin-bottom: 24px; display: block;" />
+    <img loading="lazy" decoding="async" src="/images/misinformation-center/Problem 03.webp" alt="The Transparency Demand" style="width: 100%; height: auto; border-radius: 0px; margin-bottom: 24px; display: block;" />
     <div class="cs-card-title cs-card-title--xs">The Transparency Demand</div>
     <div style="font-size: 13px; color: #57534E; line-height: 1.6;">Users wanted to see the incentive structure behind content, not just fact-check labels. Understanding who benefits mattered as much as knowing what's true.</div>
   </div>
 
   <div>
-    <img loading="lazy" decoding="async" src="/images/misinformation-center/Problem 04.webp" alt="The Platform Trust Problem" style="width: 100%; height: auto; border-radius: 8px; margin-bottom: 24px; display: block;" />
+    <img loading="lazy" decoding="async" src="/images/misinformation-center/Problem 04.webp" alt="The Platform Trust Problem" style="width: 100%; height: auto; border-radius: 0px; margin-bottom: 24px; display: block;" />
     <div class="cs-card-title cs-card-title--xs">The Platform Trust Problem</div>
     <div style="font-size: 13px; color: #57534E; line-height: 1.6;">Testing rejected a Facebook-integrated solution immediately. Users wouldn't trust the platform spreading misinformation to also solve it. The tool had to be independent.</div>
   </div>
@@ -787,7 +788,7 @@ const caseStudies = {
 <div class="pull-quote" style="margin-top: 100px;">The platform that spread the problem was structurally incapable of being trusted as its solution.</div>
 
 <div class="cs-video-wrap" style="width: 100%; max-width: 1200px; margin: 60px auto 0;">
-  <video autoplay loop muted playsinline preload="metadata" aria-label="Screen recording of the verification tool embedded in trusted surfaces like the share sheet and lock screen widget" style="display: block; width: 100%; height: auto; border-radius: 8px;">
+  <video autoplay loop muted playsinline preload="metadata" aria-label="Screen recording of the verification tool embedded in trusted surfaces like the share sheet and lock screen widget" style="display: block; width: 100%; height: auto; border-radius: 0px;">
     <source src="/videos/misinformationcenter/flow%2002.mp4" type="video/mp4">
     Your browser does not support the video tag.
   </video>
@@ -827,7 +828,7 @@ const caseStudies = {
 
 <div style="display: flex; gap: 24px; margin-top: 48px; flex-wrap: wrap;">
   <div style="flex: 1; min-width: 250px; position: relative;">
-    <div style="background-color: #F3F4F6; padding: 24px; border-radius: 16px; position: relative;">
+    <div style="background-color: #F3F4F6; padding: 24px; border-radius: 0px; position: relative;">
       <p style="font-style: italic; font-family: 'Fraunces', serif; color: #1F2937; margin: 0;">"Great idea to bring in UI scenarios outside of the app itself, like the lock screen widget."</p>
       <p style="margin-top: 12px; font-size: 13px; color: #6B7280;">— capstone reviewer</p>
     </div>
@@ -840,7 +841,7 @@ const caseStudies = {
         title: '05 — User Research',
         headline: 'Misinformation moves through trust networks — families, WhatsApp groups, neighborhood pages — in a specific generational pattern',
         content: `<div class="cs-video-wrap" style="width: 100%; max-width: 1200px; margin: 0 auto 48px;">
-  <video autoplay loop muted playsinline preload="metadata" aria-label="Screen recording of the color-coded rating system and unified search/image-search entry point" style="display: block; width: 100%; height: auto; border-radius: 8px;">
+  <video autoplay loop muted playsinline preload="metadata" aria-label="Screen recording of the color-coded rating system and unified search/image-search entry point" style="display: block; width: 100%; height: auto; border-radius: 0px;">
     <source src="/videos/misinformationcenter/Flow%2001%20Misinformation.mp4" type="video/mp4">
     Your browser does not support the video tag.
   </video>
@@ -867,7 +868,7 @@ const caseStudies = {
 
 <div style="display: flex; gap: 24px; margin-top: 48px; margin-bottom: 8px; flex-wrap: wrap;">
   <div style="flex: 1; min-width: 250px; position: relative;">
-    <div style="background-color: #F3F4F6; padding: 24px; border-radius: 16px; position: relative;">
+    <div style="background-color: #F3F4F6; padding: 24px; border-radius: 0px; position: relative;">
       <p style="font-style: italic; font-family: 'Fraunces', serif; color: #1F2937; margin: 0;">"I loved that you used the quotes from interviews. It gave it a lot of meaning."</p>
       <p style="margin-top: 12px; font-size: 13px; color: #6B7280;">— capstone reviewer</p>
     </div>
@@ -875,7 +876,7 @@ const caseStudies = {
   </div>
 </div>
 
-<img loading="lazy" decoding="async" src="/images/misinformation-center/User thinking.png" alt="The generational chain diagram and three archetype cards with real interview quotes" style="width: 100%; border-radius: 8px; margin-top: 40px; margin-bottom: 40px; display: block;" />
+<img loading="lazy" decoding="async" src="/images/misinformation-center/User thinking.png" alt="The generational chain diagram and three archetype cards with real interview quotes" style="width: 100%; border-radius: 0px; margin-top: 40px; margin-bottom: 40px; display: block;" />
 
 <p style="margin-top: 36px;"><span style="font-weight: 600;">What Misinfo Day revealed that recruited testing couldn't.</span> Small-scale testing shows what people say; live testing with unrecruited crowds shows what they do. Younger participants abandoned any flow that felt like reading within seconds. Older participants trusted Ask Us over automated ratings — a person's judgment over an algorithm's output. The sharpest insight: engagement spiked when detection was framed as a skill, not a correction — people wanted to feel smart for getting it right, not told they were wrong.</p>
 
@@ -884,16 +885,16 @@ const caseStudies = {
 <div style="margin-top: 48px;">
   <div style="font-size: 13px; color: #6B7280; margin-bottom: 12px;">Misinfo Day — live testing with ~1,800 participants · scroll to see more →</div>
   <div style="display: flex; gap: 16px; overflow-x: auto; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; padding-bottom: 8px;">
-    <img loading="lazy" decoding="async" src="/images/misinformation-center/Misinfo%20day%20%281%29.jpg" alt="Misinfo Day live testing, photo 1" style="flex: 0 0 auto; scroll-snap-align: start; width: 85%; max-width: 460px; height: 340px; object-fit: cover; border-radius: 8px; display: block;" />
-    <img loading="lazy" decoding="async" src="/images/misinformation-center/Misinfo%20day%20%282%29.jpg" alt="Misinfo Day live testing, photo 2" style="flex: 0 0 auto; scroll-snap-align: start; width: 85%; max-width: 460px; height: 340px; object-fit: cover; border-radius: 8px; display: block;" />
-    <img loading="lazy" decoding="async" src="/images/misinformation-center/Misinfo%20day%20%283%29.jpg" alt="Misinfo Day live testing, photo 3" style="flex: 0 0 auto; scroll-snap-align: start; width: 85%; max-width: 460px; height: 340px; object-fit: cover; border-radius: 8px; display: block;" />
-    <img loading="lazy" decoding="async" src="/images/misinformation-center/Misinfo%20day%20%284%29.jpg" alt="Misinfo Day live testing, photo 4" style="flex: 0 0 auto; scroll-snap-align: start; width: 85%; max-width: 460px; height: 340px; object-fit: cover; border-radius: 8px; display: block;" />
+    <img loading="lazy" decoding="async" src="/images/misinformation-center/Misinfo%20day%20%281%29.jpg" alt="Misinfo Day live testing, photo 1" style="flex: 0 0 auto; scroll-snap-align: start; width: 85%; max-width: 460px; height: 340px; object-fit: cover; border-radius: 0px; display: block;" />
+    <img loading="lazy" decoding="async" src="/images/misinformation-center/Misinfo%20day%20%282%29.jpg" alt="Misinfo Day live testing, photo 2" style="flex: 0 0 auto; scroll-snap-align: start; width: 85%; max-width: 460px; height: 340px; object-fit: cover; border-radius: 0px; display: block;" />
+    <img loading="lazy" decoding="async" src="/images/misinformation-center/Misinfo%20day%20%283%29.jpg" alt="Misinfo Day live testing, photo 3" style="flex: 0 0 auto; scroll-snap-align: start; width: 85%; max-width: 460px; height: 340px; object-fit: cover; border-radius: 0px; display: block;" />
+    <img loading="lazy" decoding="async" src="/images/misinformation-center/Misinfo%20day%20%284%29.jpg" alt="Misinfo Day live testing, photo 4" style="flex: 0 0 auto; scroll-snap-align: start; width: 85%; max-width: 460px; height: 340px; object-fit: cover; border-radius: 0px; display: block;" />
   </div>
 </div>
 
-<div style="background-color: #000000; border-radius: 8px; padding: 40px 24px; margin-top: 40px; display: flex; justify-content: center;">
+<div style="background-color: #000000; border-radius: 0px; padding: 40px 24px; margin-top: 40px; display: flex; justify-content: center;">
   <div class="cs-video-wrap" style="width: 100%; max-width: 300px;">
-    <video autoplay loop muted playsinline preload="metadata" aria-label="Screen recording of a user uploading an image for camera-based verification" style="width: 100%; aspect-ratio: 580 / 1040; border-radius: 8px; display: block; object-fit: cover;">
+    <video autoplay loop muted playsinline preload="metadata" aria-label="Screen recording of a user uploading an image for camera-based verification" style="width: 100%; aspect-ratio: 580 / 1040; border-radius: 0px; display: block; object-fit: cover;">
       <source src="/videos/misinformationcenter/Testing%20Image%20upload.mp4" type="video/mp4">
       Your browser does not support the video tag.
     </video>
@@ -919,7 +920,7 @@ const caseStudies = {
 
 <div style="display: flex; gap: 24px; margin-top: 48px; margin-bottom: 8px; flex-wrap: wrap;">
   <div style="flex: 1; min-width: 250px; position: relative;">
-    <div style="background-color: #F3F4F6; padding: 24px; border-radius: 16px; position: relative;">
+    <div style="background-color: #F3F4F6; padding: 24px; border-radius: 0px; position: relative;">
       <p style="font-style: italic; font-family: 'Fraunces', serif; color: #1F2937; margin: 0;">"Demo was very well designed. Excited to see the next steps."</p>
       <p style="margin-top: 12px; font-size: 13px; color: #6B7280;">— capstone reviewer</p>
     </div>
@@ -930,7 +931,7 @@ const caseStudies = {
 <p style="margin-top: 48px;"><span style="font-weight: 600;">If I built this in 2026.</span> In 2024 this needed an organization — moderators, funding, a maintenance team. By 2026, AI collapses that requirement: triage for Ask Us, monitoring to keep quiz content current, AI-augmented research at scale. What took a fifteen-person nonprofit now takes a determined individual. The capstone answered the design question; the ecosystem question — reaching people at scale, outliving a funding cycle — is still open.</p>
 
 <div id="prototype" class="figma-embed-container" style="margin-top: 48px;">
-  <iframe style="border: 1px solid rgba(0, 0, 0, 0.1); border-radius: 8px;" width="100%" class="figma-embed-iframe" src="https://embed.figma.com/proto/5SuxUGsaCvOVUiRdXa7uNl/Misinformation-Center?page-id=12%3A7585&node-id=20-3800&p=f&viewport=1079%2C560%2C0.06&scaling=scale-down&content-scaling=fixed&starting-point-node-id=20%3A3748&show-proto-sidebar=1&embed-host=share" allowfullscreen loading="lazy"></iframe>
+  <iframe style="border: 1px solid rgba(0, 0, 0, 0.1); border-radius: 0px;" width="100%" class="figma-embed-iframe" src="https://embed.figma.com/proto/5SuxUGsaCvOVUiRdXa7uNl/Misinformation-Center?page-id=12%3A7585&node-id=20-3800&p=f&viewport=1079%2C560%2C0.06&scaling=scale-down&content-scaling=fixed&starting-point-node-id=20%3A3748&show-proto-sidebar=1&embed-host=share" allowfullscreen loading="lazy"></iframe>
 </div>`
       },
     ]

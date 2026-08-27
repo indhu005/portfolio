@@ -111,7 +111,7 @@ export default function About() {
             background: '#000000',
             color: 'white',
             border: 'none',
-            borderRadius: '8px',
+            borderRadius: '0px',
             padding: '12px 16px',
             fontSize: '14px',
             fontWeight: 600,
@@ -191,7 +191,7 @@ export default function About() {
             maxWidth: isMobile || isTablet ? '850px' : '1020px',
             height: '580px',
             backgroundColor: '#7EB3F5',
-            borderRadius: '4px',
+            borderRadius: '0px',
             marginBottom: isMobile ? '48px' : '64px',
             marginLeft: 'auto',
             marginRight: 'auto',
@@ -334,7 +334,7 @@ export default function About() {
                   >
                     <div style={{
                       aspectRatio: '1',
-                      borderRadius: '2px',
+                      borderRadius: '0px',
                       overflow: 'hidden',
                       transform: isOtherPhoto ? 'scale(0.95)' : 'scale(1)',
                       opacity: isOtherPhoto ? 0.3 : 1,
