@@ -325,24 +325,30 @@ const caseStudies = {
 
 <h4 class="case-study-subhead">Impact</h4>
 
-<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 16px; margin-bottom: 32px;">
-  <div>
-    <p style="margin: 0;"><span style="font-weight: 600;">Pilot adoption</span><br/>95% of property managers (vs. 70% benchmark)<br/><span style="font-size: 13px; color: #6B7280;">Usage tracking during pilot — most rigorously measured</span></p>
+<div class="metrics-grid metrics-grid--dark" style="margin-bottom: 32px;">
+  <div class="metrics-cell metrics-cell--hero">
+    <div class="metrics-num">95%</div>
+    <div class="metrics-label">Pilot adoption among property managers, vs. 70% benchmark</div>
   </div>
-  <div>
-    <p style="margin: 0;"><span style="font-weight: 600;">Data accuracy</span><br/>70% → 95%<br/><span style="font-size: 13px; color: #6B7280;">Audit of asset records pre/post canonical ID + sync validation</span></p>
+  <div class="metrics-cell">
+    <div class="metrics-num">70% → 95%</div>
+    <div class="metrics-label">Data accuracy, audit of asset records pre/post canonical ID + sync validation</div>
   </div>
-  <div>
-    <p style="margin: 0;"><span style="font-weight: 600;">Reporting time per ticket</span><br/>~20 min → ~8 min<br/><span style="font-size: 13px; color: #6B7280;">Observed field timing, pre/post offline-first workflow</span></p>
+  <div class="metrics-cell">
+    <div class="metrics-num">~20 → ~8 min</div>
+    <div class="metrics-label">Reporting time per ticket, observed field timing pre/post offline-first workflow</div>
   </div>
-  <div>
-    <p style="margin: 0;"><span style="font-weight: 600;">Budget revisions</span><br/>↓ 36%<br/><span style="font-size: 13px; color: #6B7280;">Planning-cycle comparison vs. prior year</span></p>
+  <div class="metrics-cell">
+    <div class="metrics-num">−36%</div>
+    <div class="metrics-label">Budget revisions, planning-cycle comparison vs. prior year</div>
   </div>
-  <div>
-    <p style="margin: 0;"><span style="font-weight: 600;">Emergency repair incidents</span><br/>↓ 12%<br/><span style="font-size: 13px; color: #6B7280;">Work-order classification during pilot period</span></p>
+  <div class="metrics-cell">
+    <div class="metrics-num">−12%</div>
+    <div class="metrics-label">Emergency repair incidents, work-order classification during pilot</div>
   </div>
-  <div>
-    <p style="margin: 0;"><span style="font-weight: 600;">Unexpected maintenance costs</span><br/>↓ 25% projected<br/><span style="font-size: 13px; color: #6B7280;">Lifecycle model forecast validated against pilot repair data</span></p>
+  <div class="metrics-cell">
+    <div class="metrics-num">−25% projected</div>
+    <div class="metrics-label">Unexpected maintenance costs, lifecycle model forecast vs. pilot repair data</div>
   </div>
 </div>
 
