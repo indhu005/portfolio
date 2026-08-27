@@ -152,6 +152,7 @@ export default function Sidebar({
                     expandedProject === project.slug ? null : project.slug
                   )
                 }}
+                className="sidebar-key sidebar-key-top"
                 style={{
                   fontSize: navFontSize,
                   fontWeight: isActiveProject ? 600 : 400,
@@ -159,11 +160,10 @@ export default function Sidebar({
                   cursor: 'pointer',
                   paddingTop: navPaddingY,
                   paddingBottom: navPaddingY,
-                  paddingLeft: isActiveProject ? '10px' : '0px',
+                  paddingLeft: isActiveProject ? '50px' : '40px',
                   borderLeft: isActiveProject ? '2px solid var(--accent)' : '2px solid transparent',
-                  transition: 'color 0.12s ease-out, font-weight 0.12s ease-out, padding-left 0.12s ease-out, border-color 0.12s ease-out',
+                  transition: 'color 0.12s ease-out, font-weight 0.12s ease-out, padding-left 0.12s ease-out, border-color 0.12s ease-out, background-color 0.15s ease-out, transform 0.06s ease-out',
                   textDecoration: 'none',
-                  display: 'block',
                 }}
                 onMouseEnter={(e) => { if (!isActiveProject) e.currentTarget.style.color = 'var(--accent)' }}
                 onMouseLeave={(e) => { if (!isActiveProject) e.currentTarget.style.color = '#6B7280' }}
@@ -190,6 +190,7 @@ export default function Sidebar({
                         }}
                         onMouseEnter={(e) => { if (!isActiveSection) e.currentTarget.style.color = '#1C1917' }}
                         onMouseLeave={(e) => { if (!isActiveSection) e.currentTarget.style.color = '#6B7280' }}
+                        className="sidebar-key sidebar-key-nested"
                         style={{
                           fontSize: isCompact ? '16px' : isLargeDesktop ? '17px' : '14px',
                           color: isActiveSection ? '#1C1917' : '#6B7280',
@@ -198,10 +199,8 @@ export default function Sidebar({
                           alignItems: 'center',
                           gap: '8px',
                           cursor: onSectionClick ? 'pointer' : 'default',
-                          transition: 'color 0.12s ease, font-weight 0.12s ease',
-                          background: 'none',
+                          transition: 'color 0.12s ease, font-weight 0.12s ease, background-color 0.15s ease-out, transform 0.06s ease-out',
                           border: 'none',
-                          padding: 0,
                           paddingTop: isCompact ? '10px' : '4px',
                           paddingBottom: isCompact ? '10px' : '4px',
                           width: '100%',
@@ -230,15 +229,17 @@ export default function Sidebar({
       <div style={{ marginTop: '40px' }}>
         <Link
           href="/about"
+          className="sidebar-key sidebar-key-top"
           style={{
             fontSize: navFontSize,
             fontWeight: 700,
             color: '#1C1917',
+            paddingTop: navPaddingY,
+            paddingBottom: navPaddingY,
             marginBottom: '12px',
             cursor: 'pointer',
-            transition: 'color 0.12s ease-out',
+            transition: 'color 0.12s ease-out, background-color 0.15s ease-out, transform 0.06s ease-out',
             textDecoration: 'none',
-            display: 'block',
           }}
           onMouseEnter={(e) => e.currentTarget.style.color = 'var(--accent)'}
           onMouseLeave={(e) => e.currentTarget.style.color = '#1C1917'}
@@ -258,6 +259,7 @@ export default function Sidebar({
               rel={item.href.startsWith('mailto:') ? undefined : 'noopener noreferrer'}
               onMouseEnter={(e) => e.currentTarget.style.color = 'var(--accent)'}
               onMouseLeave={(e) => e.currentTarget.style.color = '#6B7280'}
+              className="sidebar-key sidebar-key-top"
               style={{
                 fontSize: navFontSize,
                 fontWeight: 400,
@@ -266,8 +268,7 @@ export default function Sidebar({
                 paddingBottom: navPaddingY,
                 cursor: 'pointer',
                 textDecoration: 'none',
-                display: 'block',
-                transition: 'color 0.12s ease',
+                transition: 'color 0.12s ease, background-color 0.15s ease-out, transform 0.06s ease-out',
               }}
             >
               {item.label}
@@ -277,6 +278,7 @@ export default function Sidebar({
               key={item.label}
               onMouseEnter={(e) => e.currentTarget.style.color = 'var(--accent)'}
               onMouseLeave={(e) => e.currentTarget.style.color = '#6B7280'}
+              className="sidebar-key sidebar-key-top"
               style={{
                 fontSize: navFontSize,
                 fontWeight: 400,
@@ -284,7 +286,7 @@ export default function Sidebar({
                 paddingTop: navPaddingY,
                 paddingBottom: navPaddingY,
                 cursor: 'pointer',
-                transition: 'color 0.12s ease',
+                transition: 'color 0.12s ease, background-color 0.15s ease-out, transform 0.06s ease-out',
               }}
             >
               {item.label}

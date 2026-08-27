@@ -14,6 +14,38 @@
   padding: 0;
 }
 
+/* Sidebar nav "piano key" press effect - a rectangular highlight lights up on
+   hover and depresses on click, instead of a flat color-only hover. */
+.sidebar-key {
+  position: relative;
+  display: block;
+  background-color: transparent;
+  transition: background-color 0.15s ease-out, transform 0.06s ease-out;
+}
+
+.sidebar-key:hover {
+  background-color: rgba(28, 25, 23, 0.05);
+}
+
+.sidebar-key:active {
+  background-color: rgba(28, 25, 23, 0.12);
+  transform: scaleY(0.92);
+}
+
+.sidebar-key-top {
+  margin-left: -40px;
+  padding-left: 40px;
+  transform-origin: left center;
+}
+
+.sidebar-key-nested {
+  margin-left: -8px;
+  padding-left: 8px;
+  margin-right: -8px;
+  padding-right: 8px;
+  transform-origin: left center;
+}
+
 html, body {
   overflow-x: hidden;
   overflow-y: auto;
