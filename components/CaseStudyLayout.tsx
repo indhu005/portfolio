@@ -254,6 +254,7 @@ export default function CaseStudyLayout({ caseStudy, slug }: CaseStudyLayoutProp
           {caseStudy.sections.map((section, index) => (
             <div
               key={section.id}
+              id={section.id}
               ref={(el) => { sectionRefs.current[section.id] = el }}
               style={{
                 marginBottom: index === caseStudy.sections.length - 1 ? '0' : '112px',
@@ -301,16 +302,17 @@ export default function CaseStudyLayout({ caseStudy, slug }: CaseStudyLayoutProp
                 )
               )}
 
-              {/* Brief Section - Context/Constraint/Decision/Tradeoff, appears before TL;DR */}
+              {/* Brief Section - Context/Constraint/Decision/Tradeoff, appears before TL;DR. Fused into one card with the TL;DR block below it. */}
               {index === 0 && caseStudy.brief && (
                 <div style={{
                   display: 'grid',
                   gridTemplateColumns: isMobile ? '1fr' : 'repeat(4, 1fr)',
                   gap: isMobile ? '20px' : '0',
-                  borderTop: '1px solid #E5E7EB',
-                  borderBottom: '1px solid #E5E7EB',
-                  padding: '28px 0',
-                  marginBottom: '40px',
+                  padding: isMobile ? '24px' : '28px 32px',
+                  backgroundColor: '#FFFFFF',
+                  border: '1px solid #E5E7EB',
+                  borderBottom: 'none',
+                  borderRadius: '12px 12px 0 0',
                   maxWidth: isMobile || isTablet ? '850px' : '1020px',
                   marginLeft: 'auto',
                   marginRight: 'auto',
@@ -322,20 +324,20 @@ export default function CaseStudyLayout({ caseStudy, slug }: CaseStudyLayoutProp
                     ['Tradeoff', caseStudy.brief.tradeoff],
                   ] as [string, string][]).map(([label, text], i) => (
                     <div key={label} style={{
-                      padding: isMobile ? '0' : '0 24px',
+                      padding: isMobile ? '0' : (i === 0 ? '0 20px 0 0' : '0 20px'),
                       borderLeft: !isMobile && i > 0 ? '1px solid #E5E7EB' : 'none',
                     }}>
                       <div style={{
-                        fontSize: '11px',
+                        fontSize: '10.5px',
                         fontWeight: 700,
                         textTransform: 'uppercase',
-                        letterSpacing: '0.06em',
+                        letterSpacing: '0.07em',
                         color: '#A8A29E',
                         marginBottom: '8px',
                       }}>{label}</div>
                       <div style={{
-                        fontSize: '14px',
-                        lineHeight: 1.55,
+                        fontSize: '13.5px',
+                        lineHeight: 1.5,
                         color: '#44403C',
                       }}>{text}</div>
                     </div>
@@ -349,8 +351,9 @@ export default function CaseStudyLayout({ caseStudy, slug }: CaseStudyLayoutProp
                   marginBottom: '60px',
                   padding: isMobile ? '24px' : '32px',
                   backgroundColor: '#F9FAFB',
-                  borderRadius: '12px',
+                  borderRadius: caseStudy.brief ? '0 0 12px 12px' : '12px',
                   border: '1px solid #E5E7EB',
+                  borderTop: caseStudy.brief ? '1px solid #E5E7EB' : undefined,
                   maxWidth: isMobile || isTablet ? '850px' : '1020px',
                   marginLeft: 'auto',
                   marginRight: 'auto',
@@ -485,7 +488,7 @@ export default function CaseStudyLayout({ caseStudy, slug }: CaseStudyLayoutProp
               )}
 
               {/* Visual Content Area - Hidden for strategy, constraints, tradeoffs, context-problem, turning-point, snapshot, problem, research, and reflection sections, and for sections that already embed real media via customComponent */}
-              {!section.customComponent && section.id !== 'strategy' && section.id !== 'constraints' && section.id !== 'tradeoffs' && section.id !== 'context-problem' && section.id !== 'turning-point' && section.id !== 'snapshot' && section.id !== 'problem' && section.id !== 'research' && section.id !== 'reflection' && section.id !== 'market' && section.id !== 'truemedia' && (
+              {!section.customComponent && section.id !== 'strategy' && section.id !== 'constraints' && section.id !== 'tradeoffs' && section.id !== 'context-problem' && section.id !== 'turning-point' && section.id !== 'snapshot' && section.id !== 'problem' && section.id !== 'research' && section.id !== 'reflection' && section.id !== 'market' && section.id !== 'truemedia' && section.id !== 'credit-system' && section.id !== 'product-card' && section.id !== 'extension' && section.id !== 'feature-index' && (
                 <div style={{
                   width: '100%',
                   minHeight: '500px',
