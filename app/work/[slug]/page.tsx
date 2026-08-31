@@ -227,7 +227,7 @@ const caseStudies = {
   <div class="feature-stat-label">Of users on the extension by the time I left — the fix for an 18-month-old unsolved problem</div>
 </div>
 
-<p>Partner integrations were the founders' original plan — the roadmap called for each partner to build against our API. Then our technical co-founder left, taking backend capacity with him, and that plan stopped being possible. Watching Honey auto-fill codes at checkout, I saw a fix that needed no partner engineering at all. Prototyped in two days, shipped that week with the remaining team.</p>
+<p>Partner integrations were the founders' original plan — the roadmap called for each partner to build against our API. Then our technical co-founder left, taking backend capacity with him, and that plan stopped being possible. Watching Honey auto-fill codes at checkout, I saw a fix that needed no partner engineering at all — the breakthrough was recognizing we should live where the user already is. Prototyped in two days, shipped that week with the remaining team.</p>
 
 <div class="feature-note"><span class="feature-note-label">Constraint</span> No backend engineer left on the team after the co-founder's exit — whatever shipped next had to be entirely client-side.</div>
 
