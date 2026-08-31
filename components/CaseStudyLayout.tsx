@@ -522,12 +522,18 @@ export default function CaseStudyLayout({ caseStudy, slug }: CaseStudyLayoutProp
                     marginLeft: 'auto',
                     marginRight: 'auto',
                   }}
+                  onClick={(e) => {
+                    const anchor = (e.target as HTMLElement).closest('a[href^="#"]')
+                    if (!anchor) return
+                    e.preventDefault()
+                    scrollToSection(anchor.getAttribute('href')!.slice(1))
+                  }}
                   dangerouslySetInnerHTML={{ __html: section.content }}
                 />
               )}
 
               {/* Visual Content Area - Hidden for strategy, constraints, tradeoffs, context-problem, turning-point, snapshot, problem, research, and reflection sections, and for sections that already embed real media via customComponent */}
-              {!section.customComponent && section.id !== 'strategy' && section.id !== 'constraints' && section.id !== 'tradeoffs' && section.id !== 'context-problem' && section.id !== 'turning-point' && section.id !== 'snapshot' && section.id !== 'problem' && section.id !== 'research' && section.id !== 'reflection' && section.id !== 'market' && section.id !== 'truemedia' && section.id !== 'credit-system' && section.id !== 'product-card' && section.id !== 'extension' && section.id !== 'feature-index' && section.id !== 'impact' && (
+              {!section.customComponent && section.id !== 'strategy' && section.id !== 'constraints' && section.id !== 'tradeoffs' && section.id !== 'context-problem' && section.id !== 'turning-point' && section.id !== 'snapshot' && section.id !== 'problem' && section.id !== 'research' && section.id !== 'reflection' && section.id !== 'market' && section.id !== 'truemedia' && section.id !== 'feature-index' && section.id !== 'impact' && (
                 <div style={{
                   width: '100%',
                   minHeight: '500px',

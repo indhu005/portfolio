@@ -121,138 +121,144 @@ const caseStudies = {
     <div class="feature-index-title">The Chrome Extension</div>
     <div class="feature-index-hook">An 18-month problem solved in ten days, inspired by a rain jacket.</div>
   </a>
-</div>`
-      },
-      {
-        id: 'credit-system',
-        title: '05 — Feature 01: The Credit System',
-        headline: 'Designed with the founders and PM, proven by users — five pricing models in ten months',
-        content: `<div style="width: 100%; height: 480px; background-color: #E5E7EB; border-radius: 0px; display: flex; align-items: center; justify-content: center; color: #9CA3AF; font-size: 14px; margin-top: 40px; margin-bottom: 40px;">
-  <div style="text-align: center; padding: 20px;">
-    <div style="font-weight: 600; margin-bottom: 8px;">IMAGE: 5-Frame Version Timeline</div>
-    <div style="font-size: 13px; line-height: 1.5;">One icon-driven frame per version, v1 → v5<br/>Credit counter animating ∞ → 200 → tier badges</div>
+</div>
+
+<div id="credit-system" class="feature-block">
+  <div class="feature-eyebrow">Feature 01</div>
+  <h4 class="feature-heading">The Credit System</h4>
+  <p class="feature-subheadline">Designed with the founders and PM, proven by users — five pricing models in ten months</p>
+
+  <div style="width: 100%; height: 480px; background-color: #E5E7EB; border-radius: 0px; display: flex; align-items: center; justify-content: center; color: #9CA3AF; font-size: 14px; margin-top: 32px; margin-bottom: 40px;">
+    <div style="text-align: center; padding: 20px;">
+      <div style="font-weight: 600; margin-bottom: 8px;">IMAGE: 5-Frame Version Timeline</div>
+      <div style="font-size: 13px; line-height: 1.5;">One icon-driven frame per version, v1 → v5<br/>Credit counter animating ∞ → 200 → tier badges</div>
+    </div>
+  </div>
+
+  <div class="feature-stat">
+    <div class="feature-stat-num">1–2% → 30–35%</div>
+    <div class="feature-stat-label">Lesser-known product activity, six weeks after the 200-credit cap shipped</div>
+  </div>
+
+  <p>Founders needed monetization before runway ran out — that direction was theirs. What shipped was five real pricing models in ten months, each one killed by evidence the PM and I brought back from users, not opinion.</p>
+
+  <div class="feature-note"><span class="feature-note-label">Direction</span> Founders proposed a flat 10% fee. Survey data I ran said users would pay 5–6%, not 10% — the cap that eventually shipped came from closing that gap with them, not overriding it.</div>
+
+  <div class="feature-chip-row">
+    <span class="feature-chip"><b>v1</b> Free</span>
+    <span class="feature-chip"><b>v2</b> 10% flat fee</span>
+    <span class="feature-chip"><b>v3</b> Uncapped credits</span>
+    <span class="feature-chip"><b>v4</b> 200/mo cap</span>
+    <span class="feature-chip"><b>v5</b> Tiered plans</span>
+  </div>
+
+  <div class="pull-quote">We didn't design the credit system. We discovered it — together, one killed model at a time.</div>
+
+  <div style="width: 100%; height: 300px; background-color: #E5E7EB; border-radius: 0px; display: flex; align-items: center; justify-content: center; color: #9CA3AF; font-size: 14px; margin-top: 40px; margin-bottom: 40px;">
+    <div style="text-align: center; padding: 20px;">
+      <div style="font-weight: 600; margin-bottom: 8px;">IMAGE: Low-Credit Pop-up + Notification</div>
+      <div style="font-size: 13px; line-height: 1.5;">v4 low-credit pop-up banner shown alongside the matching push notification/email</div>
+    </div>
+  </div>
+
+  <div style="border-left: 3px solid #E7E5E4; padding-left: 16px; font-size: 13px; color: #78716C; line-height: 1.6;">
+    <span style="font-weight: 600; color: #57534E;">87%</span> of surveyed users said they'd avoided purchasing a product specifically to skip entering payment info — early signal behind the credit model.
   </div>
 </div>
 
-<div class="feature-stat">
-  <div class="feature-stat-num">1–2% → 30–35%</div>
-  <div class="feature-stat-label">Lesser-known product activity, six weeks after the 200-credit cap shipped</div>
-</div>
+<div id="product-card" class="feature-block">
+  <div class="feature-eyebrow">Feature 02</div>
+  <h4 class="feature-heading">The Product Card</h4>
+  <p class="feature-subheadline">Shaped as much by engineering's constraint as by design intent</p>
 
-<p>Founders needed monetization before runway ran out — that direction was theirs. What shipped was five real pricing models in ten months, each one killed by evidence the PM and I brought back from users, not opinion.</p>
+  <div style="width: 100%; height: 480px; background-color: #E5E7EB; border-radius: 0px; display: flex; align-items: center; justify-content: center; color: #9CA3AF; font-size: 14px; margin-top: 32px; margin-bottom: 40px;">
+    <div style="text-align: center; padding: 20px;">
+      <div style="font-weight: 600; margin-bottom: 8px;">IMAGE: 6-Frame Evolution Strip</div>
+      <div style="font-size: 13px; line-height: 1.5;">Visual diff per version, each tagged with its one-word trigger:<br/>system → states → scale → support → growth → mobile</div>
+    </div>
+  </div>
 
-<div class="feature-note"><span class="feature-note-label">Direction</span> Founders proposed a flat 10% fee. Survey data I ran said users would pay 5–6%, not 10% — the cap that eventually shipped came from closing that gap with them, not overriding it.</div>
+  <div class="feature-stat">
+    <div class="feature-stat-num">6 → 0</div>
+    <div class="feature-stat-label">Features shipped on this one component, zero redesigns needed</div>
+  </div>
 
-<div class="feature-chip-row">
-  <span class="feature-chip"><b>v1</b> Free</span>
-  <span class="feature-chip"><b>v2</b> 10% flat fee</span>
-  <span class="feature-chip"><b>v3</b> Uncapped credits</span>
-  <span class="feature-chip"><b>v4</b> 200/mo cap</span>
-  <span class="feature-chip"><b>v5</b> Tiered plans</span>
-</div>
+  <p>Six versions, because every other system eventually had to live inside this one card — from an inherited layout with no system to a mobile design system reused for the Chrome extension. Engineering kept asking one question: <em>can this be a state of the existing component, not a new one?</em> That constraint, not a personal design philosophy, is what kept the card reducing instead of sprawling.</p>
 
-<div class="pull-quote">We didn't design the credit system. We discovered it — together, one killed model at a time.</div>
+  <div class="feature-note"><span class="feature-note-label">Constraint</span> Frontend engineering was 12 hours away in Asia — every new state had to be justified before a single ticket got written, or it wouldn't ship for days.</div>
 
-<div style="width: 100%; height: 300px; background-color: #E5E7EB; border-radius: 0px; display: flex; align-items: center; justify-content: center; color: #9CA3AF; font-size: 14px; margin-top: 40px; margin-bottom: 40px;">
-  <div style="text-align: center; padding: 20px;">
-    <div style="font-weight: 600; margin-bottom: 8px;">IMAGE: Low-Credit Pop-up + Notification</div>
-    <div style="font-size: 13px; line-height: 1.5;">v4 low-credit pop-up banner shown alongside the matching push notification/email</div>
+  <div class="feature-chip-row">
+    <span class="feature-chip"><b>v1</b> No system</span>
+    <span class="feature-chip"><b>v2</b> Componentized</span>
+    <span class="feature-chip"><b>v3</b> Label system</span>
+    <span class="feature-chip"><b>v4</b> Request added</span>
+    <span class="feature-chip"><b>v5</b> Buy Again + Refer</span>
+    <span class="feature-chip"><b>v6</b> Mobile system</span>
+  </div>
+
+  <div class="pull-quote">Getting the component right early is what let six features ship without six redesigns.</div>
+
+  <div style="width: 100%; height: 300px; background-color: #E5E7EB; border-radius: 0px; display: flex; align-items: center; justify-content: center; color: #9CA3AF; font-size: 14px; margin-top: 40px; margin-bottom: 40px;">
+    <div style="text-align: center; padding: 20px;">
+      <div style="font-weight: 600; margin-bottom: 8px;">VIDEO: Morph/Motion Version</div>
+      <div style="font-size: 13px; line-height: 1.5;">Same six frames, shape and content shifting version to version</div>
+    </div>
+  </div>
+
+  <div style="display: flex; gap: 16px; flex-wrap: wrap;">
+    <div style="flex: 1; min-width: 200px; height: 200px; background-color: #E5E7EB; border-radius: 0px; display: flex; align-items: center; justify-content: center; color: #9CA3AF; font-size: 13px;">
+      <div style="text-align: center; padding: 16px;">IMAGE: Credit-cost badge (v3) close-up</div>
+    </div>
+    <div style="flex: 1; min-width: 200px; height: 200px; background-color: #E5E7EB; border-radius: 0px; display: flex; align-items: center; justify-content: center; color: #9CA3AF; font-size: 13px;">
+      <div style="text-align: center; padding: 16px;">IMAGE: Countdown timer (v2) close-up</div>
+    </div>
   </div>
 </div>
 
-<div style="border-left: 3px solid #E7E5E4; padding-left: 16px; font-size: 13px; color: #78716C; line-height: 1.6;">
-  <span style="font-weight: 600; color: #57534E;">87%</span> of surveyed users said they'd avoided purchasing a product specifically to skip entering payment info — early signal behind the credit model.
-</div>`
-      },
-      {
-        id: 'product-card',
-        title: '06 — Feature 02: The Product Card',
-        headline: "Shaped as much by engineering's constraint as by design intent",
-        content: `<div style="width: 100%; height: 480px; background-color: #E5E7EB; border-radius: 0px; display: flex; align-items: center; justify-content: center; color: #9CA3AF; font-size: 14px; margin-top: 40px; margin-bottom: 40px;">
-  <div style="text-align: center; padding: 20px;">
-    <div style="font-weight: 600; margin-bottom: 8px;">IMAGE: 6-Frame Evolution Strip</div>
-    <div style="font-size: 13px; line-height: 1.5;">Visual diff per version, each tagged with its one-word trigger:<br/>system → states → scale → support → growth → mobile</div>
+<div id="extension" class="feature-block">
+  <div class="feature-eyebrow">Feature 03</div>
+  <h4 class="feature-heading">The Chrome Extension</h4>
+  <p class="feature-subheadline">A constraint the team couldn't engineer around — until the idea came from buying a rain jacket</p>
+
+  <div style="width: 100%; height: 480px; background-color: #E5E7EB; border-radius: 0px; display: flex; align-items: center; justify-content: center; color: #9CA3AF; font-size: 14px; margin-top: 32px; margin-bottom: 40px;">
+    <div style="text-align: center; padding: 20px;">
+      <div style="font-weight: 600; margin-bottom: 8px;">IMAGE: Before/After Split</div>
+      <div style="font-size: 13px; line-height: 1.5;">Old copy-paste flow (7+ steps, tab switches) vs. extension auto-fill (1 motion)<br/>Annotate step count to make −63% concrete</div>
+    </div>
   </div>
-</div>
 
-<div class="feature-stat">
-  <div class="feature-stat-num">6 → 0</div>
-  <div class="feature-stat-label">Features shipped on this one component, zero redesigns needed</div>
-</div>
-
-<p>Six versions, because every other system eventually had to live inside this one card — from an inherited layout with no system to a mobile design system reused for the Chrome extension. Engineering kept asking one question: <em>can this be a state of the existing component, not a new one?</em> That constraint, not a personal design philosophy, is what kept the card reducing instead of sprawling.</p>
-
-<div class="feature-note"><span class="feature-note-label">Constraint</span> Frontend engineering was 12 hours away in Asia — every new state had to be justified before a single ticket got written, or it wouldn't ship for days.</div>
-
-<div class="feature-chip-row">
-  <span class="feature-chip"><b>v1</b> No system</span>
-  <span class="feature-chip"><b>v2</b> Componentized</span>
-  <span class="feature-chip"><b>v3</b> Label system</span>
-  <span class="feature-chip"><b>v4</b> Request added</span>
-  <span class="feature-chip"><b>v5</b> Buy Again + Refer</span>
-  <span class="feature-chip"><b>v6</b> Mobile system</span>
-</div>
-
-<div class="pull-quote">Getting the component right early is what let six features ship without six redesigns.</div>
-
-<div style="width: 100%; height: 300px; background-color: #E5E7EB; border-radius: 0px; display: flex; align-items: center; justify-content: center; color: #9CA3AF; font-size: 14px; margin-top: 40px; margin-bottom: 40px;">
-  <div style="text-align: center; padding: 20px;">
-    <div style="font-weight: 600; margin-bottom: 8px;">VIDEO: Morph/Motion Version</div>
-    <div style="font-size: 13px; line-height: 1.5;">Same six frames, shape and content shifting version to version</div>
+  <div class="feature-stat">
+    <div class="feature-stat-num">65%</div>
+    <div class="feature-stat-label">Of users on the extension by the time I left — the fix for an 18-month-old unsolved problem</div>
   </div>
-</div>
 
-<div style="display: flex; gap: 16px; flex-wrap: wrap;">
-  <div style="flex: 1; min-width: 200px; height: 200px; background-color: #E5E7EB; border-radius: 0px; display: flex; align-items: center; justify-content: center; color: #9CA3AF; font-size: 13px;">
-    <div style="text-align: center; padding: 16px;">IMAGE: Credit-cost badge (v3) close-up</div>
+  <p>Partner integrations were the founders' original plan — the roadmap called for each partner to build against our API. Then our technical co-founder left, taking backend capacity with him, and that plan stopped being possible. Watching Honey auto-fill codes at checkout, I saw a fix that needed no partner engineering at all — the breakthrough was recognizing we should live where the user already is. Prototyped in two days, shipped that week with the remaining team.</p>
+
+  <div class="feature-note"><span class="feature-note-label">Constraint</span> No backend engineer left on the team after the co-founder's exit — whatever shipped next had to be entirely client-side.</div>
+
+  <div class="feature-chip-row">
+    <span class="feature-chip"><b>2 days</b> to prototype</span>
+    <span class="feature-chip"><b>22%</b> install rate in 2 weeks</span>
+    <span class="feature-chip"><b>−63%</b> login friction</span>
   </div>
-  <div style="flex: 1; min-width: 200px; height: 200px; background-color: #E5E7EB; border-radius: 0px; display: flex; align-items: center; justify-content: center; color: #9CA3AF; font-size: 13px;">
-    <div style="text-align: center; padding: 16px;">IMAGE: Countdown timer (v2) close-up</div>
+
+  <div class="pull-quote">The fix wasn't a partnership we finally got — it was a pattern that already existed somewhere else.</div>
+
+  <div style="width: 100%; height: 300px; background-color: #E5E7EB; border-radius: 0px; display: flex; align-items: center; justify-content: center; color: #9CA3AF; font-size: 14px; margin-top: 40px; margin-bottom: 40px;">
+    <div style="text-align: center; padding: 20px;">
+      <div style="font-weight: 600; margin-bottom: 8px;">VIDEO: Split-Screen Motion</div>
+      <div style="font-size: 13px; line-height: 1.5;">Same before/after playing in real time side by side — pacing contrast sells the stat better than a caption</div>
+    </div>
   </div>
-</div>`
-      },
-      {
-        id: 'extension',
-        title: '07 — Feature 03: The Chrome Extension',
-        headline: "A constraint the team couldn't engineer around — until the idea came from buying a rain jacket",
-        content: `<div style="width: 100%; height: 480px; background-color: #E5E7EB; border-radius: 0px; display: flex; align-items: center; justify-content: center; color: #9CA3AF; font-size: 14px; margin-top: 40px; margin-bottom: 40px;">
-  <div style="text-align: center; padding: 20px;">
-    <div style="font-weight: 600; margin-bottom: 8px;">IMAGE: Before/After Split</div>
-    <div style="font-size: 13px; line-height: 1.5;">Old copy-paste flow (7+ steps, tab switches) vs. extension auto-fill (1 motion)<br/>Annotate step count to make −63% concrete</div>
+
+  <div style="width: 100%; height: 200px; background-color: #E5E7EB; border-radius: 0px; display: flex; align-items: center; justify-content: center; color: #9CA3AF; font-size: 13px;">
+    <div style="text-align: center; padding: 16px;">IMAGE: 3-step evolution strip — auto-fill → suggestion → in-context purchase</div>
   </div>
-</div>
-
-<div class="feature-stat">
-  <div class="feature-stat-num">65%</div>
-  <div class="feature-stat-label">Of users on the extension by the time I left — the fix for an 18-month-old unsolved problem</div>
-</div>
-
-<p>Partner integrations were the founders' original plan — the roadmap called for each partner to build against our API. Then our technical co-founder left, taking backend capacity with him, and that plan stopped being possible. Watching Honey auto-fill codes at checkout, I saw a fix that needed no partner engineering at all — the breakthrough was recognizing we should live where the user already is. Prototyped in two days, shipped that week with the remaining team.</p>
-
-<div class="feature-note"><span class="feature-note-label">Constraint</span> No backend engineer left on the team after the co-founder's exit — whatever shipped next had to be entirely client-side.</div>
-
-<div class="feature-chip-row">
-  <span class="feature-chip"><b>2 days</b> to prototype</span>
-  <span class="feature-chip"><b>22%</b> install rate in 2 weeks</span>
-  <span class="feature-chip"><b>−63%</b> login friction</span>
-</div>
-
-<div class="pull-quote">The fix wasn't a partnership we finally got — it was a pattern that already existed somewhere else.</div>
-
-<div style="width: 100%; height: 300px; background-color: #E5E7EB; border-radius: 0px; display: flex; align-items: center; justify-content: center; color: #9CA3AF; font-size: 14px; margin-top: 40px; margin-bottom: 40px;">
-  <div style="text-align: center; padding: 20px;">
-    <div style="font-weight: 600; margin-bottom: 8px;">VIDEO: Split-Screen Motion</div>
-    <div style="font-size: 13px; line-height: 1.5;">Same before/after playing in real time side by side — pacing contrast sells the stat better than a caption</div>
-  </div>
-</div>
-
-<div style="width: 100%; height: 200px; background-color: #E5E7EB; border-radius: 0px; display: flex; align-items: center; justify-content: center; color: #9CA3AF; font-size: 13px;">
-  <div style="text-align: center; padding: 16px;">IMAGE: 3-step evolution strip — auto-fill → suggestion → in-context purchase</div>
 </div>`
       },
       {
         id: 'tradeoffs',
-        title: '08 — Tradeoffs & Hard Calls',
+        title: '05 — Tradeoffs & Hard Calls',
         headline: 'None of these were mine to decide alone — engineering, marketing, founders, and investors each pushed back, and the product was better for it',
         content: `<p>Every hard call below was negotiated, not dictated — my job was bringing evidence into rooms where other people had the final say.</p>
 
@@ -282,7 +288,7 @@ const caseStudies = {
       },
       {
         id: 'impact',
-        title: '09 — Impact & Reflection',
+        title: '06 — Impact & Reflection',
         headline: "The most important thing a founding designer builds isn't the product. It's the foundation that lets the product grow without being rebuilt from scratch",
         content: `<p>By year three, the founding team dispersed. The company pivoted into YC W2024 on financial analytics — the marketplace didn't survive, but the research, partnerships, and funding that made YC possible came from what we built.</p>
 
