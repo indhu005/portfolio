@@ -699,6 +699,13 @@ const caseStudies = {
         title: '01 — Snapshot',
         content: `<div class="snapshot-content-wrapper">
 <div class="snapshot-text-content">
+
+<div style="border: 1px dashed #D1D5DB; background-color: #FAFAF9; padding: 28px 32px; margin-bottom: 40px;">
+  <div style="font-size: 11px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #A8A29E; margin-bottom: 10px;">PLACEHOLDER — headline result</div>
+  <div style="font-family: 'Fraunces', serif; font-size: 40px; font-weight: 700; color: #1C1917; line-height: 1.1;">[X%] [outcome, e.g. reduction in verification time]</div>
+  <div style="font-size: 14px; color: #6B7280; margin-top: 10px;">[One-line description of the result and how it was measured — mirrors the "91.4% reduction in search time" style lead-in]</div>
+</div>
+
 <p>Platforms try to control misinformation, but users don't trust them. This capstone asked a different question: what if we equipped people to identify it themselves?</p>
 
 <img loading="lazy" decoding="async" src="/images/misinformation-center/Truth.png" alt="Truth visual" style="width: 100%; border-radius: 0px; margin-top: 40px; margin-bottom: 40px; display: block;" />
@@ -815,8 +822,38 @@ const caseStudies = {
         customComponent: <MisinfoFeaturesContent />
       },
       {
+        id: 'testing',
+        title: '04 — Testing & Validation',
+        headline: '[PLACEHOLDER: headline — what testing validated or overturned about the initial concept]',
+        content: `<div style="border: 1px dashed #D1D5DB; background-color: #FAFAF9; padding: 24px 28px; margin-bottom: 32px;">
+  <div style="font-size: 11px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #A8A29E; margin-bottom: 10px;">PLACEHOLDER SECTION</div>
+  <div style="font-size: 14px; color: #57534E; line-height: 1.6;">Iteration evidence — what was mocked up, tested, and changed before the final four-tool concept. Akeeksha's case study shows this as "Ideation and testing" + "But instead, I learned that..." — mockups compared, hypotheses disproven, what shifted as a result.</div>
+</div>
+
+<p>[PLACEHOLDER: what early concepts/mockups were tested before landing on Search / Scan / Quiz / Ask Us — e.g. how many variants, what format]</p>
+
+<p style="margin-top: 28px;"><span style="font-weight: 600;">[PLACEHOLDER: what testing disproved]</span> [Describe a hypothesis that testing overturned — e.g. an initial design direction users rejected, and why]</p>
+
+<p style="margin-top: 16px;"><span style="font-weight: 600;">[PLACEHOLDER: what testing confirmed]</span> [Describe what testing validated as the right direction]</p>
+
+<div style="display: flex; flex-wrap: wrap; gap: 40px; margin-top: 40px; padding: 24px 0; border-top: 1px solid #E5E7EB; border-bottom: 1px solid #E5E7EB;">
+  <div>
+    <div style="font-size: 26px; font-weight: 700; color: #1C1917;">[N]</div>
+    <div style="font-size: 13px; color: #6B7280; margin-top: 4px;">[PLACEHOLDER metric, e.g. concepts tested]</div>
+  </div>
+  <div>
+    <div style="font-size: 26px; font-weight: 700; color: #1C1917;">[N]</div>
+    <div style="font-size: 13px; color: #6B7280; margin-top: 4px;">[PLACEHOLDER metric, e.g. iteration rounds]</div>
+  </div>
+  <div>
+    <div style="font-size: 26px; font-weight: 700; color: #1C1917;">[N]</div>
+    <div style="font-size: 13px; color: #6B7280; margin-top: 4px;">[PLACEHOLDER metric]</div>
+  </div>
+</div>`
+      },
+      {
         id: 'market',
-        title: '04 — Market Research',
+        title: '05 — Market Research',
         headline: 'Verification had to live where misinformation spreads, but platform ownership destroyed trust',
         content: `<p>Existing tools fell into two categories, neither worked:</p>
 
@@ -850,7 +887,7 @@ const caseStudies = {
       },
       {
         id: 'research',
-        title: '05 — User Research',
+        title: '06 — User Research',
         headline: 'Misinformation moves through trust networks — families, WhatsApp groups, neighborhood pages — in a specific generational pattern',
         content: `<div class="cs-video-wrap" style="width: 100%; max-width: 1200px; margin: 0 auto 48px;">
   <video autoplay loop muted playsinline preload="metadata" aria-label="Screen recording of the color-coded rating system and unified search/image-search entry point" style="display: block; width: 100%; height: auto; border-radius: 0px;">
@@ -870,11 +907,29 @@ const caseStudies = {
 
 <p style="margin-top: 28px;">The archetypes emerged from that chain, not a persona template:</p>
 
-<p style="margin-top: 20px;"><span style="font-weight: 600;">Truth Seekers (18–30)</span> — already motivated, cross-referencing sources, wanting to be community validators, not just skeptics.</p>
-
-<p style="margin-top: 16px;"><span style="font-weight: 600;">Overwhelmed Guardians (25–40)</span> — desperately want verification tools, but any added friction fails with this group regardless of quality.</p>
-
-<p style="margin-top: 16px;"><span style="font-weight: 600;">Vulnerable Believers (55–80)</span> — trust what they receive because it comes from people they know. Design for them means meeting existing behavior, not demanding new habits.</p>
+<div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 32px; margin-bottom: 8px;">
+  <div>
+    <div style="width: 100%; aspect-ratio: 1 / 1; background-color: #000000; display: flex; align-items: center; justify-content: center; overflow: hidden; margin-bottom: 16px;">
+      <img loading="lazy" decoding="async" src="/images/misinformation-center/Truth%20Seekers.gif" alt="Truth Seekers archetype" style="width: 100%; height: 100%; object-fit: cover; display: block;" />
+    </div>
+    <div class="cs-card-title cs-card-title--xs">Truth Seekers (18–30)</div>
+    <div style="font-size: 13px; color: #57534E; line-height: 1.6; margin-top: 6px;">Already motivated, cross-referencing sources, wanting to be community validators, not just skeptics.</div>
+  </div>
+  <div>
+    <div style="width: 100%; aspect-ratio: 1 / 1; background-color: #000000; display: flex; align-items: center; justify-content: center; overflow: hidden; margin-bottom: 16px;">
+      <img loading="lazy" decoding="async" src="/images/misinformation-center/Overwhelmed%20Guardians.gif" alt="Overwhelmed Guardians archetype" style="width: 100%; height: 100%; object-fit: cover; display: block;" />
+    </div>
+    <div class="cs-card-title cs-card-title--xs">Overwhelmed Guardians (25–40)</div>
+    <div style="font-size: 13px; color: #57534E; line-height: 1.6; margin-top: 6px;">Desperately want verification tools, but any added friction fails with this group regardless of quality.</div>
+  </div>
+  <div>
+    <div style="width: 100%; aspect-ratio: 1 / 1; background-color: #000000; display: flex; align-items: center; justify-content: center; overflow: hidden; margin-bottom: 16px;">
+      <img loading="lazy" decoding="async" src="/images/misinformation-center/Vulnerable%20population.gif" alt="Vulnerable Believers archetype" style="width: 100%; height: 100%; object-fit: cover; display: block;" />
+    </div>
+    <div class="cs-card-title cs-card-title--xs">Vulnerable Believers (55–80)</div>
+    <div style="font-size: 13px; color: #57534E; line-height: 1.6; margin-top: 6px;">Trust what they receive because it comes from people they know. Design for them means meeting existing behavior, not demanding new habits.</div>
+  </div>
+</div>
 
 <p style="margin-top: 28px;">The strategy: design primarily for the first two, since they become the human layer protecting the third — a mother who learns to verify a link becomes the person her parent calls before forwarding it.</p>
 
@@ -915,16 +970,59 @@ const caseStudies = {
 </div>`
       },
       {
+        id: 'impact',
+        title: '07 — Impact & Results',
+        headline: '[PLACEHOLDER: headline result stat and what it proves]',
+        content: `<div style="border: 1px dashed #D1D5DB; background-color: #FAFAF9; padding: 24px 28px; margin-bottom: 32px;">
+  <div style="font-size: 11px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #A8A29E; margin-bottom: 10px;">PLACEHOLDER SECTION</div>
+  <div style="font-size: 14px; color: #57534E; line-height: 1.6;">Dedicated results section — quantified outcomes from the concept validation, distinct from the research methodology numbers already shown in sections 03 and 06. Akeeksha's case study closes with hard numbers here (e.g. "99.9% Gen Z approved," "60% increased trust") — this is the equivalent slot for Misinfo Center's Misinfo Day / testing results.</div>
+</div>
+
+<p>[PLACEHOLDER: 2-3 sentence summary of what the concept validation proved — task completion, comprehension, trust shift, willingness to use, etc.]</p>
+
+<div style="display: flex; flex-wrap: wrap; gap: 40px; margin-top: 40px; padding: 24px 0; border-top: 1px solid #E5E7EB; border-bottom: 1px solid #E5E7EB;">
+  <div>
+    <div style="font-size: 26px; font-weight: 700; color: #1C1917;">[X%]</div>
+    <div style="font-size: 13px; color: #6B7280; margin-top: 4px;">[PLACEHOLDER metric, e.g. task success rate at Misinfo Day]</div>
+  </div>
+  <div>
+    <div style="font-size: 26px; font-weight: 700; color: #1C1917;">[X%]</div>
+    <div style="font-size: 13px; color: #6B7280; margin-top: 4px;">[PLACEHOLDER metric, e.g. would use again / trust shift]</div>
+  </div>
+  <div>
+    <div style="font-size: 26px; font-weight: 700; color: #1C1917;">[X]</div>
+    <div style="font-size: 13px; color: #6B7280; margin-top: 4px;">[PLACEHOLDER metric, e.g. avg. verification time]</div>
+  </div>
+</div>
+
+<p style="margin-top: 28px;"><span style="font-weight: 600;">[PLACEHOLDER: stakeholder or reviewer validation]</span> [Quote or note from professors/reviewers/TrueMedia on the concept's credibility, if any beyond what's already quoted elsewhere]</p>`
+      },
+      {
         id: 'truemedia',
-        title: '06 — TrueMedia',
+        title: '08 — TrueMedia',
         headline: 'Detection is the expensive end of the chain — authenticating content at creation is fundamentally more efficient, but nobody profits from implementing it',
         content: `<p>TrueMedia.org was a nonprofit building deepfake detection for the 2024 election. Through UW's partnership, I contributed research synthesis on what to prioritize. They shipped a dark, utilitarian tool for journalists; mine served a teenager asking "why should I care?" — two solutions to adjacent problems. They analyzed 60,000+ pieces of media, launched in September 2024, and shut down in January 2025, open-sourcing the technology rather than chasing funding. Founder Oren Etzioni: "We are not prepared for a large-scale, generative AI attack. It hasn't come yet. That doesn't mean it won't."</p>
 
 <p style="margin-top: 28px;">Two lessons reframed the market for me: platforms are ambivalent about detection because it drives engagement, and the real unaddressed threat — personalized scams — never reaches a community to verify it. Detection is also the expensive end of the chain; authenticating content at creation is more efficient, but C2PA proposed exactly that and stalled on incentives. A third came from testing: participants rejected a Facebook-embedded concept as too platform-tied and easy to dismiss as biased, settling the case for the integration vision over a standalone app.</p>`
       },
       {
+        id: 'future',
+        title: '09 — Future Directions',
+        headline: '[PLACEHOLDER: headline — where this goes next]',
+        content: `<div style="border: 1px dashed #D1D5DB; background-color: #FAFAF9; padding: 24px 28px; margin-bottom: 32px;">
+  <div style="font-size: 11px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #A8A29E; margin-bottom: 10px;">PLACEHOLDER SECTION</div>
+  <div style="font-size: 14px; color: #57534E; line-height: 1.6;">Forward-looking scope, distinct from the retrospective Reflection section that follows. Akeeksha's case study includes "If I had more time, I would..." as its own beat before the closing reflection — a short, concrete list of next iterations rather than lessons learned.</div>
+</div>
+
+<p style="margin-top: 16px;"><span style="font-weight: 600;">[PLACEHOLDER 1].</span> [What would be built or tested next, and why it was out of scope for the capstone]</p>
+
+<p style="margin-top: 16px;"><span style="font-weight: 600;">[PLACEHOLDER 2].</span> [Second next step — e.g. scaling the archetype research, a new platform surface, etc.]</p>
+
+<p style="margin-top: 16px;"><span style="font-weight: 600;">[PLACEHOLDER 3].</span> [Third next step]</p>`
+      },
+      {
         id: 'reflection',
-        title: '07 — Reflection',
+        title: '10 — Reflection',
         headline: 'A designer who thinks only about what users see is a UI designer. A designer who thinks about everything required to make that experience real and sustainable is a product leader',
         content: `<p><span style="font-weight: 600;">What this project taught me.</span> Design alone cannot make a public good sustainable — TrueMedia was research-grounded and mission-complete, and it still closed on economics, not design. The compass is trusted because it has no business model; the phone manufacturer absorbs the cost. That's why the integration vision — Apple News, the share sheet, the native camera — is the sustainability answer, not a nice-to-have. Coming back to school after industry, I couldn't stay inside a class project's boundaries; every decision triggered questions about moderation staffing and who pays. My professors thought I was overcomplicating an exercise. I've come to see that instinct as the point: a designer who thinks only about what users see is a UI designer; one who thinks about what makes it real and sustainable is a product leader.</p>
 

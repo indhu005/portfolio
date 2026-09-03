@@ -125,14 +125,6 @@ a:active {
   }
 }
 
-/* Scroll footsteps / bird-hover layer */
-.pixel-footsteps-layer {
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  z-index: 9998;
-}
-
 /* Case study body copy: shared subheading styles (replaces per-instance inline styles) */
 .case-study-subhead {
   font-weight: 600;
@@ -768,15 +760,6 @@ a:active {
   .play-project-image-box {
     height: 500px;
   }
-}
-
-.pixel-hover-bird {
-  position: absolute;
-  width: 24px;
-  height: 18px;
-  object-fit: contain;
-  opacity: 0.9;
-  transition: left 0.75s cubic-bezier(0.3, 0.1, 0.3, 1), top 0.75s cubic-bezier(0.3, 0.1, 0.3, 1), opacity 0.75s ease-in;
 }
 
 /* Figma embed responsive sizing */

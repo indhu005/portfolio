@@ -206,43 +206,16 @@ export default function Home() {
               <article style={{
                 display: 'flex',
                 flexDirection: 'column',
+                border: '1px solid #E5E7EB',
+                padding: isMobile ? '24px' : isWideDesktop ? '48px' : '40px',
+                backgroundColor: '#FFFFFF',
               }}>
-                {/* Large Image Placeholder */}
-                <a
-                  href="/work/lat"
-                  data-bird-target="true"
-                  data-cursor-color="#1F5D3A"
-                  style={{
-                    display: 'block',
-                    width: '100%',
-                    textDecoration: 'none',
-                    cursor: 'pointer',
-                  }}
-                >
-                  <div style={{
-                    width: '100%',
-                    height: isMobile ? '320px' : isWideDesktop ? '760px' : '620px',
-                    backgroundColor: '#E5E5E5',
-                    borderRadius: '0px',
-                    transition: 'transform 0.3s ease, box-shadow 0.3s ease',
-                  }}
-                  onMouseEnter={(e) => {
-                    e.currentTarget.style.transform = 'translateY(-4px)'
-                    e.currentTarget.style.boxShadow = '0 12px 40px rgba(0, 0, 0, 0.12)'
-                  }}
-                  onMouseLeave={(e) => {
-                    e.currentTarget.style.transform = 'translateY(0)'
-                    e.currentTarget.style.boxShadow = 'none'
-                  }}
-                  />
-                </a>
-
-                {/* Meta */}
+                {/* Header: index + title + description */}
                 <div style={{
                   display: 'flex',
                   gap: isMobile ? '16px' : '32px',
                   alignItems: 'flex-start',
-                  marginTop: isMobile ? '20px' : '28px',
+                  marginBottom: isMobile ? '20px' : '28px',
                 }}>
                   <div style={{
                     fontSize: isWideDesktop ? '15px' : '13px',
@@ -295,18 +268,10 @@ export default function Home() {
                     </p>
                   </div>
                 </div>
-              </article>
 
-              {/* Card 2 - Keye */}
-              <article style={{
-                display: 'flex',
-                flexDirection: 'column',
-              }}>
                 {/* Large Image Placeholder */}
                 <a
-                  href="/work/keye"
-                  data-bird-target="true"
-                  data-cursor-color="#D97B29"
+                  href="/work/lat"
                   style={{
                     display: 'block',
                     width: '100%',
@@ -332,12 +297,51 @@ export default function Home() {
                   />
                 </a>
 
-                {/* Meta */}
+                {/* CTA */}
+                <div style={{ marginTop: isMobile ? '24px' : '32px' }}>
+                  <a
+                    href="/work/lat"
+                    style={{
+                      display: 'inline-block',
+                      backgroundColor: 'var(--accent)',
+                      color: '#FFFFFF',
+                      textDecoration: 'none',
+                      border: 'none',
+                      borderRadius: '0px',
+                      padding: '12px 22px',
+                      fontSize: '14px',
+                      fontWeight: 600,
+                      cursor: 'pointer',
+                      transition: 'transform 0.15s ease, box-shadow 0.15s ease',
+                    }}
+                    onMouseEnter={(e) => {
+                      e.currentTarget.style.transform = 'translateY(-2px)'
+                      e.currentTarget.style.boxShadow = '0 6px 16px rgba(28, 25, 23, 0.25)'
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.style.transform = 'translateY(0)'
+                      e.currentTarget.style.boxShadow = 'none'
+                    }}
+                  >
+                    View Case Study →
+                  </a>
+                </div>
+              </article>
+
+              {/* Card 2 - Keye */}
+              <article style={{
+                display: 'flex',
+                flexDirection: 'column',
+                border: '1px solid #E5E7EB',
+                padding: isMobile ? '24px' : isWideDesktop ? '48px' : '40px',
+                backgroundColor: '#FFFFFF',
+              }}>
+                {/* Header: index + title + description */}
                 <div style={{
                   display: 'flex',
                   gap: isMobile ? '16px' : '32px',
                   alignItems: 'flex-start',
-                  marginTop: isMobile ? '20px' : '28px',
+                  marginBottom: isMobile ? '20px' : '28px',
                 }}>
                   <div style={{
                     fontSize: isWideDesktop ? '15px' : '13px',
@@ -390,18 +394,10 @@ export default function Home() {
                     </p>
                   </div>
                 </div>
-              </article>
 
-              {/* Card 3 - Misinformation Center */}
-              <article style={{
-                display: 'flex',
-                flexDirection: 'column',
-              }}>
                 {/* Large Image Placeholder */}
                 <a
-                  href="/work/misinformation-center"
-                  data-bird-target="true"
-                  data-cursor-color="#B23A3A"
+                  href="/work/keye"
                   style={{
                     display: 'block',
                     width: '100%',
@@ -411,9 +407,13 @@ export default function Home() {
                 >
                   <div style={{
                     width: '100%',
-                    height: isMobile ? '320px' : isWideDesktop ? '760px' : '620px',
-                    backgroundColor: '#E5E5E5',
+                    aspectRatio: '2400 / 1351',
+                    backgroundColor: '#FFFFFF',
                     borderRadius: '0px',
+                    overflow: 'hidden',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
                     transition: 'transform 0.3s ease, box-shadow 0.3s ease',
                   }}
                   onMouseEnter={(e) => {
@@ -424,15 +424,65 @@ export default function Home() {
                     e.currentTarget.style.transform = 'translateY(0)'
                     e.currentTarget.style.boxShadow = 'none'
                   }}
-                  />
+                  >
+                    <img
+                      src="/images/home/keye-landing.webp"
+                      alt="Keye landing page preview"
+                      style={{
+                        width: '85%',
+                        height: '85%',
+                        objectFit: 'contain',
+                        display: 'block',
+                      }}
+                    />
+                  </div>
                 </a>
 
-                {/* Meta */}
+                {/* CTA */}
+                <div style={{ marginTop: isMobile ? '24px' : '32px' }}>
+                  <a
+                    href="/work/keye"
+                    style={{
+                      display: 'inline-block',
+                      backgroundColor: 'var(--accent)',
+                      color: '#FFFFFF',
+                      textDecoration: 'none',
+                      border: 'none',
+                      borderRadius: '0px',
+                      padding: '12px 22px',
+                      fontSize: '14px',
+                      fontWeight: 600,
+                      cursor: 'pointer',
+                      transition: 'transform 0.15s ease, box-shadow 0.15s ease',
+                    }}
+                    onMouseEnter={(e) => {
+                      e.currentTarget.style.transform = 'translateY(-2px)'
+                      e.currentTarget.style.boxShadow = '0 6px 16px rgba(28, 25, 23, 0.25)'
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.style.transform = 'translateY(0)'
+                      e.currentTarget.style.boxShadow = 'none'
+                    }}
+                  >
+                    View Case Study →
+                  </a>
+                </div>
+              </article>
+
+              {/* Card 3 - Misinformation Center */}
+              <article style={{
+                display: 'flex',
+                flexDirection: 'column',
+                border: '1px solid #E5E7EB',
+                padding: isMobile ? '24px' : isWideDesktop ? '48px' : '40px',
+                backgroundColor: '#FFFFFF',
+              }}>
+                {/* Header: index + title + description */}
                 <div style={{
                   display: 'flex',
                   gap: isMobile ? '16px' : '32px',
                   alignItems: 'flex-start',
-                  marginTop: isMobile ? '20px' : '28px',
+                  marginBottom: isMobile ? '20px' : '28px',
                 }}>
                   <div style={{
                     fontSize: isWideDesktop ? '15px' : '13px',
@@ -464,6 +514,125 @@ export default function Home() {
                       Media literacy tools for the AI age — equipping people to identify misinformation themselves through verification, education, and trust.
                     </p>
                   </div>
+                </div>
+
+                {/* Large Image Placeholder */}
+                <a
+                  href="/work/misinformation-center"
+                  style={{
+                    display: 'block',
+                    width: '100%',
+                    textDecoration: 'none',
+                    cursor: 'pointer',
+                  }}
+                >
+                  <div style={{
+                    display: 'flex',
+                    gap: isMobile ? '8px' : '12px',
+                    width: '100%',
+                    height: isMobile ? '320px' : isWideDesktop ? '760px' : '620px',
+                  }}>
+                    <div
+                      style={{
+                        flex: 1,
+                        height: '100%',
+                        backgroundColor: '#FFFFFF',
+                        borderRadius: '0px',
+                        overflow: 'hidden',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        transition: 'transform 0.3s ease, box-shadow 0.3s ease',
+                      }}
+                      onMouseEnter={(e) => {
+                        e.currentTarget.style.transform = 'translateY(-4px)'
+                        e.currentTarget.style.boxShadow = '0 12px 40px rgba(0, 0, 0, 0.12)'
+                      }}
+                      onMouseLeave={(e) => {
+                        e.currentTarget.style.transform = 'translateY(0)'
+                        e.currentTarget.style.boxShadow = 'none'
+                      }}
+                    >
+                      <img
+                        src="/images/misinformation-center/Langing%20page%201%20of%202%20images.gif"
+                        alt="Misinformation Center landing preview, 1 of 2"
+                        style={{
+                          width: '93%',
+                          height: '93%',
+                          objectFit: 'contain',
+                          display: 'block',
+                        }}
+                      />
+                    </div>
+                    <div
+                      style={{
+                        flex: 1,
+                        height: '100%',
+                        backgroundColor: '#FFFFFF',
+                        borderRadius: '0px',
+                        overflow: 'hidden',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        transition: 'transform 0.3s ease, box-shadow 0.3s ease',
+                      }}
+                      onMouseEnter={(e) => {
+                        e.currentTarget.style.transform = 'translateY(-4px)'
+                        e.currentTarget.style.boxShadow = '0 12px 40px rgba(0, 0, 0, 0.12)'
+                      }}
+                      onMouseLeave={(e) => {
+                        e.currentTarget.style.transform = 'translateY(0)'
+                        e.currentTarget.style.boxShadow = 'none'
+                      }}
+                    >
+                      <video
+                        autoPlay
+                        loop
+                        muted
+                        playsInline
+                        preload="metadata"
+                        aria-label="Misinformation Center landing preview, 2 of 2"
+                        style={{
+                          width: '93%',
+                          height: '93%',
+                          objectFit: 'contain',
+                          display: 'block',
+                        }}
+                      >
+                        <source src="/videos/misinformationcenter/Landing%20page%20Image%2002%20of%2002%20cropped.mp4" type="video/mp4" />
+                      </video>
+                    </div>
+                  </div>
+                </a>
+
+                {/* CTA */}
+                <div style={{ marginTop: isMobile ? '24px' : '32px' }}>
+                  <a
+                    href="/work/misinformation-center"
+                    style={{
+                      display: 'inline-block',
+                      backgroundColor: 'var(--accent)',
+                      color: '#FFFFFF',
+                      textDecoration: 'none',
+                      border: 'none',
+                      borderRadius: '0px',
+                      padding: '12px 22px',
+                      fontSize: '14px',
+                      fontWeight: 600,
+                      cursor: 'pointer',
+                      transition: 'transform 0.15s ease, box-shadow 0.15s ease',
+                    }}
+                    onMouseEnter={(e) => {
+                      e.currentTarget.style.transform = 'translateY(-2px)'
+                      e.currentTarget.style.boxShadow = '0 6px 16px rgba(28, 25, 23, 0.25)'
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.style.transform = 'translateY(0)'
+                      e.currentTarget.style.boxShadow = 'none'
+                    }}
+                  >
+                    View Case Study →
+                  </a>
                 </div>
               </article>
             </div>

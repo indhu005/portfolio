@@ -9,18 +9,6 @@ interface Cell {
   plantedAt?: number
 }
 
-interface Bird {
-  id: number
-  x: number
-  y: number
-  vx: number
-  vy: number
-  variant: number // 1, 2, or 3 for different bird SVGs
-  onTree?: boolean // true if sitting on a tree
-  treeRow?: number // which tree row
-  treeCol?: number // which tree column
-}
-
 interface Truck {
   id: number
   row: number
@@ -199,7 +187,6 @@ export default function LandingGameSimple() {
   const [isTablet, setIsTablet] = useState(false)
   const [grid, setGrid] = useState<Cell[][]>([])
   const [planted, setPlanted] = useState(0)
-  const [birds, setBirds] = useState<Bird[]>([])
   const [trucks, setTrucks] = useState<Truck[]>([])
   const [smokes, setSmokes] = useState<Smoke[]>([])
   const [timeLeft, setTimeLeft] = useState(ROUND_DURATION)
@@ -212,7 +199,6 @@ export default function LandingGameSimple() {
   const [hasInteracted, setHasInteracted] = useState(false)
   const [playCount, setPlayCount] = useState(0) // Track replays for difficulty
   const [isDaytime, setIsDaytime] = useState(true) // Track if it's day or night
-  const animationFrameRef = useRef<number>()
   const truckAnimationRef = useRef<number>()
 
   useEffect(() => {
@@ -469,139 +455,6 @@ export default function LandingGameSimple() {
     )
     setTrucks([]) // Clear trucks on restart
   }
-
-  // Initialize birds - mix of flying and sitting on trees
-  useEffect(() => {
-    if (!mounted) return
-
-    const initialBirds = Array.from({ length: 5 }, (_, i) => ({
-      id: i,
-      x: Math.random() * 80 + 10, // 10-90%
-      y: Math.random() * 60 + 10, // 10-70%
-      vx: (Math.random() - 0.5) * 0.3,
-      vy: (Math.random() - 0.5) * 0.2,
-      variant: Math.floor(Math.random() * 3) + 1, // 1, 2, or 3
-      onTree: false,
-    }))
-
-    setBirds(initialBirds)
-  }, [mounted])
-
-  // Animate birds and land some on trees
-  useEffect(() => {
-    if (birds.length === 0) return
-
-    let lastFrame = 0
-    const frameDelay = isMobile ? 50 : 32 // ~30fps is plenty for ambient bird movement, reduces main-thread load
-
-    const animate = (timestamp: number) => {
-      if (timestamp - lastFrame < frameDelay) {
-        animationFrameRef.current = requestAnimationFrame(animate)
-        return
-      }
-      lastFrame = timestamp
-
-      setBirds(prev =>
-        prev
-          .map(bird => {
-            // Birds sitting on trees don't move
-            if (bird.onTree) {
-              return bird
-            }
-
-            return {
-              ...bird,
-              x: bird.x + bird.vx,
-              y: bird.y + bird.vy,
-              vx: bird.vx + (Math.random() - 0.5) * 0.05,
-              vy: bird.vy + (Math.random() - 0.5) * 0.05,
-            }
-          })
-          .filter(bird => bird.onTree || (bird.x > -10 && bird.x < 110 && bird.y > 0 && bird.y < 100))
-      )
-
-      // Scale bird count with tree count
-      const treeCount = grid.flat().filter(cell => cell.state === 'tree').length
-      const targetBirds = Math.min(Math.floor(treeCount / 3) + 2, 12)
-
-      setBirds(prev => {
-        if (prev.length < targetBirds && Math.random() < 0.1) {
-          return [
-            ...prev,
-            {
-              id: Date.now(),
-              x: Math.random() < 0.5 ? -5 : 105,
-              y: Math.random() * 60 + 10,
-              vx: (Math.random() - 0.5) * 0.3,
-              vy: (Math.random() - 0.5) * 0.2,
-              variant: Math.floor(Math.random() * 3) + 1,
-              onTree: false,
-            },
-          ]
-        }
-        return prev
-      })
-
-      animationFrameRef.current = requestAnimationFrame(animate)
-    }
-
-    animationFrameRef.current = requestAnimationFrame(animate)
-
-    return () => {
-      if (animationFrameRef.current) {
-        cancelAnimationFrame(animationFrameRef.current)
-      }
-    }
-  }, [birds.length, grid, isMobile])
-
-  // Land birds on trees randomly
-  useEffect(() => {
-    const interval = setInterval(() => {
-      const trees = grid.flat().reduce<Array<{row: number, col: number}>>((acc, cell, index) => {
-        if (cell.state === 'tree') {
-          const cols = isMobile ? GRID_COLS_MOBILE : GRID_COLS_DESKTOP
-          acc.push({ row: Math.floor(index / cols), col: index % cols })
-        }
-        return acc
-      }, [])
-
-      if (trees.length > 0 && Math.random() < 0.3) {
-        const tree = trees[Math.floor(Math.random() * trees.length)]
-        const flyingBirds = birds.filter(b => !b.onTree)
-
-        if (flyingBirds.length > 0) {
-          const birdToLand = flyingBirds[Math.floor(Math.random() * flyingBirds.length)]
-
-          setBirds(prev => prev.map(b =>
-            b.id === birdToLand.id
-              ? { ...b, onTree: true, treeRow: tree.row, treeCol: tree.col }
-              : b
-          ))
-        }
-      }
-
-      // Sometimes make sitting birds fly away
-      const sittingBirds = birds.filter(b => b.onTree)
-      if (sittingBirds.length > 0 && Math.random() < 0.2) {
-        const birdToFly = sittingBirds[Math.floor(Math.random() * sittingBirds.length)]
-
-        setBirds(prev => prev.map(b =>
-          b.id === birdToFly.id
-            ? {
-                ...b,
-                onTree: false,
-                treeRow: undefined,
-                treeCol: undefined,
-                vx: (Math.random() - 0.5) * 0.3,
-                vy: -Math.random() * 0.3, // Fly upward
-              }
-            : b
-        ))
-      }
-    }, 3000) // Check every 3 seconds
-
-    return () => clearInterval(interval)
-  }, [birds, grid, isMobile])
 
   if (!mounted) {
     return (
@@ -974,7 +827,7 @@ export default function LandingGameSimple() {
         </div>
       )}
 
-      {/* Game container with birds */}
+      {/* Game container */}
       <div style={{
         position: 'relative',
         width: '100%',
@@ -1002,56 +855,6 @@ export default function LandingGameSimple() {
             }}
           />
         </div>
-
-        {/* Birds layer */}
-        {birds.map(bird => {
-          const cellSize = isMobile ? 48 : 80
-          const gap = isMobile ? 8 : 16
-
-          // Calculate position for birds sitting on trees
-          let positionStyle = {}
-          if (bird.onTree && bird.treeRow !== undefined && bird.treeCol !== undefined) {
-            const treeX = bird.treeCol * (cellSize + gap) + cellSize / 2
-            const treeY = bird.treeRow * (cellSize + gap) + cellSize * 0.2 // Sit near top of tree
-
-            positionStyle = {
-              left: `${treeX}px`,
-              top: `${treeY}px`,
-              transform: 'translate(-50%, -50%)',
-            }
-          } else {
-            positionStyle = {
-              left: `${bird.x}%`,
-              top: `${bird.y}%`,
-            }
-          }
-
-          const birdVariants = ['Birds.svg', 'birds 02.svg', 'birds 03.svg']
-          const birdSrc = `/images/home/${birdVariants[(bird.variant - 1) % 3]}`
-
-          return (
-            <div
-              key={bird.id}
-              style={{
-                position: 'absolute',
-                ...positionStyle,
-                pointerEvents: 'none',
-                zIndex: bird.onTree ? 25 : 1, // Higher z-index when on tree
-                transition: bird.onTree ? 'all 0.5s ease-out' : 'none',
-              }}
-            >
-              <img
-                src={birdSrc}
-                alt="bird"
-                style={{
-                  width: '24px',
-                  height: '18px',
-                  objectFit: 'contain',
-                }}
-              />
-            </div>
-          )
-        })}
 
         {/* Grid */}
         <div style={{
@@ -1327,7 +1130,7 @@ export default function LandingGameSimple() {
                 In this game, you're planting trees (sustainable design decisions) while trucks deliver buildings (commercial pressure, technical debt, competing priorities).
               </p>
               <p style={{ marginBottom: '16px' }}>
-                You have <strong>10 seconds</strong> to plant as many trees as you can. The trees grow and attract birds. But trucks keep coming with buildings.
+                You have <strong>10 seconds</strong> to plant as many trees as you can. But trucks keep coming with buildings.
               </p>
               <p style={{ marginBottom: '16px', color: '#6B7280' }}>
                 <em>It's a metaphor for product design—balancing what's sustainable with what's urgent, making intentional choices before momentum decides for you.</em>
