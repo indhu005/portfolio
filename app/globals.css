@@ -89,6 +89,16 @@ a:active {
   display: block;
 }
 
+/* Case study body is raw HTML per case study, so multi-column grids are
+   hardcoded inline styles that can't read the isMobile breakpoint. Force
+   any such grid to a single column on mobile so it reflows instead of
+   overflowing the viewport. */
+@media (max-width: 768px) {
+  .case-study-content div[style*="grid-template-columns"] {
+    grid-template-columns: 1fr !important;
+  }
+}
+
 /* Pull quote styling */
 .pull-quote {
   border-left: 3px solid var(--border-accent);

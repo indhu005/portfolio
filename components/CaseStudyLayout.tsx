@@ -215,6 +215,7 @@ export default function CaseStudyLayout({ caseStudy, slug }: CaseStudyLayoutProp
           style={{
             flex: 1,
             overflowY: 'auto',
+            overflowX: 'hidden',
             padding: isMobile ? '88px 20px 40px 20px' : isTablet ? '96px 32px 50px 32px' : '56px 48px 60px 48px',
             minWidth: 0,
             scrollBehavior: 'smooth',
