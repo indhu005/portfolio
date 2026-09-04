@@ -829,9 +829,9 @@ export default function Home() {
                         src="/images/home/Misinformation%20Landing%2001.png"
                         alt="Misinformation Center landing preview, 1 of 2"
                         style={{
-                          width: '97%',
-                          height: '97%',
-                          objectFit: 'contain',
+                          width: '100%',
+                          height: '100%',
+                          objectFit: 'cover',
                           display: 'block',
                         }}
                       />
