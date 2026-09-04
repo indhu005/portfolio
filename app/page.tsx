@@ -809,7 +809,7 @@ export default function Home() {
                       style={{
                         width: isMobile ? '100%' : '55%',
                         flexShrink: 0,
-                        aspectRatio: '7680 / 4320',
+                        aspectRatio: '1400 / 760',
                         backgroundColor: '#000000',
                         borderRadius: '0px',
                         overflow: 'hidden',
@@ -827,16 +827,22 @@ export default function Home() {
                         e.currentTarget.style.boxShadow = 'none'
                       }}
                     >
-                      <img
-                        src="/images/home/Misinformation%20Landing%2001.png"
-                        alt="Misinformation Center landing preview, 1 of 2"
+                      <video
+                        autoPlay
+                        loop
+                        muted
+                        playsInline
+                        preload="metadata"
+                        aria-label="Misinformation Center landing preview, 1 of 2"
                         style={{
                           width: '100%',
                           height: '100%',
                           objectFit: 'cover',
                           display: 'block',
                         }}
-                      />
+                      >
+                        <source src="/videos/home/misinfo-chat-bubbles.mp4" type="video/mp4" />
+                      </video>
                     </div>
                     <div
                       style={{
