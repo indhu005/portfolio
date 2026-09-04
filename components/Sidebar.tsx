@@ -91,10 +91,10 @@ export default function Sidebar({
       height: '100vh',
       borderRight: '1px solid rgba(0,0,0,0.08)',
       backgroundColor: '#FFFFFF',
-      padding: '0px 0px 40px 40px',
-      paddingTop: '24px',
+      padding: '40px 0px 40px 40px',
       display: 'flex',
       flexDirection: 'column',
+      justifyContent: 'center',
       overflowY: 'auto',
     }}>
 
@@ -131,18 +131,21 @@ export default function Sidebar({
         }}>based in Seattle</div>
       </div>
 
-      {/* WORK SECTION */}
+      {/* CONTENTS SECTION */}
       <div style={{ marginTop: '48px' }}>
         <div style={{
-          fontSize: isLargeDesktop ? '18px' : '15px',
+          fontSize: '11px',
           fontWeight: 700,
           color: '#1C1917',
           marginBottom: '12px',
-        }}>Work</div>
+          textTransform: 'uppercase',
+          letterSpacing: '0.06em',
+        }}>Contents</div>
 
-        {projects.map((project) => {
+        {projects.map((project, index) => {
           const isActiveProject = activeProjectProp === project.slug
           const isExpanded = expandedProject === project.slug || isActiveProject
+          const num = String(index + 1).padStart(2, '0')
 
           return (
             <div key={project.name}>
@@ -157,66 +160,69 @@ export default function Sidebar({
                 style={{
                   fontSize: navFontSize,
                   fontWeight: 400,
-                  color: isActiveProject ? ACTIVE_COLOR : '#6B7280',
+                  color: isActiveProject ? '#1C1917' : '#6B7280',
                   cursor: 'pointer',
                   paddingTop: navPaddingY,
                   paddingBottom: navPaddingY,
-                  paddingLeft: isActiveProject ? '50px' : '40px',
-                  borderLeft: isActiveProject ? `2px solid ${ACTIVE_COLOR}` : '2px solid transparent',
-                  transition: 'color 0.12s ease-out, font-weight 0.12s ease-out, padding-left 0.12s ease-out, border-color 0.12s ease-out, background-color 0.15s ease-out, transform 0.06s ease-out',
+                  display: 'flex',
+                  alignItems: 'baseline',
+                  gap: '10px',
+                  transition: 'color 0.12s ease-out, background-color 0.15s ease-out, transform 0.06s ease-out',
                   textDecoration: 'none',
                 }}
                 onMouseEnter={(e) => { if (!isActiveProject) e.currentTarget.style.color = ACTIVE_COLOR }}
                 onMouseLeave={(e) => { if (!isActiveProject) e.currentTarget.style.color = '#6B7280' }}
               >
+                <span style={{
+                  fontSize: isCompact ? '13px' : '11px',
+                  color: isActiveProject ? ACTIVE_COLOR : '#9CA3AF',
+                  flexShrink: 0,
+                  width: '16px',
+                  fontVariantNumeric: 'tabular-nums',
+                }}>
+                  {num}
+                </span>
                 {project.name}
               </Link>
 
               {/* TOC */}
               {isExpanded && project.slug !== 'play' && (
-                <div style={{ marginLeft: '16px', marginBottom: '8px' }}>
+                <div style={{ marginLeft: '26px', marginBottom: '8px' }}>
                   {(sections || toc).map((item) => {
                     const isActiveSection = activeSection === item.id
                     const displayTitle = sections ? getShortTitle(item.title) : item.title
 
                     return (
-                      <button
-                        key={item.id}
-                        type="button"
-                        aria-current={isActiveSection ? 'true' : undefined}
-                        onClick={() => {
-                          if (onSectionClick) {
-                            onSectionClick(item.id)
-                          }
-                        }}
-                        onMouseEnter={(e) => { if (!isActiveSection) e.currentTarget.style.color = ACTIVE_COLOR }}
-                        onMouseLeave={(e) => { if (!isActiveSection) e.currentTarget.style.color = '#6B7280' }}
-                        className="sidebar-key sidebar-key-nested"
-                        style={{
-                          fontSize: isCompact ? '16px' : isLargeDesktop ? '17px' : '14px',
-                          color: isActiveSection ? ACTIVE_COLOR : '#6B7280',
-                          fontWeight: 400,
-                          display: 'flex',
-                          alignItems: 'center',
-                          gap: '8px',
-                          cursor: onSectionClick ? 'pointer' : 'default',
-                          transition: 'color 0.12s ease, font-weight 0.12s ease, background-color 0.15s ease-out, transform 0.06s ease-out',
-                          border: 'none',
-                          paddingTop: isCompact ? '10px' : '4px',
-                          paddingBottom: isCompact ? '10px' : '4px',
-                          width: '100%',
-                          textAlign: 'left',
-                          fontFamily: 'inherit',
-                        }}
-                      >
-                        <span style={{
-                          color: isActiveSection ? ACTIVE_COLOR : '#9CA3AF',
-                          fontWeight: 400,
-                        }}>
-                          —
-                        </span>
-                        {displayTitle}
-                      </button>
+                      <div key={item.id}>
+                        <button
+                          type="button"
+                          aria-current={isActiveSection ? 'true' : undefined}
+                          onClick={() => {
+                            if (onSectionClick) {
+                              onSectionClick(item.id)
+                            }
+                          }}
+                          onMouseEnter={(e) => { if (!isActiveSection) e.currentTarget.style.color = ACTIVE_COLOR }}
+                          onMouseLeave={(e) => { if (!isActiveSection) e.currentTarget.style.color = '#6B7280' }}
+                          className="sidebar-key sidebar-key-nested"
+                          style={{
+                            fontSize: isCompact ? '16px' : isLargeDesktop ? '17px' : '14px',
+                            color: isActiveSection ? '#1C1917' : '#6B7280',
+                            fontWeight: 400,
+                            display: 'inline-block',
+                            cursor: onSectionClick ? 'pointer' : 'default',
+                            transition: 'color 0.12s ease, border-color 0.12s ease, background-color 0.15s ease-out, transform 0.06s ease-out',
+                            border: 'none',
+                            borderBottom: isActiveSection ? `1px solid ${ACTIVE_COLOR}` : '1px solid transparent',
+                            paddingTop: isCompact ? '10px' : '4px',
+                            paddingBottom: isCompact ? '10px' : '4px',
+                            textAlign: 'left',
+                            fontFamily: 'inherit',
+                          }}
+                        >
+                          {displayTitle}
+                        </button>
+                      </div>
                     )
                   })}
                 </div>
