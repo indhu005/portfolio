@@ -798,43 +798,82 @@ export default function Home() {
                     cursor: 'pointer',
                   }}
                 >
-                  <div
-                    style={{
-                      width: '100%',
-                      height: isMobile ? '320px' : isWideDesktop ? '760px' : '620px',
-                      backgroundColor: '#FFFFFF',
-                      borderRadius: '0px',
-                      overflow: 'hidden',
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      transition: 'transform 0.3s ease, box-shadow 0.3s ease',
-                    }}
-                    onMouseEnter={(e) => {
-                      e.currentTarget.style.transform = 'translateY(-4px)'
-                      e.currentTarget.style.boxShadow = '0 12px 40px rgba(0, 0, 0, 0.12)'
-                    }}
-                    onMouseLeave={(e) => {
-                      e.currentTarget.style.transform = 'translateY(0)'
-                      e.currentTarget.style.boxShadow = 'none'
-                    }}
-                  >
-                    <video
-                      autoPlay
-                      loop
-                      muted
-                      playsInline
-                      preload="metadata"
-                      aria-label="Misinformation Center landing preview"
+                  <div style={{
+                    display: 'flex',
+                    gap: isMobile ? '8px' : '12px',
+                    width: '100%',
+                    height: isMobile ? '320px' : isWideDesktop ? '760px' : '620px',
+                  }}>
+                    <div
                       style={{
-                        width: '93%',
-                        height: '93%',
-                        objectFit: 'contain',
-                        display: 'block',
+                        flex: 1.4,
+                        height: '100%',
+                        backgroundColor: '#000000',
+                        borderRadius: '0px',
+                        overflow: 'hidden',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        transition: 'transform 0.3s ease, box-shadow 0.3s ease',
+                      }}
+                      onMouseEnter={(e) => {
+                        e.currentTarget.style.transform = 'translateY(-4px)'
+                        e.currentTarget.style.boxShadow = '0 12px 40px rgba(0, 0, 0, 0.12)'
+                      }}
+                      onMouseLeave={(e) => {
+                        e.currentTarget.style.transform = 'translateY(0)'
+                        e.currentTarget.style.boxShadow = 'none'
                       }}
                     >
-                      <source src="/videos/misinformationcenter/Landing%20page%20Image%2002%20of%2002%20cropped.mp4" type="video/mp4" />
-                    </video>
+                      <img
+                        src="/images/home/Misinformation%20Landing%2001.png"
+                        alt="Misinformation Center landing preview, 1 of 2"
+                        style={{
+                          width: '97%',
+                          height: '97%',
+                          objectFit: 'contain',
+                          display: 'block',
+                        }}
+                      />
+                    </div>
+                    <div
+                      style={{
+                        flex: 1,
+                        height: '100%',
+                        backgroundColor: '#FFFFFF',
+                        borderRadius: '0px',
+                        overflow: 'hidden',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        transition: 'transform 0.3s ease, box-shadow 0.3s ease',
+                      }}
+                      onMouseEnter={(e) => {
+                        e.currentTarget.style.transform = 'translateY(-4px)'
+                        e.currentTarget.style.boxShadow = '0 12px 40px rgba(0, 0, 0, 0.12)'
+                      }}
+                      onMouseLeave={(e) => {
+                        e.currentTarget.style.transform = 'translateY(0)'
+                        e.currentTarget.style.boxShadow = 'none'
+                      }}
+                    >
+                      <video
+                        autoPlay
+                        loop
+                        muted
+                        playsInline
+                        preload="metadata"
+                        aria-label="Misinformation Center landing preview, 2 of 2"
+                        style={{
+                          width: '99%',
+                          height: '99%',
+                          objectFit: 'contain',
+                          display: 'block',
+                        }}
+                      >
+                        <source src="/videos/misinformationcenter/Landing%20page%20Image%2002%20of%2002%20cropped.mp4" type="video/mp4" />
+                      </video>
+                    </div>
                   </div>
                 </a>
 
