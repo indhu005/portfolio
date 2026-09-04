@@ -175,7 +175,7 @@ export default function Home() {
         >
           {/* Landing Game */}
           <div style={{
-            marginBottom: '20px',
+            marginBottom: isMobile ? '48px' : isWideDesktop ? '96px' : '80px',
           }}>
             <LandingGameSimple />
           </div>
@@ -918,87 +918,6 @@ export default function Home() {
             </div>
           </section>
 
-          {/* Experience */}
-          <section style={{
-            marginTop: isMobile ? '80px' : isWideDesktop ? '140px' : '120px',
-          }}>
-            <div style={{
-              display: 'flex',
-              alignItems: 'center',
-              gap: '12px',
-              marginBottom: isMobile ? '28px' : '40px',
-            }}>
-              <span style={{
-                width: '10px',
-                height: '10px',
-                borderRadius: '50%',
-                backgroundColor: 'var(--accent)',
-                flexShrink: 0,
-              }} />
-              <h2 style={{
-                fontFamily: 'var(--font-fraunces), serif',
-                fontSize: isMobile ? '22px' : isWideDesktop ? '39px' : '34px',
-                fontWeight: 700,
-                color: '#1C1917',
-                letterSpacing: '-0.01em',
-                margin: 0,
-              }}>
-                Experience
-              </h2>
-            </div>
-
-            <div style={{ display: 'flex', flexDirection: 'column' }}>
-              {[
-                { title: 'Independent Product Designer', company: 'Freelance', years: '2025 – Present' },
-                { title: 'Senior Product Designer', company: 'Amento', years: '2023 – 2024' },
-                { title: 'Graduate Capstone Designer', company: 'University of Washington', years: '2024 – 2025' },
-                { title: 'Product Designer II', company: 'Handel Architects', years: '2022 – 2023' },
-                { title: 'Founding Product Designer', company: 'Keye', years: '2021 – 2022' },
-                { title: 'Senior Product Designer', company: 'Flock.ai', years: '2021 – 2022' },
-                { title: 'Product Designer (Volunteer)', company: 'Distribute Aid', years: '2020' },
-                { title: 'User Experience Designer', company: 'Gensler', years: '2018 – 2020' },
-              ].map((role, i) => (
-                <div
-                  key={i}
-                  style={{
-                    display: 'flex',
-                    justifyContent: 'space-between',
-                    alignItems: 'baseline',
-                    gap: '24px',
-                    padding: isMobile ? '18px 0' : '22px 0',
-                    borderBottom: '1px solid rgba(0,0,0,0.08)',
-                    flexWrap: isMobile ? 'wrap' : 'nowrap',
-                  }}
-                >
-                  <div style={{ display: 'flex', flexWrap: 'wrap', columnGap: '10px', rowGap: '2px' }}>
-                    <span style={{
-                      fontSize: isMobile ? '16px' : isWideDesktop ? '19px' : '17px',
-                      fontWeight: 600,
-                      color: '#1C1917',
-                    }}>
-                      {role.title}
-                    </span>
-                    <span style={{
-                      fontSize: isMobile ? '16px' : isWideDesktop ? '19px' : '17px',
-                      fontWeight: 400,
-                      color: '#6B7280',
-                    }}>
-                      — {role.company}
-                    </span>
-                  </div>
-                  <span style={{
-                    fontSize: isMobile ? '13px' : '14px',
-                    fontWeight: 500,
-                    color: '#9CA3AF',
-                    flexShrink: 0,
-                    whiteSpace: 'nowrap',
-                  }}>
-                    {role.years}
-                  </span>
-                </div>
-              ))}
-            </div>
-          </section>
           </div>
 
           {/* Footer Links */}
