@@ -61,6 +61,7 @@ export default function Sidebar({
   sections
 }: SidebarProps = {}) {
   const router = useRouter()
+  const ACTIVE_COLOR = '#D9662B'
   const [expandedProject, setExpandedProject] = useState<string | null>(activeProjectProp)
   const [isLargeDesktop, setIsLargeDesktop] = useState(false)
   // Sidebar renders inside the mobile/tablet overlay (see page.tsx `isTablet &&` gate),
@@ -155,17 +156,17 @@ export default function Sidebar({
                 className="sidebar-key sidebar-key-top"
                 style={{
                   fontSize: navFontSize,
-                  fontWeight: isActiveProject ? 600 : 400,
-                  color: isActiveProject ? 'var(--accent)' : '#6B7280',
+                  fontWeight: 400,
+                  color: isActiveProject ? ACTIVE_COLOR : '#6B7280',
                   cursor: 'pointer',
                   paddingTop: navPaddingY,
                   paddingBottom: navPaddingY,
                   paddingLeft: isActiveProject ? '50px' : '40px',
-                  borderLeft: isActiveProject ? '2px solid var(--accent)' : '2px solid transparent',
+                  borderLeft: isActiveProject ? `2px solid ${ACTIVE_COLOR}` : '2px solid transparent',
                   transition: 'color 0.12s ease-out, font-weight 0.12s ease-out, padding-left 0.12s ease-out, border-color 0.12s ease-out, background-color 0.15s ease-out, transform 0.06s ease-out',
                   textDecoration: 'none',
                 }}
-                onMouseEnter={(e) => { if (!isActiveProject) e.currentTarget.style.color = 'var(--accent)' }}
+                onMouseEnter={(e) => { if (!isActiveProject) e.currentTarget.style.color = ACTIVE_COLOR }}
                 onMouseLeave={(e) => { if (!isActiveProject) e.currentTarget.style.color = '#6B7280' }}
               >
                 {project.name}
@@ -188,13 +189,13 @@ export default function Sidebar({
                             onSectionClick(item.id)
                           }
                         }}
-                        onMouseEnter={(e) => { if (!isActiveSection) e.currentTarget.style.color = '#1C1917' }}
+                        onMouseEnter={(e) => { if (!isActiveSection) e.currentTarget.style.color = ACTIVE_COLOR }}
                         onMouseLeave={(e) => { if (!isActiveSection) e.currentTarget.style.color = '#6B7280' }}
                         className="sidebar-key sidebar-key-nested"
                         style={{
                           fontSize: isCompact ? '16px' : isLargeDesktop ? '17px' : '14px',
-                          color: isActiveSection ? '#1C1917' : '#6B7280',
-                          fontWeight: isActiveSection ? 500 : 400,
+                          color: isActiveSection ? ACTIVE_COLOR : '#6B7280',
+                          fontWeight: 400,
                           display: 'flex',
                           alignItems: 'center',
                           gap: '8px',
@@ -209,8 +210,8 @@ export default function Sidebar({
                         }}
                       >
                         <span style={{
-                          color: isActiveSection ? 'var(--accent)' : '#9CA3AF',
-                          fontWeight: isActiveSection ? 700 : 400,
+                          color: isActiveSection ? ACTIVE_COLOR : '#9CA3AF',
+                          fontWeight: 400,
                         }}>
                           —
                         </span>
