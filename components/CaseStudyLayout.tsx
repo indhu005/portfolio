@@ -456,11 +456,7 @@ export default function CaseStudyLayout({ caseStudy, slug }: CaseStudyLayoutProp
                     </div>
                     <div>
                       <div style={{ fontWeight: 600, color: '#6B7280', marginBottom: '4px' }}>Impact</div>
-                      {slug === 'lat' || slug === 'misinformation-center' ? (
-                        <div style={{ color: '#1C1917' }}>{caseStudy.tldr.impact}</div>
-                      ) : (
-                        <div className="tldr-impact-badge">{caseStudy.tldr.impact}</div>
-                      )}
+                      <div style={{ color: '#1C1917' }}>{caseStudy.tldr.impact}</div>
                     </div>
                     <div style={{ gridColumn: isMobile ? '1' : 'span 2' }}>
                       <div style={{ fontWeight: 600, color: '#6B7280', marginBottom: '4px' }}>Key Skills</div>
