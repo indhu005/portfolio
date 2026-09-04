@@ -869,6 +869,7 @@ export default function Home() {
                           height: '99%',
                           objectFit: 'contain',
                           display: 'block',
+                          transform: 'scale(1.3)',
                         }}
                       >
                         <source src="/videos/misinformationcenter/Landing%20page%20Image%2002%20of%2002%20cropped.mp4" type="video/mp4" />
