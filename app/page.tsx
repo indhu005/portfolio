@@ -21,6 +21,63 @@ const useMediaQuery = (query: string) => {
   return mounted ? matches : false
 }
 
+const ArrowIcon = () => (
+  <svg width="16" height="10" viewBox="0 0 16 10" fill="none" style={{ transition: 'transform 0.2s ease' }}>
+    <path d="M1 5H15M15 5L11 1M15 5L11 9" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" />
+  </svg>
+)
+
+type TldrCell = { label: string; value: string }
+
+// Mini-TLDR spec-table strip — same Context/Constraint/Decision/Tradeoff
+// language as the case study Brief block, condensed to 4 cells. Column
+// count folds 4 -> 2 -> 1 across breakpoints; border placement is derived
+// from column count so dividers never end up on the wrong edge.
+const TldrStrip = ({ cells, isMobile, isTablet, offset }: { cells: TldrCell[]; isMobile: boolean; isTablet: boolean; offset: number }) => {
+  const columns = isMobile ? 1 : isTablet ? 2 : 4
+  return (
+    <div style={{
+      display: 'grid',
+      gridTemplateColumns: `repeat(${columns}, 1fr)`,
+      marginTop: isMobile ? '24px' : '32px',
+      marginLeft: offset,
+      borderTop: '1px solid #F1F0EE',
+      borderBottom: '1px solid #F1F0EE',
+    }}>
+      {cells.map((cell, i) => {
+        const isFirstInRow = i % columns === 0
+        const isFirstRow = i < columns
+        return (
+          <div key={cell.label} style={{
+            padding: isMobile ? '16px 0' : '20px',
+            paddingLeft: isFirstInRow ? 0 : '20px',
+            borderLeft: isFirstInRow ? 'none' : '1px solid #F1F0EE',
+            borderTop: isFirstRow ? 'none' : '1px solid #F1F0EE',
+          }}>
+            <div style={{
+              fontSize: '10.5px',
+              fontWeight: 700,
+              textTransform: 'uppercase',
+              letterSpacing: '0.08em',
+              color: '#57534E',
+              marginBottom: '8px',
+            }}>
+              {cell.label}
+            </div>
+            <div style={{
+              fontSize: '14.5px',
+              lineHeight: '1.55',
+              color: '#1C1917',
+            }}>
+              {cell.value}
+            </div>
+          </div>
+        )
+      })}
+    </div>
+  )
+}
+
 export default function Home() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [revealed, setRevealed] = useState(false)
@@ -227,7 +284,7 @@ export default function Home() {
                   }}>
                     01
                   </div>
-                  <div>
+                  <div style={{ flex: 1, minWidth: 0 }}>
                     <div style={{
                       display: 'flex',
                       alignItems: 'center',
@@ -267,14 +324,60 @@ export default function Home() {
                       Turning fragmented campus maintenance into a trusted financial decision system through ML-driven lifecycle intelligence.
                     </p>
                   </div>
+                  {!isMobile && (
+                    <a
+                      href="/work/lat"
+                      style={{
+                        display: 'inline-flex',
+                        alignItems: 'center',
+                        gap: '8px',
+                        fontSize: '14.5px',
+                        fontWeight: 600,
+                        color: '#1C1917',
+                        textDecoration: 'none',
+                        paddingTop: '10px',
+                        paddingBottom: '2px',
+                        flexShrink: 0,
+                        borderBottom: '1px solid transparent',
+                        transition: 'border-color 0.2s ease',
+                      }}
+                      onMouseEnter={(e) => {
+                        e.currentTarget.style.borderBottomColor = '#1C1917'
+                        const svg = e.currentTarget.querySelector('svg')
+                        if (svg) svg.style.transform = 'translateX(4px)'
+                      }}
+                      onMouseLeave={(e) => {
+                        e.currentTarget.style.borderBottomColor = 'transparent'
+                        const svg = e.currentTarget.querySelector('svg')
+                        if (svg) svg.style.transform = 'translateX(0)'
+                      }}
+                    >
+                      View case study
+                      <ArrowIcon />
+                    </a>
+                  )}
                 </div>
+
+                <TldrStrip
+                  isMobile={isMobile}
+                  isTablet={isTablet && !isMobile}
+                  offset={isMobile ? 0 : 56}
+                  cells={[
+                    { label: 'Role & Team', value: 'Lead Designer (60% design, 40% strategy) · team of 4 — PM, 2 external engineers, client stakeholders' },
+                    { label: 'Constraint', value: "Legacy CMMS/ERP stack couldn't be disrupted, data integrity had hard boundaries, capital decisions were politically sensitive." },
+                    { label: 'Impact', value: '95% pilot adoption · 70%→95% data accuracy · 25% cost reduction projected' },
+                    { label: 'Tech & Approach', value: 'ML/AI design · API-first architecture · Human-in-the-loop approval gates' },
+                  ]}
+                />
 
                 {/* Large Image Placeholder */}
                 <a
                   href="/work/lat"
                   style={{
                     display: 'block',
-                    width: '100%',
+                    width: isMobile ? '100%' : 'calc(100% - 56px)',
+                    marginLeft: isMobile ? 0 : '56px',
+                    marginTop: isMobile ? '24px' : '32px',
                     textDecoration: 'none',
                     cursor: 'pointer',
                   }}
@@ -297,35 +400,43 @@ export default function Home() {
                   />
                 </a>
 
-                {/* CTA */}
-                <div style={{ marginTop: isMobile ? '24px' : '32px' }}>
-                  <a
-                    href="/work/lat"
-                    style={{
-                      display: 'inline-block',
-                      backgroundColor: 'var(--accent)',
-                      color: '#FFFFFF',
-                      textDecoration: 'none',
-                      border: 'none',
-                      borderRadius: '0px',
-                      padding: '12px 22px',
-                      fontSize: '14px',
-                      fontWeight: 600,
-                      cursor: 'pointer',
-                      transition: 'transform 0.15s ease, box-shadow 0.15s ease',
-                    }}
-                    onMouseEnter={(e) => {
-                      e.currentTarget.style.transform = 'translateY(-2px)'
-                      e.currentTarget.style.boxShadow = '0 6px 16px rgba(28, 25, 23, 0.25)'
-                    }}
-                    onMouseLeave={(e) => {
-                      e.currentTarget.style.transform = 'translateY(0)'
-                      e.currentTarget.style.boxShadow = 'none'
-                    }}
-                  >
-                    View Case Study →
-                  </a>
-                </div>
+                {/* CTA — mobile only; desktop CTA lives in the title row */}
+                {isMobile && (
+                  <div style={{
+                    marginTop: '20px',
+                    display: 'flex',
+                    justifyContent: 'flex-end',
+                  }}>
+                    <a
+                      href="/work/lat"
+                      style={{
+                        display: 'inline-flex',
+                        alignItems: 'center',
+                        gap: '8px',
+                        fontSize: '14.5px',
+                        fontWeight: 600,
+                        color: '#1C1917',
+                        textDecoration: 'none',
+                        paddingBottom: '2px',
+                        borderBottom: '1px solid transparent',
+                        transition: 'border-color 0.2s ease',
+                      }}
+                      onMouseEnter={(e) => {
+                        e.currentTarget.style.borderBottomColor = '#1C1917'
+                        const svg = e.currentTarget.querySelector('svg')
+                        if (svg) svg.style.transform = 'translateX(4px)'
+                      }}
+                      onMouseLeave={(e) => {
+                        e.currentTarget.style.borderBottomColor = 'transparent'
+                        const svg = e.currentTarget.querySelector('svg')
+                        if (svg) svg.style.transform = 'translateX(0)'
+                      }}
+                    >
+                      View case study
+                      <ArrowIcon />
+                    </a>
+                  </div>
+                )}
               </article>
 
               {/* Card 2 - Keye */}
@@ -353,7 +464,7 @@ export default function Home() {
                   }}>
                     02
                   </div>
-                  <div>
+                  <div style={{ flex: 1, minWidth: 0 }}>
                     <div style={{
                       display: 'flex',
                       alignItems: 'center',
@@ -393,14 +504,60 @@ export default function Home() {
                       From three static screens to a YC-backed subscription marketplace — designing ClassPass for digital tools.
                     </p>
                   </div>
+                  {!isMobile && (
+                    <a
+                      href="/work/keye"
+                      style={{
+                        display: 'inline-flex',
+                        alignItems: 'center',
+                        gap: '8px',
+                        fontSize: '14.5px',
+                        fontWeight: 600,
+                        color: '#1C1917',
+                        textDecoration: 'none',
+                        paddingTop: '10px',
+                        paddingBottom: '2px',
+                        flexShrink: 0,
+                        borderBottom: '1px solid transparent',
+                        transition: 'border-color 0.2s ease',
+                      }}
+                      onMouseEnter={(e) => {
+                        e.currentTarget.style.borderBottomColor = '#1C1917'
+                        const svg = e.currentTarget.querySelector('svg')
+                        if (svg) svg.style.transform = 'translateX(4px)'
+                      }}
+                      onMouseLeave={(e) => {
+                        e.currentTarget.style.borderBottomColor = 'transparent'
+                        const svg = e.currentTarget.querySelector('svg')
+                        if (svg) svg.style.transform = 'translateX(0)'
+                      }}
+                    >
+                      View case study
+                      <ArrowIcon />
+                    </a>
+                  )}
                 </div>
+
+                <TldrStrip
+                  isMobile={isMobile}
+                  isTablet={isTablet && !isMobile}
+                  offset={isMobile ? 0 : 56}
+                  cells={[
+                    { label: 'Role & Team', value: 'Founding Designer · team of 5 — 2 engineers, 1 PM, 2 designers I hired' },
+                    { label: 'Constraint', value: "Engineering was 12 time zones away; a co-founder's exit erased backend capacity for planned integrations." },
+                    { label: 'Impact', value: '0→20K MAUs · $1.5M raised · YC W2024' },
+                    { label: 'Tech & Approach', value: 'Design systems · Chrome extension · Credit-based economics' },
+                  ]}
+                />
 
                 {/* Large Image Placeholder */}
                 <a
                   href="/work/keye"
                   style={{
                     display: 'block',
-                    width: '100%',
+                    width: isMobile ? '100%' : 'calc(100% - 56px)',
+                    marginLeft: isMobile ? 0 : '56px',
+                    marginTop: isMobile ? '24px' : '32px',
                     textDecoration: 'none',
                     cursor: 'pointer',
                   }}
@@ -438,35 +595,43 @@ export default function Home() {
                   </div>
                 </a>
 
-                {/* CTA */}
-                <div style={{ marginTop: isMobile ? '24px' : '32px' }}>
-                  <a
-                    href="/work/keye"
-                    style={{
-                      display: 'inline-block',
-                      backgroundColor: 'var(--accent)',
-                      color: '#FFFFFF',
-                      textDecoration: 'none',
-                      border: 'none',
-                      borderRadius: '0px',
-                      padding: '12px 22px',
-                      fontSize: '14px',
-                      fontWeight: 600,
-                      cursor: 'pointer',
-                      transition: 'transform 0.15s ease, box-shadow 0.15s ease',
-                    }}
-                    onMouseEnter={(e) => {
-                      e.currentTarget.style.transform = 'translateY(-2px)'
-                      e.currentTarget.style.boxShadow = '0 6px 16px rgba(28, 25, 23, 0.25)'
-                    }}
-                    onMouseLeave={(e) => {
-                      e.currentTarget.style.transform = 'translateY(0)'
-                      e.currentTarget.style.boxShadow = 'none'
-                    }}
-                  >
-                    View Case Study →
-                  </a>
-                </div>
+                {/* CTA — mobile only; desktop CTA lives in the title row */}
+                {isMobile && (
+                  <div style={{
+                    marginTop: '20px',
+                    display: 'flex',
+                    justifyContent: 'flex-end',
+                  }}>
+                    <a
+                      href="/work/keye"
+                      style={{
+                        display: 'inline-flex',
+                        alignItems: 'center',
+                        gap: '8px',
+                        fontSize: '14.5px',
+                        fontWeight: 600,
+                        color: '#1C1917',
+                        textDecoration: 'none',
+                        paddingBottom: '2px',
+                        borderBottom: '1px solid transparent',
+                        transition: 'border-color 0.2s ease',
+                      }}
+                      onMouseEnter={(e) => {
+                        e.currentTarget.style.borderBottomColor = '#1C1917'
+                        const svg = e.currentTarget.querySelector('svg')
+                        if (svg) svg.style.transform = 'translateX(4px)'
+                      }}
+                      onMouseLeave={(e) => {
+                        e.currentTarget.style.borderBottomColor = 'transparent'
+                        const svg = e.currentTarget.querySelector('svg')
+                        if (svg) svg.style.transform = 'translateX(0)'
+                      }}
+                    >
+                      View case study
+                      <ArrowIcon />
+                    </a>
+                  </div>
+                )}
               </article>
 
               {/* Card 3 - Misinformation Center */}
@@ -494,7 +659,7 @@ export default function Home() {
                   }}>
                     03
                   </div>
-                  <div>
+                  <div style={{ flex: 1, minWidth: 0 }}>
                     <h3 style={{
                       fontFamily: 'var(--font-fraunces), serif',
                       fontSize: isMobile ? '24px' : isWideDesktop ? '34px' : '28px',
@@ -514,14 +679,60 @@ export default function Home() {
                       Media literacy tools for the AI age — equipping people to identify misinformation themselves through verification, education, and trust.
                     </p>
                   </div>
+                  {!isMobile && (
+                    <a
+                      href="/work/misinformation-center"
+                      style={{
+                        display: 'inline-flex',
+                        alignItems: 'center',
+                        gap: '8px',
+                        fontSize: '14.5px',
+                        fontWeight: 600,
+                        color: '#1C1917',
+                        textDecoration: 'none',
+                        paddingTop: '10px',
+                        paddingBottom: '2px',
+                        flexShrink: 0,
+                        borderBottom: '1px solid transparent',
+                        transition: 'border-color 0.2s ease',
+                      }}
+                      onMouseEnter={(e) => {
+                        e.currentTarget.style.borderBottomColor = '#1C1917'
+                        const svg = e.currentTarget.querySelector('svg')
+                        if (svg) svg.style.transform = 'translateX(4px)'
+                      }}
+                      onMouseLeave={(e) => {
+                        e.currentTarget.style.borderBottomColor = 'transparent'
+                        const svg = e.currentTarget.querySelector('svg')
+                        if (svg) svg.style.transform = 'translateX(0)'
+                      }}
+                    >
+                      View case study
+                      <ArrowIcon />
+                    </a>
+                  )}
                 </div>
+
+                <TldrStrip
+                  isMobile={isMobile}
+                  isTablet={isTablet && !isMobile}
+                  offset={isMobile ? 0 : 56}
+                  cells={[
+                    { label: 'Role & Team', value: 'Sole Designer (Graduate Capstone) · solo post-Feb 2024, research partnership with TrueMedia.org' },
+                    { label: 'Constraint', value: 'No engineering resourcing beyond a prototype; testing showed users rejected any platform-integrated solution outright.' },
+                    { label: 'Impact', value: '~1,800 testers at Misinfo Day · 2,000-respondent survey · Concept validation' },
+                    { label: 'Tech & Approach', value: 'Concept design · Gamification · Platform strategy' },
+                  ]}
+                />
 
                 {/* Large Image Placeholder */}
                 <a
                   href="/work/misinformation-center"
                   style={{
                     display: 'block',
-                    width: '100%',
+                    width: isMobile ? '100%' : 'calc(100% - 56px)',
+                    marginLeft: isMobile ? 0 : '56px',
+                    marginTop: isMobile ? '24px' : '32px',
                     textDecoration: 'none',
                     cursor: 'pointer',
                   }}
@@ -557,8 +768,8 @@ export default function Home() {
                         src="/images/misinformation-center/Langing%20page%201%20of%202%20images.gif"
                         alt="Misinformation Center landing preview, 1 of 2"
                         style={{
-                          width: '93%',
-                          height: '93%',
+                          width: '70%',
+                          height: '70%',
                           objectFit: 'contain',
                           display: 'block',
                         }}
@@ -605,35 +816,43 @@ export default function Home() {
                   </div>
                 </a>
 
-                {/* CTA */}
-                <div style={{ marginTop: isMobile ? '24px' : '32px' }}>
-                  <a
-                    href="/work/misinformation-center"
-                    style={{
-                      display: 'inline-block',
-                      backgroundColor: 'var(--accent)',
-                      color: '#FFFFFF',
-                      textDecoration: 'none',
-                      border: 'none',
-                      borderRadius: '0px',
-                      padding: '12px 22px',
-                      fontSize: '14px',
-                      fontWeight: 600,
-                      cursor: 'pointer',
-                      transition: 'transform 0.15s ease, box-shadow 0.15s ease',
-                    }}
-                    onMouseEnter={(e) => {
-                      e.currentTarget.style.transform = 'translateY(-2px)'
-                      e.currentTarget.style.boxShadow = '0 6px 16px rgba(28, 25, 23, 0.25)'
-                    }}
-                    onMouseLeave={(e) => {
-                      e.currentTarget.style.transform = 'translateY(0)'
-                      e.currentTarget.style.boxShadow = 'none'
-                    }}
-                  >
-                    View Case Study →
-                  </a>
-                </div>
+                {/* CTA — mobile only; desktop CTA lives in the title row */}
+                {isMobile && (
+                  <div style={{
+                    marginTop: '20px',
+                    display: 'flex',
+                    justifyContent: 'flex-end',
+                  }}>
+                    <a
+                      href="/work/misinformation-center"
+                      style={{
+                        display: 'inline-flex',
+                        alignItems: 'center',
+                        gap: '8px',
+                        fontSize: '14.5px',
+                        fontWeight: 600,
+                        color: '#1C1917',
+                        textDecoration: 'none',
+                        paddingBottom: '2px',
+                        borderBottom: '1px solid transparent',
+                        transition: 'border-color 0.2s ease',
+                      }}
+                      onMouseEnter={(e) => {
+                        e.currentTarget.style.borderBottomColor = '#1C1917'
+                        const svg = e.currentTarget.querySelector('svg')
+                        if (svg) svg.style.transform = 'translateX(4px)'
+                      }}
+                      onMouseLeave={(e) => {
+                        e.currentTarget.style.borderBottomColor = 'transparent'
+                        const svg = e.currentTarget.querySelector('svg')
+                        if (svg) svg.style.transform = 'translateX(0)'
+                      }}
+                    >
+                      View case study
+                      <ArrowIcon />
+                    </a>
+                  </div>
+                )}
               </article>
             </div>
           </section>
