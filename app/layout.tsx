@@ -1,4 +1,4 @@
-import type { Metadata } from 'next'
+import type { Metadata, Viewport } from 'next'
 import { DM_Sans, Fraunces } from 'next/font/google'
 import './globals.css'
 import ScrollRestoration from '@/components/ScrollRestoration'
@@ -65,6 +65,11 @@ export const metadata: Metadata = {
   verification: {
     google: 'google-site-verification-code', // Replace with actual verification code
   }
+}
+
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
 }
 
 export default function RootLayout({
