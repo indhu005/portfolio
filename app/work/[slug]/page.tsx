@@ -311,7 +311,7 @@ const caseStudies = {
     tldr: {
       role: 'Lead Product Designer (60% design, 40% strategy)',
       team: '1 PM, 1 designer (me), 2 external engineers, client stakeholders',
-      timeline: '8 months',
+      timeline: '12 months (Jun 2023–May 2024)',
       impact: '95% pilot adoption | 70%→95% data accuracy | 25% cost reduction projected',
       skills: 'Enterprise UX · ML/AI design · Stakeholder alignment · Field research · API-first architecture'
     },
@@ -323,7 +323,7 @@ const caseStudies = {
 
 <p style="margin-top: 28px;"><span style="font-weight: 600;">My role.</span> I owned product vision, workflows, and the design system, aligning field technicians, managers, accountants, and executives — translating institutional needs into requirements and pushing for field research when stakeholders wanted to skip it.</p>
 
-<p style="margin-top: 28px;"><span style="font-weight: 600;">Timeline was 8 months</span><br/>Discovery to data consolidation to ML framework to pilot to beta to release. The platform continued beyond my tenure.</p>
+<p style="margin-top: 28px;"><span style="font-weight: 600;">Timeline ran June 2023 to May 2024, 12 months</span><br/>Discovery to data consolidation to ML framework to pilot to beta to release. The platform continued beyond my tenure.</p>
 
 <p style="margin-top: 28px;"><span style="font-weight: 600;">Team</span><br/>1 PM, 1 designer (me), 2 external engineers, plus client-side CAPEX, data science, accounting, and property management teams</p>
 
@@ -689,7 +689,7 @@ const caseStudies = {
     tldr: {
       role: 'Sole Designer (Graduate Capstone)',
       team: 'Solo (post-February 2024) · Research collaboration with TrueMedia.org',
-      timeline: '7 months (Jan–July 2024)',
+      timeline: '12 months (Jan–Dec 2024)',
       impact: '~1,800 testers at Misinfo Day | 2,000-respondent survey | Concept validation',
       skills: 'User research · Concept design · Gamification · Platform strategy · Academic rigor'
     },
@@ -722,7 +722,7 @@ const caseStudies = {
   </div>
 </div>
 
-<p style="margin-top: 28px;"><span style="font-weight: 600;">My role.</span> Sole designer on a UW graduate capstone (Jan–July 2024), started as a team of four. After February, the product, design, and direction were entirely mine — research, archetypes, all four features, and testing with ~1,800 people at Misinfo Day.</p>
+<p style="margin-top: 28px;"><span style="font-weight: 600;">My role.</span> Sole designer on a UW graduate capstone (Jan–Dec 2024), started as a team of four. After February, the product, design, and direction were entirely mine — research, archetypes, all four features, and testing with ~1,800 people at Misinfo Day.</p>
 
 <p style="margin-top: 28px;">From March to May, I collaborated with TrueMedia.org, a deepfake-detection nonprofit, on research and market assessment. They analyzed 60,000+ pieces of media and shut down in January 2025 — not from bad design, but because nobody profits from deepfake detection. That's this case study's throughline: design alone can't make a public good sustainable (section 06).</p>
 </div>

@@ -321,7 +321,7 @@ export default function Home() {
                         color: '#57534E',
                         flexShrink: 0,
                       }}>
-                        8 months
+                        Jun 2023 – May 2024
                       </span>
                     </div>
                     <p style={{
@@ -719,7 +719,7 @@ export default function Home() {
                         color: '#57534E',
                         flexShrink: 0,
                       }}>
-                        Jan–Jul 2024
+                        Jan–Dec 2024
                       </span>
                     </div>
                     <p style={{
