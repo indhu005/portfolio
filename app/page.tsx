@@ -622,8 +622,8 @@ export default function Home() {
                       src="/images/home/keye-landing.webp"
                       alt="Keye landing page preview"
                       style={{
-                        width: '85%',
-                        height: '85%',
+                        width: '95%',
+                        height: '95%',
                         objectFit: 'contain',
                         display: 'block',
                       }}
