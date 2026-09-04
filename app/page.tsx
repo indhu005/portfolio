@@ -314,6 +314,15 @@ export default function Home() {
                       }}>
                         Shipped
                       </span>
+                      <span style={{
+                        fontSize: '11px',
+                        fontWeight: 700,
+                        letterSpacing: '0.02em',
+                        color: '#57534E',
+                        flexShrink: 0,
+                      }}>
+                        8 months
+                      </span>
                     </div>
                     <p style={{
                       fontSize: isMobile ? '19px' : isWideDesktop ? '23px' : '22px',
@@ -323,6 +332,15 @@ export default function Home() {
                     }}>
                       Turning fragmented campus maintenance into a trusted financial decision system through ML-driven lifecycle intelligence.
                     </p>
+                    <div style={{
+                      fontFamily: 'var(--font-fraunces), serif',
+                      fontSize: isMobile ? '20px' : '24px',
+                      fontWeight: 700,
+                      color: '#1C1917',
+                      marginTop: isMobile ? '12px' : '16px',
+                    }}>
+                      95% pilot adoption
+                    </div>
                   </div>
                   {!isMobile && (
                     <a
@@ -494,6 +512,15 @@ export default function Home() {
                       }}>
                         Shipped
                       </span>
+                      <span style={{
+                        fontSize: '11px',
+                        fontWeight: 700,
+                        letterSpacing: '0.02em',
+                        color: '#57534E',
+                        flexShrink: 0,
+                      }}>
+                        2021–2022
+                      </span>
                     </div>
                     <p style={{
                       fontSize: isMobile ? '19px' : isWideDesktop ? '23px' : '22px',
@@ -503,6 +530,15 @@ export default function Home() {
                     }}>
                       From three static screens to a YC-backed subscription marketplace — designing ClassPass for digital tools.
                     </p>
+                    <div style={{
+                      fontFamily: 'var(--font-fraunces), serif',
+                      fontSize: isMobile ? '20px' : '24px',
+                      fontWeight: 700,
+                      color: '#1C1917',
+                      marginTop: isMobile ? '12px' : '16px',
+                    }}>
+                      0→20K MAUs
+                    </div>
                   </div>
                   {!isMobile && (
                     <a
@@ -660,16 +696,32 @@ export default function Home() {
                     03
                   </div>
                   <div style={{ flex: 1, minWidth: 0 }}>
-                    <h3 style={{
-                      fontFamily: 'var(--font-fraunces), serif',
-                      fontSize: isMobile ? '24px' : isWideDesktop ? '34px' : '28px',
-                      fontWeight: 700,
-                      color: '#1C1917',
-                      marginBottom: isMobile ? '12px' : '16px',
-                      letterSpacing: '-0.01em',
+                    <div style={{
+                      display: 'flex',
+                      alignItems: 'center',
+                      gap: '10px',
+                      marginBottom: isMobile ? '8px' : '10px',
                     }}>
-                      Misinformation Center
-                    </h3>
+                      <h3 style={{
+                        fontFamily: 'var(--font-fraunces), serif',
+                        fontSize: isMobile ? '24px' : isWideDesktop ? '34px' : '28px',
+                        fontWeight: 700,
+                        color: '#1C1917',
+                        letterSpacing: '-0.01em',
+                        margin: 0,
+                      }}>
+                        Misinformation Center
+                      </h3>
+                      <span style={{
+                        fontSize: '11px',
+                        fontWeight: 700,
+                        letterSpacing: '0.02em',
+                        color: '#57534E',
+                        flexShrink: 0,
+                      }}>
+                        Jan–Jul 2024
+                      </span>
+                    </div>
                     <p style={{
                       fontSize: isMobile ? '19px' : isWideDesktop ? '23px' : '22px',
                       lineHeight: '1.6',
@@ -678,6 +730,15 @@ export default function Home() {
                     }}>
                       Media literacy tools for the AI age — equipping people to identify misinformation themselves through verification, education, and trust.
                     </p>
+                    <div style={{
+                      fontFamily: 'var(--font-fraunces), serif',
+                      fontSize: isMobile ? '20px' : '24px',
+                      fontWeight: 700,
+                      color: '#1C1917',
+                      marginTop: isMobile ? '12px' : '16px',
+                    }}>
+                      ~1,800 testers at Misinfo Day
+                    </div>
                   </div>
                   {!isMobile && (
                     <a
@@ -718,7 +779,7 @@ export default function Home() {
                   isTablet={isTablet && !isMobile}
                   offset={isMobile ? 0 : 56}
                   cells={[
-                    { label: 'Role & Team', value: 'Sole Designer (Graduate Capstone) · solo post-Feb 2024, research partnership with TrueMedia.org' },
+                    { label: 'Role & Team', value: 'Sole Designer (Graduate Capstone) · solo post-Feb 2024, contributed to user research for TrueMedia.org' },
                     { label: 'Constraint', value: 'No engineering resourcing beyond a prototype; testing showed users rejected any platform-integrated solution outright.' },
                     { label: 'Impact', value: '~1,800 testers at Misinfo Day · 2,000-respondent survey · Concept validation' },
                     { label: 'Tech & Approach', value: 'Concept design · Gamification · Platform strategy' },
