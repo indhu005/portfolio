@@ -802,7 +802,7 @@ export default function Home() {
                     display: 'flex',
                     flexDirection: isMobile ? 'column' : 'row',
                     alignItems: isMobile ? 'stretch' : 'center',
-                    gap: isMobile ? '8px' : '12px',
+                    gap: isMobile ? '6px' : '4px',
                     width: '100%',
                   }}>
                     <div
@@ -872,6 +872,7 @@ export default function Home() {
                           height: '99%',
                           objectFit: 'contain',
                           display: 'block',
+                          transform: 'scale(1.15)',
                         }}
                       >
                         <source src="/videos/misinformationcenter/Landing%20page%20Image%2002%20of%2002%20cropped.mp4" type="video/mp4" />
