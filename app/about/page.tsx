@@ -185,43 +185,55 @@ export default function About() {
             minWidth: 0,
           }}
         >
-          {/* Blue placeholder - same as home page */}
-          <div style={{
-            width: '100%',
-            maxWidth: isMobile || isTablet ? '850px' : '1020px',
-            height: '580px',
-            backgroundColor: '#7EB3F5',
-            borderRadius: '0px',
-            marginBottom: isMobile ? '48px' : '64px',
-            marginLeft: 'auto',
-            marginRight: 'auto',
-          }} />
-
           <div style={{
             maxWidth: isMobile || isTablet ? '850px' : '1020px',
             marginLeft: 'auto',
             marginRight: 'auto',
           }}>
-            <h1 style={{
-              fontFamily: 'var(--font-fraunces), serif',
-              fontSize: isMobile ? '48px' : isTablet ? '64px' : '80px',
-              fontWeight: 700,
-              lineHeight: '1.1',
-              color: '#1C1917',
+            {/* Portrait photo + heading, arranged side by side on larger screens */}
+            <div style={{
+              display: 'grid',
+              gridTemplateColumns: isMobile || isTablet ? '1fr' : '340px 1fr',
+              gap: isMobile ? '32px' : isTablet ? '40px' : '56px',
+              alignItems: 'start',
               marginBottom: isMobile ? '48px' : '64px',
-              letterSpacing: '-0.02em',
             }}>
-              Hello there!
-            </h1>
+              <img
+                src="/images/about/me.webp"
+                alt="Indhu on a forest road trail"
+                width={1200}
+                height={1600}
+                style={{
+                  width: isMobile ? '220px' : isTablet ? '260px' : '100%',
+                  maxWidth: isMobile || isTablet ? '260px' : 'none',
+                  height: 'auto',
+                  aspectRatio: '3 / 4',
+                  objectFit: 'cover',
+                  borderRadius: '0px',
+                  display: 'block',
+                }}
+              />
 
-            <div>
-              {/* Opener */}
-              <div style={{
-                fontFamily: 'var(--font-fraunces), serif',
-                fontWeight: 400,
-                fontStyle: 'italic',
-                fontSize: isMobile ? '24px' : isTablet ? '30px' : '34px',
-                lineHeight: '1.35',
+              <div>
+                <h1 style={{
+                  fontFamily: 'var(--font-fraunces), serif',
+                  fontSize: isMobile ? '48px' : isTablet ? '64px' : '72px',
+                  fontWeight: 700,
+                  lineHeight: '1.1',
+                  color: '#1C1917',
+                  marginBottom: isMobile ? '28px' : '36px',
+                  letterSpacing: '-0.02em',
+                }}>
+                  Hello there!
+                </h1>
+
+                {/* Opener */}
+                <div style={{
+                  fontFamily: 'var(--font-fraunces), serif',
+                  fontWeight: 400,
+                  fontStyle: 'italic',
+                  fontSize: isMobile ? '22px' : isTablet ? '26px' : '28px',
+                  lineHeight: '1.35',
                 letterSpacing: '-0.01em',
                 color: '#1C1917',
                 marginBottom: isMobile ? '56px' : '80px',
@@ -239,9 +251,11 @@ export default function About() {
                 }}>
                   I care less about what a screen looks like than why it exists, how the pieces underneath it hold together, and whether people can actually trust it. That's taken me from a three-screen prototype to a founding-designer role, and from a university research project to an ML platform that earned 95% adoption inside a skeptical institution.
                 </span>
+                </div>
               </div>
+            </div>
 
-              {/* Beat: The compulsion */}
+            {/* Beat: The compulsion */}
               <div style={{
                 display: 'grid',
                 gridTemplateColumns: isMobile ? '1fr' : '110px 1fr',
@@ -451,7 +465,6 @@ export default function About() {
                   LinkedIn →
                 </a>
               </div>
-            </div>
           </div>
 
           {/* PHOTO GRID */}
@@ -619,18 +632,6 @@ export default function About() {
                 )
               })}
             </div>
-
-            {/* SHOE COLLECTION CAPTION */}
-            <p style={{
-              fontFamily: 'var(--font-fraunces), serif',
-              fontSize: isMobile ? '16px' : '17px',
-              lineHeight: '1.75',
-              color: '#1C1917',
-              marginTop: isMobile ? '40px' : '60px',
-              maxWidth: '680px',
-            }}>
-              Same angle, same obsession, 2016–2024. I've apparently been doing user research on pavement the whole time.
-            </p>
           </div>
         </div>
       </div>
