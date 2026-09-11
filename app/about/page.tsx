@@ -352,7 +352,7 @@ export default function About() {
           {/* PHOTO GRID */}
           <div style={{
             marginTop: isMobile ? '60px' : '80px',
-            maxWidth: isMobile || isTablet ? '850px' : '1020px',
+            maxWidth: isMobile || isTablet ? '850px' : '1160px',
             marginLeft: 'auto',
             marginRight: 'auto',
           }}>
