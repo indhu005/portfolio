@@ -410,113 +410,8 @@ const caseStudies = {
 <img loading="lazy" decoding="async" width="3300" height="2400" src="/images/lat/Market%20Gap.webp" alt="Market Gap Analysis" style="width: 100%; height: auto; border-radius: 0px; margin-top: 40px; margin-bottom: 40px; display: block;" />`
       },
       {
-        id: 'turning-point',
-        title: '03 — The Turning Point',
-        headline: 'Research revealed we were redesigning a system of coordination',
-        content: `<div class="cs-video-wrap" style="width: 100%; max-width: 1200px; margin: 0 auto 48px;">
-  <video autoplay loop muted playsinline preload="metadata" width="1882" height="1046" aria-label="Screen recording of the role-based dashboard surfaces built over a shared data foundation" style="display: block; width: 100%; height: auto; border-radius: 0px;">
-    <source src="/videos/lat/Flow%2002.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-  </video>
-  <button type="button" class="cs-video-toggle" aria-label="Pause video" onclick="var v=this.previousElementSibling;if(v.paused){v.play();this.textContent='⏸';this.setAttribute('aria-label','Pause video');}else{v.pause();this.textContent='▶';this.setAttribute('aria-label','Play video');}">⏸</button>
-</div>
-
-<p>We thought we were customizing a product. Research showed we were redesigning <span style="font-weight: 600;">a system of coordination.</span></p>
-
-<p style="margin-top: 28px;">The breakthrough wasn't the AI — it was recognizing that fragmented data was forcing humans to do system work. Everyone had access to data; what they lacked was context, prioritization, and trust.</p>
-
-<p style="margin-top: 28px;">That reframed everything. Instead of one dashboard for everyone, we built role-based surfaces over a shared foundation, surfacing only what was actionable.</p>
-
-<img loading="lazy" decoding="async" width="2909" height="1667" src="/images/lat/pROBLEM.webp" alt="System architecture diagram — modular API layer, role-based surfaces, shared data foundation" style="width: 100%; height: auto; border-radius: 0px; margin-top: 40px; margin-bottom: 40px; display: block;" />`
-      },
-      {
-        id: 'constraints',
-        title: '04 — Constraints & Design Responses',
-        headline: "The legacy ecosystem couldn't be disrupted, so LAT shipped as a modular layer alongside it",
-        content: `<div style="display: grid; grid-template-columns: 1fr; gap: 28px; margin-bottom: 48px;">
-  <div>
-    <div class="cs-card-title">Legacy Ecosystem Couldn't Be Disrupted</div>
-    <div style="font-size: 15px; color: #57534E; line-height: 1.6;">LAT shipped as a modular API layer alongside the existing CMMS/ERP stack — no forced migration, no workflow replacement, incremental transparency without triggering resistance.</div>
-  </div>
-
-  <div>
-    <div class="cs-card-title">Data Integrity Had Hard Boundaries</div>
-    <div style="font-size: 15px; color: #57534E; line-height: 1.6;">Strict governance meant we inherited duplicated, inconsistent records. That constraint produced the project's defining incident (section 07); the response — validation states, multi-signal checks, confidence tiers — became the product's trust architecture.</div>
-  </div>
-
-  <div>
-    <div class="cs-card-title">Capital Decisions Were Political</div>
-    <div style="font-size: 15px; color: #57534E; line-height: 1.6;">Layered approvals, public accountability, donor influence — automation there isn't neutral, it's political. We kept managers as approval gatekeepers, made AI show its reasoning, and logged every override.</div>
-  </div>
-</div>
-
-<div style="width: 100%; height: 450px; background-color: #E5E7EB; border-radius: 0px; display: flex; align-items: center; justify-content: center; color: #9CA3AF; font-size: 14px; margin-top: 40px; margin-bottom: 40px;">
-  <div style="text-align: center; padding: 20px;">
-    <div style="font-weight: 600; margin-bottom: 8px;">IMAGE: Approval Workflow</div>
-    <div style="font-size: 13px; line-height: 1.5;">Manager review gates → AI reasoning display → Override logging<br/>Shows human-in-the-loop design</div>
-  </div>
-</div>
-
-<div style="display: grid; grid-template-columns: 1fr; gap: 28px; margin-bottom: 48px;">
-  <div>
-    <div class="cs-card-title">Roles Had Wildly Different Needs</div>
-    <div style="font-size: 15px; color: #57534E; line-height: 1.6;">Technicians needed voice-to-text and big touch targets, not desk-built forms. Managers running 15 jobs a day needed delegation, not dashboards. Accountants needed brief-with-drill-down; executives needed two options, not a back-study. Role-based surfaces beat one universal view.</div>
-  </div>
-
-  <div>
-    <div class="cs-card-title">Field Reality: Connectivity & Devices</div>
-    <div style="font-size: 15px; color: #57534E; line-height: 1.6;">Technicians worked underground and on swing stages with unstable connections. We shipped offline-first capture with queued auto-sync, and pushed phone-first refinement to a later phase — field users wanted it sooner, but organizational trust had to come first.</div>
-  </div>
-
-  <div>
-    <div class="cs-card-title">Eight Months Forced Scope Discipline</div>
-    <div style="font-size: 15px; color: #57534E; line-height: 1.6;">AI auto-scheduling, ESG modeling, digital twins, a live campus map — all tempting. The filter: one north star (reduce unexpected costs) plus two drivers (planning accuracy, adoption velocity). Anything that didn't serve those moved to the roadmap: data unification → offline workflows → lifecycle visibility → predictive modeling → simulation.</div>
-  </div>
-</div>
-
-<div style="width: 100%; height: 450px; background-color: #E5E7EB; border-radius: 0px; display: flex; align-items: center; justify-content: center; color: #9CA3AF; font-size: 14px; margin-top: 40px; margin-bottom: 40px;">
-  <div style="text-align: center; padding: 20px;">
-    <div style="font-weight: 600; margin-bottom: 8px;">IMAGE: Offline-First Architecture</div>
-    <div style="font-size: 13px; line-height: 1.5;">Mobile workflow: Local queue → Capture → Auto-sync → Retry logic<br/>Shows connectivity resilience design</div>
-  </div>
-</div>`
-      },
-      {
-        id: 'strategy',
-        title: '05 — Strategy',
-        headline: 'One north star: reduce unexpected maintenance costs by 25%',
-        content: `<p>Every feature mapped to one of three drivers: <span style="font-weight: 600;">cost reduction, planning accuracy, or adoption velocity.</span> If it didn't serve one, it didn't ship.</p>
-
-<div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 32px; margin-top: 48px; margin-bottom: 48px;">
-  <div>
-    <div class="cs-card-title">Trust Precedes Automation</div>
-    <div style="font-size: 15px; color: #57534E; line-height: 1.6;">AI as decision support, not authority — approval gates, logged overrides, confidence-aware outputs.</div>
-  </div>
-
-  <div>
-    <div class="cs-card-title">Adoption Before Expansion</div>
-    <div style="font-size: 15px; color: #57534E; line-height: 1.6;">Offline workflows and repair clarity first; AI auto-scheduling and ESG modules second.</div>
-  </div>
-
-  <div>
-    <div class="cs-card-title">Data Integrity Before AI</div>
-    <div style="font-size: 15px; color: #57534E; line-height: 1.6;">Stabilized data foundation first, predictive sophistication second.</div>
-  </div>
-
-  <div>
-    <div class="cs-card-title">Reduce Cognitive Load</div>
-    <div style="font-size: 15px; color: #57534E; line-height: 1.6;">Role-tailored surfaces, signals not noise.</div>
-  </div>
-</div>
-
-<div style="background-color: #F9FAFB; padding: 28px; border-radius: 0px; border-left: 3px solid #7EB3F5;">
-  <div class="cs-card-title cs-card-title--md">Platform Thinking</div>
-  <div style="font-size: 15px; color: #57534E; line-height: 1.7;">The predictive engine improves as override data accumulates: more campuses → more lifecycle data → smarter predictions → higher switching cost. LAT compounds intelligence through use.</div>
-</div>`
-      },
-      {
         id: 'solution',
-        title: '06 — Solution',
+        title: '03 — Solution',
         headline: 'Three pillars turned operational signals into financial intelligence',
         content: `<div style="margin-top: 32px; margin-bottom: 48px;">
   <div style="font-size: 20px; font-weight: 600; color: #1C1917; margin-bottom: 16px;">Pillar 1 — Reliable Field Intelligence</div>
@@ -578,6 +473,111 @@ const caseStudies = {
     <div style="font-weight: 600; margin-bottom: 8px;">IMAGE 5: Scenario Comparison</div>
     <div style="font-size: 13px; line-height: 1.5;">Two scenarios side-by-side: "Repair" vs "Replace"<br/>Shows: Cost delta, timeline delta, risk comparison<br/>Export button for board-ready CapEx reports</div>
   </div>
+</div>`
+      },
+      {
+        id: 'turning-point',
+        title: '04 — The Turning Point',
+        headline: 'Research revealed we were redesigning a system of coordination',
+        content: `<div class="cs-video-wrap" style="width: 100%; max-width: 1200px; margin: 0 auto 48px;">
+  <video autoplay loop muted playsinline preload="metadata" width="1882" height="1046" aria-label="Screen recording of the role-based dashboard surfaces built over a shared data foundation" style="display: block; width: 100%; height: auto; border-radius: 0px;">
+    <source src="/videos/lat/Flow%2002.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+  <button type="button" class="cs-video-toggle" aria-label="Pause video" onclick="var v=this.previousElementSibling;if(v.paused){v.play();this.textContent='⏸';this.setAttribute('aria-label','Pause video');}else{v.pause();this.textContent='▶';this.setAttribute('aria-label','Play video');}">⏸</button>
+</div>
+
+<p>We thought we were customizing a product. Research showed we were redesigning <span style="font-weight: 600;">a system of coordination.</span></p>
+
+<p style="margin-top: 28px;">The breakthrough wasn't the AI — it was recognizing that fragmented data was forcing humans to do system work. Everyone had access to data; what they lacked was context, prioritization, and trust.</p>
+
+<p style="margin-top: 28px;">That reframed everything. Instead of one dashboard for everyone, we built role-based surfaces over a shared foundation, surfacing only what was actionable.</p>
+
+<img loading="lazy" decoding="async" width="2909" height="1667" src="/images/lat/pROBLEM.webp" alt="System architecture diagram — modular API layer, role-based surfaces, shared data foundation" style="width: 100%; height: auto; border-radius: 0px; margin-top: 40px; margin-bottom: 40px; display: block;" />`
+      },
+      {
+        id: 'constraints',
+        title: '05 — Constraints & Design Responses',
+        headline: "The legacy ecosystem couldn't be disrupted, so LAT shipped as a modular layer alongside it",
+        content: `<div style="display: grid; grid-template-columns: 1fr; gap: 28px; margin-bottom: 48px;">
+  <div>
+    <div class="cs-card-title">Legacy Ecosystem Couldn't Be Disrupted</div>
+    <div style="font-size: 15px; color: #57534E; line-height: 1.6;">LAT shipped as a modular API layer alongside the existing CMMS/ERP stack — no forced migration, no workflow replacement, incremental transparency without triggering resistance.</div>
+  </div>
+
+  <div>
+    <div class="cs-card-title">Data Integrity Had Hard Boundaries</div>
+    <div style="font-size: 15px; color: #57534E; line-height: 1.6;">Strict governance meant we inherited duplicated, inconsistent records. That constraint produced the project's defining incident (section 07); the response — validation states, multi-signal checks, confidence tiers — became the product's trust architecture.</div>
+  </div>
+
+  <div>
+    <div class="cs-card-title">Capital Decisions Were Political</div>
+    <div style="font-size: 15px; color: #57534E; line-height: 1.6;">Layered approvals, public accountability, donor influence — automation there isn't neutral, it's political. We kept managers as approval gatekeepers, made AI show its reasoning, and logged every override.</div>
+  </div>
+</div>
+
+<div style="width: 100%; height: 450px; background-color: #E5E7EB; border-radius: 0px; display: flex; align-items: center; justify-content: center; color: #9CA3AF; font-size: 14px; margin-top: 40px; margin-bottom: 40px;">
+  <div style="text-align: center; padding: 20px;">
+    <div style="font-weight: 600; margin-bottom: 8px;">IMAGE: Approval Workflow</div>
+    <div style="font-size: 13px; line-height: 1.5;">Manager review gates → AI reasoning display → Override logging<br/>Shows human-in-the-loop design</div>
+  </div>
+</div>
+
+<div style="display: grid; grid-template-columns: 1fr; gap: 28px; margin-bottom: 48px;">
+  <div>
+    <div class="cs-card-title">Roles Had Wildly Different Needs</div>
+    <div style="font-size: 15px; color: #57534E; line-height: 1.6;">Technicians needed voice-to-text and big touch targets, not desk-built forms. Managers running 15 jobs a day needed delegation, not dashboards. Accountants needed brief-with-drill-down; executives needed two options, not a back-study. Role-based surfaces beat one universal view.</div>
+  </div>
+
+  <div>
+    <div class="cs-card-title">Field Reality: Connectivity & Devices</div>
+    <div style="font-size: 15px; color: #57534E; line-height: 1.6;">Technicians worked underground and on swing stages with unstable connections. We shipped offline-first capture with queued auto-sync, and pushed phone-first refinement to a later phase — field users wanted it sooner, but organizational trust had to come first.</div>
+  </div>
+
+  <div>
+    <div class="cs-card-title">Eight Months Forced Scope Discipline</div>
+    <div style="font-size: 15px; color: #57534E; line-height: 1.6;">AI auto-scheduling, ESG modeling, digital twins, a live campus map — all tempting. The filter: one north star (reduce unexpected costs) plus two drivers (planning accuracy, adoption velocity). Anything that didn't serve those moved to the roadmap: data unification → offline workflows → lifecycle visibility → predictive modeling → simulation.</div>
+  </div>
+</div>
+
+<div style="width: 100%; height: 450px; background-color: #E5E7EB; border-radius: 0px; display: flex; align-items: center; justify-content: center; color: #9CA3AF; font-size: 14px; margin-top: 40px; margin-bottom: 40px;">
+  <div style="text-align: center; padding: 20px;">
+    <div style="font-weight: 600; margin-bottom: 8px;">IMAGE: Offline-First Architecture</div>
+    <div style="font-size: 13px; line-height: 1.5;">Mobile workflow: Local queue → Capture → Auto-sync → Retry logic<br/>Shows connectivity resilience design</div>
+  </div>
+</div>`
+      },
+      {
+        id: 'strategy',
+        title: '06 — Strategy',
+        headline: 'One north star: reduce unexpected maintenance costs by 25%',
+        content: `<p>Every feature mapped to one of three drivers: <span style="font-weight: 600;">cost reduction, planning accuracy, or adoption velocity.</span> If it didn't serve one, it didn't ship.</p>
+
+<div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 32px; margin-top: 48px; margin-bottom: 48px;">
+  <div>
+    <div class="cs-card-title">Trust Precedes Automation</div>
+    <div style="font-size: 15px; color: #57534E; line-height: 1.6;">AI as decision support, not authority — approval gates, logged overrides, confidence-aware outputs.</div>
+  </div>
+
+  <div>
+    <div class="cs-card-title">Adoption Before Expansion</div>
+    <div style="font-size: 15px; color: #57534E; line-height: 1.6;">Offline workflows and repair clarity first; AI auto-scheduling and ESG modules second.</div>
+  </div>
+
+  <div>
+    <div class="cs-card-title">Data Integrity Before AI</div>
+    <div style="font-size: 15px; color: #57534E; line-height: 1.6;">Stabilized data foundation first, predictive sophistication second.</div>
+  </div>
+
+  <div>
+    <div class="cs-card-title">Reduce Cognitive Load</div>
+    <div style="font-size: 15px; color: #57534E; line-height: 1.6;">Role-tailored surfaces, signals not noise.</div>
+  </div>
+</div>
+
+<div style="background-color: #F9FAFB; padding: 28px; border-radius: 0px; border-left: 3px solid #7EB3F5;">
+  <div class="cs-card-title cs-card-title--md">Platform Thinking</div>
+  <div style="font-size: 15px; color: #57534E; line-height: 1.7;">The predictive engine improves as override data accumulates: more campuses → more lifecycle data → smarter predictions → higher switching cost. LAT compounds intelligence through use.</div>
 </div>`
       },
       {
