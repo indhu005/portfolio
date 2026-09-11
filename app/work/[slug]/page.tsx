@@ -364,7 +364,7 @@ const caseStudies = {
         id: 'context-problem',
         title: '02 — Context & Problem',
         headline: 'Fragmented data was forcing humans to do the work a system should have done',
-        content: `<div class="cs-video-wrap" style="width: 100%; max-width: 1200px; margin: 0 auto 48px;">
+        content: `<div class="cs-video-wrap" style="width: 100%; max-width: 960px; margin: 0 auto 48px;">
   <video autoplay loop muted playsinline preload="metadata" width="1882" height="1060" aria-label="Screen recording demonstrating a technician, manager, and leadership each working from fragmented, disconnected tools" style="display: block; width: 100%; height: auto; border-radius: 0px;">
     <source src="/videos/lat/Flow%2001.mp4" type="video/mp4">
     Your browser does not support the video tag.
@@ -376,7 +376,7 @@ const caseStudies = {
 
 <p style="margin-top: 28px;">Without a unified system, everyone operates in their own flow with no common path:</p>
 
-<div class="cs-video-wrap" style="width: 100%; max-width: 1200px; margin: 48px auto 48px;">
+<div class="cs-video-wrap" style="width: 100%; max-width: 960px; margin: 48px auto 48px;">
   <video autoplay loop muted playsinline preload="metadata" width="1878" height="1030" aria-label="Screen recording showing each role's separate, uncoordinated workflow path through the old tools" style="display: block; width: 100%; height: auto; border-radius: 0px;">
     <source src="/videos/lat/Flow%2003.mp4" type="video/mp4">
     Your browser does not support the video tag.
@@ -386,16 +386,16 @@ const caseStudies = {
 
 <img loading="lazy" decoding="async" width="3300" height="2400" src="/images/lat/User%20Issues.webp" alt="User Issues" style="width: 100%; height: auto; border-radius: 0px; margin-top: 40px; margin-bottom: 40px; display: block;" />
 
-<div style="display: flex; gap: 24px; margin-top: 8px; margin-bottom: 8px; flex-wrap: wrap;">
+<div style="display: flex; align-items: flex-start; gap: 24px; margin-top: 8px; margin-bottom: 8px; flex-wrap: wrap;">
   <div style="flex: 1; min-width: 250px; position: relative;">
     <div style="background-color: #1C1917; padding: 24px; border-radius: 0px; position: relative;">
-      <p style="font-style: italic; font-family: 'Fraunces', serif; color: #FFFFFF; font-size: 23px; font-weight: 700; margin: 0;">"I do the physical work in 30 minutes, but reporting takes another 20."</p>
+      <p style="font-style: italic; font-family: 'Fraunces', serif; color: #FFFFFF; font-size: 23px; font-weight: 500; margin: 0;">"I do the physical work in 30 minutes, but reporting takes another 20."</p>
     </div>
     <div style="width: 0; height: 0; border-left: 12px solid transparent; border-right: 12px solid transparent; border-top: 12px solid #1C1917; position: absolute; bottom: -12px; left: 32px;"></div>
   </div>
   <div style="flex: 1; min-width: 250px; position: relative;">
     <div style="background-color: #1C1917; padding: 24px; border-radius: 0px; position: relative;">
-      <p style="font-style: italic; font-family: 'Fraunces', serif; color: #FFFFFF; font-size: 23px; font-weight: 700; margin: 0;">"Each year I'm choosing between urgent-now and smart-long-term with partial data."</p>
+      <p style="font-style: italic; font-family: 'Fraunces', serif; color: #FFFFFF; font-size: 23px; font-weight: 500; margin: 0;">"Each year I'm choosing between urgent-now and smart-long-term with partial data."</p>
     </div>
     <div style="width: 0; height: 0; border-left: 12px solid transparent; border-right: 12px solid transparent; border-top: 12px solid #1C1917; position: absolute; bottom: -12px; left: 32px;"></div>
   </div>
