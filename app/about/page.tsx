@@ -233,7 +233,7 @@ export default function About() {
                 maxWidth: '18ch',
                 margin: isMobile ? '0 0 40px' : '0 0 56px',
               }}>
-                A product designer who thinks in systems.
+                I decide who the system defers to.
               </div>
 
               {[
@@ -241,27 +241,27 @@ export default function About() {
                   n: '01',
                   label: 'The compulsion',
                   pull: true,
-                  body: <>I still can't look at a product without asking <em>why</em> it exists, and lately, <em>why now</em>, before I let myself get excited about what it should be. It's a compulsion.</>,
+                  body: <>I can't look at a product without asking <em>why</em> it exists, and lately, <em>why now</em>. It's a compulsion, not a process.</>,
                 },
                 {
                   n: '02',
                   label: 'Who decides',
-                  body: <>What guardrails and accessibility should look like as AI decides more of what people see, trust, and act on. That's the harder question pulling me lately. Building an enterprise ML platform that had to earn trust inside a cautious institution, and a media literacy tool built on the idea that people should be equipped to judge for themselves, taught me the same lesson twice. <span style={{ color: '#1C1917', fontWeight: 500 }}>The interface is rarely the hard part. Deciding who the system should defer to is.</span></>,
+                  body: <>AI now decides more of what people see, trust, and act on, so guardrails matter more than polish. An enterprise ML platform earning trust inside a skeptical institution, and a media literacy tool built on judging for yourself, taught me the same lesson twice. <span style={{ color: '#1C1917', fontWeight: 500 }}>The interface is rarely the hard part. Deciding who the system should defer to is.</span></>,
                 },
                 {
                   n: '03',
                   label: 'The bar',
-                  body: <>The best products I know are invisible. An Apple Watch that detects a heartbeat and calls for help. A tool that fits so naturally into someone's day they forget they're using it. That's the bar I actually care about. Pretty isn't enough. If someone notices they're using your product, it hasn't done its job yet. <span style={{ color: '#78716C', fontSize: '14px' }}>(I notice I'm using most apps about as much as I notice I'm wearing shoes with a rock in them. Constantly, and with growing resentment.)</span></>,
+                  body: <>The best products are invisible. An Apple Watch that catches a heartbeat and calls for help. If someone notices they're using your product, it hasn't done its job yet.</>,
                 },
                 {
                   n: '04',
                   label: 'How I see',
-                  body: <>I take a lot of photos of stuff most people just walk past. Fog swallowing a road through sequoias. A library that looks like it's about to unfold itself onto the sidewalk. I'm not sure why my eyes default to working that way, but I can't turn it off.</>,
+                  body: <>I take a lot of photos of stuff most people walk past. Fog swallowing a road through sequoias. A library that looks about to unfold onto the sidewalk. I'm not sure why my eyes work that way, but I can't turn it off.</>,
                 },
                 {
                   n: '05',
                   label: 'What I collect',
-                  body: <>Each city I've lived in left something behind, mostly strong opinions about public transit that nobody asked for. I collect things that make people lean in for a second look, and I lose sleep over problems that were never actually part of the assignment. A design superpower or a problem with setting boundaries, depending who you ask. Probably both.</>,
+                  body: <>Every city I've lived in left an opinion about public transit nobody asked for. I collect things that make people look twice, and lose sleep over problems that were never part of the assignment. Superpower or boundary problem, probably both.</>,
                 },
                 {
                   n: '06',
