@@ -213,7 +213,6 @@ export default function About() {
                   objectFit: 'cover',
                   borderRadius: '0px',
                   display: 'block',
-                  filter: 'grayscale(1) contrast(1.05)',
                   marginBottom: '24px',
                 }}
               />
