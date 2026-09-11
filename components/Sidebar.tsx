@@ -188,7 +188,7 @@ export default function Sidebar({
               {/* TOC */}
               {isExpanded && project.slug !== 'play' && (
                 <div style={{ marginLeft: '26px', marginBottom: '8px' }}>
-                  {(sections || toc).map((item) => {
+                  {(sections || toc).filter((item) => item.id !== 'strategy').map((item) => {
                     const isActiveSection = activeSection === item.id
                     const displayTitle = sections ? getShortTitle(item.title) : item.title
 
