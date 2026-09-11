@@ -374,15 +374,7 @@ const caseStudies = {
 
 <p>Universities manage billions in infrastructure with fragmented tools: a technician underground can't access repair history, a project manager stitches together spreadsheets and invoices before planning meetings, leadership decides on partial data.</p>
 
-<p style="margin-top: 28px;">Without a unified system, everyone operates in their own flow with no common path:</p>
-
-<div class="cs-video-wrap" style="width: 100%; max-width: 960px; margin: 48px auto 48px;">
-  <video autoplay loop muted playsinline preload="metadata" width="1878" height="1030" aria-label="Screen recording showing each role's separate, uncoordinated workflow path through the old tools" style="display: block; width: 100%; height: auto; border-radius: 0px;">
-    <source src="/videos/lat/Flow%2003.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-  </video>
-  <button type="button" class="cs-video-toggle" aria-label="Pause video" onclick="var v=this.previousElementSibling;if(v.paused){v.play();this.textContent='⏸';this.setAttribute('aria-label','Pause video');}else{v.pause();this.textContent='▶';this.setAttribute('aria-label','Play video');}">⏸</button>
-</div>
+<p style="margin-top: 28px;">Without a unified system, everyone operates in their own flow with no common path.</p>
 
 <img loading="lazy" decoding="async" width="3300" height="2400" src="/images/lat/User%20Issues.webp" alt="User Issues" style="width: 100%; height: auto; border-radius: 0px; margin-top: 40px; margin-bottom: 40px; display: block;" />
 
