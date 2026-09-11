@@ -7,7 +7,6 @@ const projects = [
   { name: 'LAT', slug: 'lat' },
   { name: 'Keye', slug: 'keye' },
   { name: 'Misinformation Center', slug: 'misinformation-center' },
-  { name: 'Play', slug: 'play' },
 ]
 
 const toc = [
