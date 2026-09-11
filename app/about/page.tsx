@@ -214,42 +214,200 @@ export default function About() {
               Hello there!
             </h1>
 
-            <div style={{
-              fontSize: isMobile ? '17px' : '18px',
-              lineHeight: '1.8',
-              color: '#1C1917',
-            }}>
-              <p style={{ marginBottom: '36px' }}>
-                I'm a product designer who thinks in systems — less interested in what a screen looks like than in why it exists, how the pieces underneath it hold together, and whether people can actually trust it. That's taken me from a three-screen prototype to a founding-designer role, and from a university research project to an ML platform that earned 95% adoption inside a skeptical institution.
-              </p>
+            <div>
+              {/* Opener */}
+              <div style={{
+                fontFamily: 'var(--font-fraunces), serif',
+                fontWeight: 400,
+                fontStyle: 'italic',
+                fontSize: isMobile ? '24px' : isTablet ? '30px' : '34px',
+                lineHeight: '1.35',
+                letterSpacing: '-0.01em',
+                color: '#1C1917',
+                marginBottom: isMobile ? '56px' : '80px',
+              }}>
+                I'm a product designer who thinks in systems.
+                <span style={{
+                  fontFamily: 'inherit',
+                  fontStyle: 'normal',
+                  fontWeight: 400,
+                  fontSize: isMobile ? '16px' : '17px',
+                  lineHeight: '1.75',
+                  color: '#44403C',
+                  display: 'block',
+                  marginTop: '20px',
+                }}>
+                  I care less about what a screen looks like than why it exists, how the pieces underneath it hold together, and whether people can actually trust it. That's taken me from a three-screen prototype to a founding-designer role, and from a university research project to an ML platform that earned 95% adoption inside a skeptical institution.
+                </span>
+              </div>
 
+              {/* Beat: The compulsion */}
+              <div style={{
+                display: 'grid',
+                gridTemplateColumns: isMobile ? '1fr' : '110px 1fr',
+                gap: isMobile ? '10px' : '32px',
+                padding: isMobile ? '28px 0' : '36px 0',
+                borderTop: '1px solid rgba(0,0,0,0.1)',
+              }}>
+                <div style={{
+                  fontSize: '11px',
+                  fontWeight: 700,
+                  letterSpacing: '0.1em',
+                  textTransform: 'uppercase',
+                  color: '#78716C',
+                  paddingTop: isMobile ? 0 : '4px',
+                }}>The compulsion</div>
+                <p style={{
+                  fontFamily: 'var(--font-fraunces), serif',
+                  fontWeight: 600,
+                  fontSize: isMobile ? '19px' : '22px',
+                  lineHeight: '1.5',
+                  color: '#1C1917',
+                  margin: 0,
+                  maxWidth: '58ch',
+                }}>
+                  I still can't look at a product without asking <em>why</em> it exists, and lately, <em>why now</em>, before I let myself get excited about what it should be. It's a compulsion.
+                </p>
+              </div>
+
+              {/* Beat: Who decides */}
+              <div style={{
+                display: 'grid',
+                gridTemplateColumns: isMobile ? '1fr' : '110px 1fr',
+                gap: isMobile ? '10px' : '32px',
+                padding: isMobile ? '28px 0' : '36px 0',
+                borderTop: '1px solid rgba(0,0,0,0.1)',
+              }}>
+                <div style={{
+                  fontSize: '11px',
+                  fontWeight: 700,
+                  letterSpacing: '0.1em',
+                  textTransform: 'uppercase',
+                  color: '#78716C',
+                  paddingTop: isMobile ? 0 : '4px',
+                }}>Who decides</div>
+                <p style={{
+                  fontSize: isMobile ? '16px' : '17px',
+                  lineHeight: '1.75',
+                  color: '#44403C',
+                  margin: 0,
+                  maxWidth: '62ch',
+                }}>
+                  What guardrails and accessibility should look like as AI decides more of what people see, trust, and act on. That's the harder question pulling me lately. Building an enterprise ML platform that had to earn trust inside a cautious institution, and a media literacy tool built on the idea that people should be equipped to judge for themselves, taught me the same lesson twice. <span style={{ color: '#1C1917' }}>The interface is rarely the hard part. Deciding who the system should defer to is.</span>
+                </p>
+              </div>
+
+              {/* Beat: The bar */}
+              <div style={{
+                display: 'grid',
+                gridTemplateColumns: isMobile ? '1fr' : '110px 1fr',
+                gap: isMobile ? '10px' : '32px',
+                padding: isMobile ? '28px 0' : '36px 0',
+                borderTop: '1px solid rgba(0,0,0,0.1)',
+              }}>
+                <div style={{
+                  fontSize: '11px',
+                  fontWeight: 700,
+                  letterSpacing: '0.1em',
+                  textTransform: 'uppercase',
+                  color: '#78716C',
+                  paddingTop: isMobile ? 0 : '4px',
+                }}>The bar</div>
+                <p style={{
+                  fontSize: isMobile ? '16px' : '17px',
+                  lineHeight: '1.75',
+                  color: '#44403C',
+                  margin: 0,
+                  maxWidth: '62ch',
+                }}>
+                  The best products I know are invisible. An Apple Watch that detects a heartbeat and calls for help. A tool that fits so naturally into someone's day they forget they're using it. That's the bar I actually care about. Pretty isn't enough. If someone notices they're using your product, it hasn't done its job yet. <span style={{ color: '#78716C', fontSize: isMobile ? '14px' : '15px' }}>(I notice I'm using most apps about as much as I notice I'm wearing shoes with a rock in them. Constantly, and with growing resentment.)</span>
+                </p>
+              </div>
+
+              {/* Beat: How I see */}
+              <div style={{
+                display: 'grid',
+                gridTemplateColumns: isMobile ? '1fr' : '110px 1fr',
+                gap: isMobile ? '10px' : '32px',
+                padding: isMobile ? '28px 0' : '36px 0',
+                borderTop: '1px solid rgba(0,0,0,0.1)',
+              }}>
+                <div style={{
+                  fontSize: '11px',
+                  fontWeight: 700,
+                  letterSpacing: '0.1em',
+                  textTransform: 'uppercase',
+                  color: '#78716C',
+                  paddingTop: isMobile ? 0 : '4px',
+                }}>How I see</div>
+                <p style={{
+                  fontSize: isMobile ? '16px' : '17px',
+                  lineHeight: '1.75',
+                  color: '#44403C',
+                  margin: 0,
+                  maxWidth: '62ch',
+                }}>
+                  I take a lot of photos of stuff most people just walk past. Fog swallowing a road through sequoias. A library that looks like it's about to unfold itself onto the sidewalk. I'm not sure why my eyes default to working that way, but I can't turn it off.
+                </p>
+              </div>
+
+              {/* Beat: Cities lived in, with stat callout */}
+              <div style={{
+                display: 'grid',
+                gridTemplateColumns: isMobile ? '1fr' : '110px 1fr',
+                gap: isMobile ? '10px' : '32px',
+                padding: isMobile ? '28px 0' : '36px 0',
+                borderTop: '1px solid rgba(0,0,0,0.1)',
+                alignItems: 'start',
+              }}>
+                <div style={{
+                  fontSize: '11px',
+                  fontWeight: 700,
+                  letterSpacing: '0.1em',
+                  textTransform: 'uppercase',
+                  color: '#78716C',
+                  paddingTop: isMobile ? 0 : '4px',
+                }}>Cities lived in</div>
+                <div>
+                  <div style={{
+                    fontFamily: 'var(--font-fraunces), serif',
+                    fontSize: isMobile ? '36px' : '46px',
+                    lineHeight: 1,
+                    color: '#1C1917',
+                  }}>5</div>
+                  <div style={{
+                    fontSize: '13px',
+                    color: '#78716C',
+                    marginTop: '8px',
+                  }}>
+                    Chicago, Milwaukee, LA, New York, and now Seattle. Each city left something behind, mostly strong opinions about public transit that nobody asked for.
+                  </div>
+                  <p style={{
+                    fontSize: isMobile ? '16px' : '17px',
+                    lineHeight: '1.75',
+                    color: '#44403C',
+                    marginTop: '20px',
+                    marginBottom: 0,
+                    maxWidth: '58ch',
+                  }}>
+                    I collect things that make people lean in for a second look, and I lose sleep over problems that were never actually part of the assignment. A design superpower or a problem with setting boundaries, depending who you ask. Probably both.
+                  </p>
+                </div>
+              </div>
+
+              {/* Coda */}
               <p style={{
                 fontFamily: 'var(--font-fraunces), serif',
-                fontWeight: 600,
-                fontSize: isMobile ? '18px' : '19px',
-                lineHeight: '1.7',
-                marginBottom: '36px',
+                fontStyle: 'italic',
+                fontWeight: 400,
+                fontSize: isMobile ? '19px' : '23px',
+                lineHeight: '1.6',
+                color: '#1C1917',
+                maxWidth: '54ch',
+                marginTop: isMobile ? '32px' : '40px',
+                paddingTop: isMobile ? '28px' : '40px',
+                borderTop: '1px solid rgba(0,0,0,0.1)',
               }}>
-                I still can't look at a product without asking <em>why</em> it exists — and lately, <em>why now</em> — before I let myself get excited about what it should be. It's a compulsion.
-              </p>
-
-              <p style={{ marginBottom: '36px' }}>
-                Most recently that's pulled me toward a harder question: what guardrails and accessibility should look like as AI decides more of what people see, trust, and act on. Building an enterprise ML platform that had to earn trust inside a cautious institution, and a media-literacy tool built on the idea that people should be equipped to judge for themselves, taught me the same lesson twice — the interface is rarely the hard part. Deciding who the system should defer to is.
-              </p>
-
-              <p style={{ marginBottom: '36px' }}>
-                The best products I know are invisible. An Apple Watch that detects a heartbeat and calls for help. A tool that fits so naturally into someone's day they forget they're using it. That's the bar I actually care about. Pretty isn't enough. If someone notices they're using your product, it hasn't done its job yet. (I notice I'm using most apps about as much as I notice I'm wearing shoes with a rock in them. Which is to say: constantly, and with growing resentment.)
-              </p>
-
-              <p style={{ marginBottom: '36px' }}>
-                I take a lot of photos of stuff most people just walk past. Fog swallowing a road through sequoias. A library that looks like it's about to unfold itself onto the sidewalk. I'm not sure why my eyes default to working that way, but I can't turn it off.
-              </p>
-
-              <p style={{ marginBottom: '36px' }}>
-                I've lived in Chicago, Milwaukee, LA, New York, and now Seattle. Each city left something behind, mostly strong opinions about public transit that nobody asked for. I collect things that make people lean in for a second look, and I lose sleep over problems that were never actually part of the assignment. Design superpower or boundary-setting problem, depending who you ask. Probably both.
-              </p>
-
-              <p style={{ marginBottom: '48px' }}>
                 When I'm in my 60s, I want a barn full of animals, surrounded by tall trees, reading every day. Until then, I'll be the one asking why the button needs to move at all.
               </p>
 
@@ -258,6 +416,7 @@ export default function About() {
                 gap: '32px',
                 flexWrap: 'wrap',
                 paddingTop: '16px',
+                marginTop: isMobile ? '40px' : '48px',
                 borderTop: '1px solid rgba(0,0,0,0.08)',
                 marginBottom: '80px',
               }}>
