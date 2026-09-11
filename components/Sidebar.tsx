@@ -41,6 +41,7 @@ const getShortTitle = (fullTitle: string): string => {
   const titleMap: Record<string, string> = {
     'Project Snapshot': 'Snapshot',
     'Context & Problem': 'Context & Problem',
+    'Constraints & Design Responses': 'Constraints',
     'Where I Started: Evidence over Instinct': 'Where I Started',
     'The Credit System: From Constraint to Intelligence': 'Credit System',
     'Features Built from Signal': 'Features',
