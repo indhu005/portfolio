@@ -410,8 +410,28 @@ const caseStudies = {
 <img loading="lazy" decoding="async" width="3300" height="2400" src="/images/lat/Market%20Gap.webp" alt="Market Gap Analysis" style="width: 100%; height: auto; border-radius: 0px; margin-top: 40px; margin-bottom: 40px; display: block;" />`
       },
       {
+        id: 'turning-point',
+        title: '03 — The Turning Point',
+        headline: 'Research revealed we were redesigning a system of coordination',
+        content: `<div class="cs-video-wrap" style="width: 100%; max-width: 1200px; margin: 0 auto 48px;">
+  <video autoplay loop muted playsinline preload="metadata" width="1882" height="1046" aria-label="Screen recording of the role-based dashboard surfaces built over a shared data foundation" style="display: block; width: 100%; height: auto; border-radius: 0px;">
+    <source src="/videos/lat/Flow%2002.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+  <button type="button" class="cs-video-toggle" aria-label="Pause video" onclick="var v=this.previousElementSibling;if(v.paused){v.play();this.textContent='⏸';this.setAttribute('aria-label','Pause video');}else{v.pause();this.textContent='▶';this.setAttribute('aria-label','Play video');}">⏸</button>
+</div>
+
+<p>We thought we were customizing a product. Research showed we were redesigning <span style="font-weight: 600;">a system of coordination.</span></p>
+
+<p style="margin-top: 28px;">The breakthrough wasn't the AI — it was recognizing that fragmented data was forcing humans to do system work. Everyone had access to data; what they lacked was context, prioritization, and trust.</p>
+
+<p style="margin-top: 28px;">That reframed everything. Instead of one dashboard for everyone, we built role-based surfaces over a shared foundation, surfacing only what was actionable.</p>
+
+<img loading="lazy" decoding="async" width="2909" height="1667" src="/images/lat/pROBLEM.webp" alt="System architecture diagram — modular API layer, role-based surfaces, shared data foundation" style="width: 100%; height: auto; border-radius: 0px; margin-top: 40px; margin-bottom: 40px; display: block;" />`
+      },
+      {
         id: 'solution',
-        title: '03 — Solution',
+        title: '04 — Solution',
         headline: 'Three pillars turned operational signals into financial intelligence',
         content: `<div style="margin-top: 32px; margin-bottom: 48px;">
   <div style="font-size: 20px; font-weight: 600; color: #1C1917; margin-bottom: 16px;">Pillar 1 — Reliable Field Intelligence</div>
@@ -474,26 +494,6 @@ const caseStudies = {
     <div style="font-size: 13px; line-height: 1.5;">Two scenarios side-by-side: "Repair" vs "Replace"<br/>Shows: Cost delta, timeline delta, risk comparison<br/>Export button for board-ready CapEx reports</div>
   </div>
 </div>`
-      },
-      {
-        id: 'turning-point',
-        title: '04 — The Turning Point',
-        headline: 'Research revealed we were redesigning a system of coordination',
-        content: `<div class="cs-video-wrap" style="width: 100%; max-width: 1200px; margin: 0 auto 48px;">
-  <video autoplay loop muted playsinline preload="metadata" width="1882" height="1046" aria-label="Screen recording of the role-based dashboard surfaces built over a shared data foundation" style="display: block; width: 100%; height: auto; border-radius: 0px;">
-    <source src="/videos/lat/Flow%2002.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-  </video>
-  <button type="button" class="cs-video-toggle" aria-label="Pause video" onclick="var v=this.previousElementSibling;if(v.paused){v.play();this.textContent='⏸';this.setAttribute('aria-label','Pause video');}else{v.pause();this.textContent='▶';this.setAttribute('aria-label','Play video');}">⏸</button>
-</div>
-
-<p>We thought we were customizing a product. Research showed we were redesigning <span style="font-weight: 600;">a system of coordination.</span></p>
-
-<p style="margin-top: 28px;">The breakthrough wasn't the AI — it was recognizing that fragmented data was forcing humans to do system work. Everyone had access to data; what they lacked was context, prioritization, and trust.</p>
-
-<p style="margin-top: 28px;">That reframed everything. Instead of one dashboard for everyone, we built role-based surfaces over a shared foundation, surfacing only what was actionable.</p>
-
-<img loading="lazy" decoding="async" width="2909" height="1667" src="/images/lat/pROBLEM.webp" alt="System architecture diagram — modular API layer, role-based surfaces, shared data foundation" style="width: 100%; height: auto; border-radius: 0px; margin-top: 40px; margin-bottom: 40px; display: block;" />`
       },
       {
         id: 'constraints',
