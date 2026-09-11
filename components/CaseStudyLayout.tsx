@@ -336,17 +336,14 @@ export default function CaseStudyLayout({ caseStudy, slug }: CaseStudyLayoutProp
                 )
               )}
 
-              {/* Brief Section - Context/Constraint/Decision/Tradeoff, appears before TL;DR. Fused into one card with the TL;DR block below it. */}
+              {/* Brief Section - Context/Constraint/Decision/Tradeoff, appears before TL;DR. */}
               {index === 0 && caseStudy.brief && (
                 <div style={{
                   display: 'grid',
                   gridTemplateColumns: isMobile ? '1fr' : 'repeat(4, 1fr)',
-                  gap: isMobile ? '20px' : '0',
-                  padding: isMobile ? '24px' : '28px 32px',
-                  backgroundColor: '#FFFFFF',
-                  border: '1px solid #E5E7EB',
-                  borderBottom: 'none',
-                  borderRadius: '0px',
+                  gap: isMobile ? '24px' : '0',
+                  paddingTop: isMobile ? '24px' : '28px',
+                  borderTop: '1px solid rgba(28, 25, 23, 0.12)',
                   maxWidth: isMobile || isTablet ? '850px' : '1020px',
                   marginLeft: 'auto',
                   marginRight: 'auto',
@@ -359,19 +356,20 @@ export default function CaseStudyLayout({ caseStudy, slug }: CaseStudyLayoutProp
                   ] as [string, string][]).map(([label, text], i) => (
                     <div key={label} style={{
                       padding: isMobile ? '0' : (i === 0 ? '0 20px 0 0' : '0 20px'),
-                      borderLeft: !isMobile && i > 0 ? '1px solid #E5E7EB' : 'none',
+                      borderLeft: !isMobile && i > 0 ? '1px solid rgba(28, 25, 23, 0.12)' : 'none',
                     }}>
                       <div style={{
+                        fontFamily: 'ui-monospace, SFMono-Regular, Menlo, monospace',
                         fontSize: '10.5px',
-                        fontWeight: 700,
+                        fontWeight: 500,
                         textTransform: 'uppercase',
                         letterSpacing: '0.07em',
-                        color: '#A8A29E',
-                        marginBottom: '8px',
+                        color: '#78716C',
+                        marginBottom: '10px',
                       }}>{label}</div>
                       <div style={{
                         fontSize: '13.5px',
-                        lineHeight: 1.5,
+                        lineHeight: 1.55,
                         color: '#44403C',
                       }}>{text}</div>
                     </div>
@@ -383,11 +381,10 @@ export default function CaseStudyLayout({ caseStudy, slug }: CaseStudyLayoutProp
               {index === 0 && caseStudy.tldr && (
                 <div style={{
                   marginBottom: '60px',
-                  padding: isMobile ? '24px' : '32px',
-                  backgroundColor: '#F9FAFB',
-                  borderRadius: '0px',
-                  border: '1px solid #E5E7EB',
-                  borderTop: caseStudy.brief ? '1px solid #E5E7EB' : undefined,
+                  paddingTop: isMobile ? '24px' : '32px',
+                  paddingBottom: isMobile ? '24px' : '32px',
+                  borderTop: caseStudy.brief ? '1px solid rgba(28, 25, 23, 0.12)' : undefined,
+                  borderBottom: '1px solid rgba(28, 25, 23, 0.12)',
                   maxWidth: isMobile || isTablet ? '850px' : '1020px',
                   marginLeft: 'auto',
                   marginRight: 'auto',
@@ -401,11 +398,12 @@ export default function CaseStudyLayout({ caseStudy, slug }: CaseStudyLayoutProp
                     gap: '16px',
                   }}>
                     <h2 style={{
-                      fontSize: isMobile ? '16px' : '18px',
-                      fontWeight: 700,
-                      color: '#1C1917',
+                      fontFamily: 'ui-monospace, SFMono-Regular, Menlo, monospace',
+                      fontSize: isMobile ? '13px' : '14px',
+                      fontWeight: 500,
+                      color: '#78716C',
                       margin: 0,
-                      letterSpacing: '0.02em',
+                      letterSpacing: '0.06em',
                       textTransform: 'uppercase',
                     }}>TL;DR</h2>
 
@@ -444,23 +442,23 @@ export default function CaseStudyLayout({ caseStudy, slug }: CaseStudyLayoutProp
                     lineHeight: '1.6',
                   }}>
                     <div>
-                      <div style={{ fontWeight: 600, color: '#6B7280', marginBottom: '4px' }}>Role</div>
+                      <div style={{ fontFamily: 'ui-monospace, SFMono-Regular, Menlo, monospace', fontSize: '10.5px', fontWeight: 500, letterSpacing: '0.06em', textTransform: 'uppercase', color: '#78716C', marginBottom: '6px' }}>Role</div>
                       <div style={{ color: '#1C1917' }}>{caseStudy.tldr.role}</div>
                     </div>
                     <div>
-                      <div style={{ fontWeight: 600, color: '#6B7280', marginBottom: '4px' }}>Team</div>
+                      <div style={{ fontFamily: 'ui-monospace, SFMono-Regular, Menlo, monospace', fontSize: '10.5px', fontWeight: 500, letterSpacing: '0.06em', textTransform: 'uppercase', color: '#78716C', marginBottom: '6px' }}>Team</div>
                       <div style={{ color: '#1C1917' }}>{caseStudy.tldr.team}</div>
                     </div>
                     <div>
-                      <div style={{ fontWeight: 600, color: '#6B7280', marginBottom: '4px' }}>Timeline</div>
+                      <div style={{ fontFamily: 'ui-monospace, SFMono-Regular, Menlo, monospace', fontSize: '10.5px', fontWeight: 500, letterSpacing: '0.06em', textTransform: 'uppercase', color: '#78716C', marginBottom: '6px' }}>Timeline</div>
                       <div style={{ color: '#1C1917' }}>{caseStudy.tldr.timeline}</div>
                     </div>
                     <div>
-                      <div style={{ fontWeight: 600, color: '#6B7280', marginBottom: '4px' }}>Impact</div>
+                      <div style={{ fontFamily: 'ui-monospace, SFMono-Regular, Menlo, monospace', fontSize: '10.5px', fontWeight: 500, letterSpacing: '0.06em', textTransform: 'uppercase', color: '#78716C', marginBottom: '6px' }}>Impact</div>
                       <div style={{ color: '#1C1917' }}>{caseStudy.tldr.impact}</div>
                     </div>
                     <div style={{ gridColumn: isMobile ? '1' : 'span 2' }}>
-                      <div style={{ fontWeight: 600, color: '#6B7280', marginBottom: '4px' }}>Key Skills</div>
+                      <div style={{ fontFamily: 'ui-monospace, SFMono-Regular, Menlo, monospace', fontSize: '10.5px', fontWeight: 500, letterSpacing: '0.06em', textTransform: 'uppercase', color: '#78716C', marginBottom: '6px' }}>Key Skills</div>
                       <div style={{ color: '#1C1917' }}>{caseStudy.tldr.skills}</div>
                     </div>
                   </div>

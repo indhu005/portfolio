@@ -527,7 +527,7 @@ const caseStudies = {
   </div>
 
   <div>
-    <div class="cs-card-title">Eight Months Forced Scope Discipline</div>
+    <div class="cs-card-title">Twelve Months Forced Scope Discipline</div>
     <div style="font-size: 15px; color: #57534E; line-height: 1.6;">AI auto-scheduling, ESG modeling, digital twins, a live campus map — all tempting. The filter: one north star (reduce unexpected costs) plus two drivers (planning accuracy, adoption velocity). Anything that didn't serve those moved to the roadmap: data unification → offline workflows → lifecycle visibility → predictive modeling → simulation.</div>
   </div>
 </div>
