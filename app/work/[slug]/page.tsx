@@ -365,7 +365,7 @@ const caseStudies = {
         title: '02 — Context & Problem',
         headline: 'Fragmented data was forcing humans to do the work a system should have done',
         content: `<div class="cs-video-wrap" style="width: 100%; max-width: 1200px; margin: 0 auto 48px;">
-  <video autoplay loop muted playsinline preload="metadata" aria-label="Screen recording demonstrating a technician, manager, and leadership each working from fragmented, disconnected tools" style="display: block; width: 100%; height: auto; border-radius: 0px;">
+  <video autoplay loop muted playsinline preload="metadata" width="1882" height="1060" aria-label="Screen recording demonstrating a technician, manager, and leadership each working from fragmented, disconnected tools" style="display: block; width: 100%; height: auto; border-radius: 0px;">
     <source src="/videos/lat/Flow%2001.mp4" type="video/mp4">
     Your browser does not support the video tag.
   </video>
@@ -377,27 +377,27 @@ const caseStudies = {
 <p style="margin-top: 28px;">Without a unified system, everyone operates in their own flow with no common path:</p>
 
 <div class="cs-video-wrap" style="width: 100%; max-width: 1200px; margin: 48px auto 48px;">
-  <video autoplay loop muted playsinline preload="metadata" aria-label="Screen recording showing each role's separate, uncoordinated workflow path through the old tools" style="display: block; width: 100%; height: auto; border-radius: 0px;">
+  <video autoplay loop muted playsinline preload="metadata" width="1878" height="1030" aria-label="Screen recording showing each role's separate, uncoordinated workflow path through the old tools" style="display: block; width: 100%; height: auto; border-radius: 0px;">
     <source src="/videos/lat/Flow%2003.mp4" type="video/mp4">
     Your browser does not support the video tag.
   </video>
   <button type="button" class="cs-video-toggle" aria-label="Pause video" onclick="var v=this.previousElementSibling;if(v.paused){v.play();this.textContent='⏸';this.setAttribute('aria-label','Pause video');}else{v.pause();this.textContent='▶';this.setAttribute('aria-label','Play video');}">⏸</button>
 </div>
 
-<img loading="lazy" decoding="async" src="/images/lat/User%20Issues.webp" alt="User Issues" style="width: 100%; border-radius: 0px; margin-top: 40px; margin-bottom: 40px; display: block;" />
+<img loading="lazy" decoding="async" width="3300" height="2400" src="/images/lat/User%20Issues.webp" alt="User Issues" style="width: 100%; height: auto; border-radius: 0px; margin-top: 40px; margin-bottom: 40px; display: block;" />
 
 <div style="display: flex; gap: 24px; margin-top: 8px; margin-bottom: 8px; flex-wrap: wrap;">
   <div style="flex: 1; min-width: 250px; position: relative;">
-    <div style="background-color: #F3F4F6; padding: 24px; border-radius: 0px; position: relative;">
-      <p style="font-style: italic; font-family: 'Fraunces', serif; color: #1F2937; margin: 0;">"I do the physical work in 30 minutes, but reporting takes another 20."</p>
+    <div style="background-color: #1C1917; padding: 24px; border-radius: 0px; position: relative;">
+      <p style="font-style: italic; font-family: 'Fraunces', serif; color: #FFFFFF; font-size: 23px; font-weight: 700; margin: 0;">"I do the physical work in 30 minutes, but reporting takes another 20."</p>
     </div>
-    <div style="width: 0; height: 0; border-left: 12px solid transparent; border-right: 12px solid transparent; border-top: 12px solid #F3F4F6; position: absolute; bottom: -12px; left: 32px;"></div>
+    <div style="width: 0; height: 0; border-left: 12px solid transparent; border-right: 12px solid transparent; border-top: 12px solid #1C1917; position: absolute; bottom: -12px; left: 32px;"></div>
   </div>
   <div style="flex: 1; min-width: 250px; position: relative;">
-    <div style="background-color: #F3F4F6; padding: 24px; border-radius: 0px; position: relative;">
-      <p style="font-style: italic; font-family: 'Fraunces', serif; color: #1F2937; margin: 0;">"Each year I'm choosing between urgent-now and smart-long-term with partial data."</p>
+    <div style="background-color: #1C1917; padding: 24px; border-radius: 0px; position: relative;">
+      <p style="font-style: italic; font-family: 'Fraunces', serif; color: #FFFFFF; font-size: 23px; font-weight: 700; margin: 0;">"Each year I'm choosing between urgent-now and smart-long-term with partial data."</p>
     </div>
-    <div style="width: 0; height: 0; border-left: 12px solid transparent; border-right: 12px solid transparent; border-top: 12px solid #F3F4F6; position: absolute; bottom: -12px; left: 32px;"></div>
+    <div style="width: 0; height: 0; border-left: 12px solid transparent; border-right: 12px solid transparent; border-top: 12px solid #1C1917; position: absolute; bottom: -12px; left: 32px;"></div>
   </div>
 </div>
 
@@ -407,14 +407,14 @@ const caseStudies = {
 
 <p style="margin-top: 20px;">CMMS platforms handle tickets and leases but don't model asset lifespan or CapEx tradeoffs. Preventive maintenance ran on time, not risk, causing over-maintenance and surprise failures. Field tools assumed stable connectivity, so slow digital reporting killed adoption. And replacing the legacy stack wasn't viable — it was wired into procurement and budgeting. They didn't need another silo; they needed a layer that worked with what existed.</p>
 
-<img loading="lazy" decoding="async" src="/images/lat/Market%20Gap.webp" alt="Market Gap Analysis" style="width: 100%; border-radius: 0px; margin-top: 40px; margin-bottom: 40px; display: block;" />`
+<img loading="lazy" decoding="async" width="3300" height="2400" src="/images/lat/Market%20Gap.webp" alt="Market Gap Analysis" style="width: 100%; height: auto; border-radius: 0px; margin-top: 40px; margin-bottom: 40px; display: block;" />`
       },
       {
         id: 'turning-point',
         title: '03 — The Turning Point',
         headline: 'Research revealed we were redesigning a system of coordination',
         content: `<div class="cs-video-wrap" style="width: 100%; max-width: 1200px; margin: 0 auto 48px;">
-  <video autoplay loop muted playsinline preload="metadata" aria-label="Screen recording of the role-based dashboard surfaces built over a shared data foundation" style="display: block; width: 100%; height: auto; border-radius: 0px;">
+  <video autoplay loop muted playsinline preload="metadata" width="1882" height="1046" aria-label="Screen recording of the role-based dashboard surfaces built over a shared data foundation" style="display: block; width: 100%; height: auto; border-radius: 0px;">
     <source src="/videos/lat/Flow%2002.mp4" type="video/mp4">
     Your browser does not support the video tag.
   </video>
@@ -427,7 +427,7 @@ const caseStudies = {
 
 <p style="margin-top: 28px;">That reframed everything. Instead of one dashboard for everyone, we built role-based surfaces over a shared foundation, surfacing only what was actionable.</p>
 
-<img loading="lazy" decoding="async" src="/images/lat/pROBLEM.webp" alt="System architecture diagram — modular API layer, role-based surfaces, shared data foundation" style="width: 100%; border-radius: 0px; margin-top: 40px; margin-bottom: 40px; display: block;" />`
+<img loading="lazy" decoding="async" width="2909" height="1667" src="/images/lat/pROBLEM.webp" alt="System architecture diagram — modular API layer, role-based surfaces, shared data foundation" style="width: 100%; height: auto; border-radius: 0px; margin-top: 40px; margin-bottom: 40px; display: block;" />`
       },
       {
         id: 'constraints',
@@ -606,7 +606,7 @@ const caseStudies = {
   </div>
 </div>
 
-<img loading="lazy" decoding="async" src="/images/lat/AB%20Testing.webp" alt="AB Testing comparison showing simplified vs detailed alert views" style="width: 100%; border-radius: 0px; margin-top: 40px; margin-bottom: 40px; display: block;" />
+<img loading="lazy" decoding="async" width="3300" height="2400" src="/images/lat/AB%20Testing.webp" alt="AB Testing comparison showing simplified vs detailed alert views" style="width: 100%; height: auto; border-radius: 0px; margin-top: 40px; margin-bottom: 40px; display: block;" />
 
 <div class="pull-quote">The failure mode is never the UI. It's adoption, trust, and behavior — once those break, the metrics follow.</div>
 
@@ -807,7 +807,7 @@ const caseStudies = {
 <div class="pull-quote" style="margin-top: 100px;">The platform that spread the problem was structurally incapable of being trusted as its solution.</div>
 
 <div class="cs-video-wrap" style="width: 100%; max-width: 1200px; margin: 60px auto 0;">
-  <video autoplay loop muted playsinline preload="metadata" aria-label="Screen recording of the verification tool embedded in trusted surfaces like the share sheet and lock screen widget" style="display: block; width: 100%; height: auto; border-radius: 0px;">
+  <video autoplay loop muted playsinline preload="metadata" width="2248" height="1388" aria-label="Screen recording of the verification tool embedded in trusted surfaces like the share sheet and lock screen widget" style="display: block; width: 100%; height: auto; border-radius: 0px;">
     <source src="/videos/misinformationcenter/flow%2002.mp4" type="video/mp4">
     Your browser does not support the video tag.
   </video>
@@ -890,7 +890,7 @@ const caseStudies = {
         title: '06 — User Research',
         headline: 'Misinformation moves through trust networks — families, WhatsApp groups, neighborhood pages — in a specific generational pattern',
         content: `<div class="cs-video-wrap" style="width: 100%; max-width: 1200px; margin: 0 auto 48px;">
-  <video autoplay loop muted playsinline preload="metadata" aria-label="Screen recording of the color-coded rating system and unified search/image-search entry point" style="display: block; width: 100%; height: auto; border-radius: 0px;">
+  <video autoplay loop muted playsinline preload="metadata" width="2256" height="1384" aria-label="Screen recording of the color-coded rating system and unified search/image-search entry point" style="display: block; width: 100%; height: auto; border-radius: 0px;">
     <source src="/videos/misinformationcenter/Flow%2001%20Misinformation.mp4" type="video/mp4">
     Your browser does not support the video tag.
   </video>

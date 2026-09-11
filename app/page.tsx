@@ -1,6 +1,7 @@
 'use client'
 import Sidebar from '@/components/Sidebar'
 import LandingGameSimple from '@/components/LandingGameSimple'
+import LazyVideo from '@/components/LazyVideo'
 import { useState, useEffect, type CSSProperties } from 'react'
 
 const useMediaQuery = (query: string) => {
@@ -621,6 +622,7 @@ export default function Home() {
                     <img
                       src="/images/home/keye-landing.webp"
                       alt="Keye landing page preview"
+                      loading="lazy"
                       style={{
                         width: '95%',
                         height: '95%',
@@ -827,22 +829,16 @@ export default function Home() {
                         e.currentTarget.style.boxShadow = 'none'
                       }}
                     >
-                      <video
-                        autoPlay
-                        loop
-                        muted
-                        playsInline
-                        preload="metadata"
-                        aria-label="Misinformation Center landing preview, 1 of 2"
+                      <LazyVideo
+                        src="/videos/home/misinfo-chat-bubbles.mp4"
+                        alt="Misinformation Center landing preview, 1 of 2"
                         style={{
                           width: '100%',
                           height: '100%',
                           objectFit: 'cover',
                           display: 'block',
                         }}
-                      >
-                        <source src="/videos/home/misinfo-chat-bubbles.mp4" type="video/mp4" />
-                      </video>
+                      />
                     </div>
                     <div
                       style={{
@@ -866,13 +862,9 @@ export default function Home() {
                         e.currentTarget.style.boxShadow = 'none'
                       }}
                     >
-                      <video
-                        autoPlay
-                        loop
-                        muted
-                        playsInline
-                        preload="metadata"
-                        aria-label="Misinformation Center landing preview, 2 of 2"
+                      <LazyVideo
+                        src="/videos/misinformationcenter/Landing%20page%20Image%2002%20of%2002%20cropped.mp4"
+                        alt="Misinformation Center landing preview, 2 of 2"
                         style={{
                           width: '99%',
                           height: '99%',
@@ -880,9 +872,7 @@ export default function Home() {
                           display: 'block',
                           transform: 'scale(1.15)',
                         }}
-                      >
-                        <source src="/videos/misinformationcenter/Landing%20page%20Image%2002%20of%2002%20cropped.mp4" type="video/mp4" />
-                      </video>
+                      />
                     </div>
                   </div>
                 </a>
