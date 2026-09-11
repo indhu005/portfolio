@@ -151,31 +151,6 @@ export default function About() {
         height: '100vh',
       }}>
 
-        {/* TOPBAR */}
-        <div style={{
-          height: isMobile ? '60px' : '72px',
-          borderBottom: '1px solid rgba(0,0,0,0.08)',
-          display: 'flex',
-          alignItems: 'baseline',
-          padding: isMobile ? '0 20px' : isTablet ? '0 32px' : '0 48px 0 48px',
-          paddingTop: isMobile ? '20px' : '24px',
-          flexShrink: 0,
-        }}>
-          <div style={{
-            maxWidth: isMobile || isTablet ? '850px' : '1020px',
-            marginLeft: 'auto',
-            marginRight: 'auto',
-            width: '100%',
-          }}>
-            <span style={{
-              fontFamily: 'inherit',
-              fontSize: isMobile ? '14px' : '16px',
-              fontWeight: 700,
-              color: '#1C1917',
-            }}>About</span>
-          </div>
-        </div>
-
         {/* CONTENT AREA */}
         <div
           style={{
