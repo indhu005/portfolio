@@ -372,7 +372,9 @@ const caseStudies = {
   <button type="button" class="cs-video-toggle" aria-label="Pause video" onclick="var v=this.previousElementSibling;if(v.paused){v.play();this.textContent='⏸';this.setAttribute('aria-label','Pause video');}else{v.pause();this.textContent='▶';this.setAttribute('aria-label','Play video');}">⏸</button>
 </div>
 
-<p>Universities manage billions in infrastructure with fragmented tools: a technician underground can't access repair history, a project manager stitches together spreadsheets and invoices before planning meetings, leadership decides on partial data.</p>
+<p style="font-size: 14px; color: #6B7280;">What this shows: about 70 to 75% of operational U.S. buildings predate 2000 and were never designed for lifecycle management (<a href="https://www.eia.gov/consumption/commercial/reports/" target="_blank" rel="noopener noreferrer" style="color: #6B7280; text-decoration: underline;">EIA.gov</a>). Property management vendors price for more of the same. Pay more and you get a bigger bundle of the same single use tool, still built for offices only or residential only. Nobody sells the integrated version for a mixed use portfolio like a university's, with labs, offices, and housing converted from other uses. That product doesn't exist at any price. Fragmented systems just produce fragmented data, no matter how much you spend.</p>
+
+<p style="margin-top: 28px;">Universities manage billions in infrastructure with fragmented tools: a technician underground can't access repair history, a project manager stitches together spreadsheets and invoices before planning meetings, leadership decides on partial data.</p>
 
 <p style="margin-top: 28px;">Without a unified system, everyone operates in their own flow with no common path.</p>
 
