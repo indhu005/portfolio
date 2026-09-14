@@ -334,7 +334,7 @@ const caseStudies = {
 <div class="metrics-grid metrics-grid--dark" style="margin-bottom: 32px;">
   <div class="metrics-cell metrics-cell--hero">
     <div class="metrics-num">95%</div>
-    <div class="metrics-label">Pilot adoption among property managers, vs. 70% benchmark</div>
+    <div class="metrics-label">Pilot adoption among property managers, vs. the 70% threshold UW's IT training team uses to decide whether a tool stays live</div>
   </div>
   <div class="metrics-cell">
     <div class="metrics-num">70% → 95%</div>
@@ -392,6 +392,8 @@ const caseStudies = {
     <div style="width: 0; height: 0; border-left: 12px solid transparent; border-right: 12px solid transparent; border-top: 12px solid #1C1917; position: absolute; bottom: -12px; left: 32px;"></div>
   </div>
 </div>
+
+<p style="margin-top: 16px; font-size: 14px; color: #6B7280;">Research base: 7–8 full-time technicians and vendors (including swing-stage shadowing), 4 operations/construction project managers, 2 accountants, 5–6 executives, and the Director of Facilities — UW Seattle's primary sponsor for the engagement, with a later proposal to extend to UW Tacoma.</p>
 
 <div class="pull-quote" style="margin-top: 48px;">The institution wasn't lacking expertise. It was operating without a unified source of truth.</div>
 
@@ -580,6 +582,10 @@ const caseStudies = {
   <div>
     <div class="cs-card-title">Automation vs. Trust</div>
     <div style="font-size: 15px; color: #57534E; line-height: 1.6;">The engine could have auto-escalated and auto-scheduled maintenance. We chose human-in-the-loop instead — 95% adoption, with override frequency falling over time. Early automation would have collapsed adoption after the first visible mistake.</div>
+    <div style="margin-top: 16px; padding-top: 16px; border-top: 1px solid rgba(28, 25, 23, 0.12);">
+      <span style="font-family: var(--font-fraunces), serif; font-size: 22px; font-weight: 500; color: #1C1917;">61% → 19%</span>
+      <span style="font-size: 12px; letter-spacing: 0.04em; text-transform: uppercase; color: #78716C; margin-left: 10px;">override rate, month 1 to month 7 — trust earned incrementally, not assumed</span>
+    </div>
   </div>
 
   <div>
@@ -590,6 +596,16 @@ const caseStudies = {
   <div>
     <div class="cs-card-title">Transparency vs. Organizational Comfort</div>
     <div style="font-size: 15px; color: #57534E; line-height: 1.6;">Some stakeholders wanted curated weekly summaries; real-time visibility exposed inefficiencies and shifted narrative control. I pushed for role-based dashboards with threshold notifications — meetings became strategic, not status-driven.</div>
+  </div>
+
+  <div>
+    <div class="cs-card-title">What "Minimal Disruption" Actually Meant</div>
+    <div style="font-size: 15px; color: #57534E; line-height: 1.6;">UW issued an RFP after evaluating vendors, and the Director of Facilities was the executive sponsor who signed off. But the bar for "yes" wasn't set by one person — it was collectively defined by the PMs, accountants, and executives who'd have to live with the system: limited spend, minimal disruption, and integration with the existing CMMS/ERP rather than a replacement. I initially read "minimal disruption" as designing within their existing tools. Research showed the real ask was reorganizing how five different roles worked day-to-day — the interfaces were a symptom, not the problem. Getting five stakeholder groups who didn't report to me, and didn't agree with each other, to accept that reframe was the actual sell.</div>
+  </div>
+
+  <div>
+    <div class="cs-card-title">One Dashboard vs. Role-Based Views</div>
+    <div style="font-size: 15px; color: #57534E; line-height: 1.6;">The first design was a single dashboard for every user, matching the stakeholder assumption that one shared view would fix coordination. It didn't — testing showed it stalled decisions and confused technicians, managers, and executives alike, each scanning for something different. I moved to role-based surfaces over one data model instead, which meant re-litigating the original decision with the same executives who'd approved it.</div>
   </div>
 
   <div>
@@ -628,7 +644,7 @@ const caseStudies = {
   </div>
   <div class="metrics-cell">
     <div class="metrics-num">95%</div>
-    <div class="metrics-label">Pilot adoption, vs. a 70% benchmark</div>
+    <div class="metrics-label">Pilot adoption, vs. the 70% threshold UW's IT training team uses to decide whether a tool stays live</div>
   </div>
   <div class="metrics-cell">
     <div class="metrics-num">25%</div>
