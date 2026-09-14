@@ -1,7 +1,6 @@
 'use client'
 import Sidebar from '@/components/Sidebar'
 import LandingGameSimple from '@/components/LandingGameSimple'
-import LazyVideo from '@/components/LazyVideo'
 import { useState, useEffect, type CSSProperties } from 'react'
 
 const useMediaQuery = (query: string) => {
@@ -801,79 +800,36 @@ export default function Home() {
                   }}
                 >
                   <div style={{
-                    display: 'flex',
-                    flexDirection: isMobile ? 'column' : 'row',
-                    alignItems: isMobile ? 'stretch' : 'center',
-                    gap: isMobile ? '6px' : '4px',
                     width: '100%',
-                  }}>
-                    <div
+                    aspectRatio: '4952 / 2786',
+                    backgroundColor: '#FFFFFF',
+                    borderRadius: '0px',
+                    overflow: 'hidden',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    transition: 'transform 0.3s ease, box-shadow 0.3s ease',
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.transform = 'translateY(-4px)'
+                    e.currentTarget.style.boxShadow = '0 12px 40px rgba(0, 0, 0, 0.12)'
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.transform = 'translateY(0)'
+                    e.currentTarget.style.boxShadow = 'none'
+                  }}
+                  >
+                    <img
+                      src="/images/home/Landing%20misinformation.png"
+                      alt="Misinformation Center landing preview"
+                      loading="lazy"
                       style={{
-                        width: isMobile ? '100%' : '55%',
-                        flexShrink: 0,
-                        aspectRatio: '1400 / 760',
-                        backgroundColor: '#000000',
-                        borderRadius: '0px',
-                        overflow: 'hidden',
-                        display: 'flex',
-                        alignItems: 'center',
-                        justifyContent: 'center',
-                        transition: 'transform 0.3s ease, box-shadow 0.3s ease',
+                        width: '95%',
+                        height: '95%',
+                        objectFit: 'contain',
+                        display: 'block',
                       }}
-                      onMouseEnter={(e) => {
-                        e.currentTarget.style.transform = 'translateY(-4px)'
-                        e.currentTarget.style.boxShadow = '0 12px 40px rgba(0, 0, 0, 0.12)'
-                      }}
-                      onMouseLeave={(e) => {
-                        e.currentTarget.style.transform = 'translateY(0)'
-                        e.currentTarget.style.boxShadow = 'none'
-                      }}
-                    >
-                      <LazyVideo
-                        src="/videos/home/misinfo-chat-bubbles.mp4"
-                        alt="Misinformation Center landing preview, 1 of 2"
-                        style={{
-                          width: '100%',
-                          height: '100%',
-                          objectFit: 'cover',
-                          display: 'block',
-                        }}
-                      />
-                    </div>
-                    <div
-                      style={{
-                        flex: 1,
-                        width: isMobile ? '100%' : undefined,
-                        height: isMobile ? '320px' : isWideDesktop ? '760px' : '620px',
-                        backgroundColor: '#FFFFFF',
-                        borderRadius: '0px',
-                        overflow: 'hidden',
-                        display: 'flex',
-                        alignItems: 'center',
-                        justifyContent: 'center',
-                        transition: 'transform 0.3s ease, box-shadow 0.3s ease',
-                      }}
-                      onMouseEnter={(e) => {
-                        e.currentTarget.style.transform = 'translateY(-4px)'
-                        e.currentTarget.style.boxShadow = '0 12px 40px rgba(0, 0, 0, 0.12)'
-                      }}
-                      onMouseLeave={(e) => {
-                        e.currentTarget.style.transform = 'translateY(0)'
-                        e.currentTarget.style.boxShadow = 'none'
-                      }}
-                    >
-                      <LazyVideo
-                        src="/videos/misinformationcenter/Landing%20page%20Image%2002%20of%2002%20cropped.mp4"
-                        alt="Misinformation Center landing preview, 2 of 2"
-                        style={{
-                          width: '99%',
-                          height: '99%',
-                          objectFit: 'contain',
-                          display: 'block',
-                          transform: 'scale(1.15)',
-                        }}
-                      />
-                    </div>
+                    />
                   </div>
                 </a>
 
