@@ -353,6 +353,10 @@ const caseStudies = {
     <div class="metrics-label">Emergency repair incidents, work-order classification during pilot</div>
   </div>
   <div class="metrics-cell">
+    <div class="metrics-num">−60%</div>
+    <div class="metrics-label">Planning time, capital planning cycle comparison vs. prior year</div>
+  </div>
+  <div class="metrics-cell">
     <div class="metrics-num">−25% projected</div>
     <div class="metrics-label">Unexpected maintenance costs, lifecycle model forecast vs. pilot repair data</div>
   </div>
@@ -503,12 +507,12 @@ const caseStudies = {
 
   <div>
     <div class="cs-card-title">Data Integrity Had Hard Boundaries</div>
-    <div style="font-size: 15px; color: #57534E; line-height: 1.6;">Strict governance meant we inherited duplicated, inconsistent records. That constraint produced the project's defining incident (section 07); the response — validation states, multi-signal checks, confidence tiers — became the product's trust architecture.</div>
+    <div style="font-size: 15px; color: #57534E; line-height: 1.6;">Strict governance meant we inherited duplicated, inconsistent records. That constraint produced the project's defining incident (section 04); the response — validation states, multi-signal checks, confidence tiers — became the product's trust architecture.</div>
   </div>
 
   <div>
     <div class="cs-card-title">Capital Decisions Were Political</div>
-    <div style="font-size: 15px; color: #57534E; line-height: 1.6;">Layered approvals, public accountability, donor influence — automation there isn't neutral, it's political. We kept managers as approval gatekeepers, made AI show its reasoning, and logged every override.</div>
+    <div style="font-size: 15px; color: #57534E; line-height: 1.6;">Layered approvals, public accountability, donor influence — automation there isn't neutral, it's political.</div>
   </div>
 </div>
 
@@ -550,11 +554,6 @@ const caseStudies = {
         content: `<p>Every feature mapped to one of three drivers: <span style="font-weight: 600;">cost reduction, planning accuracy, or adoption velocity.</span> If it didn't serve one, it didn't ship.</p>
 
 <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 32px; margin-top: 48px; margin-bottom: 48px;">
-  <div>
-    <div class="cs-card-title">Trust Precedes Automation</div>
-    <div style="font-size: 15px; color: #57534E; line-height: 1.6;">AI as decision support, not authority — approval gates, logged overrides, confidence-aware outputs.</div>
-  </div>
-
   <div>
     <div class="cs-card-title">Adoption Before Expansion</div>
     <div style="font-size: 15px; color: #57534E; line-height: 1.6;">Offline workflows and repair clarity first; AI auto-scheduling and ESG modules second.</div>
@@ -636,39 +635,6 @@ const caseStudies = {
 <p style="margin-top: 28px;"><span style="font-weight: 600;">Decision-making.</span> Teams stopped entering meetings to reconcile facts and started entering them to decide.</p>
 
 <p style="margin-top: 28px;"><span style="font-weight: 600;">Strategic.</span> Scenario simulation moved feasibility analysis in-house and drew expansion interest from other universities — a path from consulting project to scalable platform.</p>
-
-<h4 class="case-study-subhead">Impact</h4>
-
-<div class="metrics-grid metrics-grid--dark" style="margin-bottom: 48px;">
-  <div class="metrics-cell metrics-cell--hero">
-    <div class="metrics-num">70% → 95%</div>
-    <div class="metrics-label">Data accuracy across the pilot</div>
-  </div>
-  <div class="metrics-cell">
-    <div class="metrics-num">95%</div>
-    <div class="metrics-label">Pilot adoption, vs. the 70% threshold UW's IT training team uses to decide whether a tool stays live</div>
-  </div>
-  <div class="metrics-cell">
-    <div class="metrics-num">25%</div>
-    <div class="metrics-label">Projected maintenance cost reduction</div>
-  </div>
-  <div class="metrics-cell">
-    <div class="metrics-num">20min → 8min</div>
-    <div class="metrics-label">Reporting time, per ticket</div>
-  </div>
-  <div class="metrics-cell">
-    <div class="metrics-num">−36%</div>
-    <div class="metrics-label">Budget revisions</div>
-  </div>
-  <div class="metrics-cell">
-    <div class="metrics-num">−60%</div>
-    <div class="metrics-label">Planning time</div>
-  </div>
-  <div class="metrics-cell">
-    <div class="metrics-num">−12%</div>
-    <div class="metrics-label">Emergency incidents</div>
-  </div>
-</div>
 
 <div class="pull-quote" style="margin-top: 48px;">The biggest change wasn't cost savings. It was decision confidence.</div>`
       },
