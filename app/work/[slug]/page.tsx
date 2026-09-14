@@ -378,7 +378,7 @@ const caseStudies = {
 
 <p style="margin-top: 28px;">Without a unified system, everyone operates in their own flow with no common path.</p>
 
-<img loading="lazy" decoding="async" width="3300" height="2400" src="/images/lat/User%20Issues.webp" alt="User Issues" style="width: 100%; height: auto; border-radius: 0px; margin-top: 40px; margin-bottom: 40px; display: block;" />
+<img loading="lazy" decoding="async" width="2000" height="1455" src="/images/lat/User%20Issues.webp" alt="User Issues" style="width: 100%; height: auto; border-radius: 0px; margin-top: 40px; margin-bottom: 40px; display: block;" />
 
 <div style="display: flex; align-items: flex-start; gap: 24px; margin-top: 8px; margin-bottom: 8px; flex-wrap: wrap;">
   <div style="flex: 1; min-width: 250px; position: relative;">
@@ -403,7 +403,7 @@ const caseStudies = {
 
 <p style="margin-top: 20px;">CMMS platforms handle tickets and leases but don't model asset lifespan or CapEx tradeoffs. Preventive maintenance ran on time, not risk, causing over-maintenance and surprise failures. Field tools assumed stable connectivity, so slow digital reporting killed adoption. And replacing the legacy stack wasn't viable — it was wired into procurement and budgeting. They didn't need another silo; they needed a layer that worked with what existed.</p>
 
-<img loading="lazy" decoding="async" width="3300" height="2400" src="/images/lat/Market%20Gap.webp" alt="Market Gap Analysis" style="width: 100%; height: auto; border-radius: 0px; margin-top: 40px; margin-bottom: 40px; display: block;" />`
+<img loading="lazy" decoding="async" width="2000" height="1455" src="/images/lat/Market%20Gap.webp" alt="Market Gap Analysis" style="width: 100%; height: auto; border-radius: 0px; margin-top: 40px; margin-bottom: 40px; display: block;" />`
       },
       {
         id: 'turning-point',
@@ -423,7 +423,7 @@ const caseStudies = {
 
 <p style="margin-top: 28px;">That reframed everything. Instead of one dashboard for everyone, we built role-based surfaces over a shared foundation, surfacing only what was actionable.</p>
 
-<img loading="lazy" decoding="async" width="2909" height="1667" src="/images/lat/pROBLEM.webp" alt="System architecture diagram — modular API layer, role-based surfaces, shared data foundation" style="width: 100%; height: auto; border-radius: 0px; margin-top: 40px; margin-bottom: 40px; display: block;" />`
+<img loading="lazy" decoding="async" width="2000" height="1146" src="/images/lat/pROBLEM.webp" alt="System architecture diagram — modular API layer, role-based surfaces, shared data foundation" style="width: 100%; height: auto; border-radius: 0px; margin-top: 40px; margin-bottom: 40px; display: block;" />`
       },
       {
         id: 'solution',
@@ -616,7 +616,7 @@ const caseStudies = {
   </div>
 </div>
 
-<img loading="lazy" decoding="async" width="3300" height="2400" src="/images/lat/AB%20Testing.webp" alt="AB Testing comparison showing simplified vs detailed alert views" style="width: 100%; height: auto; border-radius: 0px; margin-top: 40px; margin-bottom: 40px; display: block;" />
+<img loading="lazy" decoding="async" width="2000" height="1455" src="/images/lat/AB%20Testing.webp" alt="AB Testing comparison showing simplified vs detailed alert views" style="width: 100%; height: auto; border-radius: 0px; margin-top: 40px; margin-bottom: 40px; display: block;" />
 
 <div class="pull-quote">The failure mode is never the UI. It's adoption, trust, and behavior — once those break, the metrics follow.</div>
 
