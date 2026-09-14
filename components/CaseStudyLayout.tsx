@@ -25,6 +25,7 @@ interface Section {
   headline?: string
   content: string
   customComponent?: React.ReactNode
+  showPrototypeCta?: boolean
 }
 
 interface TldrData {
@@ -409,7 +410,7 @@ export default function CaseStudyLayout({ caseStudy, slug }: CaseStudyLayoutProp
 
                     {/* Skip to Impact / See Prototype Button */}
                     <button
-                      onClick={() => scrollToSection(slug === 'misinformation-center' ? 'prototype' : 'impact')}
+                      onClick={() => scrollToSection('impact')}
                       style={{
                         backgroundColor: 'var(--accent)',
                         color: '#FFFFFF',
@@ -430,7 +431,7 @@ export default function CaseStudyLayout({ caseStudy, slug }: CaseStudyLayoutProp
                         e.currentTarget.style.boxShadow = 'none'
                       }}
                     >
-                      {slug === 'misinformation-center' ? 'See Prototype →' : 'Skip to Impact →'}
+                      Skip to Impact →
                     </button>
                   </div>
 
@@ -466,21 +467,60 @@ export default function CaseStudyLayout({ caseStudy, slug }: CaseStudyLayoutProp
               )}
 
               {/* Section Label */}
-              <h2 style={{
-                fontSize: '12px',
-                fontWeight: 700,
-                color: 'var(--accent)',
-                letterSpacing: '0.08em',
-                textTransform: 'uppercase',
+              <div style={{
+                display: 'flex',
+                justifyContent: 'space-between',
+                alignItems: 'center',
+                flexWrap: 'wrap',
+                gap: '12px',
                 marginBottom: '12px',
-                marginTop: 0,
-                fontFamily: 'inherit',
                 maxWidth: isMobile || isTablet ? '850px' : '1020px',
                 marginLeft: 'auto',
                 marginRight: 'auto',
               }}>
-                {section.title}
-              </h2>
+                <h2 style={{
+                  fontSize: '12px',
+                  fontWeight: 700,
+                  color: 'var(--accent)',
+                  letterSpacing: '0.08em',
+                  textTransform: 'uppercase',
+                  margin: 0,
+                  fontFamily: 'inherit',
+                }}>
+                  {section.title}
+                </h2>
+
+                {section.showPrototypeCta && caseStudy.figmaPrototypeUrl && (
+                  <a
+                    href={caseStudy.figmaPrototypeUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style={{
+                      display: 'inline-flex',
+                      alignItems: 'center',
+                      gap: '8px',
+                      backgroundColor: 'var(--accent)',
+                      color: '#FFFFFF',
+                      borderRadius: '0px',
+                      padding: '8px 16px',
+                      fontSize: '13px',
+                      fontWeight: 600,
+                      textDecoration: 'none',
+                      transition: 'transform 0.15s ease, box-shadow 0.15s ease',
+                    }}
+                    onMouseEnter={(e) => {
+                      e.currentTarget.style.transform = 'translateY(-2px)'
+                      e.currentTarget.style.boxShadow = '0 6px 16px rgba(28, 25, 23, 0.25)'
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.style.transform = 'translateY(0)'
+                      e.currentTarget.style.boxShadow = 'none'
+                    }}
+                  >
+                    See Prototype →
+                  </a>
+                )}
+              </div>
 
               {/* Section Headline */}
               {section.headline && (
@@ -532,7 +572,7 @@ export default function CaseStudyLayout({ caseStudy, slug }: CaseStudyLayoutProp
               )}
 
               {/* Visual Content Area - Hidden for strategy, constraints, tradeoffs, context-problem, turning-point, snapshot, problem, research, and reflection sections, and for sections that already embed real media via customComponent */}
-              {!section.customComponent && section.id !== 'strategy' && section.id !== 'constraints' && section.id !== 'tradeoffs' && section.id !== 'context-problem' && section.id !== 'turning-point' && section.id !== 'snapshot' && section.id !== 'problem' && section.id !== 'research' && section.id !== 'reflection' && section.id !== 'market' && section.id !== 'truemedia' && section.id !== 'feature-index' && section.id !== 'impact' && (
+              {!section.customComponent && section.id !== 'strategy' && section.id !== 'constraints' && section.id !== 'tradeoffs' && section.id !== 'context-problem' && section.id !== 'turning-point' && section.id !== 'snapshot' && section.id !== 'problem' && section.id !== 'research' && section.id !== 'reflection' && section.id !== 'market' && section.id !== 'truemedia' && section.id !== 'feature-index' && section.id !== 'impact' && section.id !== 'testing' && (
                 <div style={{
                   width: '100%',
                   minHeight: '500px',

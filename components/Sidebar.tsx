@@ -4,8 +4,8 @@ import { useRouter } from 'next/navigation'
 import Link from 'next/link'
 
 const projects = [
-  { name: 'LAT', slug: 'lat' },
-  { name: 'Keye', slug: 'keye' },
+  { name: 'LAT', slug: 'lat', tag: 'Shipped' },
+  { name: 'Keye', slug: 'keye', tag: 'Shipped' },
   { name: 'Misinformation Center', slug: 'misinformation-center' },
 ]
 
@@ -159,8 +159,8 @@ export default function Sidebar({
                 className="sidebar-key sidebar-key-top"
                 style={{
                   fontSize: navFontSize,
-                  fontWeight: 400,
-                  color: isActiveProject ? '#1C1917' : '#6B7280',
+                  fontWeight: 700,
+                  color: isActiveProject ? '#1C1917' : '#374151',
                   cursor: 'pointer',
                   paddingTop: navPaddingY,
                   paddingBottom: navPaddingY,
@@ -171,7 +171,7 @@ export default function Sidebar({
                   textDecoration: 'none',
                 }}
                 onMouseEnter={(e) => { if (!isActiveProject) e.currentTarget.style.color = ACTIVE_COLOR }}
-                onMouseLeave={(e) => { if (!isActiveProject) e.currentTarget.style.color = '#6B7280' }}
+                onMouseLeave={(e) => { if (!isActiveProject) e.currentTarget.style.color = '#374151' }}
               >
                 <span style={{
                   fontSize: isCompact ? '13px' : '11px',
@@ -183,6 +183,20 @@ export default function Sidebar({
                   {num}
                 </span>
                 {project.name}
+                {project.tag && (
+                  <span style={{
+                    fontSize: isCompact ? '10px' : '9px',
+                    fontWeight: 700,
+                    color: '#6B7280',
+                    backgroundColor: '#F3F4F6',
+                    padding: '2px 6px',
+                    letterSpacing: '0.04em',
+                    textTransform: 'uppercase',
+                    flexShrink: 0,
+                  }}>
+                    {project.tag}
+                  </span>
+                )}
               </Link>
 
               {/* TOC */}
@@ -203,11 +217,11 @@ export default function Sidebar({
                             }
                           }}
                           onMouseEnter={(e) => { if (!isActiveSection) e.currentTarget.style.color = ACTIVE_COLOR }}
-                          onMouseLeave={(e) => { if (!isActiveSection) e.currentTarget.style.color = '#6B7280' }}
+                          onMouseLeave={(e) => { if (!isActiveSection) e.currentTarget.style.color = '#9CA3AF' }}
                           className="sidebar-key sidebar-key-nested"
                           style={{
-                            fontSize: isCompact ? '16px' : isLargeDesktop ? '17px' : '14px',
-                            color: isActiveSection ? '#1C1917' : '#6B7280',
+                            fontSize: isCompact ? '15px' : isLargeDesktop ? '16px' : '13px',
+                            color: isActiveSection ? '#1C1917' : '#9CA3AF',
                             fontWeight: 400,
                             display: 'inline-block',
                             cursor: onSectionClick ? 'pointer' : 'default',

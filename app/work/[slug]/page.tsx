@@ -655,7 +655,7 @@ const caseStudies = {
     subtitle: 'Media Literacy Tools for the AI Age',
     description: 'Research collaboration with TrueMedia.org',
     heroImage: '/images/misinformation-center/Hero.png',
-    figmaPrototypeUrl: 'https://www.figma.com/proto/5SuxUGsaCvOVUiRdXa7uNl/Misinformation-Center?page-id=12%3A7585&node-id=20-3800&p=f&viewport=1079%2C560%2C0.06&scaling=scale-down&content-scaling=fixed&starting-point-node-id=20%3A3748&show-proto-sidebar=1',
+    figmaPrototypeUrl: 'https://www.figma.com/proto/5SuxUGsaCvOVUiRdXa7uNl/Misinformation-Center?node-id=9-3238&page-id=0%3A1&starting-point-node-id=9%3A3186&t=bGz9ql6fLYb3HAKR-1',
     brief: {
       context: 'UW graduate capstone (solo after month two) asking whether people could be equipped to identify misinformation themselves, in research partnership with TrueMedia.org.',
       constraint: 'No engineering resourcing beyond a prototype, and testing showed users rejected any platform-integrated solution outright — the tool had to stand alone.',
@@ -677,30 +677,29 @@ const caseStudies = {
 <div class="snapshot-text-content">
 
 <div style="border: 1px dashed #D1D5DB; background-color: #FAFAF9; padding: 28px 32px; margin-bottom: 40px;">
-  <div style="font-size: 11px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #A8A29E; margin-bottom: 10px;">PLACEHOLDER — headline result</div>
-  <div style="font-family: 'Fraunces', serif; font-size: 40px; font-weight: 700; color: #1C1917; line-height: 1.1;">[X%] [outcome, e.g. reduction in verification time]</div>
-  <div style="font-size: 14px; color: #6B7280; margin-top: 10px;">[One-line description of the result and how it was measured — mirrors the "91.4% reduction in search time" style lead-in]</div>
+  <div style="font-size: 11px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #A8A29E; margin-bottom: 10px;">Headline result</div>
+  <div style="font-family: 'Fraunces', serif; font-size: 20px; font-weight: 600; color: #1C1917; line-height: 1.3; margin-bottom: 16px;">Two hours of searching became a few minutes of checking.</div>
+  <div style="font-family: 'Fraunces', serif; font-size: 40px; font-weight: 700; color: #1C1917; line-height: 1.1;">2h → 5m</div>
+  <div style="font-size: 14px; color: #6B7280; margin-top: 10px;">Four participants at different life stages described spending around two hours verifying a claim on their own. In testing, they reached the same answer in about five minutes — baseline self-reported, outcome observed in session.</div>
 </div>
 
 <p>Platforms try to control misinformation, but users don't trust them. This capstone asked a different question: what if we equipped people to identify it themselves?</p>
 
 <img loading="lazy" decoding="async" src="/images/misinformation-center/Truth.png" alt="Truth visual" style="width: 100%; border-radius: 0px; margin-top: 40px; margin-bottom: 40px; display: block;" />
 
-<p style="margin-top: 28px;"><span style="font-weight: 600;">Agency over authority.</span> People resist being told what's true, but respond better when given tools to decide for themselves. Not another fact-check label — tools that help people pause, verify, and learn, folded into daily habits.</p>
+<p style="margin-top: 28px;"><span style="font-weight: 600;">Agency over authority.</span> People resist being told what's true, but respond well to tools that help them decide for themselves — not another fact-check label.</p>
 
-<div style="display: flex; gap: 24px; margin-top: 48px; margin-bottom: 8px; flex-wrap: wrap;">
-  <div style="flex: 1; min-width: 250px; position: relative;">
-    <div style="background-color: #F3F4F6; padding: 24px; border-radius: 0px; position: relative;">
-      <p style="font-style: italic; font-family: 'Fraunces', serif; color: #1F2937; margin: 0;">"She took us along on her journey of learning from users as she went."</p>
-      <p style="margin-top: 12px; font-size: 13px; color: #6B7280;">— capstone reviewer</p>
-    </div>
-    <div style="width: 0; height: 0; border-left: 12px solid transparent; border-right: 12px solid transparent; border-top: 12px solid #F3F4F6; position: absolute; bottom: -12px; left: 32px;"></div>
-  </div>
+<div class="cs-video-wrap" style="width: 100%; max-width: 700px; margin: 40px auto 0;">
+  <video autoplay loop muted playsinline preload="metadata" width="2248" height="1388" aria-label="Screen recording of the verification tool embedded in trusted surfaces like the share sheet and lock screen widget" style="display: block; width: 100%; height: auto; border-radius: 0px;" onloadedmetadata="this.playbackRate=1.8;" onplay="this.playbackRate=1.8;">
+    <source src="/videos/misinformationcenter/flow%2002.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+  <button type="button" class="cs-video-toggle" aria-label="Pause video" onclick="var v=this.previousElementSibling;if(v.paused){v.play();this.textContent='⏸';this.setAttribute('aria-label','Pause video');}else{v.pause();this.textContent='▶';this.setAttribute('aria-label','Play video');}">⏸</button>
 </div>
 
-<p style="margin-top: 28px;"><span style="font-weight: 600;">My role.</span> Sole designer on a UW graduate capstone (Jan–Dec 2024), started as a team of four. After February, the product, design, and direction were entirely mine — research, archetypes, all four features, and testing with ~1,800 people at Misinfo Day.</p>
+<p style="margin-top: 28px;"><span style="font-weight: 600;">My role.</span> Sole designer on this UW graduate capstone (Jan–Dec 2024), started as a team of four. After February, the research, archetypes, all four features, and testing with ~1,800 people at Misinfo Day were mine alone.</p>
 
-<p style="margin-top: 28px;">From March to May, I collaborated with TrueMedia.org, a deepfake-detection nonprofit, on research and market assessment. They analyzed 60,000+ pieces of media and shut down in January 2025 — not from bad design, but because nobody profits from deepfake detection. That's this case study's throughline: design alone can't make a public good sustainable (section 06).</p>
+<p style="margin-top: 28px;">From March to May, I also collaborated with TrueMedia.org, a deepfake-detection nonprofit. They analyzed 60,000+ pieces of media and shut down in January 2025 — not from bad design, but because nobody profits from detection. That's this case study's throughline (section 06).</p>
 </div>
 
 <div class="snapshot-bottom-content">
@@ -752,50 +751,43 @@ const caseStudies = {
         id: 'problem',
         title: '02 — The Problem',
         headline: 'After AI, the same problem arrived at a different scale',
-        content: `<p>Misinformation exploits human bias: believe what confirms your views, trust what feels familiar, share before verifying. After AI, the same problem arrived at a different scale — more believable, more volume, same fragile ecosystem.</p>
+        content: `<p>Misinformation exploits human bias: believe what confirms your views, share before verifying. After AI, the same problem arrived at a different scale — more believable, more volume, same fragile ecosystem.</p>
 
 <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 40px; margin-top: 64px; margin-bottom: 64px;">
   <div>
     <img loading="lazy" decoding="async" src="/images/misinformation-center/Problem 01.webp" alt="Survey Results" style="width: 100%; height: auto; border-radius: 0px; margin-bottom: 24px; display: block;" />
     <div class="cs-card-title cs-card-title--xs">Survey Results (n=2,000)</div>
-    <div style="font-size: 13px; color: #57534E; line-height: 1.6;">74% encountered misinformation weekly. 62% of parents felt overwhelmed. <20% trusted existing fact-checkers. Users wanted peace of mind, not just truth.</div>
+    <div style="font-size: 13px; color: #57534E; line-height: 1.6;">74% encountered misinformation weekly, 62% of parents felt overwhelmed, and <20% trusted existing fact-checkers.</div>
   </div>
 
   <div>
     <img loading="lazy" decoding="async" src="/images/misinformation-center/Problem 02.webp" alt="The Generational Sandwich" style="width: 100%; height: auto; border-radius: 0px; margin-bottom: 24px; display: block;" />
     <div class="cs-card-title cs-card-title--xs">The Generational Sandwich</div>
-    <div style="font-size: 13px; color: #57534E; line-height: 1.6;">Mothers filtering misinformation for kids while protecting elderly parents from scams. Managing media literacy for two generations at once shaped the archetype strategy.</div>
+    <div style="font-size: 13px; color: #57534E; line-height: 1.6;">Mothers filtering misinformation for kids while protecting elderly parents from scams — shaped the archetype strategy.</div>
   </div>
 
   <div>
     <img loading="lazy" decoding="async" src="/images/misinformation-center/Problem 03.webp" alt="The Transparency Demand" style="width: 100%; height: auto; border-radius: 0px; margin-bottom: 24px; display: block;" />
     <div class="cs-card-title cs-card-title--xs">The Transparency Demand</div>
-    <div style="font-size: 13px; color: #57534E; line-height: 1.6;">Users wanted to see the incentive structure behind content, not just fact-check labels. Understanding who benefits mattered as much as knowing what's true.</div>
+    <div style="font-size: 13px; color: #57534E; line-height: 1.6;">Users wanted to see who benefits from content, not just a fact-check label.</div>
   </div>
 
   <div>
     <img loading="lazy" decoding="async" src="/images/misinformation-center/Problem 04.webp" alt="The Platform Trust Problem" style="width: 100%; height: auto; border-radius: 0px; margin-bottom: 24px; display: block;" />
     <div class="cs-card-title cs-card-title--xs">The Platform Trust Problem</div>
-    <div style="font-size: 13px; color: #57534E; line-height: 1.6;">Testing rejected a Facebook-integrated solution immediately. Users wouldn't trust the platform spreading misinformation to also solve it. The tool had to be independent.</div>
+    <div style="font-size: 13px; color: #57534E; line-height: 1.6;">Testing rejected a solution integrated into a major social platform immediately — the tool had to stand independent.</div>
   </div>
 </div>
 
-<div class="pull-quote" style="margin-top: 100px;">The platform that spread the problem was structurally incapable of being trusted as its solution.</div>
-
-<div class="cs-video-wrap" style="width: 100%; max-width: 1200px; margin: 60px auto 0;">
-  <video autoplay loop muted playsinline preload="metadata" width="2248" height="1388" aria-label="Screen recording of the verification tool embedded in trusted surfaces like the share sheet and lock screen widget" style="display: block; width: 100%; height: auto; border-radius: 0px;">
-    <source src="/videos/misinformationcenter/flow%2002.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-  </video>
-  <button type="button" class="cs-video-toggle" aria-label="Pause video" onclick="var v=this.previousElementSibling;if(v.paused){v.play();this.textContent='⏸';this.setAttribute('aria-label','Pause video');}else{v.pause();this.textContent='▶';this.setAttribute('aria-label','Play video');}">⏸</button>
-</div>`
+<div class="pull-quote" style="margin-top: 100px;">The platform that spread the problem was structurally incapable of being trusted as its solution.</div>`
       },
       {
         id: 'features',
         title: '03 — Features',
         headline: "The quiz builds the skill, Search and Scan provide the tool at the moment of need, Ask Us is the human fallback at the tool's limit",
         content: '',
-        customComponent: <MisinfoFeaturesContent />
+        customComponent: <MisinfoFeaturesContent />,
+        showPrototypeCta: true
       },
       {
         id: 'testing',
@@ -803,28 +795,30 @@ const caseStudies = {
         headline: "The first version didn't fail on usability. It failed on who was asking.",
         content: `<p>Three rounds before the four tools settled — a platform-embedded concept, a format head-to-head, and the full build at the capstone showcase.</p>
 
-<p style="margin-top: 28px;"><span style="font-weight: 600;">What testing disproved.</span> The Misinformation Center built inside a major social platform. Seventeen of nineteen people wouldn't engage — they kept asking why it was there. Not a design problem; no interface would have fixed it. So I moved it out.</p>
-
-<p style="margin-top: 16px;"><span style="font-weight: 600;">What testing confirmed.</span> People skimmed the written guide and finished the interactive quiz, so the quiz became the backbone. At the showcase the flow held without help — one gap, no exit from every screen.</p>
-
-<div style="display: flex; flex-wrap: wrap; gap: 40px; margin-top: 40px; padding: 24px 0; border-top: 1px solid #E5E7EB; border-bottom: 1px solid #E5E7EB;">
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 40px; margin-top: 28px; align-items: start;">
   <div>
-    <div style="font-size: 26px; font-weight: 700; color: #1C1917;">17/19</div>
-    <div style="font-size: 13px; color: #6B7280; margin-top: 4px;">wouldn't engage with the platform-embedded concept</div>
-  </div>
-  <div>
-    <div style="font-size: 26px; font-weight: 700; color: #1C1917;">2</div>
-    <div style="font-size: 13px; color: #6B7280; margin-top: 4px;">formats tested head-to-head: written guide vs. interactive quiz</div>
-  </div>
-  <div>
-    <div style="font-size: 26px; font-weight: 700; color: #1C1917;">2h → 5m</div>
-    <div style="font-size: 13px; color: #6B7280; margin-top: 4px;">verification time, participant-reported</div>
-  </div>
-</div>
+    <p style="margin-top: 0;"><span style="font-weight: 600;">What testing disproved.</span> Seventeen of nineteen people wouldn't engage with a version built inside a major social platform — they kept asking why it was there. Not a design problem; no interface would have fixed it. So I moved it out.</p>
 
-<div style="background-color: #000000; border-radius: 0px; padding: 40px 24px; margin-top: 40px; display: flex; justify-content: center;">
-  <div class="cs-video-wrap" style="width: 100%; max-width: 300px;">
-    <video autoplay loop muted playsinline preload="metadata" aria-label="Screen recording of a user uploading an image for camera-based verification" style="width: 100%; aspect-ratio: 580 / 1040; border-radius: 0px; display: block; object-fit: cover;">
+    <p style="margin-top: 16px;"><span style="font-weight: 600;">What testing confirmed.</span> People skimmed the written guide but finished the interactive quiz, so the quiz became the backbone. At the showcase the flow held without help, with one gap: no exit from every screen.</p>
+
+    <div style="display: flex; flex-wrap: wrap; gap: 32px; margin-top: 28px; padding: 24px 0; border-top: 1px solid #E5E7EB; border-bottom: 1px solid #E5E7EB;">
+      <div>
+        <div style="font-size: 26px; font-weight: 700; color: #1C1917;">17/19</div>
+        <div style="font-size: 13px; color: #6B7280; margin-top: 4px;">wouldn't engage with the platform-embedded concept</div>
+      </div>
+      <div>
+        <div style="font-size: 26px; font-weight: 700; color: #1C1917;">2</div>
+        <div style="font-size: 13px; color: #6B7280; margin-top: 4px;">formats tested head-to-head: written guide vs. interactive quiz</div>
+      </div>
+      <div>
+        <div style="font-size: 26px; font-weight: 700; color: #1C1917;">2h → 5m</div>
+        <div style="font-size: 13px; color: #6B7280; margin-top: 4px;">verification time, participant-reported</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="cs-video-wrap" style="width: 100%; max-width: 288px; margin: 0 auto; position: relative; overflow: hidden; aspect-ratio: 492 / 958; border-radius: 0px; background-color: #000000;">
+    <video autoplay loop muted playsinline preload="metadata" aria-label="Screen recording of a user uploading an image for camera-based verification" style="position: absolute; top: 0; left: 0; width: 117.89%; aspect-ratio: 580 / 1040; border-radius: 0px; display: block; transform: translate(-9.31%, -4.62%);">
       <source src="/videos/misinformationcenter/Testing%20Image%20upload.mp4" type="video/mp4">
       Your browser does not support the video tag.
     </video>
@@ -836,25 +830,25 @@ const caseStudies = {
         id: 'market',
         title: '05 — Market Research',
         headline: 'Verification had to live where misinformation spreads, but platform ownership destroyed trust',
-        content: `<p>Existing tools fell into two categories, neither worked:</p>
+        content: `<p>Snopes is monetized; the free alternatives are nonprofits with text-heavy resources people ignore — two categories, neither worked:</p>
 
 <div style="display: grid; grid-template-columns: 1fr; gap: 24px; margin-top: 40px; margin-bottom: 48px;">
   <div>
     <div class="cs-card-title">Monetized Platforms — Credible but Compromised</div>
-    <div style="font-size: 15px; color: #57534E; line-height: 1.6;">Snopes had trust and rigor, but ran ads. Facebook labels and Twitter Community Notes had scale but were seen as biased. The entity profiting from misinformation's spread can't be trusted to flag it.</div>
+    <div style="font-size: 15px; color: #57534E; line-height: 1.6;">Snopes had trust, but ran ads. Platform labels and Community Notes had scale but read as biased.</div>
   </div>
 
   <div>
     <div class="cs-card-title">Nonprofit Resources — Trustworthy but Invisible</div>
-    <div style="font-size: 15px; color: #57534E; line-height: 1.6;">Literacy initiatives had integrity but no engagement — text-heavy resources in a short-form-video era, browser extensions desktop-bound and friction-heavy.</div>
+    <div style="font-size: 15px; color: #57534E; line-height: 1.6;">Literacy initiatives had integrity but no engagement in a short-form-video era.</div>
   </div>
 </div>
 
-<p>The gap: users who trusted Reuters and the Guardian, wanted multiple sources, and read news on phones inside apps they already trusted. Every existing tool asked them to leave and do extra work — friction that was fatal.</p>
+<p>The gap: users trusted established outlets, wanted multiple sources, inside apps they already used — leaving was fatal friction.</p>
 
 <div class="pull-quote" style="margin-top: 48px; margin-bottom: 48px;">Verification had to live where misinformation spreads, but platform ownership destroyed trust.</div>
 
-<p><span style="font-weight: 600;">The integration insight.</span> I brought this paradox to my professors, who thought I was digging too deep for an academic project. The answer: a trusted utility embedded in trusted surfaces — Safari share sheet, Apple News, native camera — backed by institutions users can verify, owned by none of the platforms it lives in. Not another app; infrastructure that makes verification a natural step.</p>
+<p><span style="font-weight: 600;">The integration insight.</span> I brought this to all three professors — none engaged, waving it off as digging too deep. I worked it through instead with my husband, an AI scientist outside product: a trusted utility in trusted surfaces — Safari share sheet, Apple News, native camera — backed by verifiable institutions, owned by none of the platforms it lives in.</p>
 
 <div style="display: flex; gap: 24px; margin-top: 48px; flex-wrap: wrap;">
   <div style="flex: 1; min-width: 250px; position: relative;">
@@ -878,15 +872,15 @@ const caseStudies = {
   <button type="button" class="cs-video-toggle" aria-label="Pause video" onclick="var v=this.previousElementSibling;if(v.paused){v.play();this.textContent='⏸';this.setAttribute('aria-label','Pause video');}else{v.pause();this.textContent='▶';this.setAttribute('aria-label','Play video');}">⏸</button>
 </div>
 
-<p style="margin-top: 8px; font-size: 15px; color: #6B7280;">2,000 survey respondents · 28 paid interviews · 14 usability sessions · ~1,800 tested live at Misinfo Day, from high schoolers to the creator of the SIFT methodology.</p>
+<p style="margin-top: 8px; font-size: 15px; color: #6B7280;">2,000 survey respondents · 28 interviews · 14 usability sessions · ~1,800 at Misinfo Day.</p>
 
-<p style="margin-top: 28px;">Early task-based testing — verify a headline in under 30 seconds — surfaced ambiguous labels and slow search response times, which shaped a later shift to color-coded ratings and a single, unified search/image-search entry point.</p>
+<p style="margin-top: 28px;">Early testing — verify a headline in under 30 seconds — surfaced ambiguous labels and slow search, shaping the shift to color-coded ratings.</p>
 
 <div class="pull-quote" style="margin-top: 48px; margin-bottom: 48px;">Misinformation moves through trust networks — families, WhatsApp groups, neighborhood pages — in a specific generational pattern.</div>
 
-<p><span style="font-weight: 600;">The finding that changed the problem:</span> Adults 55–80 receive misinformation from people they trust deeply. Teens 13–18 encounter it through peer dynamics where questioning carries social cost. Adults 25–40 sit between both — the most exhausted, managing it for two generations at once.</p>
+<p><span style="font-weight: 600;">The finding that changed the problem:</span> families argue over what's true, and it runs through specific channels: adults 55–80 scammed via WhatsApp groups from trusted contacts, teens 13–18 pressured into exposing personal data, and 25–40 caught managing both.</p>
 
-<p style="margin-top: 28px;">The archetypes emerged from that chain, not a persona template:</p>
+<p style="margin-top: 28px;">The archetypes emerged from that chain:</p>
 
 <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 32px; margin-bottom: 8px;">
   <div>
@@ -894,95 +888,75 @@ const caseStudies = {
       <img loading="lazy" decoding="async" src="/images/misinformation-center/Truth%20Seekers.gif" alt="Truth Seekers archetype" style="width: 100%; height: 100%; object-fit: cover; display: block;" />
     </div>
     <div class="cs-card-title cs-card-title--xs">Truth Seekers (18–30)</div>
-    <div style="font-size: 13px; color: #57534E; line-height: 1.6; margin-top: 6px;">Already motivated, cross-referencing sources, wanting to be community validators, not just skeptics.</div>
+    <div style="font-size: 13px; color: #57534E; line-height: 1.6; margin-top: 6px;">Already motivated, cross-referencing sources, want to be validators.</div>
   </div>
   <div>
     <div style="width: 100%; aspect-ratio: 1 / 1; background-color: #000000; display: flex; align-items: center; justify-content: center; overflow: hidden; margin-bottom: 16px;">
       <img loading="lazy" decoding="async" src="/images/misinformation-center/Overwhelmed%20Guardians.gif" alt="Overwhelmed Guardians archetype" style="width: 100%; height: 100%; object-fit: cover; display: block;" />
     </div>
     <div class="cs-card-title cs-card-title--xs">Overwhelmed Guardians (25–40)</div>
-    <div style="font-size: 13px; color: #57534E; line-height: 1.6; margin-top: 6px;">Desperately want verification tools, but any added friction fails with this group regardless of quality.</div>
+    <div style="font-size: 13px; color: #57534E; line-height: 1.6; margin-top: 6px;">Want verification tools, but any friction loses this group.</div>
   </div>
   <div>
     <div style="width: 100%; aspect-ratio: 1 / 1; background-color: #000000; display: flex; align-items: center; justify-content: center; overflow: hidden; margin-bottom: 16px;">
       <img loading="lazy" decoding="async" src="/images/misinformation-center/Vulnerable%20population.gif" alt="Vulnerable Believers archetype" style="width: 100%; height: 100%; object-fit: cover; display: block;" />
     </div>
     <div class="cs-card-title cs-card-title--xs">Vulnerable Believers (55–80)</div>
-    <div style="font-size: 13px; color: #57534E; line-height: 1.6; margin-top: 6px;">Trust what they receive because it comes from people they know. Design for them means meeting existing behavior, not demanding new habits.</div>
+    <div style="font-size: 13px; color: #57534E; line-height: 1.6; margin-top: 6px;">Trust what comes from people they know — design means meeting existing behavior.</div>
   </div>
 </div>
 
-<p style="margin-top: 28px;">The strategy: design primarily for the first two, since they become the human layer protecting the third — a mother who learns to verify a link becomes the person her parent calls before forwarding it.</p>
-
-<div style="display: flex; gap: 24px; margin-top: 48px; margin-bottom: 8px; flex-wrap: wrap;">
-  <div style="flex: 1; min-width: 250px; position: relative;">
-    <div style="background-color: #F3F4F6; padding: 24px; border-radius: 0px; position: relative;">
-      <p style="font-style: italic; font-family: 'Fraunces', serif; color: #1F2937; margin: 0;">"I loved that you used the quotes from interviews. It gave it a lot of meaning."</p>
-      <p style="margin-top: 12px; font-size: 13px; color: #6B7280;">— capstone reviewer</p>
-    </div>
-    <div style="width: 0; height: 0; border-left: 12px solid transparent; border-right: 12px solid transparent; border-top: 12px solid #F3F4F6; position: absolute; bottom: -12px; left: 32px;"></div>
-  </div>
-</div>
+<p style="margin-top: 28px;">The strategy: design for the first two — they become the human layer protecting the third, like a mother who verifies before forwarding to her parent.</p>
 
 <img loading="lazy" decoding="async" src="/images/misinformation-center/User thinking.png" alt="The generational chain diagram and three archetype cards with real interview quotes" style="width: 100%; border-radius: 0px; margin-top: 40px; margin-bottom: 40px; display: block;" />
 
-<p style="margin-top: 36px;"><span style="font-weight: 600;">What Misinfo Day revealed that recruited testing couldn't.</span> Small-scale testing shows what people say; live testing with unrecruited crowds shows what they do. Younger participants abandoned any flow that felt like reading within seconds. Older participants trusted Ask Us over automated ratings — a person's judgment over an algorithm's output. The sharpest insight: engagement spiked when detection was framed as a skill, not a correction — people wanted to feel smart for getting it right, not told they were wrong.</p>
+<p style="margin-top: 36px;"><span style="font-weight: 600;">What Misinfo Day revealed that recruited testing couldn't.</span> Live crowds show what people do, not what they say. Younger participants abandoned anything that felt like reading within seconds; older participants trusted Ask Us over automated ratings. Engagement spiked when detection was framed as a skill, not a correction.</p>
 
-<p style="margin-top: 28px;">This was also the moment Scan got decided. Attendees kept asking whether it only worked on stuff already on their phone, or could check something in front of them right now — a flyer, a printed article. That gap became Scan: camera-based verification for printed and in-person content a purely digital tool would have missed.</p>
+<p style="margin-top: 28px;">This was also when Scan got decided — attendees wanted to check something in front of them right now, not just what was on their phone.</p>
 
 <div style="margin-top: 48px;">
-  <div style="font-size: 13px; color: #6B7280; margin-bottom: 12px;">Misinfo Day — live testing with ~1,800 participants · scroll to see more →</div>
-  <div style="display: flex; gap: 16px; overflow-x: auto; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; padding-bottom: 8px;">
-    <img loading="lazy" decoding="async" src="/images/misinformation-center/Misinfo%20day%20%281%29.jpg" alt="Misinfo Day live testing, photo 1" style="flex: 0 0 auto; scroll-snap-align: start; width: 85%; max-width: 460px; height: 340px; object-fit: cover; border-radius: 0px; display: block;" />
-    <img loading="lazy" decoding="async" src="/images/misinformation-center/Misinfo%20day%20%282%29.jpg" alt="Misinfo Day live testing, photo 2" style="flex: 0 0 auto; scroll-snap-align: start; width: 85%; max-width: 460px; height: 340px; object-fit: cover; border-radius: 0px; display: block;" />
-    <img loading="lazy" decoding="async" src="/images/misinformation-center/Misinfo%20day%20%283%29.jpg" alt="Misinfo Day live testing, photo 3" style="flex: 0 0 auto; scroll-snap-align: start; width: 85%; max-width: 460px; height: 340px; object-fit: cover; border-radius: 0px; display: block;" />
-    <img loading="lazy" decoding="async" src="/images/misinformation-center/Misinfo%20day%20%284%29.jpg" alt="Misinfo Day live testing, photo 4" style="flex: 0 0 auto; scroll-snap-align: start; width: 85%; max-width: 460px; height: 340px; object-fit: cover; border-radius: 0px; display: block;" />
+  <div style="font-size: 13px; color: #6B7280; margin-bottom: 12px;">Misinfo Day — live testing with ~1,800 participants</div>
+  <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px;">
+    <img loading="lazy" decoding="async" src="/images/misinformation-center/Misinfo%20day%20%281%29.jpg" alt="Misinfo Day live testing, photo 1" style="width: 100%; height: 340px; object-fit: cover; border-radius: 0px; display: block;" />
+    <img loading="lazy" decoding="async" src="/images/misinformation-center/Misinfo%20day%20%282%29.jpg" alt="Misinfo Day live testing, photo 2" style="width: 100%; height: 340px; object-fit: cover; border-radius: 0px; display: block;" />
   </div>
 </div>`
       },
       {
         id: 'impact',
         title: '07 — Impact & Results',
-        headline: '[PLACEHOLDER: headline result stat and what it proves]',
-        content: `<div style="border: 1px dashed #D1D5DB; background-color: #FAFAF9; padding: 24px 28px; margin-bottom: 32px;">
-  <div style="font-size: 11px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #A8A29E; margin-bottom: 10px;">PLACEHOLDER SECTION</div>
-  <div style="font-size: 14px; color: #57534E; line-height: 1.6;">Dedicated results section — quantified outcomes from the concept validation, distinct from the research methodology numbers already shown in sections 03 and 06. Akeeksha's case study closes with hard numbers here (e.g. "99.9% Gen Z approved," "60% increased trust") — this is the equivalent slot for Misinfo Center's Misinfo Day / testing results.</div>
-</div>
-
-<p>[PLACEHOLDER: 2-3 sentence summary of what the concept validation proved — task completion, comprehension, trust shift, willingness to use, etc.]</p>
+        headline: "96% of 36 Gen Z and millennial testers said they'd use it. Older users needed a camera first.",
+        content: `<p>Younger testers took to search and the quiz immediately. Older participants stayed out until Scan arrived — pointing a camera at a newspaper asked nothing of them they didn't already know, and it removed the part they disliked most: having to ask a younger relative for help.</p>
 
 <div style="display: flex; flex-wrap: wrap; gap: 40px; margin-top: 40px; padding: 24px 0; border-top: 1px solid #E5E7EB; border-bottom: 1px solid #E5E7EB;">
   <div>
-    <div style="font-size: 26px; font-weight: 700; color: #1C1917;">[X%]</div>
-    <div style="font-size: 13px; color: #6B7280; margin-top: 4px;">[PLACEHOLDER metric, e.g. task success rate at Misinfo Day]</div>
+    <div style="font-size: 26px; font-weight: 700; color: #1C1917;">96%</div>
+    <div style="font-size: 13px; color: #6B7280; margin-top: 4px;">of 36 Gen Z and millennial testers said they'd use it</div>
   </div>
   <div>
-    <div style="font-size: 26px; font-weight: 700; color: #1C1917;">[X%]</div>
-    <div style="font-size: 13px; color: #6B7280; margin-top: 4px;">[PLACEHOLDER metric, e.g. would use again / trust shift]</div>
-  </div>
-  <div>
-    <div style="font-size: 26px; font-weight: 700; color: #1C1917;">[X]</div>
-    <div style="font-size: 13px; color: #6B7280; margin-top: 4px;">[PLACEHOLDER metric, e.g. avg. verification time]</div>
+    <div style="font-size: 26px; font-weight: 700; color: #1C1917;">2h → 5m</div>
+    <div style="font-size: 13px; color: #6B7280; margin-top: 4px;">verification they described as taking two hours took about five minutes in testing</div>
   </div>
 </div>
 
-<p style="margin-top: 28px;"><span style="font-weight: 600;">[PLACEHOLDER: stakeholder or reviewer validation]</span> [Quote or note from professors/reviewers/TrueMedia on the concept's credibility, if any beyond what's already quoted elsewhere]</p>`
+<p style="margin-top: 28px;">The final version was framed as a system utility — something that lives beside the compass and the calculator, not an app you remember to open.</p>`
       },
       {
         id: 'truemedia',
         title: '08 — TrueMedia',
         headline: 'Detection is the expensive end of the chain — authenticating content at creation is fundamentally more efficient, but nobody profits from implementing it',
-        content: `<p>TrueMedia.org was a nonprofit building deepfake detection for the 2024 election. Through UW's partnership, I contributed research synthesis on what to prioritize. They shipped a dark, utilitarian tool for journalists; mine served a teenager asking "why should I care?" — two solutions to adjacent problems. They analyzed 60,000+ pieces of media, launched in September 2024, and shut down in January 2025, open-sourcing the technology rather than chasing funding. Founder Oren Etzioni: "We are not prepared for a large-scale, generative AI attack. It hasn't come yet. That doesn't mean it won't."</p>
+        content: `<p>TrueMedia.org was a nonprofit building deepfake detection for the 2024 election. Through UW's partnership, I contributed research synthesis on what to prioritize. They shipped a dark, utilitarian tool for journalists; mine served a teenager asking "why should I care?" — two solutions to adjacent problems. Per later reporting on the shutdown, they analyzed 60,000+ pieces of media, launched in September 2024, and shut down in January 2025, open-sourcing the technology rather than chasing funding. Founder Oren Etzioni, quoted in that coverage: "We are not prepared for a large-scale, generative AI attack. It hasn't come yet. That doesn't mean it won't."</p>
 
-<p style="margin-top: 28px;">Two lessons reframed the market for me: platforms are ambivalent about detection because it drives engagement, and the real unaddressed threat — personalized scams — never reaches a community to verify it. Detection is also the expensive end of the chain; authenticating content at creation is more efficient, but C2PA proposed exactly that and stalled on incentives. A third came from testing: participants rejected a Facebook-embedded concept as too platform-tied and easy to dismiss as biased, settling the case for the integration vision over a standalone app.</p>`
+<p style="margin-top: 28px;">TrueMedia's Head of Product reframed the market for me in two lessons: platforms are ambivalent about detection because it drives engagement, and the real unaddressed threat — personalized scams — never reaches a community to verify it. His critique: detection is the expensive end of the chain; authenticating content at creation is more efficient, but C2PA proposed exactly that and stalled on incentives.</p>`
       },
       {
         id: 'reflection',
         title: '09 — Reflection',
+        showPrototypeCta: true,
         headline: 'A designer who thinks only about what users see is a UI designer. A designer who thinks about everything required to make that experience real and sustainable is a product leader',
-        content: `<p><span style="font-weight: 600;">What this project taught me.</span> Design alone cannot make a public good sustainable — TrueMedia was research-grounded and mission-complete, and it still closed on economics, not design. The compass is trusted because it has no business model; the phone manufacturer absorbs the cost. That's why the integration vision — Apple News, the share sheet, the native camera — is the sustainability answer, not a nice-to-have. Coming back to school after industry, I couldn't stay inside a class project's boundaries; every decision triggered questions about moderation staffing and who pays. My professors thought I was overcomplicating an exercise. I've come to see that instinct as the point: a designer who thinks only about what users see is a UI designer; one who thinks about what makes it real and sustainable is a product leader.</p>
+        content: `<p><span style="font-weight: 600;">What this project taught me.</span> Design alone can't make a public good sustainable — TrueMedia was research-grounded and mission-complete, yet closed on economics, not design. The integration vision, embedded in trusted surfaces with no business model, is the answer. A designer who only sees the UI misses that; a product leader thinks about what makes it real.</p>
 
-<p style="margin-top: 28px;"><span style="font-weight: 600;">What changed from feedback and testing.</span> Reviewers pushed the quiz to teach the why behind each answer, producing the post-answer reveal, and flagged visual and navigation issues fixed in the refinement pass. Usability testing showed people liked the clarity of color-coded credibility badges but wanted to know why — pushing the rating system from a flat badge into a layered one: quick signal upfront, reasoning a tap away.</p>
+<p style="margin-top: 28px;"><span style="font-weight: 600;">What changed.</span> Feedback pushed the quiz to teach the why behind each answer, and credibility badges toward layered reveals — signal first, reasoning a tap away. By 2026, AI collapses the staffing this needed; the design question is answered, the ecosystem question isn't.</p>
 
 <div style="display: flex; gap: 24px; margin-top: 48px; margin-bottom: 8px; flex-wrap: wrap;">
   <div style="flex: 1; min-width: 250px; position: relative;">
@@ -992,12 +966,6 @@ const caseStudies = {
     </div>
     <div style="width: 0; height: 0; border-left: 12px solid transparent; border-right: 12px solid transparent; border-top: 12px solid #F3F4F6; position: absolute; bottom: -12px; left: 32px;"></div>
   </div>
-</div>
-
-<p style="margin-top: 48px;"><span style="font-weight: 600;">If I built this in 2026.</span> In 2024 this needed an organization — moderators, funding, a maintenance team. By 2026, AI collapses that requirement: triage for Ask Us, monitoring to keep quiz content current, AI-augmented research at scale. What took a fifteen-person nonprofit now takes a determined individual. The capstone answered the design question; the ecosystem question — reaching people at scale, outliving a funding cycle — is still open.</p>
-
-<div id="prototype" class="figma-embed-container" style="margin-top: 48px;">
-  <iframe style="border: 1px solid rgba(0, 0, 0, 0.1); border-radius: 0px;" width="100%" class="figma-embed-iframe" src="https://embed.figma.com/proto/5SuxUGsaCvOVUiRdXa7uNl/Misinformation-Center?page-id=12%3A7585&node-id=20-3800&p=f&viewport=1079%2C560%2C0.06&scaling=scale-down&content-scaling=fixed&starting-point-node-id=20%3A3748&show-proto-sidebar=1&embed-host=share" allowfullscreen loading="lazy"></iframe>
 </div>`
       },
     ]
