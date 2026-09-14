@@ -1016,23 +1016,8 @@ const caseStudies = {
 <p style="margin-top: 28px;">Two lessons reframed the market for me: platforms are ambivalent about detection because it drives engagement, and the real unaddressed threat — personalized scams — never reaches a community to verify it. Detection is also the expensive end of the chain; authenticating content at creation is more efficient, but C2PA proposed exactly that and stalled on incentives. A third came from testing: participants rejected a Facebook-embedded concept as too platform-tied and easy to dismiss as biased, settling the case for the integration vision over a standalone app.</p>`
       },
       {
-        id: 'future',
-        title: '09 — Future Directions',
-        headline: '[PLACEHOLDER: headline — where this goes next]',
-        content: `<div style="border: 1px dashed #D1D5DB; background-color: #FAFAF9; padding: 24px 28px; margin-bottom: 32px;">
-  <div style="font-size: 11px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #A8A29E; margin-bottom: 10px;">PLACEHOLDER SECTION</div>
-  <div style="font-size: 14px; color: #57534E; line-height: 1.6;">Forward-looking scope, distinct from the retrospective Reflection section that follows. Akeeksha's case study includes "If I had more time, I would..." as its own beat before the closing reflection — a short, concrete list of next iterations rather than lessons learned.</div>
-</div>
-
-<p style="margin-top: 16px;"><span style="font-weight: 600;">[PLACEHOLDER 1].</span> [What would be built or tested next, and why it was out of scope for the capstone]</p>
-
-<p style="margin-top: 16px;"><span style="font-weight: 600;">[PLACEHOLDER 2].</span> [Second next step — e.g. scaling the archetype research, a new platform surface, etc.]</p>
-
-<p style="margin-top: 16px;"><span style="font-weight: 600;">[PLACEHOLDER 3].</span> [Third next step]</p>`
-      },
-      {
         id: 'reflection',
-        title: '10 — Reflection',
+        title: '09 — Reflection',
         headline: 'A designer who thinks only about what users see is a UI designer. A designer who thinks about everything required to make that experience real and sustainable is a product leader',
         content: `<p><span style="font-weight: 600;">What this project taught me.</span> Design alone cannot make a public good sustainable — TrueMedia was research-grounded and mission-complete, and it still closed on economics, not design. The compass is trusted because it has no business model; the phone manufacturer absorbs the cost. That's why the integration vision — Apple News, the share sheet, the native camera — is the sustainability answer, not a nice-to-have. Coming back to school after industry, I couldn't stay inside a class project's boundaries; every decision triggered questions about moderation staffing and who pays. My professors thought I was overcomplicating an exercise. I've come to see that instinct as the point: a designer who thinks only about what users see is a UI designer; one who thinks about what makes it real and sustainable is a product leader.</p>
 
