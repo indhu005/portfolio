@@ -800,30 +800,35 @@ const caseStudies = {
       {
         id: 'testing',
         title: '04 — Testing & Validation',
-        headline: '[PLACEHOLDER: headline — what testing validated or overturned about the initial concept]',
-        content: `<div style="border: 1px dashed #D1D5DB; background-color: #FAFAF9; padding: 24px 28px; margin-bottom: 32px;">
-  <div style="font-size: 11px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #A8A29E; margin-bottom: 10px;">PLACEHOLDER SECTION</div>
-  <div style="font-size: 14px; color: #57534E; line-height: 1.6;">Iteration evidence — what was mocked up, tested, and changed before the final four-tool concept. Akeeksha's case study shows this as "Ideation and testing" + "But instead, I learned that..." — mockups compared, hypotheses disproven, what shifted as a result.</div>
-</div>
+        headline: "The first version didn't fail on usability. It failed on who was asking.",
+        content: `<p>Three rounds before the four tools settled — a platform-embedded concept, a format head-to-head, and the full build at the capstone showcase.</p>
 
-<p>[PLACEHOLDER: what early concepts/mockups were tested before landing on Search / Scan / Quiz / Ask Us — e.g. how many variants, what format]</p>
+<p style="margin-top: 28px;"><span style="font-weight: 600;">What testing disproved.</span> The Misinformation Center built inside a major social platform. Seventeen of nineteen people wouldn't engage — they kept asking why it was there. Not a design problem; no interface would have fixed it. So I moved it out.</p>
 
-<p style="margin-top: 28px;"><span style="font-weight: 600;">[PLACEHOLDER: what testing disproved]</span> [Describe a hypothesis that testing overturned — e.g. an initial design direction users rejected, and why]</p>
-
-<p style="margin-top: 16px;"><span style="font-weight: 600;">[PLACEHOLDER: what testing confirmed]</span> [Describe what testing validated as the right direction]</p>
+<p style="margin-top: 16px;"><span style="font-weight: 600;">What testing confirmed.</span> People skimmed the written guide and finished the interactive quiz, so the quiz became the backbone. At the showcase the flow held without help — one gap, no exit from every screen.</p>
 
 <div style="display: flex; flex-wrap: wrap; gap: 40px; margin-top: 40px; padding: 24px 0; border-top: 1px solid #E5E7EB; border-bottom: 1px solid #E5E7EB;">
   <div>
-    <div style="font-size: 26px; font-weight: 700; color: #1C1917;">[N]</div>
-    <div style="font-size: 13px; color: #6B7280; margin-top: 4px;">[PLACEHOLDER metric, e.g. concepts tested]</div>
+    <div style="font-size: 26px; font-weight: 700; color: #1C1917;">17/19</div>
+    <div style="font-size: 13px; color: #6B7280; margin-top: 4px;">wouldn't engage with the platform-embedded concept</div>
   </div>
   <div>
-    <div style="font-size: 26px; font-weight: 700; color: #1C1917;">[N]</div>
-    <div style="font-size: 13px; color: #6B7280; margin-top: 4px;">[PLACEHOLDER metric, e.g. iteration rounds]</div>
+    <div style="font-size: 26px; font-weight: 700; color: #1C1917;">2</div>
+    <div style="font-size: 13px; color: #6B7280; margin-top: 4px;">formats tested head-to-head: written guide vs. interactive quiz</div>
   </div>
   <div>
-    <div style="font-size: 26px; font-weight: 700; color: #1C1917;">[N]</div>
-    <div style="font-size: 13px; color: #6B7280; margin-top: 4px;">[PLACEHOLDER metric]</div>
+    <div style="font-size: 26px; font-weight: 700; color: #1C1917;">2h → 5m</div>
+    <div style="font-size: 13px; color: #6B7280; margin-top: 4px;">verification time, participant-reported</div>
+  </div>
+</div>
+
+<div style="background-color: #000000; border-radius: 0px; padding: 40px 24px; margin-top: 40px; display: flex; justify-content: center;">
+  <div class="cs-video-wrap" style="width: 100%; max-width: 300px;">
+    <video autoplay loop muted playsinline preload="metadata" aria-label="Screen recording of a user uploading an image for camera-based verification" style="width: 100%; aspect-ratio: 580 / 1040; border-radius: 0px; display: block; object-fit: cover;">
+      <source src="/videos/misinformationcenter/Testing%20Image%20upload.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    <button type="button" class="cs-video-toggle" aria-label="Pause video" onclick="var v=this.previousElementSibling;if(v.paused){v.play();this.textContent='⏸';this.setAttribute('aria-label','Pause video');}else{v.pause();this.textContent='▶';this.setAttribute('aria-label','Play video');}">⏸</button>
   </div>
 </div>`
       },
@@ -932,16 +937,6 @@ const caseStudies = {
     <img loading="lazy" decoding="async" src="/images/misinformation-center/Misinfo%20day%20%282%29.jpg" alt="Misinfo Day live testing, photo 2" style="flex: 0 0 auto; scroll-snap-align: start; width: 85%; max-width: 460px; height: 340px; object-fit: cover; border-radius: 0px; display: block;" />
     <img loading="lazy" decoding="async" src="/images/misinformation-center/Misinfo%20day%20%283%29.jpg" alt="Misinfo Day live testing, photo 3" style="flex: 0 0 auto; scroll-snap-align: start; width: 85%; max-width: 460px; height: 340px; object-fit: cover; border-radius: 0px; display: block;" />
     <img loading="lazy" decoding="async" src="/images/misinformation-center/Misinfo%20day%20%284%29.jpg" alt="Misinfo Day live testing, photo 4" style="flex: 0 0 auto; scroll-snap-align: start; width: 85%; max-width: 460px; height: 340px; object-fit: cover; border-radius: 0px; display: block;" />
-  </div>
-</div>
-
-<div style="background-color: #000000; border-radius: 0px; padding: 40px 24px; margin-top: 40px; display: flex; justify-content: center;">
-  <div class="cs-video-wrap" style="width: 100%; max-width: 300px;">
-    <video autoplay loop muted playsinline preload="metadata" aria-label="Screen recording of a user uploading an image for camera-based verification" style="width: 100%; aspect-ratio: 580 / 1040; border-radius: 0px; display: block; object-fit: cover;">
-      <source src="/videos/misinformationcenter/Testing%20Image%20upload.mp4" type="video/mp4">
-      Your browser does not support the video tag.
-    </video>
-    <button type="button" class="cs-video-toggle" aria-label="Pause video" onclick="var v=this.previousElementSibling;if(v.paused){v.play();this.textContent='⏸';this.setAttribute('aria-label','Pause video');}else{v.pause();this.textContent='▶';this.setAttribute('aria-label','Play video');}">⏸</button>
   </div>
 </div>`
       },
