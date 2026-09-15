@@ -1,6 +1,16 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  async redirects() {
+    return [
+      {
+        source: '/:path*',
+        has: [{ type: 'host', value: 'www.indhu.design' }],
+        destination: 'https://indhu.design/:path*',
+        permanent: true,
+      },
+    ];
+  },
   turbopack: {},
   typescript: {
     ignoreBuildErrors: true,

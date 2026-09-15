@@ -1,13 +1,5 @@
 {
   "framework": "nextjs",
   "buildCommand": "next build",
-  "installCommand": "npm install",
-  "redirects": [
-    {
-      "source": "/:path*",
-      "has": [{ "type": "host", "value": "www.indhu.design" }],
-      "destination": "https://indhu.design/:path*",
-      "permanent": true
-    }
-  ]
+  "installCommand": "npm install"
 }
