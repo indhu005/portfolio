@@ -31,6 +31,27 @@ const caseStudies = {
 
 <p style="margin-top: 28px;"><span style="font-weight: 600;">Timeline.</span> 2 years (2021–2022): beta to credit system to marketplace to extension to seed funding. After the team dispersed, the company pivoted into YC W2024 on the traction we built.</p>
 
+<div class="cs-laptop-mockup" style="margin: 160px auto 160px;">
+  <div class="cs-laptop-lid">
+    <div class="cs-laptop-camera"></div>
+    <div class="cs-laptop-screen">
+      <div class="cs-browser-chrome">
+        <div class="cs-browser-dots"><span></span><span></span><span></span></div>
+        <div class="cs-browser-url">🔒 unlockkeye.com</div>
+      </div>
+      <div class="cs-video-wrap" style="width: 100%; margin: 0; overflow: hidden;">
+        <video autoplay loop muted playsinline preload="metadata" width="2304" height="1440" aria-label="Screen recording overview of the Keye product" style="display: block; width: 100%; height: auto; transform: scale(1.18); transform-origin: top center;" onloadedmetadata="this.playbackRate=0.6;" onplay="this.playbackRate=0.6;">
+          <source src="/videos/Keye/Snapshot%2001%20video.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <button type="button" class="cs-video-toggle" aria-label="Pause video" onclick="var v=this.previousElementSibling;if(v.paused){v.play();this.textContent='⏸';this.setAttribute('aria-label','Pause video');}else{v.pause();this.textContent='▶';this.setAttribute('aria-label','Play video');}">⏸</button>
+      </div>
+    </div>
+  </div>
+  <div class="cs-laptop-hinge"></div>
+  <div class="cs-laptop-base"><div class="cs-laptop-notch"></div></div>
+</div>
+
 <h4 class="case-study-subhead">Impact</h4>
 
 <div class="metrics-grid metrics-grid--dark" style="margin-bottom: 48px;">
@@ -68,14 +89,6 @@ const caseStudies = {
     <span>Featured in Forbes, BulletPitch, UPenn Venture Lab</span><span class="metrics-sep">·</span>
     <span>Accepted to YC W2024</span>
   </div>
-</div>
-
-<div class="cs-video-wrap" style="width: 100%; max-width: 960px; margin: 0 auto 8px; overflow: hidden;">
-  <video data-scroll-autoplay loop muted playsinline preload="metadata" width="2304" height="1440" aria-label="Screen recording overview of the Keye product" style="display: block; width: calc(100% + 4px); height: auto; margin-left: -4px; border-radius: 0px;">
-    <source src="/videos/Keye/Snapshot%2001%20video.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-  </video>
-  <button type="button" class="cs-video-toggle" aria-label="Pause video" onclick="var v=this.previousElementSibling;if(v.paused){v.play();this.textContent='⏸';this.setAttribute('aria-label','Pause video');}else{v.pause();this.textContent='▶';this.setAttribute('aria-label','Play video');}">⏸</button>
 </div>`
       },
       {
@@ -85,7 +98,7 @@ const caseStudies = {
         content: `<p>Users created fake emails for free trials, shared passwords in friend groups, even paid for a VPN for cheaper regional pricing. Premium tools were priced for committed subscribers, not curious explorers.</p>
 
 <div class="cs-video-wrap" style="width: 100%; max-width: 960px; margin: 40px auto 40px; position: relative; overflow: hidden; aspect-ratio: 2304 / 432;">
-  <video data-scroll-autoplay loop muted playsinline preload="metadata" width="2304" height="1440" aria-label="Screen recording of the Keye paywall" style="position: absolute; top: 0; left: 0; width: 100%; height: auto; transform: translateY(-70%); border-radius: 0px;">
+  <video autoplay loop muted playsinline preload="metadata" width="2304" height="1440" aria-label="Screen recording of the Keye paywall" style="position: absolute; top: 0; left: 0; width: 100%; height: auto; transform: translateY(-70%); border-radius: 0px;">
     <source src="/videos/Keye/Paywall%20video.mp4" type="video/mp4">
     Your browser does not support the video tag.
   </video>
@@ -102,9 +115,9 @@ const caseStudies = {
 </div>
 
 <div style="display: flex; gap: 32px; margin-top: 48px; margin-bottom: 8px; flex-wrap: wrap; align-items: center;">
-  <div style="flex: 1; min-width: 280px;">
-    <img loading="lazy" decoding="async" src="/images/keye/Sharing%20Subscription.jpg" alt="Screenshots of real group chat conversations across UPenn — students splitting and sharing subscription costs for MasterClass, Crunchbase, and Grammarly" style="width: 100%; border-radius: 0px; display: block;" />
-    <div style="font-size: 13px; color: #9CA3AF; margin-top: 8px;">Snippets from real conversations across UPenn.</div>
+  <div style="flex: 1; min-width: 280px; background-color: #F9FAFB; padding: 20px; border: 1px solid #E7E5E4;">
+    <img loading="lazy" decoding="async" src="/images/keye/Sharing%20Subscription.jpg" alt="Screenshots of real group chat conversations across UPenn — students splitting and sharing subscription costs for MasterClass, Crunchbase, and Grammarly" style="width: 80%; max-width: 320px; margin: 0 auto; border-radius: 0px; display: block;" />
+    <div style="font-size: 13px; color: #9CA3AF; margin-top: 12px; text-align: center;">Snippets from real conversations across UPenn.</div>
   </div>
   <div style="flex: 1; min-width: 280px;">
     <p>This wasn't rare. Group chats across campus were full of people splitting subscriptions, hunting for discount codes, asking if anyone had a shared login. The behavior already existed — Keye just gave it a legitimate home.</p>
@@ -119,7 +132,45 @@ const caseStudies = {
         headline: "The founders were moving fast on instinct. I slowed things down just enough to check if the instinct was right",
         content: `<p>My first task was the purchase flow. Founders had baked in mandatory consent and a feedback survey at checkout — completion dropped 30% there. I moved consent to signup and tested the survey in three placements; only the post-access popup worked, because users had just used the product. Drop-off fell 20% in one sprint.</p>
 
-<p style="margin-top: 28px;">The hardest call was removing product descriptions once testing showed users scanning, not reading. I led with imagery and a side-by-side comparison, pre-selecting Keye — some users then bought full subscriptions through us, a behavior we hadn't planned for but kept.</p>
+<div class="cs-changelog">
+  <div class="cs-changelog-row">
+    <div class="cs-changelog-v">V1</div>
+    <div class="cs-changelog-body">
+      <img class="cs-changelog-zoomable" loading="lazy" decoding="async" width="1400" height="855" src="/images/keye/section-03-v1.webp" alt="Survey V1 — embedded directly in the purchase flow" onclick="document.getElementById('cs-lightbox-img').src=this.src;document.getElementById('cs-lightbox-img').alt=this.alt;document.getElementById('cs-lightbox').style.display='flex';" />
+      <p>Embedded directly in the purchase flow, shown before confirming access.</p>
+      <p class="cs-changelog-signal">Signal: users were confused by the mandatory survey — drop-off hit 50%, and it drove a spike in customer service requests.</p>
+    </div>
+  </div>
+  <div class="cs-changelog-row">
+    <div class="cs-changelog-v">V2</div>
+    <div class="cs-changelog-body">
+      <img class="cs-changelog-zoomable" loading="lazy" decoding="async" width="1400" height="855" src="/images/keye/section-03-v2.webp" alt="Survey V2 — reframed as Step 3 of a numbered checkout flow" onclick="document.getElementById('cs-lightbox-img').src=this.src;document.getElementById('cs-lightbox-img').alt=this.alt;document.getElementById('cs-lightbox').style.display='flex';" />
+      <p>Reframed as Step 3 of a numbered checkout sequence.</p>
+      <p class="cs-changelog-signal">Signal: only moved the needle 2–3% — founders wanted this data organically, but it was still a barrier to funnel growth.</p>
+    </div>
+  </div>
+  <div class="cs-changelog-row">
+    <div class="cs-changelog-v">V3</div>
+    <div class="cs-changelog-body">
+      <img class="cs-changelog-zoomable" loading="lazy" decoding="async" width="1400" height="855" src="/images/keye/section-03-v3.webp" alt="Survey V3 — rebuilt as its own page, shown right after product use" onclick="document.getElementById('cs-lightbox-img').src=this.src;document.getElementById('cs-lightbox-img').alt=this.alt;document.getElementById('cs-lightbox').style.display='flex';" />
+      <p>Rebuilt as its own page, shown right after the product was used.</p>
+      <p class="cs-changelog-signal">Signal: consent moved to signup instead of repeating at every purchase — drop-off fell sharply once it stopped feeling repetitive.</p>
+    </div>
+  </div>
+  <div class="cs-changelog-row">
+    <div class="cs-changelog-v">V4</div>
+    <div class="cs-changelog-body">
+      <img class="cs-changelog-zoomable" loading="lazy" decoding="async" width="1400" height="855" src="/images/keye/section-03-v4.webp" alt="Survey V4 — folded back into the app as an in-context modal, the version that shipped" onclick="document.getElementById('cs-lightbox-img').src=this.src;document.getElementById('cs-lightbox-img').alt=this.alt;document.getElementById('cs-lightbox').style.display='flex';" />
+      <p>Folded back into the app as an in-context modal — the version that shipped.</p>
+      <p class="cs-changelog-signal">Signal: the final version.</p>
+    </div>
+  </div>
+</div>
+
+<div id="cs-lightbox" class="cs-lightbox" onclick="this.style.display='none';">
+  <button type="button" class="cs-lightbox-close" aria-label="Close" onclick="event.stopPropagation();document.getElementById('cs-lightbox').style.display='none';">✕</button>
+  <img id="cs-lightbox-img" src="" alt="" onclick="event.stopPropagation();" />
+</div>
 
 <div class="pull-quote" style="margin-top: 28px;">On a seed-stage startup budget, I worked by signal saturation: once the same friction appeared across five or six users, it was real enough to act on.</div>`
       },
