@@ -201,10 +201,33 @@ const caseStudies = {
   <h4 class="feature-heading">The Credit System</h4>
   <p class="feature-subheadline">Designed with the founders and PM, proven by users — five pricing models in ten months</p>
 
-  <div style="width: 100%; height: 480px; background-color: #E5E7EB; border-radius: 0px; display: flex; align-items: center; justify-content: center; color: #9CA3AF; font-size: 14px; margin-top: 32px; margin-bottom: 40px;">
-    <div style="text-align: center; padding: 20px;">
-      <div style="font-weight: 600; margin-bottom: 8px;">IMAGE: 5-Frame Version Timeline</div>
-      <div style="font-size: 13px; line-height: 1.5;">One icon-driven frame per version, v1 → v5<br/>Credit counter animating ∞ → 200 → tier badges</div>
+  <div class="cs-tabs">
+    <div class="cs-tabs-nav">
+      <button type="button" class="cs-tab-btn cs-tab-active" onclick="var t=this.closest('.cs-tabs');t.querySelectorAll('.cs-tab-btn').forEach(function(b){b.classList.remove('cs-tab-active');});this.classList.add('cs-tab-active');t.querySelectorAll('.cs-tab-panel').forEach(function(p){p.classList.toggle('cs-tab-panel-active', p.dataset.panel==='v1');});">v1 — Free</button>
+      <button type="button" class="cs-tab-btn" onclick="var t=this.closest('.cs-tabs');t.querySelectorAll('.cs-tab-btn').forEach(function(b){b.classList.remove('cs-tab-active');});this.classList.add('cs-tab-active');t.querySelectorAll('.cs-tab-panel').forEach(function(p){p.classList.toggle('cs-tab-panel-active', p.dataset.panel==='v2');});">v2 — 10% fee</button>
+      <button type="button" class="cs-tab-btn" onclick="var t=this.closest('.cs-tabs');t.querySelectorAll('.cs-tab-btn').forEach(function(b){b.classList.remove('cs-tab-active');});this.classList.add('cs-tab-active');t.querySelectorAll('.cs-tab-panel').forEach(function(p){p.classList.toggle('cs-tab-panel-active', p.dataset.panel==='v3');});">v3 — Uncapped</button>
+      <button type="button" class="cs-tab-btn" onclick="var t=this.closest('.cs-tabs');t.querySelectorAll('.cs-tab-btn').forEach(function(b){b.classList.remove('cs-tab-active');});this.classList.add('cs-tab-active');t.querySelectorAll('.cs-tab-panel').forEach(function(p){p.classList.toggle('cs-tab-panel-active', p.dataset.panel==='v4');});">v4 — 200 cap</button>
+      <button type="button" class="cs-tab-btn" onclick="var t=this.closest('.cs-tabs');t.querySelectorAll('.cs-tab-btn').forEach(function(b){b.classList.remove('cs-tab-active');});this.classList.add('cs-tab-active');t.querySelectorAll('.cs-tab-panel').forEach(function(p){p.classList.toggle('cs-tab-panel-active', p.dataset.panel==='v5');});">v5 — Tiered</button>
+    </div>
+    <div class="cs-tab-panel cs-tab-panel-active" data-panel="v1">
+      <img src="/images/keye/credit-system-v1b.webp" alt="v1 free flow">
+      <p class="cs-tab-caption"><b>Free.</b> The first version shipped with no monetization at all — the goal was proving people would use the product, before asking anyone to pay for it.</p>
+    </div>
+    <div class="cs-tab-panel" data-panel="v2">
+      <img src="/images/keye/credit-system-v2.webp" alt="v2 flat 10% fee">
+      <p class="cs-tab-caption"><b>10% flat fee.</b> Founders proposed a flat commission on every purchase — the direction was theirs, but survey data said users would tolerate roughly half that.</p>
+    </div>
+    <div class="cs-tab-panel" data-panel="v3">
+      <img src="/images/keye/credit-system-v3.webp" alt="v3 uncapped credits">
+      <p class="cs-tab-caption"><b>Uncapped credits.</b> Closer to what users said they'd pay, but with no ceiling, heavy users cost more than they generated.</p>
+    </div>
+    <div class="cs-tab-panel" data-panel="v4">
+      <img src="/images/keye/credit-system-v4.webp" alt="v4 200 credit monthly cap">
+      <p class="cs-tab-caption"><b>200/mo cap.</b> Capping credits at 200 a month is what pushed lesser-known product activity from 1–2% to 30–35% within six weeks — scarcity nudged people toward products they'd have otherwise skipped.</p>
+    </div>
+    <div class="cs-tab-panel" data-panel="v5">
+      <img src="/images/keye/credit-system-v5.webp" alt="v5 tiered plans">
+      <p class="cs-tab-caption"><b>Tiered plans.</b> The cap worked, but power users wanted more headroom — tiered plans let them buy up without breaking the scarcity effect for everyone else.</p>
     </div>
   </div>
 
@@ -227,11 +250,12 @@ const caseStudies = {
 
   <div class="pull-quote">We didn't design the credit system. We discovered it — together, one killed model at a time.</div>
 
-  <div style="width: 100%; height: 300px; background-color: #E5E7EB; border-radius: 0px; display: flex; align-items: center; justify-content: center; color: #9CA3AF; font-size: 14px; margin-top: 40px; margin-bottom: 40px;">
-    <div style="text-align: center; padding: 20px;">
-      <div style="font-weight: 600; margin-bottom: 8px;">IMAGE: Low-Credit Pop-up + Notification</div>
-      <div style="font-size: 13px; line-height: 1.5;">v4 low-credit pop-up banner shown alongside the matching push notification/email</div>
-    </div>
+  <div class="cs-video-wrap" style="width: 100%; margin: 40px auto; overflow: hidden;">
+    <video autoplay loop muted playsinline preload="metadata" width="2560" height="1440" aria-label="Screen recording of the v4 low-credit pop-up and notification" style="display: block; width: 100%; height: auto; transform: scale(1.35); transform-origin: top center;">
+      <source src="/videos/Keye/Credit%20system%20video.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    <button type="button" class="cs-video-toggle" aria-label="Pause video" onclick="var v=this.previousElementSibling;if(v.paused){v.play();this.textContent='⏸';this.setAttribute('aria-label','Pause video');}else{v.pause();this.textContent='▶';this.setAttribute('aria-label','Play video');}">⏸</button>
   </div>
 
   <div style="border-left: 3px solid #E7E5E4; padding-left: 16px; font-size: 13px; color: #78716C; line-height: 1.6;">

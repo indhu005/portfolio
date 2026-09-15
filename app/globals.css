@@ -595,6 +595,93 @@ img, video {
   }
 }
 
+/* Credit System version tabs — click a version chip to swap the image
+   and caption below it, so the 5-model progression doesn't need 5 full
+   image blocks stacked on the page. */
+.cs-tabs {
+  width: 100%;
+  margin: 32px 0 40px;
+  background: #FAFAF9;
+  border: 1px solid #EEECE7;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.cs-tabs-nav {
+  display: flex;
+  flex-wrap: wrap;
+  border-bottom: 1px solid #EEECE7;
+}
+
+.cs-tab-btn {
+  flex: 1;
+  min-width: 110px;
+  padding: 14px 12px;
+  background: transparent;
+  border: none;
+  border-right: 1px solid #EEECE7;
+  font-size: 13px;
+  font-weight: 600;
+  color: #A8A29E;
+  cursor: pointer;
+  text-align: center;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.cs-tab-btn:last-child {
+  border-right: none;
+}
+
+.cs-tab-btn:hover {
+  color: #57534E;
+  background: #F5F3F0;
+}
+
+.cs-tab-btn.cs-tab-active {
+  color: #1C1917;
+  background: #FFFFFF;
+  box-shadow: inset 0 -2px 0 #D9662B;
+}
+
+.cs-tab-panel {
+  display: none;
+  padding: 28px;
+}
+
+.cs-tab-panel.cs-tab-panel-active {
+  display: block;
+}
+
+.cs-tab-panel img {
+  width: 100%;
+  display: block;
+  border-radius: 3px;
+  box-shadow: 0 6px 20px rgba(28, 25, 23, 0.1);
+  margin-bottom: 16px;
+}
+
+.cs-tab-caption {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #57534E;
+  max-width: 70ch;
+}
+
+.cs-tab-caption b {
+  color: #1C1917;
+}
+
+@media (max-width: 640px) {
+  .cs-tab-btn {
+    min-width: 72px;
+    font-size: 11.5px;
+    padding: 12px 6px;
+  }
+  .cs-tab-panel {
+    padding: 18px;
+  }
+}
+
 /* CSS-built laptop device frame — wraps a demo video so it reads as "live
    product on a machine" rather than a bare screen recording. No image
    assets needed; built entirely from shapes. */
