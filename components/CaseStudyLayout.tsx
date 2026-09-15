@@ -571,8 +571,8 @@ export default function CaseStudyLayout({ caseStudy, slug }: CaseStudyLayoutProp
                 />
               )}
 
-              {/* Visual Content Area - Hidden for strategy, constraints, tradeoffs, context-problem, turning-point, snapshot, problem, research, and reflection sections, and for sections that already embed real media via customComponent */}
-              {!section.customComponent && section.id !== 'strategy' && section.id !== 'constraints' && section.id !== 'tradeoffs' && section.id !== 'context-problem' && section.id !== 'turning-point' && section.id !== 'snapshot' && section.id !== 'problem' && section.id !== 'research' && section.id !== 'reflection' && section.id !== 'market' && section.id !== 'truemedia' && section.id !== 'feature-index' && section.id !== 'impact' && section.id !== 'testing' && (
+              {/* Visual Content Area - Hidden for strategy, constraints, tradeoffs, context-problem, turning-point, snapshot, problem, research, reflection, and started sections, and for sections that already embed real media via customComponent */}
+              {!section.customComponent && section.id !== 'strategy' && section.id !== 'constraints' && section.id !== 'tradeoffs' && section.id !== 'context-problem' && section.id !== 'turning-point' && section.id !== 'snapshot' && section.id !== 'problem' && section.id !== 'research' && section.id !== 'reflection' && section.id !== 'market' && section.id !== 'truemedia' && section.id !== 'feature-index' && section.id !== 'impact' && section.id !== 'testing' && section.id !== 'started' && (
                 <div style={{
                   width: '100%',
                   minHeight: '500px',
