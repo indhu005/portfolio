@@ -89,6 +89,12 @@ a:active {
   display: block;
 }
 
+/* Site-wide safety net: no image or video should ever be wider than its
+   container, even ones added later without an explicit responsive style. */
+img, video {
+  max-width: 100%;
+}
+
 /* Case study body is raw HTML per case study, so multi-column grids are
    hardcoded inline styles that can't read the isMobile breakpoint. Force
    any such grid to a single column on mobile so it reflows instead of
@@ -418,6 +424,22 @@ a:active {
 @media (max-width: 640px) {
   .metrics-grid {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  .metrics-num {
+    font-size: 22px;
+  }
+
+  .metrics-cell--hero .metrics-num {
+    font-size: 34px;
+  }
+
+  .metrics-label {
+    font-size: 10px;
+  }
+
+  .metrics-cell--hero .metrics-label {
+    font-size: 11px;
   }
 }
 

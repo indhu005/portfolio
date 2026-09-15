@@ -27,9 +27,9 @@ const caseStudies = {
         title: '01 — Snapshot',
         content: `<p><span style="font-weight: 600;">Product</span><br/>A credit-based marketplace for flexible access to premium tools — Grammarly, Adobe, Otter.ai, MasterClass, Crunchbase, and 150+ others — without long-term subscriptions. ClassPass for digital tools.</p>
 
-<p style="margin-top: 28px;"><span style="font-weight: 600;">My role.</span> Founding (and for most of Keye's life, only) designer. Founders set product vision and fundraising strategy; the PM and I turned it into what shipped. I designed every surface — web, mobile web, Chrome extension — wrote PRDs, ran research, and hired the two designers who replaced me.</p>
+<p style="margin-top: 28px;"><span style="font-weight: 600;">My role.</span> Founding (and for most of Keye's life, only) designer. Founders set vision and fundraising; the PM and I turned it into what shipped — I designed every surface, wrote PRDs, ran research, and hired the two designers who replaced me.</p>
 
-<p style="margin-top: 28px;"><span style="font-weight: 600;">Timeline.</span> 2 years (2021–2022): beta to credit system to marketplace to extension to seed funding. After the founding team dispersed, the company pivoted into YC W2024 on the traction we built.</p>
+<p style="margin-top: 28px;"><span style="font-weight: 600;">Timeline.</span> 2 years (2021–2022): beta to credit system to marketplace to extension to seed funding. After the team dispersed, the company pivoted into YC W2024 on the traction we built.</p>
 
 <h4 class="case-study-subhead">Impact</h4>
 
@@ -68,13 +68,29 @@ const caseStudies = {
     <span>Featured in Forbes, BulletPitch, UPenn Venture Lab</span><span class="metrics-sep">·</span>
     <span>Accepted to YC W2024</span>
   </div>
+</div>
+
+<div class="cs-video-wrap" style="width: 100%; max-width: 960px; margin: 0 auto 8px; overflow: hidden;">
+  <video data-scroll-autoplay loop muted playsinline preload="metadata" width="2304" height="1440" aria-label="Screen recording overview of the Keye product" style="display: block; width: calc(100% + 4px); height: auto; margin-left: -4px; border-radius: 0px;">
+    <source src="/videos/Keye/Snapshot%2001%20video.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+  <button type="button" class="cs-video-toggle" aria-label="Pause video" onclick="var v=this.previousElementSibling;if(v.paused){v.play();this.textContent='⏸';this.setAttribute('aria-label','Pause video');}else{v.pause();this.textContent='▶';this.setAttribute('aria-label','Play video');}">⏸</button>
 </div>`
       },
       {
         id: 'context-problem',
         title: '02 — The Problem',
-        headline: 'Premium tools were priced for committed subscribers, not curious explorers',
-        content: `<p>Users created fake emails for free trials, shared passwords in friend groups, even paid for a VPN to unlock cheaper regional pricing. Premium tools like Grammarly ($180/year) and Crunchbase ($600) were priced for committed subscribers, not curious explorers.</p>
+        headline: 'People were faking emails, sharing passwords, even paying for VPNs just to try a tool before committing to it',
+        content: `<p>Users created fake emails for free trials, shared passwords in friend groups, even paid for a VPN for cheaper regional pricing. Premium tools were priced for committed subscribers, not curious explorers.</p>
+
+<div class="cs-video-wrap" style="width: 100%; max-width: 960px; margin: 40px auto 40px; position: relative; overflow: hidden; aspect-ratio: 2304 / 432;">
+  <video data-scroll-autoplay loop muted playsinline preload="metadata" width="2304" height="1440" aria-label="Screen recording of the Keye paywall" style="position: absolute; top: 0; left: 0; width: 100%; height: auto; transform: translateY(-70%); border-radius: 0px;">
+    <source src="/videos/Keye/Paywall%20video.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+  <button type="button" class="cs-video-toggle" aria-label="Pause video" onclick="var v=this.previousElementSibling;if(v.paused){v.play();this.textContent='⏸';this.setAttribute('aria-label','Pause video');}else{v.pause();this.textContent='▶';this.setAttribute('aria-label','Play video');}">⏸</button>
+</div>
 
 <div style="display: flex; gap: 24px; margin-top: 48px; margin-bottom: 8px; flex-wrap: wrap;">
   <div style="flex: 1; min-width: 250px; position: relative;">
@@ -85,19 +101,25 @@ const caseStudies = {
   </div>
 </div>
 
-<img loading="lazy" decoding="async" src="/images/keye/Sharing%20Subscription.webp" alt="Screenshots of real group chat conversations across UPenn — students splitting and sharing subscription costs for MasterClass, Crunchbase, Grammarly, and streaming services" style="width: 100%; border-radius: 0px; margin-top: 40px; margin-bottom: 16px; display: block;" />
-
-<div style="font-size: 13px; color: #9CA3AF; margin-bottom: 40px;">Snippets from real conversations across UPenn.</div>
+<div style="display: flex; gap: 32px; margin-top: 48px; margin-bottom: 8px; flex-wrap: wrap; align-items: center;">
+  <div style="flex: 1; min-width: 280px;">
+    <img loading="lazy" decoding="async" src="/images/keye/Sharing%20Subscription.jpg" alt="Screenshots of real group chat conversations across UPenn — students splitting and sharing subscription costs for MasterClass, Crunchbase, and Grammarly" style="width: 100%; border-radius: 0px; display: block;" />
+    <div style="font-size: 13px; color: #9CA3AF; margin-top: 8px;">Snippets from real conversations across UPenn.</div>
+  </div>
+  <div style="flex: 1; min-width: 280px;">
+    <p>This wasn't rare. Group chats across campus were full of people splitting subscriptions, hunting for discount codes, asking if anyone had a shared login. The behavior already existed — Keye just gave it a legitimate home.</p>
+  </div>
+</div>
 
 <p style="margin-top: 48px;">ClassPass proved flexible multi-provider access worked; Apple One bundled someone else's services. Neither filled the gap between free trial and full subscription — that gap was Keye's opportunity.</p>`
       },
       {
         id: 'started',
-        title: '03 — Where I Started: Evidence over Instinct',
-        headline: "My job wasn't to execute the founders' instincts but to introduce user evidence into a team moving on momentum",
-        content: `<p>My first task was the purchase flow. Founders had baked in mandatory consent and a feedback survey at checkout — completion dropped 30% there. I moved consent to signup and tested the survey in three placements: email (80% ignored), in-checkout (confused buyers), and a post-access popup, which worked because users had just used the product. Drop-off fell 20% in one sprint.</p>
+        title: '03 — Evidence Over Instinct',
+        headline: "The founders were moving fast on instinct. I slowed things down just enough to check if the instinct was right",
+        content: `<p>My first task was the purchase flow. Founders had baked in mandatory consent and a feedback survey at checkout — completion dropped 30% there. I moved consent to signup and tested the survey in three placements; only the post-access popup worked, because users had just used the product. Drop-off fell 20% in one sprint.</p>
 
-<p style="margin-top: 28px;">The hardest call was removing product descriptions after testing showed users scanning, not reading. I led with imagery and a side-by-side price comparison, pre-selecting Keye — some users then bought full subscriptions through us, a behavior we hadn't designed for but kept.</p>
+<p style="margin-top: 28px;">The hardest call was removing product descriptions once testing showed users scanning, not reading. I led with imagery and a side-by-side comparison, pre-selecting Keye — some users then bought full subscriptions through us, a behavior we hadn't planned for but kept.</p>
 
 <div class="pull-quote" style="margin-top: 28px;">On a seed-stage startup budget, I worked by signal saturation: once the same friction appeared across five or six users, it was real enough to act on.</div>`
       },
@@ -140,7 +162,7 @@ const caseStudies = {
     <div class="feature-stat-label">Lesser-known product activity, six weeks after the 200-credit cap shipped</div>
   </div>
 
-  <p>Founders needed monetization before runway ran out — that direction was theirs. What shipped was five real pricing models in ten months, each one killed by evidence the PM and I brought back from users, not opinion.</p>
+  <p>Founders needed monetization before runway ran out — that direction was theirs. What shipped was five pricing models in ten months, each one killed by user evidence, not opinion.</p>
 
   <div class="feature-note"><span class="feature-note-label">Direction</span> Founders proposed a flat 10% fee. Survey data I ran said users would pay 5–6%, not 10% — the cap that eventually shipped came from closing that gap with them, not overriding it.</div>
 
@@ -183,7 +205,7 @@ const caseStudies = {
     <div class="feature-stat-label">Features shipped on this one component, zero redesigns needed</div>
   </div>
 
-  <p>Six versions, because every other system eventually had to live inside this one card — from an inherited layout with no system to a mobile design system reused for the Chrome extension. Engineering kept asking one question: <em>can this be a state of the existing component, not a new one?</em> That constraint, not a personal design philosophy, is what kept the card reducing instead of sprawling.</p>
+  <p>Six versions, because every other feature eventually had to live inside this one card — from an inherited layout with no system to a mobile system reused for the extension. Engineering's constant question — <em>can this be a state of the existing component, not a new one?</em> — is what kept it reducing instead of sprawling.</p>
 
   <div class="feature-note"><span class="feature-note-label">Constraint</span> Frontend engineering was 12 hours away in Asia — every new state had to be justified before a single ticket got written, or it wouldn't ship for days.</div>
 
@@ -232,7 +254,7 @@ const caseStudies = {
     <div class="feature-stat-label">Of users on the extension by the time I left — the fix for an 18-month-old unsolved problem</div>
   </div>
 
-  <p>Partner integrations were the founders' original plan — the roadmap called for each partner to build against our API. Then our technical co-founder left, taking backend capacity with him, and that plan stopped being possible. Watching Honey auto-fill codes at checkout, I saw a fix that needed no partner engineering at all — the breakthrough was recognizing we should live where the user already is. Prototyped in two days, shipped that week with the remaining team.</p>
+  <p>Partner integrations were the founders' original plan — each partner would build against our API. Then our technical co-founder left, taking backend capacity with him, and that plan stopped being possible. Watching Honey auto-fill codes at checkout, I realized we didn't need partner engineering at all — just to live where the user already is. Prototyped in two days, shipped that week.</p>
 
   <div class="feature-note"><span class="feature-note-label">Constraint</span> No backend engineer left on the team after the co-founder's exit — whatever shipped next had to be entirely client-side.</div>
 
@@ -265,7 +287,7 @@ const caseStudies = {
 <div style="display: grid; grid-template-columns: 1fr; gap: 28px; margin-top: 32px;">
   <div>
     <div class="cs-card-title">The GIF Decision</div>
-    <div style="font-size: 15px; color: #57534E; line-height: 1.6;">I wanted animated onboarding characters; engineering flagged performance. I brought evidence on Lottie's lightweight format — we learned it together, and a better solution won over either original position.</div>
+    <div style="font-size: 15px; color: #57534E; line-height: 1.6;">I wanted animated onboarding characters; engineering flagged performance. I brought evidence on Lottie's lightweight format, and a better solution won over either original position.</div>
   </div>
 
   <div>
@@ -290,11 +312,11 @@ const caseStudies = {
         id: 'impact',
         title: '06 — Impact & Reflection',
         headline: "The most important thing a founding designer builds isn't the product. It's the foundation that lets the product grow without being rebuilt from scratch",
-        content: `<p>By year three, the founding team dispersed. The company pivoted into YC W2024 on financial analytics — the marketplace didn't survive, but the research, partnerships, and funding that made YC possible came from what we built.</p>
+        content: `<p>By year three, the founding team dispersed. The company pivoted into YC W2024 on financial analytics — the marketplace didn't survive, but the research, partnerships, and funding that made YC possible did.</p>
 
 <div class="pull-quote" style="margin-top: 48px;">The credit cap wasn't valuable because it monetized the product. It was valuable because it generated the behavioral data that shaped the entire partnership strategy.</div>
 
-<p style="margin-top: 48px;">Keye compressed the feedback loop between decision and consequence from months to days. It taught me to treat every decision as a hypothesis — the ones I confirmed without testing were the ones that broke in production.</p>`
+<p style="margin-top: 48px;">Keye compressed the feedback loop between decision and consequence from months to days — and taught me to treat every decision as a hypothesis. The ones I never tested were the ones that broke in production.</p>`
       },
     ]
   },

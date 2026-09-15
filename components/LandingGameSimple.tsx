@@ -318,8 +318,11 @@ export default function LandingGameSimple() {
 
     const spawnTruck = () => {
       const cols = isMobile ? GRID_COLS_MOBILE : GRID_COLS_DESKTOP
-      const cellSize = isMobile ? 48 : 80
-      const gap = isMobile ? 8 : 16
+      // Must match the render-time cellSize/gap below exactly, or trucks
+      // spawn/travel using a wider grid than what's actually drawn and
+      // end up rendered off the edge of the (narrower) real grid.
+      const cellSize = isMobile ? 48 : isTablet ? 64 : (typeof window !== 'undefined' && window.innerWidth >= 1800 ? 120 : 100)
+      const gap = isMobile ? 8 : isTablet ? 12 : 16
 
       // Exclude top row on tablet to prevent overlap with instruction text
       const minRow = isTablet ? 1 : 0

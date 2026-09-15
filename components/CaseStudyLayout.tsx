@@ -74,6 +74,34 @@ export default function CaseStudyLayout({ caseStudy, slug }: CaseStudyLayoutProp
     }
   }, [])
 
+  // Videos marked data-scroll-autoplay only start playing once they scroll
+  // into view (and pause once they scroll out), instead of autoplaying
+  // immediately on page load.
+  useEffect(() => {
+    const root = contentRef.current
+    if (!root) return
+
+    const videos = root.querySelectorAll<HTMLVideoElement>('video[data-scroll-autoplay]')
+    if (videos.length === 0) return
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          const video = entry.target as HTMLVideoElement
+          if (entry.isIntersecting) {
+            video.play().catch(() => {})
+          } else {
+            video.pause()
+          }
+        })
+      },
+      { root, threshold: 0.3 }
+    )
+
+    videos.forEach((video) => observer.observe(video))
+    return () => observer.disconnect()
+  }, [caseStudy.sections])
+
   useEffect(() => {
     let ticking = false
 
