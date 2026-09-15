@@ -226,7 +226,7 @@ const caseStudies = {
       <p class="cs-tab-caption"><b>200/mo cap.</b> Capping credits at 200 a month is what pushed lesser-known product activity from 1–2% to 30–35% within six weeks — scarcity nudged people toward products they'd have otherwise skipped.</p>
     </div>
     <div class="cs-tab-panel" data-panel="v5">
-      <img src="/images/keye/credit-system-v5.webp" alt="v5 tiered plans" style="max-width: 620px; margin: 0 0 16px 20px; display: block;">
+      <img src="/images/keye/credit-system-v5.webp" alt="v5 tiered plans" style="max-width: 620px; margin: 0 auto 16px; display: block;">
       <p class="cs-tab-caption"><b>Tiered plans.</b> The cap worked, but power users wanted more headroom — tiered plans let them buy up without breaking the scarcity effect for everyone else.</p>
     </div>
   </div>
