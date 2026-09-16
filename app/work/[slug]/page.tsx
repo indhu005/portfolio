@@ -199,7 +199,7 @@ const caseStudies = {
 <div id="credit-system" class="feature-block">
   <div class="feature-eyebrow">Feature 01</div>
   <h4 class="feature-heading">The Credit System</h4>
-  <p class="feature-subheadline">Designed with the founders and PM, proven by users — five pricing models in ten months</p>
+  <p class="feature-subheadline">Partnering with the founders and PM to turn their pricing direction into something users actually kept — five models in ten months</p>
 
   <div class="cs-tabs">
     <div class="cs-tabs-nav">
@@ -236,9 +236,9 @@ const caseStudies = {
     <div class="feature-stat-label">Lesser-known product activity, six weeks after the 200-credit cap shipped</div>
   </div>
 
-  <p>Founders needed monetization before runway ran out — that direction was theirs. What shipped was five pricing models in ten months, each one killed by user evidence, not opinion.</p>
+  <p>Founders needed monetization before runway ran out — that direction was theirs. My role was to help them get there faster: testing each pricing model against real usage and feeding what we learned back into the next version, together. Five pricing models shipped in ten months, each one a step closer to what users would actually stick with.</p>
 
-  <div class="feature-note"><span class="feature-note-label">Direction</span> Founders proposed a flat 10% fee. Survey data I ran said users would pay 5–6%, not 10% — the cap that eventually shipped came from closing that gap with them, not overriding it.</div>
+  <div class="feature-note"><span class="feature-note-label">Direction</span> Founders proposed a flat 10% fee. Survey data I ran pointed to something closer to 5–6% — closing that gap together is what shaped the cap that eventually shipped.</div>
 
   <div class="feature-chip-row">
     <span class="feature-chip"><b>v1</b> Free</span>
@@ -248,14 +248,27 @@ const caseStudies = {
     <span class="feature-chip"><b>v5</b> Tiered plans</span>
   </div>
 
-  <div class="pull-quote">We didn't design the credit system. We discovered it — together, one killed model at a time.</div>
+  <div class="pull-quote">Every version of the credit system came from testing with the founders — five models, one team, ten months of learning together.</div>
 
-  <div class="cs-video-wrap" style="width: 100%; margin: 40px auto; overflow: hidden;">
-    <video autoplay loop muted playsinline preload="metadata" width="2560" height="1440" aria-label="Screen recording of the v4 low-credit pop-up and notification" style="display: block; width: 100%; height: auto; transform: scale(1.35); transform-origin: top center;">
-      <source src="/videos/Keye/Credit%20system%20video.mp4" type="video/mp4">
-      Your browser does not support the video tag.
-    </video>
-    <button type="button" class="cs-video-toggle" aria-label="Pause video" onclick="var v=this.previousElementSibling;if(v.paused){v.play();this.textContent='⏸';this.setAttribute('aria-label','Pause video');}else{v.pause();this.textContent='▶';this.setAttribute('aria-label','Play video');}">⏸</button>
+  <div class="cs-laptop-mockup" style="margin: 40px auto; max-width: 960px;">
+    <div class="cs-laptop-lid">
+      <div class="cs-laptop-camera"></div>
+      <div class="cs-laptop-screen">
+        <div class="cs-browser-chrome">
+          <div class="cs-browser-dots"><span></span><span></span><span></span></div>
+          <div class="cs-browser-url">🔒 unlockkeye.com</div>
+        </div>
+        <div class="cs-video-wrap" style="width: 100%; margin: 0; overflow: hidden; aspect-ratio: 16 / 10;">
+          <video autoplay loop muted playsinline preload="metadata" width="1620" height="1440" aria-label="Screen recording of the v4 low-credit pop-up and notification" style="display: block; width: 100%; height: auto; position: absolute; top: 0; left: 0;">
+            <source src="/videos/Keye/Credit%20system%20video%20cropped.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+          <button type="button" class="cs-video-toggle" aria-label="Pause video" onclick="var v=this.previousElementSibling;if(v.paused){v.play();this.textContent='⏸';this.setAttribute('aria-label','Pause video');}else{v.pause();this.textContent='▶';this.setAttribute('aria-label','Play video');}">⏸</button>
+        </div>
+      </div>
+    </div>
+    <div class="cs-laptop-hinge"></div>
+    <div class="cs-laptop-base"><div class="cs-laptop-notch"></div></div>
   </div>
 
   <div style="border-left: 3px solid #E7E5E4; padding-left: 16px; font-size: 13px; color: #78716C; line-height: 1.6;">
