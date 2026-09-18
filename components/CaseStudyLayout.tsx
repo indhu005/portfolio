@@ -51,6 +51,7 @@ interface CaseStudy {
   brief?: BriefData
   sections: Section[]
   heroImage?: string
+  heroVideo?: string
   figmaPrototypeUrl?: string
 }
 
@@ -298,9 +299,43 @@ export default function CaseStudyLayout({ caseStudy, slug }: CaseStudyLayoutProp
                 marginRight: 'auto',
               }}
             >
-              {/* Hero Image for first section (Snapshot) */}
+              {/* Hero Video/Image for first section (Snapshot) */}
               {index === 0 && (
-                caseStudy.heroImage ? (
+                caseStudy.heroVideo ? (
+                  <div
+                    className="cs-laptop-mockup"
+                    style={{
+                      width: '100%',
+                      maxWidth: isMobile || isTablet ? '850px' : '1020px',
+                      marginBottom: '50px',
+                      marginLeft: 'auto',
+                      marginRight: 'auto',
+                    }}
+                  >
+                    <div className="cs-laptop-lid">
+                      <div className="cs-laptop-camera"></div>
+                      <div className="cs-laptop-screen">
+                        <div className="cs-browser-chrome">
+                          <div className="cs-browser-dots"><span></span><span></span><span></span></div>
+                          <div className="cs-browser-url">🔒 unlockkeye.com</div>
+                        </div>
+                        <video
+                          autoPlay
+                          loop
+                          muted
+                          playsInline
+                          preload="metadata"
+                          aria-label={`${caseStudy.title} hero`}
+                          style={{ display: 'block', width: '100%', height: 'auto' }}
+                        >
+                          <source src={caseStudy.heroVideo} type="video/mp4" />
+                        </video>
+                      </div>
+                    </div>
+                    <div className="cs-laptop-hinge"></div>
+                    <div className="cs-laptop-base"><div className="cs-laptop-notch"></div></div>
+                  </div>
+                ) : caseStudy.heroImage ? (
                   <img
                     src={caseStudy.heroImage}
                     alt={`${caseStudy.title} hero`}

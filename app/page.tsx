@@ -265,7 +265,7 @@ export default function Home() {
               <article style={{
                 display: 'flex',
                 flexDirection: 'column',
-                border: '1px solid #E5E7EB',
+                border: '1.5px solid #D6D3D1',
                 padding: isMobile ? '24px' : isWideDesktop ? '48px' : '40px',
                 backgroundColor: '#FFFFFF',
               }}>
@@ -463,7 +463,7 @@ export default function Home() {
               <article style={{
                 display: 'flex',
                 flexDirection: 'column',
-                border: '1px solid #E5E7EB',
+                border: '1.5px solid #D6D3D1',
                 padding: isMobile ? '24px' : isWideDesktop ? '48px' : '40px',
                 backgroundColor: '#FFFFFF',
               }}>
@@ -588,7 +588,7 @@ export default function Home() {
                   ]}
                 />
 
-                {/* Large Image Placeholder */}
+                {/* Landing hero image */}
                 <a
                   href="/work/keye"
                   style={{
@@ -596,6 +596,40 @@ export default function Home() {
                     width: isMobile ? '100%' : 'calc(100% - 56px)',
                     marginLeft: isMobile ? 0 : '56px',
                     marginTop: isMobile ? '24px' : '32px',
+                    textDecoration: 'none',
+                    cursor: 'pointer',
+                  }}
+                >
+                  <img
+                    src="/images/home/keye-landing-hero.webp"
+                    alt="Keye landing page hero"
+                    loading="lazy"
+                    style={{
+                      width: '100%',
+                      height: 'auto',
+                      display: 'block',
+                      borderRadius: '0px',
+                      transition: 'transform 0.3s ease, box-shadow 0.3s ease',
+                    }}
+                    onMouseEnter={(e) => {
+                      e.currentTarget.style.transform = 'translateY(-4px)'
+                      e.currentTarget.style.boxShadow = '0 12px 40px rgba(0, 0, 0, 0.12)'
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.style.transform = 'translateY(0)'
+                      e.currentTarget.style.boxShadow = 'none'
+                    }}
+                  />
+                </a>
+
+                {/* Large Image Placeholder */}
+                <a
+                  href="/work/keye"
+                  style={{
+                    display: 'block',
+                    width: isMobile ? '100%' : 'calc(100% - 56px)',
+                    marginLeft: isMobile ? 0 : '56px',
+                    marginTop: isMobile ? '16px' : '20px',
                     textDecoration: 'none',
                     cursor: 'pointer',
                   }}
@@ -677,7 +711,7 @@ export default function Home() {
               <article style={{
                 display: 'flex',
                 flexDirection: 'column',
-                border: '1px solid #E5E7EB',
+                border: '1.5px solid #D6D3D1',
                 padding: isMobile ? '24px' : isWideDesktop ? '48px' : '40px',
                 backgroundColor: '#FFFFFF',
               }}>

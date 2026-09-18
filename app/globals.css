@@ -310,6 +310,380 @@ img, video {
   font-weight: 600;
 }
 
+/* Credit System version-progression stages (Feature 01) — full-width, editorial */
+.cs-stage {
+  margin-bottom: 56px;
+}
+
+.cs-stage-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 12px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #78716C;
+}
+
+.cs-stage-tag {
+  font-weight: 500;
+  letter-spacing: 0;
+  text-transform: none;
+  color: #A8A29E;
+  white-space: nowrap;
+}
+
+.cs-stage-img {
+  width: 100%;
+  display: block;
+  margin: 0 0 18px;
+  border: 1px solid #E7E5E4;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.cs-stage-img:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 28px rgba(28, 25, 23, 0.1);
+}
+
+.cs-stage p {
+  margin: 0;
+}
+
+/* Mechanism diagram — Uncapped -> Cap -> Result */
+.cs-mechanism-row {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr auto 1fr;
+  gap: 16px;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.cs-mechanism-cell {
+  border: 1px solid #E7E5E4;
+  padding: 22px 20px;
+  text-align: center;
+}
+
+.cs-mechanism-cell--dark {
+  border-color: #1C1917;
+  background: #1C1917;
+}
+
+.cs-mechanism-label {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #78716C;
+  margin-bottom: 10px;
+}
+
+.cs-mechanism-cell--dark .cs-mechanism-label {
+  color: #A8A29E;
+}
+
+.cs-mechanism-body {
+  font-size: 14.5px;
+  line-height: 1.5;
+  color: #333333;
+}
+
+.cs-mechanism-cell--dark .cs-mechanism-body {
+  color: #FFFFFF;
+}
+
+.cs-mechanism-arrow {
+  font-size: 18px;
+  color: #C4C4C4;
+  text-align: center;
+}
+
+@media (max-width: 720px) {
+  .cs-mechanism-row {
+    grid-template-columns: 1fr;
+  }
+
+  .cs-mechanism-arrow {
+    transform: rotate(90deg);
+  }
+
+  .cs-stage-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+  }
+}
+
+/* Product Card version-progression stages (Feature 02) */
+.pc-stage {
+  margin-bottom: 76px;
+}
+
+.pc-stage-label {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #78716C;
+  margin-bottom: 14px;
+}
+
+.pc-stage p {
+  margin-top: 12px;
+}
+
+.pc-crop-img {
+  width: 60%;
+  display: block;
+  margin: 28px auto 36px;
+  border: 1px solid #E7E5E4;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.pc-crop-img:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 28px rgba(28, 25, 23, 0.1);
+}
+
+@media (max-width: 767px) {
+  .pc-crop-img {
+    width: 100%;
+  }
+}
+
+.pc-phone-mockup {
+  width: 60%;
+  display: block;
+  margin: 28px auto 36px;
+  transition: transform 0.25s ease;
+}
+
+.pc-phone-mockup:hover {
+  transform: translateY(-3px);
+}
+
+@media (max-width: 767px) {
+  .pc-phone-mockup {
+    width: 100%;
+  }
+}
+
+.pc-stage-title {
+  font-size: 17px;
+  font-weight: 700;
+  color: #1C1917;
+  line-height: 1.4;
+  margin-bottom: 12px;
+}
+
+.pc-considered {
+  display: flex;
+  gap: 10px;
+  margin-top: 18px;
+  padding: 14px 16px;
+  border: 1px dashed #D6D3D1;
+  font-size: 13.5px;
+  color: #57534E;
+  line-height: 1.6;
+}
+
+.pc-considered b {
+  color: #1C1917;
+}
+
+/* Annotated card breakdown */
+.pc-annotated-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 40px;
+  align-items: start;
+  margin: 32px 0 48px;
+}
+
+.pc-annotated-img-wrap {
+  position: relative;
+  width: 100%;
+}
+
+.pc-annotated-img-wrap img {
+  width: 100%;
+  display: block;
+  border: 1px solid #E7E5E4;
+}
+
+.pc-dot {
+  position: absolute;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: #1C1917;
+  color: #FFFFFF;
+  font-size: 13px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: translate(-50%, -50%);
+}
+
+.pc-annotated-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.pc-annotated-item {
+  display: flex;
+  gap: 14px;
+}
+
+.pc-dot-inline {
+  min-width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: #1C1917;
+  color: #FFFFFF;
+  font-size: 13px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.pc-annotated-item p {
+  font-size: 15px;
+  line-height: 1.5;
+  color: #333333;
+  margin: 0;
+}
+
+@media (max-width: 767px) {
+  .pc-annotated-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Metrics strip - 4-up bordered grid, reuses feature-stat-num/label */
+.pc-metrics-strip {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1px;
+  background: #E7E5E4;
+  border: 1px solid #E7E5E4;
+  margin: 32px 0 56px;
+}
+
+.pc-metrics-cell {
+  background: #FFFFFF;
+  padding: 28px 20px;
+}
+
+@media (max-width: 640px) {
+  .pc-metrics-strip {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Cross-version pattern callout box */
+.pc-patterns {
+  background: #FAFAF9;
+  border: 1px solid #EEECE7;
+  padding: 32px 36px;
+  margin-bottom: 56px;
+}
+
+.pc-patterns-title {
+  font-size: 17px;
+  font-weight: 700;
+  color: #1C1917;
+  margin-bottom: 18px;
+}
+
+.pc-patterns-item {
+  font-size: 15px;
+  line-height: 1.6;
+  color: #333333;
+  margin-bottom: 14px;
+}
+
+.pc-patterns-item:last-child {
+  margin-bottom: 0;
+}
+
+/* Closing phone mockup + marketing carousel (end of case study) */
+.keye-closing-phone {
+  width: 100%;
+  display: block;
+  margin: 56px auto 64px;
+}
+
+/* Standout marketing photo — breaks the text rhythm, but stays within the text column */
+.keye-standout-figure {
+  width: 100%;
+  margin: 0 0 48px;
+}
+
+.keye-standout-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.keye-standout-img:hover {
+  transform: scale(1.01);
+}
+
+.keye-standout-caption {
+  font-size: 13px;
+  color: #78716C;
+  text-align: center;
+  margin-top: 14px;
+}
+
+.keye-marketing-carousel {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding: 4px 4px 16px;
+  margin: 0 0 24px;
+  -webkit-overflow-scrolling: touch;
+}
+
+.keye-marketing-carousel::-webkit-scrollbar {
+  height: 6px;
+}
+
+.keye-marketing-carousel::-webkit-scrollbar-thumb {
+  background: #E7E5E4;
+  border-radius: 3px;
+}
+
+.keye-marketing-carousel img {
+  flex: 0 0 auto;
+  width: 340px;
+  height: auto;
+  scroll-snap-align: start;
+  border: 1px solid #E7E5E4;
+  display: block;
+}
+
+@media (max-width: 640px) {
+  .keye-marketing-carousel img {
+    width: 260px;
+  }
+}
+
+.pc-patterns-item b {
+  color: #1C1917;
+}
+
 /* Feature overview index - jump grid at top of the features block */
 .feature-index {
   display: grid;
@@ -688,6 +1062,11 @@ img, video {
 .cs-laptop-mockup {
   max-width: 880px;
   margin: 0 auto;
+  transition: transform 0.3s ease;
+}
+
+.cs-laptop-mockup:hover {
+  transform: translateY(-4px);
 }
 
 .cs-laptop-lid {
