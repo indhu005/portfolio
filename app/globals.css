@@ -337,9 +337,9 @@ img, video {
 }
 
 .cs-stage-img {
-  width: 100%;
+  width: 75%;
   display: block;
-  margin: 0 0 18px;
+  margin: 0 auto 18px;
   border: 1px solid #E7E5E4;
   transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
@@ -347,6 +347,12 @@ img, video {
 .cs-stage-img:hover {
   transform: translateY(-3px);
   box-shadow: 0 14px 28px rgba(28, 25, 23, 0.1);
+}
+
+@media (max-width: 767px) {
+  .cs-stage-img {
+    width: 100%;
+  }
 }
 
 .cs-stage p {
@@ -437,7 +443,7 @@ img, video {
 }
 
 .pc-crop-img {
-  width: 60%;
+  width: 75%;
   display: block;
   margin: 28px auto 36px;
   border: 1px solid #E7E5E4;
@@ -456,7 +462,7 @@ img, video {
 }
 
 .pc-phone-mockup {
-  width: 60%;
+  width: 75%;
   display: block;
   margin: 28px auto 36px;
   transition: transform 0.25s ease;

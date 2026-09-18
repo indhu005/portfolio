@@ -520,12 +520,7 @@ const caseStudies = {
         id: 'impact',
         title: '06 — Impact & Reflection',
         headline: "The most important thing a founding designer builds isn't the product. It's the foundation that lets the product grow without being rebuilt from scratch",
-        content: `<figure class="keye-standout-figure">
-  <img class="keye-standout-img" loading="lazy" decoding="async" src="/images/keye/marketing-01.webp" alt="A Keye ad on a subway platform billboard — 'It's not a food delivery ad, but something better.'">
-  <figcaption class="keye-standout-caption">The idea made it off the screen — a Keye ad running in transit, three years after three static cards.</figcaption>
-</figure>
-
-<p>By year three, the founding team dispersed. The company pivoted into YC W2024 on financial analytics — the marketplace didn't survive, but the research, partnerships, and funding that made YC possible did.</p>
+        content: `<p>By year three, the founding team dispersed. The company pivoted into YC W2024 on financial analytics — the marketplace didn't survive, but the research, partnerships, and funding that made YC possible did.</p>
 
 <div class="pull-quote" style="margin-top: 48px;">The credit cap wasn't valuable because it monetized the product. It was valuable because it generated the behavioral data that shaped the entire partnership strategy.</div>
 

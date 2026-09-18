@@ -351,23 +351,23 @@ export default function Home() {
                         display: 'inline-flex',
                         alignItems: 'center',
                         gap: '8px',
-                        fontSize: '14.5px',
+                        fontSize: '14px',
                         fontWeight: 600,
-                        color: '#1C1917',
+                        color: '#FFFFFF',
+                        backgroundColor: '#D9662B',
                         textDecoration: 'none',
-                        paddingTop: '10px',
-                        paddingBottom: '2px',
+                        padding: '10px 18px',
+                        borderRadius: '999px',
                         flexShrink: 0,
-                        borderBottom: '1px solid transparent',
-                        transition: 'border-color 0.2s ease',
+                        transition: 'background-color 0.2s ease',
                       }}
                       onMouseEnter={(e) => {
-                        e.currentTarget.style.borderBottomColor = '#1C1917'
+                        e.currentTarget.style.backgroundColor = '#C2571F'
                         const svg = e.currentTarget.querySelector('svg')
                         if (svg) svg.style.transform = 'translateX(4px)'
                       }}
                       onMouseLeave={(e) => {
-                        e.currentTarget.style.borderBottomColor = 'transparent'
+                        e.currentTarget.style.backgroundColor = '#D9662B'
                         const svg = e.currentTarget.querySelector('svg')
                         if (svg) svg.style.transform = 'translateX(0)'
                       }}
@@ -433,21 +433,22 @@ export default function Home() {
                         display: 'inline-flex',
                         alignItems: 'center',
                         gap: '8px',
-                        fontSize: '14.5px',
+                        fontSize: '14px',
                         fontWeight: 600,
-                        color: '#1C1917',
+                        color: '#FFFFFF',
+                        backgroundColor: '#D9662B',
                         textDecoration: 'none',
-                        paddingBottom: '2px',
-                        borderBottom: '1px solid transparent',
-                        transition: 'border-color 0.2s ease',
+                        padding: '10px 18px',
+                        borderRadius: '999px',
+                        transition: 'background-color 0.2s ease',
                       }}
                       onMouseEnter={(e) => {
-                        e.currentTarget.style.borderBottomColor = '#1C1917'
+                        e.currentTarget.style.backgroundColor = '#C2571F'
                         const svg = e.currentTarget.querySelector('svg')
                         if (svg) svg.style.transform = 'translateX(4px)'
                       }}
                       onMouseLeave={(e) => {
-                        e.currentTarget.style.borderBottomColor = 'transparent'
+                        e.currentTarget.style.backgroundColor = '#D9662B'
                         const svg = e.currentTarget.querySelector('svg')
                         if (svg) svg.style.transform = 'translateX(0)'
                       }}
@@ -549,23 +550,23 @@ export default function Home() {
                         display: 'inline-flex',
                         alignItems: 'center',
                         gap: '8px',
-                        fontSize: '14.5px',
+                        fontSize: '14px',
                         fontWeight: 600,
-                        color: '#1C1917',
+                        color: '#FFFFFF',
+                        backgroundColor: '#D9662B',
                         textDecoration: 'none',
-                        paddingTop: '10px',
-                        paddingBottom: '2px',
+                        padding: '10px 18px',
+                        borderRadius: '999px',
                         flexShrink: 0,
-                        borderBottom: '1px solid transparent',
-                        transition: 'border-color 0.2s ease',
+                        transition: 'background-color 0.2s ease',
                       }}
                       onMouseEnter={(e) => {
-                        e.currentTarget.style.borderBottomColor = '#1C1917'
+                        e.currentTarget.style.backgroundColor = '#C2571F'
                         const svg = e.currentTarget.querySelector('svg')
                         if (svg) svg.style.transform = 'translateX(4px)'
                       }}
                       onMouseLeave={(e) => {
-                        e.currentTarget.style.borderBottomColor = 'transparent'
+                        e.currentTarget.style.backgroundColor = '#D9662B'
                         const svg = e.currentTarget.querySelector('svg')
                         if (svg) svg.style.transform = 'translateX(0)'
                       }}
@@ -681,21 +682,22 @@ export default function Home() {
                         display: 'inline-flex',
                         alignItems: 'center',
                         gap: '8px',
-                        fontSize: '14.5px',
+                        fontSize: '14px',
                         fontWeight: 600,
-                        color: '#1C1917',
+                        color: '#FFFFFF',
+                        backgroundColor: '#D9662B',
                         textDecoration: 'none',
-                        paddingBottom: '2px',
-                        borderBottom: '1px solid transparent',
-                        transition: 'border-color 0.2s ease',
+                        padding: '10px 18px',
+                        borderRadius: '999px',
+                        transition: 'background-color 0.2s ease',
                       }}
                       onMouseEnter={(e) => {
-                        e.currentTarget.style.borderBottomColor = '#1C1917'
+                        e.currentTarget.style.backgroundColor = '#C2571F'
                         const svg = e.currentTarget.querySelector('svg')
                         if (svg) svg.style.transform = 'translateX(4px)'
                       }}
                       onMouseLeave={(e) => {
-                        e.currentTarget.style.borderBottomColor = 'transparent'
+                        e.currentTarget.style.backgroundColor = '#D9662B'
                         const svg = e.currentTarget.querySelector('svg')
                         if (svg) svg.style.transform = 'translateX(0)'
                       }}
@@ -784,23 +786,23 @@ export default function Home() {
                         display: 'inline-flex',
                         alignItems: 'center',
                         gap: '8px',
-                        fontSize: '14.5px',
+                        fontSize: '14px',
                         fontWeight: 600,
-                        color: '#1C1917',
+                        color: '#FFFFFF',
+                        backgroundColor: '#D9662B',
                         textDecoration: 'none',
-                        paddingTop: '10px',
-                        paddingBottom: '2px',
+                        padding: '10px 18px',
+                        borderRadius: '999px',
                         flexShrink: 0,
-                        borderBottom: '1px solid transparent',
-                        transition: 'border-color 0.2s ease',
+                        transition: 'background-color 0.2s ease',
                       }}
                       onMouseEnter={(e) => {
-                        e.currentTarget.style.borderBottomColor = '#1C1917'
+                        e.currentTarget.style.backgroundColor = '#C2571F'
                         const svg = e.currentTarget.querySelector('svg')
                         if (svg) svg.style.transform = 'translateX(4px)'
                       }}
                       onMouseLeave={(e) => {
-                        e.currentTarget.style.borderBottomColor = 'transparent'
+                        e.currentTarget.style.backgroundColor = '#D9662B'
                         const svg = e.currentTarget.querySelector('svg')
                         if (svg) svg.style.transform = 'translateX(0)'
                       }}
@@ -882,21 +884,22 @@ export default function Home() {
                         display: 'inline-flex',
                         alignItems: 'center',
                         gap: '8px',
-                        fontSize: '14.5px',
+                        fontSize: '14px',
                         fontWeight: 600,
-                        color: '#1C1917',
+                        color: '#FFFFFF',
+                        backgroundColor: '#D9662B',
                         textDecoration: 'none',
-                        paddingBottom: '2px',
-                        borderBottom: '1px solid transparent',
-                        transition: 'border-color 0.2s ease',
+                        padding: '10px 18px',
+                        borderRadius: '999px',
+                        transition: 'background-color 0.2s ease',
                       }}
                       onMouseEnter={(e) => {
-                        e.currentTarget.style.borderBottomColor = '#1C1917'
+                        e.currentTarget.style.backgroundColor = '#C2571F'
                         const svg = e.currentTarget.querySelector('svg')
                         if (svg) svg.style.transform = 'translateX(4px)'
                       }}
                       onMouseLeave={(e) => {
-                        e.currentTarget.style.borderBottomColor = 'transparent'
+                        e.currentTarget.style.backgroundColor = '#D9662B'
                         const svg = e.currentTarget.querySelector('svg')
                         if (svg) svg.style.transform = 'translateX(0)'
                       }}
