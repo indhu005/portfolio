@@ -1226,32 +1226,22 @@ img, video {
   .cs-changelog-v {
     padding-top: 0;
   }
+}
 
+/* Below desktop, the fixed 220px thumbnail + cover-crop (tuned for a small
+   desktop preview) clips the sides of a wide screenshot — e.g. browser
+   chrome and button text cut off. Stack single-column and show the whole
+   image instead; there's enough vertical room on phone and tablet alike. */
+@media (max-width: 1024px) {
   .cs-changelog-body {
     grid-template-columns: 1fr;
     gap: 10px;
   }
 
-  /* Full-width single-column layout needs the whole screenshot visible —
-     the desktop cover-crop was tuned for the narrow 220px thumbnail column
-     and clips the sides (e.g. browser chrome, button text) at mobile width. */
   .cs-changelog-body img {
     height: auto;
     max-height: none;
     object-fit: contain;
-  }
-}
-
-/* Tablet keeps the 2-column layout, but the fixed 220px thumbnail + cover-crop
-   still clips too much of a wide screenshot — widen the column and ease off
-   the crop so the sides stay visible. */
-@media (min-width: 641px) and (max-width: 1024px) {
-  .cs-changelog-body {
-    grid-template-columns: 1fr 320px;
-  }
-
-  .cs-changelog-body img {
-    max-height: 260px;
   }
 }
 
