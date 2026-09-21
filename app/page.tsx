@@ -1,6 +1,7 @@
 'use client'
 import Sidebar from '@/components/Sidebar'
 import LandingGameSimple from '@/components/LandingGameSimple'
+import { useRouter } from 'next/navigation'
 import { useState, useEffect, type CSSProperties } from 'react'
 
 const useMediaQuery = (query: string) => {
@@ -79,6 +80,7 @@ const TldrStrip = ({ cells, isMobile, isTablet, offset }: { cells: TldrCell[]; i
 }
 
 export default function Home() {
+  const router = useRouter()
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [revealed, setRevealed] = useState(false)
   const isMobile = useMediaQuery('(max-width: 768px)')
@@ -118,9 +120,9 @@ export default function Home() {
             top: '20px',
             left: '20px',
             zIndex: 1000,
-            background: 'rgba(0, 0, 0, 0.6)',
-            backdropFilter: 'blur(8px)',
-            WebkitBackdropFilter: 'blur(8px)',
+            background: 'rgba(28, 25, 23, 0.85)',
+            backdropFilter: 'blur(12px)',
+            WebkitBackdropFilter: 'blur(12px)',
             color: 'white',
             border: '1px solid rgba(255, 255, 255, 0.1)',
             borderRadius: '0px',
@@ -262,7 +264,10 @@ export default function Home() {
               gap: isMobile ? '90px' : isWideDesktop ? '160px' : '130px',
             }}>
               {/* Card 1 - LAT */}
-              <article style={{
+              <article
+                onClick={isMobile ? () => router.push('/work/lat') : undefined}
+                style={{
+                cursor: isMobile ? 'pointer' : 'default',
                 display: 'flex',
                 flexDirection: 'column',
                 border: '1.5px solid #D6D3D1',
@@ -289,8 +294,9 @@ export default function Home() {
                   <div style={{ flex: 1, minWidth: 0 }}>
                     <div style={{
                       display: 'flex',
+                      flexWrap: isMobile ? 'wrap' : 'nowrap',
                       alignItems: 'center',
-                      gap: '10px',
+                      gap: isMobile ? '8px 10px' : '10px',
                       marginBottom: isMobile ? '8px' : '10px',
                     }}>
                       <h3 style={{
@@ -425,20 +431,21 @@ export default function Home() {
                   <div style={{
                     marginTop: '20px',
                     display: 'flex',
-                    justifyContent: 'flex-end',
                   }}>
                     <a
                       href="/work/lat"
                       style={{
-                        display: 'inline-flex',
+                        display: 'flex',
                         alignItems: 'center',
+                        justifyContent: 'center',
                         gap: '8px',
-                        fontSize: '14px',
+                        width: '100%',
+                        fontSize: '15px',
                         fontWeight: 600,
                         color: '#FFFFFF',
                         backgroundColor: '#D9662B',
                         textDecoration: 'none',
-                        padding: '10px 18px',
+                        padding: '14px 18px',
                         borderRadius: '999px',
                         transition: 'background-color 0.2s ease',
                       }}
@@ -461,7 +468,10 @@ export default function Home() {
               </article>
 
               {/* Card 2 - Keye */}
-              <article style={{
+              <article
+                onClick={isMobile ? () => router.push('/work/keye') : undefined}
+                style={{
+                cursor: isMobile ? 'pointer' : 'default',
                 display: 'flex',
                 flexDirection: 'column',
                 border: '1.5px solid #D6D3D1',
@@ -488,8 +498,9 @@ export default function Home() {
                   <div style={{ flex: 1, minWidth: 0 }}>
                     <div style={{
                       display: 'flex',
+                      flexWrap: isMobile ? 'wrap' : 'nowrap',
                       alignItems: 'center',
-                      gap: '10px',
+                      gap: isMobile ? '8px 10px' : '10px',
                       marginBottom: isMobile ? '8px' : '10px',
                     }}>
                       <h3 style={{
@@ -674,20 +685,21 @@ export default function Home() {
                   <div style={{
                     marginTop: '20px',
                     display: 'flex',
-                    justifyContent: 'flex-end',
                   }}>
                     <a
                       href="/work/keye"
                       style={{
-                        display: 'inline-flex',
+                        display: 'flex',
                         alignItems: 'center',
+                        justifyContent: 'center',
                         gap: '8px',
-                        fontSize: '14px',
+                        width: '100%',
+                        fontSize: '15px',
                         fontWeight: 600,
                         color: '#FFFFFF',
                         backgroundColor: '#D9662B',
                         textDecoration: 'none',
-                        padding: '10px 18px',
+                        padding: '14px 18px',
                         borderRadius: '999px',
                         transition: 'background-color 0.2s ease',
                       }}
@@ -710,7 +722,10 @@ export default function Home() {
               </article>
 
               {/* Card 3 - Misinformation Center */}
-              <article style={{
+              <article
+                onClick={isMobile ? () => router.push('/work/misinformation-center') : undefined}
+                style={{
+                cursor: isMobile ? 'pointer' : 'default',
                 display: 'flex',
                 flexDirection: 'column',
                 border: '1.5px solid #D6D3D1',
@@ -737,8 +752,9 @@ export default function Home() {
                   <div style={{ flex: 1, minWidth: 0 }}>
                     <div style={{
                       display: 'flex',
+                      flexWrap: isMobile ? 'wrap' : 'nowrap',
                       alignItems: 'center',
-                      gap: '10px',
+                      gap: isMobile ? '8px 10px' : '10px',
                       marginBottom: isMobile ? '8px' : '10px',
                     }}>
                       <h3 style={{
@@ -876,20 +892,21 @@ export default function Home() {
                   <div style={{
                     marginTop: '20px',
                     display: 'flex',
-                    justifyContent: 'flex-end',
                   }}>
                     <a
                       href="/work/misinformation-center"
                       style={{
-                        display: 'inline-flex',
+                        display: 'flex',
                         alignItems: 'center',
+                        justifyContent: 'center',
                         gap: '8px',
-                        fontSize: '14px',
+                        width: '100%',
+                        fontSize: '15px',
                         fontWeight: 600,
                         color: '#FFFFFF',
                         backgroundColor: '#D9662B',
                         textDecoration: 'none',
-                        padding: '10px 18px',
+                        padding: '14px 18px',
                         borderRadius: '999px',
                         transition: 'background-color 0.2s ease',
                       }}

@@ -25,7 +25,7 @@ const caseStudies = {
       {
         id: 'snapshot',
         title: '01 — Snapshot',
-        content: `<img class="cs-changelog-zoomable" loading="lazy" decoding="async" src="/images/keye/snapshot-mobile-grid.webp" alt="Eight screens of the Keye mobile product card system, on an orange background" style="width: 90%; max-width: 820px; max-height: none; height: auto; object-fit: initial; box-shadow: none; display: block; margin: 40px auto 56px;" onclick="document.getElementById('cs-lightbox-img').src=this.src;document.getElementById('cs-lightbox-img').alt=this.alt;document.getElementById('cs-lightbox').style.display='flex';">
+        content: `<img class="cs-changelog-zoomable" loading="lazy" decoding="async" src="/images/keye/snapshot-mobile-grid-white.webp" alt="Eight screens of the Keye mobile product card system" style="width: 100%; max-width: 1040px; max-height: none; height: auto; object-fit: initial; box-shadow: none; display: block; margin: 40px auto 56px;" onclick="document.getElementById('cs-lightbox-img').src=this.src;document.getElementById('cs-lightbox-img').alt=this.alt;document.getElementById('cs-lightbox').style.display='flex';">
 
 <p><span style="font-weight: 600;">Product</span><br/>A credit-based marketplace for flexible access to premium tools — Grammarly, Adobe, Otter.ai, MasterClass, Crunchbase, and 150+ others — without long-term subscriptions. ClassPass for digital tools.</p>
 
@@ -423,7 +423,7 @@ const caseStudies = {
   <h4 class="feature-heading">The Chrome Extension</h4>
   <p class="feature-subheadline">A constraint the team couldn't engineer around — until the idea came from buying a rain jacket</p>
 
-  <div class="cs-video-wrap" style="width: 60%; margin: 32px auto 40px; background: #000000; padding: 10px;">
+  <div class="cs-video-wrap cs-video-wrap--narrow" style="width: 60%; margin: 32px auto 40px; background: #000000; padding: 10px;">
     <video autoplay loop muted playsinline preload="metadata" width="1101" height="755" aria-label="Screen recording of the Keye Chrome extension — install, login, and auto-fill on a partner site" style="display: block; width: 100%; height: auto;">
       <source src="/videos/Keye/Chrome%20extension%20cropped.mp4" type="video/mp4">
     </video>

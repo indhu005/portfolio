@@ -184,7 +184,7 @@ export default function About() {
                 width={1200}
                 height={1600}
                 style={{
-                  width: isMobile ? '200px' : '100%',
+                  width: '100%',
                   height: 'auto',
                   aspectRatio: '3 / 4',
                   objectFit: 'cover',

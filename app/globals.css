@@ -1075,6 +1075,33 @@ img, video {
   transform: translateY(-4px);
 }
 
+/* Several Keye laptop mockups are set inline to width: 60% for desktop
+   framing — on phone/tablet that shrinks the demo video too small to read,
+   so widen the mockup at narrower breakpoints (overrides the inline style). */
+@media (max-width: 1024px) {
+  .cs-laptop-mockup {
+    width: 90% !important;
+  }
+}
+
+@media (max-width: 640px) {
+  .cs-laptop-mockup {
+    width: 100% !important;
+  }
+}
+
+@media (max-width: 1024px) {
+  .cs-video-wrap--narrow {
+    width: 90% !important;
+  }
+}
+
+@media (max-width: 640px) {
+  .cs-video-wrap--narrow {
+    width: 100% !important;
+  }
+}
+
 .cs-laptop-lid {
   background: #2B2B2B;
   border-radius: 18px 18px 0 0;
@@ -1203,6 +1230,28 @@ img, video {
   .cs-changelog-body {
     grid-template-columns: 1fr;
     gap: 10px;
+  }
+
+  /* Full-width single-column layout needs the whole screenshot visible —
+     the desktop cover-crop was tuned for the narrow 220px thumbnail column
+     and clips the sides (e.g. browser chrome, button text) at mobile width. */
+  .cs-changelog-body img {
+    height: auto;
+    max-height: none;
+    object-fit: contain;
+  }
+}
+
+/* Tablet keeps the 2-column layout, but the fixed 220px thumbnail + cover-crop
+   still clips too much of a wide screenshot — widen the column and ease off
+   the crop so the sides stay visible. */
+@media (min-width: 641px) and (max-width: 1024px) {
+  .cs-changelog-body {
+    grid-template-columns: 1fr 320px;
+  }
+
+  .cs-changelog-body img {
+    max-height: 260px;
   }
 }
 
