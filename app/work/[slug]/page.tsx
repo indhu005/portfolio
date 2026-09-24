@@ -1,5 +1,6 @@
 import CaseStudyLayout from '@/components/CaseStudyLayout'
 import MisinfoFeaturesContent from '@/components/MisinfoFeaturesContent'
+import LatAlertToggle from '@/components/LatAlertToggle'
 import { Metadata } from 'next'
 
 const caseStudies = {
@@ -665,67 +666,67 @@ const caseStudies = {
         id: 'solution',
         title: '04 — Solution',
         headline: 'Three pillars turned operational signals into financial intelligence',
-        content: `<div style="margin-top: 32px; margin-bottom: 48px;">
-  <div style="font-size: 20px; font-weight: 600; color: #1C1917; margin-bottom: 16px;">Pillar 1 — Reliable Field Intelligence</div>
-  <p>Automatically link <span style="font-weight: 600;">Work Orders ↔ Asset DNA ↔ Cost-to-Date</span>. The conversation shifted from "we'll fix it again" to "this unit cost $42K in three years; replacing now saves $18K."</p>
-</div>
+        content: '',
+        customComponent: (
+          <div>
+            <div style={{ marginTop: '32px', marginBottom: '48px' }}>
+              <div style={{ fontSize: '20px', fontWeight: 600, color: '#1C1917', marginBottom: '16px' }}>Pillar 1 — Reliable Field Intelligence</div>
+              <p>Automatically link <span style={{ fontWeight: 600 }}>Work Orders ↔ Asset DNA ↔ Cost-to-Date</span>. The conversation shifted from "we'll fix it again" to "this unit cost $42K in three years; replacing now saves $18K."</p>
+            </div>
 
-<div style="width: 100%; height: 400px; background-color: #E5E7EB; border-radius: 0px; display: flex; align-items: center; justify-content: center; color: #9CA3AF; font-size: 14px; margin-top: 40px; margin-bottom: 40px;">
-  <div style="text-align: center; padding: 20px;">
-    <div style="font-weight: 600; margin-bottom: 8px;">IMAGE 1: Field Workflow Evolution</div>
-    <div style="font-size: 13px; line-height: 1.5;">Mobile interface showing: offline queue → capture with voice input → auto-sync confirmation<br/>Annotation: "Reporting time: 20min → 8min"</div>
-  </div>
-</div>
+            <div style={{ width: '100%', height: '400px', backgroundColor: '#E5E7EB', borderRadius: '0px', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#9CA3AF', fontSize: '14px', marginTop: '40px', marginBottom: '40px' }}>
+              <div style={{ textAlign: 'center', padding: '20px' }}>
+                <div style={{ fontWeight: 600, marginBottom: '8px' }}>IMAGE 1: Field Workflow Evolution</div>
+                <div style={{ fontSize: '13px', lineHeight: 1.5 }}>Mobile interface showing: offline queue → capture with voice input → auto-sync confirmation<br/>Annotation: "Reporting time: 20min → 8min"</div>
+              </div>
+            </div>
 
-<div style="background-color: #FFF9F5; padding: 24px; border-radius: 0px; border-left: 3px solid #FF6B35; margin-bottom: 48px;">
-  <div class="cs-card-title cs-card-title--sm">The "Everything Dashboard" Failed</div>
-  <p style="font-size: 15px; color: #57534E; line-height: 1.6; margin: 0;">Multiple graphs looked impressive; managers scanned without acting. We replaced it with a ranked priority queue — action first, analysis second.</p>
-</div>
+            <div style={{ backgroundColor: '#FFF9F5', padding: '24px', borderRadius: '0px', borderLeft: '3px solid #FF6B35', marginBottom: '48px' }}>
+              <div className="cs-card-title cs-card-title--sm">The "Everything Dashboard" Failed</div>
+              <p style={{ fontSize: '15px', color: '#57534E', lineHeight: 1.6, margin: 0 }}>Multiple graphs looked impressive; managers scanned without acting. We replaced it with a ranked priority queue — action first, analysis second.</p>
+            </div>
 
-<div style="width: 100%; height: 400px; background-color: #E5E7EB; border-radius: 0px; display: flex; align-items: center; justify-content: center; color: #9CA3AF; font-size: 14px; margin-top: 40px; margin-bottom: 40px;">
-  <div style="text-align: center; padding: 20px;">
-    <div style="font-weight: 600; margin-bottom: 8px;">IMAGE 2: Dashboard Before/After</div>
-    <div style="font-size: 13px; line-height: 1.5;">Left: Dense "Everything Dashboard" with 8+ graphs<br/>Right: Clean priority queue with contextual side panels<br/>Annotation: "Decision time: 14min → 4min"</div>
-  </div>
-</div>
+            <div style={{ width: '100%', height: '400px', backgroundColor: '#E5E7EB', borderRadius: '0px', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#9CA3AF', fontSize: '14px', marginTop: '40px', marginBottom: '40px' }}>
+              <div style={{ textAlign: 'center', padding: '20px' }}>
+                <div style={{ fontWeight: 600, marginBottom: '8px' }}>IMAGE 2: Dashboard Before/After</div>
+                <div style={{ fontSize: '13px', lineHeight: 1.5 }}>Left: Dense "Everything Dashboard" with 8+ graphs<br/>Right: Clean priority queue with contextual side panels<br/>Annotation: "Decision time: 14min → 4min"</div>
+              </div>
+            </div>
 
-<div style="margin-bottom: 48px;">
-  <div style="font-size: 20px; font-weight: 600; color: #1C1917; margin-bottom: 16px;">Pillar 2 — Predictive Lifecycle Intelligence</div>
-  <p>Turn predictive signals into ranked alerts. Early alerts said <span style="font-style: italic;">"Boiler failure risk: 68%"</span> — managers hesitated. We shifted to consequence framing: <span style="font-style: italic;">"High vibration + 9 years in service → delaying replacement may cost $18K."</span> Humans act on consequences, not probabilities.</p>
-</div>
+            <div style={{ marginBottom: '48px' }}>
+              <div style={{ fontSize: '20px', fontWeight: 600, color: '#1C1917', marginBottom: '16px' }}>Pillar 2 — Predictive Lifecycle Intelligence</div>
+              <p>Turn predictive signals into ranked alerts. Early alerts said <span style={{ fontStyle: 'italic' }}>"Boiler failure risk: 68%"</span> — managers hesitated. We shifted to consequence framing: <span style={{ fontStyle: 'italic' }}>"High vibration + 9 years in service → delaying replacement may cost $18K."</span> Humans act on consequences, not probabilities.</p>
+            </div>
 
-<div style="width: 100%; height: 400px; background-color: #E5E7EB; border-radius: 0px; display: flex; align-items: center; justify-content: center; color: #9CA3AF; font-size: 14px; margin-top: 40px; margin-bottom: 40px;">
-  <div style="text-align: center; padding: 20px;">
-    <div style="font-weight: 600; margin-bottom: 8px;">IMAGE 3: Alert Card Before/After ⭐</div>
-    <div style="font-size: 13px; line-height: 1.5;">Left: "Boiler failure risk: 68%" (probability framing)<br/>Right: "High vibration + 9yr service → $18K savings if replaced now" (consequence framing)<br/>Shows: Critical/Monitor/Safe tiers + top 3 drivers</div>
-  </div>
-</div>
+            <LatAlertToggle />
 
-<div style="background-color: #FFF9F5; padding: 24px; border-radius: 0px; border-left: 3px solid #FF6B35; margin-bottom: 32px;">
-  <div class="cs-card-title cs-card-title--sm">The Boiler Incident — When AI Was Wrong</div>
-  <p style="font-size: 15px; color: #57534E; line-height: 1.6; margin: 0;">Month 2: the engine flagged a $180K boiler replacement as Critical. Inspection showed duplicated repair entries had inflated the risk. Three guardrails contained it — manager review gate, visible drivers, no auto-procurement. We added a "Needs Verification" state and multi-signal validation. Adoption held at 95%.</p>
-</div>
+            <div style={{ backgroundColor: '#FFF9F5', padding: '24px', borderRadius: '0px', borderLeft: '3px solid #FF6B35', marginBottom: '32px' }}>
+              <div className="cs-card-title cs-card-title--sm">The Boiler Incident — When AI Was Wrong</div>
+              <p style={{ fontSize: '15px', color: '#57534E', lineHeight: 1.6, margin: 0 }}>Month 2: the engine flagged a $180K boiler replacement as Critical. Inspection showed duplicated repair entries had inflated the risk. Three guardrails contained it — manager review gate, visible drivers, no auto-procurement. We added a "Needs Verification" state and multi-signal validation. Adoption held at 95%.</p>
+            </div>
 
-<div class="pull-quote">The real AI risk in enterprise isn't model sophistication — it's dirty upstream data influencing downstream capital decisions.</div>
+            <div className="pull-quote">The real AI risk in enterprise isn't model sophistication — it's dirty upstream data influencing downstream capital decisions.</div>
 
-<div style="width: 100%; height: 400px; background-color: #E5E7EB; border-radius: 0px; display: flex; align-items: center; justify-content: center; color: #9CA3AF; font-size: 14px; margin-top: 40px; margin-bottom: 40px;">
-  <div style="text-align: center; padding: 20px;">
-    <div style="font-weight: 600; margin-bottom: 8px;">IMAGE 4: Boiler Incident Screen</div>
-    <div style="font-size: 13px; line-height: 1.5;">Critical alert showing visible contributing drivers (with duplicate entries highlighted)<br/>"Needs Verification" state badge<br/>Manager override logged in timeline</div>
-  </div>
-</div>
+            <div style={{ width: '100%', height: '400px', backgroundColor: '#E5E7EB', borderRadius: '0px', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#9CA3AF', fontSize: '14px', marginTop: '40px', marginBottom: '40px' }}>
+              <div style={{ textAlign: 'center', padding: '20px' }}>
+                <div style={{ fontWeight: 600, marginBottom: '8px' }}>IMAGE 4: Boiler Incident Screen</div>
+                <div style={{ fontSize: '13px', lineHeight: 1.5 }}>Critical alert showing visible contributing drivers (with duplicate entries highlighted)<br/>"Needs Verification" state badge<br/>Manager override logged in timeline</div>
+              </div>
+            </div>
 
-<div style="margin-bottom: 48px;">
-  <div style="font-size: 20px; font-weight: 600; color: #1C1917; margin-bottom: 16px;">Pillar 3 — Strategic Simulation & Governance</div>
-  <p>In-house scenario comparison with side-by-side cost/timeline deltas. Before LAT, feasibility questions meant commissioning external studies; after, teams ran three scenarios instantly and exported board-ready outputs. Decision velocity over spectacle.</p>
-</div>
+            <div style={{ marginBottom: '48px' }}>
+              <div style={{ fontSize: '20px', fontWeight: 600, color: '#1C1917', marginBottom: '16px' }}>Pillar 3 — Strategic Simulation & Governance</div>
+              <p>In-house scenario comparison with side-by-side cost/timeline deltas. Before LAT, feasibility questions meant commissioning external studies; after, teams ran three scenarios instantly and exported board-ready outputs. Decision velocity over spectacle.</p>
+            </div>
 
-<div style="width: 100%; height: 400px; background-color: #E5E7EB; border-radius: 0px; display: flex; align-items: center; justify-content: center; color: #9CA3AF; font-size: 14px; margin-top: 40px; margin-bottom: 40px;">
-  <div style="text-align: center; padding: 20px;">
-    <div style="font-weight: 600; margin-bottom: 8px;">IMAGE 5: Scenario Comparison</div>
-    <div style="font-size: 13px; line-height: 1.5;">Two scenarios side-by-side: "Repair" vs "Replace"<br/>Shows: Cost delta, timeline delta, risk comparison<br/>Export button for board-ready CapEx reports</div>
-  </div>
-</div>`
+            <div style={{ width: '100%', height: '400px', backgroundColor: '#E5E7EB', borderRadius: '0px', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#9CA3AF', fontSize: '14px', marginTop: '40px', marginBottom: '40px' }}>
+              <div style={{ textAlign: 'center', padding: '20px' }}>
+                <div style={{ fontWeight: 600, marginBottom: '8px' }}>IMAGE 5: Scenario Comparison</div>
+                <div style={{ fontSize: '13px', lineHeight: 1.5 }}>Two scenarios side-by-side: "Repair" vs "Replace"<br/>Shows: Cost delta, timeline delta, risk comparison<br/>Export button for board-ready CapEx reports</div>
+              </div>
+            </div>
+          </div>
+        ),
       },
       {
         id: 'constraints',
