@@ -1,7 +1,7 @@
 import CaseStudyLayout from '@/components/CaseStudyLayout'
 import MisinfoFeaturesContent from '@/components/MisinfoFeaturesContent'
 import LatAlertToggle from '@/components/LatAlertToggle'
-import LatTradeoffSpectrum from '@/components/LatTradeoffSpectrum'
+import LatTradeoffTable from '@/components/LatTradeoffTable'
 import { Metadata } from 'next'
 
 const caseStudies = {
@@ -812,7 +812,7 @@ const caseStudies = {
         content: '',
         customComponent: (
           <div>
-            <LatTradeoffSpectrum />
+            <LatTradeoffTable />
 
             <img loading="lazy" decoding="async" width={2000} height={1455} src="/images/lat/AB%20Testing.webp" alt="AB Testing comparison" style={{ width: '100%', height: 'auto', borderRadius: '0px', marginTop: '8px', marginBottom: '40px', display: 'block' }} />
 
