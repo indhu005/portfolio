@@ -53,6 +53,8 @@ interface CaseStudy {
   heroImage?: string
   heroVideo?: string
   figmaPrototypeUrl?: string
+  preSnapshotHeadline?: string
+  preSnapshotContent?: string
 }
 
 interface CaseStudyLayoutProps {
@@ -498,6 +500,33 @@ export default function CaseStudyLayout({ caseStudy, slug }: CaseStudyLayoutProp
                       <div style={{ color: '#1C1917' }}>{caseStudy.tldr.skills}</div>
                     </div>
                   </div>
+                </div>
+              )}
+
+              {/* Pre-Snapshot Content - appears after TL;DR, before the first numbered section */}
+              {index === 0 && caseStudy.preSnapshotContent && (
+                <div style={{
+                  marginBottom: '60px',
+                  maxWidth: isMobile || isTablet ? '850px' : '1020px',
+                  marginLeft: 'auto',
+                  marginRight: 'auto',
+                }}>
+                  {caseStudy.preSnapshotHeadline && (
+                    <h3 style={{
+                      fontSize: isMobile ? '23px' : '28px',
+                      fontWeight: 700,
+                      color: 'var(--text-primary)',
+                      marginBottom: '24px',
+                      lineHeight: '1.3',
+                      fontFamily: 'var(--font-fraunces), serif',
+                    }}>
+                      {caseStudy.preSnapshotHeadline}
+                    </h3>
+                  )}
+                  <div
+                    className="case-study-content"
+                    dangerouslySetInnerHTML={{ __html: caseStudy.preSnapshotContent }}
+                  />
                 </div>
               )}
 

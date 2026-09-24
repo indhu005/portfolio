@@ -548,6 +548,27 @@ const caseStudies = {
       impact: '95% pilot adoption | 70%→95% data accuracy | 25% cost reduction projected',
       skills: 'Enterprise UX · ML/AI design · Stakeholder alignment · Field research · API-first architecture'
     },
+    preSnapshotHeadline: 'Fragmented data was forcing humans to do the work a system should have done',
+    preSnapshotContent: `<p style="font-size: 14px; color: #6B7280;">70–75% of operational U.S. buildings predate 2000. No vendor sells an integrated tool for a mixed-use portfolio like a university's — fragmented systems produce fragmented data, no matter how much you spend (<a href="https://www.eia.gov/consumption/commercial/reports/" target="_blank" rel="noopener noreferrer" style="color: #6B7280; text-decoration: underline;">EIA.gov</a>).</p>
+
+<p style="margin-top: 28px;">A technician underground can't access repair history. A project manager stitches together spreadsheets before planning meetings. Leadership decides on partial data. No common path.</p>
+
+<img loading="lazy" decoding="async" width="2000" height="1455" src="/images/lat/User%20Issues.webp" alt="User Issues" style="width: 100%; height: auto; border-radius: 0px; margin-top: 40px; margin-bottom: 40px; display: block;" />
+
+<div style="display: flex; align-items: flex-start; gap: 24px; margin-top: 8px; margin-bottom: 8px; flex-wrap: wrap;">
+  <div style="flex: 1; min-width: 250px; position: relative;">
+    <div style="background-color: #1C1917; padding: 24px; border-radius: 0px; position: relative;">
+      <p style="font-style: italic; font-family: 'Fraunces', serif; color: #FFFFFF; font-size: 23px; font-weight: 500; margin: 0;">"I do the physical work in 30 minutes, but reporting takes another 20."</p>
+    </div>
+    <div style="width: 0; height: 0; border-left: 12px solid transparent; border-right: 12px solid transparent; border-top: 12px solid #1C1917; position: absolute; bottom: -12px; left: 32px;"></div>
+  </div>
+  <div style="flex: 1; min-width: 250px; position: relative;">
+    <div style="background-color: #1C1917; padding: 24px; border-radius: 0px; position: relative;">
+      <p style="font-style: italic; font-family: 'Fraunces', serif; color: #FFFFFF; font-size: 23px; font-weight: 500; margin: 0;">"Each year I'm choosing between urgent-now and smart-long-term with partial data."</p>
+    </div>
+    <div style="width: 0; height: 0; border-left: 12px solid transparent; border-right: 12px solid transparent; border-top: 12px solid #1C1917; position: absolute; bottom: -12px; left: 32px;"></div>
+  </div>
+</div>`,
     sections: [
       {
         id: 'snapshot',
@@ -600,7 +621,7 @@ const caseStudies = {
       {
         id: 'context-problem',
         title: '02 — Context & Problem',
-        headline: 'Fragmented data was forcing humans to do the work a system should have done',
+        headline: 'Why existing tools failed the people managing this infrastructure',
         content: `<div class="cs-video-wrap" style="width: 100%; max-width: 960px; margin: 0 auto 48px;">
   <video autoplay loop muted playsinline preload="metadata" width="1882" height="1060" aria-label="Screen recording demonstrating a technician, manager, and leadership each working from fragmented, disconnected tools" style="display: block; width: 100%; height: auto; border-radius: 0px;">
     <source src="/videos/lat/Flow%2001.mp4" type="video/mp4">
@@ -609,62 +630,19 @@ const caseStudies = {
   <button type="button" class="cs-video-toggle" aria-label="Pause video" onclick="var v=this.previousElementSibling;if(v.paused){v.play();this.textContent='⏸';this.setAttribute('aria-label','Pause video');}else{v.pause();this.textContent='▶';this.setAttribute('aria-label','Play video');}">⏸</button>
 </div>
 
-<p style="font-size: 14px; color: #6B7280;">What this shows: about 70 to 75% of operational U.S. buildings predate 2000 and were never designed for lifecycle management (<a href="https://www.eia.gov/consumption/commercial/reports/" target="_blank" rel="noopener noreferrer" style="color: #6B7280; text-decoration: underline;">EIA.gov</a>). Property management vendors price for more of the same. Pay more and you get a bigger bundle of the same single use tool, still built for offices only or residential only. Nobody sells the integrated version for a mixed use portfolio like a university's, with labs, offices, and housing converted from other uses. That product doesn't exist at any price. Fragmented systems just produce fragmented data, no matter how much you spend.</p>
-
-<p style="margin-top: 28px;">Universities manage billions in infrastructure with fragmented tools: a technician underground can't access repair history, a project manager stitches together spreadsheets and invoices before planning meetings, leadership decides on partial data.</p>
-
-<p style="margin-top: 28px;">Without a unified system, everyone operates in their own flow with no common path.</p>
-
-<img loading="lazy" decoding="async" width="2000" height="1455" src="/images/lat/User%20Issues.webp" alt="User Issues" style="width: 100%; height: auto; border-radius: 0px; margin-top: 40px; margin-bottom: 40px; display: block;" />
-
-<div style="display: flex; align-items: flex-start; gap: 24px; margin-top: 8px; margin-bottom: 8px; flex-wrap: wrap;">
-  <div style="flex: 1; min-width: 250px; position: relative;">
-    <div style="background-color: #1C1917; padding: 24px; border-radius: 0px; position: relative;">
-      <p style="font-style: italic; font-family: 'Fraunces', serif; color: #FFFFFF; font-size: 23px; font-weight: 500; margin: 0;">"I do the physical work in 30 minutes, but reporting takes another 20."</p>
-    </div>
-    <div style="width: 0; height: 0; border-left: 12px solid transparent; border-right: 12px solid transparent; border-top: 12px solid #1C1917; position: absolute; bottom: -12px; left: 32px;"></div>
-  </div>
-  <div style="flex: 1; min-width: 250px; position: relative;">
-    <div style="background-color: #1C1917; padding: 24px; border-radius: 0px; position: relative;">
-      <p style="font-style: italic; font-family: 'Fraunces', serif; color: #FFFFFF; font-size: 23px; font-weight: 500; margin: 0;">"Each year I'm choosing between urgent-now and smart-long-term with partial data."</p>
-    </div>
-    <div style="width: 0; height: 0; border-left: 12px solid transparent; border-right: 12px solid transparent; border-top: 12px solid #1C1917; position: absolute; bottom: -12px; left: 32px;"></div>
-  </div>
-</div>
-
-<p style="margin-top: 16px; font-size: 14px; color: #6B7280;">Research base: 7–8 full-time technicians and vendors (including swing-stage shadowing), 4 operations/construction project managers, 2 accountants, 5–6 executives, and the Director of Facilities — UW Seattle's primary sponsor for the engagement, with a later proposal to extend to UW Tacoma.</p>
+<p style="font-size: 14px; color: #6B7280;">Research base: 7–8 full-time technicians and vendors (including swing-stage shadowing), 4 operations/construction project managers, 2 accountants, 5–6 executives, and the Director of Facilities — UW Seattle's primary sponsor for the engagement, with a later proposal to extend to UW Tacoma.</p>
 
 <div class="pull-quote" style="margin-top: 48px;">The institution wasn't lacking expertise. It was operating without a unified source of truth.</div>
 
-<h4 class="case-study-subhead">Why existing tools failed</h4>
+<p style="margin-top: 48px;">CMMS platforms handle tickets and leases but don't model asset lifespan or CapEx tradeoffs. Preventive maintenance ran on time, not risk, causing over-maintenance and surprise failures. Field tools assumed stable connectivity, so slow digital reporting killed adoption. And replacing the legacy stack wasn't viable — it was wired into procurement and budgeting. They didn't need another silo; they needed a layer that worked with what existed.</p>
 
-<p style="margin-top: 20px;">CMMS platforms handle tickets and leases but don't model asset lifespan or CapEx tradeoffs. Preventive maintenance ran on time, not risk, causing over-maintenance and surprise failures. Field tools assumed stable connectivity, so slow digital reporting killed adoption. And replacing the legacy stack wasn't viable — it was wired into procurement and budgeting. They didn't need another silo; they needed a layer that worked with what existed.</p>
+<p style="margin-top: 28px;">Property management vendors price for more of the same. Pay more and you get a bigger bundle of the same single use tool, still built for offices only or residential only. Nobody sells the integrated version for a mixed use portfolio like a university's, with labs, offices, and housing converted from other uses. That product doesn't exist at any price.</p>
 
-<img loading="lazy" decoding="async" width="2000" height="1455" src="/images/lat/Market%20Gap.webp" alt="Market Gap Analysis" style="width: 100%; height: auto; border-radius: 0px; margin-top: 40px; margin-bottom: 40px; display: block;" />`
-      },
-      {
-        id: 'turning-point',
-        title: '03 — The Turning Point',
-        headline: 'Research revealed we were redesigning a system of coordination',
-        content: `<div class="cs-video-wrap" style="width: 100%; max-width: 1200px; margin: 0 auto 48px;">
-  <video autoplay loop muted playsinline preload="metadata" width="1882" height="1046" aria-label="Screen recording of the role-based dashboard surfaces built over a shared data foundation" style="display: block; width: 100%; height: auto; border-radius: 0px;">
-    <source src="/videos/lat/Flow%2002.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-  </video>
-  <button type="button" class="cs-video-toggle" aria-label="Pause video" onclick="var v=this.previousElementSibling;if(v.paused){v.play();this.textContent='⏸';this.setAttribute('aria-label','Pause video');}else{v.pause();this.textContent='▶';this.setAttribute('aria-label','Play video');}">⏸</button>
-</div>
-
-<p>We thought we were customizing a product. Research showed we were redesigning <span style="font-weight: 600;">a system of coordination.</span></p>
-
-<p style="margin-top: 28px;">The breakthrough wasn't the AI — it was recognizing that fragmented data was forcing humans to do system work. Everyone had access to data; what they lacked was context, prioritization, and trust.</p>
-
-<p style="margin-top: 28px;">That reframed everything. Instead of one dashboard for everyone, we built role-based surfaces over a shared foundation, surfacing only what was actionable.</p>
-
-<img loading="lazy" decoding="async" width="2000" height="1146" src="/images/lat/pROBLEM.webp" alt="System architecture diagram — modular API layer, role-based surfaces, shared data foundation" style="width: 100%; height: auto; border-radius: 0px; margin-top: 40px; margin-bottom: 40px; display: block;" />`
+<img loading="lazy" decoding="async" width="3300" height="2400" src="/images/lat/Market%20Gap.jpg" alt="Market Gap Analysis" style="width: 100%; height: auto; border-radius: 0px; margin-top: 40px; margin-bottom: 40px; display: block;" />`
       },
       {
         id: 'solution',
-        title: '04 — Solution',
+        title: '03 — Solution',
         headline: 'Three pillars turned operational signals into financial intelligence',
         content: '',
         customComponent: (
@@ -729,6 +707,26 @@ const caseStudies = {
         ),
       },
       {
+        id: 'turning-point',
+        title: '04 — The Turning Point',
+        headline: 'Research revealed we were redesigning a system of coordination',
+        content: `<div class="cs-video-wrap" style="width: 100%; max-width: 1200px; margin: 0 auto 48px;">
+  <video autoplay loop muted playsinline preload="metadata" width="1882" height="1046" aria-label="Screen recording of the role-based dashboard surfaces built over a shared data foundation" style="display: block; width: 100%; height: auto; border-radius: 0px;">
+    <source src="/videos/lat/Flow%2002.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+  <button type="button" class="cs-video-toggle" aria-label="Pause video" onclick="var v=this.previousElementSibling;if(v.paused){v.play();this.textContent='⏸';this.setAttribute('aria-label','Pause video');}else{v.pause();this.textContent='▶';this.setAttribute('aria-label','Play video');}">⏸</button>
+</div>
+
+<p>We thought we were customizing a product. Research showed we were redesigning <span style="font-weight: 600;">a system of coordination.</span></p>
+
+<p style="margin-top: 28px;">The breakthrough wasn't the AI — it was recognizing that fragmented data was forcing humans to do system work. Everyone had access to data; what they lacked was context, prioritization, and trust.</p>
+
+<p style="margin-top: 28px;">That reframed everything. Instead of one dashboard for everyone, we built role-based surfaces over a shared foundation, surfacing only what was actionable.</p>
+
+<img loading="lazy" decoding="async" width="2000" height="1146" src="/images/lat/pROBLEM.webp" alt="System architecture diagram — modular API layer, role-based surfaces, shared data foundation" style="width: 100%; height: auto; border-radius: 0px; margin-top: 40px; margin-bottom: 40px; display: block;" />`
+      },
+      {
         id: 'constraints',
         title: '05 — Constraints & Design Responses',
         headline: "The legacy ecosystem couldn't be disrupted, so LAT shipped as a modular layer alongside it",
@@ -740,7 +738,7 @@ const caseStudies = {
 
   <div>
     <div class="cs-card-title">Data Integrity Had Hard Boundaries</div>
-    <div style="font-size: 15px; color: #57534E; line-height: 1.6;">Strict governance meant we inherited duplicated, inconsistent records. That constraint produced the project's defining incident (section 04); the response — validation states, multi-signal checks, confidence tiers — became the product's trust architecture.</div>
+    <div style="font-size: 15px; color: #57534E; line-height: 1.6;">Strict governance meant we inherited duplicated, inconsistent records. That constraint produced the project's defining incident (section 03); the response — validation states, multi-signal checks, confidence tiers — became the product's trust architecture.</div>
   </div>
 
   <div>
