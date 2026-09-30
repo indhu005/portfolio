@@ -98,8 +98,8 @@ export default function Home() {
 
   // Brand-color splash on first paint, fades into the page shortly after
   useEffect(() => {
-    const fadeTimer = setTimeout(() => setSplashFading(true), 450)
-    const removeTimer = setTimeout(() => setSplashVisible(false), 850)
+    const fadeTimer = setTimeout(() => setSplashFading(true), 650)
+    const removeTimer = setTimeout(() => setSplashVisible(false), 1250)
     return () => {
       clearTimeout(fadeTimer)
       clearTimeout(removeTimer)
@@ -132,21 +132,32 @@ export default function Home() {
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
-          opacity: splashFading ? 0 : 1,
-          transition: 'opacity 0.4s ease-out',
+          borderRadius: splashFading ? '50%' : '0%',
+          transform: splashFading ? 'scale(0.03)' : 'scale(1)',
+          transition: 'transform 0.55s cubic-bezier(0.6, 0, 0.35, 1), border-radius 0.55s ease-in',
           animation: 'splashPulse 0.6s ease-out',
           pointerEvents: splashFading ? 'none' : 'auto',
+          overflow: 'hidden',
         }}>
-          <img
-            src="/images/home/tree 01 (3).svg"
-            alt=""
-            style={{
-              width: '72px',
-              height: '72px',
-              objectFit: 'contain',
-              animation: 'splashSproutPop 0.5s 0.08s cubic-bezier(0.34, 1.56, 0.64, 1) both',
-            }}
-          />
+          <div style={{
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            gap: '16px',
+            opacity: splashFading ? 0 : 1,
+            transition: 'opacity 0.2s ease-out',
+          }}>
+            <img
+              src="/images/home/tree 01 (3).svg"
+              alt=""
+              style={{
+                width: '72px',
+                height: '72px',
+                objectFit: 'contain',
+                animation: 'splashSproutPop 0.5s 0.08s cubic-bezier(0.34, 1.56, 0.64, 1) both',
+              }}
+            />
+          </div>
         </div>
       )}
 

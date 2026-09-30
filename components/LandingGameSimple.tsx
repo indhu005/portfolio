@@ -28,7 +28,8 @@ interface Smoke {
 }
 
 const GRID_ROWS = 4
-const GRID_COLS_DESKTOP = 8
+const GRID_COLS_DESKTOP = 9
+const GRID_COLS_TABLET = 8
 const GRID_COLS_MOBILE = 6
 const ROUND_DURATION = 10 // 10 seconds
 
@@ -270,7 +271,7 @@ export default function LandingGameSimple() {
   // Initialize grid
   useEffect(() => {
     if (!mounted) return
-    const cols = isMobile ? GRID_COLS_MOBILE : GRID_COLS_DESKTOP
+    const cols = isMobile ? GRID_COLS_MOBILE : isTablet ? GRID_COLS_TABLET : GRID_COLS_DESKTOP
     setGrid(
       Array(GRID_ROWS)
         .fill(null)
@@ -292,7 +293,7 @@ export default function LandingGameSimple() {
           } else {
             // Silent reset - restart the game
             setTimeout(() => {
-              const cols = isMobile ? GRID_COLS_MOBILE : GRID_COLS_DESKTOP
+              const cols = isMobile ? GRID_COLS_MOBILE : isTablet ? GRID_COLS_TABLET : GRID_COLS_DESKTOP
               setTimeLeft(ROUND_DURATION)
               setPlanted(0)
               setGameActive(true)
@@ -370,7 +371,7 @@ export default function LandingGameSimple() {
     if (!gameActive || !mounted) return
 
     const spawnTruck = () => {
-      const cols = isMobile ? GRID_COLS_MOBILE : GRID_COLS_DESKTOP
+      const cols = isMobile ? GRID_COLS_MOBILE : isTablet ? GRID_COLS_TABLET : GRID_COLS_DESKTOP
       // Must match the render-time cellSize/gap below exactly, or trucks
       // spawn/travel using a wider grid than what's actually drawn and
       // end up rendered off the edge of the (narrower) real grid.
@@ -410,7 +411,7 @@ export default function LandingGameSimple() {
 
   // Animate trucks
   useEffect(() => {
-    const cols = isMobile ? GRID_COLS_MOBILE : GRID_COLS_DESKTOP
+    const cols = isMobile ? GRID_COLS_MOBILE : isTablet ? GRID_COLS_TABLET : GRID_COLS_DESKTOP
     const cellSize = isMobile ? 48 : 80
     const gap = isMobile ? 8 : 16
     const gridWidth = cols * (cellSize + gap)
@@ -505,7 +506,7 @@ export default function LandingGameSimple() {
 
   // Restart game
   const restartGame = () => {
-    const cols = isMobile ? GRID_COLS_MOBILE : GRID_COLS_DESKTOP
+    const cols = isMobile ? GRID_COLS_MOBILE : isTablet ? GRID_COLS_TABLET : GRID_COLS_DESKTOP
     setTimeLeft(ROUND_DURATION)
     setPlanted(0)
     setGameActive(true)
@@ -535,7 +536,7 @@ export default function LandingGameSimple() {
     )
   }
 
-  const cols = isMobile ? GRID_COLS_MOBILE : GRID_COLS_DESKTOP
+  const cols = isMobile ? GRID_COLS_MOBILE : isTablet ? GRID_COLS_TABLET : GRID_COLS_DESKTOP
   // Responsive cell sizes: mobile (48), tablet (64), laptop (100), monitor (120)
   const cellSize = isMobile ? 48 : isTablet ? 64 : (typeof window !== 'undefined' && window.innerWidth >= 1800 ? 120 : 100)
   const gap = isMobile ? 8 : isTablet ? 12 : 16
@@ -913,7 +914,7 @@ export default function LandingGameSimple() {
         width: '100%',
         marginTop: isMobile ? '140px' : isTablet ? '160px' : '230px',
         display: 'flex',
-        justifyContent: 'center',
+        justifyContent: isMobile || isTablet ? 'center' : 'flex-start',
       }}>
         {/* Ambient clouds drifting behind the birds */}
         <div style={{ position: 'absolute', top: '-20px', left: 0, width: '100%', height: isMobile ? '60px' : '90px', pointerEvents: 'none', zIndex: 2 }}>
@@ -980,7 +981,7 @@ export default function LandingGameSimple() {
         <div
           style={{
             position: 'absolute',
-            top: '20px',
+            top: '-115px',
             left: isMobile ? '20px' : '40px',
             pointerEvents: 'none',
             zIndex: 5,
@@ -1021,13 +1022,17 @@ export default function LandingGameSimple() {
           title={audioMuted ? 'Unmute ambient sound' : 'Mute ambient sound'}
           style={{
             position: 'absolute',
-            top: '20px',
-            right: isMobile ? '20px' : '40px',
+            ...(isMobile
+              ? { top: '110px', left: '20px' }
+              : isTablet
+              ? { top: '130px', left: '40px' }
+              : { bottom: '-12px', right: '36px' }),
             width: '32px',
             height: '32px',
             borderRadius: '50%',
-            border: '1px solid rgba(28, 25, 23, 0.12)',
-            backgroundColor: 'rgba(255, 255, 255, 0.85)',
+            border: '1px solid rgba(255, 255, 255, 0.12)',
+            backgroundColor: 'rgba(28, 25, 23, 0.9)',
+            boxShadow: '0 2px 8px rgba(0, 0, 0, 0.2)',
             backdropFilter: 'blur(8px)',
             display: 'flex',
             alignItems: 'center',
@@ -1048,8 +1053,6 @@ export default function LandingGameSimple() {
         gridTemplateColumns: `repeat(${cols}, ${cellSize}px)`,
         gap: `${gap}px`,
         zIndex: 10,
-        marginLeft: 'auto',
-        marginRight: 'auto',
       }}>
         {grid.map((row, rowIndex) =>
           row.map((cell, colIndex) => (
