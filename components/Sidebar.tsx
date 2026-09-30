@@ -60,7 +60,7 @@ export default function Sidebar({
   sections
 }: SidebarProps = {}) {
   const router = useRouter()
-  const ACTIVE_COLOR = '#D9662B'
+  const ACTIVE_COLOR = '#FF8A0E'
   const [expandedProject, setExpandedProject] = useState<string | null>(activeProjectProp)
   const [isLargeDesktop, setIsLargeDesktop] = useState(false)
   // Sidebar renders inside the mobile/tablet overlay (see page.tsx `isTablet &&` gate),

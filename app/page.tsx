@@ -115,7 +115,7 @@ export default function Home() {
     <div style={{
       display: 'flex',
       height: '100vh',
-      backgroundColor: '#FFFFFF',
+      backgroundColor: '#FAF8F3',
       overflow: 'hidden',
       width: '100vw',
     }}>
@@ -155,25 +155,40 @@ export default function Home() {
       {isTablet && (
         <button
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+          aria-label={mobileMenuOpen ? 'Close menu' : 'Open menu'}
           style={{
             position: 'fixed',
             top: '20px',
             left: '20px',
             zIndex: 1000,
-            background: 'rgba(28, 25, 23, 0.85)',
+            width: '40px',
+            height: '40px',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            background: 'rgba(255, 255, 255, 0.85)',
             backdropFilter: 'blur(12px)',
             WebkitBackdropFilter: 'blur(12px)',
-            color: 'white',
-            border: '1px solid rgba(255, 255, 255, 0.1)',
-            borderRadius: '0px',
-            padding: '12px 16px',
-            fontSize: '14px',
-            fontWeight: 600,
+            border: '1px solid rgba(28, 25, 23, 0.1)',
+            borderRadius: '10px',
             cursor: 'pointer',
-            boxShadow: '0 2px 8px rgba(0,0,0,0.2)',
+            boxShadow: '0 2px 8px rgba(0,0,0,0.08)',
           }}
         >
-          {mobileMenuOpen ? '✕ Close' : '☰ Menu'}
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+            {mobileMenuOpen ? (
+              <>
+                <path d="M4 4L14 14" stroke="#1C1917" strokeWidth="1.6" strokeLinecap="round" />
+                <path d="M14 4L4 14" stroke="#1C1917" strokeWidth="1.6" strokeLinecap="round" />
+              </>
+            ) : (
+              <>
+                <path d="M2.5 5H15.5" stroke="#1C1917" strokeWidth="1.6" strokeLinecap="round" />
+                <path d="M2.5 9H15.5" stroke="#1C1917" strokeWidth="1.6" strokeLinecap="round" />
+                <path d="M2.5 13H15.5" stroke="#1C1917" strokeWidth="1.6" strokeLinecap="round" />
+              </>
+            )}
+          </svg>
         </button>
       )}
 
@@ -186,7 +201,7 @@ export default function Home() {
             left: 0,
             width: '100vw',
             height: '100vh',
-            backgroundColor: '#FFFFFF',
+            backgroundColor: '#FAF8F3',
             zIndex: 999,
             overflowY: 'auto',
             padding: '80px 20px 20px 20px',
@@ -214,7 +229,7 @@ export default function Home() {
             padding: isMobile ? '0 20px 40px 20px' : isTablet ? '0 32px 50px 32px' : isWideDesktop ? '0 80px 80px 80px' : '0 48px 60px 48px',
             minWidth: 0,
             scrollBehavior: 'smooth',
-            backgroundColor: '#FFFFFF',
+            backgroundColor: '#FAF8F3',
           }}
         >
           {/* Landing Game */}

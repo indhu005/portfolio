@@ -117,8 +117,13 @@ const SaplingIcon = ({ size = 40, variant = 0, isDaytime = true }: { size?: numb
 // Building component with fast pop-in animation
 const BuildingIcon = ({ size = 60, variant = 0, isDaytime = true }: { size?: number; variant?: number; isDaytime?: boolean }) => {
   const [isPopping, setIsPopping] = useState(true)
-  const buildingVariants = ['building 01.svg', 'building 02.svg', 'building 03.svg']
-  const buildingFile = buildingVariants[variant % 3]
+  const buildingVariants = ['building 01.svg', 'building 02.svg', 'building 03.svg', 'building 04.svg']
+  const buildingFile = buildingVariants[variant % 4]
+  // Building 04 is a tall skyscraper (65:204 aspect) — give it real extra height instead of
+  // capping it to the same square box as the shorter buildings.
+  const isTallVariant = variant % 4 === 3
+  const buildingHeight = isTallVariant ? size * 1.7 : size
+  const buildingWidth = isTallVariant ? size * 0.55 : size
 
   useEffect(() => {
     const timer = setTimeout(() => setIsPopping(false), 200)
@@ -133,8 +138,8 @@ const BuildingIcon = ({ size = 60, variant = 0, isDaytime = true }: { size?: num
         alt="building"
         style={{
           position: 'absolute',
-          width: size,
-          height: size,
+          width: buildingWidth,
+          height: buildingHeight,
           bottom: '20%',
           left: '50%',
           transform: `translateX(-50%) scale(${isPopping ? 0.3 : 1})`,
@@ -147,6 +152,21 @@ const BuildingIcon = ({ size = 60, variant = 0, isDaytime = true }: { size?: num
       />
     </>
   )
+}
+
+// Sun color moves through the day: dawn pink-orange -> morning yellow-orange -> midday bright orange -> evening fading orange-pink
+const getSunStyle = (hour: number): { background: string; glow: string } => {
+  if (hour >= 6 && hour < 9) {
+    return { background: 'linear-gradient(135deg, #FFB199, #FF7D6B)', glow: 'rgba(255, 137, 122, 0.3)' }
+  }
+  if (hour >= 9 && hour < 12) {
+    return { background: 'linear-gradient(135deg, #FFDD77, #FFA94D)', glow: 'rgba(255, 169, 77, 0.28)' }
+  }
+  if (hour >= 12 && hour < 16) {
+    return { background: 'linear-gradient(135deg, #FFB347, #FF8A0E)', glow: 'rgba(255, 138, 14, 0.28)' }
+  }
+  // Evening (16-18): fading orange-pink
+  return { background: 'linear-gradient(135deg, #FFA08A, #FF7FA8)', glow: 'rgba(255, 127, 168, 0.24)' }
 }
 
 // Simple ground marker component
@@ -175,7 +195,7 @@ const GroundMarker = ({ size = 60 }: { size?: number }) => {
         cy={size * 0.8}
         rx={ellipseWidth / 2}
         ry={ellipseHeight / 2}
-        fill="#D1D1D1"
+        fill="#8DC562"
       />
     </svg>
   )
@@ -199,6 +219,10 @@ export default function LandingGameSimple() {
   const [hasInteracted, setHasInteracted] = useState(false)
   const [playCount, setPlayCount] = useState(0) // Track replays for difficulty
   const [isDaytime, setIsDaytime] = useState(true) // Track if it's day or night
+  const [dayHour, setDayHour] = useState(12) // Seattle hour, drives the sun's color through the day
+  const [audioMuted, setAudioMuted] = useState(true) // Starts muted; user must opt in to sound
+  const birdsAudioRef = useRef<HTMLAudioElement>(null)
+  const trafficAudioRef = useRef<HTMLAudioElement>(null)
   const truckAnimationRef = useRef<number>()
 
   useEffect(() => {
@@ -224,6 +248,7 @@ export default function LandingGameSimple() {
 
       // Daytime: 6am - 6pm (6-18), Nighttime: 6pm - 6am
       setIsDaytime(hour >= 6 && hour < 18)
+      setDayHour(hour)
 
       setLocalTime(
         seattleTime.toLocaleTimeString('en-US', {
@@ -312,6 +337,34 @@ export default function LandingGameSimple() {
     return () => clearInterval(interval)
   }, [gameActive])
 
+  // Ambient audio: birds get louder as more trees are planted, traffic gets louder as more buildings go up
+  useEffect(() => {
+    const birdsAudio = birdsAudioRef.current
+    const trafficAudio = trafficAudioRef.current
+    if (!birdsAudio || !trafficAudio) return
+
+    if (audioMuted) {
+      birdsAudio.pause()
+      trafficAudio.pause()
+      return
+    }
+
+    const flat = grid.flat()
+    const treeCount = flat.filter(c => c.state === 'tree' || c.state === 'sapling').length
+    const buildingCount = flat.filter(c => c.state === 'building').length
+    const total = treeCount + buildingCount
+
+    // Baseline ambience even at zero, then mix toward whichever side dominates
+    const birdsVolume = total === 0 ? 0.3 : 0.15 + 0.6 * (treeCount / total)
+    const trafficVolume = total === 0 ? 0.15 : 0.1 + 0.55 * (buildingCount / total)
+
+    birdsAudio.volume = Math.min(1, birdsVolume)
+    trafficAudio.volume = Math.min(1, trafficVolume)
+
+    if (birdsAudio.paused) birdsAudio.play().catch(() => {})
+    if (trafficAudio.paused) trafficAudio.play().catch(() => {})
+  }, [grid, audioMuted])
+
   // Spawn trucks (they deliver buildings)
   useEffect(() => {
     if (!gameActive || !mounted) return
@@ -350,7 +403,7 @@ export default function LandingGameSimple() {
     }
 
     // Adaptive difficulty: easier first time, harder on replay
-    const spawnInterval = playCount === 0 ? 1200 : 850 // 1.2s first time, 0.85s on replay
+    const spawnInterval = playCount === 0 ? 1800 : 1300 // fewer, bigger trucks — 1.8s first time, 1.3s on replay
     const interval = setInterval(spawnTruck, spawnInterval)
     return () => clearInterval(interval)
   }, [gameActive, mounted, isMobile, isTablet, playCount])
@@ -395,7 +448,10 @@ export default function LandingGameSimple() {
             if (prevGrid.length === 0) return prevGrid
             const newGrid = [...prevGrid]
             if (newGrid[truck.row]?.[truck.col]?.state === 'empty') {
-              const buildingVariant = Math.floor(Math.random() * 3)
+              // Keep the tall skyscraper (variant 3) off phone/tablet entirely (too tall for
+              // those smaller cells) and out of row 0 on desktop (would overflow into the header).
+              const tallVariantAllowed = !isMobile && !isTablet && truck.row !== 0
+              const buildingVariant = tallVariantAllowed ? Math.floor(Math.random() * 4) : Math.floor(Math.random() * 3)
               newGrid[truck.row][truck.col] = { state: 'building', variant: buildingVariant }
               spawnDust(truck.row, truck.col)
             }
@@ -445,7 +501,7 @@ export default function LandingGameSimple() {
         cancelAnimationFrame(truckAnimationRef.current)
       }
     }
-  }, [isMobile, playCount])
+  }, [isMobile, isTablet, playCount])
 
   // Restart game
   const restartGame = () => {
@@ -472,7 +528,7 @@ export default function LandingGameSimple() {
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
-        backgroundColor: '#FFFFFF',
+        backgroundColor: '#FAF8F3',
       }}>
         Loading...
       </div>
@@ -504,7 +560,7 @@ export default function LandingGameSimple() {
     <div style={{
       position: 'relative',
       width: '100%',
-      backgroundColor: '#FFFFFF',
+      backgroundColor: '#FAF8F3',
       borderRadius: '4px',
       padding: isMobile ? '16px' : '20px',
       paddingBottom: isMobile ? '90px' : isTablet ? '140px' : '20px', // More padding on tablet to prevent overlap
@@ -513,6 +569,22 @@ export default function LandingGameSimple() {
       alignItems: 'center',
       justifyContent: 'center',
     }}>
+      {/* Warm ambient glow behind the header and scene, like sunlight washing the sky */}
+      <div style={{
+        position: 'absolute',
+        top: '0px',
+        left: '50%',
+        transform: 'translateX(-50%)',
+        width: '90%',
+        maxWidth: '900px',
+        height: isMobile ? '360px' : '520px',
+        background: isDaytime
+          ? 'radial-gradient(ellipse 60% 50% at 50% 20%, rgba(255,201,77,0.18), rgba(255,201,77,0) 70%)'
+          : 'radial-gradient(ellipse 60% 50% at 50% 20%, rgba(215,220,236,0.16), rgba(215,220,236,0) 70%)',
+        pointerEvents: 'none',
+        zIndex: 0,
+      }} />
+
       {/* Center header */}
       <div style={{
         position: 'absolute',
@@ -532,7 +604,7 @@ export default function LandingGameSimple() {
           marginBottom: isMobile ? '8px' : '16px',
           lineHeight: '1.5',
         }}>
-          {localRegion} • {localTime}
+          <span style={{ color: '#B5610A', fontWeight: 600 }}>{localRegion}</span> • {localTime}
         </div>
 
         {/* Tagline */}
@@ -611,7 +683,7 @@ export default function LandingGameSimple() {
               <div style={{
                 height: '100%',
                 width: `${((ROUND_DURATION - timeLeft) / ROUND_DURATION) * 100}%`,
-                backgroundColor: '#7EB3F5',
+                backgroundColor: '#FF8A0E',
                 transition: 'width 0.3s ease-out',
                 borderRadius: '2px',
               }} />
@@ -785,7 +857,7 @@ export default function LandingGameSimple() {
               <div style={{
                 height: '100%',
                 width: `${((ROUND_DURATION - timeLeft) / ROUND_DURATION) * 100}%`,
-                backgroundColor: '#7EB3F5',
+                backgroundColor: '#FF8A0E',
                 transition: 'width 0.3s ease-out',
                 borderRadius: '2px',
               }} />
@@ -843,6 +915,67 @@ export default function LandingGameSimple() {
         display: 'flex',
         justifyContent: 'center',
       }}>
+        {/* Ambient clouds drifting behind the birds */}
+        <div style={{ position: 'absolute', top: '-20px', left: 0, width: '100%', height: isMobile ? '60px' : '90px', pointerEvents: 'none', zIndex: 2 }}>
+          <img
+            src="/images/home/Cloud 01.svg"
+            alt=""
+            style={{ position: 'absolute', top: '0px', width: isMobile ? '70px' : '120px', height: 'auto', opacity: 0.55, animation: 'birdDriftRight 46s linear infinite' }}
+          />
+          <img
+            src="/images/home/Cloud 02.svg"
+            alt=""
+            style={{ position: 'absolute', top: isMobile ? '26px' : '38px', width: isMobile ? '52px' : '86px', height: 'auto', opacity: 0.4, animation: 'birdDriftLeft 58s linear infinite', animationDelay: '-20s' }}
+          />
+          {!isMobile && (
+            <img
+              src="/images/home/Cloud 01.svg"
+              alt=""
+              style={{ position: 'absolute', top: '14px', width: '64px', height: 'auto', opacity: 0.32, animation: 'birdDriftRight 64s linear infinite', animationDelay: '-30s' }}
+            />
+          )}
+        </div>
+
+        {/* Ambient birds, high — kept clear of the sun (left) and the stats HUD card (right) */}
+        {!isMobile && (
+          <div style={{ position: 'absolute', top: '-58px', left: '14%', width: '52%', height: '60px', pointerEvents: 'none', zIndex: 4 }}>
+            <div style={{ position: 'absolute', transform: 'scaleX(-1)', animation: 'birdFlyRight 17s ease-in-out infinite' }}>
+              <img
+                src="/images/home/Bird 01.svg"
+                alt=""
+                style={{ display: 'block', width: '35px', height: 'auto', opacity: 0.9, animation: 'birdFlapA 0.7s ease-in-out infinite' }}
+              />
+            </div>
+            <div style={{ position: 'absolute', animation: 'birdFlyLeft 21s ease-in-out infinite', animationDelay: '-7s' }}>
+              <img
+                src="/images/home/Bird 04.svg"
+                alt=""
+                style={{ display: 'block', width: '28px', height: 'auto', opacity: 0.85, animation: 'birdFlapB 0.55s ease-in-out infinite', animationDelay: '-0.2s' }}
+              />
+            </div>
+          </div>
+        )}
+
+        {/* Ambient birds, low — cruising near tree-top height so they read against the scene, not just the sky */}
+        {!isMobile && (
+          <div style={{ position: 'absolute', top: '130px', left: 0, width: '100%', height: '110px', pointerEvents: 'none', zIndex: 6 }}>
+            <div style={{ position: 'absolute', transform: 'scaleX(-1)', animation: 'birdFlyRight 13s ease-in-out infinite', animationDelay: '-3s' }}>
+              <img
+                src="/images/home/Bird 02.svg"
+                alt=""
+                style={{ display: 'block', width: '37px', height: 'auto', opacity: 0.9, animation: 'birdFlapA 0.6s ease-in-out infinite', animationDelay: '-0.3s' }}
+              />
+            </div>
+            <div style={{ position: 'absolute', animation: 'birdFlyLeft 19s ease-in-out infinite', animationDelay: '-12s' }}>
+              <img
+                src="/images/home/Bird 03.svg"
+                alt=""
+                style={{ display: 'block', width: '30px', height: 'auto', opacity: 0.85, animation: 'birdFlapB 0.65s ease-in-out infinite' }}
+              />
+            </div>
+          </div>
+        )}
+
         {/* Sun/Moon - top left corner (opposite of timer) */}
         <div
           style={{
@@ -853,16 +986,59 @@ export default function LandingGameSimple() {
             zIndex: 5,
           }}
         >
-          <img
-            src={isDaytime ? '/images/home/sun.svg' : '/images/home/moon.svg'}
-            alt={isDaytime ? 'sun' : 'moon'}
-            style={{
-              width: isMobile ? '20px' : '28px',
-              height: isMobile ? '20px' : '28px',
-              objectFit: 'contain',
-            }}
-          />
+          {isDaytime ? (
+            <div
+              role="img"
+              aria-label="sun"
+              style={{
+                width: isMobile ? '23px' : '32px',
+                height: isMobile ? '23px' : '32px',
+                borderRadius: '50%',
+                background: getSunStyle(dayHour).background,
+                boxShadow: `0 0 0 ${isMobile ? '6px' : '8px'} ${getSunStyle(dayHour).glow}`,
+                transition: 'background 1.5s ease, box-shadow 1.5s ease',
+              }}
+            />
+          ) : (
+            <img
+              src="/images/home/moon.svg"
+              alt="moon"
+              style={{
+                width: isMobile ? '23px' : '32px',
+                height: isMobile ? '23px' : '32px',
+                objectFit: 'contain',
+              }}
+            />
+          )}
         </div>
+
+        {/* Ambient audio — birds louder with more trees, traffic louder with more buildings. Starts muted. */}
+        <audio ref={birdsAudioRef} src="/audio/birds%20chirping.mp3" loop preload="none" />
+        <audio ref={trafficAudioRef} src="/audio/Traffic%20sound.mp3" loop preload="none" />
+        <button
+          onClick={() => setAudioMuted(prev => !prev)}
+          aria-label={audioMuted ? 'Unmute ambient sound' : 'Mute ambient sound'}
+          title={audioMuted ? 'Unmute ambient sound' : 'Mute ambient sound'}
+          style={{
+            position: 'absolute',
+            top: '20px',
+            right: isMobile ? '20px' : '40px',
+            width: '32px',
+            height: '32px',
+            borderRadius: '50%',
+            border: '1px solid rgba(28, 25, 23, 0.12)',
+            backgroundColor: 'rgba(255, 255, 255, 0.85)',
+            backdropFilter: 'blur(8px)',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            cursor: 'pointer',
+            zIndex: 60,
+            fontSize: '14px',
+          }}
+        >
+          {audioMuted ? '🔇' : '🔊'}
+        </button>
 
         {/* Grid */}
         <div style={{
@@ -901,9 +1077,9 @@ export default function LandingGameSimple() {
               }}
             >
               {cell.state === 'empty' && <GroundMarker size={cellSize} />}
-              {cell.state === 'sapling' && <SaplingIcon variant={cell.variant || 0} size={isMobile ? 24 : 40} isDaytime={isDaytime} />}
-              {cell.state === 'tree' && <TreeIcon variant={cell.variant || 0} size={isMobile ? 36 : 60} isDaytime={isDaytime} />}
-              {cell.state === 'building' && <BuildingIcon variant={cell.variant || 0} size={isMobile ? 36 : 60} isDaytime={isDaytime} />}
+              {cell.state === 'sapling' && <SaplingIcon variant={cell.variant || 0} size={isMobile ? 35 : isTablet ? 42 : 60} isDaytime={isDaytime} />}
+              {cell.state === 'tree' && <TreeIcon variant={cell.variant || 0} size={isMobile ? 53 : isTablet ? 62 : 90} isDaytime={isDaytime} />}
+              {cell.state === 'building' && <BuildingIcon variant={cell.variant || 0} size={isMobile ? 41 : isTablet ? 48 : 69} isDaytime={isDaytime} />}
             </div>
           ))
         )}
@@ -911,8 +1087,8 @@ export default function LandingGameSimple() {
 
         {/* Trucks overlay */}
         {trucks.map(truck => {
-          const truckWidth = isMobile ? 36 : 60
-          const truckHeight = isMobile ? 22 : 36
+          const truckWidth = isMobile ? 37 : 59
+          const truckHeight = isMobile ? 30 : 47
           // Subtle up/down bob while driving, purely cosmetic (not stored in state)
           const bob = Math.sin(truck.x / 14) * 1.5
 

@@ -228,6 +228,47 @@ const caseStudies = {
     </div>
   </div>
 
+  <div class="cs-credit-slider">
+    <div class="cs-credit-slider-hint">Drag the slider to change the monthly credit budget</div>
+    <div class="cs-credit-slider-inner">
+      <div class="cs-credit-slider-labels">
+        <span>Unlimited</span>
+        <span>200 / mo</span>
+      </div>
+      <input type="range" min="0" max="100" value="0" class="cs-credit-slider-input" aria-label="Monthly credit budget, from unlimited to 200" oninput="var w=this.closest('.cs-credit-slider');var pct=(1.5+(this.value/100)*31);var tried=Math.round((pct/100)*24);var dots=w.querySelectorAll('.cs-credit-dot');for(var i=0;i<dots.length;i++){dots[i].style.backgroundColor=i<tried?'#1C1917':'#E7E5E4';}w.querySelector('.cs-credit-badge').textContent=pct.toFixed(1)+'% trying a product they would not have picked on their own';w.querySelector('.cs-credit-slider-value-num').textContent=this.value==0?'Unlimited':(this.value==100?'200':(Math.round(200+(1-this.value/100)*800)));" />
+      <div class="cs-credit-slider-value">Budget: <b class="cs-credit-slider-value-num" style="color: #1C1917;">Unlimited</b> credits</div>
+    </div>
+    <div class="cs-credit-dots">
+        <div class="cs-credit-dot"></div>
+        <div class="cs-credit-dot"></div>
+        <div class="cs-credit-dot"></div>
+        <div class="cs-credit-dot"></div>
+        <div class="cs-credit-dot"></div>
+        <div class="cs-credit-dot"></div>
+        <div class="cs-credit-dot"></div>
+        <div class="cs-credit-dot"></div>
+        <div class="cs-credit-dot"></div>
+        <div class="cs-credit-dot"></div>
+        <div class="cs-credit-dot"></div>
+        <div class="cs-credit-dot"></div>
+        <div class="cs-credit-dot"></div>
+        <div class="cs-credit-dot"></div>
+        <div class="cs-credit-dot"></div>
+        <div class="cs-credit-dot"></div>
+        <div class="cs-credit-dot"></div>
+        <div class="cs-credit-dot"></div>
+        <div class="cs-credit-dot"></div>
+        <div class="cs-credit-dot"></div>
+        <div class="cs-credit-dot"></div>
+        <div class="cs-credit-dot"></div>
+        <div class="cs-credit-dot"></div>
+        <div class="cs-credit-dot"></div>
+    </div>
+    <div class="cs-credit-badge-row">
+      <div class="cs-credit-badge">1.5% trying a product they would not have picked on their own</div>
+    </div>
+  </div>
+
   <div class="feature-eyebrow">The five versions</div>
 
   <div class="cs-stage" style="margin-top: 20px;">

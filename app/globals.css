@@ -55,7 +55,7 @@ html, body {
 }
 
 body {
-  background-color: #FFFFFF;
+  background-color: #FAF8F3;
 }
 
 a {
@@ -154,6 +154,50 @@ img, video {
 @keyframes deliveryDust {
   0% { transform: translate(-50%, -50%) scale(0.3); opacity: 0.55; }
   100% { transform: translate(-50%, -50%) scale(2.2); opacity: 0; }
+}
+
+/* Landing game: birds drift across the top of the scene, opposite directions, different speeds */
+/* Clouds: simple straight drift is fine for these, left animates against the container so it's a real crossing, not a % of its own tiny width */
+@keyframes birdDriftRight {
+  from { left: -12%; }
+  to { left: 108%; }
+}
+
+@keyframes birdDriftLeft {
+  from { left: 108%; transform: scaleX(-1); }
+  to { left: -12%; transform: scaleX(-1); }
+}
+
+/* Birds: a real diagonal wave path across the container (left) combined with an up/down bob (top), not a flap-in-place */
+@keyframes birdFlyRight {
+  0%   { left: -10%; top: 0px; }
+  15%  { left: 8%;   top: -14px; }
+  32%  { left: 28%;  top: 6px; }
+  48%  { left: 46%;  top: -10px; }
+  65%  { left: 65%;  top: 8px; }
+  82%  { left: 84%;  top: -6px; }
+  100% { left: 104%; top: 0px; }
+}
+
+@keyframes birdFlyLeft {
+  0%   { left: 104%; top: 0px; }
+  15%  { left: 84%;  top: 10px; }
+  32%  { left: 65%;  top: -8px; }
+  48%  { left: 46%;  top: 6px; }
+  65%  { left: 28%;  top: -10px; }
+  82%  { left: 8%;   top: 8px; }
+  100% { left: -10%; top: 0px; }
+}
+
+/* Landing game: quick wing-flap layered on top of the flight path itself */
+@keyframes birdFlapA {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+
+@keyframes birdFlapB {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-4px); }
 }
 
 /* Splash screen: the brand-green field breathes once instead of sitting flat */
@@ -469,6 +513,78 @@ img, video {
     align-items: flex-start;
     gap: 4px;
   }
+}
+
+/* Interactive credit-budget slider (Feature 01) */
+.cs-credit-slider {
+  width: 100%;
+  margin: 8px 0 64px;
+}
+
+.cs-credit-slider-hint {
+  font-size: 12px;
+  color: #9CA3AF;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.cs-credit-slider-inner {
+  max-width: 420px;
+  margin: 0 auto 32px;
+}
+
+.cs-credit-slider-labels {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #78716C;
+  margin-bottom: 10px;
+}
+
+.cs-credit-slider-input {
+  width: 100%;
+  accent-color: #1C1917;
+  cursor: pointer;
+}
+
+.cs-credit-slider-value {
+  text-align: center;
+  font-size: 13px;
+  color: #57534E;
+  margin-top: 8px;
+}
+
+.cs-credit-dots {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  gap: 8px;
+  max-width: 280px;
+  margin: 0 auto 28px;
+}
+
+.cs-credit-dot {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  background-color: #E7E5E4;
+  transition: background-color 0.3s ease;
+}
+
+.cs-credit-badge-row {
+  display: flex;
+  justify-content: center;
+}
+
+.cs-credit-badge {
+  background-color: #1C1917;
+  color: #FAFAF9;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 8px 16px;
+  border-radius: 999px;
 }
 
 /* Product Card version-progression stages (Feature 02) */
