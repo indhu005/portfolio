@@ -83,6 +83,8 @@ export default function Home() {
   const router = useRouter()
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [revealed, setRevealed] = useState(false)
+  const [splashFading, setSplashFading] = useState(false)
+  const [splashVisible, setSplashVisible] = useState(true)
   const isMobile = useMediaQuery('(max-width: 768px)')
   const isTablet = useMediaQuery('(max-width: 1024px)')
   const isWideDesktop = useMediaQuery('(min-width: 2200px)')
@@ -90,6 +92,16 @@ export default function Home() {
   useEffect(() => {
     const timer = setTimeout(() => setRevealed(true), 50)
     return () => clearTimeout(timer)
+  }, [])
+
+  // Brand-color splash on first paint, fades into the page shortly after
+  useEffect(() => {
+    const fadeTimer = setTimeout(() => setSplashFading(true), 450)
+    const removeTimer = setTimeout(() => setSplashVisible(false), 850)
+    return () => {
+      clearTimeout(fadeTimer)
+      clearTimeout(removeTimer)
+    }
   }, [])
 
   const revealStyle = (delayMs: number): CSSProperties => ({
@@ -107,6 +119,19 @@ export default function Home() {
       overflow: 'hidden',
       width: '100vw',
     }}>
+
+      {/* Splash screen - brand green flash before the page fades in */}
+      {splashVisible && (
+        <div style={{
+          position: 'fixed',
+          inset: 0,
+          backgroundColor: '#8CC751',
+          zIndex: 9999,
+          opacity: splashFading ? 0 : 1,
+          transition: 'opacity 0.4s ease-out',
+          pointerEvents: splashFading ? 'none' : 'auto',
+        }} />
+      )}
 
       {/* SIDEBAR - Hidden on mobile/tablet */}
       {!isTablet && <Sidebar />}
