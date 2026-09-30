@@ -50,7 +50,9 @@ const TldrStrip = ({ cells, isMobile, isTablet, offset }: { cells: TldrCell[]; i
         const isFirstRow = i < columns
         return (
           <div key={cell.label} style={{
-            padding: isMobile ? '16px 0' : '20px',
+            paddingTop: isMobile ? '16px' : '20px',
+            paddingRight: isMobile ? 0 : '20px',
+            paddingBottom: isMobile ? '16px' : '20px',
             paddingLeft: isFirstInRow ? 0 : '20px',
             borderLeft: isFirstInRow ? 'none' : '1px solid #F1F0EE',
             borderTop: isFirstRow ? 'none' : '1px solid #F1F0EE',
