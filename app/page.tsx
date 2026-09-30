@@ -127,10 +127,25 @@ export default function Home() {
           inset: 0,
           backgroundColor: '#8CC751',
           zIndex: 9999,
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
           opacity: splashFading ? 0 : 1,
           transition: 'opacity 0.4s ease-out',
+          animation: 'splashPulse 0.6s ease-out',
           pointerEvents: splashFading ? 'none' : 'auto',
-        }} />
+        }}>
+          <img
+            src="/images/home/tree 01 (3).svg"
+            alt=""
+            style={{
+              width: '72px',
+              height: '72px',
+              objectFit: 'contain',
+              animation: 'splashSproutPop 0.5s 0.08s cubic-bezier(0.34, 1.56, 0.64, 1) both',
+            }}
+          />
+        </div>
       )}
 
       {/* SIDEBAR - Hidden on mobile/tablet */}
