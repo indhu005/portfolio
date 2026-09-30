@@ -449,8 +449,8 @@ export default function LandingGameSimple() {
             const newGrid = [...prevGrid]
             if (newGrid[truck.row]?.[truck.col]?.state === 'empty') {
               // Keep the tall skyscraper (variant 3) off phone/tablet entirely (too tall for
-              // those smaller cells) and out of row 0 on desktop (would overflow into the header).
-              const tallVariantAllowed = !isMobile && !isTablet && truck.row !== 0
+              // those smaller cells), and on laptop/desktop only let it appear in row 0.
+              const tallVariantAllowed = !isMobile && !isTablet && truck.row === 0
               const buildingVariant = tallVariantAllowed ? Math.floor(Math.random() * 4) : Math.floor(Math.random() * 3)
               newGrid[truck.row][truck.col] = { state: 'building', variant: buildingVariant }
               spawnDust(truck.row, truck.col)
