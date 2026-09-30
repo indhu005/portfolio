@@ -1077,8 +1077,8 @@ export default function LandingGameSimple() {
               }}
             >
               {cell.state === 'empty' && <GroundMarker size={cellSize} />}
-              {cell.state === 'sapling' && <SaplingIcon variant={cell.variant || 0} size={isMobile ? 35 : isTablet ? 42 : 60} isDaytime={isDaytime} />}
-              {cell.state === 'tree' && <TreeIcon variant={cell.variant || 0} size={isMobile ? 53 : isTablet ? 62 : 90} isDaytime={isDaytime} />}
+              {cell.state === 'sapling' && <SaplingIcon variant={cell.variant || 0} size={isMobile ? 30 : isTablet ? 42 : 60} isDaytime={isDaytime} />}
+              {cell.state === 'tree' && <TreeIcon variant={cell.variant || 0} size={isMobile ? 45 : isTablet ? 62 : 90} isDaytime={isDaytime} />}
               {cell.state === 'building' && <BuildingIcon variant={cell.variant || 0} size={isMobile ? 41 : isTablet ? 48 : 69} isDaytime={isDaytime} />}
             </div>
           ))
