@@ -34,25 +34,28 @@ const ROUND_DURATION = 10 // 10 seconds
 
 // Simple tree component - full grown tree with sway animation
 const TreeIcon = ({ size = 60, variant = 0, isDaytime = true }: { size?: number; variant?: number; isDaytime?: boolean }) => {
-  const [isSwaying, setIsSwaying] = useState(false)
+  const [isGusting, setIsGusting] = useState(false)
   const treeVariants = ['tree 01 (1).svg', 'tree 01 (2).svg', 'tree 01 (3).svg', 'tree 01 (4).svg', 'tree 01 (5).svg']
   const treeFile = treeVariants[variant % 5]
+  // Stagger each tree's idle sway so a row of trees doesn't move in unison
+  const swayDelay = useRef(-(Math.random() * 4)).current
+  const swayDuration = useRef(3.4 + Math.random() * 1.8).current
 
-  // Random sway animation
+  // Occasional stronger gust layered on top of the continuous idle sway
   useEffect(() => {
     const randomDelay = Math.random() * 5000
-    const swayDuration = 800
+    const gustDuration = 900
 
-    const startSwaying = () => {
-      const shouldSway = Math.random() < 0.3 // 30% chance
-      if (shouldSway) {
-        setIsSwaying(true)
-        setTimeout(() => setIsSwaying(false), swayDuration)
+    const startGusting = () => {
+      const shouldGust = Math.random() < 0.3 // 30% chance
+      if (shouldGust) {
+        setIsGusting(true)
+        setTimeout(() => setIsGusting(false), gustDuration)
       }
-      setTimeout(startSwaying, 3000 + Math.random() * 4000)
+      setTimeout(startGusting, 3000 + Math.random() * 4000)
     }
 
-    const initialTimeout = setTimeout(startSwaying, randomDelay)
+    const initialTimeout = setTimeout(startGusting, randomDelay)
     return () => clearTimeout(initialTimeout)
   }, [])
 
@@ -68,10 +71,12 @@ const TreeIcon = ({ size = 60, variant = 0, isDaytime = true }: { size?: number;
           height: size,
           bottom: '20%',
           left: '50%',
-          transform: isSwaying ? 'translateX(-50%) rotate(3deg)' : 'translateX(-50%)',
+          transformOrigin: 'bottom center',
+          animation: isGusting
+            ? 'treeGust 0.9s ease-in-out'
+            : `treeIdleSway ${swayDuration}s ease-in-out ${swayDelay}s infinite`,
           objectFit: 'contain',
           zIndex: 5,
-          transition: 'transform 0.4s ease-in-out',
           willChange: 'transform',
           backfaceVisibility: 'hidden',
         }}
@@ -82,14 +87,8 @@ const TreeIcon = ({ size = 60, variant = 0, isDaytime = true }: { size?: number;
 
 // Sapling component - smaller tree with grow animation
 const SaplingIcon = ({ size = 40, variant = 0, isDaytime = true }: { size?: number; variant?: number; isDaytime?: boolean }) => {
-  const [isGrowing, setIsGrowing] = useState(true)
   const treeVariants = ['tree 01 (1).svg', 'tree 01 (2).svg', 'tree 01 (3).svg', 'tree 01 (4).svg', 'tree 01 (5).svg']
   const treeFile = treeVariants[variant % 5]
-
-  useEffect(() => {
-    const timer = setTimeout(() => setIsGrowing(false), 400)
-    return () => clearTimeout(timer)
-  }, [])
 
   return (
     <>
@@ -103,11 +102,10 @@ const SaplingIcon = ({ size = 40, variant = 0, isDaytime = true }: { size?: numb
           height: size,
           bottom: '20%',
           left: '50%',
-          transform: `translateX(-50%) scale(${isGrowing ? 0.3 : 1})`,
+          transformOrigin: 'bottom center',
+          animation: 'saplingPop 0.45s cubic-bezier(0.34, 1.56, 0.64, 1) forwards',
           objectFit: 'contain',
-          opacity: 0.7,
           zIndex: 5,
-          transition: 'transform 0.4s ease-out',
           willChange: 'transform',
           backfaceVisibility: 'hidden',
         }}
@@ -155,6 +153,8 @@ const BuildingIcon = ({ size = 60, variant = 0, isDaytime = true }: { size?: num
 const GroundMarker = ({ size = 60 }: { size?: number }) => {
   const ellipseWidth = size * 0.7 * 0.2
   const ellipseHeight = size * 0.3 * 0.2
+  // Stagger so a grid of empty plots doesn't pulse in lockstep
+  const pulseDelay = useRef(-(Math.random() * 2.6)).current
   return (
     <svg
       width={size}
@@ -164,7 +164,8 @@ const GroundMarker = ({ size = 60 }: { size?: number }) => {
         position: 'absolute',
         bottom: '15%',
         left: '50%',
-        transform: 'translateX(-50%)',
+        transformOrigin: `${size / 2}px ${size * 0.8}px`,
+        animation: `groundInvite 2.6s ease-in-out ${pulseDelay}s infinite`,
         pointerEvents: 'none',
         zIndex: 0,
       }}
@@ -175,7 +176,6 @@ const GroundMarker = ({ size = 60 }: { size?: number }) => {
         rx={ellipseWidth / 2}
         ry={ellipseHeight / 2}
         fill="#D1D1D1"
-        opacity="0.4"
       />
     </svg>
   )
@@ -335,7 +335,6 @@ export default function LandingGameSimple() {
       const targetX = targetCol * (cellSize + gap)
       const startX = fromLeft ? -100 : (cols * (cellSize + gap) + 100)
 
-      // Spawn truck immediately (no smoke)
       const newTruck: Truck = {
         id: Date.now() + Math.random(),
         row: targetRow,
@@ -376,52 +375,58 @@ export default function LandingGameSimple() {
       setTrucks(prevTrucks => {
         if (prevTrucks.length === 0) return prevTrucks
 
+        const spawnDust = (row: number, col: number) => {
+          const cs = isMobile ? 48 : isTablet ? 64 : (typeof window !== 'undefined' && window.innerWidth >= 1800 ? 120 : 100)
+          const g = isMobile ? 8 : isTablet ? 12 : 16
+          const dustId = Date.now() + Math.random()
+          const dustX = col * (cs + g) + cs / 2
+          const dustY = row * (cs + g) + cs / 2
+          setSmokes(prev => [...prev, { id: dustId, x: dustX, y: dustY, facingRight: true }])
+          setTimeout(() => {
+            setSmokes(prev => prev.filter(s => s.id !== dustId))
+          }, 500)
+        }
+
+        const baseSpeed = (playCount === 0 ? 4 : 5.5) * 2 // Compensate for half frame rate to keep same visual speed
+        const decelZone = 70 // px — truck eases into its delivery spot instead of stopping abruptly
+
+        const deliver = (truck: Truck) => {
+          setGrid(prevGrid => {
+            if (prevGrid.length === 0) return prevGrid
+            const newGrid = [...prevGrid]
+            if (newGrid[truck.row]?.[truck.col]?.state === 'empty') {
+              const buildingVariant = Math.floor(Math.random() * 3)
+              newGrid[truck.row][truck.col] = { state: 'building', variant: buildingVariant }
+              spawnDust(truck.row, truck.col)
+            }
+            return newGrid
+          })
+        }
+
         return prevTrucks
           .map(truck => {
-            const speed = (playCount === 0 ? 4 : 5.5) * 2 // Compensate for half frame rate to keep same visual speed
             let newX = truck.x
             let newDelivered = truck.delivered
+            const distanceToTarget = Math.abs(truck.targetX - truck.x)
+            const speed = !truck.delivered && distanceToTarget < decelZone
+              ? Math.max(baseSpeed * 0.3, baseSpeed * (distanceToTarget / decelZone))
+              : baseSpeed
 
-            // Move toward target, deliver, then exit
             if (truck.facingRight) {
               newX += speed
-
-              // Check if reached target and not yet delivered
               if (!truck.delivered && newX >= truck.targetX) {
-                // Deliver building
-                setGrid(prevGrid => {
-                  if (prevGrid.length === 0) return prevGrid
-                  const newGrid = [...prevGrid]
-                  if (newGrid[truck.row]?.[truck.col]?.state === 'empty') {
-                    const buildingVariant = Math.floor(Math.random() * 3)
-                    newGrid[truck.row][truck.col] = { state: 'building', variant: buildingVariant }
-                  }
-                  return newGrid
-                })
+                newX = truck.targetX
+                deliver(truck)
                 newDelivered = true
               }
-
-              // Remove if off screen right
               if (newX > gridWidth + 100) return null
             } else {
               newX -= speed
-
-              // Check if reached target and not yet delivered
               if (!truck.delivered && newX <= truck.targetX) {
-                // Deliver building
-                setGrid(prevGrid => {
-                  if (prevGrid.length === 0) return prevGrid
-                  const newGrid = [...prevGrid]
-                  if (newGrid[truck.row]?.[truck.col]?.state === 'empty') {
-                    const buildingVariant = Math.floor(Math.random() * 3)
-                    newGrid[truck.row][truck.col] = { state: 'building', variant: buildingVariant }
-                  }
-                  return newGrid
-                })
+                newX = truck.targetX
+                deliver(truck)
                 newDelivered = true
               }
-
-              // Remove if off screen left
               if (newX < -100) return null
             }
 
@@ -908,6 +913,8 @@ export default function LandingGameSimple() {
         {trucks.map(truck => {
           const truckWidth = isMobile ? 36 : 60
           const truckHeight = isMobile ? 22 : 36
+          // Subtle up/down bob while driving, purely cosmetic (not stored in state)
+          const bob = Math.sin(truck.x / 14) * 1.5
 
           return (
             <img
@@ -918,7 +925,7 @@ export default function LandingGameSimple() {
                 position: 'absolute',
                 left: '0',
                 top: '0',
-                transform: `translate(${truck.x}px, ${truck.y}px) scaleX(${truck.facingRight ? 1 : -1})`,
+                transform: `translate(${truck.x}px, ${truck.y + bob}px) scaleX(${truck.facingRight ? 1 : -1})`,
                 width: `${truckWidth}px`,
                 height: `${truckHeight}px`,
                 willChange: 'transform',
@@ -929,6 +936,25 @@ export default function LandingGameSimple() {
             />
           )
         })}
+
+        {/* Delivery dust puffs */}
+        {smokes.map(dust => (
+          <div
+            key={dust.id}
+            style={{
+              position: 'absolute',
+              left: `${dust.x}px`,
+              top: `${dust.y}px`,
+              width: isMobile ? '28px' : '44px',
+              height: isMobile ? '28px' : '44px',
+              borderRadius: '50%',
+              background: 'radial-gradient(circle, rgba(214,211,209,0.7) 0%, rgba(214,211,209,0) 70%)',
+              animation: 'deliveryDust 0.5s ease-out forwards',
+              zIndex: 15,
+              pointerEvents: 'none',
+            }}
+          />
+        ))}
         </div>
       </div>
 

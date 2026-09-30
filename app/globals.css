@@ -123,6 +123,39 @@ img, video {
   border-left-width: 4px;
 }
 
+/* Landing game: gentle continuous idle sway so trees never feel static */
+@keyframes treeIdleSway {
+  0%, 100% { transform: translateX(-50%) rotate(-0.6deg); }
+  50% { transform: translateX(-50%) rotate(0.6deg); }
+}
+
+/* Landing game: stronger gust layered on top of idle sway */
+@keyframes treeGust {
+  0%, 100% { transform: translateX(-50%) rotate(-0.6deg); }
+  30% { transform: translateX(-50%) rotate(4deg); }
+  60% { transform: translateX(-50%) rotate(-2.5deg); }
+  100% { transform: translateX(-50%) rotate(-0.6deg); }
+}
+
+/* Landing game: sapling pops in with a spring overshoot instead of a flat ease */
+@keyframes saplingPop {
+  0% { transform: translateX(-50%) scale(0.2) rotate(-6deg); opacity: 0; }
+  60% { transform: translateX(-50%) scale(1.12) rotate(2deg); opacity: 0.75; }
+  100% { transform: translateX(-50%) scale(1) rotate(0deg); opacity: 0.85; }
+}
+
+/* Landing game: empty plots pulse softly to invite a click */
+@keyframes groundInvite {
+  0%, 100% { opacity: 0.35; transform: translateX(-50%) scale(1); }
+  50% { opacity: 0.65; transform: translateX(-50%) scale(1.15); }
+}
+
+/* Landing game: dust puff when a truck drops a building */
+@keyframes deliveryDust {
+  0% { transform: translate(-50%, -50%) scale(0.3); opacity: 0.55; }
+  100% { transform: translate(-50%, -50%) scale(2.2); opacity: 0; }
+}
+
 /* Water rise animation for photo grid */
 @keyframes waterRise {
   0% {
