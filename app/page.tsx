@@ -205,7 +205,7 @@ export default function Home() {
               lineHeight: '1.08',
               color: '#1C1917',
               marginTop: isWideDesktop ? '20px' : '0',
-              marginBottom: isMobile ? '32px' : isWideDesktop ? '56px' : '48px',
+              marginBottom: isMobile ? '16px' : '20px',
               letterSpacing: '-0.02em',
               ...revealStyle(0),
             }}>
@@ -213,16 +213,33 @@ export default function Home() {
             </h1>
 
             <div style={{
+              display: 'flex',
+              flexWrap: 'wrap',
+              alignItems: 'center',
+              gap: isMobile ? '8px' : '10px',
+              fontSize: isMobile ? '14px' : '15px',
+              letterSpacing: '0.01em',
+              marginBottom: isMobile ? '32px' : isWideDesktop ? '56px' : '48px',
+              ...revealStyle(60),
+            }}>
+              <span style={{ fontWeight: 700, color: '#57534E' }}>Senior Product Designer</span>
+              <span style={{ color: '#D6D3D1' }}>·</span>
+              <span style={{ fontWeight: 500, color: '#57534E' }}>Seattle</span>
+              <span style={{ color: '#D6D3D1' }}>·</span>
+              <span style={{ fontWeight: 700, color: '#57534E' }}>0→1 &amp; AI/ML Product Trust</span>
+            </div>
+
+            <div style={{
               fontSize: isMobile ? '20px' : isWideDesktop ? '24px' : '22px',
               lineHeight: '1.8',
               color: '#1C1917',
             }}>
               <p style={{ marginBottom: isWideDesktop ? '32px' : '28px', ...revealStyle(120) }}>
-                I'm a product designer who builds trust into systems — from a founding role that took a marketplace from three screens to funded, to an enterprise ML platform that earned 95% adoption inside a politically sensitive institution.
+                I'm a product designer with 8+ years of experience taking products from 0 to 1. I build trust into systems, from a founding role at Keye that took a marketplace from three screens to a funded company, to LAT, an enterprise ML platform that reached 95% adoption inside a politically sensitive institution.
               </p>
 
               <p style={{ marginBottom: isWideDesktop ? '32px' : '28px', ...revealStyle(220) }}>
-                I think in the how and the why, and lately the why now — most recently, what accessibility and safety guardrails should look like as AI decides more of what people see and trust.
+                I think in the how and the why, and lately the why now. Most recently, that's meant figuring out what accessibility and safety guardrails should look like as AI decides more of what people see and trust.
               </p>
             </div>
           </main>
