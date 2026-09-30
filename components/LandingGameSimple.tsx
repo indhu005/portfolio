@@ -622,14 +622,25 @@ export default function LandingGameSimple() {
 
         {/* Explanation - desktop only (not tablet) */}
         {!isMobile && !isTablet && (
-          <div style={{
-            fontSize: '14px',
-            color: '#4B5563',
-            marginBottom: '12px',
-            lineHeight: '1.5',
-          }}>
-            Trucks deliver buildings to empty spaces. Plant trees to keep the ecosystem alive.
-          </div>
+          <>
+            <div style={{
+              fontSize: '14px',
+              color: '#4B5563',
+              marginBottom: '6px',
+              lineHeight: '1.5',
+            }}>
+              Trucks deliver buildings to empty spaces. Plant trees to keep the ecosystem alive.
+            </div>
+            <div style={{
+              fontSize: '13px',
+              color: '#9CA3AF',
+              fontStyle: 'italic',
+              marginBottom: '12px',
+              lineHeight: '1.5',
+            }}>
+              A small stand-in for the real thing: shipping fast without losing what matters.
+            </div>
+          </>
         )}
 
         {/* Instruction */}
@@ -710,11 +721,11 @@ export default function LandingGameSimple() {
               }
             }}
             style={{
-              padding: '6px 10px',
+              padding: '6px 12px',
               backgroundColor: 'rgba(28, 25, 23, 0.9)',
               color: '#FFFFFF',
               border: 'none',
-              borderRadius: '8px',
+              borderRadius: '999px',
               fontSize: '11px',
               fontWeight: 600,
               cursor: 'pointer',
@@ -764,6 +775,35 @@ export default function LandingGameSimple() {
         </div>
       )}
 
+      {/* Desktop only: "Why a game?" label above the yellow ? button */}
+      {!isMobile && !isTablet && (
+        <button
+          onClick={() => {
+            setShowLearnMore(true)
+            setButtonActive(true)
+            setTimeout(() => setButtonActive(false), 300)
+          }}
+          style={{
+            position: 'absolute',
+            bottom: '150px',
+            right: '68px',
+            padding: '6px 14px',
+            backgroundColor: 'rgba(28, 25, 23, 0.9)',
+            color: '#FAF8F3',
+            border: 'none',
+            borderRadius: '999px',
+            fontSize: '12px',
+            fontWeight: 600,
+            cursor: 'pointer',
+            zIndex: 100,
+            fontFamily: 'DM Sans, sans-serif',
+            whiteSpace: 'nowrap',
+          }}
+        >
+          Why a game?
+        </button>
+      )}
+
       {/* Desktop only: Yellow ? button - bottom right (tablets use mobile strip) */}
       {!isMobile && !isTablet && (
         <button
@@ -775,7 +815,7 @@ export default function LandingGameSimple() {
           style={{
             position: 'absolute',
             bottom: '60px',
-            right: '40px',
+            right: '89px',
             width: '64px',
             height: '64px',
             backgroundColor: buttonActive ? '#FF6B35' : '#FFF44F',
@@ -885,11 +925,11 @@ export default function LandingGameSimple() {
             }}
             style={{
               marginTop: '8px',
-              padding: '8px 12px',
+              padding: '8px 16px',
               backgroundColor: 'rgba(28, 25, 23, 0.9)',
               color: '#FFFFFF',
               border: 'none',
-              borderRadius: '6px',
+              borderRadius: '999px',
               fontSize: '13px',
               fontWeight: 600,
               cursor: 'pointer',
@@ -981,7 +1021,7 @@ export default function LandingGameSimple() {
         <div
           style={{
             position: 'absolute',
-            top: '-115px',
+            top: '-140px',
             left: isMobile ? '20px' : '40px',
             pointerEvents: 'none',
             zIndex: 5,
@@ -1013,6 +1053,48 @@ export default function LandingGameSimple() {
           )}
         </div>
 
+        {/* See the work — points visitors at the case studies without requiring them to play */}
+        <button
+          onClick={() => {
+            document.getElementById('case-studies')?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+          }}
+          style={{
+            position: 'absolute',
+            top: '-141px',
+            left: isMobile ? '64px' : '92px',
+            display: 'flex',
+            alignItems: 'center',
+            gap: '6px',
+            padding: '8px 16px',
+            backgroundColor: '#1C1917',
+            border: 'none',
+            borderRadius: '999px',
+            cursor: 'pointer',
+            color: '#FAF8F3',
+            fontSize: '13px',
+            fontWeight: 600,
+            letterSpacing: '0.02em',
+            whiteSpace: 'nowrap',
+            fontFamily: 'DM Sans, sans-serif',
+            boxShadow: '0 3px 10px rgba(0, 0, 0, 0.15)',
+            transition: 'transform 0.15s ease, box-shadow 0.15s ease',
+            zIndex: 5,
+          }}
+          onMouseEnter={(e) => {
+            e.currentTarget.style.transform = 'translateY(-2px)'
+            e.currentTarget.style.boxShadow = '0 6px 16px rgba(0, 0, 0, 0.2)'
+          }}
+          onMouseLeave={(e) => {
+            e.currentTarget.style.transform = 'translateY(0)'
+            e.currentTarget.style.boxShadow = '0 3px 10px rgba(0, 0, 0, 0.15)'
+          }}
+        >
+          See the work
+          <svg width="13" height="13" viewBox="0 0 16 16" fill="none" style={{ animation: 'scrollPromptBounce 1.6s ease-in-out infinite' }}>
+            <path d="M8 2.5V13.5M8 13.5L3 8.5M8 13.5L13 8.5" stroke="#FAF8F3" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+          </svg>
+        </button>
+
         {/* Ambient audio — birds louder with more trees, traffic louder with more buildings. Starts muted. */}
         <audio ref={birdsAudioRef} src="/audio/birds%20chirping.mp3" loop preload="none" />
         <audio ref={trafficAudioRef} src="/audio/Traffic%20sound.mp3" loop preload="none" />
@@ -1026,7 +1108,7 @@ export default function LandingGameSimple() {
               ? { top: '110px', left: '20px' }
               : isTablet
               ? { top: '130px', left: '40px' }
-              : { bottom: '-12px', right: '36px' }),
+              : { bottom: '-12px', right: '85px' }),
             width: '32px',
             height: '32px',
             borderRadius: '50%',

@@ -34,16 +34,19 @@ type TldrCell = { label: string; value: string }
 // language as the case study Brief block, condensed to 4 cells. Column
 // count folds 4 -> 2 -> 1 across breakpoints; border placement is derived
 // from column count so dividers never end up on the wrong edge.
-const TldrStrip = ({ cells, isMobile, isTablet, offset }: { cells: TldrCell[]; isMobile: boolean; isTablet: boolean; offset: number }) => {
+const TldrStrip = ({ cells, isMobile, isTablet, offset, dark, onLight }: { cells: TldrCell[]; isMobile: boolean; isTablet: boolean; offset: number; dark?: boolean; onLight?: boolean }) => {
   const columns = isMobile ? 1 : isTablet ? 2 : 4
+  const borderColor = dark ? 'rgba(255,255,255,0.3)' : onLight ? 'rgba(28,25,23,0.25)' : '#F1F0EE'
+  const labelColor = dark ? 'rgba(255,255,255,0.75)' : onLight ? 'rgba(28,25,23,0.65)' : '#57534E'
+  const valueColor = dark ? '#FFFFFF' : '#1C1917'
   return (
     <div style={{
       display: 'grid',
       gridTemplateColumns: `repeat(${columns}, 1fr)`,
       marginTop: isMobile ? '24px' : '32px',
       marginLeft: offset,
-      borderTop: '1px solid #F1F0EE',
-      borderBottom: '1px solid #F1F0EE',
+      borderTop: `1px solid ${borderColor}`,
+      borderBottom: `1px solid ${borderColor}`,
     }}>
       {cells.map((cell, i) => {
         const isFirstInRow = i % columns === 0
@@ -54,15 +57,15 @@ const TldrStrip = ({ cells, isMobile, isTablet, offset }: { cells: TldrCell[]; i
             paddingRight: isMobile ? 0 : '20px',
             paddingBottom: isMobile ? '16px' : '20px',
             paddingLeft: isFirstInRow ? 0 : '20px',
-            borderLeft: isFirstInRow ? 'none' : '1px solid #F1F0EE',
-            borderTop: isFirstRow ? 'none' : '1px solid #F1F0EE',
+            borderLeft: isFirstInRow ? 'none' : `1px solid ${borderColor}`,
+            borderTop: isFirstRow ? 'none' : `1px solid ${borderColor}`,
           }}>
             <div style={{
               fontSize: '10.5px',
               fontWeight: 700,
               textTransform: 'uppercase',
               letterSpacing: '0.08em',
-              color: '#57534E',
+              color: labelColor,
               marginBottom: '8px',
             }}>
               {cell.label}
@@ -70,7 +73,7 @@ const TldrStrip = ({ cells, isMobile, isTablet, offset }: { cells: TldrCell[]; i
             <div style={{
               fontSize: '14.5px',
               lineHeight: '1.55',
-              color: '#1C1917',
+              color: valueColor,
             }}>
               {cell.value}
             </div>
@@ -355,9 +358,9 @@ export default function Home() {
                 cursor: isMobile ? 'pointer' : 'default',
                 display: 'flex',
                 flexDirection: 'column',
-                border: '1.5px solid #D6D3D1',
+                border: '1.5px solid #4B2E83',
                 padding: isMobile ? '24px' : isWideDesktop ? '48px' : '40px',
-                backgroundColor: '#FFFFFF',
+                backgroundColor: '#4B2E83',
               }}>
                 {/* Header: index + title + description */}
                 <div style={{
@@ -369,7 +372,7 @@ export default function Home() {
                   <div style={{
                     fontSize: isWideDesktop ? '15px' : '13px',
                     fontWeight: 700,
-                    color: 'var(--accent)',
+                    color: '#FFFFFF',
                     letterSpacing: '0.08em',
                     flexShrink: 0,
                     paddingTop: '6px',
@@ -388,7 +391,7 @@ export default function Home() {
                         fontFamily: 'var(--font-fraunces), serif',
                         fontSize: isMobile ? '24px' : isWideDesktop ? '34px' : '28px',
                         fontWeight: 700,
-                        color: '#1C1917',
+                        color: '#FFFFFF',
                         letterSpacing: '-0.01em',
                         margin: 0,
                       }}>
@@ -399,8 +402,8 @@ export default function Home() {
                         fontWeight: 700,
                         textTransform: 'uppercase',
                         letterSpacing: '0.06em',
-                        color: '#57534E',
-                        border: '1px solid #E5E7EB',
+                        color: '#FFFFFF',
+                        border: '1px solid rgba(255,255,255,0.4)',
                         borderRadius: '0px',
                         padding: '4px 10px',
                         flexShrink: 0,
@@ -411,7 +414,7 @@ export default function Home() {
                         fontSize: '11px',
                         fontWeight: 700,
                         letterSpacing: '0.02em',
-                        color: '#57534E',
+                        color: 'rgba(255,255,255,0.85)',
                         flexShrink: 0,
                       }}>
                         Jun 2023 – May 2024
@@ -420,7 +423,7 @@ export default function Home() {
                     <p style={{
                       fontSize: isMobile ? '19px' : isWideDesktop ? '23px' : '22px',
                       lineHeight: '1.6',
-                      color: '#57534E',
+                      color: 'rgba(255,255,255,0.9)',
                       maxWidth: '800px',
                     }}>
                       Turning fragmented campus maintenance into a trusted financial decision system through ML-driven lifecycle intelligence.
@@ -429,7 +432,7 @@ export default function Home() {
                       fontFamily: 'var(--font-fraunces), serif',
                       fontSize: isMobile ? '20px' : '24px',
                       fontWeight: 700,
-                      color: '#1C1917',
+                      color: '#FFFFFF',
                       marginTop: isMobile ? '12px' : '16px',
                     }}>
                       95% pilot adoption
@@ -473,6 +476,7 @@ export default function Home() {
                   isMobile={isMobile}
                   isTablet={isTablet && !isMobile}
                   offset={isMobile ? 0 : 56}
+                  dark
                   cells={[
                     { label: 'Role & Team', value: 'Lead Designer (60% design, 40% strategy) · team of 4 — PM, 2 external engineers, client stakeholders' },
                     { label: 'Constraint', value: "Legacy CMMS/ERP stack couldn't be disrupted, data integrity had hard boundaries, capital decisions were politically sensitive." },
@@ -496,7 +500,7 @@ export default function Home() {
                   <div style={{
                     width: '100%',
                     height: isMobile ? '320px' : isWideDesktop ? '760px' : '620px',
-                    backgroundColor: '#E5E5E5',
+                    backgroundColor: '#293133',
                     borderRadius: '0px',
                     transition: 'transform 0.3s ease, box-shadow 0.3s ease',
                   }}
@@ -559,9 +563,9 @@ export default function Home() {
                 cursor: isMobile ? 'pointer' : 'default',
                 display: 'flex',
                 flexDirection: 'column',
-                border: '1.5px solid #D6D3D1',
+                border: '1.5px solid #4F7DDD',
                 padding: isMobile ? '24px' : isWideDesktop ? '48px' : '40px',
-                backgroundColor: '#FFFFFF',
+                backgroundColor: '#4F7DDD',
               }}>
                 {/* Header: index + title + description */}
                 <div style={{
@@ -573,7 +577,7 @@ export default function Home() {
                   <div style={{
                     fontSize: isWideDesktop ? '15px' : '13px',
                     fontWeight: 700,
-                    color: 'var(--accent)',
+                    color: '#FFFFFF',
                     letterSpacing: '0.08em',
                     flexShrink: 0,
                     paddingTop: '6px',
@@ -592,7 +596,7 @@ export default function Home() {
                         fontFamily: 'var(--font-fraunces), serif',
                         fontSize: isMobile ? '24px' : isWideDesktop ? '34px' : '28px',
                         fontWeight: 700,
-                        color: '#1C1917',
+                        color: '#FFFFFF',
                         letterSpacing: '-0.01em',
                         margin: 0,
                       }}>
@@ -603,8 +607,8 @@ export default function Home() {
                         fontWeight: 700,
                         textTransform: 'uppercase',
                         letterSpacing: '0.06em',
-                        color: '#57534E',
-                        border: '1px solid #E5E7EB',
+                        color: '#FFFFFF',
+                        border: '1px solid rgba(255,255,255,0.4)',
                         borderRadius: '0px',
                         padding: '4px 10px',
                         flexShrink: 0,
@@ -615,7 +619,7 @@ export default function Home() {
                         fontSize: '11px',
                         fontWeight: 700,
                         letterSpacing: '0.02em',
-                        color: '#57534E',
+                        color: 'rgba(255,255,255,0.85)',
                         flexShrink: 0,
                       }}>
                         2021–2022
@@ -624,7 +628,7 @@ export default function Home() {
                     <p style={{
                       fontSize: isMobile ? '19px' : isWideDesktop ? '23px' : '22px',
                       lineHeight: '1.6',
-                      color: '#57534E',
+                      color: 'rgba(255,255,255,0.9)',
                       maxWidth: '800px',
                     }}>
                       From three static screens to a YC-backed subscription marketplace — designing ClassPass for digital tools.
@@ -633,7 +637,7 @@ export default function Home() {
                       fontFamily: 'var(--font-fraunces), serif',
                       fontSize: isMobile ? '20px' : '24px',
                       fontWeight: 700,
-                      color: '#1C1917',
+                      color: '#FFFFFF',
                       marginTop: isMobile ? '12px' : '16px',
                     }}>
                       0→20K MAUs
@@ -677,6 +681,7 @@ export default function Home() {
                   isMobile={isMobile}
                   isTablet={isTablet && !isMobile}
                   offset={isMobile ? 0 : 56}
+                  dark
                   cells={[
                     { label: 'Role & Team', value: 'Founding Designer · team of 5 — 2 engineers, 1 PM, 2 designers I hired' },
                     { label: 'Constraint', value: "Engineering was 12 time zones away; a co-founder's exit erased backend capacity for planned integrations." },
@@ -685,7 +690,7 @@ export default function Home() {
                   ]}
                 />
 
-                {/* Landing hero image */}
+                {/* Landing hero — same video + laptop treatment used as the hero in the Keye case study */}
                 <a
                   href="/work/keye"
                   style={{
@@ -697,15 +702,10 @@ export default function Home() {
                     cursor: 'pointer',
                   }}
                 >
-                  <img
-                    src="/images/home/keye-landing-hero.webp"
-                    alt="Keye landing page hero"
-                    loading="lazy"
+                  <div
+                    className="cs-laptop-mockup"
                     style={{
                       width: '100%',
-                      height: 'auto',
-                      display: 'block',
-                      borderRadius: '0px',
                       transition: 'transform 0.3s ease, box-shadow 0.3s ease',
                     }}
                     onMouseEnter={(e) => {
@@ -716,52 +716,29 @@ export default function Home() {
                       e.currentTarget.style.transform = 'translateY(0)'
                       e.currentTarget.style.boxShadow = 'none'
                     }}
-                  />
-                </a>
-
-                {/* Large Image Placeholder */}
-                <a
-                  href="/work/keye"
-                  style={{
-                    display: 'block',
-                    width: isMobile ? '100%' : 'calc(100% - 56px)',
-                    marginLeft: isMobile ? 0 : '56px',
-                    marginTop: isMobile ? '16px' : '20px',
-                    textDecoration: 'none',
-                    cursor: 'pointer',
-                  }}
-                >
-                  <div style={{
-                    width: '100%',
-                    aspectRatio: '2400 / 1351',
-                    backgroundColor: '#FFFFFF',
-                    borderRadius: '0px',
-                    overflow: 'hidden',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    transition: 'transform 0.3s ease, box-shadow 0.3s ease',
-                  }}
-                  onMouseEnter={(e) => {
-                    e.currentTarget.style.transform = 'translateY(-4px)'
-                    e.currentTarget.style.boxShadow = '0 12px 40px rgba(0, 0, 0, 0.12)'
-                  }}
-                  onMouseLeave={(e) => {
-                    e.currentTarget.style.transform = 'translateY(0)'
-                    e.currentTarget.style.boxShadow = 'none'
-                  }}
                   >
-                    <img
-                      src="/images/home/keye-landing.webp"
-                      alt="Keye landing page preview"
-                      loading="lazy"
-                      style={{
-                        width: '95%',
-                        height: '95%',
-                        objectFit: 'contain',
-                        display: 'block',
-                      }}
-                    />
+                    <div className="cs-laptop-lid">
+                      <div className="cs-laptop-camera"></div>
+                      <div className="cs-laptop-screen">
+                        <div className="cs-browser-chrome">
+                          <div className="cs-browser-dots"><span></span><span></span><span></span></div>
+                          <div className="cs-browser-url">🔒 unlockkeye.com</div>
+                        </div>
+                        <video
+                          autoPlay
+                          loop
+                          muted
+                          playsInline
+                          preload="metadata"
+                          aria-label="Keye landing page hero"
+                          style={{ display: 'block', width: '100%', height: 'auto' }}
+                        >
+                          <source src="/videos/Keye/Keye%20hero%20cropped.mp4" type="video/mp4" />
+                        </video>
+                      </div>
+                    </div>
+                    <div className="cs-laptop-hinge"></div>
+                    <div className="cs-laptop-base"><div className="cs-laptop-notch"></div></div>
                   </div>
                 </a>
 
@@ -813,9 +790,9 @@ export default function Home() {
                 cursor: isMobile ? 'pointer' : 'default',
                 display: 'flex',
                 flexDirection: 'column',
-                border: '1.5px solid #D6D3D1',
+                border: '1.5px solid #000000',
                 padding: isMobile ? '24px' : isWideDesktop ? '48px' : '40px',
-                backgroundColor: '#FFFFFF',
+                backgroundColor: '#000000',
               }}>
                 {/* Header: index + title + description */}
                 <div style={{
@@ -827,7 +804,7 @@ export default function Home() {
                   <div style={{
                     fontSize: isWideDesktop ? '15px' : '13px',
                     fontWeight: 700,
-                    color: 'var(--accent)',
+                    color: '#FFFFFF',
                     letterSpacing: '0.08em',
                     flexShrink: 0,
                     paddingTop: '6px',
@@ -846,7 +823,7 @@ export default function Home() {
                         fontFamily: 'var(--font-fraunces), serif',
                         fontSize: isMobile ? '24px' : isWideDesktop ? '34px' : '28px',
                         fontWeight: 700,
-                        color: '#1C1917',
+                        color: '#FFFFFF',
                         letterSpacing: '-0.01em',
                         margin: 0,
                       }}>
@@ -856,7 +833,7 @@ export default function Home() {
                         fontSize: '11px',
                         fontWeight: 700,
                         letterSpacing: '0.02em',
-                        color: '#57534E',
+                        color: '#FFFFFF',
                         flexShrink: 0,
                       }}>
                         Jan–Dec 2024
@@ -865,7 +842,7 @@ export default function Home() {
                     <p style={{
                       fontSize: isMobile ? '19px' : isWideDesktop ? '23px' : '22px',
                       lineHeight: '1.6',
-                      color: '#57534E',
+                      color: 'rgba(255,255,255,0.75)',
                       maxWidth: '800px',
                     }}>
                       Media literacy tools for the AI age — equipping people to identify misinformation themselves through verification, education, and trust.
@@ -874,7 +851,7 @@ export default function Home() {
                       fontFamily: 'var(--font-fraunces), serif',
                       fontSize: isMobile ? '20px' : '24px',
                       fontWeight: 700,
-                      color: '#1C1917',
+                      color: '#FFFFFF',
                       marginTop: isMobile ? '12px' : '16px',
                     }}>
                       ~1,800 testers at Misinfo Day
@@ -918,59 +895,87 @@ export default function Home() {
                   isMobile={isMobile}
                   isTablet={isTablet && !isMobile}
                   offset={isMobile ? 0 : 56}
+                  dark
                   cells={[
                     { label: 'Role & Team', value: 'Sole Designer (Graduate Capstone) · solo post-Feb 2024, contributed to user research for TrueMedia.org' },
-                    { label: 'Constraint', value: 'No engineering resourcing beyond a prototype; testing showed users rejected any platform-integrated solution outright.' },
                     { label: 'Impact', value: '~1,800 testers at Misinfo Day · 2,000-respondent survey · Concept validation' },
                     { label: 'Tech & Approach', value: 'Concept design · Gamification · Platform strategy' },
                   ]}
                 />
 
-                {/* Large Image Placeholder */}
-                <a
-                  href="/work/misinformation-center"
-                  style={{
-                    display: 'block',
-                    width: isMobile ? '100%' : 'calc(100% - 56px)',
-                    marginLeft: isMobile ? 0 : '56px',
-                    marginTop: isMobile ? '24px' : '32px',
-                    textDecoration: 'none',
-                    cursor: 'pointer',
-                  }}
-                >
-                  <div style={{
-                    width: '100%',
-                    aspectRatio: '4952 / 2786',
-                    backgroundColor: '#FFFFFF',
-                    borderRadius: '0px',
-                    overflow: 'hidden',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    transition: 'transform 0.3s ease, box-shadow 0.3s ease',
-                  }}
-                  onMouseEnter={(e) => {
-                    e.currentTarget.style.transform = 'translateY(-4px)'
-                    e.currentTarget.style.boxShadow = '0 12px 40px rgba(0, 0, 0, 0.12)'
-                  }}
-                  onMouseLeave={(e) => {
-                    e.currentTarget.style.transform = 'translateY(0)'
-                    e.currentTarget.style.boxShadow = 'none'
-                  }}
+                {/* Landing videos, side by side — cropped tight to the phone so they sit seamlessly on the black card */}
+                <div style={{
+                  display: 'flex',
+                  flexDirection: 'row',
+                  gap: isMobile ? '48px' : '140px',
+                  width: isMobile ? '100%' : 'calc(100% - 56px)',
+                  marginLeft: isMobile ? 0 : '56px',
+                  marginTop: isMobile ? '24px' : '32px',
+                  marginBottom: isMobile ? '24px' : '32px',
+                  justifyContent: 'center',
+                  padding: isMobile ? '24px 0' : '32px 0',
+                }}>
+                  <a
+                    href="/work/misinformation-center"
+                    style={{ display: 'block', width: '100%', maxWidth: '300px', textDecoration: 'none', cursor: 'pointer' }}
                   >
-                    <img
-                      src="/images/home/Landing%20misinformation.png"
-                      alt="Misinformation Center landing preview"
-                      loading="lazy"
+                    <video
+                      autoPlay
+                      loop
+                      muted
+                      playsInline
+                      preload="auto"
+                      aria-label="Misinformation Center landing feature 1"
                       style={{
-                        width: '95%',
-                        height: '95%',
-                        objectFit: 'contain',
                         display: 'block',
+                        width: '100%',
+                        aspectRatio: '680 / 1340',
+                        borderRadius: '0px',
+                        transition: 'transform 0.3s ease, box-shadow 0.3s ease',
                       }}
-                    />
-                  </div>
-                </a>
+                      onMouseEnter={(e) => {
+                        e.currentTarget.style.transform = 'translateY(-4px)'
+                        e.currentTarget.style.boxShadow = '0 12px 40px rgba(0, 0, 0, 0.12)'
+                      }}
+                      onMouseLeave={(e) => {
+                        e.currentTarget.style.transform = 'translateY(0)'
+                        e.currentTarget.style.boxShadow = 'none'
+                      }}
+                    >
+                      <source src="/videos/misinformationcenter/Landing%20video%2001%20cropped.mp4" type="video/mp4" />
+                    </video>
+                  </a>
+                  <a
+                    href="/work/misinformation-center"
+                    style={{ display: 'block', width: '100%', maxWidth: '300px', textDecoration: 'none', cursor: 'pointer' }}
+                  >
+                    <video
+                      autoPlay
+                      loop
+                      muted
+                      playsInline
+                      preload="auto"
+                      aria-label="Misinformation Center landing feature 2"
+                      style={{
+                        display: 'block',
+                        width: '100%',
+                        aspectRatio: '680 / 1340',
+                        borderRadius: '0px',
+                        transition: 'transform 0.3s ease, box-shadow 0.3s ease',
+                      }}
+                      onMouseEnter={(e) => {
+                        e.currentTarget.style.transform = 'translateY(-4px)'
+                        e.currentTarget.style.boxShadow = '0 12px 40px rgba(0, 0, 0, 0.12)'
+                      }}
+                      onMouseLeave={(e) => {
+                        e.currentTarget.style.transform = 'translateY(0)'
+                        e.currentTarget.style.boxShadow = 'none'
+                      }}
+                    >
+                      <source src="/videos/misinformationcenter/Landing%20video%2002%20cropped.mp4" type="video/mp4" />
+                    </video>
+                  </a>
+                </div>
 
                 {/* CTA — mobile only; desktop CTA lives in the title row */}
                 {isMobile && (
