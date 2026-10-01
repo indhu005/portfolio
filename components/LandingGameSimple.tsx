@@ -563,11 +563,15 @@ export default function LandingGameSimple() {
       width: '100%',
       backgroundColor: '#FAF8F3',
       borderRadius: '4px',
-      padding: isMobile ? '16px' : '20px',
+      paddingTop: isMobile ? '16px' : '20px',
+      paddingRight: isMobile ? '16px' : '20px',
+      // No left padding on desktop: the grid left-aligns flush with this box's edge so it
+      // lines up with "Hi, I'm Indhu" below, which shares the same parent maxWidth/margin.
+      paddingLeft: isMobile || isTablet ? (isMobile ? '16px' : '20px') : '0px',
       paddingBottom: isMobile ? '90px' : isTablet ? '140px' : '20px', // More padding on tablet to prevent overlap
       display: 'flex',
       flexDirection: 'column',
-      alignItems: 'center',
+      alignItems: isMobile || isTablet ? 'center' : 'flex-start',
       justifyContent: 'center',
     }}>
       {/* Warm ambient glow behind the header and scene, like sunlight washing the sky */}
@@ -743,6 +747,30 @@ export default function LandingGameSimple() {
             Skip →
           </button>
 
+          {/* Mute button — tablet only, shares the timer bar (phone has no ambient audio) */}
+          {isTablet && (
+            <button
+              onClick={() => setAudioMuted(prev => !prev)}
+              aria-label={audioMuted ? 'Unmute ambient sound' : 'Mute ambient sound'}
+              title={audioMuted ? 'Unmute ambient sound' : 'Mute ambient sound'}
+              style={{
+                width: '32px',
+                height: '32px',
+                borderRadius: '50%',
+                border: '1px solid rgba(28, 25, 23, 0.12)',
+                backgroundColor: 'rgba(28, 25, 23, 0.06)',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                cursor: 'pointer',
+                fontSize: '13px',
+                flexShrink: 0,
+              }}
+            >
+              {audioMuted ? '🔇' : '🔊'}
+            </button>
+          )}
+
           {/* Yellow ? button */}
           <button
             onClick={() => {
@@ -773,6 +801,35 @@ export default function LandingGameSimple() {
             ?
           </button>
         </div>
+      )}
+
+      {/* Desktop only: mute button, stacked above "Why a game?" and the yellow ? button */}
+      {!isMobile && !isTablet && (
+        <button
+          onClick={() => setAudioMuted(prev => !prev)}
+          aria-label={audioMuted ? 'Unmute ambient sound' : 'Mute ambient sound'}
+          title={audioMuted ? 'Unmute ambient sound' : 'Mute ambient sound'}
+          style={{
+            position: 'absolute',
+            bottom: '194px',
+            right: '105px',
+            width: '32px',
+            height: '32px',
+            borderRadius: '50%',
+            border: '1px solid rgba(255, 255, 255, 0.12)',
+            backgroundColor: 'rgba(28, 25, 23, 0.9)',
+            boxShadow: '0 2px 8px rgba(0, 0, 0, 0.2)',
+            backdropFilter: 'blur(8px)',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            cursor: 'pointer',
+            zIndex: 100,
+            fontSize: '14px',
+          }}
+        >
+          {audioMuted ? '🔇' : '🔊'}
+        </button>
       )}
 
       {/* Desktop only: "Why a game?" label above the yellow ? button */}
@@ -948,10 +1005,12 @@ export default function LandingGameSimple() {
         </div>
       )}
 
-      {/* Game container */}
+      {/* Game container. Desktop: width is capped to the grid's own size (not 100%) so the outer
+          wrapper's centering actually centers the grid — on wide monitors a 100%-wide, flex-start
+          container left the fixed-size grid stranded far from the centered heading above it. */}
       <div style={{
         position: 'relative',
-        width: '100%',
+        width: isMobile || isTablet ? '100%' : `${cols * cellSize + (cols - 1) * gap}px`,
         marginTop: isMobile ? '140px' : isTablet ? '160px' : '230px',
         display: 'flex',
         justifyContent: isMobile || isTablet ? 'center' : 'flex-start',
@@ -1017,12 +1076,13 @@ export default function LandingGameSimple() {
           </div>
         )}
 
-        {/* Sun/Moon - top left corner (opposite of timer) */}
+        {/* Sun/Moon - top left corner (opposite of timer). Hidden on phone (too cramped next to the menu/heading); sits just above the grid on tablet. */}
+        {!isMobile && (
         <div
           style={{
             position: 'absolute',
-            top: '-140px',
-            left: isMobile ? '20px' : '40px',
+            top: isTablet ? '-100px' : '-140px',
+            left: isTablet ? '24px' : '40px',
             pointerEvents: 'none',
             zIndex: 5,
           }}
@@ -1052,80 +1112,55 @@ export default function LandingGameSimple() {
             />
           )}
         </div>
+        )}
 
-        {/* See the work — points visitors at the case studies without requiring them to play */}
-        <button
-          onClick={() => {
-            document.getElementById('case-studies')?.scrollIntoView({ behavior: 'smooth', block: 'start' })
-          }}
-          style={{
-            position: 'absolute',
-            top: '-141px',
-            left: isMobile ? '64px' : '92px',
-            display: 'flex',
-            alignItems: 'center',
-            gap: '6px',
-            padding: '8px 16px',
-            backgroundColor: '#1C1917',
-            border: 'none',
-            borderRadius: '999px',
-            cursor: 'pointer',
-            color: '#FAF8F3',
-            fontSize: '13px',
-            fontWeight: 600,
-            letterSpacing: '0.02em',
-            whiteSpace: 'nowrap',
-            fontFamily: 'DM Sans, sans-serif',
-            boxShadow: '0 3px 10px rgba(0, 0, 0, 0.15)',
-            transition: 'transform 0.15s ease, box-shadow 0.15s ease',
-            zIndex: 5,
-          }}
-          onMouseEnter={(e) => {
-            e.currentTarget.style.transform = 'translateY(-2px)'
-            e.currentTarget.style.boxShadow = '0 6px 16px rgba(0, 0, 0, 0.2)'
-          }}
-          onMouseLeave={(e) => {
-            e.currentTarget.style.transform = 'translateY(0)'
-            e.currentTarget.style.boxShadow = '0 3px 10px rgba(0, 0, 0, 0.15)'
-          }}
-        >
-          See the work
-          <svg width="13" height="13" viewBox="0 0 16 16" fill="none" style={{ animation: 'scrollPromptBounce 1.6s ease-in-out infinite' }}>
-            <path d="M8 2.5V13.5M8 13.5L3 8.5M8 13.5L13 8.5" stroke="#FAF8F3" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-          </svg>
-        </button>
+        {/* See the work — points visitors at the case studies without requiring them to play. Desktop only: on phone/tablet it collides with the heading text. */}
+        {!isMobile && !isTablet && (
+          <button
+            onClick={() => {
+              document.getElementById('case-studies')?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+            }}
+            style={{
+              position: 'absolute',
+              top: '-141px',
+              left: '92px',
+              display: 'flex',
+              alignItems: 'center',
+              gap: '6px',
+              padding: '8px 16px',
+              backgroundColor: '#1C1917',
+              border: 'none',
+              borderRadius: '999px',
+              cursor: 'pointer',
+              color: '#FAF8F3',
+              fontSize: '13px',
+              fontWeight: 600,
+              letterSpacing: '0.02em',
+              whiteSpace: 'nowrap',
+              fontFamily: 'DM Sans, sans-serif',
+              boxShadow: '0 3px 10px rgba(0, 0, 0, 0.15)',
+              transition: 'transform 0.15s ease, box-shadow 0.15s ease',
+              zIndex: 5,
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.transform = 'translateY(-2px)'
+              e.currentTarget.style.boxShadow = '0 6px 16px rgba(0, 0, 0, 0.2)'
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.transform = 'translateY(0)'
+              e.currentTarget.style.boxShadow = '0 3px 10px rgba(0, 0, 0, 0.15)'
+            }}
+          >
+            See the work
+            <svg width="13" height="13" viewBox="0 0 16 16" fill="none" style={{ animation: 'scrollPromptBounce 1.6s ease-in-out infinite' }}>
+              <path d="M8 2.5V13.5M8 13.5L3 8.5M8 13.5L13 8.5" stroke="#FAF8F3" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
+          </button>
+        )}
 
-        {/* Ambient audio — birds louder with more trees, traffic louder with more buildings. Starts muted. */}
+        {/* Ambient audio — birds louder with more trees, traffic louder with more buildings. Starts muted. Phone has no mute control, so audio never plays there; tablet's control lives in the timer bar instead; desktop's lives above "Why a game?" at the top level. */}
         <audio ref={birdsAudioRef} src="/audio/birds%20chirping.mp3" loop preload="none" />
         <audio ref={trafficAudioRef} src="/audio/Traffic%20sound.mp3" loop preload="none" />
-        <button
-          onClick={() => setAudioMuted(prev => !prev)}
-          aria-label={audioMuted ? 'Unmute ambient sound' : 'Mute ambient sound'}
-          title={audioMuted ? 'Unmute ambient sound' : 'Mute ambient sound'}
-          style={{
-            position: 'absolute',
-            ...(isMobile
-              ? { top: '110px', left: '20px' }
-              : isTablet
-              ? { top: '130px', left: '40px' }
-              : { bottom: '-12px', right: '85px' }),
-            width: '32px',
-            height: '32px',
-            borderRadius: '50%',
-            border: '1px solid rgba(255, 255, 255, 0.12)',
-            backgroundColor: 'rgba(28, 25, 23, 0.9)',
-            boxShadow: '0 2px 8px rgba(0, 0, 0, 0.2)',
-            backdropFilter: 'blur(8px)',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            cursor: 'pointer',
-            zIndex: 60,
-            fontSize: '14px',
-          }}
-        >
-          {audioMuted ? '🔇' : '🔊'}
-        </button>
 
         {/* Grid */}
         <div style={{

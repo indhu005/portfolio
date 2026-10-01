@@ -2,7 +2,7 @@
 import Sidebar from '@/components/Sidebar'
 import LandingGameSimple from '@/components/LandingGameSimple'
 import { useRouter } from 'next/navigation'
-import { useState, useEffect, type CSSProperties } from 'react'
+import { useState, useEffect, useRef, type CSSProperties } from 'react'
 
 const useMediaQuery = (query: string) => {
   const [matches, setMatches] = useState(false)
@@ -90,6 +90,8 @@ export default function Home() {
   const [revealed, setRevealed] = useState(false)
   const [splashFading, setSplashFading] = useState(false)
   const [splashVisible, setSplashVisible] = useState(true)
+  const [inGameZone, setInGameZone] = useState(true)
+  const gameWrapperRef = useRef<HTMLDivElement>(null)
   const isMobile = useMediaQuery('(max-width: 768px)')
   const isTablet = useMediaQuery('(max-width: 1024px)')
   const isWideDesktop = useMediaQuery('(min-width: 2200px)')
@@ -108,6 +110,21 @@ export default function Home() {
       clearTimeout(removeTimer)
     }
   }, [])
+
+  // Tracks whether the fixed hamburger button still overlaps the game hero, so it can mirror the game's accent color there and go transparent once scrolled past it
+  useEffect(() => {
+    if (!isTablet) return
+    const container = document.querySelector('[data-scroll-container]')
+    if (!container) return
+    const checkGameZone = () => {
+      const wrapper = gameWrapperRef.current
+      if (!wrapper) return
+      setInGameZone(wrapper.getBoundingClientRect().bottom > 60)
+    }
+    checkGameZone()
+    container.addEventListener('scroll', checkGameZone, { passive: true })
+    return () => container.removeEventListener('scroll', checkGameZone)
+  }, [isTablet])
 
   const revealStyle = (delayMs: number): CSSProperties => ({
     opacity: revealed ? 1 : 0,
@@ -182,26 +199,27 @@ export default function Home() {
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
-            background: 'rgba(255, 255, 255, 0.85)',
-            backdropFilter: 'blur(12px)',
-            WebkitBackdropFilter: 'blur(12px)',
-            border: '1px solid rgba(28, 25, 23, 0.1)',
+            background: inGameZone ? '#F2955A' : 'transparent',
+            backdropFilter: inGameZone ? 'none' : 'blur(12px)',
+            WebkitBackdropFilter: inGameZone ? 'none' : 'blur(12px)',
+            border: inGameZone ? 'none' : '1px solid rgba(28, 25, 23, 0.1)',
             borderRadius: '10px',
             cursor: 'pointer',
-            boxShadow: '0 2px 8px rgba(0,0,0,0.08)',
+            boxShadow: inGameZone ? '0 2px 8px rgba(0,0,0,0.15)' : 'none',
+            transition: 'background-color 0.2s ease, box-shadow 0.2s ease',
           }}
         >
           <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
             {mobileMenuOpen ? (
               <>
-                <path d="M4 4L14 14" stroke="#1C1917" strokeWidth="1.6" strokeLinecap="round" />
-                <path d="M14 4L4 14" stroke="#1C1917" strokeWidth="1.6" strokeLinecap="round" />
+                <path d="M4 4L14 14" stroke={inGameZone ? '#FFFFFF' : '#1C1917'} strokeWidth="1.6" strokeLinecap="round" />
+                <path d="M14 4L4 14" stroke={inGameZone ? '#FFFFFF' : '#1C1917'} strokeWidth="1.6" strokeLinecap="round" />
               </>
             ) : (
               <>
-                <path d="M2.5 5H15.5" stroke="#1C1917" strokeWidth="1.6" strokeLinecap="round" />
-                <path d="M2.5 9H15.5" stroke="#1C1917" strokeWidth="1.6" strokeLinecap="round" />
-                <path d="M2.5 13H15.5" stroke="#1C1917" strokeWidth="1.6" strokeLinecap="round" />
+                <path d="M2.5 5H15.5" stroke={inGameZone ? '#FFFFFF' : '#1C1917'} strokeWidth="1.6" strokeLinecap="round" />
+                <path d="M2.5 9H15.5" stroke={inGameZone ? '#FFFFFF' : '#1C1917'} strokeWidth="1.6" strokeLinecap="round" />
+                <path d="M2.5 13H15.5" stroke={inGameZone ? '#FFFFFF' : '#1C1917'} strokeWidth="1.6" strokeLinecap="round" />
               </>
             )}
           </svg>
@@ -248,8 +266,12 @@ export default function Home() {
             backgroundColor: '#FAF8F3',
           }}
         >
-          {/* Landing Game */}
-          <div style={{
+          {/* Landing Game — same maxWidth/centering as the wrapper below so the grid can align its
+              left edge to "Hi, I'm Indhu" instead of centering in the full (wider) content area */}
+          <div ref={gameWrapperRef} style={{
+            maxWidth: isWideDesktop ? '1400px' : '1200px',
+            marginLeft: 'auto',
+            marginRight: 'auto',
             marginBottom: isMobile ? '48px' : isWideDesktop ? '96px' : '80px',
           }}>
             <LandingGameSimple />
@@ -358,9 +380,9 @@ export default function Home() {
                 cursor: isMobile ? 'pointer' : 'default',
                 display: 'flex',
                 flexDirection: 'column',
-                border: '1.5px solid #4B2E83',
+                border: '1.5px solid #1C1917',
                 padding: isMobile ? '24px' : isWideDesktop ? '48px' : '40px',
-                backgroundColor: '#4B2E83',
+                backgroundColor: '#1C1917',
               }}>
                 {/* Header: index + title + description */}
                 <div style={{
@@ -653,7 +675,7 @@ export default function Home() {
                         fontSize: '14px',
                         fontWeight: 600,
                         color: '#FFFFFF',
-                        backgroundColor: '#D9662B',
+                        backgroundColor: '#FF7A1A',
                         textDecoration: 'none',
                         padding: '10px 18px',
                         borderRadius: '999px',
@@ -661,12 +683,12 @@ export default function Home() {
                         transition: 'background-color 0.2s ease',
                       }}
                       onMouseEnter={(e) => {
-                        e.currentTarget.style.backgroundColor = '#C2571F'
+                        e.currentTarget.style.backgroundColor = '#E8650A'
                         const svg = e.currentTarget.querySelector('svg')
                         if (svg) svg.style.transform = 'translateX(4px)'
                       }}
                       onMouseLeave={(e) => {
-                        e.currentTarget.style.backgroundColor = '#D9662B'
+                        e.currentTarget.style.backgroundColor = '#FF7A1A'
                         const svg = e.currentTarget.querySelector('svg')
                         if (svg) svg.style.transform = 'translateX(0)'
                       }}
@@ -759,19 +781,19 @@ export default function Home() {
                         fontSize: '15px',
                         fontWeight: 600,
                         color: '#FFFFFF',
-                        backgroundColor: '#D9662B',
+                        backgroundColor: '#FF7A1A',
                         textDecoration: 'none',
                         padding: '14px 18px',
                         borderRadius: '999px',
                         transition: 'background-color 0.2s ease',
                       }}
                       onMouseEnter={(e) => {
-                        e.currentTarget.style.backgroundColor = '#C2571F'
+                        e.currentTarget.style.backgroundColor = '#E8650A'
                         const svg = e.currentTarget.querySelector('svg')
                         if (svg) svg.style.transform = 'translateX(4px)'
                       }}
                       onMouseLeave={(e) => {
-                        e.currentTarget.style.backgroundColor = '#D9662B'
+                        e.currentTarget.style.backgroundColor = '#FF7A1A'
                         const svg = e.currentTarget.querySelector('svg')
                         if (svg) svg.style.transform = 'translateX(0)'
                       }}
