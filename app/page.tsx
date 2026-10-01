@@ -91,7 +91,10 @@ export default function Home() {
   const [splashFading, setSplashFading] = useState(false)
   const [splashVisible, setSplashVisible] = useState(true)
   const [inGameZone, setInGameZone] = useState(true)
+  const [overDarkCard, setOverDarkCard] = useState(false)
   const gameWrapperRef = useRef<HTMLDivElement>(null)
+  const latCardRef = useRef<HTMLElement>(null)
+  const misinfoCardRef = useRef<HTMLElement>(null)
   const isMobile = useMediaQuery('(max-width: 768px)')
   const isTablet = useMediaQuery('(max-width: 1024px)')
   const isWideDesktop = useMediaQuery('(min-width: 2200px)')
@@ -111,19 +114,28 @@ export default function Home() {
     }
   }, [])
 
-  // Tracks whether the fixed hamburger button still overlaps the game hero, so it can mirror the game's accent color there and go transparent once scrolled past it
+  // Tracks whether the fixed hamburger button still overlaps the game hero (mirrors its accent
+  // color there) or a dark product card (LAT/Misinfo are near-black, so the icon needs to go white
+  // to stay visible instead of a black icon disappearing against a black background)
   useEffect(() => {
     if (!isTablet) return
     const container = document.querySelector('[data-scroll-container]')
     if (!container) return
-    const checkGameZone = () => {
+    const buttonCenterY = 40 // button sits at top:20px, height:40px
+    const checkZones = () => {
       const wrapper = gameWrapperRef.current
-      if (!wrapper) return
-      setInGameZone(wrapper.getBoundingClientRect().bottom > 60)
+      if (wrapper) setInGameZone(wrapper.getBoundingClientRect().bottom > 60)
+
+      const isOverCard = (ref: React.RefObject<HTMLElement | null>) => {
+        if (!ref.current) return false
+        const rect = ref.current.getBoundingClientRect()
+        return rect.top < buttonCenterY && rect.bottom > buttonCenterY
+      }
+      setOverDarkCard(isOverCard(latCardRef) || isOverCard(misinfoCardRef))
     }
-    checkGameZone()
-    container.addEventListener('scroll', checkGameZone, { passive: true })
-    return () => container.removeEventListener('scroll', checkGameZone)
+    checkZones()
+    container.addEventListener('scroll', checkZones, { passive: true })
+    return () => container.removeEventListener('scroll', checkZones)
   }, [isTablet])
 
   const revealStyle = (delayMs: number): CSSProperties => ({
@@ -185,7 +197,9 @@ export default function Home() {
       {!isTablet && <Sidebar />}
 
       {/* MOBILE MENU BUTTON */}
-      {isTablet && (
+      {isTablet && (() => {
+        const iconIsWhite = inGameZone || overDarkCard
+        return (
         <button
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           aria-label={mobileMenuOpen ? 'Close menu' : 'Open menu'}
@@ -212,19 +226,20 @@ export default function Home() {
           <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
             {mobileMenuOpen ? (
               <>
-                <path d="M4 4L14 14" stroke={inGameZone ? '#FFFFFF' : '#1C1917'} strokeWidth="1.6" strokeLinecap="round" />
-                <path d="M14 4L4 14" stroke={inGameZone ? '#FFFFFF' : '#1C1917'} strokeWidth="1.6" strokeLinecap="round" />
+                <path d="M4 4L14 14" stroke={iconIsWhite ? '#FFFFFF' : '#1C1917'} strokeWidth="1.6" strokeLinecap="round" />
+                <path d="M14 4L4 14" stroke={iconIsWhite ? '#FFFFFF' : '#1C1917'} strokeWidth="1.6" strokeLinecap="round" />
               </>
             ) : (
               <>
-                <path d="M2.5 5H15.5" stroke={inGameZone ? '#FFFFFF' : '#1C1917'} strokeWidth="1.6" strokeLinecap="round" />
-                <path d="M2.5 9H15.5" stroke={inGameZone ? '#FFFFFF' : '#1C1917'} strokeWidth="1.6" strokeLinecap="round" />
-                <path d="M2.5 13H15.5" stroke={inGameZone ? '#FFFFFF' : '#1C1917'} strokeWidth="1.6" strokeLinecap="round" />
+                <path d="M2.5 5H15.5" stroke={iconIsWhite ? '#FFFFFF' : '#1C1917'} strokeWidth="1.6" strokeLinecap="round" />
+                <path d="M2.5 9H15.5" stroke={iconIsWhite ? '#FFFFFF' : '#1C1917'} strokeWidth="1.6" strokeLinecap="round" />
+                <path d="M2.5 13H15.5" stroke={iconIsWhite ? '#FFFFFF' : '#1C1917'} strokeWidth="1.6" strokeLinecap="round" />
               </>
             )}
           </svg>
         </button>
-      )}
+        )
+      })()}
 
       {/* MOBILE/TABLET OVERLAY MENU */}
       {isTablet && mobileMenuOpen && (
@@ -375,6 +390,7 @@ export default function Home() {
             }}>
               {/* Card 1 - LAT */}
               <article
+                ref={latCardRef}
                 onClick={isMobile ? () => router.push('/work/lat') : undefined}
                 style={{
                 cursor: isMobile ? 'pointer' : 'default',
@@ -807,6 +823,7 @@ export default function Home() {
 
               {/* Card 3 - Misinformation Center */}
               <article
+                ref={misinfoCardRef}
                 onClick={isMobile ? () => router.push('/work/misinformation-center') : undefined}
                 style={{
                 cursor: isMobile ? 'pointer' : 'default',
