@@ -685,64 +685,81 @@ const caseStudies = {
       {
         id: 'solution',
         title: '03 — Solution',
-        headline: 'Three pillars turned operational signals into financial intelligence',
+        headline: 'Three decisions turned operational signals into financial intelligence',
         content: '',
         customComponent: (
           <div>
-            <div style={{ marginTop: '32px', marginBottom: '48px' }}>
-              <div style={{ fontSize: '20px', fontWeight: 600, color: '#1C1917', marginBottom: '16px' }}>Pillar 1 — Reliable Field Intelligence</div>
-              <p>Automatically link <span style={{ fontWeight: 600 }}>Work Orders ↔ Asset DNA ↔ Cost-to-Date</span>. "We'll fix it again" became "this cost $42K in three years — replace it now, save $18K."</p>
+            <div style={{ marginBottom: '8px' }}>
+              <div style={{ fontSize: '13px', fontWeight: 700, color: '#FF6B35', letterSpacing: '0.06em', textTransform: 'uppercase', marginBottom: '8px' }}>Decision 01</div>
+              <div style={{ fontSize: '20px', fontWeight: 600, color: '#1C1917', marginBottom: '16px' }}>Replace the "Everything Dashboard"</div>
+              <p><span style={{ fontWeight: 600 }}>Problem.</span> Managers scanned 8+ graphs without acting on them.</p>
+              <p style={{ marginTop: '12px' }}><span style={{ fontWeight: 600 }}>Design.</span> A ranked priority queue replaced the dashboard.</p>
+              <p style={{ marginTop: '12px' }}><span style={{ fontWeight: 600 }}>Why.</span> Prioritization beat information density.</p>
             </div>
 
-            <div style={{ width: '100%', height: '400px', backgroundColor: '#E5E7EB', borderRadius: '0px', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#9CA3AF', fontSize: '14px', marginTop: '40px', marginBottom: '40px' }}>
-              <div style={{ textAlign: 'center', padding: '20px' }}>
-                <div style={{ fontWeight: 600, marginBottom: '8px' }}>IMAGE 1: Field Workflow Evolution</div>
-                <div style={{ fontSize: '13px', lineHeight: 1.5 }}>Offline queue → voice capture → auto-sync<br/>"Reporting time: 20min → 8min"</div>
-              </div>
-            </div>
-
-            <div style={{ backgroundColor: '#FFF9F5', padding: '24px', borderRadius: '0px', borderLeft: '3px solid #FF6B35', marginBottom: '48px' }}>
-              <div className="cs-card-title cs-card-title--sm">The "Everything Dashboard" Failed</div>
-              <p style={{ fontSize: '15px', color: '#57534E', lineHeight: 1.6, margin: 0 }}>Managers scanned graphs without acting. We replaced it with a ranked priority queue.</p>
-            </div>
-
-            <div style={{ width: '100%', height: '400px', backgroundColor: '#E5E7EB', borderRadius: '0px', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#9CA3AF', fontSize: '14px', marginTop: '40px', marginBottom: '40px' }}>
+            <div style={{ width: '100%', height: '400px', backgroundColor: '#E5E7EB', borderRadius: '0px', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#9CA3AF', fontSize: '14px', marginTop: '40px', marginBottom: '48px' }}>
               <div style={{ textAlign: 'center', padding: '20px' }}>
                 <div style={{ fontWeight: 600, marginBottom: '8px' }}>IMAGE 2: Dashboard Before/After</div>
                 <div style={{ fontSize: '13px', lineHeight: 1.5 }}>8+ graphs → priority queue<br/>"Decision time: 14min → 4min"</div>
               </div>
             </div>
 
-            <div style={{ marginBottom: '48px' }}>
-              <div style={{ fontSize: '20px', fontWeight: 600, color: '#1C1917', marginBottom: '16px' }}>Pillar 2 — Predictive Lifecycle Intelligence</div>
-              <p>Early alerts said <span style={{ fontStyle: 'italic' }}>"Boiler failure risk: 68%"</span> — managers hesitated. We shifted to consequence framing: <span style={{ fontStyle: 'italic' }}>"9 years in service → delaying replacement may cost $18K."</span> They acted immediately.</p>
+            <div style={{ marginBottom: '8px' }}>
+              <div style={{ fontSize: '13px', fontWeight: 700, color: '#FF6B35', letterSpacing: '0.06em', textTransform: 'uppercase', marginBottom: '8px' }}>Decision 02</div>
+              <div style={{ fontSize: '20px', fontWeight: 600, color: '#1C1917', marginBottom: '16px' }}>Turn predictions into consequences</div>
+              <p>The question wasn't how confident the model was. It was what decision the manager actually needed to make.</p>
+              <p style={{ marginTop: '12px' }}>Early alerts said <span style={{ fontStyle: 'italic' }}>"Boiler failure risk: 68%"</span> — managers hesitated. We shifted to consequence framing: <span style={{ fontStyle: 'italic' }}>"9 years in service → delaying replacement may cost $18K."</span> They acted immediately.</p>
             </div>
 
             <LatAlertToggle />
 
-            <div style={{ backgroundColor: '#FFF9F5', padding: '24px', borderRadius: '0px', borderLeft: '3px solid #FF6B35', marginBottom: '32px' }}>
-              <div className="cs-card-title cs-card-title--sm">The Boiler Incident — When AI Was Wrong</div>
-              <p style={{ fontSize: '15px', color: '#57534E', lineHeight: 1.6, margin: 0 }}>Month 2: the engine flagged a $180K boiler as Critical — duplicated entries had inflated the risk. We added manager review and a "Needs Verification" state. Adoption held at 95%.</p>
+            <p style={{ marginTop: '24px', marginBottom: '48px' }}><span style={{ fontWeight: 600 }}>Why.</span> The alert didn't need to prove confidence — it needed to give managers enough to decide.</p>
+
+            <div style={{ marginBottom: '8px' }}>
+              <div style={{ fontSize: '13px', fontWeight: 700, color: '#FF6B35', letterSpacing: '0.06em', textTransform: 'uppercase', marginBottom: '8px' }}>Decision 03</div>
+              <div style={{ fontSize: '20px', fontWeight: 600, color: '#1C1917', marginBottom: '16px' }}>Design for AI failure, not the demo</div>
             </div>
 
-            <div className="pull-quote">In enterprise AI, dirty upstream data quietly steers capital decisions worth millions — long before anyone questions the model.</div>
+            <div style={{ backgroundColor: '#FFF9F5', padding: '24px', borderRadius: '0px', borderLeft: '3px solid #FF6B35', marginBottom: '32px' }}>
+              <div className="cs-card-title cs-card-title--sm">The Boiler Incident</div>
+              <p style={{ fontSize: '15px', color: '#57534E', lineHeight: 1.7, margin: 0 }}>
+                <span style={{ fontWeight: 600 }}>Model said:</span> Critical — a $180K boiler flagged for replacement.<br/>
+                <span style={{ fontWeight: 600 }}>Human found:</span> duplicated maintenance records had inflated the risk score.<br/>
+                <span style={{ fontWeight: 600 }}>Design response:</span> a "Needs Verification" state, visible risk drivers, mandatory manager approval, and logged overrides.<br/>
+                <span style={{ fontWeight: 600 }}>Result:</span> adoption held at 95%.
+              </p>
+            </div>
 
-            <div style={{ width: '100%', height: '400px', backgroundColor: '#E5E7EB', borderRadius: '0px', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#9CA3AF', fontSize: '14px', marginTop: '40px', marginBottom: '40px' }}>
+            <div style={{ width: '100%', height: '400px', backgroundColor: '#E5E7EB', borderRadius: '0px', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#9CA3AF', fontSize: '14px', marginTop: '40px', marginBottom: '48px' }}>
               <div style={{ textAlign: 'center', padding: '20px' }}>
                 <div style={{ fontWeight: 600, marginBottom: '8px' }}>IMAGE 4: Boiler Incident Screen</div>
                 <div style={{ fontSize: '13px', lineHeight: 1.5 }}>Critical alert with drivers highlighted<br/>"Needs Verification" badge<br/>Override logged</div>
               </div>
             </div>
 
-            <div style={{ marginBottom: '48px' }}>
-              <div style={{ fontSize: '20px', fontWeight: 600, color: '#1C1917', marginBottom: '16px' }}>Pillar 3 — Strategic Simulation & Governance</div>
-              <p>In-house scenario comparison with side-by-side cost/timeline deltas. Feasibility used to mean commissioning external studies; now teams run scenarios instantly and export board-ready outputs.</p>
-            </div>
+            <div style={{ borderTop: '1px solid #E5E7EB', paddingTop: '32px' }}>
+              <div style={{ fontSize: '13px', fontWeight: 700, color: '#9CA3AF', letterSpacing: '0.06em', textTransform: 'uppercase', marginBottom: '20px' }}>Also shipped</div>
 
-            <div style={{ width: '100%', height: '400px', backgroundColor: '#E5E7EB', borderRadius: '0px', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#9CA3AF', fontSize: '14px', marginTop: '40px', marginBottom: '40px' }}>
-              <div style={{ textAlign: 'center', padding: '20px' }}>
-                <div style={{ fontWeight: 600, marginBottom: '8px' }}>IMAGE 5: Scenario Comparison</div>
-                <div style={{ fontSize: '13px', lineHeight: 1.5 }}>"Repair" vs "Replace" side-by-side<br/>Cost, timeline, risk deltas</div>
+              <div style={{ marginBottom: '24px' }}>
+                <p><span style={{ fontWeight: 600 }}>Offline field reporting.</span> Work Orders, Asset DNA, and Cost-to-Date linked automatically — an offline queue with voice capture and auto-sync cut reporting time from 20 to 8 minutes.</p>
+              </div>
+
+              <div style={{ width: '100%', height: '320px', backgroundColor: '#E5E7EB', borderRadius: '0px', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#9CA3AF', fontSize: '14px', marginBottom: '40px' }}>
+                <div style={{ textAlign: 'center', padding: '20px' }}>
+                  <div style={{ fontWeight: 600, marginBottom: '8px' }}>IMAGE 1: Field Workflow Evolution</div>
+                  <div style={{ fontSize: '13px', lineHeight: 1.5 }}>Offline queue → voice capture → auto-sync</div>
+                </div>
+              </div>
+
+              <div style={{ marginBottom: '24px' }}>
+                <p><span style={{ fontWeight: 600 }}>Scenario simulation.</span> In-house cost/timeline comparisons replaced commissioned feasibility studies and drew interest from other universities.</p>
+              </div>
+
+              <div style={{ width: '100%', height: '320px', backgroundColor: '#E5E7EB', borderRadius: '0px', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#9CA3AF', fontSize: '14px' }}>
+                <div style={{ textAlign: 'center', padding: '20px' }}>
+                  <div style={{ fontWeight: 600, marginBottom: '8px' }}>IMAGE 5: Scenario Comparison</div>
+                  <div style={{ fontSize: '13px', lineHeight: 1.5 }}>"Repair" vs "Replace" side-by-side<br/>Cost, timeline, risk deltas</div>
+                </div>
               </div>
             </div>
           </div>
