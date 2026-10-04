@@ -820,6 +820,16 @@ const caseStudies = {
               </p>
             </div>
 
+            <div style={{ display: 'flex', gap: '24px', marginBottom: '40px', flexWrap: 'wrap' }}>
+              <div style={{ flex: 1, minWidth: '250px', position: 'relative' }}>
+                <div style={{ backgroundColor: '#F3F4F6', padding: '24px', position: 'relative' }}>
+                  <p style={{ fontStyle: 'italic', fontFamily: "'Fraunces', serif", color: '#1F2937', margin: 0 }}>"It's great that there is an option to add my opinion rather than just accepting or rejecting a flagged asset. I love that in one click I can view the history of the asset rather than looking into folders or pausing for deeper review later. Decision making has become less stressful for me."</p>
+                  <p style={{ marginTop: '12px', fontSize: '13px', color: '#6B7280' }}>— facilities manager, post-launch stakeholder interview</p>
+                </div>
+                <div style={{ width: 0, height: 0, borderLeft: '12px solid transparent', borderRight: '12px solid transparent', borderTop: '12px solid #F3F4F6', position: 'absolute', bottom: '-12px', left: '32px' }}></div>
+              </div>
+            </div>
+
             <div style={{ width: '100%', height: '400px', backgroundColor: '#E5E7EB', borderRadius: '0px', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#9CA3AF', fontSize: '14px', marginTop: '40px', marginBottom: '48px' }}>
               <div style={{ textAlign: 'center', padding: '20px' }}>
                 <div style={{ fontWeight: 600, marginBottom: '8px' }}>IMAGE 4: Boiler Incident Screen</div>
