@@ -615,7 +615,14 @@ const caseStudies = {
       {
         id: 'snapshot',
         title: '01 — Snapshot',
-        content: `<p><span style="font-weight: 600;">Product</span><br/>An ML platform helping a Pacific Northwest university manage 60–80+ buildings — a modular API layer alongside their legacy CMMS/ERP, turning fragmented data into financial intelligence.</p>
+        content: `<div style="border: 1px dashed #D1D5DB; background-color: #FAFAF9; padding: 28px 32px; margin-bottom: 40px;">
+  <div style="font-size: 11px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #A8A29E; margin-bottom: 10px;">Headline result</div>
+  <div style="font-family: 'Fraunces', serif; font-size: 20px; font-weight: 600; color: #1C1917; line-height: 1.3; margin-bottom: 16px;">Adoption cleared the client's own bar for keeping a tool alive.</div>
+  <div style="font-family: 'Fraunces', serif; font-size: 40px; font-weight: 700; color: #1C1917; line-height: 1.1;">95% pilot adoption</div>
+  <div style="font-size: 14px; color: #6B7280; margin-top: 10px;">vs. UW IT's 70% threshold. Data accuracy rose 70%→95% and cost reduction is projected at 25% over the same lifecycle linkage — directly observed adoption and accuracy, projected cost figure.</div>
+</div>
+
+<p><span style="font-weight: 600;">Product</span><br/>An ML platform helping a Pacific Northwest university manage 60–80+ buildings — a modular API layer alongside their legacy CMMS/ERP, turning fragmented data into financial intelligence.</p>
 
 <p style="margin-top: 28px;"><span style="font-weight: 600;">My role.</span> Product vision, workflows, and the design system — aligning technicians, managers, accountants, and executives.</p>
 
