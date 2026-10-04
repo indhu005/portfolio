@@ -823,7 +823,7 @@ const caseStudies = {
             <div style={{ display: 'flex', gap: '24px', marginBottom: '40px', flexWrap: 'wrap' }}>
               <div style={{ flex: 1, minWidth: '250px', position: 'relative' }}>
                 <div style={{ backgroundColor: '#F3F4F6', padding: '24px', position: 'relative' }}>
-                  <p style={{ fontStyle: 'italic', fontFamily: "'Fraunces', serif", color: '#1F2937', margin: 0 }}>"It's great that there is an option to add my opinion rather than just accepting or rejecting a flagged asset. I love that in one click I can view the history of the asset rather than looking into folders or pausing for deeper review later. Decision making has become less stressful for me."</p>
+                  <p style={{ fontStyle: 'italic', fontFamily: "'Fraunces', serif", color: '#1F2937', margin: 0 }}>"It's great that I can add my own opinion instead of just accepting or rejecting a flagged asset, and pulling up its history in one click instead of digging through folders has made decision-making a lot less stressful."</p>
                   <p style={{ marginTop: '12px', fontSize: '13px', color: '#6B7280' }}>— facilities manager, post-launch stakeholder interview</p>
                 </div>
                 <div style={{ width: 0, height: 0, borderLeft: '12px solid transparent', borderRight: '12px solid transparent', borderTop: '12px solid #F3F4F6', position: 'absolute', bottom: '-12px', left: '32px' }}></div>
