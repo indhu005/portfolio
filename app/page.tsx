@@ -193,22 +193,6 @@ export default function Home() {
         </div>
       )}
 
-      {/* TEMP DEBUG — remove after diagnosing iPad breakpoint */}
-      <div style={{
-        position: 'fixed',
-        bottom: '8px',
-        right: '8px',
-        zIndex: 99999,
-        background: 'red',
-        color: 'white',
-        fontSize: '14px',
-        fontWeight: 700,
-        padding: '6px 10px',
-        borderRadius: '6px',
-      }}>
-        w:{typeof window !== 'undefined' ? window.innerWidth : '?'} dpr:{typeof window !== 'undefined' ? window.devicePixelRatio : '?'} tablet:{String(isTablet)}
-      </div>
-
       {/* SIDEBAR - Hidden on mobile/tablet */}
       {!isTablet && <Sidebar />}
 
