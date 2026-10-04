@@ -92,6 +92,7 @@ export default function Home() {
   const [splashVisible, setSplashVisible] = useState(true)
   const [inGameZone, setInGameZone] = useState(true)
   const [overDarkCard, setOverDarkCard] = useState(false)
+  const [scrollProgress, setScrollProgress] = useState(0)
   const gameWrapperRef = useRef<HTMLDivElement>(null)
   const latCardRef = useRef<HTMLElement>(null)
   const misinfoCardRef = useRef<HTMLElement>(null)
@@ -113,6 +114,21 @@ export default function Home() {
       clearTimeout(removeTimer)
     }
   }, [])
+
+  // Drives the little character walking down the sidebar's border as the page scrolls —
+  // 0 at the top of the page, 1 at the bottom of the scrollable content.
+  useEffect(() => {
+    if (isTablet) return
+    const container = document.querySelector('[data-scroll-container]')
+    if (!container) return
+    const updateProgress = () => {
+      const max = container.scrollHeight - container.clientHeight
+      setScrollProgress(max > 0 ? container.scrollTop / max : 0)
+    }
+    updateProgress()
+    container.addEventListener('scroll', updateProgress, { passive: true })
+    return () => container.removeEventListener('scroll', updateProgress)
+  }, [isTablet])
 
   // Tracks whether the fixed hamburger button still overlaps the game hero (mirrors its accent
   // color there) or a dark product card (LAT/Misinfo are near-black, so the icon needs to go white
@@ -195,6 +211,29 @@ export default function Home() {
 
       {/* SIDEBAR - Hidden on mobile/tablet */}
       {!isTablet && <Sidebar />}
+
+      {/* Walking character — climbs down the sidebar's blue border as the page scrolls.
+          Source SVG is drawn standing upright (head top, feet bottom); rotated -90deg so
+          it lies on its side with its feet landing on the vertical border line. */}
+      {!isTablet && (
+        <img
+          src="/images/home/Animation character.svg"
+          alt=""
+          style={{
+            position: 'fixed',
+            left: '320px',
+            top: `calc(${(scrollProgress * 88).toFixed(2)}vh + 24px)`,
+            width: '16px',
+            height: 'auto',
+            zIndex: 60,
+            transform: 'translate(-50%, -50%)',
+            animation: 'climbSway 0.6s ease-in-out infinite alternate',
+            transformOrigin: 'center',
+            transition: 'top 0.08s linear',
+            pointerEvents: 'none',
+          }}
+        />
+      )}
 
       {/* MOBILE MENU BUTTON */}
       {isTablet && (() => {
