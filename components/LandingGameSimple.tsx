@@ -647,6 +647,19 @@ export default function LandingGameSimple() {
           </>
         )}
 
+        {/* Condensed explanation - mobile/tablet, so context doesn't depend on opening the "Why a game?" modal */}
+        {(isMobile || isTablet) && (
+          <div style={{
+            fontSize: '12px',
+            color: '#9CA3AF',
+            fontStyle: 'italic',
+            marginBottom: isMobile ? '6px' : '12px',
+            lineHeight: '1.5',
+          }}>
+            A quick interactive metaphor for product design tradeoffs.
+          </div>
+        )}
+
         {/* Instruction */}
         {!gameEnded && (
           <div style={{
@@ -1162,8 +1175,11 @@ export default function LandingGameSimple() {
         <audio ref={birdsAudioRef} src="/audio/birds%20chirping.mp3" loop preload="none" />
         <audio ref={trafficAudioRef} src="/audio/Traffic%20sound.mp3" loop preload="none" />
 
-        {/* Grid */}
-        <div style={{
+        {/* Grid — decorative/playful interaction, not essential content. Hidden from
+            assistive tech rather than made individually keyboard-navigable: tabbing
+            through 50+ cells would be worse than skipping it, and "Skip to Work" above
+            already gives keyboard/screen-reader users a direct, labeled way past it. */}
+        <div aria-hidden="true" style={{
         position: 'relative',
         display: 'grid',
         gridTemplateRows: `repeat(${GRID_ROWS}, ${cellSize}px)`,
