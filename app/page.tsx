@@ -231,12 +231,12 @@ export default function Home() {
           }}
         >
           <circle cx="8" cy="8" r="7.5" fill="#FFFFFF" stroke="#1C1917" strokeWidth="0.75" />
+          <path d="M8 5.3L10.47 7.1L9.53 9.98H6.47L5.53 7.1L8 5.3Z" fill="#1C1917" />
           <path
-            d="M8 4.2L10.4 6L9.5 8.8H6.5L5.6 6L8 4.2ZM8 4.2V1.8M6.5 8.8L4.4 10.8M9.5 8.8L11.6 10.8M4.4 10.8L2 10.3M4.4 10.8L4.9 13.1M11.6 10.8L14 10.3M11.6 10.8L11.1 13.1M2 10.3L1.2 8M14 10.3L14.8 8M1.8 5.7L4.3 6M14.2 5.7L11.7 6"
+            d="M8 5.3V3.3M10.47 7.1L12.2 5.9M9.53 9.98L10.8 11.8M6.47 9.98L5.2 11.8M5.53 7.1L3.8 5.9"
             stroke="#1C1917"
             strokeWidth="0.6"
             strokeLinecap="round"
-            strokeLinejoin="round"
           />
         </svg>
       )}
