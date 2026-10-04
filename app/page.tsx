@@ -334,7 +334,7 @@ export default function Home() {
               <span style={{ color: '#D6D3D1' }}>·</span>
               <span style={{ fontWeight: 500, color: '#57534E' }}>Seattle</span>
               <span style={{ color: '#D6D3D1' }}>·</span>
-              <span style={{ fontWeight: 700, color: '#57534E' }}>0→1 &amp; AI/ML Product Trust</span>
+              <span style={{ fontWeight: 700, color: '#57534E' }}>0→1, AI/ML &amp; Trustworthy Systems</span>
             </div>
 
             <div style={{
@@ -342,6 +342,17 @@ export default function Home() {
               lineHeight: '1.8',
               color: '#1C1917',
             }}>
+              <p style={{
+                fontFamily: 'var(--font-fraunces), serif',
+                fontSize: isMobile ? '26px' : isWideDesktop ? '34px' : '30px',
+                fontWeight: 700,
+                lineHeight: '1.3',
+                marginBottom: isWideDesktop ? '32px' : '28px',
+                ...revealStyle(90),
+              }}>
+                I decide who the system defers to.
+              </p>
+
               <p style={{ marginBottom: isWideDesktop ? '32px' : '28px', ...revealStyle(120) }}>
                 I'm a product designer with 8+ years of experience taking products from 0 to 1. I build trust into systems, from a founding role at Keye that took a marketplace from three screens to a funded company, to LAT, an enterprise ML platform that reached 95% adoption inside a politically sensitive institution.
               </p>

@@ -15,24 +15,6 @@ const tradeoffs: Tradeoff[] = [
     stat: '61% → 19% override rate',
   },
   {
-    id: 'signal-speed',
-    considered: '10+ predictive inputs shown per asset.',
-    shippedTitle: 'Top drivers, rest in drill-down',
-    why: 'Users only acted on risk, time-to-impact, and cost — more signal just created hesitation.',
-  },
-  {
-    id: 'transparency-comfort',
-    considered: 'Curated weekly summaries for leadership.',
-    shippedTitle: 'Real-time visibility',
-    why: 'Exposed inefficiencies instead of hiding them. Meetings became strategic, not status-driven.',
-  },
-  {
-    id: 'minimal-disruption',
-    considered: '"Minimal disruption" = same tools, new UI.',
-    shippedTitle: 'Reorganized how 5 roles worked',
-    why: 'The real ask was day-to-day workflow, not the interface. Selling that reframe was the actual work.',
-  },
-  {
     id: 'dashboard-roles',
     considered: 'One shared dashboard for every user.',
     shippedTitle: 'Role-based surfaces',

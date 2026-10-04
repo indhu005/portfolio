@@ -1,5 +1,6 @@
 'use client'
 import { useState, useEffect, useRef } from 'react'
+import Link from 'next/link'
 import Sidebar from './Sidebar'
 import { CaseStudyStructuredData } from './StructuredData'
 
@@ -156,26 +157,74 @@ export default function CaseStudyLayout({ caseStudy, slug }: CaseStudyLayoutProp
       {isTablet && (
         <button
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+          aria-label={mobileMenuOpen ? 'Close menu' : 'Open menu'}
           style={{
             position: 'fixed',
             top: '20px',
             left: '20px',
             zIndex: 1000,
-            background: 'rgba(0, 0, 0, 0.6)',
-            backdropFilter: 'blur(8px)',
-            WebkitBackdropFilter: 'blur(8px)',
-            color: 'white',
-            border: '1px solid rgba(255, 255, 255, 0.1)',
-            borderRadius: '0px',
-            padding: '12px 16px',
-            fontSize: '14px',
-            fontWeight: 600,
+            width: '40px',
+            height: '40px',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            background: 'transparent',
+            backdropFilter: 'blur(12px)',
+            WebkitBackdropFilter: 'blur(12px)',
+            border: '1px solid rgba(28, 25, 23, 0.1)',
+            borderRadius: '10px',
             cursor: 'pointer',
-            boxShadow: '0 2px 8px rgba(0,0,0,0.2)',
           }}
         >
-          {mobileMenuOpen ? '✕ Close' : '☰ Menu'}
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+            {mobileMenuOpen ? (
+              <>
+                <path d="M4 4L14 14" stroke="#1C1917" strokeWidth="1.6" strokeLinecap="round" />
+                <path d="M14 4L4 14" stroke="#1C1917" strokeWidth="1.6" strokeLinecap="round" />
+              </>
+            ) : (
+              <>
+                <path d="M2.5 5H15.5" stroke="#1C1917" strokeWidth="1.6" strokeLinecap="round" />
+                <path d="M2.5 9H15.5" stroke="#1C1917" strokeWidth="1.6" strokeLinecap="round" />
+                <path d="M2.5 13H15.5" stroke="#1C1917" strokeWidth="1.6" strokeLinecap="round" />
+              </>
+            )}
+          </svg>
         </button>
+      )}
+
+      {/* MOBILE/TABLET BREADCRUMB */}
+      {isTablet && !mobileMenuOpen && (
+        <div style={{
+          position: 'fixed',
+          top: '20px',
+          left: '72px',
+          right: '20px',
+          zIndex: 999,
+          display: 'flex',
+          alignItems: 'center',
+          gap: '6px',
+          height: '40px',
+          padding: '0 14px',
+          background: 'rgba(255, 255, 255, 0.82)',
+          backdropFilter: 'blur(12px)',
+          WebkitBackdropFilter: 'blur(12px)',
+          border: '1px solid rgba(28, 25, 23, 0.1)',
+          borderRadius: '10px',
+          fontSize: '12px',
+          fontWeight: 500,
+          color: '#57534E',
+          overflow: 'hidden',
+          whiteSpace: 'nowrap',
+        }}>
+          <Link href="/" style={{ color: '#57534E', textDecoration: 'none', flexShrink: 0 }}>Home</Link>
+          <span style={{ flexShrink: 0 }}>/</span>
+          <span style={{ color: '#1C1917', fontWeight: 600, flexShrink: 0 }}>{caseStudy.title}</span>
+          <span style={{ flexShrink: 0 }}>/</span>
+          <span style={{ color: '#1C1917', fontWeight: 600, overflow: 'hidden', textOverflow: 'ellipsis' }}>
+            {caseStudy.sections.find(s => s.id === activeSection)?.title.replace(/^\d+\s*—\s*/, '') ?? ''}
+          </span>
+        </div>
       )}
 
       {/* MOBILE/TABLET OVERLAY MENU */}

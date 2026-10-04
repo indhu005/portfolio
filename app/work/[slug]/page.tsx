@@ -35,6 +35,11 @@ const caseStudies = {
 
 <p style="margin-top: 28px;"><span style="font-weight: 600;">Timeline.</span> 2 years (2021–2022): beta to credit system to marketplace to extension to seed funding. After the team dispersed, the company pivoted into YC W2024 on the traction we built.</p>
 
+<div style="background-color: #F9FAFB; padding: 24px 28px; border-radius: 0px; border-left: 3px solid #FF6B35; margin-top: 32px;">
+  <div style="font-size: 11px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #A8A29E; margin-bottom: 10px;">My contribution</div>
+  <div style="font-size: 15px; color: #57534E; line-height: 1.7;">I owned the credit-system pivots that kept the product solvent as we learned from real usage, built the product-card system that scaled across every surface, and shipped the Chrome extension that cut onboarding friction by 63% in two days.</div>
+</div>
+
 <div class="cs-laptop-mockup" style="width: 60%; margin: 120px auto 120px;">
   <div class="cs-laptop-lid">
     <div class="cs-laptop-camera"></div>
@@ -630,6 +635,11 @@ const caseStudies = {
 
 <p style="margin-top: 28px;"><span style="font-weight: 600;">Team</span><br/>1 PM, 1 designer (me), 2 external engineers, plus client-side CAPEX and data teams</p>
 
+<div style="background-color: #F9FAFB; padding: 24px 28px; border-radius: 0px; border-left: 3px solid #FF6B35; margin-top: 32px;">
+  <div style="font-size: 11px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #A8A29E; margin-bottom: 10px;">My contribution</div>
+  <div style="font-size: 15px; color: #57534E; line-height: 1.7;">I reframed the product from a shared facilities dashboard into role-specific decision surfaces, set the trust model that let managers act on AI recommendations without blind trust, and carried the offline-first field workflow from research through pilot.</div>
+</div>
+
 <div style="width: 100%; min-height: 450px; background-color: #E5E7EB; border-radius: 0px; display: flex; align-items: center; justify-content: center; color: #9CA3AF; font-size: 14px; margin-top: 40px; margin-bottom: 40px;">Hero — one asset rendered for a technician (mobile), a manager (priority queue), and an executive (summary). One data model, three surfaces.</div>
 
 <h4 class="case-study-subhead">Impact</h4>
@@ -638,34 +648,41 @@ const caseStudies = {
   <div class="metrics-cell metrics-cell--hero">
     <div class="metrics-num">95%</div>
     <div class="metrics-label">Pilot adoption, vs. UW IT's 70% threshold for keeping a tool live</div>
+    <div style="font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 10px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #4ADE80; margin-top: 10px;">Observed</div>
   </div>
   <div class="metrics-cell">
     <div class="metrics-num">70% → 95%</div>
     <div class="metrics-label">Data accuracy, pre/post canonical ID + sync validation</div>
+    <div style="font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 10px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #4ADE80; margin-top: 10px;">Observed</div>
   </div>
   <div class="metrics-cell">
     <div class="metrics-num">~20 → ~8 min</div>
     <div class="metrics-label">Reporting time per ticket, pre/post offline-first workflow</div>
+    <div style="font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 10px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #4ADE80; margin-top: 10px;">Observed</div>
   </div>
   <div class="metrics-cell">
     <div class="metrics-num">−36%</div>
     <div class="metrics-label">Budget revisions vs. prior year</div>
+    <div style="font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 10px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #60A5FA; margin-top: 10px;">Measured</div>
   </div>
   <div class="metrics-cell">
     <div class="metrics-num">−12%</div>
     <div class="metrics-label">Emergency repair incidents during pilot</div>
+    <div style="font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 10px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #60A5FA; margin-top: 10px;">Measured</div>
   </div>
   <div class="metrics-cell">
     <div class="metrics-num">−60%</div>
     <div class="metrics-label">Planning time vs. prior year</div>
+    <div style="font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 10px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #60A5FA; margin-top: 10px;">Measured</div>
   </div>
   <div class="metrics-cell">
     <div class="metrics-num">−25% projected</div>
     <div class="metrics-label">Unexpected maintenance costs, lifecycle model forecast</div>
+    <div style="font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 10px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #FBBF24; margin-top: 10px;">Projected</div>
   </div>
 </div>
 
-<p style="font-size: 14px; color: #6B7280;">Adoption, accuracy, and reporting time were directly observed. Cost figures came from the platform's own forecasting layer, so I hold those more loosely.</p>`
+<p style="font-size: 14px; color: #6B7280;">Observed = measured directly from pilot usage. Measured = drawn from operational records (budget, incident, planning logs). Projected = output of the platform's own forecasting layer, held more loosely.</p>`
       },
       {
         id: 'context-problem',
@@ -843,41 +860,20 @@ const caseStudies = {
 </div>`
       },
       {
-        id: 'strategy',
-        title: '06 — Strategy',
-        headline: 'One north star: reduce unexpected maintenance costs by 25%',
-        content: `<p>Every feature mapped to one driver: <span style="font-weight: 600;">cost reduction, planning accuracy, or adoption velocity.</span> If it didn't serve one, it didn't ship.</p>
-
-<div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 32px; margin-top: 48px; margin-bottom: 48px;">
-  <div>
-    <div class="cs-card-title">Adoption Before Expansion</div>
-    <div style="font-size: 15px; color: #57534E; line-height: 1.6;">Offline workflows first; AI auto-scheduling second.</div>
-  </div>
-
-  <div>
-    <div class="cs-card-title">Data Integrity Before AI</div>
-    <div style="font-size: 15px; color: #57534E; line-height: 1.6;">Stable data foundation first, predictive sophistication second.</div>
-  </div>
-
-  <div>
-    <div class="cs-card-title">Reduce Cognitive Load</div>
-    <div style="font-size: 15px; color: #57534E; line-height: 1.6;">Role-tailored surfaces, signals not noise.</div>
-  </div>
-</div>
-
-<div style="background-color: #F9FAFB; padding: 28px; border-radius: 0px; border-left: 3px solid #7EB3F5;">
-  <div class="cs-card-title cs-card-title--md">Platform Thinking</div>
-  <div style="font-size: 15px; color: #57534E; line-height: 1.7;">The predictive engine improves as override data accumulates — LAT compounds intelligence through use.</div>
-</div>`
-      },
-      {
         id: 'tradeoffs',
-        title: '07 — Tradeoffs',
+        title: '06 — Tradeoffs',
         headline: 'We chose human-in-the-loop over speed, accepting slower decisions to build trust',
         content: '',
         customComponent: (
           <div>
+            <p>Every feature mapped to one driver: <span style={{ fontWeight: 600 }}>cost reduction, planning accuracy, or adoption velocity.</span> Offline workflows and data integrity came before expanding AI scope — these three tradeoffs are where that showed up most.</p>
+
             <LatTradeoffTable />
+
+            <div style={{ backgroundColor: '#F9FAFB', padding: '28px', borderRadius: '0px', borderLeft: '3px solid #7EB3F5', marginTop: '8px', marginBottom: '40px' }}>
+              <div className="cs-card-title cs-card-title--md">Platform Thinking</div>
+              <div style={{ fontSize: '15px', color: '#57534E', lineHeight: 1.7 }}>The predictive engine improves as override data accumulates — LAT compounds intelligence through use.</div>
+            </div>
 
             <img loading="lazy" decoding="async" width={2000} height={1455} src="/images/lat/AB%20Testing.webp" alt="AB Testing comparison" style={{ width: '100%', height: 'auto', borderRadius: '0px', marginTop: '8px', marginBottom: '40px', display: 'block' }} />
 
@@ -894,7 +890,7 @@ const caseStudies = {
       },
       {
         id: 'impact',
-        title: '08 — Impact',
+        title: '07 — Impact',
         headline: "The biggest change wasn't cost savings — it was decision confidence",
         content: `<p><span style="font-weight: 600;">Operational.</span> Linking work orders to lifecycle cost made repair history visible in real time.</p>
 
@@ -906,7 +902,7 @@ const caseStudies = {
       },
       {
         id: 'reflection',
-        title: '09 — Reflection',
+        title: '08 — Reflection',
         headline: "Clarity drove action more than completeness — users didn't want more data, they wanted less to think about",
         content: `<p><span style="font-weight: 600;">What I got wrong.</span> I thought predictive accuracy would drive adoption. Data integrity mattered more — strong predictions failed when the data was messy.</p>
 
