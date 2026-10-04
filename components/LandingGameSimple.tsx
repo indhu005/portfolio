@@ -1024,7 +1024,7 @@ export default function LandingGameSimple() {
       <div style={{
         position: 'relative',
         width: isMobile || isTablet ? '100%' : `${cols * cellSize + (cols - 1) * gap}px`,
-        marginTop: isMobile ? '140px' : isTablet ? '160px' : '230px',
+        marginTop: isMobile ? '166px' : isTablet ? '192px' : '230px',
         display: 'flex',
         justifyContent: isMobile || isTablet ? 'center' : 'flex-start',
       }}>
@@ -1339,7 +1339,7 @@ export default function LandingGameSimple() {
               })()}
             </div>
 
-            {/* View case studies link - green */}
+            {/* View case studies - primary green button, black text */}
             <a
               href="#case-studies"
               onClick={(e) => {
@@ -1347,20 +1347,23 @@ export default function LandingGameSimple() {
                 document.getElementById('case-studies')?.scrollIntoView({ behavior: 'smooth', block: 'start' })
               }}
               style={{
-                display: 'block',
+                display: 'inline-block',
                 fontSize: '15px',
-                fontWeight: 500,
-                color: '#86C232',
+                fontWeight: 600,
+                color: '#1C1917',
+                backgroundColor: '#86C232',
                 textDecoration: 'none',
-                transition: 'color 0.2s',
+                borderRadius: '999px',
+                padding: '10px 20px',
+                transition: 'background-color 0.2s',
                 cursor: 'pointer',
                 marginBottom: '16px',
               }}
               onMouseEnter={(e) => {
-                e.currentTarget.style.color = '#FFFFFF'
+                e.currentTarget.style.backgroundColor = '#9ED94A'
               }}
               onMouseLeave={(e) => {
-                e.currentTarget.style.color = '#86C232'
+                e.currentTarget.style.backgroundColor = '#86C232'
               }}
             >
               Curious how I create real products
