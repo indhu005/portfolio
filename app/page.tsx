@@ -357,6 +357,43 @@ export default function Home() {
                 I'm a product designer with 8+ years of experience taking products from 0 to 1. I build trust into systems, from a founding role at Keye that took a marketplace from three screens to a funded company, to LAT, an enterprise ML platform that reached 95% adoption inside a politically sensitive institution.
               </p>
 
+              {/* Proof Strip — fast, scannable backing for the claims above */}
+              <div style={{
+                display: 'grid',
+                gridTemplateColumns: isMobile ? '1fr' : 'repeat(3, 1fr)',
+                gap: isMobile ? '20px' : '24px',
+                marginBottom: isWideDesktop ? '32px' : '28px',
+                padding: isMobile ? '20px' : '24px 28px',
+                border: '1px solid #E7E5E4',
+                ...revealStyle(160),
+              }}>
+                {[
+                  { stat: '95% pilot adoption', context: 'LAT — 12-month enterprise rollout, measured by weekly active use of the core workflow' },
+                  { stat: '0→20K MAUs · $1.5M raised', context: 'Keye — founding designer, team of 5, later pivoted into YC F24' },
+                  { stat: '~1,800 testers', context: 'Misinfo Day — concept validated via a 2,000-respondent survey' },
+                ].map((item) => (
+                  <div key={item.stat}>
+                    <div style={{
+                      fontFamily: 'var(--font-fraunces), serif',
+                      fontSize: isMobile ? '18px' : '20px',
+                      fontWeight: 700,
+                      color: '#1C1917',
+                      marginBottom: '6px',
+                      lineHeight: '1.3',
+                    }}>
+                      {item.stat}
+                    </div>
+                    <div style={{
+                      fontSize: '13.5px',
+                      lineHeight: '1.5',
+                      color: '#78716C',
+                    }}>
+                      {item.context}
+                    </div>
+                  </div>
+                ))}
+              </div>
+
               <p style={{ marginBottom: isWideDesktop ? '32px' : '28px', ...revealStyle(220) }}>
                 I think in the how and the why, and lately the why now. Most recently, that's meant figuring out what accessibility and safety guardrails should look like as AI decides more of what people see and trust.
               </p>
@@ -430,6 +467,16 @@ export default function Home() {
                   </div>
                   <div style={{ flex: 1, minWidth: 0 }}>
                     <div style={{
+                      fontSize: '11px',
+                      fontWeight: 700,
+                      textTransform: 'uppercase',
+                      letterSpacing: '0.08em',
+                      color: '#D9662B',
+                      marginBottom: '6px',
+                    }}>
+                      Enterprise AI · 0→1 Systems
+                    </div>
+                    <div style={{
                       display: 'flex',
                       flexWrap: isMobile ? 'wrap' : 'nowrap',
                       alignItems: 'center',
@@ -475,7 +522,7 @@ export default function Home() {
                       color: 'rgba(255,255,255,0.9)',
                       maxWidth: '800px',
                     }}>
-                      Turning fragmented campus maintenance into a trusted financial decision system through ML-driven lifecycle intelligence.
+                      Designing for AI failure and human-in-the-loop workflows — turning fragmented campus maintenance into a trusted financial decision system.
                     </p>
                     <div style={{
                       fontFamily: 'var(--font-fraunces), serif',
@@ -635,6 +682,16 @@ export default function Home() {
                   </div>
                   <div style={{ flex: 1, minWidth: 0 }}>
                     <div style={{
+                      fontSize: '11px',
+                      fontWeight: 700,
+                      textTransform: 'uppercase',
+                      letterSpacing: '0.08em',
+                      color: '#FFFFFF',
+                      marginBottom: '6px',
+                    }}>
+                      Growth · Marketplace · Design Systems
+                    </div>
+                    <div style={{
                       display: 'flex',
                       flexWrap: isMobile ? 'wrap' : 'nowrap',
                       alignItems: 'center',
@@ -734,7 +791,7 @@ export default function Home() {
                   cells={[
                     { label: 'Role & Team', value: 'Founding Designer · team of 5 — 2 engineers, 1 PM, 2 designers I hired' },
                     { label: 'Constraint', value: "Engineering was 12 time zones away; a co-founder's exit erased backend capacity for planned integrations." },
-                    { label: 'Impact', value: '0→20K MAUs · $1.5M raised · YC W2024' },
+                    { label: 'Impact', value: '0→20K MAUs · $1.5M raised · YC F24' },
                     { label: 'Tech & Approach', value: 'Design systems · Chrome extension · Credit-based economics' },
                   ]}
                 />
@@ -862,6 +919,16 @@ export default function Home() {
                     03
                   </div>
                   <div style={{ flex: 1, minWidth: 0 }}>
+                    <div style={{
+                      fontSize: '11px',
+                      fontWeight: 700,
+                      textTransform: 'uppercase',
+                      letterSpacing: '0.08em',
+                      color: '#D9662B',
+                      marginBottom: '6px',
+                    }}>
+                      Research · AI Trust · Media Literacy
+                    </div>
                     <div style={{
                       display: 'flex',
                       flexWrap: isMobile ? 'wrap' : 'nowrap',
@@ -1067,6 +1134,122 @@ export default function Home() {
                   </div>
                 )}
               </article>
+            </div>
+          </section>
+
+          {/* How I Work Section */}
+          <section id="how-i-work" style={{
+            marginTop: isMobile ? '60px' : isWideDesktop ? '120px' : '100px',
+          }}>
+            {/* Section Header */}
+            <div style={{
+              display: 'flex',
+              alignItems: 'center',
+              gap: '12px',
+              marginBottom: isMobile ? '32px' : isWideDesktop ? '64px' : '48px',
+            }}>
+              <span style={{
+                width: '10px',
+                height: '10px',
+                borderRadius: '50%',
+                backgroundColor: 'var(--accent)',
+                flexShrink: 0,
+              }} />
+              <h2 style={{
+                fontFamily: 'var(--font-fraunces), serif',
+                fontSize: isMobile ? '22px' : isWideDesktop ? '39px' : '34px',
+                fontWeight: 700,
+                color: '#1C1917',
+                letterSpacing: '-0.01em',
+                margin: 0,
+              }}>
+                How I Work
+              </h2>
+            </div>
+
+            <div style={{
+              display: 'flex',
+              flexDirection: 'column',
+              maxWidth: isWideDesktop ? '1100px' : '920px',
+            }}>
+              {[
+                {
+                  statement: 'I decide who the system defers to.',
+                  body: 'At LAT, giving maintenance staff the final call on every ML flag, instead of a dashboard of predictions, brought the override rate down from 61% to 19% as trust in the system grew.',
+                  project: 'LAT',
+                },
+                {
+                  statement: 'I make the constraint do the work.',
+                  body: "Keye's credit cap wasn't a monetization lever. Capping it generated the behavioral data that shaped the company's entire partnership strategy.",
+                  project: 'Keye',
+                },
+                {
+                  statement: 'I test the concept before I polish the interface.',
+                  body: '17 of 19 testers at Misinfo Day rejected the original scan-and-verify concept. That result sent the design back to a quiz-first format before any visual work began.',
+                  project: 'Misinformation Center',
+                },
+                {
+                  statement: 'I build trust before I build for scale.',
+                  body: 'LAT shipped inside a politically sensitive institution, so every workflow earned adoption one honest interaction at a time, reaching 95% pilot adoption.',
+                  project: 'LAT',
+                },
+                {
+                  statement: 'I hire the people who outgrow me.',
+                  body: "Founding Keye's design practice meant hiring the two designers who replaced me. A founding designer's job is to build a foundation that survives their own departure.",
+                  project: 'Keye',
+                },
+              ].map((item, i) => (
+                <div key={item.statement} style={{
+                  display: 'flex',
+                  gap: isMobile ? '16px' : '32px',
+                  alignItems: 'flex-start',
+                  padding: isMobile ? '24px 0' : '32px 0',
+                  borderTop: i === 0 ? 'none' : '1px solid #E7E5E4',
+                }}>
+                  <div style={{
+                    fontSize: isWideDesktop ? '15px' : '13px',
+                    fontWeight: 700,
+                    color: '#A8A29E',
+                    letterSpacing: '0.08em',
+                    flexShrink: 0,
+                    paddingTop: '4px',
+                  }}>
+                    {String(i + 1).padStart(2, '0')}
+                  </div>
+                  <div style={{ flex: 1, minWidth: 0 }}>
+                    <p style={{
+                      fontFamily: 'var(--font-fraunces), serif',
+                      fontSize: isMobile ? '19px' : isWideDesktop ? '26px' : '23px',
+                      fontWeight: 700,
+                      lineHeight: '1.35',
+                      color: '#1C1917',
+                      margin: 0,
+                      marginBottom: '10px',
+                    }}>
+                      {item.statement}
+                    </p>
+                    <p style={{
+                      fontSize: isMobile ? '15.5px' : '16.5px',
+                      lineHeight: '1.65',
+                      color: '#57534E',
+                      margin: 0,
+                      marginBottom: '10px',
+                      maxWidth: '680px',
+                    }}>
+                      {item.body}
+                    </p>
+                    <span style={{
+                      fontSize: '11px',
+                      fontWeight: 700,
+                      textTransform: 'uppercase',
+                      letterSpacing: '0.06em',
+                      color: 'var(--accent)',
+                    }}>
+                      {item.project}
+                    </span>
+                  </div>
+                </div>
+              ))}
             </div>
           </section>
 

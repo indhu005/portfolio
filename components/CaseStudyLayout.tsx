@@ -35,6 +35,7 @@ interface TldrData {
   timeline: string
   impact: string
   skills: string
+  decisionAuthority?: string
 }
 
 interface BriefData {
@@ -548,6 +549,12 @@ export default function CaseStudyLayout({ caseStudy, slug }: CaseStudyLayoutProp
                       <div style={{ fontFamily: 'ui-monospace, SFMono-Regular, Menlo, monospace', fontSize: '10.5px', fontWeight: 500, letterSpacing: '0.06em', textTransform: 'uppercase', color: '#78716C', marginBottom: '6px' }}>Key Skills</div>
                       <div style={{ color: '#1C1917' }}>{caseStudy.tldr.skills}</div>
                     </div>
+                    {caseStudy.tldr.decisionAuthority && (
+                      <div style={{ gridColumn: isMobile ? '1' : 'span 2' }}>
+                        <div style={{ fontFamily: 'ui-monospace, SFMono-Regular, Menlo, monospace', fontSize: '10.5px', fontWeight: 500, letterSpacing: '0.06em', textTransform: 'uppercase', color: '#78716C', marginBottom: '6px' }}>Decision Authority</div>
+                        <div style={{ color: '#1C1917' }}>{caseStudy.tldr.decisionAuthority}</div>
+                      </div>
+                    )}
                   </div>
                 </div>
               )}

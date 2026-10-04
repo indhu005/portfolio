@@ -20,8 +20,9 @@ const caseStudies = {
       role: 'Founding Product Designer',
       team: '5 (2 engineers, 1 PM, 2 designers I hired)',
       timeline: '2 years (2021–2022)',
-      impact: '0→20K MAUs | $1.5M raised | YC W2024',
-      skills: 'Product strategy · Design systems · User research · PRDs · Chrome extension · Credit economics'
+      impact: '0→20K MAUs | $1.5M raised | YC F24',
+      skills: 'Product strategy · Design systems · User research · PRDs · Chrome extension · Credit economics',
+      decisionAuthority: 'Owned: every shipped surface, the credit-cap mechanic, the product-card system, hiring the two designers who followed me. Founders owned vision and fundraising; I translated it into what shipped alongside the PM.'
     },
     sections: [
       {
@@ -33,11 +34,16 @@ const caseStudies = {
 
 <p style="margin-top: 28px;"><span style="font-weight: 600;">My role.</span> Founding (and for most of Keye's life, only) designer. Founders set vision and fundraising; the PM and I turned it into what shipped — I designed every surface, wrote PRDs, ran research, and hired the two designers who replaced me.</p>
 
-<p style="margin-top: 28px;"><span style="font-weight: 600;">Timeline.</span> 2 years (2021–2022): beta to credit system to marketplace to extension to seed funding. After the team dispersed, the company pivoted into YC W2024 on the traction we built.</p>
+<p style="margin-top: 28px;"><span style="font-weight: 600;">Timeline.</span> 2 years (2021–2022): beta to credit system to marketplace to extension to seed funding. After the team dispersed, the company pivoted into YC F24 on the traction we built.</p>
 
 <div style="background-color: #F9FAFB; padding: 24px 28px; border-radius: 0px; border-left: 3px solid #FF6B35; margin-top: 32px;">
   <div style="font-size: 11px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #A8A29E; margin-bottom: 10px;">My contribution</div>
   <div style="font-size: 15px; color: #57534E; line-height: 1.7;">I owned the credit-system pivots that kept the product solvent as we learned from real usage, built the product-card system that scaled across every surface, and shipped the Chrome extension that cut onboarding friction by 63% in two days.</div>
+</div>
+
+<div style="background-color: #F9FAFB; padding: 24px 28px; border-radius: 0px; border-left: 3px solid #FF6B35; margin-top: 20px;">
+  <div style="font-size: 11px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #A8A29E; margin-bottom: 10px;">Team leverage</div>
+  <div style="font-size: 15px; color: #57534E; line-height: 1.7;">I scoped the MVP alongside the founders from three static screens, then hired and ran point for the two designers who eventually replaced me — building design velocity the team didn't have before I joined, and didn't lose after I left, through seed funding and into YC F24.</div>
 </div>
 
 <div class="cs-laptop-mockup" style="width: 60%; margin: 120px auto 120px;">
@@ -67,38 +73,47 @@ const caseStudies = {
   <div class="metrics-cell metrics-cell--hero">
     <div class="metrics-num">0 → 20K+</div>
     <div class="metrics-label">Monthly active users in under 12 months</div>
+    <div style="font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 10px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #4ADE80; margin-top: 10px;">Observed</div>
   </div>
   <div class="metrics-cell">
     <div class="metrics-num">+45%</div>
     <div class="metrics-label">Engagement, within 3 months</div>
+    <div style="font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 10px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #4ADE80; margin-top: 10px;">Observed</div>
   </div>
   <div class="metrics-cell">
     <div class="metrics-num">+32%</div>
     <div class="metrics-label">Trial-to-paid conversion post monetization</div>
+    <div style="font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 10px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #4ADE80; margin-top: 10px;">Observed</div>
   </div>
   <div class="metrics-cell">
     <div class="metrics-num">150+ / 35+</div>
     <div class="metrics-label">Products · direct partnerships incl. Adobe, Grammarly, Otter.ai</div>
+    <div style="font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 10px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #4ADE80; margin-top: 10px;">Observed</div>
   </div>
   <div class="metrics-cell">
     <div class="metrics-num">+44%</div>
     <div class="metrics-label">Partner subscriptions, year over year</div>
+    <div style="font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 10px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #4ADE80; margin-top: 10px;">Observed</div>
   </div>
   <div class="metrics-cell">
     <div class="metrics-num">60%</div>
     <div class="metrics-label">Extension adoption, within 3 months</div>
+    <div style="font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 10px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #4ADE80; margin-top: 10px;">Observed</div>
   </div>
   <div class="metrics-cell">
     <div class="metrics-num">−63%</div>
     <div class="metrics-label">Login friction, via auto-login</div>
+    <div style="font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 10px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #4ADE80; margin-top: 10px;">Observed</div>
   </div>
   <div class="metrics-funding">
     <span>$1.5M pre-seed</span><span class="metrics-sep">·</span>
     <span>$30K in grants &amp; competition wins</span><span class="metrics-sep">·</span>
     <span>Featured in Forbes, BulletPitch, UPenn Venture Lab</span><span class="metrics-sep">·</span>
-    <span>Accepted to YC W2024</span>
+    <span>Accepted to YC F24</span>
   </div>
-</div>`
+</div>
+
+<p style="font-size: 14px; color: #6B7280;">Engagement = weekly active users as a share of total registered users, tracked in product analytics. Trial-to-paid and extension adoption are measured the same way — share of eligible users converting within the stated window.</p>`
       },
       {
         id: 'context-problem',
@@ -133,7 +148,9 @@ const caseStudies = {
   </div>
 </div>
 
-<p style="margin-top: 48px;">ClassPass proved flexible multi-provider access worked; Apple One bundled someone else's services. Neither filled the gap between free trial and full subscription — that gap was Keye's opportunity.</p>`
+<p style="margin-top: 48px;">ClassPass proved flexible multi-provider access worked; Apple One bundled someone else's services. Neither filled the gap between free trial and full subscription — that gap was Keye's opportunity.</p>
+
+<p style="margin-top: 28px;">The friction ran both directions. Users wanted to sample tools without committing; the tools themselves — especially the lesser-known ones without Grammarly-level brand pull — had no cheap way to get in front of people who'd never heard of them. A subscription funnel favors whoever's already trusted. Keye's credit system gave both sides a lower-cost way in: users got trial access without the VPN-and-fake-email workaround, and smaller tools got discovery they couldn't buy through a normal subscription paywall.</p>`
       },
       {
         id: 'started',
@@ -568,7 +585,7 @@ const caseStudies = {
         id: 'impact',
         title: '06 — Impact & Reflection',
         headline: "The most important thing a founding designer builds isn't the product. It's the foundation that lets the product grow without being rebuilt from scratch",
-        content: `<p>By year three, the founding team dispersed. The company pivoted into YC W2024 on financial analytics — the marketplace didn't survive, but the research, partnerships, and funding that made YC possible did.</p>
+        content: `<p>By year three, the founding team dispersed. The company pivoted into YC F24 on financial analytics — the marketplace didn't survive, but the research, partnerships, and funding that made YC possible did.</p>
 
 <div class="pull-quote" style="margin-top: 48px;">The credit cap wasn't valuable because it monetized the product. It was valuable because it generated the behavioral data that shaped the entire partnership strategy.</div>
 
@@ -593,7 +610,8 @@ const caseStudies = {
       team: '1 PM, 1 designer (me), 2 external engineers, client stakeholders',
       timeline: '12 months (Jun 2023–May 2024)',
       impact: '95% pilot adoption | 70%→95% data accuracy | 25% cost reduction projected',
-      skills: 'Enterprise UX · ML/AI design · Stakeholder alignment · Field research · API-first architecture'
+      skills: 'Enterprise UX · ML/AI design · Stakeholder alignment · Field research · API-first architecture',
+      decisionAuthority: 'Owned: workflow design, the human-in-the-loop approval model, and the alert-framing decisions that cut override rate from 61% to 19%. Client stakeholders owned data-integrity and political constraints I had to design within.'
     },
     preSnapshotHeadline: 'Fragmented data was forcing humans to do the work a system should have done',
     preSnapshotContent: `<p style="font-size: 14px; color: #6B7280;">70–75% of operational U.S. buildings predate 2000, and no vendor sells an integrated tool for a mixed-use portfolio like a university's (<a href="https://www.eia.gov/consumption/commercial/reports/" target="_blank" rel="noopener noreferrer" style="color: #6B7280; text-decoration: underline;">EIA.gov</a>).</p>
@@ -704,6 +722,28 @@ const caseStudies = {
 
 <p style="margin-top: 28px;">Vendors just price for more of the same single-use tool. Nobody sells the integrated version for a mixed-use portfolio like a university's, at any price.</p>
 
+<div style="margin-top: 40px; margin-bottom: 40px;">
+  <div style="font-size: 11px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #A8A29E; margin-bottom: 16px;">Fragmentation, by owner</div>
+  <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px;">
+    <div style="border-left: 3px solid #E7E5E4; padding-left: 16px;">
+      <div style="font-weight: 600; color: #1C1917; margin-bottom: 4px;">Field conditions</div>
+      <div style="font-size: 14px; color: #57534E; line-height: 1.6;">Technicians &amp; vendors — tracked on paper or memory, rarely reached managers</div>
+    </div>
+    <div style="border-left: 3px solid #E7E5E4; padding-left: 16px;">
+      <div style="font-weight: 600; color: #1C1917; margin-bottom: 4px;">Maintenance scheduling</div>
+      <div style="font-size: 14px; color: #57534E; line-height: 1.6;">Legacy CMMS/ERP, IT-owned — ran on fixed time intervals, not real risk</div>
+    </div>
+    <div style="border-left: 3px solid #E7E5E4; padding-left: 16px;">
+      <div style="font-weight: 600; color: #1C1917; margin-bottom: 4px;">Capital requests</div>
+      <div style="font-size: 14px; color: #57534E; line-height: 1.6;">Project managers &amp; accountants — manual spreadsheets stitched before each planning cycle</div>
+    </div>
+    <div style="border-left: 3px solid #E7E5E4; padding-left: 16px;">
+      <div style="font-weight: 600; color: #1C1917; margin-bottom: 4px;">Final approval</div>
+      <div style="font-size: 14px; color: #57534E; line-height: 1.6;">Executives &amp; the Director of Facilities — decided on whatever partial data reached them</div>
+    </div>
+  </div>
+</div>
+
 <img loading="lazy" decoding="async" width="3300" height="2400" src="/images/lat/Market%20Gap.jpg" alt="Market Gap Analysis" style="width: 100%; height: auto; border-radius: 0px; margin-top: 40px; margin-bottom: 40px; display: block;" />`
       },
       {
@@ -713,6 +753,26 @@ const caseStudies = {
         content: '',
         customComponent: (
           <div>
+            <div style={{ marginBottom: '16px' }}>
+              <div style={{ fontSize: '11px', fontWeight: 700, letterSpacing: '0.06em', textTransform: 'uppercase', color: '#A8A29E', marginBottom: '20px' }}>One data model, three surfaces</div>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '0', border: '1px solid #E7E5E4' }}>
+                <div style={{ padding: '18px 24px' }}>
+                  <div style={{ fontWeight: 600, color: '#1C1917', marginBottom: '4px' }}>Technician — mobile, offline-first</div>
+                  <div style={{ fontSize: '14px', color: '#57534E' }}>Field reports queue locally, voice-captured, and sync when connectivity returns</div>
+                </div>
+                <div style={{ textAlign: 'center', color: '#D9662B', fontSize: '18px', borderTop: '1px solid #E7E5E4', borderBottom: '1px solid #E7E5E4', padding: '6px' }}>↓ feeds shared data model ↓</div>
+                <div style={{ padding: '18px 24px' }}>
+                  <div style={{ fontWeight: 600, color: '#1C1917', marginBottom: '4px' }}>Manager — priority queue</div>
+                  <div style={{ fontSize: '14px', color: '#57534E' }}>Same records, ranked by risk and consequence instead of raw graphs; approves or overrides flagged items</div>
+                </div>
+                <div style={{ textAlign: 'center', color: '#D9662B', fontSize: '18px', borderTop: '1px solid #E7E5E4', borderBottom: '1px solid #E7E5E4', padding: '6px' }}>↓ rolls up ↓</div>
+                <div style={{ padding: '18px 24px' }}>
+                  <div style={{ fontWeight: 600, color: '#1C1917', marginBottom: '4px' }}>Executive — summary</div>
+                  <div style={{ fontSize: '14px', color: '#57534E' }}>Portfolio-level cost and risk, traceable back to the field report that drove it</div>
+                </div>
+              </div>
+            </div>
+
             <div style={{ marginBottom: '8px' }}>
               <div style={{ fontSize: '13px', fontWeight: 700, color: '#FF6B35', letterSpacing: '0.06em', textTransform: 'uppercase', marginBottom: '8px' }}>Decision 01</div>
               <div style={{ fontSize: '20px', fontWeight: 600, color: '#1C1917', marginBottom: '16px' }}>Replace the "Everything Dashboard"</div>
@@ -738,6 +798,12 @@ const caseStudies = {
             <LatAlertToggle />
 
             <p style={{ marginTop: '24px', marginBottom: '48px' }}><span style={{ fontWeight: 600 }}>Why.</span> The alert didn't need to prove confidence — it needed to give managers enough to decide.</p>
+
+            <div style={{ marginBottom: '48px' }}>
+              <div style={{ fontSize: '11px', fontWeight: 700, letterSpacing: '0.06em', textTransform: 'uppercase', color: '#A8A29E', marginBottom: '16px' }}>Model behavior</div>
+              <p>LAT's model scores each asset for replacement risk from maintenance history, asset age, and inspection records, then routes that score into one of three confidence tiers — Critical, Monitor, Safe — rather than exposing a raw probability. Every manager override (accept, reject, or request verification) is logged and fed back in, so the score recalibrates against real-world outcomes instead of staying static after deployment.</p>
+              <p style={{ marginTop: '16px' }}>The design decision wasn't the scoring itself — it was choosing what the model was allowed to withhold. A model that's wrong with full confidence is more dangerous than one that's uncertain and says so, which is why every Critical alert ships with its top risk drivers visible and requires a human decision before it affects a budget.</p>
+            </div>
 
             <div style={{ marginBottom: '8px' }}>
               <div style={{ fontSize: '13px', fontWeight: 700, color: '#FF6B35', letterSpacing: '0.06em', textTransform: 'uppercase', marginBottom: '8px' }}>Decision 03</div>
@@ -857,6 +923,25 @@ const caseStudies = {
     <div style="font-weight: 600; margin-bottom: 8px;">IMAGE: Offline-First Architecture</div>
     <div style="font-size: 13px; line-height: 1.5;">Local queue → capture → auto-sync → retry</div>
   </div>
+</div>
+
+<h4 class="case-study-subhead" style="margin-top: 16px;">Design System Patterns</h4>
+
+<div style="display: grid; grid-template-columns: 1fr; gap: 28px; margin-top: 24px; margin-bottom: 24px;">
+  <div>
+    <div class="cs-card-title">Tokens for two environments</div>
+    <div style="font-size: 15px; color: #57534E; line-height: 1.6;">The same component library had to hold up on a phone screen in direct sunlight underground and on a dense desktop dashboard reviewed indoors. Technician mobile ran on a high-contrast token set — larger type, fewer colors, status carried by shape as well as color. Manager and executive surfaces used a denser, lower-contrast set built for longer indoor sessions.</div>
+  </div>
+
+  <div>
+    <div class="cs-card-title">Reusable edge-case patterns</div>
+    <div style="font-size: 15px; color: #57534E; line-height: 1.6;">Four patterns recurred across every surface rather than being designed once each: an offline-status banner (queued / syncing / failed), a sync-conflict resolution state for records edited in two places at once, the confidence/risk tier badge (Critical / Monitor / Safe) from the alert system, and the human-override dialog — visible reasoning, mandatory comment, logged decision — that shipped after the boiler incident.</div>
+  </div>
+
+  <div>
+    <div class="cs-card-title">Engineering handoff</div>
+    <div style="font-size: 15px; color: #57534E; line-height: 1.6;">Each component shipped with its states spec'd against what the API actually returned — loading, stale-while-revalidating, offline-queued, and error — not just the happy path. Expected loading latencies were set with the two external engineers so slow states got real skeleton treatments instead of spinners bolted on after the fact.</div>
+  </div>
 </div>`
       },
       {
@@ -869,6 +954,11 @@ const caseStudies = {
             <p>Every feature mapped to one driver: <span style={{ fontWeight: 600 }}>cost reduction, planning accuracy, or adoption velocity.</span> Offline workflows and data integrity came before expanding AI scope — these three tradeoffs are where that showed up most.</p>
 
             <LatTradeoffTable />
+
+            <div style={{ backgroundColor: '#FFF9F5', padding: '28px', borderRadius: '0px', borderLeft: '3px solid #FF6B35', marginTop: '8px', marginBottom: '24px' }}>
+              <div className="cs-card-title cs-card-title--md">What we didn't build</div>
+              <div style={{ fontSize: '15px', color: '#57534E', lineHeight: 1.7 }}>AI auto-scheduling, ESG modeling, and digital twins were all requested and all cut. Twelve months forced one north star — decision confidence — and two drivers, cost and adoption. Anything that didn't serve those lost the argument, however compelling on its own.</div>
+            </div>
 
             <div style={{ backgroundColor: '#F9FAFB', padding: '28px', borderRadius: '0px', borderLeft: '3px solid #7EB3F5', marginTop: '8px', marginBottom: '40px' }}>
               <div className="cs-card-title cs-card-title--md">Platform Thinking</div>
@@ -929,7 +1019,8 @@ const caseStudies = {
       team: 'Solo (post-February 2024) · Research collaboration with TrueMedia.org',
       timeline: '12 months (Jan–Dec 2024)',
       impact: '~1,800 testers at Misinfo Day | 2,000-respondent survey | Concept validation',
-      skills: 'User research · Concept design · Gamification · Platform strategy · Academic rigor'
+      skills: 'User research · Concept design · Gamification · Platform strategy · Academic rigor',
+      decisionAuthority: 'Owned, solo after February 2024: research direction, all four tool concepts, and the pivot away from the original scan-and-verify design after 17 of 19 testers rejected it. TrueMedia.org set the research partnership scope.'
     },
     sections: [
       {
@@ -1250,7 +1341,7 @@ export async function generateMetadata({
 
   const metadataMap: Record<string, { description: string; keywords: string[] }> = {
     keye: {
-      description: 'Founding Product Designer at Keye — from three static screens to YC W2024. Built credit-based marketplace, Chrome extension, and design system. 0→20K MAUs, $1.5M raised.',
+      description: 'Founding Product Designer at Keye — from three static screens to YC F24. Built credit-based marketplace, Chrome extension, and design system. 0→20K MAUs, $1.5M raised.',
       keywords: ['YC startup designer', 'founding designer', 'startup product design', 'credit marketplace', 'Chrome extension design', 'design systems', 'subscription marketplace', 'SaaS design']
     },
     lat: {
