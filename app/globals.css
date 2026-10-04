@@ -131,6 +131,12 @@ img, video {
 }
 
 /* Landing game: gentle continuous idle sway so trees never feel static */
+/* Homepage sidebar marker: a football spinning in place as it climbs the border line */
+@keyframes footballSpin {
+  0% { transform: translate(0, -50%) rotate(0deg); }
+  100% { transform: translate(0, -50%) rotate(360deg); }
+}
+
 @keyframes treeIdleSway {
   0%, 100% { transform: translateX(-50%) rotate(-0.6deg); }
   50% { transform: translateX(-50%) rotate(0.6deg); }

@@ -212,24 +212,33 @@ export default function Home() {
       {/* SIDEBAR - Hidden on mobile/tablet */}
       {!isTablet && <Sidebar />}
 
-      {/* Scroll-progress marker — a dot with a soft trail climbing the sidebar's blue border */}
+      {/* Scroll-progress marker — a football climbing the sidebar's blue border, spinning as it goes */}
       {!isTablet && (
-        <div
+        <svg
+          width="16"
+          height="16"
+          viewBox="0 0 16 16"
           style={{
             position: 'fixed',
             left: '320px',
             top: `calc(${(scrollProgress * 88).toFixed(2)}vh + 24px)`,
-            width: '14px',
-            height: '14px',
-            borderRadius: '50%',
-            backgroundColor: '#4A72E5',
-            boxShadow: '0 10px 0 -3px rgba(74,114,229,0.25), 0 20px 0 -5px rgba(74,114,229,0.12)',
             zIndex: 60,
             transform: 'translate(0, -50%)',
             transition: 'top 0.08s linear',
             pointerEvents: 'none',
+            filter: 'drop-shadow(0 2px 3px rgba(0,0,0,0.2))',
+            animation: 'footballSpin 1.4s linear infinite',
           }}
-        />
+        >
+          <circle cx="8" cy="8" r="7.5" fill="#FFFFFF" stroke="#1C1917" strokeWidth="0.75" />
+          <path
+            d="M8 4.2L10.4 6L9.5 8.8H6.5L5.6 6L8 4.2ZM8 4.2V1.8M6.5 8.8L4.4 10.8M9.5 8.8L11.6 10.8M4.4 10.8L2 10.3M4.4 10.8L4.9 13.1M11.6 10.8L14 10.3M11.6 10.8L11.1 13.1M2 10.3L1.2 8M14 10.3L14.8 8M1.8 5.7L4.3 6M14.2 5.7L11.7 6"
+            stroke="#1C1917"
+            strokeWidth="0.6"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+        </svg>
       )}
 
       {/* MOBILE MENU BUTTON */}
