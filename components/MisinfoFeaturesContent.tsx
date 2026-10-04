@@ -13,7 +13,8 @@ export default function MisinfoFeaturesContent() {
       <img src="/images/misinformation-center/Facebook misinformation center.png" alt="Misinformation Center wireframes embedded in a major social platform — the killed direction" width={2999} height={1210} style={{ width: '100%', height: 'auto', borderRadius: '0px', marginTop: '32px', marginBottom: '48px', display: 'block' }} />
 
       <div style={{ marginTop: '120px' }}>
-        <p style={{ fontSize: '20px', fontWeight: 600 }}>Feature 01 — Literacy Quiz</p>
+        <p className="feature-eyebrow">Feature 01</p>
+        <p className="feature-heading">Literacy Quiz</p>
 
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '40px', marginTop: '20px', alignItems: 'start' }}>
           <div>
@@ -55,7 +56,8 @@ export default function MisinfoFeaturesContent() {
       </div>
 
       <div style={{ marginTop: '120px' }}>
-        <p style={{ fontSize: '20px', fontWeight: 600 }}>Feature 02 — Search & Image Search</p>
+        <p className="feature-eyebrow">Feature 02</p>
+        <p className="feature-heading">Search & Image Search</p>
 
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '40px', marginTop: '20px', alignItems: 'start' }}>
           <div>
@@ -87,7 +89,8 @@ export default function MisinfoFeaturesContent() {
       </div>
 
       <div style={{ marginTop: '120px' }}>
-        <p style={{ fontSize: '20px', fontWeight: 600 }}>Feature 03 — Scan</p>
+        <p className="feature-eyebrow">Feature 03</p>
+        <p className="feature-heading">Scan</p>
 
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '40px', marginTop: '20px', alignItems: 'start' }}>
           <div>
@@ -104,7 +107,8 @@ export default function MisinfoFeaturesContent() {
       </div>
 
       <div style={{ marginTop: '120px' }}>
-        <p style={{ fontSize: '20px', fontWeight: 600 }}>Feature 04 — Ask Us</p>
+        <p className="feature-eyebrow">Feature 04</p>
+        <p className="feature-heading">Ask Us</p>
 
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '40px', marginTop: '20px', alignItems: 'start' }}>
           <div>

@@ -944,7 +944,7 @@ img, video {
 .feature-eyebrow {
   font-size: 12px;
   font-weight: 700;
-  color: var(--accent);
+  color: #FF6B35;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   margin-bottom: 10px;
