@@ -64,13 +64,13 @@ export default function Sidebar({
   const [expandedProject, setExpandedProject] = useState<string | null>(activeProjectProp)
   const [isLargeDesktop, setIsLargeDesktop] = useState(false)
   // Sidebar renders inside the mobile/tablet overlay (see page.tsx `isTablet &&` gate),
-  // so <=1024px here means touch context — bump tap targets to meet the 44px minimum.
+  // so <=1180px here means touch context — bump tap targets to meet the 44px minimum.
   const [isCompact, setIsCompact] = useState(false)
 
   useEffect(() => {
     const checkLargeDesktop = () => {
       setIsLargeDesktop(window.innerWidth >= 1600)
-      setIsCompact(window.innerWidth <= 1024)
+      setIsCompact(window.innerWidth <= 1180)
     }
     checkLargeDesktop()
     window.addEventListener('resize', checkLargeDesktop)

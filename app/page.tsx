@@ -96,7 +96,7 @@ export default function Home() {
   const latCardRef = useRef<HTMLElement>(null)
   const misinfoCardRef = useRef<HTMLElement>(null)
   const isMobile = useMediaQuery('(max-width: 768px)')
-  const isTablet = useMediaQuery('(max-width: 1080px)')
+  const isTablet = useMediaQuery('(max-width: 1180px)')
   const isWideDesktop = useMediaQuery('(min-width: 2200px)')
 
   useEffect(() => {
