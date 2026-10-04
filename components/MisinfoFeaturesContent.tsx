@@ -88,51 +88,33 @@ export default function MisinfoFeaturesContent() {
         </div>
       </div>
 
-      <div style={{ marginTop: '120px' }}>
-        <p className="feature-eyebrow">Feature 03</p>
-        <p className="feature-heading">Scan</p>
+      <div style={{ marginTop: '96px' }}>
+        <p className="feature-eyebrow">Other explorations</p>
+        <p style={{ marginTop: '12px', fontSize: '15px', color: '#57534E', lineHeight: '1.6', maxWidth: '640px' }}>
+          Two smaller tools rounded out the four — narrower use cases than the quiz or search, but each came from a gap the other two couldn't cover.
+        </p>
 
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '40px', marginTop: '20px', alignItems: 'start' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '32px', marginTop: '32px' }}>
           <div>
-            <p style={{ marginTop: 0 }}>Scan came from Misinfo Day: what happens when the misinformation is a printed flyer, a newspaper, a poster? Older users hesitated and erred on forms, but scanned instantly — a behavior already learned from restaurant QR codes.</p>
-          </div>
-
-          <div style={{ width: '100%', maxWidth: '288px', margin: '0 auto' }}>
-            <video autoPlay loop muted playsInline preload="auto" style={{ display: 'block', width: '100%', aspectRatio: '448 / 906', borderRadius: '0px' }}>
-              <source src="/videos/misinformationcenter/Scan.mp4" type="video/mp4" />
-              Your browser does not support the video tag.
-            </video>
-          </div>
-        </div>
-      </div>
-
-      <div style={{ marginTop: '120px' }}>
-        <p className="feature-eyebrow">Feature 04</p>
-        <p className="feature-heading">Ask Us</p>
-
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '40px', marginTop: '20px', alignItems: 'start' }}>
-          <div>
-            <p style={{ marginTop: 0 }}>Some misinformation exists in no database — private WhatsApp forwards, local rumors, freshly manipulated images. Automated systems can't catch what they've never seen, and users who distrusted platform verdicts wouldn't trust an AI verdict either.</p>
-
-            <p style={{ marginTop: '16px', fontWeight: 600 }}>Human judgment backed by journalistic expertise was the only answer.</p>
-
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr', gap: '20px', marginTop: '20px' }}>
-              <div>
-                <div style={{ fontWeight: 600, fontSize: '16px', marginBottom: '8px' }}>Clear response-time expectations</div>
-                <div style={{ fontSize: '15px', color: '#57534E' }}>Pending / Under Review / Responded, so users knew what to expect.</div>
-              </div>
-              <div>
-                <div style={{ fontWeight: 600, fontSize: '16px', marginBottom: '8px' }}>Three-step simplification</div>
-                <div style={{ fontSize: '15px', color: '#57534E' }}>After Misinfo Day, the multi-field form dropped to three steps — older participants were struggling with entry.</div>
-              </div>
+            <div style={{ width: '100%', maxWidth: '160px', marginBottom: '16px' }}>
+              <video autoPlay loop muted playsInline preload="auto" style={{ display: 'block', width: '100%', aspectRatio: '448 / 906', borderRadius: '0px' }}>
+                <source src="/videos/misinformationcenter/Scan.mp4" type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
             </div>
+            <div style={{ fontWeight: 600, fontSize: '15px', marginBottom: '6px' }}>Scan</div>
+            <div style={{ fontSize: '14px', color: '#57534E', lineHeight: '1.6' }}>For misinformation that shows up on paper — flyers, newspapers, posters. Older users hesitated on forms but scanned instantly, a behavior already learned from restaurant QR codes.</div>
           </div>
 
-          <div style={{ width: '100%', maxWidth: '288px', margin: '0 auto' }}>
-            <video autoPlay loop muted playsInline preload="auto" style={{ display: 'block', width: '100%', aspectRatio: '444 / 906', borderRadius: '0px' }}>
-              <source src="/videos/misinformationcenter/Submit.mp4" type="video/mp4" />
-              Your browser does not support the video tag.
-            </video>
+          <div>
+            <div style={{ width: '100%', maxWidth: '160px', marginBottom: '16px' }}>
+              <video autoPlay loop muted playsInline preload="auto" style={{ display: 'block', width: '100%', aspectRatio: '444 / 906', borderRadius: '0px' }}>
+                <source src="/videos/misinformationcenter/Submit.mp4" type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
+            </div>
+            <div style={{ fontWeight: 600, fontSize: '15px', marginBottom: '6px' }}>Ask Us</div>
+            <div style={{ fontSize: '14px', color: '#57534E', lineHeight: '1.6' }}>Human-backed fact-checking for gray-area content no database or algorithm has seen yet — private forwards, local rumors, freshly manipulated images. Simplified from a multi-field form to three steps after Misinfo Day.</div>
           </div>
         </div>
       </div>

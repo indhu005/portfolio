@@ -1340,59 +1340,62 @@ export default function LandingGameSimple() {
             </div>
 
             {/* View case studies - primary green button, black text */}
-            <a
-              href="#case-studies"
-              onClick={(e) => {
-                e.preventDefault()
-                document.getElementById('case-studies')?.scrollIntoView({ behavior: 'smooth', block: 'start' })
-              }}
-              style={{
-                display: 'inline-block',
-                fontSize: '15px',
-                fontWeight: 600,
-                color: '#1C1917',
-                backgroundColor: '#86C232',
-                textDecoration: 'none',
-                borderRadius: '999px',
-                padding: '10px 20px',
-                transition: 'background-color 0.2s',
-                cursor: 'pointer',
-                marginBottom: '16px',
-              }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.backgroundColor = '#9ED94A'
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.backgroundColor = '#86C232'
-              }}
-            >
-              Curious how I create real products
-            </a>
+            <div style={{ marginBottom: '16px' }}>
+              <a
+                href="#case-studies"
+                onClick={(e) => {
+                  e.preventDefault()
+                  document.getElementById('case-studies')?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+                }}
+                style={{
+                  display: 'inline-block',
+                  fontSize: '15px',
+                  fontWeight: 600,
+                  color: '#1C1917',
+                  backgroundColor: '#86C232',
+                  textDecoration: 'none',
+                  borderRadius: '999px',
+                  padding: '10px 20px',
+                  transition: 'background-color 0.2s',
+                  cursor: 'pointer',
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.backgroundColor = '#9ED94A'
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.backgroundColor = '#86C232'
+                }}
+              >
+                Curious how I create real products
+              </a>
+            </div>
 
             {/* Play again link - secondary grey */}
-            <button
-              onClick={restartGame}
-              style={{
-                fontSize: '13px',
-                fontWeight: 500,
-                color: '#9CA3AF',
-                background: 'none',
-                border: 'none',
-                textDecoration: 'none',
-                borderBottom: '1px solid transparent',
-                transition: 'border-color 0.2s',
-                cursor: 'pointer',
-                padding: 0,
-              }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.borderBottomColor = '#9CA3AF'
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.borderBottomColor = 'transparent'
-              }}
-            >
-              Play again
-            </button>
+            <div>
+              <button
+                onClick={restartGame}
+                style={{
+                  fontSize: '13px',
+                  fontWeight: 500,
+                  color: '#9CA3AF',
+                  background: 'none',
+                  border: 'none',
+                  textDecoration: 'none',
+                  borderBottom: '1px solid transparent',
+                  transition: 'border-color 0.2s',
+                  cursor: 'pointer',
+                  padding: 0,
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.borderBottomColor = '#9CA3AF'
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.borderBottomColor = 'transparent'
+                }}
+              >
+                Play again
+              </button>
+            </div>
           </div>
         </>
       )}

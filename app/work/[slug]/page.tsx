@@ -1068,16 +1068,16 @@ const caseStudies = {
 <div class="snapshot-bottom-content">
 <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin-top: 48px; margin-bottom: 48px;">
   <div style="background-color: #F3F4F6; border-radius: 0px; padding: 20px 24px;">
+    <div class="cs-card-title cs-card-title--sm-tight">Literacy Quiz</div>
+    <div style="font-size: 14px; color: #57534E; line-height: 1.5;">A level-based game teaching users to spot manipulated content</div>
+  </div>
+  <div style="background-color: #F3F4F6; border-radius: 0px; padding: 20px 24px;">
     <div class="cs-card-title cs-card-title--sm-tight">Search & Image Search</div>
     <div style="font-size: 14px; color: #57534E; line-height: 1.5;">Verify links, headlines, and images with layered credibility ratings</div>
   </div>
   <div style="background-color: #F3F4F6; border-radius: 0px; padding: 20px 24px;">
     <div class="cs-card-title cs-card-title--sm-tight">Scan</div>
     <div style="font-size: 14px; color: #57534E; line-height: 1.5;">Camera-based verification for printed content — flyers, newspapers, ads</div>
-  </div>
-  <div style="background-color: #F3F4F6; border-radius: 0px; padding: 20px 24px;">
-    <div class="cs-card-title cs-card-title--sm-tight">Literacy Quiz</div>
-    <div style="font-size: 14px; color: #57534E; line-height: 1.5;">A level-based game teaching users to spot manipulated content</div>
   </div>
   <div style="background-color: #F3F4F6; border-radius: 0px; padding: 20px 24px;">
     <div class="cs-card-title cs-card-title--sm-tight">Ask Us</div>
