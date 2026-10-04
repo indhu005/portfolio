@@ -87,14 +87,15 @@ export default function Sidebar({
       width: '320px',
       minWidth: '320px',
       maxWidth: '320px',
-      height: '100vh',
-      borderRight: '1px solid rgba(0,0,0,0.08)',
+      height: isCompact ? 'auto' : '100vh',
+      minHeight: isCompact ? undefined : '100vh',
+      borderRight: isCompact ? 'none' : '1px solid rgba(0,0,0,0.08)',
       backgroundColor: '#FFFFFF',
       padding: '40px 0px 40px 40px',
       display: 'flex',
       flexDirection: 'column',
-      justifyContent: 'center',
-      overflowY: 'auto',
+      justifyContent: isCompact ? 'flex-start' : 'center',
+      overflowY: isCompact ? 'visible' : 'auto',
     }}>
 
       {/* NAME */}

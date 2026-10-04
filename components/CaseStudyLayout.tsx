@@ -68,7 +68,7 @@ export default function CaseStudyLayout({ caseStudy, slug }: CaseStudyLayoutProp
   const contentRef = useRef<HTMLDivElement>(null)
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const isMobile = useMediaQuery('(max-width: 768px)')
-  const isTablet = useMediaQuery('(max-width: 1024px)')
+  const isTablet = useMediaQuery('(max-width: 1080px)')
 
   // Scroll to top on mount
   useEffect(() => {

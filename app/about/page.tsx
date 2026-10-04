@@ -67,7 +67,7 @@ export default function About() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [selectedPhoto, setSelectedPhoto] = useState<typeof photos[0] | null>(null)
   const isMobile = useMediaQuery('(max-width: 768px)')
-  const isTablet = useMediaQuery('(max-width: 1024px)')
+  const isTablet = useMediaQuery('(max-width: 1080px)')
 
   useEffect(() => {
     if (!selectedPhoto) return
