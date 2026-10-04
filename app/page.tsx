@@ -149,7 +149,7 @@ export default function Home() {
     <div style={{
       display: 'flex',
       height: '100vh',
-      backgroundColor: '#FAF8F3',
+      backgroundColor: '#FFFFFF',
       overflow: 'hidden',
       width: '100vw',
     }}>
@@ -250,7 +250,7 @@ export default function Home() {
             left: 0,
             width: '100vw',
             height: '100vh',
-            backgroundColor: '#FAF8F3',
+            backgroundColor: '#FFFFFF',
             zIndex: 999,
             overflowY: 'auto',
             padding: '80px 20px 20px 20px',
@@ -278,7 +278,7 @@ export default function Home() {
             padding: isMobile ? '0 20px 40px 20px' : isTablet ? '0 32px 50px 32px' : isWideDesktop ? '0 80px 80px 80px' : '0 48px 60px 48px',
             minWidth: 0,
             scrollBehavior: 'smooth',
-            backgroundColor: '#FAF8F3',
+            backgroundColor: '#FFFFFF',
           }}
         >
           {/* Landing Game — same maxWidth/centering as the wrapper below so the grid can align its
@@ -317,7 +317,7 @@ export default function Home() {
               letterSpacing: '-0.02em',
               ...revealStyle(0),
             }}>
-              Hi, I'm <span style={{ color: 'var(--accent)' }}>Indhu</span>
+              Hi, I'm <span style={{ color: '#1C1917' }}>Indhu</span>
             </h1>
 
             <div style={{
@@ -659,9 +659,9 @@ export default function Home() {
                 cursor: isMobile ? 'pointer' : 'default',
                 display: 'flex',
                 flexDirection: 'column',
-                border: '1.5px solid #4F7DDD',
+                border: '1.5px solid #4A72E5',
                 padding: isMobile ? '24px' : isWideDesktop ? '48px' : '40px',
-                backgroundColor: '#4F7DDD',
+                backgroundColor: '#4A72E5',
               }}>
                 {/* Header: index + title + description */}
                 <div style={{
@@ -759,7 +759,7 @@ export default function Home() {
                         fontSize: '14px',
                         fontWeight: 600,
                         color: '#FFFFFF',
-                        backgroundColor: '#FF7A1A',
+                        backgroundColor: '#FF7C5F',
                         textDecoration: 'none',
                         padding: '10px 18px',
                         borderRadius: '999px',
@@ -767,12 +767,12 @@ export default function Home() {
                         transition: 'background-color 0.2s ease',
                       }}
                       onMouseEnter={(e) => {
-                        e.currentTarget.style.backgroundColor = '#E8650A'
+                        e.currentTarget.style.backgroundColor = '#E85F42'
                         const svg = e.currentTarget.querySelector('svg')
                         if (svg) svg.style.transform = 'translateX(4px)'
                       }}
                       onMouseLeave={(e) => {
-                        e.currentTarget.style.backgroundColor = '#FF7A1A'
+                        e.currentTarget.style.backgroundColor = '#FF7C5F'
                         const svg = e.currentTarget.querySelector('svg')
                         if (svg) svg.style.transform = 'translateX(0)'
                       }}
@@ -865,19 +865,19 @@ export default function Home() {
                         fontSize: '15px',
                         fontWeight: 600,
                         color: '#FFFFFF',
-                        backgroundColor: '#FF7A1A',
+                        backgroundColor: '#FF7C5F',
                         textDecoration: 'none',
                         padding: '14px 18px',
                         borderRadius: '999px',
                         transition: 'background-color 0.2s ease',
                       }}
                       onMouseEnter={(e) => {
-                        e.currentTarget.style.backgroundColor = '#E8650A'
+                        e.currentTarget.style.backgroundColor = '#E85F42'
                         const svg = e.currentTarget.querySelector('svg')
                         if (svg) svg.style.transform = 'translateX(4px)'
                       }}
                       onMouseLeave={(e) => {
-                        e.currentTarget.style.backgroundColor = '#FF7A1A'
+                        e.currentTarget.style.backgroundColor = '#FF7C5F'
                         const svg = e.currentTarget.querySelector('svg')
                         if (svg) svg.style.transform = 'translateX(0)'
                       }}

@@ -60,7 +60,7 @@ export default function Sidebar({
   sections
 }: SidebarProps = {}) {
   const router = useRouter()
-  const ACTIVE_COLOR = '#FF8A0E'
+  const ACTIVE_COLOR = '#4A72E5'
   const [expandedProject, setExpandedProject] = useState<string | null>(activeProjectProp)
   const [isLargeDesktop, setIsLargeDesktop] = useState(false)
   // Sidebar renders inside the mobile/tablet overlay (see page.tsx `isTablet &&` gate),
@@ -89,7 +89,7 @@ export default function Sidebar({
       maxWidth: '320px',
       height: isCompact ? 'auto' : '100vh',
       minHeight: isCompact ? undefined : '100vh',
-      borderRight: isCompact ? 'none' : '1px solid rgba(0,0,0,0.08)',
+      borderRight: isCompact ? 'none' : '2px solid rgba(74, 114, 229, 0.18)',
       backgroundColor: '#FFFFFF',
       padding: '40px 0px 40px 40px',
       display: 'flex',
@@ -187,8 +187,8 @@ export default function Sidebar({
                   <span style={{
                     fontSize: isCompact ? '10px' : '9px',
                     fontWeight: 700,
-                    color: '#6B7280',
-                    backgroundColor: '#F3F4F6',
+                    color: '#4A72E5',
+                    backgroundColor: 'rgba(74, 114, 229, 0.1)',
                     padding: '2px 6px',
                     letterSpacing: '0.04em',
                     textTransform: 'uppercase',

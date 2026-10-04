@@ -77,7 +77,7 @@ export default function LatAlertToggle() {
                   width: '100%',
                   height: '220px',
                   backgroundColor: active ? '#FFF9F5' : '#FAFAFA',
-                  border: active ? '1.5px solid #FF6B35' : '1px solid rgba(0,0,0,0.08)',
+                  border: active ? '1.5px solid #FF7C5F' : '1px solid rgba(0,0,0,0.08)',
                   borderRadius: '12px',
                   display: 'flex',
                   alignItems: 'center',
@@ -97,7 +97,7 @@ export default function LatAlertToggle() {
                   width: '8px',
                   height: '8px',
                   borderRadius: '50%',
-                  backgroundColor: '#FF6B35',
+                  backgroundColor: '#FF7C5F',
                   opacity: active ? 1 : 0,
                   transition: 'opacity 0.25s ease',
                 }} />

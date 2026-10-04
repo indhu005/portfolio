@@ -529,7 +529,7 @@ export default function LandingGameSimple() {
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
-        backgroundColor: '#FAF8F3',
+        backgroundColor: '#FFFFFF',
       }}>
         Loading...
       </div>
@@ -561,7 +561,7 @@ export default function LandingGameSimple() {
     <div style={{
       position: 'relative',
       width: '100%',
-      backgroundColor: '#FAF8F3',
+      backgroundColor: '#FFFFFF',
       borderRadius: '4px',
       paddingTop: isMobile ? '16px' : '20px',
       paddingRight: isMobile ? '16px' : '20px',

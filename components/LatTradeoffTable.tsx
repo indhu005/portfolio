@@ -75,7 +75,7 @@ export default function LatTradeoffTable() {
               fontWeight: 700,
               letterSpacing: '0.06em',
               textTransform: 'uppercase',
-              color: '#FF6B35',
+              color: '#FF7C5F',
               marginBottom: '8px',
             }}>
               Shipped
@@ -98,7 +98,7 @@ export default function LatTradeoffTable() {
                 marginTop: '10px',
                 fontFamily: 'ui-monospace, SFMono-Regular, Menlo, monospace',
                 fontSize: '11px',
-                color: '#FF6B35',
+                color: '#FF7C5F',
                 background: 'rgba(255, 107, 53, 0.1)',
                 padding: '3px 9px',
                 borderRadius: '999px',

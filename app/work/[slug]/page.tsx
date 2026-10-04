@@ -36,12 +36,12 @@ const caseStudies = {
 
 <p style="margin-top: 28px;"><span style="font-weight: 600;">Timeline.</span> 2 years (2021–2022): beta to credit system to marketplace to extension to seed funding. After the team dispersed, the company pivoted into YC F24 on the traction we built.</p>
 
-<div style="background-color: #F9FAFB; padding: 24px 28px; border-radius: 0px; border-left: 3px solid #FF6B35; margin-top: 32px;">
+<div style="background-color: #F9FAFB; padding: 24px 28px; border-radius: 0px; border-left: 3px solid #FF7C5F; margin-top: 32px;">
   <div style="font-size: 11px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #A8A29E; margin-bottom: 10px;">My contribution</div>
   <div style="font-size: 15px; color: #57534E; line-height: 1.7;">I owned the credit-system pivots that kept the product solvent as we learned from real usage, built the product-card system that scaled across every surface, and shipped the Chrome extension that cut onboarding friction by 63% in two days.</div>
 </div>
 
-<div style="background-color: #F9FAFB; padding: 24px 28px; border-radius: 0px; border-left: 3px solid #FF6B35; margin-top: 20px;">
+<div style="background-color: #F9FAFB; padding: 24px 28px; border-radius: 0px; border-left: 3px solid #FF7C5F; margin-top: 20px;">
   <div style="font-size: 11px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #A8A29E; margin-bottom: 10px;">Team leverage</div>
   <div style="font-size: 15px; color: #57534E; line-height: 1.7;">I scoped the MVP alongside the founders from three static screens, then hired and ran point for the two designers who eventually replaced me — building design velocity the team didn't have before I joined, and didn't lose after I left, through seed funding and into YC F24.</div>
 </div>
@@ -653,7 +653,7 @@ const caseStudies = {
 
 <p style="margin-top: 28px;"><span style="font-weight: 600;">Team</span><br/>1 PM, 1 designer (me), 2 external engineers, plus client-side CAPEX and data teams</p>
 
-<div style="background-color: #F9FAFB; padding: 24px 28px; border-radius: 0px; border-left: 3px solid #FF6B35; margin-top: 32px;">
+<div style="background-color: #F9FAFB; padding: 24px 28px; border-radius: 0px; border-left: 3px solid #FF7C5F; margin-top: 32px;">
   <div style="font-size: 11px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #A8A29E; margin-bottom: 10px;">My contribution</div>
   <div style="font-size: 15px; color: #57534E; line-height: 1.7;">I reframed the product from a shared facilities dashboard into role-specific decision surfaces, set the trust model that let managers act on AI recommendations without blind trust, and carried the offline-first field workflow from research through pilot.</div>
 </div>
@@ -760,12 +760,12 @@ const caseStudies = {
                   <div style={{ fontWeight: 600, color: '#1C1917', marginBottom: '4px' }}>Technician — mobile, offline-first</div>
                   <div style={{ fontSize: '14px', color: '#57534E' }}>Field reports queue locally, voice-captured, and sync when connectivity returns</div>
                 </div>
-                <div style={{ textAlign: 'center', color: '#D9662B', fontSize: '18px', borderTop: '1px solid #E7E5E4', borderBottom: '1px solid #E7E5E4', padding: '6px' }}>↓ feeds shared data model ↓</div>
+                <div style={{ textAlign: 'center', color: '#FF7C5F', fontSize: '18px', borderTop: '1px solid #E7E5E4', borderBottom: '1px solid #E7E5E4', padding: '6px' }}>↓ feeds shared data model ↓</div>
                 <div style={{ padding: '18px 24px' }}>
                   <div style={{ fontWeight: 600, color: '#1C1917', marginBottom: '4px' }}>Manager — priority queue</div>
                   <div style={{ fontSize: '14px', color: '#57534E' }}>Same records, ranked by risk and consequence instead of raw graphs; approves or overrides flagged items</div>
                 </div>
-                <div style={{ textAlign: 'center', color: '#D9662B', fontSize: '18px', borderTop: '1px solid #E7E5E4', borderBottom: '1px solid #E7E5E4', padding: '6px' }}>↓ rolls up ↓</div>
+                <div style={{ textAlign: 'center', color: '#FF7C5F', fontSize: '18px', borderTop: '1px solid #E7E5E4', borderBottom: '1px solid #E7E5E4', padding: '6px' }}>↓ rolls up ↓</div>
                 <div style={{ padding: '18px 24px' }}>
                   <div style={{ fontWeight: 600, color: '#1C1917', marginBottom: '4px' }}>Executive — summary</div>
                   <div style={{ fontSize: '14px', color: '#57534E' }}>Portfolio-level cost and risk, traceable back to the field report that drove it</div>
@@ -774,7 +774,7 @@ const caseStudies = {
             </div>
 
             <div style={{ marginBottom: '8px' }}>
-              <div style={{ fontSize: '13px', fontWeight: 700, color: '#FF6B35', letterSpacing: '0.06em', textTransform: 'uppercase', marginBottom: '8px' }}>Decision 01</div>
+              <div style={{ fontSize: '13px', fontWeight: 700, color: '#FF7C5F', letterSpacing: '0.06em', textTransform: 'uppercase', marginBottom: '8px' }}>Decision 01</div>
               <div style={{ fontSize: '20px', fontWeight: 600, color: '#1C1917', marginBottom: '16px' }}>Replace the "Everything Dashboard"</div>
               <p><span style={{ fontWeight: 600 }}>Problem.</span> Managers scanned 8+ graphs without acting on them.</p>
               <p style={{ marginTop: '12px' }}><span style={{ fontWeight: 600 }}>Design.</span> A ranked priority queue replaced the dashboard.</p>
@@ -789,7 +789,7 @@ const caseStudies = {
             </div>
 
             <div style={{ marginBottom: '8px' }}>
-              <div style={{ fontSize: '13px', fontWeight: 700, color: '#FF6B35', letterSpacing: '0.06em', textTransform: 'uppercase', marginBottom: '8px' }}>Decision 02</div>
+              <div style={{ fontSize: '13px', fontWeight: 700, color: '#FF7C5F', letterSpacing: '0.06em', textTransform: 'uppercase', marginBottom: '8px' }}>Decision 02</div>
               <div style={{ fontSize: '20px', fontWeight: 600, color: '#1C1917', marginBottom: '16px' }}>Turn predictions into consequences</div>
               <p>The question wasn't how confident the model was. It was what decision the manager actually needed to make.</p>
               <p style={{ marginTop: '12px' }}>Early alerts said <span style={{ fontStyle: 'italic' }}>"Boiler failure risk: 68%"</span> — managers hesitated. We shifted to consequence framing: <span style={{ fontStyle: 'italic' }}>"9 years in service → delaying replacement may cost $18K."</span> They acted immediately.</p>
@@ -806,11 +806,11 @@ const caseStudies = {
             </div>
 
             <div style={{ marginBottom: '8px' }}>
-              <div style={{ fontSize: '13px', fontWeight: 700, color: '#FF6B35', letterSpacing: '0.06em', textTransform: 'uppercase', marginBottom: '8px' }}>Decision 03</div>
+              <div style={{ fontSize: '13px', fontWeight: 700, color: '#FF7C5F', letterSpacing: '0.06em', textTransform: 'uppercase', marginBottom: '8px' }}>Decision 03</div>
               <div style={{ fontSize: '20px', fontWeight: 600, color: '#1C1917', marginBottom: '16px' }}>Design for AI failure, not the demo</div>
             </div>
 
-            <div style={{ backgroundColor: '#FFF9F5', padding: '24px', borderRadius: '0px', borderLeft: '3px solid #FF6B35', marginBottom: '32px' }}>
+            <div style={{ backgroundColor: '#FFF9F5', padding: '24px', borderRadius: '0px', borderLeft: '3px solid #FF7C5F', marginBottom: '32px' }}>
               <div className="cs-card-title cs-card-title--sm">The Boiler Incident</div>
               <p style={{ fontSize: '15px', color: '#57534E', lineHeight: 1.7, margin: 0 }}>
                 <span style={{ fontWeight: 600 }}>Model said:</span> Critical — a $180K boiler flagged for replacement.<br/>
@@ -965,7 +965,7 @@ const caseStudies = {
 
             <LatTradeoffTable />
 
-            <div style={{ backgroundColor: '#FFF9F5', padding: '28px', borderRadius: '0px', borderLeft: '3px solid #FF6B35', marginTop: '8px', marginBottom: '24px' }}>
+            <div style={{ backgroundColor: '#FFF9F5', padding: '28px', borderRadius: '0px', borderLeft: '3px solid #FF7C5F', marginTop: '8px', marginBottom: '24px' }}>
               <div className="cs-card-title cs-card-title--md">What we didn't build</div>
               <div style={{ fontSize: '15px', color: '#57534E', lineHeight: 1.7 }}>AI auto-scheduling, ESG modeling, and digital twins were all requested and all cut. Twelve months forced one north star — decision confidence — and two drivers, cost and adoption. Anything that didn't serve those lost the argument, however compelling on its own.</div>
             </div>
