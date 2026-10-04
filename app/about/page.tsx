@@ -410,8 +410,8 @@ export default function About() {
           }}>
             <div style={{
               display: 'grid',
-              gridTemplateColumns: isMobile ? 'repeat(2, 1fr)' : isTablet ? 'repeat(3, 1fr)' : 'repeat(6, 1fr)',
-              gap: isMobile ? '16px' : isTablet ? '24px' : '32px',
+              gridTemplateColumns: isMobile ? 'repeat(2, 1fr)' : isTablet ? 'repeat(3, 1fr)' : 'repeat(4, 1fr)',
+              gap: isMobile ? '16px' : isTablet ? '28px' : '40px',
               transition: 'all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1)',
             }}>
               {photos.map((photo) => {
@@ -424,7 +424,7 @@ export default function About() {
                     onClick={() => setSelectedPhoto(isExpanded ? null : photo)}
                     style={{
                       gridColumn: isExpanded
-                        ? (isMobile ? 'span 2' : isTablet ? 'span 3' : 'span 3')
+                        ? (isMobile ? 'span 2' : isTablet ? 'span 3' : 'span 2')
                         : 'span 1',
                       gridRow: isExpanded
                         ? (isMobile ? 'span 2' : 'span 2')
