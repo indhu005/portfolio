@@ -471,7 +471,7 @@ export default function Home() {
                       fontWeight: 700,
                       textTransform: 'uppercase',
                       letterSpacing: '0.08em',
-                      color: '#D9662B',
+                      color: '#4A72E5',
                       marginBottom: '6px',
                     }}>
                       Enterprise AI · 0→1 Systems
@@ -544,7 +544,7 @@ export default function Home() {
                         fontSize: '14px',
                         fontWeight: 600,
                         color: '#FFFFFF',
-                        backgroundColor: '#D9662B',
+                        backgroundColor: '#4A72E5',
                         textDecoration: 'none',
                         padding: '10px 18px',
                         borderRadius: '999px',
@@ -552,12 +552,12 @@ export default function Home() {
                         transition: 'background-color 0.2s ease',
                       }}
                       onMouseEnter={(e) => {
-                        e.currentTarget.style.backgroundColor = '#C2571F'
+                        e.currentTarget.style.backgroundColor = '#3A5BC7'
                         const svg = e.currentTarget.querySelector('svg')
                         if (svg) svg.style.transform = 'translateX(4px)'
                       }}
                       onMouseLeave={(e) => {
-                        e.currentTarget.style.backgroundColor = '#D9662B'
+                        e.currentTarget.style.backgroundColor = '#4A72E5'
                         const svg = e.currentTarget.querySelector('svg')
                         if (svg) svg.style.transform = 'translateX(0)'
                       }}
@@ -628,19 +628,19 @@ export default function Home() {
                         fontSize: '15px',
                         fontWeight: 600,
                         color: '#FFFFFF',
-                        backgroundColor: '#D9662B',
+                        backgroundColor: '#4A72E5',
                         textDecoration: 'none',
                         padding: '14px 18px',
                         borderRadius: '999px',
                         transition: 'background-color 0.2s ease',
                       }}
                       onMouseEnter={(e) => {
-                        e.currentTarget.style.backgroundColor = '#C2571F'
+                        e.currentTarget.style.backgroundColor = '#3A5BC7'
                         const svg = e.currentTarget.querySelector('svg')
                         if (svg) svg.style.transform = 'translateX(4px)'
                       }}
                       onMouseLeave={(e) => {
-                        e.currentTarget.style.backgroundColor = '#D9662B'
+                        e.currentTarget.style.backgroundColor = '#4A72E5'
                         const svg = e.currentTarget.querySelector('svg')
                         if (svg) svg.style.transform = 'translateX(0)'
                       }}
@@ -924,7 +924,7 @@ export default function Home() {
                       fontWeight: 700,
                       textTransform: 'uppercase',
                       letterSpacing: '0.08em',
-                      color: '#D9662B',
+                      color: '#4A72E5',
                       marginBottom: '6px',
                     }}>
                       Research · AI Trust · Media Literacy
@@ -984,7 +984,7 @@ export default function Home() {
                         fontSize: '14px',
                         fontWeight: 600,
                         color: '#FFFFFF',
-                        backgroundColor: '#D9662B',
+                        backgroundColor: '#4A72E5',
                         textDecoration: 'none',
                         padding: '10px 18px',
                         borderRadius: '999px',
@@ -992,12 +992,12 @@ export default function Home() {
                         transition: 'background-color 0.2s ease',
                       }}
                       onMouseEnter={(e) => {
-                        e.currentTarget.style.backgroundColor = '#C2571F'
+                        e.currentTarget.style.backgroundColor = '#3A5BC7'
                         const svg = e.currentTarget.querySelector('svg')
                         if (svg) svg.style.transform = 'translateX(4px)'
                       }}
                       onMouseLeave={(e) => {
-                        e.currentTarget.style.backgroundColor = '#D9662B'
+                        e.currentTarget.style.backgroundColor = '#4A72E5'
                         const svg = e.currentTarget.querySelector('svg')
                         if (svg) svg.style.transform = 'translateX(0)'
                       }}
@@ -1111,19 +1111,19 @@ export default function Home() {
                         fontSize: '15px',
                         fontWeight: 600,
                         color: '#FFFFFF',
-                        backgroundColor: '#D9662B',
+                        backgroundColor: '#4A72E5',
                         textDecoration: 'none',
                         padding: '14px 18px',
                         borderRadius: '999px',
                         transition: 'background-color 0.2s ease',
                       }}
                       onMouseEnter={(e) => {
-                        e.currentTarget.style.backgroundColor = '#C2571F'
+                        e.currentTarget.style.backgroundColor = '#3A5BC7'
                         const svg = e.currentTarget.querySelector('svg')
                         if (svg) svg.style.transform = 'translateX(4px)'
                       }}
                       onMouseLeave={(e) => {
-                        e.currentTarget.style.backgroundColor = '#D9662B'
+                        e.currentTarget.style.backgroundColor = '#4A72E5'
                         const svg = e.currentTarget.querySelector('svg')
                         if (svg) svg.style.transform = 'translateX(0)'
                       }}
