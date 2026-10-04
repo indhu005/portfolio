@@ -1024,7 +1024,7 @@ export default function LandingGameSimple() {
       <div style={{
         position: 'relative',
         width: isMobile || isTablet ? '100%' : `${cols * cellSize + (cols - 1) * gap}px`,
-        marginTop: isMobile ? '186px' : isTablet ? '212px' : '230px',
+        marginTop: isMobile ? '196px' : isTablet ? '222px' : '230px',
         display: 'flex',
         justifyContent: isMobile || isTablet ? 'center' : 'flex-start',
       }}>
