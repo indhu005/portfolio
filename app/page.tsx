@@ -226,7 +226,7 @@ export default function Home() {
             width: '16px',
             height: 'auto',
             zIndex: 60,
-            transform: 'translate(-50%, -50%)',
+            transform: 'translate(0, -50%)',
             animation: 'climbSway 0.6s ease-in-out infinite alternate',
             transformOrigin: 'center',
             transition: 'top 0.08s linear',
