@@ -212,23 +212,20 @@ export default function Home() {
       {/* SIDEBAR - Hidden on mobile/tablet */}
       {!isTablet && <Sidebar />}
 
-      {/* Walking character — climbs down the sidebar's blue border as the page scrolls.
-          Source SVG is drawn standing upright (head top, feet bottom); rotated -90deg so
-          it lies on its side with its feet landing on the vertical border line. */}
+      {/* Scroll-progress marker — a dot with a soft trail climbing the sidebar's blue border */}
       {!isTablet && (
-        <img
-          src="/images/home/Animation character.svg"
-          alt=""
+        <div
           style={{
             position: 'fixed',
             left: '320px',
             top: `calc(${(scrollProgress * 88).toFixed(2)}vh + 24px)`,
-            width: '16px',
-            height: 'auto',
+            width: '14px',
+            height: '14px',
+            borderRadius: '50%',
+            backgroundColor: '#4A72E5',
+            boxShadow: '0 10px 0 -3px rgba(74,114,229,0.25), 0 20px 0 -5px rgba(74,114,229,0.12)',
             zIndex: 60,
             transform: 'translate(0, -50%)',
-            animation: 'climbSway 0.6s ease-in-out infinite alternate',
-            transformOrigin: 'center',
             transition: 'top 0.08s linear',
             pointerEvents: 'none',
           }}

@@ -131,12 +131,6 @@ img, video {
 }
 
 /* Landing game: gentle continuous idle sway so trees never feel static */
-/* Homepage sidebar mascot: subtle side-to-side sway, like gripping and shifting up a rope */
-@keyframes climbSway {
-  0% { transform: translate(0, -50%) rotate(-4deg); }
-  100% { transform: translate(0, -50%) rotate(4deg); }
-}
-
 @keyframes treeIdleSway {
   0%, 100% { transform: translateX(-50%) rotate(-0.6deg); }
   50% { transform: translateX(-50%) rotate(0.6deg); }
