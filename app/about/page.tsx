@@ -58,11 +58,16 @@ const photoCaptions = [
   "Foam, doing the most for a Tuesday",
 ]
 
+// Curated down to 16 for variety — nature, abstract/art, architecture, animals,
+// and personal moments, with redundant beach/architecture/ceiling duplicates cut
+// to the single strongest shot in each cluster.
+const KEPT_PHOTO_IDS = new Set([4, 8, 9, 10, 13, 21, 22, 24, 25, 26, 28, 29, 30, 33, 34, 36])
+
 const photos = Array.from({ length: 36 }, (_, i) => ({
   id: i + 1,
   src: `/images/about/photo-${String(i + 1).padStart(2, '0')}.jpg`,
   caption: photoCaptions[i] ?? ''
-}))
+})).filter((photo) => KEPT_PHOTO_IDS.has(photo.id))
 
 export default function About() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
