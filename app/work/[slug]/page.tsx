@@ -779,7 +779,7 @@ const caseStudies = {
               <p style={{ fontSize: '14px', color: '#78716C' }}>One queue. One shift. No hidden sync failures.</p>
               <p style={{ fontSize: '15px', color: '#44403C', marginTop: '12px', maxWidth: '640px' }}>For field technicians, a completed action isn't complete if its update never reaches the system. We made sync state visible directly on the work order.</p>
 
-              <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'flex-start', gap: '24px', marginTop: '56px', flexWrap: 'nowrap' }}>
+              <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'flex-start', gap: '24px', marginTop: '56px', flexWrap: 'wrap' }}>
                 <div style={{ flex: '0 1 230px', minWidth: '170px' }}>
                   <img loading="lazy" decoding="async" width={1206} height={2622} src="/images/lat/LAT%20Technician%20Work%20Orders%20V1.png" alt="Technician work order queue, version 1 — a long list with filter tabs and priority tags" style={{ width: '100%', height: 'auto', borderRadius: '0px', display: 'block' }} />
                   <div style={{ fontSize: '12px', fontWeight: 700, letterSpacing: '0.04em', textTransform: 'uppercase', color: '#A8A29E', marginTop: '16px' }}>Starting point</div>
@@ -804,7 +804,7 @@ const caseStudies = {
                 </div>
 
                 <div style={{ flex: '0 1 230px', minWidth: '170px' }}>
-                  <img loading="lazy" decoding="async" width={1206} height={3159} src="/images/lat/LAT%20Technician%20Work%20Orders%20V3.png" alt="Technician work order queue, version 3 — a summary banner showing unsent changes, including the failed Roof drain job with its Retry button" style={{ width: '100%', height: 'auto', borderRadius: '0px', display: 'block' }} />
+                  <img loading="lazy" decoding="async" width={1206} height={3633} src="/images/lat/LAT%20%C2%B7%20Technician%20work%20orders%20V3.png" alt="Technician work order queue, version 3 — a summary banner showing unsent changes, including the failed Roof drain job with its Retry button" style={{ width: '100%', height: 'auto', borderRadius: '0px', display: 'block' }} />
                   <div style={{ fontSize: '12px', fontWeight: 700, letterSpacing: '0.04em', textTransform: 'uppercase', color: '#FF7C5F', marginTop: '16px' }}>One shift, one status</div>
                   <div style={{ fontSize: '13px', color: '#57534E', marginTop: '4px' }}>Banner isolates failures</div>
                   <div style={{ fontSize: '13px', color: '#78716C', marginTop: '6px' }}>One status for the shift, so a stuck update can't hide.</div>
@@ -814,34 +814,34 @@ const caseStudies = {
               <div style={{ marginTop: '64px' }}>
                 <div style={{ fontSize: '11px', fontWeight: 700, letterSpacing: '0.06em', textTransform: 'uppercase', color: '#A8A29E', marginBottom: '20px' }}>The card became the source of truth for the shift</div>
 
-                <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'flex-start', gap: '24px', flexWrap: 'wrap' }}>
-                  <div style={{ flex: '1 1 440px', minWidth: '320px' }}>
-                    <div style={{ backgroundColor: '#FFFFFF', border: '1px solid #E7E5E4', boxShadow: '0 2px 10px rgba(0,0,0,0.06)', padding: '20px' }}>
+                <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'flex-start', gap: '40px', rowGap: '48px', flexWrap: 'wrap' }}>
+                  <div style={{ flex: '1 1 240px', maxWidth: '260px', minWidth: '200px' }}>
+                    <div style={{ backgroundColor: '#FFFFFF', border: '1px solid #E7E5E4', boxShadow: '0 2px 10px rgba(0,0,0,0.06)', padding: '16px' }}>
                       <img loading="lazy" decoding="async" width={1086} height={306} src="/images/lat/Work%20order-2.png" alt="Work order card, base state — priority badge, title, and location" style={{ width: '100%', height: 'auto', display: 'block' }} />
                     </div>
                     <div style={{ fontSize: '11px', fontWeight: 700, letterSpacing: '0.04em', textTransform: 'uppercase', color: '#A8A29E', marginTop: '14px' }}>01 — Identify the work</div>
                     <div style={{ fontSize: '13px', color: '#57534E', marginTop: '4px' }}>Priority + job + location. Enough to recognize the task at a glance.</div>
                   </div>
 
-                  <div style={{ flex: '1 1 440px', minWidth: '320px' }}>
-                    <div style={{ backgroundColor: '#FFFFFF', border: '1px solid #E7E5E4', boxShadow: '0 2px 10px rgba(0,0,0,0.06)', padding: '20px' }}>
+                  <div style={{ flex: '1 1 240px', maxWidth: '260px', minWidth: '200px' }}>
+                    <div style={{ backgroundColor: '#FFFFFF', border: '1px solid #E7E5E4', boxShadow: '0 2px 10px rgba(0,0,0,0.06)', padding: '16px' }}>
                       <img loading="lazy" decoding="async" width={1086} height={429} src="/images/lat/Work%20order-1.png" alt="Work order card with due and scheduled times, and sync state added" style={{ width: '100%', height: 'auto', display: 'block' }} />
                     </div>
                     <div style={{ fontSize: '11px', fontWeight: 700, letterSpacing: '0.04em', textTransform: 'uppercase', color: '#FF7C5F', marginTop: '14px' }}>02 — Plan the work</div>
                     <div style={{ fontSize: '13px', color: '#57534E', marginTop: '4px' }}>Due + scheduled time. Technicians can plan without opening the job.</div>
                   </div>
 
-                  <div style={{ flex: '1 1 440px', minWidth: '320px' }}>
-                    <div style={{ backgroundColor: '#FFFFFF', border: '1px solid #E7E5E4', boxShadow: '0 2px 10px rgba(0,0,0,0.06)', padding: '20px' }}>
+                  <div style={{ flex: '1 1 240px', maxWidth: '260px', minWidth: '200px' }}>
+                    <div style={{ backgroundColor: '#FFFFFF', border: '1px solid #E7E5E4', boxShadow: '0 2px 10px rgba(0,0,0,0.06)', padding: '16px' }}>
                       <img loading="lazy" decoding="async" width={1086} height={504} src="/images/lat/Work%20order.png" alt="Work order card with an unread update badge added" style={{ width: '100%', height: 'auto', display: 'block' }} />
                     </div>
                     <div style={{ fontSize: '11px', fontWeight: 700, letterSpacing: '0.04em', textTransform: 'uppercase', color: '#FF7C5F', marginTop: '14px' }}>03 — Know what changed</div>
                     <div style={{ fontSize: '13px', color: '#57534E', marginTop: '4px' }}>Unread update. Changes are visible before they become surprises.</div>
                   </div>
 
-                  <div style={{ flex: '1 1 440px', minWidth: '320px' }}>
-                    <div style={{ backgroundColor: '#FFFFFF', border: '1px solid #E7E5E4', boxShadow: '0 2px 10px rgba(0,0,0,0.06)', padding: '20px' }}>
-                      <img loading="lazy" decoding="async" width={1086} height={756} src="/images/lat/Sync%20failed.png" alt="Work order card showing a failed sync and the Retry sync button, for the Roof drain job reassigned by Maya" style={{ width: '100%', height: 'auto', display: 'block' }} />
+                  <div style={{ flex: '1 1 240px', maxWidth: '260px', minWidth: '200px' }}>
+                    <div style={{ backgroundColor: '#FFFFFF', border: '1px solid #E7E5E4', boxShadow: '0 2px 10px rgba(0,0,0,0.06)', padding: '16px' }}>
+                      <img loading="lazy" decoding="async" width={1086} height={669} src="/images/lat/Sync%20failed.png" alt="Work order card showing a failed sync and the Retry sync button, for the Roof drain job reassigned by Maya" style={{ width: '100%', height: 'auto', display: 'block' }} />
                     </div>
                     <div style={{ fontSize: '11px', fontWeight: 700, letterSpacing: '0.04em', textTransform: 'uppercase', color: '#FF7C5F', marginTop: '14px' }}>04 — Know what actually happened</div>
                     <div style={{ fontSize: '13px', color: '#57534E', marginTop: '4px' }}>Sync state + retry. The technician always knows whether the update reached the system.</div>
