@@ -832,10 +832,7 @@ const caseStudies = {
 
                   <div style={{ flex: '0 1 440px', minWidth: '320px' }}>
                     <div style={{ backgroundColor: '#FFFFFF', border: '1px solid #E7E5E4', boxShadow: '0 2px 10px rgba(0,0,0,0.06)', padding: '20px' }}>
-                      <div style={{ position: 'relative' }}>
-                        <img loading="lazy" decoding="async" width={1086} height={222} src="/images/lat/Work%20order%20Zoom.png" alt="Work order card, zoomed on the sync state and the new unread update badge" style={{ width: '100%', height: 'auto', display: 'block' }} />
-                        <div className="cs-highlight-box" style={{ top: '46px', height: '33px' }} />
-                      </div>
+                      <img loading="lazy" decoding="async" width={1086} height={222} src="/images/lat/Work%20order%20Zoom.png" alt="Work order card, zoomed on the sync state and the new unread update badge" style={{ width: '100%', height: 'auto', display: 'block' }} />
                     </div>
                     <div style={{ fontSize: '11px', fontWeight: 700, letterSpacing: '0.04em', textTransform: 'uppercase', color: '#FF7C5F', marginTop: '14px' }}>+ Unread flag</div>
                     <div style={{ fontSize: '13px', color: '#57534E', marginTop: '4px' }}>"1 unread update" flags a change on this job the technician hasn't seen yet.</div>
@@ -843,10 +840,7 @@ const caseStudies = {
 
                   <div style={{ flex: '0 1 440px', minWidth: '320px' }}>
                     <div style={{ backgroundColor: '#FFFFFF', border: '1px solid #E7E5E4', boxShadow: '0 2px 10px rgba(0,0,0,0.06)', padding: '20px' }}>
-                      <div style={{ position: 'relative' }}>
-                        <img loading="lazy" decoding="async" width={1206} height={711} src="/images/lat/Work%20order%20Failed%20Zoom.png" alt="Work order card showing a failed sync and the Retry sync button, for the Roof drain job reassigned by Maya" style={{ width: '100%', height: 'auto', display: 'block' }} />
-                        <div className="cs-highlight-box" style={{ top: '131px', height: '103px' }} />
-                      </div>
+                      <img loading="lazy" decoding="async" width={1086} height={756} src="/images/lat/Sync%20failed.png" alt="Work order card showing a failed sync and the Retry sync button, for the Roof drain job reassigned by Maya" style={{ width: '100%', height: 'auto', display: 'block' }} />
                     </div>
                     <div style={{ fontSize: '11px', fontWeight: 700, letterSpacing: '0.04em', textTransform: 'uppercase', color: '#FF7C5F', marginTop: '14px' }}>+ Failed and retry</div>
                     <div style={{ fontSize: '13px', color: '#57534E', marginTop: '4px' }}>When sync fails, the card says so in place and offers Retry — the update stays safe on the device either way.</div>
