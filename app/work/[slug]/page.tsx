@@ -824,7 +824,7 @@ const caseStudies = {
 
                   <div style={{ flex: '0 1 440px', minWidth: '320px' }}>
                     <div style={{ backgroundColor: '#FFFFFF', border: '1px solid #E7E5E4', boxShadow: '0 2px 10px rgba(0,0,0,0.06)', padding: '20px' }}>
-                      <img loading="lazy" decoding="async" width={1086} height={172} src="/images/lat/Work%20order-1%20Zoom.png" alt="Work order card, zoomed on the due and scheduled times, and sync state" style={{ width: '100%', height: 'auto', display: 'block' }} />
+                      <img loading="lazy" decoding="async" width={1086} height={429} src="/images/lat/Work%20order-1.png" alt="Work order card with due and scheduled times, and sync state added" style={{ width: '100%', height: 'auto', display: 'block' }} />
                     </div>
                     <div style={{ fontSize: '11px', fontWeight: 700, letterSpacing: '0.04em', textTransform: 'uppercase', color: '#FF7C5F', marginTop: '14px' }}>+ Time &amp; sync</div>
                     <div style={{ fontSize: '13px', color: '#57534E', marginTop: '4px' }}>Due and Scheduled times, plus sync state — plan and trust the card without opening it.</div>
@@ -832,7 +832,7 @@ const caseStudies = {
 
                   <div style={{ flex: '0 1 440px', minWidth: '320px' }}>
                     <div style={{ backgroundColor: '#FFFFFF', border: '1px solid #E7E5E4', boxShadow: '0 2px 10px rgba(0,0,0,0.06)', padding: '20px' }}>
-                      <img loading="lazy" decoding="async" width={1086} height={222} src="/images/lat/Work%20order%20Zoom.png" alt="Work order card, zoomed on the sync state and the new unread update badge" style={{ width: '100%', height: 'auto', display: 'block' }} />
+                      <img loading="lazy" decoding="async" width={1086} height={504} src="/images/lat/Work%20order.png" alt="Work order card with an unread update badge added" style={{ width: '100%', height: 'auto', display: 'block' }} />
                     </div>
                     <div style={{ fontSize: '11px', fontWeight: 700, letterSpacing: '0.04em', textTransform: 'uppercase', color: '#FF7C5F', marginTop: '14px' }}>+ Unread flag</div>
                     <div style={{ fontSize: '13px', color: '#57534E', marginTop: '4px' }}>"1 unread update" flags a change on this job the technician hasn't seen yet.</div>
