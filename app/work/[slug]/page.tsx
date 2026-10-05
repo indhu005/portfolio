@@ -598,7 +598,7 @@ const caseStudies = {
   lat: {
     title: 'LAT',
     subtitle: 'Lifecycle Assessment Tracker',
-    description: 'Turning fragmented campus maintenance into a trusted financial decision system',
+    description: 'Designing an AI-assisted maintenance system people could trust with $180K decisions',
     brief: {
       context: 'Lead designer for an ML platform helping a university manage 60–80+ buildings across three campuses.',
       constraint: 'Legacy CMMS/ERP couldn\'t be disrupted, data had hard integrity boundaries, and capital decisions were political.',
@@ -618,7 +618,7 @@ const caseStudies = {
 
 <p style="margin-top: 28px;">A technician underground can't access repair history. A manager stitches spreadsheets before planning. Leadership decides on partial data.</p>
 
-<img loading="lazy" decoding="async" width="2000" height="1455" src="/images/lat/User%20Issues.webp" alt="User Issues" style="width: 100%; height: auto; border-radius: 0px; margin-top: 40px; margin-bottom: 40px; display: block;" />
+<img loading="lazy" decoding="async" width="2000" height="1200" src="/images/lat/User%20Issues.webp" alt="Diagram of fragmented maintenance data flow" style="width: 100%; height: auto; border-radius: 0px; margin-top: 40px; margin-bottom: 40px; display: block;" />
 
 <div style="display: flex; align-items: flex-start; gap: 24px; margin-top: 8px; margin-bottom: 8px; flex-wrap: wrap;">
   <div style="flex: 1; min-width: 250px; position: relative;">
@@ -645,7 +645,7 @@ const caseStudies = {
   <div style="font-size: 14px; color: #6B7280; margin-top: 10px;">vs. UW IT's 70% threshold. Data accuracy rose 70%→95% and cost reduction is projected at 25% over the same lifecycle linkage — directly observed adoption and accuracy, projected cost figure.</div>
 </div>
 
-<p><span style="font-weight: 600;">Product</span><br/>An ML platform helping a Pacific Northwest university manage 60–80+ buildings — a modular API layer alongside their legacy CMMS/ERP, turning fragmented data into financial intelligence.</p>
+<p><span style="font-weight: 600;">Product</span><br/>A maintenance platform helping a Pacific Northwest university manage 60–80+ buildings — a modular API layer alongside their legacy CMMS/ERP, turning fragmented data into decisions people could act on.</p>
 
 <p style="margin-top: 28px;"><span style="font-weight: 600;">My role.</span> Product vision, workflows, and the design system — aligning technicians, managers, accountants, and executives.</p>
 
@@ -662,8 +662,8 @@ const caseStudies = {
 
 <h4 class="case-study-subhead">Impact</h4>
 
-<div class="metrics-grid metrics-grid--dark" style="margin-bottom: 32px;">
-  <div class="metrics-cell metrics-cell--hero">
+<div class="metrics-grid metrics-grid--dark" style="margin-bottom: 20px;">
+  <div class="metrics-cell">
     <div class="metrics-num">95%</div>
     <div class="metrics-label">Pilot adoption, vs. UW IT's 70% threshold for keeping a tool live</div>
     <div style="font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 10px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #4ADE80; margin-top: 10px;">Observed</div>
@@ -678,29 +678,9 @@ const caseStudies = {
     <div class="metrics-label">Reporting time per ticket, pre/post offline-first workflow</div>
     <div style="font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 10px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #4ADE80; margin-top: 10px;">Observed</div>
   </div>
-  <div class="metrics-cell">
-    <div class="metrics-num">−36%</div>
-    <div class="metrics-label">Budget revisions vs. prior year</div>
-    <div style="font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 10px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #60A5FA; margin-top: 10px;">Measured</div>
-  </div>
-  <div class="metrics-cell">
-    <div class="metrics-num">−12%</div>
-    <div class="metrics-label">Emergency repair incidents during pilot</div>
-    <div style="font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 10px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #60A5FA; margin-top: 10px;">Measured</div>
-  </div>
-  <div class="metrics-cell">
-    <div class="metrics-num">−60%</div>
-    <div class="metrics-label">Planning time vs. prior year</div>
-    <div style="font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 10px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #60A5FA; margin-top: 10px;">Measured</div>
-  </div>
-  <div class="metrics-cell">
-    <div class="metrics-num">−25% projected</div>
-    <div class="metrics-label">Unexpected maintenance costs, lifecycle model forecast</div>
-    <div style="font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 10px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #FBBF24; margin-top: 10px;">Projected</div>
-  </div>
 </div>
 
-<p style="font-size: 14px; color: #6B7280;">Observed = measured directly from pilot usage. Measured = drawn from operational records (budget, incident, planning logs). Projected = output of the platform's own forecasting layer, held more loosely.</p>`
+<p style="font-size: 14px; color: #6B7280;">All three observed directly from pilot usage. Budget, incident, and planning impact appear in context in the sections below.</p>`
       },
       {
         id: 'context-problem',
@@ -749,10 +729,12 @@ const caseStudies = {
       {
         id: 'solution',
         title: '03 — Solution',
-        headline: 'Three decisions turned operational signals into financial intelligence',
+        headline: 'Three decisions made the system\'s intelligence trustworthy enough to act on',
         content: '',
         customComponent: (
           <div>
+            <p style={{ fontSize: '15px', color: '#44403C', maxWidth: '680px', marginBottom: '56px' }}>Research showed the problem wasn't a lack of data — it was that each role had to translate raw numbers into a decision themselves. So the system did three things: <span style={{ fontWeight: 600 }}>prioritize</span> what needed attention, <span style={{ fontWeight: 600 }}>explain</span> what a prediction meant financially, and <span style={{ fontWeight: 600 }}>verify</span> it before it reached a budget. AI wasn't the product here — trustworthy decision-making was.</p>
+
             <div style={{ marginBottom: '96px' }}>
               <div style={{ fontSize: '11px', fontWeight: 700, letterSpacing: '0.06em', textTransform: 'uppercase', color: '#A8A29E', marginBottom: '20px' }}>One data model, three surfaces</div>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '0', border: '1px solid #E7E5E4' }}>
@@ -860,6 +842,7 @@ const caseStudies = {
               <p><span style={{ fontWeight: 600 }}>Problem.</span> Managers scanned 8+ graphs without acting on them.</p>
               <p style={{ marginTop: '12px' }}><span style={{ fontWeight: 600 }}>Design.</span> A ranked priority queue replaced the dashboard.</p>
               <p style={{ marginTop: '12px' }}><span style={{ fontWeight: 600 }}>Why.</span> Prioritization beat information density.</p>
+              <p style={{ marginTop: '12px', color: '#78716C' }}><span style={{ fontWeight: 600, color: '#44403C' }}>Result.</span> Planning time dropped 60% and budget revisions fell 36% vs. the prior year — managers spent that time deciding instead of reconciling.</p>
             </div>
 
             <div style={{ width: '100%', height: '400px', backgroundColor: '#E5E7EB', borderRadius: '0px', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#9CA3AF', fontSize: '14px', marginTop: '40px', marginBottom: '48px' }}>
@@ -872,18 +855,25 @@ const caseStudies = {
             <div style={{ marginBottom: '8px' }}>
               <div style={{ fontSize: '13px', fontWeight: 700, color: '#FF7C5F', letterSpacing: '0.06em', textTransform: 'uppercase', marginBottom: '8px' }}>Decision 02</div>
               <div style={{ fontSize: '20px', fontWeight: 600, color: '#1C1917', marginBottom: '16px' }}>Turn predictions into consequences</div>
+              <div className="pull-quote" style={{ marginBottom: '20px' }}>A probability isn't a decision. A consequence is.</div>
               <p>The question wasn't how confident the model was. It was what decision the manager actually needed to make.</p>
-              <p style={{ marginTop: '12px' }}>Early alerts said <span style={{ fontStyle: 'italic' }}>"Boiler failure risk: 68%"</span> — managers hesitated. We shifted to consequence framing: <span style={{ fontStyle: 'italic' }}>"9 years in service → delaying replacement may cost $18K."</span> They acted immediately.</p>
+              <p style={{ marginTop: '12px' }}>Early alerts said <span style={{ fontStyle: 'italic' }}>"Boiler failure risk: 68%"</span> — a probability, not a decision. Managers hesitated on it. We shifted to consequence framing: <span style={{ fontStyle: 'italic' }}>"9 years in service → delaying replacement may cost $18K."</span> On the boiler alert, the manager requested an inspection and approved the replacement within a day.</p>
             </div>
 
             <LatAlertToggle />
 
-            <p style={{ marginTop: '24px', marginBottom: '48px' }}><span style={{ fontWeight: 600 }}>Why.</span> The alert didn't need to prove confidence — it needed to give managers enough to decide.</p>
+            <p style={{ marginTop: '24px' }}><span style={{ fontWeight: 600 }}>Why.</span> The alert didn't need to prove confidence — it needed to give managers enough to decide: what's at stake, and what happens if they wait.</p>
 
-            <div style={{ marginBottom: '48px' }}>
-              <div style={{ fontSize: '11px', fontWeight: 700, letterSpacing: '0.06em', textTransform: 'uppercase', color: '#A8A29E', marginBottom: '16px' }}>Model behavior</div>
-              <p>LAT's model scores each asset for replacement risk from maintenance history, asset age, and inspection records, then routes that score into one of three confidence tiers — Critical, Monitor, Safe — rather than exposing a raw probability. Every manager override (accept, reject, or request verification) is logged and fed back in, so the score recalibrates against real-world outcomes instead of staying static after deployment.</p>
-              <p style={{ marginTop: '16px' }}>The design decision wasn't the scoring itself — it was choosing what the model was allowed to withhold. A model that's wrong with full confidence is more dangerous than one that's uncertain and says so, which is why every Critical alert ships with its top risk drivers visible and requires a human decision before it affects a budget.</p>
+            <p style={{ marginTop: '12px', marginBottom: '48px', color: '#78716C' }}><span style={{ fontWeight: 600, color: '#44403C' }}>Result.</span> Override rate fell from 61% to 19% as consequence framing rolled out, and emergency repair incidents dropped 12% during the pilot — managers weren't just agreeing with the model more, they were catching problems earlier.</p>
+
+            <div style={{ backgroundColor: '#FFF9F5', padding: '24px', borderRadius: '0px', borderLeft: '3px solid #FF7C5F', marginBottom: '48px' }}>
+              <div className="cs-card-title cs-card-title--sm">Model behavior</div>
+              <p style={{ fontSize: '15px', color: '#57534E', lineHeight: 1.7, margin: 0 }}>
+                Each asset gets a risk score from maintenance history, age, and inspections, routed into <span style={{ fontWeight: 600 }}>Critical / Monitor / Safe</span> — never a raw probability. Every override is logged and fed back in, so the score recalibrates against real outcomes.
+              </p>
+              <p style={{ fontSize: '15px', color: '#57534E', lineHeight: 1.7, marginTop: '12px', marginBottom: 0 }}>
+                <span style={{ fontWeight: 600 }}>The real design decision:</span> what the model was allowed to withhold. A confident wrong answer is worse than an uncertain one — so Critical alerts always show their risk drivers and need a human decision before touching a budget.
+              </p>
             </div>
 
             <div style={{ marginBottom: '8px' }}>
@@ -919,7 +909,8 @@ const caseStudies = {
             </div>
 
             <div style={{ borderTop: '1px solid #E5E7EB', paddingTop: '32px' }}>
-              <div style={{ fontSize: '13px', fontWeight: 700, color: '#9CA3AF', letterSpacing: '0.06em', textTransform: 'uppercase', marginBottom: '20px' }}>Also shipped</div>
+              <div style={{ fontSize: '13px', fontWeight: 700, color: '#9CA3AF', letterSpacing: '0.06em', textTransform: 'uppercase', marginBottom: '4px' }}>Supporting workflows</div>
+              <p style={{ fontSize: '14px', color: '#78716C', marginBottom: '20px' }}>Outside the core prioritize → explain → verify loop, two more workflows fed the same data model.</p>
 
               <div style={{ marginBottom: '24px' }}>
                 <p><span style={{ fontWeight: 600 }}>Offline field reporting.</span> Work Orders, Asset DNA, and Cost-to-Date linked automatically — an offline queue with voice capture and auto-sync cut reporting time from 20 to 8 minutes.</p>
@@ -949,7 +940,7 @@ const caseStudies = {
       {
         id: 'turning-point',
         title: '04 — The Turning Point',
-        headline: 'Research revealed we were redesigning a system of coordination',
+        headline: 'We weren\'t designing another dashboard — we were connecting decisions that used to happen in isolation',
         content: `<div class="cs-video-wrap" style="width: 100%; max-width: 1200px; margin: 0 auto 48px;">
   <video autoplay loop muted playsinline preload="metadata" width="1882" height="1046" aria-label="Role-based dashboard surfaces over a shared data foundation" style="display: block; width: 100%; height: auto; border-radius: 0px;">
     <source src="/videos/lat/Flow%2002.mp4" type="video/mp4">
@@ -958,7 +949,7 @@ const caseStudies = {
   <button type="button" class="cs-video-toggle" aria-label="Pause video" onclick="var v=this.previousElementSibling;if(v.paused){v.play();this.textContent='⏸';this.setAttribute('aria-label','Pause video');}else{v.pause();this.textContent='▶';this.setAttribute('aria-label','Play video');}">⏸</button>
 </div>
 
-<p>We thought we were customizing a product. Research showed we were redesigning <span style="font-weight: 600;">a system of coordination</span> — everyone had data, what they lacked was context and trust.</p>
+<p>We thought we were customizing a product. Research showed each role was making decisions in isolation, off the same data — what was missing wasn't data, it was shared context and trust.</p>
 
 <p style="margin-top: 28px;">So instead of one dashboard for everyone, we built role-based surfaces over a shared foundation, surfacing only what was actionable.</p>
 
@@ -976,7 +967,7 @@ const caseStudies = {
 
   <div>
     <div class="cs-card-title">Data Integrity Had Hard Boundaries</div>
-    <div style="font-size: 15px; color: #57534E; line-height: 1.6;">Strict governance meant inherited, duplicated records — source of the project's defining incident (section 03). Validation states and confidence tiers became the trust architecture.</div>
+    <div style="font-size: 15px; color: #57534E; line-height: 1.6;">Strict governance meant inherited, duplicated records — the source of the boiler incident (Decision 03). Validation states and confidence tiers became how managers learned to trust the score.</div>
   </div>
 
   <div>
@@ -1021,17 +1012,17 @@ const caseStudies = {
 <div style="display: grid; grid-template-columns: 1fr; gap: 28px; margin-top: 24px; margin-bottom: 24px;">
   <div>
     <div class="cs-card-title">Tokens for two environments</div>
-    <div style="font-size: 15px; color: #57534E; line-height: 1.6;">The same component library had to hold up on a phone screen in direct sunlight underground and on a dense desktop dashboard reviewed indoors. Technician mobile ran on a high-contrast token set — larger type, fewer colors, status carried by shape as well as color. Manager and executive surfaces used a denser, lower-contrast set built for longer indoor sessions.</div>
+    <div style="font-size: 15px; color: #57534E; line-height: 1.6;">The same component library had to work on a phone in direct sunlight underground and a dense desktop dashboard indoors. Technician mobile got a high-contrast, larger-type token set; manager and executive surfaces used a denser set built for longer indoor sessions.</div>
   </div>
 
   <div>
     <div class="cs-card-title">Reusable edge-case patterns</div>
-    <div style="font-size: 15px; color: #57534E; line-height: 1.6;">Four patterns recurred across every surface rather than being designed once each: an offline-status banner (queued / syncing / failed), a sync-conflict resolution state for records edited in two places at once, the confidence/risk tier badge (Critical / Monitor / Safe) from the alert system, and the human-override dialog — visible reasoning, mandatory comment, logged decision — that shipped after the boiler incident.</div>
+    <div style="font-size: 15px; color: #57534E; line-height: 1.6;">Four patterns recurred across every surface instead of being built once each: an offline-status banner, a sync-conflict resolution state, the Critical/Monitor/Safe risk badge, and the human-override dialog — visible reasoning, mandatory comment, logged decision — that shipped after the boiler incident.</div>
   </div>
 
   <div>
     <div class="cs-card-title">Engineering handoff</div>
-    <div style="font-size: 15px; color: #57534E; line-height: 1.6;">Each component shipped with its states spec'd against what the API actually returned — loading, stale-while-revalidating, offline-queued, and error — not just the happy path. Expected loading latencies were set with the two external engineers so slow states got real skeleton treatments instead of spinners bolted on after the fact.</div>
+    <div style="font-size: 15px; color: #57534E; line-height: 1.6;">Each component shipped with its states spec'd against what the API actually returned — loading, stale-while-revalidating, offline-queued, error — not just the happy path. Latencies were set with the engineers so slow states got real skeletons, not spinners bolted on after.</div>
   </div>
 </div>`
       },
@@ -1042,18 +1033,18 @@ const caseStudies = {
         content: '',
         customComponent: (
           <div>
-            <p>Every feature mapped to one driver: <span style={{ fontWeight: 600 }}>cost reduction, planning accuracy, or adoption velocity.</span> Offline workflows and data integrity came before expanding AI scope — these three tradeoffs are where that showed up most.</p>
+            <p>Every feature mapped to one driver: <span style={{ fontWeight: 600 }}>cost, planning accuracy, or adoption.</span> Offline workflows and data integrity came before expanding AI scope — these three tradeoffs show where.</p>
 
             <LatTradeoffTable />
 
             <div style={{ backgroundColor: '#FFF9F5', padding: '28px', borderRadius: '0px', borderLeft: '3px solid #FF7C5F', marginTop: '8px', marginBottom: '24px' }}>
               <div className="cs-card-title cs-card-title--md">What we didn't build</div>
-              <div style={{ fontSize: '15px', color: '#57534E', lineHeight: 1.7 }}>AI auto-scheduling, ESG modeling, and digital twins were all requested and all cut. Twelve months forced one north star — decision confidence — and two drivers, cost and adoption. Anything that didn't serve those lost the argument, however compelling on its own.</div>
+              <div style={{ fontSize: '15px', color: '#57534E', lineHeight: 1.7 }}>AI auto-scheduling, ESG modeling, and digital twins were all requested and all cut. Twelve months forced one north star — decision confidence — and two drivers, cost and adoption.</div>
             </div>
 
             <div style={{ backgroundColor: '#FFF9F5', padding: '28px', borderRadius: '0px', borderLeft: '3px solid #FF7C5F', marginTop: '8px', marginBottom: '40px' }}>
-              <div className="cs-card-title cs-card-title--md">Platform Thinking</div>
-              <div style={{ fontSize: '15px', color: '#57534E', lineHeight: 1.7 }}>The predictive engine improves as override data accumulates — LAT compounds intelligence through use.</div>
+              <div className="cs-card-title cs-card-title--md">The model keeps learning</div>
+              <div style={{ fontSize: '15px', color: '#57534E', lineHeight: 1.7 }}>Every override gets logged and fed back in, so the model recalibrates against real outcomes instead of staying static. The resulting lifecycle forecast projects a 25% reduction in unexpected maintenance costs.</div>
             </div>
 
             <img loading="lazy" decoding="async" width={2000} height={1455} src="/images/lat/AB%20Testing.webp" alt="AB Testing comparison" style={{ width: '100%', height: 'auto', borderRadius: '0px', marginTop: '8px', marginBottom: '40px', display: 'block' }} />
@@ -1089,7 +1080,7 @@ const caseStudies = {
 
 <p style="margin-top: 28px;"><span style="font-weight: 600;">What mattered more.</span> The lifecycle linkage, not the AI. Once work orders, asset history, and cost were reliably connected, decisions improved before the predictive layer even matured.</p>
 
-<p style="margin-top: 28px;"><span style="font-weight: 600;">What I learned about AI in enterprise.</span> Adoption depends less on model sophistication than on trust architecture. Design for the failure, not the demo.</p>`
+<p style="margin-top: 28px;"><span style="font-weight: 600;">What I learned about AI in enterprise.</span> Adoption depends less on model sophistication than on whether people can see why it's wrong when it is. Design for the failure, not the demo.</p>`
       },
     ]
   },

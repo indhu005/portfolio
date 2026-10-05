@@ -128,7 +128,7 @@ export default function LatAlertToggle() {
           padding: '8px 16px',
           borderRadius: '999px',
         }}>
-          Manager response: hesitated &rarr; acted immediately
+          Manager response: requested inspection &rarr; approved replacement in 1 day
         </div>
       </div>
 
