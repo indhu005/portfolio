@@ -814,7 +814,7 @@ const caseStudies = {
                 <div style={{ fontSize: '11px', fontWeight: 700, letterSpacing: '0.06em', textTransform: 'uppercase', color: '#A8A29E', marginBottom: '20px' }}>Work order card, up close</div>
 
                 <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'flex-start', gap: '24px', flexWrap: 'wrap' }}>
-                  <div style={{ flex: '0 1 440px', minWidth: '320px' }}>
+                  <div style={{ flex: '1 1 440px', minWidth: '320px' }}>
                     <div style={{ backgroundColor: '#FFFFFF', border: '1px solid #E7E5E4', boxShadow: '0 2px 10px rgba(0,0,0,0.06)', padding: '20px' }}>
                       <img loading="lazy" decoding="async" width={1086} height={306} src="/images/lat/Work%20order-2.png" alt="Work order card, base state — priority badge, title, and location" style={{ width: '100%', height: 'auto', display: 'block' }} />
                     </div>
@@ -822,7 +822,7 @@ const caseStudies = {
                     <div style={{ fontSize: '13px', color: '#57534E', marginTop: '4px' }}>Priority, job, and location — enough to recognize the work.</div>
                   </div>
 
-                  <div style={{ flex: '0 1 440px', minWidth: '320px' }}>
+                  <div style={{ flex: '1 1 440px', minWidth: '320px' }}>
                     <div style={{ backgroundColor: '#FFFFFF', border: '1px solid #E7E5E4', boxShadow: '0 2px 10px rgba(0,0,0,0.06)', padding: '20px' }}>
                       <img loading="lazy" decoding="async" width={1086} height={429} src="/images/lat/Work%20order-1.png" alt="Work order card with due and scheduled times, and sync state added" style={{ width: '100%', height: 'auto', display: 'block' }} />
                     </div>
@@ -830,7 +830,7 @@ const caseStudies = {
                     <div style={{ fontSize: '13px', color: '#57534E', marginTop: '4px' }}>Due and Scheduled times, plus sync state — plan and trust the card without opening it.</div>
                   </div>
 
-                  <div style={{ flex: '0 1 440px', minWidth: '320px' }}>
+                  <div style={{ flex: '1 1 440px', minWidth: '320px' }}>
                     <div style={{ backgroundColor: '#FFFFFF', border: '1px solid #E7E5E4', boxShadow: '0 2px 10px rgba(0,0,0,0.06)', padding: '20px' }}>
                       <img loading="lazy" decoding="async" width={1086} height={504} src="/images/lat/Work%20order.png" alt="Work order card with an unread update badge added" style={{ width: '100%', height: 'auto', display: 'block' }} />
                     </div>
@@ -838,7 +838,7 @@ const caseStudies = {
                     <div style={{ fontSize: '13px', color: '#57534E', marginTop: '4px' }}>"1 unread update" flags a change on this job the technician hasn't seen yet.</div>
                   </div>
 
-                  <div style={{ flex: '0 1 440px', minWidth: '320px' }}>
+                  <div style={{ flex: '1 1 440px', minWidth: '320px' }}>
                     <div style={{ backgroundColor: '#FFFFFF', border: '1px solid #E7E5E4', boxShadow: '0 2px 10px rgba(0,0,0,0.06)', padding: '20px' }}>
                       <img loading="lazy" decoding="async" width={1086} height={756} src="/images/lat/Sync%20failed.png" alt="Work order card showing a failed sync and the Retry sync button, for the Roof drain job reassigned by Maya" style={{ width: '100%', height: 'auto', display: 'block' }} />
                     </div>
