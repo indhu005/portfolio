@@ -753,7 +753,7 @@ const caseStudies = {
         content: '',
         customComponent: (
           <div>
-            <div style={{ marginBottom: '16px' }}>
+            <div style={{ marginBottom: '96px' }}>
               <div style={{ fontSize: '11px', fontWeight: 700, letterSpacing: '0.06em', textTransform: 'uppercase', color: '#A8A29E', marginBottom: '20px' }}>One data model, three surfaces</div>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '0', border: '1px solid #E7E5E4' }}>
                 <div style={{ padding: '18px 24px' }}>
@@ -771,6 +771,44 @@ const caseStudies = {
                   <div style={{ fontSize: '14px', color: '#57534E' }}>Portfolio-level cost and risk, traceable back to the field report that drove it</div>
                 </div>
               </div>
+            </div>
+
+            <div style={{ marginBottom: '48px' }}>
+              <div style={{ fontSize: '11px', fontWeight: 700, letterSpacing: '0.06em', textTransform: 'uppercase', color: '#A8A29E', marginBottom: '20px' }}>Technician queue, three iterations</div>
+
+              <p style={{ fontSize: '14px', color: '#78716C' }}>From filtered list to one synced, shift-aware queue.</p>
+
+              <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'center', gap: '40px', marginTop: '56px', flexWrap: 'nowrap' }}>
+                <div style={{ flex: '0 1 200px', minWidth: '150px' }}>
+                  <img loading="lazy" decoding="async" width={1206} height={2622} src="/images/lat/LAT%20Technician%20Work%20Orders%20V1.png" alt="Technician work order queue, version 1 — a long list with filter tabs and priority tags" style={{ width: '100%', height: 'auto', borderRadius: '0px', display: 'block' }} />
+                  <div style={{ fontSize: '12px', fontWeight: 700, letterSpacing: '0.04em', textTransform: 'uppercase', color: '#A8A29E', marginTop: '16px' }}>Starting point</div>
+                  <div style={{ fontSize: '13px', color: '#57534E', marginTop: '4px' }}>Filtered list, tabs, priority tags</div>
+                </div>
+
+                <div style={{ flex: '0 0 130px', textAlign: 'center', marginTop: '98px' }}>
+                  <div style={{ color: '#FF7C5F', fontSize: '24px' }}>→</div>
+                  <div style={{ fontSize: '13px', color: '#78716C', marginTop: '10px', lineHeight: 1.5 }}>fewer controls, added sync state</div>
+                </div>
+
+                <div style={{ flex: '0 1 200px', minWidth: '150px' }}>
+                  <img loading="lazy" decoding="async" width={1206} height={2622} src="/images/lat/LAT%20Technician%20Work%20Orders%20V2.png" alt="Technician work order queue, version 2 — one sort control, due times, and sync state on every card" style={{ width: '100%', height: 'auto', borderRadius: '0px', display: 'block' }} />
+                  <div style={{ fontSize: '12px', fontWeight: 700, letterSpacing: '0.04em', textTransform: 'uppercase', color: '#FF7C5F', marginTop: '16px' }}>One queue, one switch</div>
+                  <div style={{ fontSize: '13px', color: '#57534E', marginTop: '4px' }}>Due time + sync state on every card</div>
+                </div>
+
+                <div style={{ flex: '0 0 130px', textAlign: 'center', marginTop: '98px' }}>
+                  <div style={{ color: '#FF7C5F', fontSize: '24px' }}>→</div>
+                  <div style={{ fontSize: '13px', color: '#78716C', marginTop: '10px', lineHeight: 1.5 }}>added shift banner, isolated failures</div>
+                </div>
+
+                <div style={{ flex: '0 1 200px', minWidth: '150px' }}>
+                  <img loading="lazy" decoding="async" width={1206} height={2622} src="/images/lat/LAT%20Technician%20Work%20Orders%20V3.png" alt="Technician work order queue, version 3 — a summary banner showing unsent changes across the whole shift" style={{ width: '100%', height: 'auto', borderRadius: '0px', display: 'block' }} />
+                  <div style={{ fontSize: '12px', fontWeight: 700, letterSpacing: '0.04em', textTransform: 'uppercase', color: '#FF7C5F', marginTop: '16px' }}>One shift, one status</div>
+                  <div style={{ fontSize: '13px', color: '#57534E', marginTop: '4px' }}>Banner isolates failures, Retry waiting</div>
+                </div>
+              </div>
+
+              <p style={{ fontSize: '14px', color: '#78716C', marginTop: '40px', textAlign: 'center' }}>Removing "did that go through?" from the technician's day — part of why offline field reporting went from 20 minutes to 8.</p>
             </div>
 
             <div style={{ marginBottom: '8px' }}>
@@ -970,7 +1008,7 @@ const caseStudies = {
               <div style={{ fontSize: '15px', color: '#57534E', lineHeight: 1.7 }}>AI auto-scheduling, ESG modeling, and digital twins were all requested and all cut. Twelve months forced one north star — decision confidence — and two drivers, cost and adoption. Anything that didn't serve those lost the argument, however compelling on its own.</div>
             </div>
 
-            <div style={{ backgroundColor: '#F9FAFB', padding: '28px', borderRadius: '0px', borderLeft: '3px solid #7EB3F5', marginTop: '8px', marginBottom: '40px' }}>
+            <div style={{ backgroundColor: '#FFF9F5', padding: '28px', borderRadius: '0px', borderLeft: '3px solid #FF7C5F', marginTop: '8px', marginBottom: '40px' }}>
               <div className="cs-card-title cs-card-title--md">Platform Thinking</div>
               <div style={{ fontSize: '15px', color: '#57534E', lineHeight: 1.7 }}>The predictive engine improves as override data accumulates — LAT compounds intelligence through use.</div>
             </div>
@@ -1061,6 +1099,11 @@ const caseStudies = {
 </div>
 
 <p style="margin-top: 28px;"><span style="font-weight: 600;">My role.</span> Sole designer on this UW graduate capstone (Jan–Dec 2024), started as a team of four. After February, the research, archetypes, all four features, and testing with ~1,800 people at Misinfo Day were mine alone.</p>
+
+<div style="background-color: #F9FAFB; padding: 24px 28px; border-radius: 0px; border-left: 3px solid #FF7C5F; margin-top: 28px;">
+  <div style="font-size: 11px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #A8A29E; margin-bottom: 10px;">My contribution</div>
+  <div style="font-size: 15px; color: #57534E; line-height: 1.7;">I owned the research direction, all four tool concepts, and the pivot away from the original scan-and-verify design after 17 of 19 testers rejected it — TrueMedia.org set the scope of the research partnership that fed into it.</div>
+</div>
 
 <p style="margin-top: 28px;">From March to May, I also collaborated with TrueMedia.org, a deepfake-detection nonprofit. They analyzed 60,000+ pieces of media and shut down in January 2025 — not from bad design, but because nobody profits from detection. That's this case study's throughline (section 06).</p>
 </div>
