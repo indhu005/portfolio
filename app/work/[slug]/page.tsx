@@ -610,7 +610,7 @@ const caseStudies = {
       team: '1 PM, 1 designer (me), 2 external engineers, client stakeholders',
       timeline: '12 months (Jun 2023–May 2024)',
       impact: '95% pilot adoption | 70%→95% data accuracy | 25% cost reduction projected',
-      skills: 'Enterprise UX · ML/AI design · Stakeholder alignment · Field research · API-first architecture',
+      skills: 'Enterprise UX · Trust-centered AI design · Stakeholder alignment · Field research · API-first architecture',
       decisionAuthority: 'Owned: workflow design, the human-in-the-loop approval model, and the alert-framing decisions that cut override rate from 61% to 19%. Client stakeholders owned data-integrity and political constraints I had to design within.'
     },
     preSnapshotHeadline: 'Fragmented data was forcing humans to do the work a system should have done',
@@ -642,7 +642,7 @@ const caseStudies = {
   <div style="font-size: 11px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #A8A29E; margin-bottom: 10px;">Headline result</div>
   <div style="font-family: 'Fraunces', serif; font-size: 20px; font-weight: 600; color: #1C1917; line-height: 1.3; margin-bottom: 16px;">Adoption cleared the client's own bar for keeping a tool alive.</div>
   <div style="font-family: 'Fraunces', serif; font-size: 40px; font-weight: 700; color: #1C1917; line-height: 1.1;">95% pilot adoption</div>
-  <div style="font-size: 14px; color: #6B7280; margin-top: 10px;">vs. UW IT's 70% threshold. Data accuracy rose 70%→95% and cost reduction is projected at 25% over the same lifecycle linkage — directly observed adoption and accuracy, projected cost figure.</div>
+  <div style="font-size: 14px; color: #6B7280; margin-top: 10px;">vs. UW IT's 70% threshold. Data accuracy rose 70%→95% over the same period.</div>
 </div>
 
 <p><span style="font-weight: 600;">Product</span><br/>A maintenance platform helping a Pacific Northwest university manage 60–80+ buildings — a modular API layer alongside their legacy CMMS/ERP, turning fragmented data into decisions people could act on.</p>
@@ -655,7 +655,7 @@ const caseStudies = {
 
 <div style="background-color: #F9FAFB; padding: 24px 28px; border-radius: 0px; border-left: 3px solid #FF7C5F; margin-top: 32px;">
   <div style="font-size: 11px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #A8A29E; margin-bottom: 10px;">My contribution</div>
-  <div style="font-size: 15px; color: #57534E; line-height: 1.7;">I reframed the product from a shared facilities dashboard into role-specific decision surfaces, set the trust model that let managers act on AI recommendations without blind trust, and carried the offline-first field workflow from research through pilot.</div>
+  <div style="font-size: 15px; color: #57534E; line-height: 1.7;">I reframed the product from a shared facilities dashboard into role-specific decision surfaces, set the approval model that let managers act on AI recommendations without blind faith, and carried the offline-first field workflow from research through pilot.</div>
 </div>
 
 <div style="width: 100%; min-height: 450px; background-color: #E5E7EB; border-radius: 0px; display: flex; align-items: center; justify-content: center; color: #9CA3AF; font-size: 14px; margin-top: 40px; margin-bottom: 40px;">Hero — one asset rendered for a technician (mobile), a manager (priority queue), and an executive (summary). One data model, three surfaces.</div>
@@ -683,9 +683,61 @@ const caseStudies = {
 <p style="font-size: 14px; color: #6B7280;">All three observed directly from pilot usage. Budget, incident, and planning impact appear in context in the sections below.</p>`
       },
       {
+        id: 'context-problem',
+        title: '02 — Context & Problem',
+        headline: 'Why existing tools failed the people managing this infrastructure',
+        content: `<div class="cs-video-wrap" style="width: 100%; max-width: 960px; margin: 0 auto 48px;">
+  <video autoplay loop muted playsinline preload="metadata" width="1882" height="1060" aria-label="Technician, manager, and leadership working from fragmented tools" style="display: block; width: 100%; height: auto; border-radius: 0px;">
+    <source src="/videos/lat/Flow%2001.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+  <button type="button" class="cs-video-toggle" aria-label="Pause video" onclick="var v=this.previousElementSibling;if(v.paused){v.play();this.textContent='⏸';this.setAttribute('aria-label','Pause video');}else{v.pause();this.textContent='▶';this.setAttribute('aria-label','Play video');}">⏸</button>
+</div>
+
+<p style="font-size: 14px; color: #6B7280;">Research base: 7–8 technicians and vendors, 4 project managers, 2 accountants, 5–6 executives, and the Director of Facilities — UW Seattle's primary sponsor.</p>
+
+<div class="pull-quote" style="margin-top: 48px;">The institution wasn't lacking expertise. It was operating without a unified source of truth.</div>
+
+<p style="margin-top: 48px;">CMMS platforms don't model asset lifespan or CapEx tradeoffs — preventive maintenance ran on time, not risk. Replacing the stack wasn't viable, and no vendor sells the integrated version at any price.</p>
+
+<div style="margin-top: 40px; margin-bottom: 40px;">
+  <div style="font-size: 11px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #A8A29E; margin-bottom: 16px;">Fragmentation, by owner</div>
+  <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px;">
+    <div style="border-left: 3px solid #E7E5E4; padding-left: 16px;">
+      <div style="font-weight: 600; color: #1C1917; margin-bottom: 4px;">Field conditions</div>
+      <div style="font-size: 14px; color: #57534E; line-height: 1.6;">Technicians &amp; vendors — tracked on paper or memory, rarely reached managers</div>
+    </div>
+    <div style="border-left: 3px solid #E7E5E4; padding-left: 16px;">
+      <div style="font-weight: 600; color: #1C1917; margin-bottom: 4px;">Maintenance scheduling</div>
+      <div style="font-size: 14px; color: #57534E; line-height: 1.6;">Legacy CMMS/ERP, IT-owned — ran on fixed time intervals, not real risk</div>
+    </div>
+    <div style="border-left: 3px solid #E7E5E4; padding-left: 16px;">
+      <div style="font-weight: 600; color: #1C1917; margin-bottom: 4px;">Capital requests</div>
+      <div style="font-size: 14px; color: #57534E; line-height: 1.6;">Project managers &amp; accountants — manual spreadsheets stitched before each planning cycle</div>
+    </div>
+    <div style="border-left: 3px solid #E7E5E4; padding-left: 16px;">
+      <div style="font-weight: 600; color: #1C1917; margin-bottom: 4px;">Final approval</div>
+      <div style="font-size: 14px; color: #57534E; line-height: 1.6;">Executives &amp; the Director of Facilities — decided on whatever partial data reached them</div>
+    </div>
+  </div>
+</div>
+
+<div style="margin-top: 48px; margin-bottom: 40px;">
+  <div style="font-size: 11px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #A8A29E; margin-bottom: 20px;">What the research changed</div>
+  <div style="display: flex; flex-direction: column; gap: 20px;">
+    <p style="font-size: 15px; line-height: 1.6; margin: 0; padding-left: 16px; border-left: 3px solid #E7E5E4;"><span style="color: #78716C;">Technicians worked underground with no signal</span> <span style="color: #FF7C5F;">→</span> <span style="color: #44403C; font-style: italic;">connectivity isn't guaranteed</span> <span style="color: #FF7C5F;">→</span> <span style="color: #1C1917; font-weight: 600;">offline-first capture with queued auto-sync</span></p>
+    <p style="font-size: 15px; line-height: 1.6; margin: 0; padding-left: 16px; border-left: 3px solid #E7E5E4;"><span style="color: #78716C;">Managers scanned 8+ graphs before acting on anything</span> <span style="color: #FF7C5F;">→</span> <span style="color: #44403C; font-style: italic;">more information wasn't producing better decisions</span> <span style="color: #FF7C5F;">→</span> <span style="color: #1C1917; font-weight: 600;">a ranked priority queue replaced the dashboard</span></p>
+    <p style="font-size: 15px; line-height: 1.6; margin: 0; padding-left: 16px; border-left: 3px solid #E7E5E4;"><span style="color: #78716C;">Managers hesitated on a "68% failure risk" alert</span> <span style="color: #FF7C5F;">→</span> <span style="color: #44403C; font-style: italic;">a probability isn't actionable, a consequence is</span> <span style="color: #FF7C5F;">→</span> <span style="color: #1C1917; font-weight: 600;">consequence framing: cost and timeframe, not confidence</span></p>
+    <p style="font-size: 15px; line-height: 1.6; margin: 0; padding-left: 16px; border-left: 3px solid #E7E5E4;"><span style="color: #78716C;">Legacy records had inherited duplicates that inflated risk scores</span> <span style="color: #FF7C5F;">→</span> <span style="color: #44403C; font-style: italic;">an AI system inherits its data's quality problems</span> <span style="color: #FF7C5F;">→</span> <span style="color: #1C1917; font-weight: 600;">a "Needs Verification" state with mandatory human approval</span></p>
+  </div>
+</div>
+
+<img loading="lazy" decoding="async" width="3300" height="2400" src="/images/lat/Market%20Gap.jpg" alt="Market Gap Analysis" style="width: 100%; height: auto; border-radius: 0px; margin-top: 40px; margin-bottom: 40px; display: block;" />`
+      },
+      {
         id: 'solution',
-        title: '02 — Solution',
-        headline: 'Three decisions made the system\'s intelligence trustworthy enough to act on',
+        title: '03 — Solution',
+        headline: 'Three decisions: prioritize what matters, explain what it costs, verify before it acts',
         content: '',
         customComponent: (
           <div>
@@ -714,8 +766,7 @@ const caseStudies = {
             <div style={{ marginBottom: '48px' }}>
               <div style={{ fontSize: '11px', fontWeight: 700, letterSpacing: '0.06em', textTransform: 'uppercase', color: '#A8A29E', marginBottom: '20px' }}>Technician queue, three iterations</div>
 
-              <p style={{ fontSize: '14px', color: '#78716C' }}>One queue. One shift. No hidden sync failures.</p>
-              <p style={{ fontSize: '15px', color: '#44403C', marginTop: '12px', maxWidth: '640px' }}>For field technicians, a completed action isn't complete if its update never reaches the system. We made sync state visible directly on the work order.</p>
+              <p style={{ fontSize: '15px', color: '#44403C', maxWidth: '640px' }}>For field technicians, a completed action isn't complete if its update never reaches the system — so we made sync state visible on the work order itself.</p>
 
               <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'flex-start', gap: '24px', marginTop: '56px', flexWrap: 'wrap' }}>
                 <div style={{ flex: '0 1 230px', minWidth: '170px' }}>
@@ -788,8 +839,6 @@ const caseStudies = {
               </div>
 
               <p style={{ fontSize: '15px', color: '#44403C', marginTop: '32px', maxWidth: '640px' }}><span style={{ fontWeight: 600 }}>A failed sync shouldn't feel like lost work.</span> We kept the update safely on-device and made recovery one tap.</p>
-
-              <p style={{ fontSize: '14px', color: '#78716C', marginTop: '24px', textAlign: 'center' }}>Every job shows whether its update arrived, and anything stuck is one tap away.</p>
             </div>
 
             <div style={{ marginBottom: '8px' }}>
@@ -808,28 +857,28 @@ const caseStudies = {
               </div>
             </div>
 
-            <div style={{ marginBottom: '8px' }}>
-              <div style={{ fontSize: '13px', fontWeight: 700, color: '#FF7C5F', letterSpacing: '0.06em', textTransform: 'uppercase', marginBottom: '8px' }}>Decision 02</div>
-              <div style={{ fontSize: '20px', fontWeight: 600, color: '#1C1917', marginBottom: '16px' }}>Turn predictions into consequences</div>
+            <div style={{ backgroundColor: '#FFFFFF', border: '1px solid #F3E8E2', borderTop: '4px solid #FF7C5F', borderRadius: '0px', padding: '40px', boxShadow: '0 4px 24px rgba(0,0,0,0.04)', marginBottom: '48px' }}>
+              <div style={{ fontSize: '13px', fontWeight: 700, color: '#FF7C5F', letterSpacing: '0.06em', textTransform: 'uppercase', marginBottom: '8px' }}>Decision 02 — the core insight</div>
+              <div style={{ fontSize: '26px', fontWeight: 600, color: '#1C1917', marginBottom: '16px' }}>Turn predictions into consequences</div>
               <div className="pull-quote" style={{ marginBottom: '20px' }}>A probability isn't a decision. A consequence is.</div>
               <p>The question wasn't how confident the model was. It was what decision the manager actually needed to make.</p>
               <p style={{ marginTop: '12px' }}>Early alerts said <span style={{ fontStyle: 'italic' }}>"Boiler failure risk: 68%"</span> — a probability, not a decision. Managers hesitated on it. We shifted to consequence framing: <span style={{ fontStyle: 'italic' }}>"9 years in service → delaying replacement may cost $18K."</span> On the boiler alert, the manager requested an inspection and approved the replacement within a day.</p>
-            </div>
 
-            <LatAlertToggle />
+              <LatAlertToggle />
 
-            <p style={{ marginTop: '24px' }}><span style={{ fontWeight: 600 }}>Why.</span> The alert didn't need to prove confidence — it needed to give managers enough to decide: what's at stake, and what happens if they wait.</p>
+              <p style={{ marginTop: '24px' }}><span style={{ fontWeight: 600 }}>Why.</span> The alert didn't need to prove confidence — it needed to give managers enough to decide: what's at stake, and what happens if they wait.</p>
 
-            <p style={{ marginTop: '12px', marginBottom: '48px', color: '#78716C' }}><span style={{ fontWeight: 600, color: '#44403C' }}>Result.</span> Override rate fell from 61% to 19% as consequence framing rolled out, and emergency repair incidents dropped 12% during the pilot — managers weren't just agreeing with the model more, they were catching problems earlier.</p>
+              <p style={{ marginTop: '12px' }}><span style={{ fontWeight: 600, color: '#44403C' }}>Result.</span> <span style={{ color: '#78716C' }}>Override rate fell from 61% to 19% as consequence framing rolled out, and emergency repair incidents dropped 12% during the pilot — managers weren't just agreeing with the model more, they were catching problems earlier.</span></p>
 
-            <div style={{ backgroundColor: '#FFF9F5', padding: '24px', borderRadius: '0px', borderLeft: '3px solid #FF7C5F', marginBottom: '48px' }}>
-              <div className="cs-card-title cs-card-title--sm">Model behavior</div>
-              <p style={{ fontSize: '15px', color: '#57534E', lineHeight: 1.7, margin: 0 }}>
-                Each asset gets a risk score from maintenance history, age, and inspections, routed into <span style={{ fontWeight: 600 }}>Critical / Monitor / Safe</span> — never a raw probability. Every override is logged and fed back in, so the score recalibrates against real outcomes.
-              </p>
-              <p style={{ fontSize: '15px', color: '#57534E', lineHeight: 1.7, marginTop: '12px', marginBottom: 0 }}>
-                <span style={{ fontWeight: 600 }}>The real design decision:</span> what the model was allowed to withhold. A confident wrong answer is worse than an uncertain one — so Critical alerts always show their risk drivers and need a human decision before touching a budget.
-              </p>
+              <div style={{ backgroundColor: '#FFF9F5', padding: '24px', borderRadius: '0px', borderLeft: '3px solid #FF7C5F', marginTop: '32px' }}>
+                <div className="cs-card-title cs-card-title--sm">Model behavior</div>
+                <p style={{ fontSize: '15px', color: '#57534E', lineHeight: 1.7, margin: 0 }}>
+                  Each asset gets a risk score from maintenance history, age, and inspections, routed into <span style={{ fontWeight: 600 }}>Critical / Monitor / Safe</span> — never a raw probability. Every override is logged and fed back in, so the score recalibrates against real outcomes.
+                </p>
+                <p style={{ fontSize: '15px', color: '#57534E', lineHeight: 1.7, marginTop: '12px', marginBottom: 0 }}>
+                  <span style={{ fontWeight: 600 }}>The real design decision:</span> what the model was allowed to withhold. A confident wrong answer is worse than an uncertain one — so Critical alerts always show their risk drivers and need a human decision before touching a budget.
+                </p>
+              </div>
             </div>
 
             <div style={{ marginBottom: '8px' }}>
@@ -892,50 +941,6 @@ const caseStudies = {
             </div>
           </div>
         ),
-      },
-      {
-        id: 'context-problem',
-        title: '03 — Context & Problem',
-        headline: 'Why existing tools failed the people managing this infrastructure',
-        content: `<div class="cs-video-wrap" style="width: 100%; max-width: 960px; margin: 0 auto 48px;">
-  <video autoplay loop muted playsinline preload="metadata" width="1882" height="1060" aria-label="Technician, manager, and leadership working from fragmented tools" style="display: block; width: 100%; height: auto; border-radius: 0px;">
-    <source src="/videos/lat/Flow%2001.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-  </video>
-  <button type="button" class="cs-video-toggle" aria-label="Pause video" onclick="var v=this.previousElementSibling;if(v.paused){v.play();this.textContent='⏸';this.setAttribute('aria-label','Pause video');}else{v.pause();this.textContent='▶';this.setAttribute('aria-label','Play video');}">⏸</button>
-</div>
-
-<p style="font-size: 14px; color: #6B7280;">Research base: 7–8 technicians and vendors, 4 project managers, 2 accountants, 5–6 executives, and the Director of Facilities — UW Seattle's primary sponsor.</p>
-
-<div class="pull-quote" style="margin-top: 48px;">The institution wasn't lacking expertise. It was operating without a unified source of truth.</div>
-
-<p style="margin-top: 48px;">CMMS platforms don't model asset lifespan or CapEx tradeoffs. Preventive maintenance ran on time, not risk, causing surprise failures. Replacing the legacy stack wasn't viable either.</p>
-
-<p style="margin-top: 28px;">Vendors just price for more of the same single-use tool. Nobody sells the integrated version for a mixed-use portfolio like a university's, at any price.</p>
-
-<div style="margin-top: 40px; margin-bottom: 40px;">
-  <div style="font-size: 11px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #A8A29E; margin-bottom: 16px;">Fragmentation, by owner</div>
-  <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px;">
-    <div style="border-left: 3px solid #E7E5E4; padding-left: 16px;">
-      <div style="font-weight: 600; color: #1C1917; margin-bottom: 4px;">Field conditions</div>
-      <div style="font-size: 14px; color: #57534E; line-height: 1.6;">Technicians &amp; vendors — tracked on paper or memory, rarely reached managers</div>
-    </div>
-    <div style="border-left: 3px solid #E7E5E4; padding-left: 16px;">
-      <div style="font-weight: 600; color: #1C1917; margin-bottom: 4px;">Maintenance scheduling</div>
-      <div style="font-size: 14px; color: #57534E; line-height: 1.6;">Legacy CMMS/ERP, IT-owned — ran on fixed time intervals, not real risk</div>
-    </div>
-    <div style="border-left: 3px solid #E7E5E4; padding-left: 16px;">
-      <div style="font-weight: 600; color: #1C1917; margin-bottom: 4px;">Capital requests</div>
-      <div style="font-size: 14px; color: #57534E; line-height: 1.6;">Project managers &amp; accountants — manual spreadsheets stitched before each planning cycle</div>
-    </div>
-    <div style="border-left: 3px solid #E7E5E4; padding-left: 16px;">
-      <div style="font-weight: 600; color: #1C1917; margin-bottom: 4px;">Final approval</div>
-      <div style="font-size: 14px; color: #57534E; line-height: 1.6;">Executives &amp; the Director of Facilities — decided on whatever partial data reached them</div>
-    </div>
-  </div>
-</div>
-
-<img loading="lazy" decoding="async" width="3300" height="2400" src="/images/lat/Market%20Gap.jpg" alt="Market Gap Analysis" style="width: 100%; height: auto; border-radius: 0px; margin-top: 40px; margin-bottom: 40px; display: block;" />`
       },
       {
         id: 'turning-point',
@@ -1029,7 +1034,7 @@ const caseStudies = {
       {
         id: 'tradeoffs',
         title: '06 — Tradeoffs',
-        headline: 'We chose human-in-the-loop over speed, accepting slower decisions to build trust',
+        headline: 'We chose human-in-the-loop over speed, even where it cost us',
         content: '',
         customComponent: (
           <div>
@@ -1044,7 +1049,7 @@ const caseStudies = {
 
             <div style={{ backgroundColor: '#FFF9F5', padding: '28px', borderRadius: '0px', borderLeft: '3px solid #FF7C5F', marginTop: '8px', marginBottom: '40px' }}>
               <div className="cs-card-title cs-card-title--md">The model keeps learning</div>
-              <div style={{ fontSize: '15px', color: '#57534E', lineHeight: 1.7 }}>Every override gets logged and fed back in, so the model recalibrates against real outcomes instead of staying static. The resulting lifecycle forecast projects a 25% reduction in unexpected maintenance costs.</div>
+              <div style={{ fontSize: '15px', color: '#57534E', lineHeight: 1.7 }}>Every override gets logged and fed back in, so the model recalibrates against real outcomes instead of staying static. The resulting lifecycle forecast: <span style={{ fontWeight: 600, color: '#44403C' }}>25% fewer unexpected maintenance costs</span> <span style={{ fontFamily: 'ui-monospace, SFMono-Regular, Menlo, monospace', fontSize: '10px', fontWeight: 700, letterSpacing: '0.06em', textTransform: 'uppercase', color: '#B45309' }}>Projected</span>.</div>
             </div>
 
             <img loading="lazy" decoding="async" width={2000} height={1455} src="/images/lat/AB%20Testing.webp" alt="AB Testing comparison" style={{ width: '100%', height: 'auto', borderRadius: '0px', marginTop: '8px', marginBottom: '40px', display: 'block' }} />
@@ -1068,9 +1073,7 @@ const caseStudies = {
 
 <p style="margin-top: 28px;"><span style="font-weight: 600;">Decision-making.</span> Teams stopped entering meetings to reconcile facts, and started entering them to decide.</p>
 
-<p style="margin-top: 28px;"><span style="font-weight: 600;">Strategic.</span> Scenario simulation moved feasibility analysis in-house and drew interest from other universities.</p>
-
-<div class="pull-quote" style="margin-top: 48px;">The biggest change wasn't cost savings. It was decision confidence.</div>`
+<p style="margin-top: 28px;"><span style="font-weight: 600;">Strategic.</span> Scenario simulation moved feasibility analysis in-house and drew interest from other universities.</p>`
       },
       {
         id: 'reflection',
@@ -1433,7 +1436,7 @@ export async function generateMetadata({
     },
     lat: {
       description: 'Lead Product Designer for LAT Platform — ML-driven lifecycle assessment for university campus maintenance. 95% pilot adoption, 70%→95% data accuracy, 25% cost reduction.',
-      keywords: ['enterprise UX', 'ML product design', 'AI design', 'university technology', 'predictive maintenance', 'lifecycle assessment', 'B2B design', 'decision intelligence']
+      keywords: ['enterprise UX', 'trust-centered AI design', 'AI product design', 'university technology', 'predictive maintenance', 'lifecycle assessment', 'B2B design', 'decision intelligence']
     },
     'misinformation-center': {
       description: 'UW graduate capstone on media literacy tools for the AI age. Research collaboration with TrueMedia.org. Tested with ~1,800 people at Misinfo Day.',
