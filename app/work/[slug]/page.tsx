@@ -609,7 +609,7 @@ const caseStudies = {
       role: 'Lead Product Designer (60% design, 40% strategy)',
       team: '1 PM, 1 designer (me), 2 external engineers, client stakeholders',
       timeline: '12 months (Jun 2023–May 2024)',
-      impact: '95% pilot adoption | 70%→95% data accuracy | 25% cost reduction projected',
+      impact: '95% pilot adoption',
       skills: 'Enterprise UX · Trust-centered AI design · Stakeholder alignment · Field research · API-first architecture',
       decisionAuthority: 'Owned: workflow design, the human-in-the-loop approval model, and the alert-framing decisions that cut override rate from 61% to 19%. Client stakeholders owned data-integrity and political constraints I had to design within.'
     },
@@ -640,9 +640,8 @@ const caseStudies = {
         title: '01 — Snapshot',
         content: `<div style="border: 1px dashed #D1D5DB; background-color: #FAFAF9; padding: 28px 32px; margin-bottom: 40px;">
   <div style="font-size: 11px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #A8A29E; margin-bottom: 10px;">Headline result</div>
-  <div style="font-family: 'Fraunces', serif; font-size: 20px; font-weight: 600; color: #1C1917; line-height: 1.3; margin-bottom: 16px;">Adoption cleared the client's own bar for keeping a tool alive.</div>
   <div style="font-family: 'Fraunces', serif; font-size: 40px; font-weight: 700; color: #1C1917; line-height: 1.1;">95% pilot adoption</div>
-  <div style="font-size: 14px; color: #6B7280; margin-top: 10px;">vs. UW IT's 70% threshold. Data accuracy rose 70%→95% over the same period.</div>
+  <div style="font-size: 14px; color: #6B7280; margin-top: 10px;">vs. UW IT's 70% threshold for keeping a tool alive.</div>
 </div>
 
 <p><span style="font-weight: 600;">Product</span><br/>A maintenance platform helping a Pacific Northwest university manage 60–80+ buildings — a modular API layer alongside their legacy CMMS/ERP, turning fragmented data into decisions people could act on.</p>
@@ -847,7 +846,7 @@ const caseStudies = {
               <p><span style={{ fontWeight: 600 }}>Problem.</span> Managers scanned 8+ graphs without acting on them.</p>
               <p style={{ marginTop: '12px' }}><span style={{ fontWeight: 600 }}>Design.</span> A ranked priority queue replaced the dashboard.</p>
               <p style={{ marginTop: '12px' }}><span style={{ fontWeight: 600 }}>Why.</span> Prioritization beat information density.</p>
-              <p style={{ marginTop: '12px', color: '#78716C' }}><span style={{ fontWeight: 600, color: '#44403C' }}>Result.</span> Planning time dropped 60% and budget revisions fell 36% vs. the prior year — managers spent that time deciding instead of reconciling.</p>
+              <p style={{ marginTop: '12px', color: '#78716C' }}><span style={{ fontWeight: 600, color: '#44403C' }}>Result.</span> Planning time dropped 60% vs. the prior year — managers spent that time deciding instead of reconciling.</p>
             </div>
 
             <div style={{ width: '100%', height: '400px', backgroundColor: '#E5E7EB', borderRadius: '0px', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#9CA3AF', fontSize: '14px', marginTop: '40px', marginBottom: '48px' }}>
@@ -868,7 +867,7 @@ const caseStudies = {
 
               <p style={{ marginTop: '24px' }}><span style={{ fontWeight: 600 }}>Why.</span> The alert didn't need to prove confidence — it needed to give managers enough to decide: what's at stake, and what happens if they wait.</p>
 
-              <p style={{ marginTop: '12px' }}><span style={{ fontWeight: 600, color: '#44403C' }}>Result.</span> <span style={{ color: '#78716C' }}>Override rate fell from 61% to 19% as consequence framing rolled out, and emergency repair incidents dropped 12% during the pilot — managers weren't just agreeing with the model more, they were catching problems earlier.</span></p>
+              <p style={{ marginTop: '12px' }}><span style={{ fontWeight: 600, color: '#44403C' }}>Result.</span> <span style={{ color: '#78716C' }}>Override rate fell from 61% to 19% as consequence framing rolled out — managers weren't just agreeing with the model more, they were catching problems earlier.</span></p>
 
               <div style={{ backgroundColor: '#FFF9F5', padding: '24px', borderRadius: '0px', borderLeft: '3px solid #FF7C5F', marginTop: '32px' }}>
                 <div className="cs-card-title cs-card-title--sm">Model behavior</div>
