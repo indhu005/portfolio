@@ -722,7 +722,7 @@ const caseStudies = {
   </div>
 </div>
 
-<div style="background-color: #4A72E5; padding: 36px 32px; border-radius: 0px; margin-top: 48px; margin-bottom: 40px;">
+<div style="background-color: #1C1917; padding: 36px 32px; border-radius: 0px; margin-top: 48px; margin-bottom: 40px;">
   <div style="font-size: 11px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: rgba(255,255,255,0.65); margin-bottom: 20px;">What the research changed</div>
   <div style="display: flex; flex-direction: column; gap: 20px;">
     <p style="font-size: 15px; line-height: 1.6; margin: 0; padding-left: 16px; border-left: 3px solid rgba(255,255,255,0.35);"><span style="color: rgba(255,255,255,0.7);">Technicians worked underground with no signal</span> <span style="color: #FFFFFF;">→</span> <span style="color: rgba(255,255,255,0.9); font-style: italic;">connectivity isn't guaranteed</span> <span style="color: #FFFFFF;">→</span> <span style="color: #FFFFFF; font-weight: 600;">offline-first capture with queued auto-sync</span></p>
