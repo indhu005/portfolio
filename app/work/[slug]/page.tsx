@@ -683,52 +683,8 @@ const caseStudies = {
 <p style="font-size: 14px; color: #6B7280;">All three observed directly from pilot usage. Budget, incident, and planning impact appear in context in the sections below.</p>`
       },
       {
-        id: 'context-problem',
-        title: '02 — Context & Problem',
-        headline: 'Why existing tools failed the people managing this infrastructure',
-        content: `<div class="cs-video-wrap" style="width: 100%; max-width: 960px; margin: 0 auto 48px;">
-  <video autoplay loop muted playsinline preload="metadata" width="1882" height="1060" aria-label="Technician, manager, and leadership working from fragmented tools" style="display: block; width: 100%; height: auto; border-radius: 0px;">
-    <source src="/videos/lat/Flow%2001.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-  </video>
-  <button type="button" class="cs-video-toggle" aria-label="Pause video" onclick="var v=this.previousElementSibling;if(v.paused){v.play();this.textContent='⏸';this.setAttribute('aria-label','Pause video');}else{v.pause();this.textContent='▶';this.setAttribute('aria-label','Play video');}">⏸</button>
-</div>
-
-<p style="font-size: 14px; color: #6B7280;">Research base: 7–8 technicians and vendors, 4 project managers, 2 accountants, 5–6 executives, and the Director of Facilities — UW Seattle's primary sponsor.</p>
-
-<div class="pull-quote" style="margin-top: 48px;">The institution wasn't lacking expertise. It was operating without a unified source of truth.</div>
-
-<p style="margin-top: 48px;">CMMS platforms don't model asset lifespan or CapEx tradeoffs. Preventive maintenance ran on time, not risk, causing surprise failures. Replacing the legacy stack wasn't viable either.</p>
-
-<p style="margin-top: 28px;">Vendors just price for more of the same single-use tool. Nobody sells the integrated version for a mixed-use portfolio like a university's, at any price.</p>
-
-<div style="margin-top: 40px; margin-bottom: 40px;">
-  <div style="font-size: 11px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #A8A29E; margin-bottom: 16px;">Fragmentation, by owner</div>
-  <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px;">
-    <div style="border-left: 3px solid #E7E5E4; padding-left: 16px;">
-      <div style="font-weight: 600; color: #1C1917; margin-bottom: 4px;">Field conditions</div>
-      <div style="font-size: 14px; color: #57534E; line-height: 1.6;">Technicians &amp; vendors — tracked on paper or memory, rarely reached managers</div>
-    </div>
-    <div style="border-left: 3px solid #E7E5E4; padding-left: 16px;">
-      <div style="font-weight: 600; color: #1C1917; margin-bottom: 4px;">Maintenance scheduling</div>
-      <div style="font-size: 14px; color: #57534E; line-height: 1.6;">Legacy CMMS/ERP, IT-owned — ran on fixed time intervals, not real risk</div>
-    </div>
-    <div style="border-left: 3px solid #E7E5E4; padding-left: 16px;">
-      <div style="font-weight: 600; color: #1C1917; margin-bottom: 4px;">Capital requests</div>
-      <div style="font-size: 14px; color: #57534E; line-height: 1.6;">Project managers &amp; accountants — manual spreadsheets stitched before each planning cycle</div>
-    </div>
-    <div style="border-left: 3px solid #E7E5E4; padding-left: 16px;">
-      <div style="font-weight: 600; color: #1C1917; margin-bottom: 4px;">Final approval</div>
-      <div style="font-size: 14px; color: #57534E; line-height: 1.6;">Executives &amp; the Director of Facilities — decided on whatever partial data reached them</div>
-    </div>
-  </div>
-</div>
-
-<img loading="lazy" decoding="async" width="3300" height="2400" src="/images/lat/Market%20Gap.jpg" alt="Market Gap Analysis" style="width: 100%; height: auto; border-radius: 0px; margin-top: 40px; margin-bottom: 40px; display: block;" />`
-      },
-      {
         id: 'solution',
-        title: '03 — Solution',
+        title: '02 — Solution',
         headline: 'Three decisions made the system\'s intelligence trustworthy enough to act on',
         content: '',
         customComponent: (
@@ -936,6 +892,50 @@ const caseStudies = {
             </div>
           </div>
         ),
+      },
+      {
+        id: 'context-problem',
+        title: '03 — Context & Problem',
+        headline: 'Why existing tools failed the people managing this infrastructure',
+        content: `<div class="cs-video-wrap" style="width: 100%; max-width: 960px; margin: 0 auto 48px;">
+  <video autoplay loop muted playsinline preload="metadata" width="1882" height="1060" aria-label="Technician, manager, and leadership working from fragmented tools" style="display: block; width: 100%; height: auto; border-radius: 0px;">
+    <source src="/videos/lat/Flow%2001.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+  <button type="button" class="cs-video-toggle" aria-label="Pause video" onclick="var v=this.previousElementSibling;if(v.paused){v.play();this.textContent='⏸';this.setAttribute('aria-label','Pause video');}else{v.pause();this.textContent='▶';this.setAttribute('aria-label','Play video');}">⏸</button>
+</div>
+
+<p style="font-size: 14px; color: #6B7280;">Research base: 7–8 technicians and vendors, 4 project managers, 2 accountants, 5–6 executives, and the Director of Facilities — UW Seattle's primary sponsor.</p>
+
+<div class="pull-quote" style="margin-top: 48px;">The institution wasn't lacking expertise. It was operating without a unified source of truth.</div>
+
+<p style="margin-top: 48px;">CMMS platforms don't model asset lifespan or CapEx tradeoffs. Preventive maintenance ran on time, not risk, causing surprise failures. Replacing the legacy stack wasn't viable either.</p>
+
+<p style="margin-top: 28px;">Vendors just price for more of the same single-use tool. Nobody sells the integrated version for a mixed-use portfolio like a university's, at any price.</p>
+
+<div style="margin-top: 40px; margin-bottom: 40px;">
+  <div style="font-size: 11px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #A8A29E; margin-bottom: 16px;">Fragmentation, by owner</div>
+  <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px;">
+    <div style="border-left: 3px solid #E7E5E4; padding-left: 16px;">
+      <div style="font-weight: 600; color: #1C1917; margin-bottom: 4px;">Field conditions</div>
+      <div style="font-size: 14px; color: #57534E; line-height: 1.6;">Technicians &amp; vendors — tracked on paper or memory, rarely reached managers</div>
+    </div>
+    <div style="border-left: 3px solid #E7E5E4; padding-left: 16px;">
+      <div style="font-weight: 600; color: #1C1917; margin-bottom: 4px;">Maintenance scheduling</div>
+      <div style="font-size: 14px; color: #57534E; line-height: 1.6;">Legacy CMMS/ERP, IT-owned — ran on fixed time intervals, not real risk</div>
+    </div>
+    <div style="border-left: 3px solid #E7E5E4; padding-left: 16px;">
+      <div style="font-weight: 600; color: #1C1917; margin-bottom: 4px;">Capital requests</div>
+      <div style="font-size: 14px; color: #57534E; line-height: 1.6;">Project managers &amp; accountants — manual spreadsheets stitched before each planning cycle</div>
+    </div>
+    <div style="border-left: 3px solid #E7E5E4; padding-left: 16px;">
+      <div style="font-weight: 600; color: #1C1917; margin-bottom: 4px;">Final approval</div>
+      <div style="font-size: 14px; color: #57534E; line-height: 1.6;">Executives &amp; the Director of Facilities — decided on whatever partial data reached them</div>
+    </div>
+  </div>
+</div>
+
+<img loading="lazy" decoding="async" width="3300" height="2400" src="/images/lat/Market%20Gap.jpg" alt="Market Gap Analysis" style="width: 100%; height: auto; border-radius: 0px; margin-top: 40px; margin-bottom: 40px; display: block;" />`
       },
       {
         id: 'turning-point',
