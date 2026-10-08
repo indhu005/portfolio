@@ -621,7 +621,7 @@ const caseStudies = {
       decisionAuthority: 'Owned: workflow design, the human-in-the-loop approval model, and the alert-framing decisions that rebuilt manager trust in the system (see Decision 03). Client stakeholders owned data-integrity and political constraints I had to design within.'
     },
     preSnapshotHeadline: 'Fragmented data was forcing humans to do the work a system should have done',
-    preSnapshotContent: `<p style="font-size: 14px; color: #6B7280;">70–75% of operational U.S. buildings predate 2000, and no vendor sells an integrated tool for a mixed-use portfolio like a university's (<a href="https://www.eia.gov/consumption/commercial/reports/" target="_blank" rel="noopener noreferrer" style="color: #6B7280; text-decoration: underline;">EIA.gov</a>).</p>
+    preSnapshotContent: `<p style="font-size: 14px; color: #6B7280;">70–75% of operational U.S. buildings predate 2000 (<a href="https://www.eia.gov/consumption/commercial/reports/" target="_blank" rel="noopener noreferrer" style="color: #6B7280; text-decoration: underline;">EIA.gov</a>). The tools we evaluated didn't connect maintenance history, lifecycle risk, and capital planning in a way that fit the university's existing systems.</p>
 
 <p style="margin-top: 28px;">A technician underground can't access repair history. A manager stitches spreadsheets before planning. Leadership decides on partial data.</p>
 
@@ -645,68 +645,12 @@ const caseStudies = {
       {
         id: 'snapshot',
         title: '01 — Snapshot',
-        content: `<div style="border: 1px dashed #D1D5DB; background-color: #FAFAF9; padding: 28px 32px; margin-bottom: 40px;">
-  <div style="font-size: 11px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #A8A29E; margin-bottom: 10px;">Headline result</div>
-  <div style="font-family: 'Fraunces', serif; font-size: 40px; font-weight: 700; color: #1C1917; line-height: 1.1;">95% pilot adoption</div>
-  <div style="font-size: 14px; color: #6B7280; margin-top: 10px;">vs. the university IT department's 70% threshold for keeping a tool alive.</div>
-</div>
-
-<p><span style="font-weight: 600;">Product</span><br/>A maintenance platform helping a Pacific Northwest university manage 60–80+ buildings — a modular API layer alongside their legacy CMMS/ERP, turning fragmented data into decisions people could act on.</p>
-
-<p style="margin-top: 28px;"><span style="font-weight: 600;">My role.</span> Product vision, workflows, and the design system — aligning technicians, managers, accountants, and executives.</p>
-
-<p style="margin-top: 28px;"><span style="font-weight: 600;">Timeline: June 2023–May 2024, 12 months</span><br/>Discovery to pilot to release, continuing beyond my tenure.</p>
-
-<p style="margin-top: 28px;"><span style="font-weight: 600;">Team</span><br/>1 PM, 1 designer (me), 2 external engineers, plus client-side CAPEX and data teams</p>
-
-<div style="background-color: #F9FAFB; padding: 24px 28px; border-radius: 0px; border-left: 3px solid #FF7C5F; margin-top: 32px;">
+        content: `<div style="background-color: #F9FAFB; padding: 24px 28px; border-radius: 0px; border-left: 3px solid #FF7C5F;">
   <div style="font-size: 11px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #A8A29E; margin-bottom: 10px;">My contribution</div>
   <div style="font-size: 15px; color: #57534E; line-height: 1.7;">I reframed the product from a shared facilities dashboard into role-specific decision surfaces, set the approval model that let managers act on AI recommendations without blind faith, and carried the offline-first field workflow from research through pilot.</div>
 </div>
 
-<div style="width: 100%; min-height: 450px; background-color: #E5E7EB; border-radius: 0px; display: flex; align-items: center; justify-content: center; color: #9CA3AF; font-size: 14px; margin-top: 40px; margin-bottom: 40px;">Hero — one asset rendered for a technician (mobile), a manager (priority queue), and an executive (summary). One data model, three surfaces.</div>
-
-<h4 class="case-study-subhead">Impact</h4>
-
-<p style="font-size: 14px; color: #6B7280; margin-bottom: 24px;">Pilot cohort: 43 people (18 technicians, 15 operations/asset managers, 7 accounting, 3 executives), tracked over a 12-week pilot window.</p>
-
-<div class="metrics-grid metrics-grid--dark" style="margin-bottom: 20px;">
-  <div class="metrics-cell">
-    <div class="metrics-num">95%</div>
-    <div class="metrics-label">Weekly active use across the 43-person pilot (~41 of 43), vs. the university IT department's 70% threshold for keeping a tool live</div>
-    <div style="font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 10px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #4ADE80; margin-top: 10px;">Observed</div>
-  </div>
-  <div class="metrics-cell">
-    <div class="metrics-num">70% → 95%</div>
-    <div class="metrics-label">Record completeness (required fields present, no duplicates), pre/post canonical ID + sync validation. 70% baseline was the client's pre-project estimate, not a direct measurement.</div>
-    <div style="font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 10px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #4ADE80; margin-top: 10px;">Observed</div>
-  </div>
-  <div class="metrics-cell">
-    <div class="metrics-num">~20 → ~8 min</div>
-    <div class="metrics-label">Average reporting time per ticket across all pilot technicians, pre/post offline-first workflow</div>
-    <div style="font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 10px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #4ADE80; margin-top: 10px;">Observed</div>
-  </div>
-</div>
-
-<div class="metrics-grid metrics-grid--dark" style="margin-bottom: 20px;">
-  <div class="metrics-cell">
-    <div class="metrics-num">-36%</div>
-    <div class="metrics-label">Budget revisions, 12-week pilot vs. the same 12 weeks the prior year — from the university's own CAPEX/budget records</div>
-    <div style="font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 10px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #60A5FA; margin-top: 10px;">Measured</div>
-  </div>
-  <div class="metrics-cell">
-    <div class="metrics-num">-12%</div>
-    <div class="metrics-label">Emergency repair incidents, 12-week pilot vs. the same 12 weeks the prior year — from the university's maintenance records</div>
-    <div style="font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 10px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #60A5FA; margin-top: 10px;">Measured</div>
-  </div>
-  <div class="metrics-cell">
-    <div class="metrics-num">-60%</div>
-    <div class="metrics-label">Planning time, pilot vs. the prior year (see Decision 02) — managers' own time-tracking</div>
-    <div style="font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 10px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #60A5FA; margin-top: 10px;">Measured</div>
-  </div>
-</div>
-
-<p style="font-size: 14px; color: #6B7280;">Observed metrics come directly from pilot usage logs. Measured metrics are pulled from the university's own budget and maintenance records, comparing the 12-week pilot against the same period the year before.</p>`
+<div style="width: 100%; min-height: 450px; background-color: #E5E7EB; border-radius: 0px; display: flex; align-items: center; justify-content: center; color: #9CA3AF; font-size: 14px; margin-top: 40px;">Hero — one asset rendered for a technician (mobile), a manager (priority queue), and an executive (summary). One data model, three surfaces.</div>`
       },
       {
         id: 'context-problem',
@@ -724,7 +668,7 @@ const caseStudies = {
 
 <div class="pull-quote" style="margin-top: 48px;">The institution wasn't lacking expertise. It was operating without a unified source of truth.</div>
 
-<p style="margin-top: 48px;">CMMS platforms don't model asset lifespan or CapEx tradeoffs — preventive maintenance ran on time, not risk. Replacing the stack wasn't viable, and no vendor sells the integrated version at any price.</p>
+<p style="margin-top: 48px;">CMMS platforms don't model asset lifespan or CapEx tradeoffs — preventive maintenance ran on time, not risk. Replacing the stack wasn't viable, and none of the tools we evaluated offered the integrated version at any price.</p>
 
 <div style="margin-top: 40px; margin-bottom: 40px;">
   <div style="font-size: 11px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #A8A29E; margin-bottom: 16px;">Fragmentation, by owner</div>
@@ -767,7 +711,7 @@ const caseStudies = {
         content: '',
         customComponent: (
           <div>
-            <p style={{ fontSize: '15px', color: '#44403C', maxWidth: '680px', marginBottom: '56px' }}>Research showed the problem wasn't a lack of data — it was that each role had to translate raw numbers into a decision themselves. So the system did three things: <span style={{ fontWeight: 600 }}>prioritize</span> what needed attention, <span style={{ fontWeight: 600 }}>explain</span> what a prediction meant financially, and <span style={{ fontWeight: 600 }}>verify</span> it before it reached a budget. AI wasn't the product here — trustworthy decision-making was.</p>
+            <p style={{ fontSize: '15px', color: '#44403C', maxWidth: '680px', marginBottom: '56px' }}>Research showed the problem wasn't a lack of data — it was that each role had to translate raw numbers into a decision themselves. So the system did four things: <span style={{ fontWeight: 600 }}>keep data clean</span> at the source, <span style={{ fontWeight: 600 }}>prioritize</span> what needed attention, <span style={{ fontWeight: 600 }}>explain</span> what a prediction meant financially, and <span style={{ fontWeight: 600 }}>verify</span> it before it reached a budget. AI wasn't the product here — trustworthy decision-making was.</p>
 
             <div style={{ marginBottom: '96px' }}>
               <div style={{ fontSize: '11px', fontWeight: 700, letterSpacing: '0.06em', textTransform: 'uppercase', color: '#A8A29E', marginBottom: '20px' }}>One data model, three surfaces</div>
@@ -809,7 +753,7 @@ const caseStudies = {
 
                 <div style={{ flex: '0 0 100px', textAlign: 'center', marginTop: '112px' }}>
                   <div style={{ color: '#FF7C5F', fontSize: '24px' }}>→</div>
-                  <div style={{ fontSize: '13px', color: '#78716C', marginTop: '10px', lineHeight: 1.5 }}>Technicians choose what to do, not which filter to use.</div>
+                  <div style={{ fontSize: '13px', color: '#78716C', marginTop: '10px', lineHeight: 1.5 }}>We dropped the status tabs and moved scheduling and sync state onto each card.</div>
                 </div>
 
                 <div style={{ flex: '0 1 230px', minWidth: '170px' }}>
@@ -821,19 +765,19 @@ const caseStudies = {
 
                 <div style={{ flex: '0 0 100px', textAlign: 'center', marginTop: '112px' }}>
                   <div style={{ color: '#FF7C5F', fontSize: '24px' }}>→</div>
-                  <div style={{ fontSize: '13px', color: '#78716C', marginTop: '10px', lineHeight: 1.5 }}>One shift-level status makes failures impossible to miss.</div>
+                  <div style={{ fontSize: '13px', color: '#78716C', marginTop: '10px', lineHeight: 1.5 }}>A queue-level summary surfaces unsent changes; each card shows its own status and a retry action.</div>
                 </div>
 
                 <div style={{ flex: '0 1 230px', minWidth: '170px' }}>
                   <img loading="lazy" decoding="async" width={1206} height={3633} src="/images/lat/LAT%20%C2%B7%20Technician%20work%20orders%20V3.png" alt="Technician work order queue, version 3 — a summary banner showing unsent changes, including the failed Roof drain job with its Retry button" style={{ width: '100%', height: 'auto', borderRadius: '0px', display: 'block' }} />
                   <div style={{ fontSize: '12px', fontWeight: 700, letterSpacing: '0.04em', textTransform: 'uppercase', color: '#FF7C5F', marginTop: '16px' }}>One shift, one status</div>
-                  <div style={{ fontSize: '13px', color: '#57534E', marginTop: '4px' }}>Banner isolates failures</div>
-                  <div style={{ fontSize: '13px', color: '#78716C', marginTop: '6px' }}>One status for the shift, so a stuck update can't hide.</div>
+                  <div style={{ fontSize: '13px', color: '#57534E', marginTop: '4px' }}>Banner breaks out saved, sending, and failed</div>
+                  <div style={{ fontSize: '13px', color: '#78716C', marginTop: '6px' }}>Connection and sync are shown separately — a connected device can still have changes stuck or failing to upload.</div>
                 </div>
               </div>
 
               <div style={{ marginTop: '64px' }}>
-                <div style={{ fontSize: '11px', fontWeight: 700, letterSpacing: '0.06em', textTransform: 'uppercase', color: '#A8A29E', marginBottom: '20px' }}>The card became the source of truth for the shift</div>
+                <div style={{ fontSize: '11px', fontWeight: 700, letterSpacing: '0.06em', textTransform: 'uppercase', color: '#A8A29E', marginBottom: '20px' }}>The work-order card brought planning, sync, and updates into one place</div>
 
                 <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'flex-start', gap: '40px', rowGap: '48px', flexWrap: 'wrap' }}>
                   <div style={{ flex: '1 1 240px', maxWidth: '260px', minWidth: '200px' }}>
@@ -1098,7 +1042,7 @@ const caseStudies = {
 
             <img loading="lazy" decoding="async" width={2000} height={1455} src="/images/lat/AB%20Testing.webp" alt="AB Testing comparison" style={{ width: '100%', height: 'auto', borderRadius: '0px', marginTop: '8px', marginBottom: '40px', display: 'block' }} />
 
-            <div className="pull-quote">The failure mode is never the UI. It's adoption, trust, and behavior — once those break, the metrics follow.</div>
+            <div className="pull-quote">A usable interface wasn't enough on its own. Adoption depended on reliable data, understandable recommendations, and clear decision ownership.</div>
 
             <div style={{ width: '100%', height: '450px', backgroundColor: '#E5E7EB', borderRadius: '0px', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#9CA3AF', fontSize: '14px', marginTop: '40px', marginBottom: '40px' }}>
               <div style={{ textAlign: 'center', padding: '20px' }}>
@@ -1113,7 +1057,47 @@ const caseStudies = {
         id: 'impact',
         title: '07 — Impact',
         headline: "The biggest change wasn't cost savings — it was decision confidence",
-        content: `<p><span style="font-weight: 600;">Operational.</span> Linking work orders to lifecycle cost made repair history visible in real time.</p>
+        content: `<p style="font-size: 14px; color: #6B7280; margin-bottom: 24px;">Pilot cohort: 43 people (18 technicians, 15 operations/asset managers, 7 accounting, 3 executives), tracked over a 12-week pilot window.</p>
+
+<div class="metrics-grid metrics-grid--dark" style="margin-bottom: 20px;">
+  <div class="metrics-cell">
+    <div class="metrics-num">95%</div>
+    <div class="metrics-label">Weekly active use across the 43-person pilot (~41 of 43), vs. the university IT department's 70% threshold for keeping a tool live</div>
+    <div style="font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 10px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #4ADE80; margin-top: 10px;">Observed</div>
+  </div>
+  <div class="metrics-cell">
+    <div class="metrics-num">70% → 95%</div>
+    <div class="metrics-label">Record completeness (required fields present, no duplicates), pre/post canonical ID + sync validation. 70% baseline was the client's pre-project estimate, not a direct measurement.</div>
+    <div style="font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 10px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #4ADE80; margin-top: 10px;">Observed</div>
+  </div>
+  <div class="metrics-cell">
+    <div class="metrics-num">~20 → ~8 min</div>
+    <div class="metrics-label">Average reporting time per ticket across all pilot technicians, pre/post offline-first workflow</div>
+    <div style="font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 10px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #4ADE80; margin-top: 10px;">Observed</div>
+  </div>
+</div>
+
+<div class="metrics-grid metrics-grid--dark" style="margin-bottom: 20px;">
+  <div class="metrics-cell">
+    <div class="metrics-num">-36%</div>
+    <div class="metrics-label">Budget revisions, 12-week pilot vs. the same 12 weeks the prior year — from the university's own CAPEX/budget records</div>
+    <div style="font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 10px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #60A5FA; margin-top: 10px;">Measured</div>
+  </div>
+  <div class="metrics-cell">
+    <div class="metrics-num">-12%</div>
+    <div class="metrics-label">Emergency repair incidents, 12-week pilot vs. the same 12 weeks the prior year — from the university's maintenance records</div>
+    <div style="font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 10px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #60A5FA; margin-top: 10px;">Measured</div>
+  </div>
+  <div class="metrics-cell">
+    <div class="metrics-num">-60%</div>
+    <div class="metrics-label">Planning time, pilot vs. the prior year (see Decision 02) — managers' own time-tracking</div>
+    <div style="font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 10px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #60A5FA; margin-top: 10px;">Measured</div>
+  </div>
+</div>
+
+<p style="font-size: 14px; color: #6B7280; margin-bottom: 40px;">Observed metrics come directly from pilot usage logs. Measured metrics are pulled from the university's own budget and maintenance records, comparing the 12-week pilot against the same period the year before.</p>
+
+<p><span style="font-weight: 600;">Operational.</span> Linking work orders to lifecycle cost made repair history visible in real time.</p>
 
 <p style="margin-top: 28px;"><span style="font-weight: 600;">Decision-making.</span> Teams stopped entering meetings to reconcile facts, and started entering them to decide.</p>
 

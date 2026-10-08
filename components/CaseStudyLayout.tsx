@@ -424,6 +424,64 @@ export default function CaseStudyLayout({ caseStudy, slug }: CaseStudyLayoutProp
                 )
               )}
 
+              {/* Section Label - moved above Brief/TL;DR for the first section, right under the hero */}
+              {index === 0 && (
+                <div style={{
+                  display: 'flex',
+                  justifyContent: 'space-between',
+                  alignItems: 'center',
+                  flexWrap: 'wrap',
+                  gap: '12px',
+                  marginBottom: '24px',
+                  maxWidth: isMobile || isTablet ? '850px' : '1020px',
+                  marginLeft: 'auto',
+                  marginRight: 'auto',
+                }}>
+                  <h2 style={{
+                    fontSize: '12px',
+                    fontWeight: 700,
+                    color: 'var(--accent)',
+                    letterSpacing: '0.08em',
+                    textTransform: 'uppercase',
+                    margin: 0,
+                    fontFamily: 'inherit',
+                  }}>
+                    {section.title}
+                  </h2>
+
+                  {section.showPrototypeCta && caseStudy.figmaPrototypeUrl && (
+                    <a
+                      href={caseStudy.figmaPrototypeUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      style={{
+                        display: 'inline-flex',
+                        alignItems: 'center',
+                        gap: '8px',
+                        backgroundColor: 'var(--accent)',
+                        color: '#FFFFFF',
+                        borderRadius: '0px',
+                        padding: '8px 16px',
+                        fontSize: '13px',
+                        fontWeight: 600,
+                        textDecoration: 'none',
+                        transition: 'transform 0.15s ease, box-shadow 0.15s ease',
+                      }}
+                      onMouseEnter={(e) => {
+                        e.currentTarget.style.transform = 'translateY(-2px)'
+                        e.currentTarget.style.boxShadow = '0 6px 16px rgba(28, 25, 23, 0.25)'
+                      }}
+                      onMouseLeave={(e) => {
+                        e.currentTarget.style.transform = 'translateY(0)'
+                        e.currentTarget.style.boxShadow = 'none'
+                      }}
+                    >
+                      See Prototype →
+                    </a>
+                  )}
+                </div>
+              )}
+
               {/* Brief Section - Context/Constraint/Decision/Tradeoff, appears before TL;DR. */}
               {index === 0 && caseStudy.brief && (
                 <div style={{
@@ -586,61 +644,63 @@ export default function CaseStudyLayout({ caseStudy, slug }: CaseStudyLayoutProp
                 </div>
               )}
 
-              {/* Section Label */}
-              <div style={{
-                display: 'flex',
-                justifyContent: 'space-between',
-                alignItems: 'center',
-                flexWrap: 'wrap',
-                gap: '12px',
-                marginBottom: '12px',
-                maxWidth: isMobile || isTablet ? '850px' : '1020px',
-                marginLeft: 'auto',
-                marginRight: 'auto',
-              }}>
-                <h2 style={{
-                  fontSize: '12px',
-                  fontWeight: 700,
-                  color: 'var(--accent)',
-                  letterSpacing: '0.08em',
-                  textTransform: 'uppercase',
-                  margin: 0,
-                  fontFamily: 'inherit',
+              {/* Section Label (rendered above for the first section, right under the hero) */}
+              {index !== 0 && (
+                <div style={{
+                  display: 'flex',
+                  justifyContent: 'space-between',
+                  alignItems: 'center',
+                  flexWrap: 'wrap',
+                  gap: '12px',
+                  marginBottom: '12px',
+                  maxWidth: isMobile || isTablet ? '850px' : '1020px',
+                  marginLeft: 'auto',
+                  marginRight: 'auto',
                 }}>
-                  {section.title}
-                </h2>
+                  <h2 style={{
+                    fontSize: '12px',
+                    fontWeight: 700,
+                    color: 'var(--accent)',
+                    letterSpacing: '0.08em',
+                    textTransform: 'uppercase',
+                    margin: 0,
+                    fontFamily: 'inherit',
+                  }}>
+                    {section.title}
+                  </h2>
 
-                {section.showPrototypeCta && caseStudy.figmaPrototypeUrl && (
-                  <a
-                    href={caseStudy.figmaPrototypeUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    style={{
-                      display: 'inline-flex',
-                      alignItems: 'center',
-                      gap: '8px',
-                      backgroundColor: 'var(--accent)',
-                      color: '#FFFFFF',
-                      borderRadius: '0px',
-                      padding: '8px 16px',
-                      fontSize: '13px',
-                      fontWeight: 600,
-                      textDecoration: 'none',
-                      transition: 'transform 0.15s ease, box-shadow 0.15s ease',
-                    }}
-                    onMouseEnter={(e) => {
-                      e.currentTarget.style.transform = 'translateY(-2px)'
-                      e.currentTarget.style.boxShadow = '0 6px 16px rgba(28, 25, 23, 0.25)'
-                    }}
-                    onMouseLeave={(e) => {
-                      e.currentTarget.style.transform = 'translateY(0)'
-                      e.currentTarget.style.boxShadow = 'none'
-                    }}
-                  >
-                    See Prototype →
-                  </a>
-                )}
-              </div>
+                  {section.showPrototypeCta && caseStudy.figmaPrototypeUrl && (
+                    <a
+                      href={caseStudy.figmaPrototypeUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      style={{
+                        display: 'inline-flex',
+                        alignItems: 'center',
+                        gap: '8px',
+                        backgroundColor: 'var(--accent)',
+                        color: '#FFFFFF',
+                        borderRadius: '0px',
+                        padding: '8px 16px',
+                        fontSize: '13px',
+                        fontWeight: 600,
+                        textDecoration: 'none',
+                        transition: 'transform 0.15s ease, box-shadow 0.15s ease',
+                      }}
+                      onMouseEnter={(e) => {
+                        e.currentTarget.style.transform = 'translateY(-2px)'
+                        e.currentTarget.style.boxShadow = '0 6px 16px rgba(28, 25, 23, 0.25)'
+                      }}
+                      onMouseLeave={(e) => {
+                        e.currentTarget.style.transform = 'translateY(0)'
+                        e.currentTarget.style.boxShadow = 'none'
+                      }}
+                    >
+                      See Prototype →
+                    </a>
+                  )}
+                </div>
+              )}
 
               {/* Section Headline */}
               {section.headline && (
