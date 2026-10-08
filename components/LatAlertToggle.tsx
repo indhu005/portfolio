@@ -14,7 +14,7 @@ const frames: { key: Framing; label: string; content: React.ReactNode }[] = [
   {
     key: 'consequence',
     label: 'Consequence framing',
-    content: <>High vibration + 9yr service &rarr; $18K if replaced now</>,
+    content: <>3 years past 9-year lifespan &rarr; $3K/month if not replaced</>,
   },
 ]
 

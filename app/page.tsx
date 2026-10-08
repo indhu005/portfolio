@@ -836,7 +836,7 @@ export default function Home() {
                   cells={[
                     { label: 'Role & Team', value: 'Founding Designer · team of 5 — 2 engineers, 1 PM, 2 designers I hired' },
                     { label: 'Constraint', value: "Engineering was 12 time zones away; a co-founder's exit erased backend capacity for planned integrations." },
-                    { label: 'Impact', value: '0→20K MAUs · $1.5M raised · YC F24' },
+                    { label: 'Impact', value: '0→20K MAUs · $1.5M raised · later pivoted into YC F24' },
                     { label: 'Tech & Approach', value: 'Design systems · Chrome extension · Credit-based economics' },
                   ]}
                 />

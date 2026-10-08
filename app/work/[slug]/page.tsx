@@ -20,7 +20,7 @@ const caseStudies = {
       role: 'Founding Product Designer',
       team: '5 (2 engineers, 1 PM, 2 designers I hired)',
       timeline: '2 years (2021–2022)',
-      impact: '0→20K MAUs | $1.5M raised | YC F24',
+      impact: '0→20K MAUs | $1.5M raised | later pivoted into YC F24',
       skills: 'Product strategy · Design systems · User research · PRDs · Chrome extension · Credit economics',
       decisionAuthority: 'Owned: every shipped surface, the credit-cap mechanic, the product-card system, hiring the two designers who followed me. Founders owned vision and fundraising; I translated it into what shipped alongside the PM.'
     },
@@ -96,8 +96,13 @@ const caseStudies = {
     <div style="font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 10px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #4ADE80; margin-top: 10px;">Observed</div>
   </div>
   <div class="metrics-cell">
-    <div class="metrics-num">60%</div>
-    <div class="metrics-label">Extension adoption, within 3 months</div>
+    <div class="metrics-num">1–2% → 30–35%</div>
+    <div class="metrics-label">Lesser-known product activity, six weeks after the credit cap shipped — the design decision behind the partner-subscription growth above</div>
+    <div style="font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 10px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #4ADE80; margin-top: 10px;">Observed</div>
+  </div>
+  <div class="metrics-cell">
+    <div class="metrics-num">60% → 65%</div>
+    <div class="metrics-label">Extension adoption, 3 months post-launch vs. by the time I left</div>
     <div style="font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 10px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #4ADE80; margin-top: 10px;">Observed</div>
   </div>
   <div class="metrics-cell">
@@ -496,8 +501,8 @@ const caseStudies = {
   </div>
 
   <div class="feature-stat">
-    <div class="feature-stat-num">65%</div>
-    <div class="feature-stat-label">Of users on the extension by the time I left — the fix for an 18-month-old unsolved problem</div>
+    <div class="feature-stat-num">60% → 65%</div>
+    <div class="feature-stat-label">Extension adoption, 3 months post-launch vs. by the time I left — the fix for an 18-month-old unsolved problem</div>
   </div>
 
   <p>Partner integrations were the founders' original plan — each partner would build against our API. Then our technical co-founder left, taking backend capacity with him, and that plan stopped being possible. Watching Honey auto-fill codes at checkout, I realized we didn't need partner engineering at all — just to live where the user already is. Prototyped in two days, shipped that week.</p>
@@ -585,7 +590,9 @@ const caseStudies = {
         id: 'impact',
         title: '06 — Impact & Reflection',
         headline: "The most important thing a founding designer builds isn't the product. It's the foundation that lets the product grow without being rebuilt from scratch",
-        content: `<p>By year three, the founding team dispersed. The company pivoted into YC F24 on financial analytics — the marketplace didn't survive, but the research, partnerships, and funding that made YC possible did.</p>
+        content: `<p><span style="font-weight: 600;">What I got wrong.</span> I thought unlimited credits would show us honest user behavior — let people spend freely and we'd see what they actually wanted. It didn't. With no cost to switching, users just defaulted to the brand they already trusted; there was no signal in the data. The cap worked precisely because it removed that option — forcing a real tradeoff was what finally showed us what people would try when trying something new actually cost them something.</p>
+
+<p style="margin-top: 28px;">By year three, the founding team dispersed. The company pivoted into YC F24 on financial analytics — the marketplace didn't survive, but the research, partnerships, and funding that made YC possible did.</p>
 
 <div class="pull-quote" style="margin-top: 48px;">The credit cap wasn't valuable because it monetized the product. It was valuable because it generated the behavioral data that shaped the entire partnership strategy.</div>
 
@@ -603,7 +610,7 @@ const caseStudies = {
       context: 'Lead designer for an ML platform helping a university manage 60–80+ buildings across three campuses.',
       constraint: 'Legacy CMMS/ERP couldn\'t be disrupted, data had hard integrity boundaries, and capital decisions were political.',
       decision: 'Shipped as a modular API layer with human-in-the-loop AI: approval gates, visible reasoning, logged overrides.',
-      tradeoff: 'Chose slower, trust-building decisions over speed — the boiler incident validated staying cautious.'
+      tradeoff: 'Chose human review over full automation, even though it was slower than letting the model act on its own — the boiler incident validated staying cautious.'
     },
     tldr: {
       role: 'Lead Product Designer (60% design, 40% strategy)',
@@ -611,7 +618,7 @@ const caseStudies = {
       timeline: '12 months (Jun 2023–May 2024)',
       impact: '95% pilot adoption',
       skills: 'Enterprise UX · Trust-centered AI design · Stakeholder alignment · Field research · API-first architecture',
-      decisionAuthority: 'Owned: workflow design, the human-in-the-loop approval model, and the alert-framing decisions that cut override rate from 61% to 19%. Client stakeholders owned data-integrity and political constraints I had to design within.'
+      decisionAuthority: 'Owned: workflow design, the human-in-the-loop approval model, and the alert-framing decisions that rebuilt manager trust in the system (see Decision 03). Client stakeholders owned data-integrity and political constraints I had to design within.'
     },
     preSnapshotHeadline: 'Fragmented data was forcing humans to do the work a system should have done',
     preSnapshotContent: `<p style="font-size: 14px; color: #6B7280;">70–75% of operational U.S. buildings predate 2000, and no vendor sells an integrated tool for a mixed-use portfolio like a university's (<a href="https://www.eia.gov/consumption/commercial/reports/" target="_blank" rel="noopener noreferrer" style="color: #6B7280; text-decoration: underline;">EIA.gov</a>).</p>
@@ -641,7 +648,7 @@ const caseStudies = {
         content: `<div style="border: 1px dashed #D1D5DB; background-color: #FAFAF9; padding: 28px 32px; margin-bottom: 40px;">
   <div style="font-size: 11px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #A8A29E; margin-bottom: 10px;">Headline result</div>
   <div style="font-family: 'Fraunces', serif; font-size: 40px; font-weight: 700; color: #1C1917; line-height: 1.1;">95% pilot adoption</div>
-  <div style="font-size: 14px; color: #6B7280; margin-top: 10px;">vs. UW IT's 70% threshold for keeping a tool alive.</div>
+  <div style="font-size: 14px; color: #6B7280; margin-top: 10px;">vs. the university IT department's 70% threshold for keeping a tool alive.</div>
 </div>
 
 <p><span style="font-weight: 600;">Product</span><br/>A maintenance platform helping a Pacific Northwest university manage 60–80+ buildings — a modular API layer alongside their legacy CMMS/ERP, turning fragmented data into decisions people could act on.</p>
@@ -661,25 +668,45 @@ const caseStudies = {
 
 <h4 class="case-study-subhead">Impact</h4>
 
+<p style="font-size: 14px; color: #6B7280; margin-bottom: 24px;">Pilot cohort: 43 people (18 technicians, 15 operations/asset managers, 7 accounting, 3 executives), tracked over a 12-week pilot window.</p>
+
 <div class="metrics-grid metrics-grid--dark" style="margin-bottom: 20px;">
   <div class="metrics-cell">
     <div class="metrics-num">95%</div>
-    <div class="metrics-label">Pilot adoption, vs. UW IT's 70% threshold for keeping a tool live</div>
+    <div class="metrics-label">Weekly active use across the 43-person pilot (~41 of 43), vs. the university IT department's 70% threshold for keeping a tool live</div>
     <div style="font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 10px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #4ADE80; margin-top: 10px;">Observed</div>
   </div>
   <div class="metrics-cell">
     <div class="metrics-num">70% → 95%</div>
-    <div class="metrics-label">Data accuracy, pre/post canonical ID + sync validation</div>
+    <div class="metrics-label">Record completeness (required fields present, no duplicates), pre/post canonical ID + sync validation. 70% baseline was the client's pre-project estimate, not a direct measurement.</div>
     <div style="font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 10px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #4ADE80; margin-top: 10px;">Observed</div>
   </div>
   <div class="metrics-cell">
     <div class="metrics-num">~20 → ~8 min</div>
-    <div class="metrics-label">Reporting time per ticket, pre/post offline-first workflow</div>
+    <div class="metrics-label">Average reporting time per ticket across all pilot technicians, pre/post offline-first workflow</div>
     <div style="font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 10px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #4ADE80; margin-top: 10px;">Observed</div>
   </div>
 </div>
 
-<p style="font-size: 14px; color: #6B7280;">All three observed directly from pilot usage. Budget, incident, and planning impact appear in context in the sections below.</p>`
+<div class="metrics-grid metrics-grid--dark" style="margin-bottom: 20px;">
+  <div class="metrics-cell">
+    <div class="metrics-num">-36%</div>
+    <div class="metrics-label">Budget revisions, 12-week pilot vs. the same 12 weeks the prior year — from the university's own CAPEX/budget records</div>
+    <div style="font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 10px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #60A5FA; margin-top: 10px;">Measured</div>
+  </div>
+  <div class="metrics-cell">
+    <div class="metrics-num">-12%</div>
+    <div class="metrics-label">Emergency repair incidents, 12-week pilot vs. the same 12 weeks the prior year — from the university's maintenance records</div>
+    <div style="font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 10px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #60A5FA; margin-top: 10px;">Measured</div>
+  </div>
+  <div class="metrics-cell">
+    <div class="metrics-num">-60%</div>
+    <div class="metrics-label">Planning time, pilot vs. the prior year (see Decision 02) — managers' own time-tracking</div>
+    <div style="font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 10px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #60A5FA; margin-top: 10px;">Measured</div>
+  </div>
+</div>
+
+<p style="font-size: 14px; color: #6B7280;">Observed metrics come directly from pilot usage logs. Measured metrics are pulled from the university's own budget and maintenance records, comparing the 12-week pilot against the same period the year before.</p>`
       },
       {
         id: 'context-problem',
@@ -693,7 +720,7 @@ const caseStudies = {
   <button type="button" class="cs-video-toggle" aria-label="Pause video" onclick="var v=this.previousElementSibling;if(v.paused){v.play();this.textContent='⏸';this.setAttribute('aria-label','Pause video');}else{v.pause();this.textContent='▶';this.setAttribute('aria-label','Play video');}">⏸</button>
 </div>
 
-<p style="font-size: 14px; color: #6B7280;">Research base: 7–8 technicians and vendors, 4 project managers, 2 accountants, 5–6 executives, and the Director of Facilities — UW Seattle's primary sponsor.</p>
+<p style="font-size: 14px; color: #6B7280;">Discovery research (interviews, separate from the 43-person pilot that came later): 7–8 technicians and vendors, 4 project managers, 2 accountants, 5–6 executives, and the Director of Facilities — the university's primary sponsor.</p>
 
 <div class="pull-quote" style="margin-top: 48px;">The institution wasn't lacking expertise. It was operating without a unified source of truth.</div>
 
@@ -725,8 +752,8 @@ const caseStudies = {
   <div style="font-size: 11px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: rgba(255,255,255,0.65); margin-bottom: 20px;">What the research changed</div>
   <div style="display: flex; flex-direction: column; gap: 20px;">
     <p style="font-size: 15px; line-height: 1.6; margin: 0; padding-left: 16px; border-left: 3px solid rgba(255,255,255,0.35);"><span style="color: rgba(255,255,255,0.7);">Technicians worked underground with no signal</span> <span style="color: #FFFFFF;">→</span> <span style="color: rgba(255,255,255,0.9); font-style: italic;">connectivity isn't guaranteed</span> <span style="color: #FFFFFF;">→</span> <span style="color: #FFFFFF; font-weight: 600;">offline-first capture with queued auto-sync</span></p>
-    <p style="font-size: 15px; line-height: 1.6; margin: 0; padding-left: 16px; border-left: 3px solid rgba(255,255,255,0.35);"><span style="color: rgba(255,255,255,0.7);">Managers scanned 8+ graphs before acting on anything</span> <span style="color: #FFFFFF;">→</span> <span style="color: rgba(255,255,255,0.9); font-style: italic;">more information wasn't producing better decisions</span> <span style="color: #FFFFFF;">→</span> <span style="color: #FFFFFF; font-weight: 600;">a ranked priority queue replaced the dashboard</span></p>
-    <p style="font-size: 15px; line-height: 1.6; margin: 0; padding-left: 16px; border-left: 3px solid rgba(255,255,255,0.35);"><span style="color: rgba(255,255,255,0.7);">Managers hesitated on a "68% failure risk" alert</span> <span style="color: #FFFFFF;">→</span> <span style="color: rgba(255,255,255,0.9); font-style: italic;">a probability isn't actionable, a consequence is</span> <span style="color: #FFFFFF;">→</span> <span style="color: #FFFFFF; font-weight: 600;">consequence framing: cost and timeframe, not confidence</span></p>
+    <p style="font-size: 15px; line-height: 1.6; margin: 0; padding-left: 16px; border-left: 3px solid rgba(255,255,255,0.35);"><span style="color: rgba(255,255,255,0.7);">Managers scanned a wall of graphs before acting on anything</span> <span style="color: #FFFFFF;">→</span> <span style="color: rgba(255,255,255,0.9); font-style: italic;">more information wasn't producing better decisions</span> <span style="color: #FFFFFF;">→</span> <span style="color: #FFFFFF; font-weight: 600;">a ranked priority queue replaced the dashboard</span></p>
+    <p style="font-size: 15px; line-height: 1.6; margin: 0; padding-left: 16px; border-left: 3px solid rgba(255,255,255,0.35);"><span style="color: rgba(255,255,255,0.7);">Managers hesitated on a "68% failure risk" alert</span> <span style="color: #FFFFFF;">→</span> <span style="color: rgba(255,255,255,0.9); font-style: italic;">a risk score tells you how worried to be, not what to do</span> <span style="color: #FFFFFF;">→</span> <span style="color: #FFFFFF; font-weight: 600;">alerts reframed around cost and timeframe</span></p>
     <p style="font-size: 15px; line-height: 1.6; margin: 0; padding-left: 16px; border-left: 3px solid rgba(255,255,255,0.35);"><span style="color: rgba(255,255,255,0.7);">Legacy records had inherited duplicates that inflated risk scores</span> <span style="color: #FFFFFF;">→</span> <span style="color: rgba(255,255,255,0.9); font-style: italic;">an AI system inherits its data's quality problems</span> <span style="color: #FFFFFF;">→</span> <span style="color: #FFFFFF; font-weight: 600;">a "Needs Verification" state with mandatory human approval</span></p>
   </div>
 </div>
@@ -736,7 +763,7 @@ const caseStudies = {
       {
         id: 'solution',
         title: '03 — Solution',
-        headline: 'Three decisions: prioritize what matters, explain what it costs, verify before it acts',
+        headline: 'Four decisions: keep the data clean, prioritize what matters, explain what it costs, verify before it acts',
         content: '',
         customComponent: (
           <div>
@@ -762,10 +789,16 @@ const caseStudies = {
               </div>
             </div>
 
+            <div style={{ marginBottom: '8px' }}>
+              <div style={{ fontSize: '13px', fontWeight: 700, color: '#FF7C5F', letterSpacing: '0.06em', textTransform: 'uppercase', marginBottom: '8px' }}>Decision 01</div>
+              <div style={{ fontSize: '20px', fontWeight: 600, color: '#1C1917', marginBottom: '16px' }}>Keep the data clean at the source</div>
+              <p><span style={{ fontWeight: 600 }}>Problem.</span> Field data is where "70% data accuracy" actually breaks — a completed job whose update never reaches the system is, for everyone downstream, a job that never happened.</p>
+            </div>
+
             <div style={{ marginBottom: '48px' }}>
               <div style={{ fontSize: '11px', fontWeight: 700, letterSpacing: '0.06em', textTransform: 'uppercase', color: '#A8A29E', marginBottom: '20px' }}>Technician queue, three iterations</div>
 
-              <p style={{ fontSize: '15px', color: '#44403C', maxWidth: '640px' }}>For field technicians, a completed action isn't complete if its update never reaches the system — so we made sync state visible on the work order itself.</p>
+              <p style={{ fontSize: '15px', color: '#44403C', maxWidth: '640px' }}>So we made sync state visible on the work order itself.</p>
 
               <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'flex-start', gap: '24px', marginTop: '56px', flexWrap: 'wrap' }}>
                 <div style={{ flex: '0 1 230px', minWidth: '170px' }}>
@@ -838,36 +871,41 @@ const caseStudies = {
               </div>
 
               <p style={{ fontSize: '15px', color: '#44403C', marginTop: '32px', maxWidth: '640px' }}><span style={{ fontWeight: 600 }}>A failed sync shouldn't feel like lost work.</span> We kept the update safely on-device and made recovery one tap.</p>
+              <p style={{ fontSize: '15px', color: '#78716C', marginTop: '12px', maxWidth: '640px' }}><span style={{ fontWeight: 600, color: '#44403C' }}>Result.</span> This is the field layer behind the 70% → 95% data-accuracy jump (see Impact) — everything managers and executives act on starts here.</p>
             </div>
 
             <div style={{ marginBottom: '8px' }}>
-              <div style={{ fontSize: '13px', fontWeight: 700, color: '#FF7C5F', letterSpacing: '0.06em', textTransform: 'uppercase', marginBottom: '8px' }}>Decision 01</div>
+              <div style={{ fontSize: '13px', fontWeight: 700, color: '#FF7C5F', letterSpacing: '0.06em', textTransform: 'uppercase', marginBottom: '8px' }}>Decision 02</div>
               <div style={{ fontSize: '20px', fontWeight: 600, color: '#1C1917', marginBottom: '16px' }}>Replace the "Everything Dashboard"</div>
               <p><span style={{ fontWeight: 600 }}>Problem.</span> Managers scanned 8+ graphs without acting on them.</p>
-              <p style={{ marginTop: '12px' }}><span style={{ fontWeight: 600 }}>Design.</span> A ranked priority queue replaced the dashboard.</p>
-              <p style={{ marginTop: '12px' }}><span style={{ fontWeight: 600 }}>Why.</span> Prioritization beat information density.</p>
-              <p style={{ marginTop: '12px', color: '#78716C' }}><span style={{ fontWeight: 600, color: '#44403C' }}>Result.</span> Planning time dropped 60% vs. the prior year — managers spent that time deciding instead of reconciling.</p>
+              <p style={{ marginTop: '12px' }}><span style={{ fontWeight: 600 }}>Considered.</span> Customizable graphs, a trimmed dashboard, alerts-only, and graphs that only appeared when needed — all prototyped and tested. All still overwhelmed managers and technicians; in testing, the hidden graphs went mostly unopened.</p>
+              <p style={{ marginTop: '12px' }}><span style={{ fontWeight: 600 }}>Design.</span> A ranked priority queue replaced the dashboard. Filters stayed, repurposed to show which options were feasible rather than drill into one asset. Only the versions that tested well shipped — stakeholders were cost-conscious, and IT didn't want to retrain technicians twice.</p>
+              <p style={{ marginTop: '12px' }}><span style={{ fontWeight: 600 }}>Why.</span> Post-test interviews said it plainly: less is more.</p>
+              <p style={{ marginTop: '12px' }}><span style={{ fontWeight: 600 }}>Cost.</span> The queue gave up the auto-arranged calendar — managers liked it, but it got messy — replaced with a daily view linked to the monthly calendar.</p>
+              <p style={{ marginTop: '12px', color: '#78716C' }}><span style={{ fontWeight: 600, color: '#44403C' }}>Result.</span> Planning time dropped 60% vs. the prior year. Across 12 managers, weekly item-closure rate rose from ~4-of-10 to 8–9-of-10. Across 20+ logged decisions over 5 weeks, time from opening an asset to recording a decision fell from 14 to 4 minutes.</p>
             </div>
 
             <div style={{ width: '100%', height: '400px', backgroundColor: '#E5E7EB', borderRadius: '0px', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#9CA3AF', fontSize: '14px', marginTop: '40px', marginBottom: '48px' }}>
               <div style={{ textAlign: 'center', padding: '20px' }}>
                 <div style={{ fontWeight: 600, marginBottom: '8px' }}>IMAGE 2: Dashboard Before/After</div>
-                <div style={{ fontSize: '13px', lineHeight: 1.5 }}>8+ graphs → priority queue<br/>"Decision time: 14min → 4min"</div>
+                <div style={{ fontSize: '13px', lineHeight: 1.5 }}>Graph wall → priority queue</div>
               </div>
             </div>
 
             <div style={{ backgroundColor: '#FFFFFF', border: '1px solid #F3E8E2', borderTop: '4px solid #FF7C5F', borderRadius: '0px', padding: '40px', boxShadow: '0 4px 24px rgba(0,0,0,0.04)', marginBottom: '48px' }}>
-              <div style={{ fontSize: '13px', fontWeight: 700, color: '#FF7C5F', letterSpacing: '0.06em', textTransform: 'uppercase', marginBottom: '8px' }}>Decision 02 — the core insight</div>
+              <div style={{ fontSize: '13px', fontWeight: 700, color: '#FF7C5F', letterSpacing: '0.06em', textTransform: 'uppercase', marginBottom: '8px' }}>Decision 03 — the core insight</div>
               <div style={{ fontSize: '26px', fontWeight: 600, color: '#1C1917', marginBottom: '16px' }}>Turn predictions into consequences</div>
               <div className="pull-quote" style={{ marginBottom: '20px' }}>A probability isn't a decision. A consequence is.</div>
-              <p>The question wasn't how confident the model was. It was what decision the manager actually needed to make.</p>
-              <p style={{ marginTop: '12px' }}>Early alerts said <span style={{ fontStyle: 'italic' }}>"Boiler failure risk: 68%"</span> — a probability, not a decision. Managers hesitated on it. We shifted to consequence framing: <span style={{ fontStyle: 'italic' }}>"9 years in service → delaying replacement may cost $18K."</span> On the boiler alert, the manager requested an inspection and approved the replacement within a day.</p>
+
+              <p>First version said <span style={{ fontStyle: 'italic' }}>"Boiler failure risk: 68%"</span> — a probability. Managers didn't override it, they said they'd "have to look into it." They didn't trust a number they couldn't trace. Chasing that down also surfaced a data-quality problem serious enough that we brought on a data-scientist intern to fix the dataset.</p>
+
+              <p style={{ marginTop: '12px' }}>We tested time-to-failure and plain-language severity before landing on cost in dollars. Dollars won because managers already decide on a fixed rhythm — the monthly CAPEX cycle — and a dollar figure maps straight onto "can I request this now," instead of making them translate a probability themselves.</p>
 
               <LatAlertToggle />
 
               <p style={{ marginTop: '24px' }}><span style={{ fontWeight: 600 }}>Why.</span> The alert didn't need to prove confidence — it needed to give managers enough to decide: what's at stake, and what happens if they wait.</p>
 
-              <p style={{ marginTop: '12px' }}><span style={{ fontWeight: 600, color: '#44403C' }}>Result.</span> <span style={{ color: '#78716C' }}>Override rate fell from 61% to 19% as consequence framing rolled out — managers weren't just agreeing with the model more, they were catching problems earlier.</span></p>
+              <p style={{ marginTop: '12px' }}><span style={{ fontWeight: 600, color: '#44403C' }}>Result.</span> <span style={{ color: '#78716C' }}>Override rate fell from 61% (pilot) to 19% (first quarter post-release). Work order resolution time fell from 3 days to 2 hours, tracked over 6–8 weeks. Meeting load took about 5 weeks to follow.</span></p>
 
               <div style={{ backgroundColor: '#FFF9F5', padding: '24px', borderRadius: '0px', borderLeft: '3px solid #FF7C5F', marginTop: '32px' }}>
                 <div className="cs-card-title cs-card-title--sm">Model behavior</div>
@@ -881,7 +919,7 @@ const caseStudies = {
             </div>
 
             <div style={{ marginBottom: '8px' }}>
-              <div style={{ fontSize: '13px', fontWeight: 700, color: '#FF7C5F', letterSpacing: '0.06em', textTransform: 'uppercase', marginBottom: '8px' }}>Decision 03</div>
+              <div style={{ fontSize: '13px', fontWeight: 700, color: '#FF7C5F', letterSpacing: '0.06em', textTransform: 'uppercase', marginBottom: '8px' }}>Decision 04</div>
               <div style={{ fontSize: '20px', fontWeight: 600, color: '#1C1917', marginBottom: '16px' }}>Design for AI failure, not the demo</div>
             </div>
 
@@ -891,7 +929,7 @@ const caseStudies = {
                 <span style={{ fontWeight: 600 }}>Model said:</span> Critical — a $180K boiler flagged for replacement.<br/>
                 <span style={{ fontWeight: 600 }}>Human found:</span> duplicated maintenance records had inflated the risk score.<br/>
                 <span style={{ fontWeight: 600 }}>Design response:</span> a "Needs Verification" state, visible risk drivers, mandatory manager approval, and logged overrides.<br/>
-                <span style={{ fontWeight: 600 }}>Result:</span> adoption held at 95%.
+                <span style={{ fontWeight: 600 }}>Result:</span> adoption held steady — the near-miss became a reason to trust the system more, not less.
               </p>
             </div>
 
@@ -917,7 +955,7 @@ const caseStudies = {
               <p style={{ fontSize: '14px', color: '#78716C', marginBottom: '20px' }}>Outside the core prioritize → explain → verify loop, two more workflows fed the same data model.</p>
 
               <div style={{ marginBottom: '24px' }}>
-                <p><span style={{ fontWeight: 600 }}>Offline field reporting.</span> Work Orders, Asset DNA, and Cost-to-Date linked automatically — an offline queue with voice capture and auto-sync cut reporting time from 20 to 8 minutes.</p>
+                <p><span style={{ fontWeight: 600 }}>Offline field reporting.</span> Work Orders, Asset DNA, and Cost-to-Date linked automatically — an offline queue with voice capture and auto-sync cut reporting time sharply (see Impact).</p>
               </div>
 
               <div style={{ width: '100%', height: '320px', backgroundColor: '#E5E7EB', borderRadius: '0px', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#9CA3AF', fontSize: '14px', marginBottom: '40px' }}>
@@ -971,7 +1009,7 @@ const caseStudies = {
 
   <div>
     <div class="cs-card-title">Data Integrity Had Hard Boundaries</div>
-    <div style="font-size: 15px; color: #57534E; line-height: 1.6;">Strict governance meant inherited, duplicated records — the source of the boiler incident (Decision 03). Validation states and confidence tiers became how managers learned to trust the score.</div>
+    <div style="font-size: 15px; color: #57534E; line-height: 1.6;">Strict governance meant inherited, duplicated records — the source of the boiler incident (Decision 04). Validation states and confidence tiers became how managers learned to trust the score.</div>
   </div>
 
   <div>
@@ -1001,6 +1039,11 @@ const caseStudies = {
   <div>
     <div class="cs-card-title">Twelve Months Forced Scope Discipline</div>
     <div style="font-size: 15px; color: #57534E; line-height: 1.6;">AI auto-scheduling, ESG modeling, digital twins — all tempting, all cut. The filter: one north star, two drivers.</div>
+  </div>
+
+  <div>
+    <div class="cs-card-title">Vendors Stayed Outside LAT</div>
+    <div style="font-size: 15px; color: #57534E; line-height: 1.6;">A small, high-churn group, not LAT's users — not worth the engineering cost. The project manager stays the connective layer, syncing vendor status in by hand.</div>
   </div>
 </div>
 
@@ -1039,6 +1082,8 @@ const caseStudies = {
           <div>
             <p>Every feature mapped to one driver: <span style={{ fontWeight: 600 }}>cost, planning accuracy, or adoption.</span> Offline workflows and data integrity came before expanding AI scope — these three tradeoffs show where.</p>
 
+            <p style={{ fontSize: '14px', color: '#78716C', marginTop: '8px' }}>Override rate = the share of AI flags a manager or accountant overturned, compared early vs. late in the 12-week pilot.</p>
+
             <LatTradeoffTable />
 
             <div style={{ backgroundColor: '#FFF9F5', padding: '28px', borderRadius: '0px', borderLeft: '3px solid #FF7C5F', marginTop: '8px', marginBottom: '24px' }}>
@@ -1048,7 +1093,7 @@ const caseStudies = {
 
             <div style={{ backgroundColor: '#FFF9F5', padding: '28px', borderRadius: '0px', borderLeft: '3px solid #FF7C5F', marginTop: '8px', marginBottom: '40px' }}>
               <div className="cs-card-title cs-card-title--md">The model keeps learning</div>
-              <div style={{ fontSize: '15px', color: '#57534E', lineHeight: 1.7 }}>Every override gets logged and fed back in, so the model recalibrates against real outcomes instead of staying static. The resulting lifecycle forecast: <span style={{ fontWeight: 600, color: '#44403C' }}>25% fewer unexpected maintenance costs</span> <span style={{ fontFamily: 'ui-monospace, SFMono-Regular, Menlo, monospace', fontSize: '10px', fontWeight: 700, letterSpacing: '0.06em', textTransform: 'uppercase', color: '#B45309' }}>Projected</span>.</div>
+              <div style={{ fontSize: '15px', color: '#57534E', lineHeight: 1.7 }}>By month four, stakeholders saw urgent maintenance requests already falling and projected that trend forward a year: <span style={{ fontWeight: 600, color: '#44403C' }}>25% fewer unexpected maintenance costs</span> <span style={{ fontFamily: 'ui-monospace, SFMono-Regular, Menlo, monospace', fontSize: '10px', fontWeight: 700, letterSpacing: '0.06em', textTransform: 'uppercase', color: '#B45309' }}>Projected</span>, extrapolated from the observed decline, not yet realized.</div>
             </div>
 
             <img loading="lazy" decoding="async" width={2000} height={1455} src="/images/lat/AB%20Testing.webp" alt="AB Testing comparison" style={{ width: '100%', height: 'auto', borderRadius: '0px', marginTop: '8px', marginBottom: '40px', display: 'block' }} />
@@ -1058,7 +1103,7 @@ const caseStudies = {
             <div style={{ width: '100%', height: '450px', backgroundColor: '#E5E7EB', borderRadius: '0px', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#9CA3AF', fontSize: '14px', marginTop: '40px', marginBottom: '40px' }}>
               <div style={{ textAlign: 'center', padding: '20px' }}>
                 <div style={{ fontWeight: 600, marginBottom: '8px' }}>IMAGE: Trust Over Time Chart</div>
-                <div style={{ fontSize: '13px', lineHeight: 1.5 }}>Override rate: 61% → 19% | Adoption: climbing to 95%</div>
+                <div style={{ fontSize: '13px', lineHeight: 1.5 }}>Override rate declining as adoption climbs, charted over the pilot</div>
               </div>
             </div>
           </div>
@@ -1096,7 +1141,7 @@ const caseStudies = {
       context: 'UW graduate capstone (solo after month two) asking whether people could be equipped to identify misinformation themselves, in research partnership with TrueMedia.org.',
       constraint: 'No engineering resourcing beyond a prototype, and testing showed users rejected any platform-integrated solution outright — the tool had to stand alone.',
       decision: 'Built four independent tools (Search, Scan, Quiz, Ask Us) that help people verify and learn, instead of another fact-check label.',
-      tradeoff: 'Concept validated with ~1,800 testers, but TrueMedia shut down mid-collaboration — proof that sound design alone can\'t make a public good sustainable.'
+      tradeoff: '17 of 19 testers rejected the original platform-integrated, scan-and-verify design — so I gave up that reach and shipped four standalone tools instead.'
     },
     tldr: {
       role: 'Sole Designer (Graduate Capstone)',
