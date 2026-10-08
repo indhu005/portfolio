@@ -2,6 +2,7 @@ import CaseStudyLayout from '@/components/CaseStudyLayout'
 import MisinfoFeaturesContent from '@/components/MisinfoFeaturesContent'
 import LatAlertToggle from '@/components/LatAlertToggle'
 import LatTradeoffTable from '@/components/LatTradeoffTable'
+import LatSyncFlow from '@/components/LatSyncFlow'
 import { Metadata } from 'next'
 
 const caseStudies = {
@@ -740,82 +741,120 @@ const caseStudies = {
             </div>
 
             <div style={{ marginBottom: '48px' }}>
-              <div style={{ fontSize: '11px', fontWeight: 700, letterSpacing: '0.06em', textTransform: 'uppercase', color: '#A8A29E', marginBottom: '20px' }}>Technician queue, three iterations</div>
+              <div style={{ display: 'inline-block', fontSize: '10px', fontWeight: 700, letterSpacing: '0.06em', textTransform: 'uppercase', color: '#FFFFFF', backgroundColor: '#FF7C5F', padding: '3px 9px', borderRadius: '999px', marginBottom: '12px' }}>Technician</div>
+              <div style={{ fontSize: '11px', fontWeight: 700, letterSpacing: '0.06em', textTransform: 'uppercase', color: '#A8A29E', marginBottom: '20px' }}>Queue, three iterations</div>
 
-              <p style={{ fontSize: '15px', color: '#44403C', maxWidth: '640px' }}>So we made sync state visible on the work order itself.</p>
+              <p style={{ fontSize: '15px', color: '#44403C', maxWidth: '640px' }}>Sync state became visible on the work order itself.</p>
 
-              <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'flex-start', gap: '24px', marginTop: '56px', flexWrap: 'wrap' }}>
+              <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'flex-start', gap: '24px', marginTop: '40px', flexWrap: 'wrap' }}>
                 <div style={{ flex: '0 1 230px', minWidth: '170px' }}>
-                  <img loading="lazy" decoding="async" width={1206} height={2622} src="/images/lat/LAT%20Technician%20Work%20Orders%20V1.png" alt="Technician work order queue, version 1 — a long list with filter tabs and priority tags" style={{ width: '100%', height: 'auto', borderRadius: '0px', display: 'block' }} />
-                  <div style={{ fontSize: '12px', fontWeight: 700, letterSpacing: '0.04em', textTransform: 'uppercase', color: '#A8A29E', marginTop: '16px' }}>Starting point</div>
-                  <div style={{ fontSize: '13px', color: '#57534E', marginTop: '4px' }}>Filtered list, tabs, priority tags</div>
+                  <img loading="lazy" decoding="async" width={1206} height={2622} src="/images/lat/LAT%20Technician%20Work%20Orders%20V1.png" alt="Technician work order queue, version 1 — a long list with filter tabs and priority tags" style={{ width: '100%', height: 'auto', borderRadius: '16px', display: 'block' }} />
+                  <div style={{ fontSize: '10.5px', fontWeight: 700, letterSpacing: '0.05em', textTransform: 'uppercase', color: '#A8A29E', marginTop: '10px' }}>Starting point</div>
+                  <div style={{ fontSize: '12px', color: '#78716C', lineHeight: 1.45, marginTop: '5px' }}>Filtered list, tabs, priority tags.</div>
                 </div>
 
-                <div style={{ flex: '0 0 100px', textAlign: 'center', marginTop: '112px' }}>
+                <div style={{ flex: '0 0 100px', textAlign: 'center', alignSelf: 'center' }}>
                   <div style={{ color: '#FF7C5F', fontSize: '24px' }}>→</div>
-                  <div style={{ fontSize: '13px', color: '#78716C', marginTop: '10px', lineHeight: 1.5 }}>We dropped the status tabs and moved scheduling and sync state onto each card.</div>
+                  <div style={{ fontSize: '12px', color: '#78716C', marginTop: '10px', lineHeight: 1.45 }}>Status tabs dropped; scheduling and sync moved onto each card.</div>
                 </div>
 
                 <div style={{ flex: '0 1 230px', minWidth: '170px' }}>
-                  <img loading="lazy" decoding="async" width={1206} height={2622} src="/images/lat/LAT%20Technician%20Work%20Orders%20V2.png" alt="Technician work order queue, version 2 — one sort control, due times, and sync state on every card" style={{ width: '100%', height: 'auto', borderRadius: '0px', display: 'block' }} />
-                  <div style={{ fontSize: '12px', fontWeight: 700, letterSpacing: '0.04em', textTransform: 'uppercase', color: '#FF7C5F', marginTop: '16px' }}>One queue, one switch</div>
-                  <div style={{ fontSize: '13px', color: '#57534E', marginTop: '4px' }}>Due time + sync state on every card</div>
-                  <div style={{ fontSize: '13px', color: '#78716C', marginTop: '6px' }}>Technicians plan from the queue and can see their work is safe.</div>
+                  <img loading="lazy" decoding="async" width={1206} height={2622} src="/images/lat/LAT%20Technician%20Work%20Orders%20V2.png" alt="Technician work order queue, version 2 — one sort control, due times, and sync state on every card" style={{ width: '100%', height: 'auto', borderRadius: '16px', display: 'block' }} />
+                  <div style={{ fontSize: '10.5px', fontWeight: 700, letterSpacing: '0.05em', textTransform: 'uppercase', color: '#FF7C5F', marginTop: '10px' }}>One queue, one switch</div>
+                  <div style={{ fontSize: '12px', color: '#78716C', lineHeight: 1.45, marginTop: '5px' }}>Due time + sync state on every card.</div>
                 </div>
 
-                <div style={{ flex: '0 0 100px', textAlign: 'center', marginTop: '112px' }}>
+                <div style={{ flex: '0 0 100px', textAlign: 'center', alignSelf: 'center' }}>
                   <div style={{ color: '#FF7C5F', fontSize: '24px' }}>→</div>
-                  <div style={{ fontSize: '13px', color: '#78716C', marginTop: '10px', lineHeight: 1.5 }}>A queue-level summary surfaces unsent changes; each card shows its own status and a retry action.</div>
+                  <div style={{ fontSize: '12px', color: '#78716C', marginTop: '10px', lineHeight: 1.45 }}>Queue-level summary of unsent changes; each card shows its own status.</div>
                 </div>
 
                 <div style={{ flex: '0 1 230px', minWidth: '170px' }}>
-                  <img loading="lazy" decoding="async" width={1206} height={3633} src="/images/lat/LAT%20%C2%B7%20Technician%20work%20orders%20V3.png" alt="Technician work order queue, version 3 — a summary banner showing unsent changes, including the failed Roof drain job with its Retry button" style={{ width: '100%', height: 'auto', borderRadius: '0px', display: 'block' }} />
-                  <div style={{ fontSize: '12px', fontWeight: 700, letterSpacing: '0.04em', textTransform: 'uppercase', color: '#FF7C5F', marginTop: '16px' }}>One shift, one status</div>
-                  <div style={{ fontSize: '13px', color: '#57534E', marginTop: '4px' }}>Banner breaks out saved, sending, and failed</div>
-                  <div style={{ fontSize: '13px', color: '#78716C', marginTop: '6px' }}>Connection and sync are shown separately — a connected device can still have changes stuck or failing to upload.</div>
+                  <img loading="lazy" decoding="async" width={1206} height={3633} src="/images/lat/LAT%20%C2%B7%20Technician%20work%20orders%20V3.png" alt="Technician work order queue, version 3 — a summary banner showing unsent changes, including the failed Roof drain job with its Retry button" style={{ width: '100%', height: 'auto', borderRadius: '16px', display: 'block' }} />
+                  <div style={{ fontSize: '10.5px', fontWeight: 700, letterSpacing: '0.05em', textTransform: 'uppercase', color: '#FF7C5F', marginTop: '10px' }}>One shift, one status</div>
+                  <div style={{ fontSize: '12px', color: '#78716C', lineHeight: 1.45, marginTop: '5px' }}>Banner breaks out saved, sending, and failed.</div>
                 </div>
               </div>
 
               <div style={{ marginTop: '64px' }}>
-                <div style={{ fontSize: '11px', fontWeight: 700, letterSpacing: '0.06em', textTransform: 'uppercase', color: '#A8A29E', marginBottom: '20px' }}>The work-order card brought planning, sync, and updates into one place</div>
+                <div style={{ fontSize: '11px', fontWeight: 700, letterSpacing: '0.06em', textTransform: 'uppercase', color: '#A8A29E', marginBottom: '20px' }}>The work-order card, four states</div>
 
-                <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'flex-start', gap: '40px', rowGap: '48px', flexWrap: 'wrap' }}>
+                <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'flex-start', gap: '28px', rowGap: '40px', flexWrap: 'wrap' }}>
                   <div style={{ flex: '1 1 240px', maxWidth: '260px', minWidth: '200px' }}>
-                    <div style={{ backgroundColor: '#FFFFFF', border: '1px solid #E7E5E4', boxShadow: '0 2px 10px rgba(0,0,0,0.06)', padding: '16px' }}>
-                      <img loading="lazy" decoding="async" width={1086} height={306} src="/images/lat/Work%20order-2.png" alt="Work order card, base state — priority badge, title, and location" style={{ width: '100%', height: 'auto', display: 'block' }} />
+                    <div style={{ backgroundColor: '#FFFFFF', border: '1px solid #E7E5E4', borderRadius: '12px', boxShadow: '0 2px 10px rgba(0,0,0,0.06)', padding: '16px' }}>
+                      <img loading="lazy" decoding="async" width={1086} height={306} src="/images/lat/Work%20order-2.png" alt="Work order card, base state — priority badge, title, and location" style={{ width: '100%', height: 'auto', display: 'block', borderRadius: '6px' }} />
                     </div>
-                    <div style={{ fontSize: '11px', fontWeight: 700, letterSpacing: '0.04em', textTransform: 'uppercase', color: '#A8A29E', marginTop: '14px' }}>01 — Identify the work</div>
-                    <div style={{ fontSize: '13px', color: '#57534E', marginTop: '4px' }}>Priority + job + location. Enough to recognize the task at a glance.</div>
+                    <div style={{ fontSize: '10.5px', fontWeight: 700, letterSpacing: '0.05em', textTransform: 'uppercase', color: '#A8A29E', marginTop: '10px' }}>01 — Identify the work</div>
+                    <div style={{ fontSize: '12px', color: '#78716C', lineHeight: 1.45, marginTop: '5px' }}>Priority, job, and location at a glance.</div>
                   </div>
 
                   <div style={{ flex: '1 1 240px', maxWidth: '260px', minWidth: '200px' }}>
-                    <div style={{ backgroundColor: '#FFFFFF', border: '1px solid #E7E5E4', boxShadow: '0 2px 10px rgba(0,0,0,0.06)', padding: '16px' }}>
-                      <img loading="lazy" decoding="async" width={1086} height={429} src="/images/lat/Work%20order-1.png" alt="Work order card with due and scheduled times, and sync state added" style={{ width: '100%', height: 'auto', display: 'block' }} />
+                    <div style={{ backgroundColor: '#FFFFFF', border: '1px solid #E7E5E4', borderRadius: '12px', boxShadow: '0 2px 10px rgba(0,0,0,0.06)', padding: '16px' }}>
+                      <img loading="lazy" decoding="async" width={1086} height={429} src="/images/lat/Work%20order-1.png" alt="Work order card with due and scheduled times, and sync state added" style={{ width: '100%', height: 'auto', display: 'block', borderRadius: '6px' }} />
                     </div>
-                    <div style={{ fontSize: '11px', fontWeight: 700, letterSpacing: '0.04em', textTransform: 'uppercase', color: '#FF7C5F', marginTop: '14px' }}>02 — Plan the work</div>
-                    <div style={{ fontSize: '13px', color: '#57534E', marginTop: '4px' }}>Due + scheduled time. Technicians can plan without opening the job.</div>
+                    <div style={{ fontSize: '10.5px', fontWeight: 700, letterSpacing: '0.05em', textTransform: 'uppercase', color: '#FF7C5F', marginTop: '10px' }}>02 — Plan the work</div>
+                    <div style={{ fontSize: '12px', color: '#78716C', lineHeight: 1.45, marginTop: '5px' }}>Due and scheduled time, without opening the job.</div>
                   </div>
 
                   <div style={{ flex: '1 1 240px', maxWidth: '260px', minWidth: '200px' }}>
-                    <div style={{ backgroundColor: '#FFFFFF', border: '1px solid #E7E5E4', boxShadow: '0 2px 10px rgba(0,0,0,0.06)', padding: '16px' }}>
-                      <img loading="lazy" decoding="async" width={1086} height={504} src="/images/lat/Work%20order.png" alt="Work order card with an unread update badge added" style={{ width: '100%', height: 'auto', display: 'block' }} />
+                    <div style={{ backgroundColor: '#FFFFFF', border: '1px solid #E7E5E4', borderRadius: '12px', boxShadow: '0 2px 10px rgba(0,0,0,0.06)', padding: '16px' }}>
+                      <img loading="lazy" decoding="async" width={1086} height={504} src="/images/lat/Work%20order.png" alt="Work order card with an unread update badge added" style={{ width: '100%', height: 'auto', display: 'block', borderRadius: '6px' }} />
                     </div>
-                    <div style={{ fontSize: '11px', fontWeight: 700, letterSpacing: '0.04em', textTransform: 'uppercase', color: '#FF7C5F', marginTop: '14px' }}>03 — Know what changed</div>
-                    <div style={{ fontSize: '13px', color: '#57534E', marginTop: '4px' }}>Unread update. Changes are visible before they become surprises.</div>
+                    <div style={{ fontSize: '10.5px', fontWeight: 700, letterSpacing: '0.05em', textTransform: 'uppercase', color: '#FF7C5F', marginTop: '10px' }}>03 — Know what changed</div>
+                    <div style={{ fontSize: '12px', color: '#78716C', lineHeight: 1.45, marginTop: '5px' }}>Unread update. Changes are visible before they become surprises.</div>
                   </div>
 
                   <div style={{ flex: '1 1 240px', maxWidth: '260px', minWidth: '200px' }}>
-                    <div style={{ backgroundColor: '#FFFFFF', border: '1px solid #E7E5E4', boxShadow: '0 2px 10px rgba(0,0,0,0.06)', padding: '16px' }}>
-                      <img loading="lazy" decoding="async" width={1086} height={669} src="/images/lat/Sync%20failed.png" alt="Work order card showing a failed sync and the Retry sync button, for the Roof drain job reassigned by Maya" style={{ width: '100%', height: 'auto', display: 'block' }} />
+                    <div style={{ backgroundColor: '#FFFFFF', border: '1px solid #E7E5E4', borderRadius: '12px', boxShadow: '0 2px 10px rgba(0,0,0,0.06)', padding: '16px' }}>
+                      <img loading="lazy" decoding="async" width={1086} height={669} src="/images/lat/Sync%20failed.png" alt="Work order card showing a failed sync and the Retry sync button, for the Roof drain job reassigned by Maya" style={{ width: '100%', height: 'auto', display: 'block', borderRadius: '6px' }} />
                     </div>
-                    <div style={{ fontSize: '11px', fontWeight: 700, letterSpacing: '0.04em', textTransform: 'uppercase', color: '#FF7C5F', marginTop: '14px' }}>04 — Know what actually happened</div>
-                    <div style={{ fontSize: '13px', color: '#57534E', marginTop: '4px' }}>Sync state + retry. The technician always knows whether the update reached the system.</div>
+                    <div style={{ fontSize: '10.5px', fontWeight: 700, letterSpacing: '0.05em', textTransform: 'uppercase', color: '#FF7C5F', marginTop: '10px' }}>04 — Know what actually happened</div>
+                    <div style={{ fontSize: '12px', color: '#78716C', lineHeight: 1.45, marginTop: '5px' }}>Sync state and retry, always visible.</div>
                   </div>
                 </div>
               </div>
 
               <p style={{ fontSize: '15px', color: '#44403C', marginTop: '32px', maxWidth: '640px' }}><span style={{ fontWeight: 600 }}>A failed sync shouldn't feel like lost work.</span> We kept the update safely on-device and made recovery one tap.</p>
-              <p style={{ fontSize: '15px', color: '#78716C', marginTop: '12px', maxWidth: '640px' }}><span style={{ fontWeight: 600, color: '#44403C' }}>Result.</span> This is the field layer behind the 70% → 95% data-accuracy jump (see Impact) — everything managers and executives act on starts here.</p>
+
+              <div style={{ marginTop: '64px', backgroundColor: '#FFFFFF', border: '1px solid #F1F5F9', borderRadius: '16px', padding: '32px' }}>
+                <div style={{ display: 'inline-block', fontSize: '10px', fontWeight: 700, letterSpacing: '0.06em', textTransform: 'uppercase', color: '#FFFFFF', backgroundColor: '#FF7C5F', padding: '3px 9px', borderRadius: '999px', marginBottom: '12px' }}>Technician</div>
+                <LatSyncFlow />
+              </div>
+
+              <p style={{ fontSize: '15px', color: '#44403C', marginTop: '24px', maxWidth: '640px' }}>Every state says what is saved, what isn't, and what is blocking the job.</p>
+
+              <div style={{ marginTop: '56px', backgroundColor: '#EFF6FF', borderRadius: '16px', padding: '32px' }}>
+                <div style={{ display: 'inline-block', fontSize: '10px', fontWeight: 700, letterSpacing: '0.06em', textTransform: 'uppercase', color: '#FFFFFF', backgroundColor: '#2563EB', padding: '3px 9px', borderRadius: '999px', marginBottom: '12px' }}>PM</div>
+                <div style={{ fontSize: '11px', fontWeight: 700, letterSpacing: '0.06em', textTransform: 'uppercase', color: '#64748B', marginBottom: '20px' }}>The same job, from the manager's side</div>
+
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(170px, 1fr))', gap: '20px' }}>
+                  <div>
+                    <img loading="lazy" decoding="async" src="/images/lat/LAT%20%C2%B7%20PM%20jobs%2C%20metrics%20and%20digest.png" alt="PM view of jobs, metrics, and a digest" style={{ width: '100%', height: 'auto', display: 'block', borderRadius: '16px' }} />
+                    <div style={{ fontSize: '10.5px', fontWeight: 700, letterSpacing: '0.05em', textTransform: 'uppercase', color: '#2563EB', marginTop: '10px' }}>All jobs &amp; digest</div>
+                    <div style={{ fontSize: '12px', color: '#475569', lineHeight: 1.45, marginTop: '5px' }}>Open jobs, unsent updates, approvals waiting — plus an AI digest of what needs attention.</div>
+                  </div>
+
+                  <div>
+                    <img loading="lazy" decoding="async" src="/images/lat/LAT%20%C2%B7%20PM%20approvals.png" alt="PM view of pending approvals" style={{ width: '100%', height: 'auto', display: 'block', borderRadius: '16px' }} />
+                    <div style={{ fontSize: '10.5px', fontWeight: 700, letterSpacing: '0.05em', textTransform: 'uppercase', color: '#2563EB', marginTop: '10px' }}>Approvals</div>
+                    <div style={{ fontSize: '12px', color: '#475569', lineHeight: 1.45, marginTop: '5px' }}>Every pending request — job, requester, work, cost — in one place.</div>
+                  </div>
+
+                  <div>
+                    <img loading="lazy" decoding="async" src="/images/lat/LAT%20%C2%B7%20PM%20Boiler%20Unit%203%20job%20detail.png" alt="PM view of the Boiler Unit 3 job detail" style={{ width: '100%', height: 'auto', display: 'block', borderRadius: '16px' }} />
+                    <div style={{ fontSize: '10.5px', fontWeight: 700, letterSpacing: '0.05em', textTransform: 'uppercase', color: '#2563EB', marginTop: '10px' }}>Job detail</div>
+                    <div style={{ fontSize: '12px', color: '#475569', lineHeight: 1.45, marginTop: '5px' }}>Request, synced updates, and messages together before deciding.</div>
+                  </div>
+
+                  <div>
+                    <img loading="lazy" decoding="async" src="/images/lat/LAT%20%C2%B7%20PM%20activity%20and%20roles.png" alt="PM view of activity and roles" style={{ width: '100%', height: 'auto', display: 'block', borderRadius: '16px' }} />
+                    <div style={{ fontSize: '10.5px', fontWeight: 700, letterSpacing: '0.05em', textTransform: 'uppercase', color: '#2563EB', marginTop: '10px' }}>Activity &amp; roles</div>
+                    <div style={{ fontSize: '12px', color: '#475569', lineHeight: 1.45, marginTop: '5px' }}>Who approved what, and who's allowed to: PM up to $5K, Accounts above.</div>
+                  </div>
+                </div>
+              </div>
+
+              <p style={{ fontSize: '15px', color: '#78716C', marginTop: '40px', maxWidth: '640px' }}><span style={{ fontWeight: 600, color: '#44403C' }}>Result.</span> This is the field layer behind the 70% → 95% data-accuracy jump (see Impact) — everything managers and executives act on starts here.</p>
             </div>
 
             <div style={{ marginBottom: '8px' }}>
