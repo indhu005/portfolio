@@ -1059,7 +1059,7 @@ export default function Home() {
                   offset={isMobile ? 0 : 56}
                   dark
                   cells={[
-                    { label: 'Role & Team', value: 'Sole Designer (Graduate Capstone) · solo post-Feb 2024, contributed to user research for TrueMedia.org' },
+                    { label: 'Role & Team', value: 'Sole Designer · solo post-Feb 2024, contributed to user research for TrueMedia.org' },
                     { label: 'Impact', value: "96% of 36 testers said they'd use it · ~1,800 tested live at Misinfo Day" },
                     { label: 'Tech & Approach', value: 'Concept design · Gamification · Platform strategy' },
                   ]}
