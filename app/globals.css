@@ -432,7 +432,7 @@ img, video {
 
 /* Credit System version-progression stages (Feature 01) — full-width, editorial */
 .cs-stage {
-  margin-bottom: 56px;
+  margin-bottom: 88px;
 }
 
 .cs-stage-header {
@@ -440,7 +440,7 @@ img, video {
   align-items: baseline;
   justify-content: space-between;
   gap: 12px;
-  margin-bottom: 12px;
+  margin-bottom: 22px;
   font-size: 12px;
   font-weight: 700;
   letter-spacing: 0.06em;
@@ -459,7 +459,7 @@ img, video {
 .cs-stage-img {
   width: 75%;
   display: block;
-  margin: 0 auto 18px;
+  margin: 0 auto 28px;
   border: 1px solid #E7E5E4;
   transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
@@ -702,7 +702,12 @@ img, video {
   width: 75%;
   display: block;
   margin: 28px auto 36px;
-  border: 1px solid #E7E5E4;
+  border: 1px solid #D6D3D1;
+  border-radius: 10px;
+  padding: 20px;
+  background-color: #FFFFFF;
+  box-shadow: 0 10px 24px rgba(28, 25, 23, 0.1);
+  box-sizing: border-box;
   transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 

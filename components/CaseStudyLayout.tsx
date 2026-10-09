@@ -35,6 +35,7 @@ interface TldrData {
   timeline: string
   impact: string
   skills: string
+  tools?: string
   decisionAuthority?: string
 }
 
@@ -55,6 +56,7 @@ interface CaseStudy {
   heroImage?: string
   heroVideo?: string
   figmaPrototypeUrl?: string
+  externalLinks?: { label: string; url: string }[]
   preSnapshotHeadline?: string
   preSnapshotContent?: string
 }
@@ -337,6 +339,43 @@ export default function CaseStudyLayout({ caseStudy, slug }: CaseStudyLayoutProp
                 See Prototype →
               </a>
             )}
+
+            {caseStudy.externalLinks && caseStudy.externalLinks.length > 0 && (
+              <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap', marginTop: isMobile ? '20px' : '28px' }}>
+                {caseStudy.externalLinks.map((link) => (
+                  <a
+                    key={link.url}
+                    href={link.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style={{
+                      display: 'inline-flex',
+                      alignItems: 'center',
+                      gap: '8px',
+                      backgroundColor: 'transparent',
+                      color: '#1C1917',
+                      border: '1.5px solid #1C1917',
+                      borderRadius: '0px',
+                      padding: '10px 18px',
+                      fontSize: '14px',
+                      fontWeight: 600,
+                      textDecoration: 'none',
+                      transition: 'transform 0.15s ease, box-shadow 0.15s ease',
+                    }}
+                    onMouseEnter={(e) => {
+                      e.currentTarget.style.transform = 'translateY(-2px)'
+                      e.currentTarget.style.boxShadow = '0 6px 16px rgba(28, 25, 23, 0.15)'
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.style.transform = 'translateY(0)'
+                      e.currentTarget.style.boxShadow = 'none'
+                    }}
+                  >
+                    {link.label} →
+                  </a>
+                ))}
+              </div>
+            )}
           </div>
 
           {caseStudy.sections.map((section, index) => (
@@ -607,6 +646,12 @@ export default function CaseStudyLayout({ caseStudy, slug }: CaseStudyLayoutProp
                       <div style={{ fontFamily: 'ui-monospace, SFMono-Regular, Menlo, monospace', fontSize: '10.5px', fontWeight: 500, letterSpacing: '0.06em', textTransform: 'uppercase', color: '#78716C', marginBottom: '6px' }}>Key Skills</div>
                       <div style={{ color: '#1C1917' }}>{caseStudy.tldr.skills}</div>
                     </div>
+                    {caseStudy.tldr.tools && (
+                      <div style={{ gridColumn: isMobile ? '1' : 'span 2' }}>
+                        <div style={{ fontFamily: 'ui-monospace, SFMono-Regular, Menlo, monospace', fontSize: '10.5px', fontWeight: 500, letterSpacing: '0.06em', textTransform: 'uppercase', color: '#78716C', marginBottom: '6px' }}>Tools</div>
+                        <div style={{ color: '#1C1917' }}>{caseStudy.tldr.tools}</div>
+                      </div>
+                    )}
                     {caseStudy.tldr.decisionAuthority && (
                       <div style={{ gridColumn: isMobile ? '1' : 'span 2' }}>
                         <div style={{ fontFamily: 'ui-monospace, SFMono-Regular, Menlo, monospace', fontSize: '10.5px', fontWeight: 500, letterSpacing: '0.06em', textTransform: 'uppercase', color: '#78716C', marginBottom: '6px' }}>Decision Authority</div>

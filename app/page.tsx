@@ -414,7 +414,7 @@ export default function Home() {
               }}>
                 {[
                   { stat: '95% pilot adoption', context: 'LAT — 12-month enterprise rollout, measured by weekly active use of the core workflow' },
-                  { stat: '0→20K MAUs · $1.5M raised', context: 'Keye — founding designer, team of 5, later pivoted into YC W2024' },
+                  { stat: '0→20K MAUs · $1.5M raised', context: 'Keye — founding designer, team of 5; pivoted from subscription marketplace to financial analytics as YC F24' },
                   { stat: "96% said they'd use it", context: 'Misinfo Center — 36 Gen Z/millennial testers, field-tested at Misinfo Day' },
                 ].map((item) => (
                   <div key={item.stat}>
@@ -621,7 +621,7 @@ export default function Home() {
                   cells={[
                     { label: 'Role & Team', value: 'Lead Designer (60% design, 40% strategy) · team of 4 — PM, 2 external engineers, client stakeholders' },
                     { label: 'Constraint', value: "Legacy CMMS/ERP stack couldn't be disrupted, data integrity had hard boundaries, capital decisions were politically sensitive." },
-                    { label: 'Impact', value: '95% pilot adoption · 70%→95% data accuracy · 25% cost reduction projected' },
+                    { label: 'Impact', value: '95% weekly active use · 50%→92% data accuracy · 25% cost reduction projected' },
                     { label: 'Tech & Approach', value: 'ML/AI design · API-first architecture · Human-in-the-loop approval gates' },
                   ]}
                 />
@@ -834,9 +834,9 @@ export default function Home() {
                   offset={isMobile ? 0 : 56}
                   dark
                   cells={[
-                    { label: 'Role & Team', value: 'Founding Designer · team of 5 — 2 engineers, 1 PM, 2 designers I hired' },
+                    { label: 'Role & Team', value: 'Founding Designer · team of 5 — 2 engineers, 1 PM, me as product designer, a brand designer who joined later' },
                     { label: 'Constraint', value: "Engineering was 12 time zones away; a co-founder's exit erased backend capacity for planned integrations." },
-                    { label: 'Impact', value: '0→20K MAUs · $1.5M raised · later pivoted into YC W2024' },
+                    { label: 'Impact', value: '0→20K MAUs · $1.5M raised · pivoted from subscription marketplace to financial analytics as YC F24' },
                     { label: 'Tech & Approach', value: 'Design systems · Chrome extension · Credit-based economics' },
                   ]}
                 />

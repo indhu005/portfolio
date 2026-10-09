@@ -11,6 +11,11 @@ const caseStudies = {
     subtitle: 'Subscription Marketplace',
     description: 'From three static screens to a YC-backed company',
     heroVideo: '/videos/Keye/Keye%20hero%20cropped.mp4',
+    externalLinks: [
+      { label: 'Visit Keye', url: 'https://production.keye.co' },
+      { label: 'Bullet Pitch', url: 'https://www.bulletpitch.com/p/keye' },
+      { label: 'Wharton Magazine', url: 'https://magazine.wharton.upenn.edu/issues/fall-winter-2022/keye/' },
+    ],
     brief: {
       context: 'Founding designer on a credit-based marketplace for premium tools — seed-stage budget, team dispersed mid-build.',
       constraint: 'Engineering was 12 time zones away; a co-founder\'s exit erased backend capacity for the planned partner integrations.',
@@ -19,10 +24,11 @@ const caseStudies = {
     },
     tldr: {
       role: 'Founding Product Designer',
-      team: '5 (2 engineers, 1 PM, 2 designers I hired)',
+      team: '5 (2 engineers, 1 PM, me as product designer, a brand designer who joined later for email design)',
       timeline: '2 years (2021–2022)',
-      impact: '0→20K MAUs | $1.5M raised | later pivoted into YC W2024',
+      impact: '0→20K MAUs | $1.5M raised | pivoted from subscription marketplace to financial analytics as YC F24',
       skills: 'Product strategy · Design systems · User research · PRDs · Chrome extension · Credit economics',
+      tools: 'Figma · FigJam · Adobe After Effects · FullStory · Mixpanel · Jira · CSS · C++ · React',
       decisionAuthority: 'Owned: every shipped surface, the credit-cap mechanic, the product-card system, hiring the two designers who followed me. Founders owned vision and fundraising; I translated it into what shipped alongside the PM.'
     },
     sections: [
@@ -35,16 +41,16 @@ const caseStudies = {
 
 <p style="margin-top: 28px;"><span style="font-weight: 600;">My role.</span> Founding (and for most of Keye's life, only) designer. Founders set vision and fundraising; the PM and I turned it into what shipped — I designed every surface, wrote PRDs, ran research, and hired the two designers who replaced me.</p>
 
-<p style="margin-top: 28px;"><span style="font-weight: 600;">Timeline.</span> 2 years (2021–2022): beta to credit system to marketplace to extension to seed funding. After the team dispersed, the company pivoted into YC W2024 on the traction we built.</p>
+<p style="margin-top: 28px;"><span style="font-weight: 600;">Timeline.</span> 2 years (2021–2022): beta to credit system to marketplace to extension to seed funding. After the team dispersed, the company left the subscription marketplace behind and pivoted into financial analytics, carrying the traction we built into YC F24.</p>
 
 <div style="background-color: #F9FAFB; padding: 24px 28px; border-radius: 0px; border-left: 3px solid #FF7C5F; margin-top: 32px;">
   <div style="font-size: 11px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #A8A29E; margin-bottom: 10px;">My contribution</div>
-  <div style="font-size: 15px; color: #57534E; line-height: 1.7;">I owned the credit-system pivots that kept the product solvent as we learned from real usage, built the product-card system that scaled across every surface, and shipped the Chrome extension that cut onboarding friction by 63% in two days.</div>
+  <div style="font-size: 15px; color: #57534E; line-height: 1.7;">I owned the credit-system pivots that kept the product solvent as we learned from real usage, built the product-card system that scaled across every surface, and shipped the Chrome extension that hit a 22% install rate within two weeks.</div>
 </div>
 
 <div style="background-color: #F9FAFB; padding: 24px 28px; border-radius: 0px; border-left: 3px solid #FF7C5F; margin-top: 20px;">
   <div style="font-size: 11px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #A8A29E; margin-bottom: 10px;">Team leverage</div>
-  <div style="font-size: 15px; color: #57534E; line-height: 1.7;">I scoped the MVP alongside the founders from three static screens, then hired and ran point for the two designers who eventually replaced me — building design velocity the team didn't have before I joined, and didn't lose after I left, through seed funding and into YC W2024.</div>
+  <div style="font-size: 15px; color: #57534E; line-height: 1.7;">I scoped the MVP alongside the founders from three static screens, then hired and ran point for the two designers who eventually replaced me — building design velocity the team didn't have before I joined, and didn't lose after I left, through seed funding and into YC F24.</div>
 </div>
 
 <div class="cs-laptop-mockup" style="width: 60%; margin: 120px auto 120px;">
@@ -76,23 +82,13 @@ const caseStudies = {
     <div style="font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 10px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #4ADE80; margin-top: 10px;">Observed</div>
   </div>
   <div class="metrics-cell">
-    <div class="metrics-num">+45%</div>
-    <div class="metrics-label">Engagement, within 3 months</div>
-    <div style="font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 10px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #4ADE80; margin-top: 10px;">Observed</div>
-  </div>
-  <div class="metrics-cell">
-    <div class="metrics-num">+32%</div>
-    <div class="metrics-label">Trial-to-paid conversion post monetization</div>
-    <div style="font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 10px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #4ADE80; margin-top: 10px;">Observed</div>
-  </div>
-  <div class="metrics-cell">
     <div class="metrics-num">150+ / 35+</div>
     <div class="metrics-label">Products · direct partnerships incl. Adobe, Grammarly, Otter.ai</div>
     <div style="font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 10px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #4ADE80; margin-top: 10px;">Observed</div>
   </div>
   <div class="metrics-cell">
-    <div class="metrics-num">+44%</div>
-    <div class="metrics-label">Partner subscriptions, year over year</div>
+    <div class="metrics-num">+32%</div>
+    <div class="metrics-label">Trial-to-paid conversion post monetization</div>
     <div style="font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 10px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #4ADE80; margin-top: 10px;">Observed</div>
   </div>
   <div class="metrics-cell">
@@ -105,20 +101,15 @@ const caseStudies = {
     <div class="metrics-label">Extension adoption, 3 months post-launch vs. by the time I left</div>
     <div style="font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 10px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #4ADE80; margin-top: 10px;">Observed</div>
   </div>
-  <div class="metrics-cell">
-    <div class="metrics-num">−63%</div>
-    <div class="metrics-label">Login friction, via auto-login</div>
-    <div style="font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 10px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #4ADE80; margin-top: 10px;">Observed</div>
-  </div>
   <div class="metrics-funding">
     <span>$1.5M pre-seed</span><span class="metrics-sep">·</span>
     <span>$30K in grants &amp; competition wins</span><span class="metrics-sep">·</span>
     <span>Featured in Forbes, BulletPitch, UPenn Venture Lab</span><span class="metrics-sep">·</span>
-    <span>Accepted to YC W2024</span>
+    <span>Accepted to YC F24</span>
   </div>
 </div>
 
-<p style="font-size: 14px; color: #6B7280;">Engagement = weekly active users as a share of total registered users, tracked in product analytics. Trial-to-paid and extension adoption are measured the same way — share of eligible users converting within the stated window.</p>`
+<p style="font-size: 14px; color: #6B7280;">Trial-to-paid and extension adoption = share of eligible users converting within the stated window, tracked in product analytics.</p>`
       },
       {
         id: 'context-problem',
@@ -148,23 +139,23 @@ const caseStudies = {
     <div style="font-size: 13px; color: #9CA3AF; margin-top: 12px; text-align: center;">Snippets from real conversations across UPenn.</div>
   </div>
   <div style="flex: 1; min-width: 280px;">
-    <p>This wasn't rare. Group chats across campus were full of people splitting subscriptions, hunting for discount codes, asking if anyone had a shared login. The behavior already existed — Keye just gave it a legitimate home.</p>
+    <p>This wasn't rare — group chats across campus were already full of people splitting subscriptions and swapping logins; Keye just gave that behavior a legitimate home.</p>
   </div>
 </div>
 
 <p style="margin-top: 48px;">ClassPass proved flexible multi-provider access worked; Apple One bundled someone else's services. Neither filled the gap between free trial and full subscription — that gap was Keye's opportunity.</p>
 
-<p style="margin-top: 28px;">The friction ran both directions. Users wanted to sample tools without committing; the tools themselves — especially the lesser-known ones without Grammarly-level brand pull — had no cheap way to get in front of people who'd never heard of them. A subscription funnel favors whoever's already trusted. Keye's credit system gave both sides a lower-cost way in: users got trial access without the VPN-and-fake-email workaround, and smaller tools got discovery they couldn't buy through a normal subscription paywall.</p>`
+<p style="margin-top: 28px;">The friction ran both directions — users wanted to sample tools without committing, and lesser-known tools had no cheap way to reach people who'd never heard of them; Keye's credit system gave both sides a lower-cost way in.</p>`
       },
       {
         id: 'started',
         title: '03 — Evidence Over Instinct',
         headline: "The founders were moving fast on instinct. I slowed things down just enough to check if the instinct was right",
-        content: `<p>My first task was the purchase flow. Founders had baked in mandatory consent and a feedback survey at checkout — completion dropped 30% there. I moved consent to signup and tested the survey in three placements; only the post-access popup worked, because users had just used the product. Drop-off fell 20% in one sprint.</p>
+        content: `<p>My first task was the purchase flow: founders had baked in mandatory consent and a checkout survey dropping completion 30%, so I moved consent to signup and relocated the survey to a post-access popup, cutting drop-off 20% in one sprint.</p>
 
-<p style="margin-top: 28px; font-size: 14px; color: #6B7280;">Research base: early beta users recruited through the UPenn network — students and early-career professionals. Standout or unusual survey answers got drilled down into follow-up interviews, and users who'd contacted customer care were invited to interviews and usability sessions, incentivized with Amazon gift cards.</p>
+<p style="margin-top: 28px; font-size: 14px; color: #6B7280;">Research base: early beta users from the UPenn network, with standout survey answers and customer-care contacts followed up in interviews and usability sessions, incentivized with Amazon gift cards.</p>
 
-<div class="cs-changelog">
+<div class="cs-changelog" style="zoom: 0.85;">
   <div class="cs-changelog-row">
     <div class="cs-changelog-v">V1</div>
     <div class="cs-changelog-body">
@@ -233,8 +224,7 @@ const caseStudies = {
   <h4 class="feature-heading">The Credit System</h4>
   <p class="feature-subheadline">Five pricing models, ten months</p>
 
-  <p>Founders needed monetization before runway ran out — that direction was theirs. My role was testing each model against real usage and feeding what we learned back into the next one, together.</p>
-  <p>The through-line: <b>price as a discovery lever</b> as much as a revenue one — every version a step closer to what made users try something they wouldn't have picked on their own.</p>
+  <p>Founders set the direction — monetize before runway ran out — and I tested each model against real usage, treating <b>price as a discovery lever</b> as much as a revenue one.</p>
 
   <div class="feature-eyebrow" style="margin-top: 64px;">The mechanism</div>
   <h4 class="feature-heading">Why a cap creates discovery, not just a limit</h4>
@@ -299,50 +289,68 @@ const caseStudies = {
 
   <div class="feature-eyebrow">The five versions</div>
 
-  <div class="version-rail">
+  <div class="version-rail" style="zoom: 0.85;">
   <div class="cs-stage" style="margin-top: 20px;">
     <div class="cs-stage-header"><span>v1 — Free</span><span class="cs-stage-tag">Goal: prove usage</span></div>
-    <img class="cs-stage-img" loading="lazy" decoding="async" src="/images/keye/credit-system-v1b.webp" alt="v1 free flow, no monetization">
-    <p>No monetization at all. The goal wasn't revenue — it was proving people would use the product before asking anyone to pay for it.</p>
+    <div style="display: flex; gap: 32px; align-items: center; flex-wrap: wrap;">
+      <img class="cs-stage-img" loading="lazy" decoding="async" src="/images/keye/credit-system-v1b.webp" alt="v1 free flow, no monetization" style="width: 374px; flex: 0 0 374px; margin: 0; border-radius: 10px; box-shadow: 0 10px 24px rgba(28, 25, 23, 0.1); border-color: #D6D3D1; padding: 20px; background-color: #FFFFFF;">
+      <p style="flex: 1; min-width: 240px; margin: 0;">No monetization at all. The goal wasn't revenue — it was proving people would use the product before asking anyone to pay for it.</p>
+    </div>
   </div>
 
   <div class="cs-stage">
     <div class="cs-stage-header"><span>v2 — 10% flat fee</span><span class="cs-stage-tag">Trigger: founders' pricing direction</span></div>
-    <img class="cs-stage-img" loading="lazy" decoding="async" src="/images/keye/credit-system-v2.webp" alt="v2 flat 10% fee flow">
-    <p>Founders proposed a flat commission on every purchase. Survey data pointed to something closer to 5–6% users would actually tolerate — 10% shipped anyway, but that gap is what shaped the cap that eventually shipped.</p>
+    <div style="display: flex; gap: 32px; align-items: center; flex-wrap: wrap;">
+      <img class="cs-stage-img" loading="lazy" decoding="async" src="/images/keye/credit-system-v2.webp" alt="v2 flat 10% fee flow" style="width: 374px; flex: 0 0 374px; margin: 0; border-radius: 10px; box-shadow: 0 10px 24px rgba(28, 25, 23, 0.1); border-color: #D6D3D1; padding: 20px; background-color: #FFFFFF;">
+      <p style="flex: 1; min-width: 240px; margin: 0;">Founders proposed a flat commission on every purchase. Survey data pointed to something closer to 5–6% users would actually tolerate — 10% shipped anyway, but that gap is what shaped the cap that eventually shipped.</p>
+    </div>
   </div>
 
   <div class="cs-stage">
     <div class="cs-stage-header"><span>v3 — Uncapped credits</span><span class="cs-stage-tag">Signal: heavy users cost more than they generated</span></div>
-    <img class="cs-stage-img" loading="lazy" decoding="async" src="/images/keye/credit-system-v3.webp" alt="v3 uncapped credits">
-    <p>Closer to what users said they'd pay — but with no ceiling, the heaviest users consumed more value than the fee recovered. Fixing that meant a cap, not a bigger fee.</p>
+    <div style="display: flex; gap: 32px; align-items: center; flex-wrap: wrap;">
+      <img class="cs-stage-img" loading="lazy" decoding="async" src="/images/keye/credit-system-v3.webp" alt="v3 uncapped credits" style="width: 374px; flex: 0 0 374px; margin: 0; border-radius: 10px; box-shadow: 0 10px 24px rgba(28, 25, 23, 0.1); border-color: #D6D3D1; padding: 20px; background-color: #FFFFFF;">
+      <p style="flex: 1; min-width: 240px; margin: 0;">Closer to what users said they'd pay — but with no ceiling, the heaviest users consumed more value than the fee recovered. Fixing that meant a cap, not a bigger fee.</p>
+    </div>
   </div>
 
   <div class="cs-stage">
     <div class="cs-stage-header"><span>v4 — 200/mo cap</span><span class="cs-stage-tag">The version that changed behavior</span></div>
-    <img class="cs-stage-img" loading="lazy" decoding="async" src="/images/keye/credit-system-v4.webp" alt="v4 200 credit monthly cap">
-    <p>Capping credits at 200 a month turned scarcity into a discovery mechanic: with a limited budget, users started spending on products they'd have otherwise skipped in favor of the brand they already knew.</p>
-    <div class="feature-stat" style="margin: 24px 0 0;">
-      <div class="feature-stat-num" style="font-size: 40px;">1–2% → 30–35%</div>
-      <div class="feature-stat-label">Lesser-known product activity, six weeks after the cap shipped</div>
+    <div style="display: flex; gap: 32px; align-items: center; flex-wrap: wrap;">
+      <img class="cs-stage-img" loading="lazy" decoding="async" src="/images/keye/credit-system-v4.webp" alt="v4 200 credit monthly cap" style="width: 374px; flex: 0 0 374px; margin: 0; border-radius: 10px; box-shadow: 0 10px 24px rgba(28, 25, 23, 0.1); border-color: #D6D3D1; padding: 20px; background-color: #FFFFFF;">
+      <div style="flex: 1; min-width: 240px;">
+        <p style="margin: 0;">Capping credits at 200 a month turned scarcity into a discovery mechanic: with a limited budget, users started spending on products they'd have otherwise skipped in favor of the brand they already knew.</p>
+        <div class="feature-stat" style="margin: 20px 0 0;">
+          <div class="feature-stat-num" style="font-size: 40px;">1–2% → 30–35%</div>
+          <div class="feature-stat-label">Lesser-known product activity, six weeks after the cap shipped</div>
+        </div>
+      </div>
     </div>
   </div>
 
   <div class="cs-stage" style="margin-bottom: 24px;">
     <div class="cs-stage-header"><span>v5 — Tiered plans</span><span class="cs-stage-tag">Trigger: power users wanted headroom</span></div>
-    <img class="cs-stage-img" loading="lazy" decoding="async" src="/images/keye/credit-system-v5.webp" alt="v5 tiered plans">
-    <p>The cap worked, but it also capped the highest-intent users. Tiered plans let them buy up without loosening the scarcity effect for everyone else — same mechanic, an escape valve for the edge case.</p>
+    <div style="display: flex; gap: 32px; align-items: center; flex-wrap: wrap;">
+      <img class="cs-stage-img" loading="lazy" decoding="async" src="/images/keye/credit-system-v5.webp" alt="v5 tiered plans" style="width: 468px; flex: 0 0 468px; margin: 0;">
+      <p style="flex: 1; min-width: 240px; margin: 0;">The cap worked, but it also capped the highest-intent users. Tiered plans let them buy up without loosening the scarcity effect for everyone else — same mechanic, an escape valve for the edge case.</p>
+    </div>
   </div>
   </div>
 
-  <div class="cs-laptop-mockup" style="width: 60%; margin: 64px auto 56px;">
+  <div class="feature-eyebrow" style="margin-top: 48px;">What the credit system delivered</div>
+  <div class="pc-metrics-strip" style="margin-top: 24px;">
+    <div class="pc-metrics-cell"><div class="feature-stat-num" style="font-size: 30px;">5</div><div class="feature-stat-label">pricing models shipped in ten months</div></div>
+    <div class="pc-metrics-cell"><div class="feature-stat-num" style="font-size: 30px;">1–2%→30–35%</div><div class="feature-stat-label">lesser-known product activity, six weeks post-cap</div></div>
+    <div class="pc-metrics-cell"><div class="feature-stat-num" style="font-size: 30px;">87%</div><div class="feature-stat-label">of surveyed users avoided a purchase just to skip entering payment info</div></div>
+    <div class="pc-metrics-cell"><div class="feature-stat-num" style="font-size: 30px;">+32%</div><div class="feature-stat-label">trial-to-paid conversion post-monetization</div></div>
+  </div>
+
+  <div class="pull-quote" style="margin-top: 40px;">The cap did more than monetize the product — it generated the behavioral data that shaped the entire partnership strategy, evidence that price, not brand loyalty, was the lever moving trial activity on lesser-known tools.</div>
+
+  <div class="cs-laptop-mockup" style="width: 60%; margin: 80px auto;">
     <div class="cs-laptop-lid">
       <div class="cs-laptop-camera"></div>
       <div class="cs-laptop-screen">
-        <div class="cs-browser-chrome">
-          <div class="cs-browser-dots"><span></span><span></span><span></span></div>
-          <div class="cs-browser-url">🔒 unlockkeye.com</div>
-        </div>
         <div class="cs-video-wrap" style="width: 100%; margin: 0; overflow: hidden; aspect-ratio: 16 / 10;">
           <video autoplay loop muted playsinline preload="metadata" width="1620" height="1440" aria-label="Screen recording of the v4 low-credit pop-up and notification" style="display: block; width: 100%; height: auto; position: absolute; top: 0; left: 0;">
             <source src="/videos/Keye/Credit%20system%20video%20cropped.mp4" type="video/mp4">
@@ -354,16 +362,6 @@ const caseStudies = {
     <div class="cs-laptop-hinge"></div>
     <div class="cs-laptop-base"><div class="cs-laptop-notch"></div></div>
   </div>
-
-  <div class="feature-eyebrow" style="margin-top: 8px;">What the credit system delivered</div>
-  <div class="pc-metrics-strip" style="margin-top: 24px;">
-    <div class="pc-metrics-cell"><div class="feature-stat-num" style="font-size: 30px;">5</div><div class="feature-stat-label">pricing models shipped in ten months</div></div>
-    <div class="pc-metrics-cell"><div class="feature-stat-num" style="font-size: 30px;">1–2%→30–35%</div><div class="feature-stat-label">lesser-known product activity, six weeks post-cap</div></div>
-    <div class="pc-metrics-cell"><div class="feature-stat-num" style="font-size: 30px;">87%</div><div class="feature-stat-label">of surveyed users avoided a purchase just to skip entering payment info</div></div>
-    <div class="pc-metrics-cell"><div class="feature-stat-num" style="font-size: 30px;">+32%</div><div class="feature-stat-label">trial-to-paid conversion post-monetization</div></div>
-  </div>
-
-  <div class="pull-quote">The cap did more than monetize the product — it generated the behavioral data that shaped the entire partnership strategy, evidence that price, not brand loyalty, was the lever moving trial activity on lesser-known tools.</div>
 </div>
 
 <div id="product-card" class="feature-block">
@@ -487,7 +485,6 @@ const caseStudies = {
   <div class="feature-chip-row">
     <span class="feature-chip"><b>2 days</b> to prototype</span>
     <span class="feature-chip"><b>22%</b> install rate in 2 weeks</span>
-    <span class="feature-chip"><b>−63%</b> login friction</span>
   </div>
 
   <div class="pull-quote">The fix wasn't a partnership we finally got — it was a pattern that already existed somewhere else.</div>
@@ -555,7 +552,7 @@ const caseStudies = {
 
   <div>
     <div class="cs-card-title">The Mid-Growth Rebrand</div>
-    <div style="font-size: 15px; color: #57534E; line-height: 1.6;">Changing palette and typography mid-funnel was risky. We shipped it live — it coincided with a 34% single-month growth spike.</div>
+    <div style="font-size: 15px; color: #57534E; line-height: 1.6;">Changing palette and typography mid-funnel was risky. We shipped it live — it coincided with a 33% single-month growth spike.</div>
   </div>
 </div>
 
@@ -567,7 +564,11 @@ const caseStudies = {
         headline: "The most important thing a founding designer builds isn't the product. It's the foundation that lets the product grow without being rebuilt from scratch",
         content: `<p><span style="font-weight: 600;">What I got wrong.</span> I thought unlimited credits would show us honest user behavior — let people spend freely and we'd see what they actually wanted. It didn't. With no cost to switching, users just defaulted to the brand they already trusted; there was no signal in the data. The cap worked precisely because it removed that option — forcing a real tradeoff was what finally showed us what people would try when trying something new actually cost them something.</p>
 
-<p style="margin-top: 28px;">By year three, the founding team dispersed. The company pivoted into YC W2024 on financial analytics — the marketplace didn't survive, but the research, partnerships, and funding that made YC possible did.</p>
+<div style="background-color: #1C1917; padding: 28px 32px; border-radius: 0px; margin-top: 40px; margin-bottom: 8px;">
+  <div style="font-size: 11px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #A8A29E; margin-bottom: 10px;">The pivot</div>
+  <div style="font-family: 'Fraunces', serif; font-size: 22px; font-weight: 600; color: #FFFFFF; line-height: 1.4; margin-bottom: 12px;">By year three, the founding team dispersed and the subscription marketplace I designed didn't survive — but it got the company into YC.</div>
+  <div style="font-size: 15px; color: #D6D3D1; line-height: 1.7;">Keye left the subscription-marketplace model behind entirely and rebuilt around financial analytics. What carried over wasn't the product — it was the research, partner relationships, and funding the marketplace generated, which is what made the YC F24 acceptance possible.</div>
+</div>
 
 <div class="pull-quote" style="margin-top: 48px;">The credit cap wasn't valuable because it monetized the product. It was valuable because it generated the behavioral data that shaped the entire partnership strategy.</div>
 
@@ -629,17 +630,22 @@ const caseStudies = {
 
 <h4 class="case-study-subhead" id="impact">Impact</h4>
 
-<p style="font-size: 14px; color: #6B7280; margin-bottom: 24px;">Pilot cohort: 43 people (18 technicians, 15 operations/asset managers, 7 accounting, 3 executives), tracked over a 12-week pilot window.</p>
+<p style="font-size: 14px; color: #6B7280; margin-bottom: 24px;">Pilot cohort: 43 people (18 technicians, 15 operations/asset managers, 7 accounting, 3 executives), tracked over a 12-week pilot window — the test cohort for a tool that rolled out to 4,000+ people campus-wide.</p>
 
 <div class="metrics-grid metrics-grid--dark" style="margin-bottom: 20px;">
   <div class="metrics-cell metrics-cell--hero">
     <div class="metrics-num">95%</div>
-    <div class="metrics-label">Weekly active use across the 43-person pilot (~41 of 43), vs. the university IT department's 70% threshold for keeping a tool live</div>
+    <div class="metrics-label">Weekly active use across the full ~4,000-person rollout by week 12 — adoption started slow in week 1 and climbed steadily from there, clearing the university IT department's 70% threshold for keeping a tool live</div>
     <div style="font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 10px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #4ADE80; margin-top: 10px;">Observed</div>
   </div>
   <div class="metrics-cell">
-    <div class="metrics-num">70% → 95%</div>
-    <div class="metrics-label">Record completeness (required fields present, no duplicates), pre/post canonical ID + sync validation. 70% baseline was the client's pre-project estimate, not a direct measurement.</div>
+    <div class="metrics-num">87%</div>
+    <div class="metrics-label">Record completeness (required fields present, no duplicates), measured post canonical ID + sync validation</div>
+    <div style="font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 10px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #4ADE80; margin-top: 10px;">Observed</div>
+  </div>
+  <div class="metrics-cell">
+    <div class="metrics-num">50% → 92%</div>
+    <div class="metrics-label">Data accuracy — historical records had years of duplicate and inconsistent entries; a cleanup pass plus a flow that caught redundancies at the source closed most of the gap as adoption grew</div>
     <div style="font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 10px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #4ADE80; margin-top: 10px;">Observed</div>
   </div>
   <div class="metrics-cell">
@@ -647,24 +653,9 @@ const caseStudies = {
     <div class="metrics-label">Average reporting time per ticket across all pilot technicians, pre/post offline-first workflow</div>
     <div style="font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 10px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #4ADE80; margin-top: 10px;">Observed</div>
   </div>
-  <div class="metrics-cell">
-    <div class="metrics-num">-36%</div>
-    <div class="metrics-label">Budget revisions, 12-week pilot vs. the same 12 weeks the prior year — from the university's own CAPEX/budget records</div>
-    <div style="font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 10px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #60A5FA; margin-top: 10px;">Measured</div>
-  </div>
-  <div class="metrics-cell">
-    <div class="metrics-num">-12%</div>
-    <div class="metrics-label">Emergency repair incidents, 12-week pilot vs. the same 12 weeks the prior year — from the university's maintenance records</div>
-    <div style="font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 10px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #60A5FA; margin-top: 10px;">Measured</div>
-  </div>
-  <div class="metrics-cell">
-    <div class="metrics-num">-60%</div>
-    <div class="metrics-label">Planning time, pilot vs. the prior year (see Decision 02) — managers' own time-tracking</div>
-    <div style="font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 10px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #60A5FA; margin-top: 10px;">Measured</div>
-  </div>
 </div>
 
-<p style="font-size: 14px; color: #6B7280; margin-bottom: 40px;">Observed metrics come directly from pilot usage logs. Measured metrics are pulled from the university's own budget and maintenance records, comparing the 12-week pilot against the same period the year before.</p>
+<p style="font-size: 14px; color: #6B7280; margin-bottom: 40px;">Observed metrics come directly from pilot usage logs.</p>
 
 <p><span style="font-weight: 600;">Operational.</span> Linking work orders to lifecycle cost made repair history visible in real time.</p>
 
@@ -756,7 +747,7 @@ const caseStudies = {
             <div style={{ marginBottom: '8px' }}>
               <div style={{ fontSize: '13px', fontWeight: 700, color: '#FF7C5F', letterSpacing: '0.06em', textTransform: 'uppercase', marginBottom: '8px' }}>Decision 01</div>
               <div style={{ fontSize: '20px', fontWeight: 600, color: '#1C1917', marginBottom: '16px' }}>Keep the data clean at the source</div>
-              <p><span style={{ fontWeight: 600 }}>Problem.</span> Field data is where "70% data accuracy" actually breaks — a completed job whose update never reaches the system is, for everyone downstream, a job that never happened.</p>
+              <p><span style={{ fontWeight: 600 }}>Problem.</span> Field data is where "50% data accuracy" actually breaks — a completed job whose update never reaches the system is, for everyone downstream, a job that never happened.</p>
             </div>
 
             <div style={{ marginBottom: '48px' }}>
@@ -875,7 +866,7 @@ const caseStudies = {
                 </div>
               </div>
 
-              <p style={{ fontSize: '15px', color: '#78716C', marginTop: '40px', maxWidth: '640px' }}><span style={{ fontWeight: 600, color: '#44403C' }}>Result.</span> This is the field layer behind the 70% → 95% data-accuracy jump (see Impact) — everything managers and executives act on starts here.</p>
+              <p style={{ fontSize: '15px', color: '#78716C', marginTop: '40px', maxWidth: '640px' }}><span style={{ fontWeight: 600, color: '#44403C' }}>Result.</span> This is the field layer behind the 50% → 92% data-accuracy jump (see Impact) — everything managers and executives act on starts here. Tracked in Mixpanel across 170+ users over six weeks, median time to approve ran 7-9 minutes when a request arrived with everything needed, and 2.2-2.8 hours when it was still an open work order waiting on incoming data.</p>
             </div>
 
             <div style={{ marginBottom: '8px' }}>
@@ -886,7 +877,7 @@ const caseStudies = {
               <p style={{ marginTop: '12px' }}><span style={{ fontWeight: 600 }}>Design.</span> A ranked priority queue replaced the dashboard. Filters stayed, repurposed to show which options were feasible rather than drill into one asset. Only the versions that tested well shipped — stakeholders were cost-conscious, and IT didn't want to retrain technicians twice.</p>
               <p style={{ marginTop: '12px' }}><span style={{ fontWeight: 600 }}>Why.</span> Post-test interviews said it plainly: less is more.</p>
               <p style={{ marginTop: '12px' }}><span style={{ fontWeight: 600 }}>Cost.</span> The queue gave up the auto-arranged calendar — managers liked it, but it got messy — replaced with a daily view linked to the monthly calendar.</p>
-              <p style={{ marginTop: '12px', color: '#78716C' }}><span style={{ fontWeight: 600, color: '#44403C' }}>Result.</span> Planning time dropped 60% vs. the prior year. Across 12 managers, weekly item-closure rate rose from ~4-of-10 to 8–9-of-10. Across 20+ logged decisions over 5 weeks, time from opening an asset to recording a decision fell from 14 to 4 minutes.</p>
+              <p style={{ marginTop: '12px', color: '#78716C' }}><span style={{ fontWeight: 600, color: '#44403C' }}>Result.</span> 20+ managers got access to the queue; 15 adopted it. Across those 15, weekly item-closure rate rose from ~4-of-10 to 8–9-of-10. Across 20+ logged decisions over 5 weeks, time from opening an asset to recording a decision fell from 14 to 4 minutes. Training took about 30 minutes per person, and help requests stayed rare outside one 20-minute outage in week 4 — not the retraining burden IT was bracing for.</p>
             </div>
 
             <div style={{ backgroundColor: '#FFFFFF', border: '1px solid #F3E8E2', borderTop: '4px solid #FF7C5F', borderRadius: '0px', padding: '40px', boxShadow: '0 4px 24px rgba(0,0,0,0.04)', marginBottom: '48px' }}>
@@ -902,7 +893,7 @@ const caseStudies = {
 
               <p style={{ marginTop: '24px' }}><span style={{ fontWeight: 600 }}>Why.</span> The alert didn't need to prove confidence — it needed to give managers enough to decide: what's at stake, and what happens if they wait.</p>
 
-              <p style={{ marginTop: '12px' }}><span style={{ fontWeight: 600, color: '#44403C' }}>Result.</span> <span style={{ color: '#78716C' }}>Override rate fell from 61% (pilot) to 19% (first quarter post-release). Work order resolution time fell from 3 days to 2 hours, tracked over 6–8 weeks. Meeting load took about 5 weeks to follow.</span></p>
+              <p style={{ marginTop: '12px' }}><span style={{ fontWeight: 600, color: '#44403C' }}>Result.</span> <span style={{ color: '#78716C' }}>Override rate fell from 61% (pilot) to 19% (first quarter post-release). Acceptance of the AI's recommendation rose from 42% to 78% over the same stretch — among 400 managers across campuses, tracked over four months — as the early skepticism wore off. Work order resolution time fell from 3 days to 2 hours, tracked over 6–8 weeks. Meeting load took about 5 weeks to follow.</span></p>
 
               <p style={{ fontSize: '14px', color: '#78716C', marginTop: '8px' }}>Resolution = closed without follow-up: all site details, photos, and vendor needs attached, nothing left for a manager to chase. Before, that meant a technician traveling back to an office to upload and email — work they dreaded enough to put off, while managers couldn&apos;t close the ticket without it. Voice capture in the field closed that gap directly.</p>
 
@@ -952,6 +943,7 @@ const caseStudies = {
               <div style={{ marginBottom: '24px' }}>
                 <p><span style={{ fontWeight: 600 }}>Offline field reporting.</span> Work Orders, Asset DNA, and Cost-to-Date linked automatically — an offline queue with voice capture and auto-sync cut reporting time sharply (see Impact).</p>
                 <p style={{ fontSize: '15px', color: '#57534E', lineHeight: 1.7, marginTop: '12px' }}>On a swing stage or underground, typing is a hazard, not an inconvenience — technicians need both hands free. Voice capture fills the work order form directly from the call, turning a report technicians used to dread into one they could give hands-free while already on site.</p>
+                <p style={{ fontSize: '15px', color: '#57534E', lineHeight: 1.7, marginTop: '12px' }}>40+ technicians reported using the offline capture in the first four weeks, saving work locally when there was no signal. That surfaced a need we hadn't scoped — technicians underground wanted to pull up asset history, not just file reports, while offline — so we added offline access to that history. 19 technicians reported hitting a failed sync, almost always underground, with a successful retry once they resurfaced. Managers said in interviews this was the bigger win: without a synced update, a job can't close, so they no longer had to chase technicians to find out if work was actually done.</p>
               </div>
 
               <div style={{ marginBottom: '24px' }}>
@@ -1045,7 +1037,7 @@ const caseStudies = {
           <div>
             <p>Every feature mapped to one driver: <span style={{ fontWeight: 600 }}>cost, planning accuracy, or adoption.</span> Offline workflows and data integrity came before expanding AI scope — these three tradeoffs show where.</p>
 
-            <p style={{ fontSize: '14px', color: '#78716C', marginTop: '8px' }}>Override rate = the share of AI flags a manager or accountant overturned, compared early vs. late in the 12-week pilot.</p>
+            <p style={{ fontSize: '14px', color: '#78716C', marginTop: '8px' }}>Override rate = the share of AI flags a manager or accountant overturned, compared early vs. late in the 12-week pilot. The drop wasn't a single step — it fell week over week as managers built confidence in the score, and they started logging reasoning notes even when they agreed with it, not just when they overrode it.</p>
 
             <LatTradeoffTable />
 
@@ -1364,7 +1356,11 @@ const caseStudies = {
   </div>
   <div>
     <div style="font-size: 26px; font-weight: 700; color: #1C1917;">2h → 5m</div>
-    <div style="font-size: 13px; color: #6B7280; margin-top: 4px;">verification they described as taking two hours took about five minutes in testing</div>
+    <div style="font-size: 13px; color: #6B7280; margin-top: 4px;">verification they described as taking two hours took about five minutes in testing — reported by 4 participants</div>
+  </div>
+  <div>
+    <div style="font-size: 26px; font-weight: 700; color: #1C1917;">~8,000</div>
+    <div style="font-size: 13px; color: #6B7280; margin-top: 4px;">people used the live product over 3 months, beyond the initial testing group — the fast-verification pattern held at that scale</div>
   </div>
 </div>
 
@@ -1417,11 +1413,11 @@ export async function generateMetadata({
 
   const metadataMap: Record<string, { description: string; keywords: string[] }> = {
     keye: {
-      description: 'Founding Product Designer at Keye — from three static screens to YC W2024. Built credit-based marketplace, Chrome extension, and design system. 0→20K MAUs, $1.5M raised.',
+      description: 'Founding Product Designer at Keye — from three static screens to a subscription marketplace, which later pivoted to financial analytics as YC F24. Built credit-based marketplace, Chrome extension, and design system. 0→20K MAUs, $1.5M raised.',
       keywords: ['YC startup designer', 'founding designer', 'startup product design', 'credit marketplace', 'Chrome extension design', 'design systems', 'subscription marketplace', 'SaaS design']
     },
     lat: {
-      description: 'Lead Product Designer for LAT Platform — ML-driven lifecycle assessment for university campus maintenance. 95% pilot adoption, 70%→95% data accuracy, 25% cost reduction.',
+      description: 'Lead Product Designer for LAT Platform — ML-driven lifecycle assessment for university campus maintenance. 95% weekly active use, 50%→92% data accuracy, 25% projected cost reduction.',
       keywords: ['enterprise UX', 'trust-centered AI design', 'AI product design', 'university technology', 'predictive maintenance', 'lifecycle assessment', 'B2B design', 'decision intelligence']
     },
     'misinformation-center': {

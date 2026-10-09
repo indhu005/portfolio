@@ -25,7 +25,7 @@ const tradeoffs: Tradeoff[] = [
     considered: 'Widen predictive coverage fast after early results.',
     shippedTitle: 'Slowed for validation first',
     why: 'Data accuracy climbed as a result.',
-    stat: '70% → 95% data accuracy',
+    stat: '50% → 92% data accuracy',
   },
 ]
 
