@@ -299,6 +299,7 @@ const caseStudies = {
 
   <div class="feature-eyebrow">The five versions</div>
 
+  <div class="version-rail">
   <div class="cs-stage" style="margin-top: 20px;">
     <div class="cs-stage-header"><span>v1 — Free</span><span class="cs-stage-tag">Goal: prove usage</span></div>
     <img class="cs-stage-img" loading="lazy" decoding="async" src="/images/keye/credit-system-v1b.webp" alt="v1 free flow, no monetization">
@@ -331,6 +332,7 @@ const caseStudies = {
     <div class="cs-stage-header"><span>v5 — Tiered plans</span><span class="cs-stage-tag">Trigger: power users wanted headroom</span></div>
     <img class="cs-stage-img" loading="lazy" decoding="async" src="/images/keye/credit-system-v5.webp" alt="v5 tiered plans">
     <p>The cap worked, but it also capped the highest-intent users. Tiered plans let them buy up without loosening the scarcity effect for everyone else — same mechanic, an escape valve for the edge case.</p>
+  </div>
   </div>
 
   <div class="cs-laptop-mockup" style="width: 60%; margin: 64px auto 56px;">
@@ -371,6 +373,7 @@ const caseStudies = {
 
   <p>The product card is the only surface every Keye user touches on every visit — credits, waitlists, requests, referrals, mobile, the extension, all eventually had to live inside it. Each version carried a new funnel job: <b>browse → status → merchandising → recovery → growth → cross-platform.</b></p>
 
+  <div class="version-rail">
   <div class="pc-stage" style="margin-top: 40px;">
     <div class="pc-stage-label">v1 — Inherited (before I joined)</div>
     <img class="pc-crop-img" loading="lazy" decoding="async" src="/images/keye/product-card-v1-inherited.webp" alt="Three hand-built subscription cards — Headspace, Smiling Mind, Crunchbase — with a stray duplicate description line on Crunchbase">
@@ -422,6 +425,7 @@ const caseStudies = {
     <div class="pc-stage-title">Rebuilt the card as part of a proper mobile system, then reused the same components inside the Chrome extension.</div>
     <p><b>Trigger:</b> mobile had been tabled early — sustained user requests changed that.</p>
     <p><b>Impact:</b> in the extension, the card appears on the partner's own site, collapsing discovery and activation into one moment.</p>
+  </div>
   </div>
 
   <div class="feature-eyebrow" style="margin-top: 56px;">The card, annotated</div>

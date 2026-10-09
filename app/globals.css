@@ -479,6 +479,70 @@ img, video {
   margin: 0;
 }
 
+/* Version-rail — left-edge dot-and-line progress marker for version walkthroughs
+   (Credit System, Product Card). Dots pop and the line draws as each version
+   scrolls into view; browsers without scroll-timeline support just see it static. */
+.version-rail {
+  position: relative;
+  padding-left: 32px;
+}
+
+.version-rail::before {
+  content: '';
+  position: absolute;
+  left: 5px;
+  top: 8px;
+  bottom: 8px;
+  width: 2px;
+  background: #E7E5E4;
+}
+
+.version-rail .cs-stage,
+.version-rail .pc-stage {
+  position: relative;
+}
+
+.version-rail .cs-stage::before,
+.version-rail .pc-stage::before {
+  content: '';
+  position: absolute;
+  left: -32px;
+  top: 4px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--coral);
+  border: 2px solid #FFFFFF;
+  box-shadow: 0 0 0 1px #E7E5E4;
+}
+
+@supports (animation-timeline: view()) {
+  .version-rail::before {
+    transform: scaleY(0);
+    transform-origin: top;
+    animation: versionRailGrow linear forwards;
+    animation-timeline: view(block);
+    animation-range: entry 0% cover 70%;
+  }
+
+  .version-rail .cs-stage::before,
+  .version-rail .pc-stage::before {
+    opacity: 0;
+    transform: scale(0.4);
+    animation: versionDotPop linear forwards;
+    animation-timeline: view(block);
+    animation-range: entry 10% entry 50%;
+  }
+}
+
+@keyframes versionRailGrow {
+  to { transform: scaleY(1); }
+}
+
+@keyframes versionDotPop {
+  to { opacity: 1; transform: scale(1); }
+}
+
 /* Mechanism diagram — Uncapped -> Cap -> Result */
 .cs-mechanism-row {
   display: grid;
