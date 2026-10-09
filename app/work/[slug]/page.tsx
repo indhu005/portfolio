@@ -35,7 +35,7 @@ const caseStudies = {
       {
         id: 'snapshot',
         title: '01 — Snapshot',
-        content: `<img class="cs-changelog-zoomable" loading="lazy" decoding="async" src="/images/keye/snapshot-mobile-grid-white.webp" alt="Eight screens of the Keye mobile product card system" style="width: 100%; max-width: 1040px; max-height: none; height: auto; object-fit: initial; box-shadow: none; display: block; margin: 40px auto 56px;" onclick="document.getElementById('cs-lightbox-img').src=this.src;document.getElementById('cs-lightbox-img').alt=this.alt;document.getElementById('cs-lightbox').style.display='flex';">
+        content: `<img class="cs-changelog-zoomable" loading="lazy" decoding="async" src="/images/keye/snapshot-mobile-grid-white.webp" alt="Eight screens of the Keye mobile product card system" style="width: 100%; max-width: 1248px; max-height: none; height: auto; object-fit: initial; box-shadow: none; display: block; margin: 40px auto 56px;" onclick="document.getElementById('cs-lightbox-img').src=this.src;document.getElementById('cs-lightbox-img').alt=this.alt;document.getElementById('cs-lightbox').style.display='flex';">
 
 <p><span style="font-weight: 600;">Product</span><br/>A credit-based marketplace for flexible access to premium tools — Grammarly, Adobe, Otter.ai, MasterClass, Crunchbase, and 150+ others — without long-term subscriptions. ClassPass for digital tools.</p>
 
@@ -53,7 +53,7 @@ const caseStudies = {
   <div style="font-size: 15px; color: #57534E; line-height: 1.7;">I scoped the MVP alongside the founders from three static screens, then hired and ran point for the two designers who eventually replaced me — building design velocity the team didn't have before I joined, and didn't lose after I left, through seed funding and into YC F24.</div>
 </div>
 
-<div class="cs-laptop-mockup" style="width: 60%; margin: 120px auto 120px;">
+<div class="cs-laptop-mockup" style="width: 72%; margin: 120px auto 120px;">
   <div class="cs-laptop-lid">
     <div class="cs-laptop-camera"></div>
     <div class="cs-laptop-screen">
@@ -148,58 +148,8 @@ const caseStudies = {
 <p style="margin-top: 28px;">The friction ran both directions — users wanted to sample tools without committing, and lesser-known tools had no cheap way to reach people who'd never heard of them; Keye's credit system gave both sides a lower-cost way in.</p>`
       },
       {
-        id: 'started',
-        title: '03 — Evidence Over Instinct',
-        headline: "The founders were moving fast on instinct. I slowed things down just enough to check if the instinct was right",
-        content: `<p>My first task was the purchase flow: founders had baked in mandatory consent and a checkout survey dropping completion 30%, so I moved consent to signup and relocated the survey to a post-access popup, cutting drop-off 20% in one sprint.</p>
-
-<p style="margin-top: 28px; font-size: 14px; color: #6B7280;">Research base: early beta users from the UPenn network, with standout survey answers and customer-care contacts followed up in interviews and usability sessions, incentivized with Amazon gift cards.</p>
-
-<div class="cs-changelog" style="zoom: 0.85;">
-  <div class="cs-changelog-row">
-    <div class="cs-changelog-v">V1</div>
-    <div class="cs-changelog-body">
-      <img class="cs-changelog-zoomable" loading="lazy" decoding="async" width="1400" height="855" src="/images/keye/section-03-v1.webp" alt="Survey V1 — embedded directly in the purchase flow" onclick="document.getElementById('cs-lightbox-img').src=this.src;document.getElementById('cs-lightbox-img').alt=this.alt;document.getElementById('cs-lightbox').style.display='flex';" />
-      <p>Embedded directly in the purchase flow, shown before confirming access.</p>
-      <p class="cs-changelog-signal">Signal: users were confused by the mandatory survey — drop-off hit 50%, and it drove a spike in customer service requests.</p>
-    </div>
-  </div>
-  <div class="cs-changelog-row">
-    <div class="cs-changelog-v">V2</div>
-    <div class="cs-changelog-body">
-      <img class="cs-changelog-zoomable" loading="lazy" decoding="async" width="1400" height="855" src="/images/keye/section-03-v2.webp" alt="Survey V2 — reframed as Step 3 of a numbered checkout flow" onclick="document.getElementById('cs-lightbox-img').src=this.src;document.getElementById('cs-lightbox-img').alt=this.alt;document.getElementById('cs-lightbox').style.display='flex';" />
-      <p>Reframed as Step 3 of a numbered checkout sequence.</p>
-      <p class="cs-changelog-signal">Signal: only moved the needle 2–3% — founders wanted this data organically, but it was still a barrier to funnel growth.</p>
-    </div>
-  </div>
-  <div class="cs-changelog-row">
-    <div class="cs-changelog-v">V3</div>
-    <div class="cs-changelog-body">
-      <img class="cs-changelog-zoomable" loading="lazy" decoding="async" width="1400" height="855" src="/images/keye/section-03-v3.webp" alt="Survey V3 — rebuilt as its own page, shown right after product use" onclick="document.getElementById('cs-lightbox-img').src=this.src;document.getElementById('cs-lightbox-img').alt=this.alt;document.getElementById('cs-lightbox').style.display='flex';" />
-      <p>Rebuilt as its own page, shown right after the product was used.</p>
-      <p class="cs-changelog-signal">Signal: consent moved to signup instead of repeating at every purchase — drop-off fell sharply once it stopped feeling repetitive.</p>
-    </div>
-  </div>
-  <div class="cs-changelog-row">
-    <div class="cs-changelog-v">V4</div>
-    <div class="cs-changelog-body">
-      <img class="cs-changelog-zoomable" loading="lazy" decoding="async" width="1400" height="855" src="/images/keye/section-03-v4.webp" alt="Survey V4 — folded back into the app as an in-context modal, the version that shipped" onclick="document.getElementById('cs-lightbox-img').src=this.src;document.getElementById('cs-lightbox-img').alt=this.alt;document.getElementById('cs-lightbox').style.display='flex';" />
-      <p>Folded back into the app as an in-context modal — the version that shipped.</p>
-      <p class="cs-changelog-signal">Signal: the final version.</p>
-    </div>
-  </div>
-</div>
-
-<div id="cs-lightbox" class="cs-lightbox" onclick="this.style.display='none';">
-  <button type="button" class="cs-lightbox-close" aria-label="Close" onclick="event.stopPropagation();document.getElementById('cs-lightbox').style.display='none';">✕</button>
-  <img id="cs-lightbox-img" src="" alt="" onclick="event.stopPropagation();" />
-</div>
-
-<div class="pull-quote" style="margin-top: 28px;">On a seed-stage startup budget, I worked by signal saturation: once the same friction appeared across five or six users, it was real enough to act on.</div>`
-      },
-      {
         id: 'feature-index',
-        title: '04 — Features',
+        title: '03 — Features',
         headline: 'Three systems that carried the rest of the product',
         content: `<div class="feature-index">
   <a href="#credit-system" class="feature-index-item">
@@ -293,7 +243,7 @@ const caseStudies = {
   <div class="cs-stage" style="margin-top: 20px;">
     <div class="cs-stage-header"><span>v1 — Free</span><span class="cs-stage-tag">Goal: prove usage</span></div>
     <div style="display: flex; gap: 32px; align-items: center; flex-wrap: wrap;">
-      <img class="cs-stage-img" loading="lazy" decoding="async" src="/images/keye/credit-system-v1b.webp" alt="v1 free flow, no monetization" style="width: 374px; flex: 0 0 374px; margin: 0; border-radius: 10px; box-shadow: 0 10px 24px rgba(28, 25, 23, 0.1); border-color: #D6D3D1; padding: 20px; background-color: #FFFFFF;">
+      <img class="cs-stage-img" loading="lazy" decoding="async" src="/images/keye/credit-system-v1b.webp" alt="v1 free flow, no monetization" style="width: 449px; flex: 0 0 449px; margin: 0; border-radius: 10px; box-shadow: 0 10px 24px rgba(28, 25, 23, 0.1); border-color: #D6D3D1; padding: 20px; background-color: #FFFFFF;">
       <p style="flex: 1; min-width: 240px; margin: 0;">No monetization at all. The goal wasn't revenue — it was proving people would use the product before asking anyone to pay for it.</p>
     </div>
   </div>
@@ -301,7 +251,7 @@ const caseStudies = {
   <div class="cs-stage">
     <div class="cs-stage-header"><span>v2 — 10% flat fee</span><span class="cs-stage-tag">Trigger: founders' pricing direction</span></div>
     <div style="display: flex; gap: 32px; align-items: center; flex-wrap: wrap;">
-      <img class="cs-stage-img" loading="lazy" decoding="async" src="/images/keye/credit-system-v2.webp" alt="v2 flat 10% fee flow" style="width: 374px; flex: 0 0 374px; margin: 0; border-radius: 10px; box-shadow: 0 10px 24px rgba(28, 25, 23, 0.1); border-color: #D6D3D1; padding: 20px; background-color: #FFFFFF;">
+      <img class="cs-stage-img" loading="lazy" decoding="async" src="/images/keye/credit-system-v2.webp" alt="v2 flat 10% fee flow" style="width: 449px; flex: 0 0 449px; margin: 0; border-radius: 10px; box-shadow: 0 10px 24px rgba(28, 25, 23, 0.1); border-color: #D6D3D1; padding: 20px; background-color: #FFFFFF;">
       <p style="flex: 1; min-width: 240px; margin: 0;">Founders proposed a flat commission on every purchase. Survey data pointed to something closer to 5–6% users would actually tolerate — 10% shipped anyway, but that gap is what shaped the cap that eventually shipped.</p>
     </div>
   </div>
@@ -309,7 +259,7 @@ const caseStudies = {
   <div class="cs-stage">
     <div class="cs-stage-header"><span>v3 — Uncapped credits</span><span class="cs-stage-tag">Signal: heavy users cost more than they generated</span></div>
     <div style="display: flex; gap: 32px; align-items: center; flex-wrap: wrap;">
-      <img class="cs-stage-img" loading="lazy" decoding="async" src="/images/keye/credit-system-v3.webp" alt="v3 uncapped credits" style="width: 374px; flex: 0 0 374px; margin: 0; border-radius: 10px; box-shadow: 0 10px 24px rgba(28, 25, 23, 0.1); border-color: #D6D3D1; padding: 20px; background-color: #FFFFFF;">
+      <img class="cs-stage-img" loading="lazy" decoding="async" src="/images/keye/credit-system-v3.webp" alt="v3 uncapped credits" style="width: 449px; flex: 0 0 449px; margin: 0; border-radius: 10px; box-shadow: 0 10px 24px rgba(28, 25, 23, 0.1); border-color: #D6D3D1; padding: 20px; background-color: #FFFFFF;">
       <p style="flex: 1; min-width: 240px; margin: 0;">Closer to what users said they'd pay — but with no ceiling, the heaviest users consumed more value than the fee recovered. Fixing that meant a cap, not a bigger fee.</p>
     </div>
   </div>
@@ -317,7 +267,7 @@ const caseStudies = {
   <div class="cs-stage">
     <div class="cs-stage-header"><span>v4 — 200/mo cap</span><span class="cs-stage-tag">The version that changed behavior</span></div>
     <div style="display: flex; gap: 32px; align-items: center; flex-wrap: wrap;">
-      <img class="cs-stage-img" loading="lazy" decoding="async" src="/images/keye/credit-system-v4.webp" alt="v4 200 credit monthly cap" style="width: 374px; flex: 0 0 374px; margin: 0; border-radius: 10px; box-shadow: 0 10px 24px rgba(28, 25, 23, 0.1); border-color: #D6D3D1; padding: 20px; background-color: #FFFFFF;">
+      <img class="cs-stage-img" loading="lazy" decoding="async" src="/images/keye/credit-system-v4.webp" alt="v4 200 credit monthly cap" style="width: 449px; flex: 0 0 449px; margin: 0; border-radius: 10px; box-shadow: 0 10px 24px rgba(28, 25, 23, 0.1); border-color: #D6D3D1; padding: 20px; background-color: #FFFFFF;">
       <div style="flex: 1; min-width: 240px;">
         <p style="margin: 0;">Capping credits at 200 a month turned scarcity into a discovery mechanic: with a limited budget, users started spending on products they'd have otherwise skipped in favor of the brand they already knew.</p>
         <div class="feature-stat" style="margin: 20px 0 0;">
@@ -331,7 +281,7 @@ const caseStudies = {
   <div class="cs-stage" style="margin-bottom: 24px;">
     <div class="cs-stage-header"><span>v5 — Tiered plans</span><span class="cs-stage-tag">Trigger: power users wanted headroom</span></div>
     <div style="display: flex; gap: 32px; align-items: center; flex-wrap: wrap;">
-      <img class="cs-stage-img" loading="lazy" decoding="async" src="/images/keye/credit-system-v5.webp" alt="v5 tiered plans" style="width: 468px; flex: 0 0 468px; margin: 0;">
+      <img class="cs-stage-img" loading="lazy" decoding="async" src="/images/keye/credit-system-v5.webp" alt="v5 tiered plans" style="width: 562px; flex: 0 0 562px; margin: 0;">
       <p style="flex: 1; min-width: 240px; margin: 0;">The cap worked, but it also capped the highest-intent users. Tiered plans let them buy up without loosening the scarcity effect for everyone else — same mechanic, an escape valve for the edge case.</p>
     </div>
   </div>
@@ -347,7 +297,7 @@ const caseStudies = {
 
   <div class="pull-quote" style="margin-top: 40px;">The cap did more than monetize the product — it generated the behavioral data that shaped the entire partnership strategy, evidence that price, not brand loyalty, was the lever moving trial activity on lesser-known tools.</div>
 
-  <div class="cs-laptop-mockup" style="width: 60%; margin: 80px auto;">
+  <div class="cs-laptop-mockup" style="width: 72%; margin: 80px auto;">
     <div class="cs-laptop-lid">
       <div class="cs-laptop-camera"></div>
       <div class="cs-laptop-screen">
@@ -369,28 +319,28 @@ const caseStudies = {
   <h4 class="feature-heading">The Product Card</h4>
   <p class="feature-subheadline">Five versions, one component</p>
 
-  <p>The product card is the only surface every Keye user touches on every visit — credits, waitlists, requests, referrals, mobile, the extension, all eventually had to live inside it. Each version carried a new funnel job: <b>browse → status → merchandising → recovery → growth → cross-platform.</b></p>
+  <p>The product card is the one surface every Keye user touches on every visit — credits, waitlists, requests, referrals, mobile, the extension all live inside it. Each version added a funnel job: <b>browse → status → merchandising → recovery → growth → cross-platform.</b></p>
 
   <div class="version-rail">
   <div class="pc-stage" style="margin-top: 40px;">
     <div class="pc-stage-label">v1 — Inherited (before I joined)</div>
     <img class="pc-crop-img" loading="lazy" decoding="async" src="/images/keye/product-card-v1-inherited.webp" alt="Three hand-built subscription cards — Headspace, Smiling Mind, Crunchbase — with a stray duplicate description line on Crunchbase">
     <div class="pc-stage-title">Three products, each card built by hand. No system behind any of them.</div>
-    <p>A single job — browse, then click access — with no component behind it, so any product-wide change meant editing every card by hand (visible in Crunchbase's stray duplicate line). At three products that's invisible; at forty it's a wall. I flagged this in my interview, before I had any stake in the outcome.</p>
+    <p>A single job — browse, then click access — with no component behind it, so any change meant editing every card by hand (visible in Crunchbase's stray duplicate line). Invisible at three products; a wall at forty. I flagged this in my interview, before I had any stake in the outcome.</p>
   </div>
 
   <div class="pc-stage">
     <div class="pc-stage-label">v2 — Componentized, square shape, label system</div>
     <img class="pc-crop-img" loading="lazy" decoding="async" src="/images/keye/product-card-v3-square-labels.webp" alt="Featured Products row — square cards with a Leaving Soon label and on-card credit cost badges">
-    <div class="pc-stage-title">Converted the card into a true component, then squared it off to fit more per scroll: a countdown timer, a Waitlisted state, and labels for Featured, Leaving Soon, Coming Soon. Credit cost moved onto the card face.</div>
-    <p><b>Impact:</b> the card became a status object, not just an ad — Featured placement drove +18% trial activity, and visible pricing pre-qualified every click.</p>
-    <p>The finding worth featuring: users tried PicMonkey over Adobe once both sat on equal visual footing with visible pricing — price and placement beat brand recognition, the direct ancestor of the credit system's 1–2% → 30–35% jump.</p>
-    <div class="pc-considered"><b>Considered:</b>&nbsp;a separate "My Accounts" page, and keeping the full description on the card face. Rejected both — splitting status from discovery left the grid unable to explain a purchase, and the full description fought scanning and deciding into the same space.</div>
+    <div class="pc-stage-title">Turned the card into a true component, squared off to fit more per scroll: countdown timer, Waitlisted state, labels for Featured, Leaving Soon, Coming Soon, and credit cost moved onto the face.</div>
+    <div class="feature-note" style="border-left: 3px solid #4A72E5;"><span class="feature-note-label" style="color: #4A72E5;">Impact</span><span>the card became a status object, not just an ad — Featured placement drove <b>+18% trial activity</b>, and visible pricing pre-qualified clicks.</span></div>
+    <div class="feature-note" style="border-left: 3px solid #FF7C5F;"><span class="feature-note-label" style="color: #FF7C5F;">Finding</span><span>users tried PicMonkey over Adobe at equal visual footing with visible pricing — price and placement beat brand recognition, ancestor of the credit system's <b>1–2% → 30–35%</b> jump.</span></div>
+    <div class="pc-considered"><b>Considered:</b>&nbsp;a separate "My Accounts" page, and the full description on the card face — rejected both, since the grid needs to explain a purchase, not fight scanning with deciding.</div>
   </div>
 
   <div class="pc-stage">
     <div class="pc-stage-label">v3 — Request a Product, placed in the grid</div>
-    <div class="cs-laptop-mockup" style="width: 60%; margin: 44px auto 52px;">
+    <div class="cs-laptop-mockup" style="width: 72%; margin: 44px auto 52px;">
       <div class="cs-laptop-lid">
         <div class="cs-laptop-camera"></div>
         <div class="cs-laptop-screen">
@@ -404,25 +354,25 @@ const caseStudies = {
       <div class="cs-laptop-hinge"></div>
       <div class="cs-laptop-base"><div class="cs-laptop-notch"></div></div>
     </div>
-    <div class="pc-stage-title">A Request a Product card placed directly into the grid, at the moment a search comes up empty.</div>
-    <p><b>Trigger:</b> direct emails asking whether specific products were coming — a signal straight from the support inbox.</p>
-    <p><b>Impact:</b> closed the one unrecoverable exit in the browse flow — 34% fewer customer-care requests, plus demand data for partner prioritization.</p>
-    <div class="pc-considered"><b>Considered:</b>&nbsp;a request form in settings. Rejected — nobody fills that. In the grid, it appears at the moment of failure.</div>
+    <div class="pc-stage-title">A Request a Product card placed directly in the grid, at the moment a search fails.</div>
+    <div class="feature-note" style="border-left: 3px solid #FF7C5F;"><span class="feature-note-label" style="color: #FF7C5F;">Trigger</span><span>direct emails asking if specific products were coming — straight from the support inbox.</span></div>
+    <div class="feature-note" style="border-left: 3px solid #4A72E5;"><span class="feature-note-label" style="color: #4A72E5;">Impact</span><span>closed the one unrecoverable exit in the browse flow — <b>34% fewer</b> customer-care requests, plus demand data for partnerships.</span></div>
+    <div class="pc-considered"><b>Considered:</b>&nbsp;a request form in settings — rejected, since nobody fills that; in the grid it appears at the moment of failure.</div>
   </div>
 
   <div class="pc-stage">
     <div class="pc-stage-label">v4 — Buy Again + Refer a Friend</div>
     <img class="pc-crop-img" loading="lazy" decoding="async" src="/images/keye/product-card-v5-buy-again.webp" alt="Featured Products row with credit balance dropdown open">
-    <div class="pc-stage-title">A Buy Again card for products already used, and Refer a Friend cards woven into the grid.</div>
-    <p><b>Impact:</b> the grid became a retention and growth surface — one component now serves four funnel jobs, discover through acquire.</p>
+    <div class="pc-stage-title">A Buy Again card for used products, and Refer a Friend cards woven into the grid.</div>
+    <div class="feature-note" style="border-left: 3px solid #4A72E5;"><span class="feature-note-label" style="color: #4A72E5;">Impact</span><span>the grid became a retention and growth surface — one component now serving <b>four funnel jobs</b>, discover through acquire.</span></div>
   </div>
 
   <div class="pc-stage" style="margin-bottom: 24px;">
     <div class="pc-stage-label">v5 — Mobile design system, reused for the Chrome extension</div>
     <img class="pc-phone-mockup" loading="lazy" decoding="async" src="/images/keye/product-card-v5-mobile-mockup.webp" alt="Mobile product card system across four screens, reused for the extension">
-    <div class="pc-stage-title">Rebuilt the card as part of a proper mobile system, then reused the same components inside the Chrome extension.</div>
-    <p><b>Trigger:</b> mobile had been tabled early — sustained user requests changed that.</p>
-    <p><b>Impact:</b> in the extension, the card appears on the partner's own site, collapsing discovery and activation into one moment.</p>
+    <div class="pc-stage-title">Rebuilt the card into a proper mobile system, then reused those components inside the Chrome extension.</div>
+    <div class="feature-note" style="border-left: 3px solid #FF7C5F;"><span class="feature-note-label" style="color: #FF7C5F;">Trigger</span><span>mobile had been tabled early — sustained user requests changed that.</span></div>
+    <div class="feature-note" style="border-left: 3px solid #4A72E5;"><span class="feature-note-label" style="color: #4A72E5;">Impact</span><span>in the extension, the card appears on the partner's own site, folding discovery and activation into one moment.</span></div>
   </div>
   </div>
 
@@ -431,12 +381,12 @@ const caseStudies = {
 
   <div class="pc-annotated-grid">
     <div class="pc-annotated-img-wrap">
-      <img loading="lazy" decoding="async" src="/images/keye/product-card-annotated-card.webp" alt="Annotated Crunchbase card">
-      <div class="pc-dot" style="left: 29%; top: 33%;">1</div>
-      <div class="pc-dot" style="left: 85%; top: 17%;">2</div>
-      <div class="pc-dot" style="left: -2%; top: 74%;">3</div>
-      <div class="pc-dot" style="left: 8%; top: 99%;">4</div>
-      <div class="pc-dot" style="left: 96%; top: 76%;">5</div>
+      <img loading="lazy" decoding="async" src="/images/keye/product-card-annotated-card.webp" alt="Annotated Grammarly card">
+      <div class="pc-dot" style="left: 28%; top: 36%;">1</div>
+      <div class="pc-dot" style="left: 89%; top: 9%;">2</div>
+      <div class="pc-dot" style="left: 4%; top: 80%;">3</div>
+      <div class="pc-dot" style="left: 4%; top: 92%;">4</div>
+      <div class="pc-dot" style="left: 90%; top: 90%;">5</div>
     </div>
     <div class="pc-annotated-list">
       <div class="pc-annotated-item"><div class="pc-dot-inline">1</div><p><b>Media, one fixed zone.</b> A real screenshot or a brand-color lockup, sized to fit cleanly.</p></div>
@@ -447,7 +397,7 @@ const caseStudies = {
     </div>
   </div>
 
-  <p><b>One badge slot, not visible in the crop above:</b> Leaving Soon, Coming Soon, Featured, and Waitlisted never stack — one lifecycle badge at a time, and the CTA color follows it — <b>green</b> for buying access, <b>blue</b> for waitlisted, <b>coral</b> for capture-intent (Notify Me, Request), <b>black</b> for a secondary action (Access, when owned).</p>
+  <p><b>One badge slot:</b> Leaving Soon, Coming Soon, Featured, and Waitlisted never stack — one lifecycle badge at a time, CTA color following it — <b>green</b> for buying access, <b>blue</b> for waitlisted, <b>coral</b> for capture-intent, <b>black</b> for a secondary action.</p>
 
   <div class="feature-eyebrow" style="margin-top: 48px;">What the card carried</div>
   <div class="pc-metrics-strip">
@@ -465,114 +415,181 @@ const caseStudies = {
   <h4 class="feature-heading">The Chrome Extension</h4>
   <p class="feature-subheadline">A constraint the team couldn't engineer around — until the idea came from buying a rain jacket</p>
 
-  <div class="cs-video-wrap cs-video-wrap--narrow" style="width: 60%; margin: 32px auto 40px; background: #000000; padding: 10px;">
-    <video autoplay loop muted playsinline preload="metadata" width="1101" height="755" aria-label="Screen recording of the Keye Chrome extension — install, login, and auto-fill on a partner site" style="display: block; width: 100%; height: auto;">
-      <source src="/videos/Keye/Chrome%20extension%20cropped.mp4" type="video/mp4">
-    </video>
+  <div class="cs-laptop-mockup" style="width: 72%; margin: 32px auto 40px;">
+    <div class="cs-laptop-lid">
+      <div class="cs-laptop-camera"></div>
+      <div class="cs-laptop-screen">
+        <div class="cs-video-wrap" style="width: 100%; margin: 0; overflow: hidden;">
+          <video autoplay loop muted playsinline preload="metadata" width="1101" height="755" aria-label="Screen recording of the Keye Chrome extension — install, login, and auto-fill on a partner site" style="display: block; width: 100%; height: auto;">
+            <source src="/videos/Keye/Chrome%20extension%20cropped.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
+    </div>
+    <div class="cs-laptop-hinge"></div>
+    <div class="cs-laptop-base"><div class="cs-laptop-notch"></div></div>
   </div>
 
-  <div class="feature-stat">
-    <div class="feature-stat-num">60% → 65%</div>
-    <div class="feature-stat-label">Extension adoption, 3 months post-launch vs. by the time I left — the fix for an 18-month-old unsolved problem</div>
-  </div>
+  <p>Partner integrations were the plan until our co-founder left with the backend capacity. The idea came buying a rain jacket online — Honey auto-filled a discount code, and I realized we just needed an extension, not partner engineering. Pitched Friday, built in two days.</p>
 
-  <p>Partner integrations were the founders' original plan — each partner would build against our API. Then our technical co-founder left, taking backend capacity with him, and that plan stopped being possible. The idea came buying a rain jacket online: Honey auto-filled a discount code at checkout, and it hit me — we didn't need partner engineering at all, just an extension that could do the same thing for Keye. I pitched it to the founders that Friday, prototyped over the weekend, and sent a video Monday. It was approved on the spot and built over the next two days.</p>
+  <div class="feature-note" style="border-left: 3px solid #FF7C5F;"><span class="feature-note-label" style="color: #FF7C5F;">Constraint</span><span>No backend engineer left on the team after the co-founder's exit — whatever shipped next had to be entirely client-side.</span></div>
 
-  <div class="feature-note"><span class="feature-note-label">Constraint</span> No backend engineer left on the team after the co-founder's exit — whatever shipped next had to be entirely client-side.</div>
-
-  <div class="feature-note"><span class="feature-note-label">Access model</span> Autofill only worked for Keye's authorized partners — not shared logins. It replaced the copy-paste flow below with the same access the user already had, not a new way to pass credentials around.</div>
-
-  <div class="feature-chip-row">
-    <span class="feature-chip"><b>2 days</b> to prototype</span>
-    <span class="feature-chip"><b>22%</b> install rate in 2 weeks</span>
-  </div>
+  <div class="feature-note" style="border-left: 3px solid #4A72E5;"><span class="feature-note-label" style="color: #4A72E5;">Access model</span><span>Autofill only worked for Keye's authorized partners — not shared logins. It replaced the copy-paste flow below with the same access the user already had, not a new way to pass credentials around.</span></div>
 
   <div class="pull-quote">The fix wasn't a partnership we finally got — it was a pattern that already existed somewhere else.</div>
 
-  <div class="cs-changelog">
-    <div class="cs-changelog-row">
-      <div class="cs-changelog-v">Before</div>
-      <div class="cs-changelog-body">
-        <img class="cs-changelog-zoomable" loading="lazy" decoding="async" src="/images/keye/chrome-ext-killed.webp" alt="The old flow — manually copying a username and password to paste into the partner site, with the Go to headspace.com button visible at the bottom" style="max-height: 320px;" onclick="document.getElementById('cs-lightbox-img').src=this.src;document.getElementById('cs-lightbox-img').alt=this.alt;document.getElementById('cs-lightbox').style.display='flex';" />
-        <p>The screen the extension made obsolete: copy a username and password here, then paste them in on the partner's site.</p>
-      </div>
-    </div>
-    <div class="cs-changelog-row">
-      <div class="cs-changelog-v">1</div>
-      <div class="cs-changelog-body">
-        <img class="cs-changelog-zoomable" loading="lazy" decoding="async" src="/images/keye/chrome-ext-step1.webp" alt="Install prompt — Enable Keye quick access, Add to Chrome, it's free" onclick="document.getElementById('cs-lightbox-img').src=this.src;document.getElementById('cs-lightbox-img').alt=this.alt;document.getElementById('cs-lightbox').style.display='flex';" />
-        <p>Install, prompted right on the grid — no separate onboarding flow to build or maintain.</p>
-      </div>
-    </div>
-    <div class="cs-changelog-row">
-      <div class="cs-changelog-v">2</div>
-      <div class="cs-changelog-body">
-        <img class="cs-changelog-zoomable" loading="lazy" decoding="async" src="/images/keye/chrome-ext-step2.webp" alt="Extension panel showing Active accesses with Autofill buttons for Tubi, Headspace, and Peloton" onclick="document.getElementById('cs-lightbox-img').src=this.src;document.getElementById('cs-lightbox-img').alt=this.alt;document.getElementById('cs-lightbox').style.display='flex';" />
-        <p>Every active access, one click from Autofill — the same credential list, now living in the browser toolbar.</p>
-      </div>
-    </div>
-    <div class="cs-changelog-row">
-      <div class="cs-changelog-v">3</div>
-      <div class="cs-changelog-body">
-        <img class="cs-changelog-zoomable" loading="lazy" decoding="async" src="/images/keye/chrome-ext-step3.webp" alt="Extension panel open on Peloton's own site, prompting Autofill for the active Keye access" onclick="document.getElementById('cs-lightbox-img').src=this.src;document.getElementById('cs-lightbox-img').alt=this.alt;document.getElementById('cs-lightbox').style.display='flex';" />
-        <p>The moment that mattered: the panel follows the user onto the partner's own site, not just Keye's.</p>
-      </div>
-    </div>
-    <div class="cs-changelog-row">
-      <div class="cs-changelog-v">Final</div>
-      <div class="cs-changelog-body">
-        <img class="cs-changelog-zoomable" loading="lazy" decoding="async" src="/images/keye/chrome-ext-final.webp" alt="Final shipped version — personalized 'Welcome, Nidhi!' panel with an active access grid" onclick="document.getElementById('cs-lightbox-img').src=this.src;document.getElementById('cs-lightbox-img').alt=this.alt;document.getElementById('cs-lightbox').style.display='flex';" />
-        <p>The version that shipped — personalized by name, active accesses laid out as a grid instead of a list.</p>
-      </div>
+  <div class="cs-stage" style="margin-top: 40px;">
+    <div class="cs-stage-header"><span>Before</span></div>
+    <div style="display: flex; gap: 32px; align-items: center; flex-wrap: wrap;">
+      <img loading="lazy" decoding="async" src="/images/keye/chrome-ext-killed.webp" alt="The old flow — manually copying a username and password to paste into the partner site, with the Go to headspace.com button visible at the bottom" style="width: 673px; flex: 0 0 673px; margin: 0; border-radius: 10px; box-shadow: 0 10px 24px rgba(28, 25, 23, 0.1); border: 1px solid #D6D3D1; padding: 20px; background-color: #FFFFFF; cursor: zoom-in;" onclick="document.getElementById('cs-lightbox-img').src=this.src;document.getElementById('cs-lightbox-img').alt=this.alt;document.getElementById('cs-lightbox').style.display='flex';" />
+      <p style="flex: 1; min-width: 240px; margin: 0;">The screen the extension made obsolete: copy a username and password here, then paste them in on the partner's site.</p>
     </div>
   </div>
+
+  <div class="cs-stage">
+    <div class="cs-stage-header"><span>Step 1</span></div>
+    <div style="display: flex; gap: 32px; align-items: center; flex-wrap: wrap;">
+      <img loading="lazy" decoding="async" src="/images/keye/chrome-ext-step1.webp" alt="Install prompt — Enable Keye quick access, Add to Chrome, it's free" style="width: 673px; flex: 0 0 673px; margin: 0; border-radius: 10px; box-shadow: 0 10px 24px rgba(28, 25, 23, 0.1); border: 1px solid #D6D3D1; padding: 20px; background-color: #FFFFFF; cursor: zoom-in;" onclick="document.getElementById('cs-lightbox-img').src=this.src;document.getElementById('cs-lightbox-img').alt=this.alt;document.getElementById('cs-lightbox').style.display='flex';" />
+      <p style="flex: 1; min-width: 240px; margin: 0;">Install, prompted right on the grid — no separate onboarding flow to build or maintain.</p>
+    </div>
+  </div>
+
+  <div class="cs-stage">
+    <div class="cs-stage-header"><span>Step 2</span></div>
+    <div style="display: flex; gap: 32px; align-items: center; flex-wrap: wrap;">
+      <img loading="lazy" decoding="async" src="/images/keye/chrome-ext-step2.webp" alt="Extension panel showing Active accesses with Autofill buttons for Tubi, Headspace, and Peloton" style="width: 673px; flex: 0 0 673px; margin: 0; border-radius: 10px; box-shadow: 0 10px 24px rgba(28, 25, 23, 0.1); border: 1px solid #D6D3D1; padding: 20px; background-color: #FFFFFF; cursor: zoom-in;" onclick="document.getElementById('cs-lightbox-img').src=this.src;document.getElementById('cs-lightbox-img').alt=this.alt;document.getElementById('cs-lightbox').style.display='flex';" />
+      <p style="flex: 1; min-width: 240px; margin: 0;">Every active access, one click from Autofill — the same credential list, now living in the browser toolbar.</p>
+    </div>
+  </div>
+
+  <div class="cs-stage">
+    <div class="cs-stage-header"><span>Step 3</span></div>
+    <div style="display: flex; gap: 32px; align-items: center; flex-wrap: wrap;">
+      <img loading="lazy" decoding="async" src="/images/keye/chrome-ext-step3.webp" alt="Extension panel open on Peloton's own site, prompting Autofill for the active Keye access" style="width: 673px; flex: 0 0 673px; margin: 0; border-radius: 10px; box-shadow: 0 10px 24px rgba(28, 25, 23, 0.1); border: 1px solid #D6D3D1; padding: 20px; background-color: #FFFFFF; cursor: zoom-in;" onclick="document.getElementById('cs-lightbox-img').src=this.src;document.getElementById('cs-lightbox-img').alt=this.alt;document.getElementById('cs-lightbox').style.display='flex';" />
+      <p style="flex: 1; min-width: 240px; margin: 0;">The moment that mattered: the panel follows the user onto the partner's own site, not just Keye's.</p>
+    </div>
+  </div>
+
+  <div class="cs-stage" style="margin-bottom: 24px;">
+    <div class="cs-stage-header"><span>Final</span></div>
+    <div style="display: flex; gap: 32px; align-items: center; flex-wrap: wrap;">
+      <img loading="lazy" decoding="async" src="/images/keye/chrome-ext-final.webp" alt="Final shipped version — personalized 'Welcome, Nidhi!' panel with an active access grid" style="width: 673px; flex: 0 0 673px; margin: 0; border-radius: 10px; box-shadow: 0 10px 24px rgba(28, 25, 23, 0.1); border: 1px solid #D6D3D1; padding: 20px; background-color: #FFFFFF; cursor: zoom-in;" onclick="document.getElementById('cs-lightbox-img').src=this.src;document.getElementById('cs-lightbox-img').alt=this.alt;document.getElementById('cs-lightbox').style.display='flex';" />
+      <p style="flex: 1; min-width: 240px; margin: 0;">The version that shipped — personalized by name, active accesses laid out as a grid instead of a list.</p>
+    </div>
+  </div>
+
+  <div class="feature-eyebrow" style="margin-top: 48px;">What the extension delivered</div>
+  <div class="pc-metrics-strip" style="margin-top: 24px; grid-template-columns: repeat(3, 1fr);">
+    <div class="pc-metrics-cell"><div class="feature-stat-num" style="font-size: 30px;">2 days</div><div class="feature-stat-label">from pitch to prototype</div></div>
+    <div class="pc-metrics-cell"><div class="feature-stat-num" style="font-size: 30px;">22%</div><div class="feature-stat-label">install rate in the first 2 weeks</div></div>
+    <div class="pc-metrics-cell"><div class="feature-stat-num" style="font-size: 30px;">60% → 65%</div><div class="feature-stat-label">extension adoption, 3 months post-launch vs. by the time I left — the fix for an 18-month-old unsolved problem</div></div>
+  </div>
 </div>`
+      },
+      {
+        id: 'started',
+        title: '04 — Evidence Over Instinct',
+        headline: "The founders were moving fast on instinct. I slowed things down just enough to check if the instinct was right",
+        content: `<p>My first task was the purchase flow: founders had baked in mandatory consent and a checkout survey dropping completion 30%, so I moved consent to signup and relocated the survey to a post-access popup, cutting drop-off 20% in one sprint.</p>
+
+<p style="margin-top: 28px; font-size: 14px; color: #6B7280;">Research base: early beta users from the UPenn network, with standout survey answers and customer-care contacts followed up in interviews and usability sessions, incentivized with Amazon gift cards.</p>
+
+<div class="cs-stage" style="margin-top: 40px;">
+  <div class="cs-stage-header"><span>V1</span></div>
+  <div style="display: flex; gap: 32px; align-items: center; flex-wrap: wrap;">
+    <img loading="lazy" decoding="async" src="/images/keye/section-03-v1.webp" alt="Survey V1 — embedded directly in the purchase flow" style="width: 673px; flex: 0 0 673px; margin: 0; border-radius: 10px; box-shadow: 0 10px 24px rgba(28, 25, 23, 0.1); border: 1px solid #D6D3D1; padding: 20px; background-color: #FFFFFF; cursor: zoom-in;" onclick="document.getElementById('cs-lightbox-img').src=this.src;document.getElementById('cs-lightbox-img').alt=this.alt;document.getElementById('cs-lightbox').style.display='flex';" />
+    <div style="flex: 1; min-width: 240px;">
+      <p style="margin: 0;">Embedded directly in the purchase flow, shown before confirming access.</p>
+      <p class="cs-changelog-signal" style="margin-top: 8px;">Signal: users were confused by the mandatory survey — drop-off hit 50%, and it drove a spike in customer service requests.</p>
+    </div>
+  </div>
+</div>
+
+<div class="cs-stage">
+  <div class="cs-stage-header"><span>V2</span></div>
+  <div style="display: flex; gap: 32px; align-items: center; flex-wrap: wrap;">
+    <img loading="lazy" decoding="async" src="/images/keye/section-03-v2.webp" alt="Survey V2 — reframed as Step 3 of a numbered checkout flow" style="width: 673px; flex: 0 0 673px; margin: 0; border-radius: 10px; box-shadow: 0 10px 24px rgba(28, 25, 23, 0.1); border: 1px solid #D6D3D1; padding: 20px; background-color: #FFFFFF; cursor: zoom-in;" onclick="document.getElementById('cs-lightbox-img').src=this.src;document.getElementById('cs-lightbox-img').alt=this.alt;document.getElementById('cs-lightbox').style.display='flex';" />
+    <div style="flex: 1; min-width: 240px;">
+      <p style="margin: 0;">Reframed as Step 3 of a numbered checkout sequence.</p>
+      <p class="cs-changelog-signal" style="margin-top: 8px;">Signal: only moved the needle 2–3% — founders wanted this data organically, but it was still a barrier to funnel growth.</p>
+    </div>
+  </div>
+</div>
+
+<div class="cs-stage">
+  <div class="cs-stage-header"><span>V3</span></div>
+  <div style="display: flex; gap: 32px; align-items: center; flex-wrap: wrap;">
+    <img loading="lazy" decoding="async" src="/images/keye/section-03-v3.webp" alt="Survey V3 — rebuilt as its own page, shown right after product use" style="width: 673px; flex: 0 0 673px; margin: 0; border-radius: 10px; box-shadow: 0 10px 24px rgba(28, 25, 23, 0.1); border: 1px solid #D6D3D1; padding: 20px; background-color: #FFFFFF; cursor: zoom-in;" onclick="document.getElementById('cs-lightbox-img').src=this.src;document.getElementById('cs-lightbox-img').alt=this.alt;document.getElementById('cs-lightbox').style.display='flex';" />
+    <div style="flex: 1; min-width: 240px;">
+      <p style="margin: 0;">Rebuilt as its own page, shown right after the product was used.</p>
+      <p class="cs-changelog-signal" style="margin-top: 8px;">Signal: consent moved to signup instead of repeating at every purchase — drop-off fell sharply once it stopped feeling repetitive.</p>
+    </div>
+  </div>
+</div>
+
+<div class="cs-stage" style="margin-bottom: 24px;">
+  <div class="cs-stage-header"><span>V4</span></div>
+  <div style="display: flex; gap: 32px; align-items: center; flex-wrap: wrap;">
+    <img loading="lazy" decoding="async" src="/images/keye/section-03-v4.webp" alt="Survey V4 — folded back into the app as an in-context modal, the version that shipped" style="width: 673px; flex: 0 0 673px; margin: 0; border-radius: 10px; box-shadow: 0 10px 24px rgba(28, 25, 23, 0.1); border: 1px solid #D6D3D1; padding: 20px; background-color: #FFFFFF; cursor: zoom-in;" onclick="document.getElementById('cs-lightbox-img').src=this.src;document.getElementById('cs-lightbox-img').alt=this.alt;document.getElementById('cs-lightbox').style.display='flex';" />
+    <div style="flex: 1; min-width: 240px;">
+      <p style="margin: 0;">Folded back into the app as an in-context modal — the version that shipped.</p>
+      <p class="cs-changelog-signal" style="margin-top: 8px;">Signal: the final version.</p>
+    </div>
+  </div>
+</div>
+
+<div id="cs-lightbox" class="cs-lightbox" onclick="this.style.display='none';">
+  <button type="button" class="cs-lightbox-close" aria-label="Close" onclick="event.stopPropagation();document.getElementById('cs-lightbox').style.display='none';">✕</button>
+  <img id="cs-lightbox-img" src="" alt="" onclick="event.stopPropagation();" />
+</div>
+
+<div class="pull-quote" style="margin-top: 28px;">On a seed-stage startup budget, I worked by signal saturation: once the same friction appeared across five or six users, it was real enough to act on.</div>`
       },
       {
         id: 'tradeoffs',
         title: '05 — Tradeoffs & Hard Calls',
         headline: 'None of these were mine to decide alone — engineering, marketing, founders, and investors each pushed back, and the product was better for it',
-        content: `<p>Every hard call below was negotiated, not dictated — my job was bringing evidence into rooms where other people had the final say.</p>
+        content: `<p>Every hard call here was negotiated, not dictated — my job was bringing evidence into the room.</p>
 
 <div style="display: grid; grid-template-columns: 1fr; gap: 28px; margin-top: 32px;">
   <div>
     <div class="cs-card-title">The GIF Decision</div>
-    <div style="font-size: 15px; color: #57534E; line-height: 1.6;">I wanted animated onboarding characters; engineering flagged performance. I brought evidence on Lottie's lightweight format, and a better solution won over either original position.</div>
+    <div style="font-size: 15px; color: #57534E; line-height: 1.6;">I wanted animated characters; engineering flagged performance. Evidence on Lottie's lightweight format won out over both positions.</div>
   </div>
 
   <div>
     <div class="cs-card-title">The Influencer Debate</div>
-    <div style="font-size: 15px; color: #57534E; line-height: 1.6;">Marketing wanted influencer streams and social mechanics. I reframed it: users came to access tools, not to be entertained. Founders agreed.</div>
+    <div style="font-size: 15px; color: #57534E; line-height: 1.6;">Marketing wanted influencer streams and social mechanics; I reframed it as access, not entertainment. Founders agreed.</div>
   </div>
 
   <div>
     <div class="cs-card-title">The Mobile App Concession</div>
-    <div style="font-size: 15px; color: #57534E; line-height: 1.6;">I believed in a native app; founders and investors disagreed on cost. I conceded, and made mobile web thorough enough that it barely cost users anything.</div>
+    <div style="font-size: 15px; color: #57534E; line-height: 1.6;">I wanted native; cost won the argument. I conceded, and made mobile web thorough enough to barely cost users anything.</div>
   </div>
 
   <div>
     <div class="cs-card-title">The Mid-Growth Rebrand</div>
-    <div style="font-size: 15px; color: #57534E; line-height: 1.6;">Changing palette and typography mid-funnel was risky. We shipped it live — it coincided with a 33% single-month growth spike.</div>
+    <div style="font-size: 15px; color: #57534E; line-height: 1.6;">Changing palette and typography mid-funnel was risky — we shipped live, and it coincided with a 33% growth spike.</div>
   </div>
 </div>
 
-<div class="pull-quote" style="margin-top: 48px;">What I'd do differently isn't a product decision — it's role design. Founding-designer roles expand to fill whatever you give them. I learned to define boundaries before the product demands more than one person can sustainably give.</div>`
+<div class="pull-quote" style="margin-top: 48px;">What I'd do differently is role design, not product. Founding-designer roles expand to fill whatever you give them — I learned to set boundaries before the role outgrew one person.</div>`
       },
       {
         id: 'impact',
         title: '06 — Impact & Reflection',
         headline: "The most important thing a founding designer builds isn't the product. It's the foundation that lets the product grow without being rebuilt from scratch",
-        content: `<p><span style="font-weight: 600;">What I got wrong.</span> I thought unlimited credits would show us honest user behavior — let people spend freely and we'd see what they actually wanted. It didn't. With no cost to switching, users just defaulted to the brand they already trusted; there was no signal in the data. The cap worked precisely because it removed that option — forcing a real tradeoff was what finally showed us what people would try when trying something new actually cost them something.</p>
+        content: `<p><span style="font-weight: 600;">What I got wrong.</span> I thought unlimited credits would reveal honest user behavior. It didn't — with no cost to switching, users just defaulted to the brand they trusted. The cap worked because removing that option forced a real tradeoff, finally showing what people would try when it cost them something.</p>
 
 <div style="background-color: #1C1917; padding: 28px 32px; border-radius: 0px; margin-top: 40px; margin-bottom: 8px;">
   <div style="font-size: 11px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #A8A29E; margin-bottom: 10px;">The pivot</div>
   <div style="font-family: 'Fraunces', serif; font-size: 22px; font-weight: 600; color: #FFFFFF; line-height: 1.4; margin-bottom: 12px;">By year three, the founding team dispersed and the subscription marketplace I designed didn't survive — but it got the company into YC.</div>
-  <div style="font-size: 15px; color: #D6D3D1; line-height: 1.7;">Keye left the subscription-marketplace model behind entirely and rebuilt around financial analytics. What carried over wasn't the product — it was the research, partner relationships, and funding the marketplace generated, which is what made the YC F24 acceptance possible.</div>
+  <div style="font-size: 15px; color: #D6D3D1; line-height: 1.7;">Keye dropped the marketplace model and rebuilt around financial analytics. What carried over wasn't the product — the research, partnerships, and funding it generated made the YC F24 acceptance possible.</div>
 </div>
 
-<div class="pull-quote" style="margin-top: 48px;">The credit cap wasn't valuable because it monetized the product. It was valuable because it generated the behavioral data that shaped the entire partnership strategy.</div>
+<div class="pull-quote" style="margin-top: 48px;">The credit cap's value wasn't monetization — it was the behavioral data that shaped the entire partnership strategy.</div>
 
-<p style="margin-top: 48px;">Keye compressed the feedback loop between decision and consequence from months to days — and taught me to treat every decision as a hypothesis. The ones I never tested were the ones that broke in production.</p>
+<p style="margin-top: 48px;">Keye compressed the feedback loop from months to days, teaching me to treat every decision as a hypothesis — the untested ones were the ones that broke.</p>
 
 <img class="keye-closing-phone" loading="lazy" decoding="async" src="/images/keye/closing-phone-mockup.webp" alt="Keye product grid on mobile">`
       },
