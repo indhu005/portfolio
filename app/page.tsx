@@ -399,7 +399,11 @@ export default function Home() {
               </p>
 
               <p style={{ marginBottom: isWideDesktop ? '32px' : '28px', ...revealStyle(120) }}>
-                I'm a product designer with 8+ years of experience taking products from 0 to 1. I build trust into systems, from a founding role at Keye that took a marketplace from three screens to a funded company, to LAT, an enterprise ML platform that reached 95% adoption inside a politically sensitive institution.
+                I'm a senior product designer with 8+ years taking 0→1 AI and enterprise products to launch. I design the trust layer between people and AI — from a founding role at Keye, a YC-backed marketplace, to LAT, an enterprise AI platform that reached 95% adoption inside a politically sensitive institution.
+              </p>
+
+              <p style={{ fontSize: isMobile ? '15px' : '16px', color: '#78716C', marginBottom: isWideDesktop ? '32px' : '28px', ...revealStyle(140) }}>
+                Currently building an AI-forward marketplace, in stealth.
               </p>
 
               {/* Proof Strip — fast, scannable backing for the claims above */}
@@ -440,7 +444,7 @@ export default function Home() {
               </div>
 
               <p style={{ marginBottom: isWideDesktop ? '32px' : '28px', ...revealStyle(220) }}>
-                I think in the how and the why, and lately the why now. Most recently, that's meant figuring out what accessibility and safety guardrails should look like as AI decides more of what people see and trust.
+                I obsess over how and why — and lately, why now. These days that means deciding what AI gets to see and act on, and what stays a human call.
               </p>
             </div>
           </main>

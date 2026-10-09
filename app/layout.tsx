@@ -21,33 +21,33 @@ const fraunces = Fraunces({
 export const metadata: Metadata = {
   metadataBase: new URL('https://indhu.design'),
   title: {
-    default: 'Indhu V — Product Designer',
+    default: 'Indhu V — Senior Product Designer, AI Products & 0→1 | Seattle',
     template: '%s | Indhu V'
   },
-  description: 'Product designer in Seattle specializing in AI/ML products, design systems, and user research. Previously founding designer at YC-backed Keye, enterprise UX for universities.',
-  keywords: ['product designer', 'UX designer', 'UI designer', 'Seattle designer', 'AI product design', 'ML design', 'design systems', 'user research', 'enterprise UX', 'YC designer'],
+  description: 'Senior product designer with 8+ years taking 0→1 AI and enterprise products to launch. Founding designer at YC-backed Keye; lead designer on LAT, an enterprise AI platform for university operations. Based in Seattle.',
+  keywords: ['senior product designer', '0 to 1 product designer', 'founding designer', 'AI product designer', 'enterprise SaaS design', 'Seattle product designer', 'San Francisco product designer', 'AI/ML product design', 'design systems', 'enterprise UX', 'YC designer'],
   authors: [{ name: 'Indhu V', url: 'https://indhu.design' }],
   creator: 'Indhu V',
   openGraph: {
     type: 'website',
     locale: 'en_US',
     url: 'https://indhu.design',
-    siteName: 'Indhu V — Product Designer',
-    title: 'Indhu V — Product Designer',
-    description: 'Product designer in Seattle specializing in AI/ML products, design systems, and user research.',
+    siteName: 'Indhu V — Senior Product Designer',
+    title: 'Indhu V — Senior Product Designer, AI Products & 0→1',
+    description: 'Senior product designer with 8+ years taking 0→1 AI and enterprise products to launch. Founding designer at YC-backed Keye; lead designer on LAT, an enterprise AI platform.',
     images: [
       {
         url: '/og-image.png',
         width: 1200,
         height: 630,
-        alt: 'Indhu V — Product Designer',
+        alt: 'Indhu V — Senior Product Designer, AI Products & 0→1',
       }
     ]
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Indhu V — Product Designer',
-    description: 'Product designer in Seattle specializing in AI/ML products, design systems, and user research.',
+    title: 'Indhu V — Senior Product Designer, AI Products & 0→1',
+    description: 'Senior product designer with 8+ years taking 0→1 AI and enterprise products to launch. Founding designer at YC-backed Keye; lead designer on LAT, an enterprise AI platform.',
     images: ['/og-image.png'],
     creator: '@indhu_design'
   },

@@ -637,7 +637,7 @@ export default function LandingGameSimple() {
             </div>
             <div style={{
               fontSize: '13px',
-              color: '#9CA3AF',
+              color: '#6B7280',
               fontStyle: 'italic',
               marginBottom: '12px',
               lineHeight: '1.5',
@@ -651,7 +651,7 @@ export default function LandingGameSimple() {
         {(isMobile || isTablet) && (
           <div style={{
             fontSize: '12px',
-            color: '#9CA3AF',
+            color: '#6B7280',
             fontStyle: 'italic',
             marginBottom: isMobile ? '6px' : '12px',
             lineHeight: '1.5',

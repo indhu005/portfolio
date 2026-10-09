@@ -1092,10 +1092,10 @@ const caseStudies = {
     heroImage: '/images/misinformation-center/Hero.png',
     figmaPrototypeUrl: 'https://www.figma.com/proto/5SuxUGsaCvOVUiRdXa7uNl/Misinformation-Center?node-id=9-3238&page-id=0%3A1&starting-point-node-id=9%3A3186&t=bGz9ql6fLYb3HAKR-1',
     brief: {
-      context: 'UW graduate capstone (solo after month two) asking whether people could be equipped to identify misinformation themselves, in research partnership with TrueMedia.org.',
-      constraint: 'No engineering resourcing beyond a prototype, and testing showed users rejected any platform-integrated solution outright — the tool had to stand alone.',
-      decision: 'Built four independent tools (Search, Scan, Quiz, Ask Us) that help people verify and learn, instead of another fact-check label.',
-      tradeoff: '17 of 19 testers rejected the original platform-embedded concept — so I gave up that reach and shipped four standalone tools instead.'
+      context: 'UW capstone, solo after month two — can people learn to spot misinformation themselves?',
+      constraint: 'No engineering beyond a prototype; platform-integrated concepts failed testing.',
+      decision: 'Four standalone tools (Search, Scan, Quiz, Ask Us), not another fact-check label.',
+      tradeoff: '17/19 rejected platform-embedded — went standalone instead.'
     },
     tldr: {
       role: 'Sole Designer (Graduate Capstone)',
@@ -1144,19 +1144,19 @@ const caseStudies = {
 
 <div class="snapshot-bottom-content">
 <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin-top: 48px; margin-bottom: 48px;">
-  <div style="background-color: #F3F4F6; border-radius: 0px; padding: 20px 24px;">
+  <div style="background-color: #FFFFFF; border: 1px solid #E5E7EB; border-top: 3px solid #D97706; padding: 20px 24px;">
     <div class="cs-card-title cs-card-title--sm-tight">Literacy Quiz</div>
     <div style="font-size: 14px; color: #57534E; line-height: 1.5;">A level-based game teaching users to spot manipulated content</div>
   </div>
-  <div style="background-color: #F3F4F6; border-radius: 0px; padding: 20px 24px;">
+  <div style="background-color: #FFFFFF; border: 1px solid #E5E7EB; border-top: 3px solid #4A72E5; padding: 20px 24px;">
     <div class="cs-card-title cs-card-title--sm-tight">Search & Image Search</div>
     <div style="font-size: 14px; color: #57534E; line-height: 1.5;">Verify links, headlines, and images with layered credibility ratings</div>
   </div>
-  <div style="background-color: #F3F4F6; border-radius: 0px; padding: 20px 24px;">
+  <div style="background-color: #FFFFFF; border: 1px solid #E5E7EB; border-top: 3px solid #0D9488; padding: 20px 24px;">
     <div class="cs-card-title cs-card-title--sm-tight">Scan</div>
     <div style="font-size: 14px; color: #57534E; line-height: 1.5;">Camera-based verification for printed content — flyers, newspapers, ads</div>
   </div>
-  <div style="background-color: #F3F4F6; border-radius: 0px; padding: 20px 24px;">
+  <div style="background-color: #FFFFFF; border: 1px solid #E5E7EB; border-top: 3px solid #FF7C5F; padding: 20px 24px;">
     <div class="cs-card-title cs-card-title--sm-tight">Ask Us</div>
     <div style="font-size: 14px; color: #57534E; line-height: 1.5;">Human-backed fact-checking for gray-area content algorithms miss</div>
   </div>
@@ -1237,9 +1237,9 @@ const caseStudies = {
 
 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 40px; margin-top: 28px; align-items: start;">
   <div>
-    <p style="margin-top: 0;"><span style="font-weight: 600;">What testing disproved.</span> Seventeen of nineteen people wouldn't engage with a version built inside a major social platform — they kept asking why it was there. Not a design problem; no interface would have fixed it. So I moved it out.</p>
+    <p style="margin-top: 0;"><span style="font-weight: 600;">What testing disproved.</span> 17 of 19 wouldn't engage with a version built inside a major platform — not a design problem, so I moved it out.</p>
 
-    <p style="margin-top: 16px;"><span style="font-weight: 600;">What testing confirmed.</span> People skimmed the written guide but finished the interactive quiz, so the quiz became the backbone. At the showcase the flow held without help, with one gap: no exit from every screen.</p>
+    <p style="margin-top: 16px;"><span style="font-weight: 600;">What testing confirmed.</span> The interactive quiz beat the written guide. At the showcase it held without help, except one gap: no exit from every screen.</p>
 
     <div style="display: flex; flex-wrap: wrap; gap: 32px; margin-top: 28px; padding: 24px 0; border-top: 1px solid #E5E7EB; border-bottom: 1px solid #E5E7EB;">
       <div>
@@ -1258,7 +1258,7 @@ const caseStudies = {
   </div>
 
   <div class="cs-video-wrap" style="width: 100%; max-width: 288px; margin: 0 auto; position: relative; overflow: hidden; aspect-ratio: 492 / 958; border-radius: 0px; background-color: #000000;">
-    <video autoplay loop muted playsinline preload="metadata" aria-label="Screen recording of a user uploading an image for camera-based verification" style="position: absolute; top: 0; left: 0; width: 117.89%; aspect-ratio: 580 / 1040; border-radius: 0px; display: block; transform: translate(-9.31%, -4.62%);">
+    <video autoplay loop muted playsinline preload="metadata" aria-label="Screen recording of a user uploading an image for camera-based verification" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; object-position: center top; border-radius: 0px; display: block;">
       <source src="/videos/misinformationcenter/Testing%20Image%20upload.mp4" type="video/mp4">
       Your browser does not support the video tag.
     </video>
@@ -1302,7 +1302,7 @@ const caseStudies = {
       {
         id: 'research',
         title: '06 — User Research',
-        headline: 'Misinformation moves through trust networks — families, WhatsApp groups, neighborhood pages — in a specific generational pattern',
+        headline: 'Misinformation moves through trust networks — families, WhatsApp groups, neighborhood pages',
         content: `<div class="cs-video-wrap" style="width: 100%; max-width: 1200px; margin: 0 auto 48px;">
   <video autoplay loop muted playsinline preload="metadata" width="2256" height="1384" aria-label="Screen recording of the color-coded rating system and unified search/image-search entry point" style="display: block; width: 100%; height: auto; border-radius: 0px;">
     <source src="/videos/misinformationcenter/Flow%2001%20Misinformation.mp4" type="video/mp4">
@@ -1312,11 +1312,11 @@ const caseStudies = {
 
 <p style="margin-top: 8px; font-size: 14px; color: #6B7280;">Recruited through the UW Misinformation Center network — UW students and Seattle-area school networks.</p>
 
-<p style="margin-top: 28px;">Early testing — verify a headline in under 30 seconds — surfaced ambiguous labels and slow search, shaping the shift to color-coded ratings.</p>
+<p style="margin-top: 28px;">Early testing surfaced ambiguous labels and slow search, prompting color-coded ratings.</p>
 
-<div class="pull-quote" style="margin-top: 48px; margin-bottom: 48px;">Misinformation moves through trust networks — families, WhatsApp groups, neighborhood pages — in a specific generational pattern.</div>
+<div class="pull-quote" style="margin-top: 48px; margin-bottom: 48px;">Misinformation moves through trust networks — families, WhatsApp groups, neighborhood pages.</div>
 
-<p><span style="font-weight: 600;">The finding that changed the problem:</span> families argue over what's true, and it runs through specific channels: adults 55–80 scammed via WhatsApp groups from trusted contacts, teens 13–18 pressured into exposing personal data, and 25–40 caught managing both.</p>
+<p><span style="font-weight: 600;">The finding that changed the problem:</span> families argue along specific channels — adults 55–80 scammed via WhatsApp from trusted contacts, teens 13–18 pressured into exposing data, 25–40 caught managing both.</p>
 
 <p style="margin-top: 28px;">The archetypes emerged from that chain:</p>
 
@@ -1348,9 +1348,9 @@ const caseStudies = {
 
 <img loading="lazy" decoding="async" src="/images/misinformation-center/User thinking.png" alt="The generational chain diagram and three archetype cards with real interview quotes" style="width: 100%; border-radius: 0px; margin-top: 40px; margin-bottom: 40px; display: block;" />
 
-<p style="margin-top: 36px;"><span style="font-weight: 600;">What Misinfo Day revealed that recruited testing couldn't.</span> Live crowds show what people do, not what they say. Younger participants abandoned anything that felt like reading within seconds; older participants trusted Ask Us over automated ratings. Engagement spiked when detection was framed as a skill, not a correction.</p>
+<p style="margin-top: 36px;"><span style="font-weight: 600;">What Misinfo Day revealed that recruited testing couldn't.</span> Live crowds show what people do, not what they say. Younger participants abandoned reading within seconds; older participants trusted Ask Us over automated ratings. Engagement spiked when framed as a skill, not a correction.</p>
 
-<p style="margin-top: 28px;">This was also when Scan got decided — attendees wanted to check something in front of them right now, not just what was on their phone.</p>
+<p style="margin-top: 28px;">This is also when Scan got decided — attendees wanted to check what was in front of them, not just their phone.</p>
 
 <div style="margin-top: 48px;">
   <div style="font-size: 13px; color: #6B7280; margin-bottom: 12px;">Misinfo Day — live testing with ~1,800 participants</div>
@@ -1387,18 +1387,18 @@ const caseStudies = {
         id: 'truemedia',
         title: '08 — TrueMedia',
         headline: 'Detection is the expensive end of the chain — authenticating content at creation is fundamentally more efficient, but nobody profits from implementing it',
-        content: `<p>TrueMedia.org was a nonprofit building deepfake detection for the 2024 election. Through UW's partnership, I contributed research synthesis on what to prioritize. They shipped a dark, utilitarian tool for journalists; mine served a teenager asking "why should I care?" — two solutions to adjacent problems. Per later reporting on the shutdown, they analyzed 60,000+ pieces of media, launched in September 2024, and shut down in January 2025, open-sourcing the technology rather than chasing funding. Founder Oren Etzioni, quoted in that coverage: "We are not prepared for a large-scale, generative AI attack. It hasn't come yet. That doesn't mean it won't."</p>
+        content: `<p>TrueMedia.org built deepfake detection for the 2024 election; through UW I contributed research synthesis. Their tool served journalists, mine a teenager. They analyzed 60,000+ pieces of media before shutting down in January 2025, open-sourcing the tech instead of chasing funding.</p>
 
-<p style="margin-top: 28px;">TrueMedia's Head of Product reframed the market for me in two lessons: platforms are ambivalent about detection because it drives engagement, and the real unaddressed threat — personalized scams — never reaches a community to verify it. His critique: detection is the expensive end of the chain; authenticating content at creation is more efficient, but C2PA proposed exactly that and stalled on incentives.</p>`
+<p style="margin-top: 28px;">TrueMedia's Head of Product reframed it for me: platforms are ambivalent about detection since it drives engagement, and personalized scams never reach anyone to verify them. Authenticating content at creation would be more efficient than detection — but C2PA proposed that and stalled on incentives.</p>`
       },
       {
         id: 'reflection',
         title: '09 — Reflection',
         showPrototypeCta: true,
         headline: 'A designer who thinks only about what users see is a UI designer. A designer who thinks about everything required to make that experience real and sustainable is a product leader',
-        content: `<p><span style="font-weight: 600;">What this project taught me.</span> Design alone can't make a public good sustainable — TrueMedia was research-grounded and mission-complete, yet closed on economics, not design. The integration vision, embedded in trusted surfaces with no business model, is the answer. A designer who only sees the UI misses that; a product leader thinks about what makes it real.</p>
+        content: `<p><span style="font-weight: 600;">What this project taught me.</span> Design alone can't make a public good sustainable — TrueMedia was research-grounded and mission-complete, yet closed on economics, not design. The answer was integration into trusted surfaces, which never had a business model.</p>
 
-<p style="margin-top: 28px;"><span style="font-weight: 600;">What changed.</span> Feedback pushed the quiz to teach the why behind each answer, and credibility badges toward layered reveals — signal first, reasoning a tap away. By 2026, AI collapses the staffing this needed; the design question is answered, the ecosystem question isn't.</p>
+<p style="margin-top: 28px;"><span style="font-weight: 600;">What changed.</span> Feedback pushed the quiz toward teaching why, and badges toward layered reveals — signal first, reasoning a tap away. By 2026, AI solves the staffing; the ecosystem question remains.</p>
 
 <div style="display: flex; gap: 24px; margin-top: 48px; margin-bottom: 8px; flex-wrap: wrap;">
   <div style="flex: 1; min-width: 250px; position: relative;">

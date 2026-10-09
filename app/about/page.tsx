@@ -345,6 +345,52 @@ export default function About() {
               ))}
 
               <div style={{
+                fontFamily: 'ui-monospace, SFMono-Regular, Menlo, monospace',
+                fontSize: '15px',
+                letterSpacing: '0.04em',
+                textTransform: 'uppercase',
+                fontWeight: 700,
+                color: '#1C1917',
+                marginBottom: '24px',
+              }}>Experience</div>
+
+              <div style={{ marginBottom: '56px' }}>
+                {[
+                  { years: '2025 — Present', role: 'Product Designer', org: 'Stealth early-stage startup', note: 'AI-forward marketplace' },
+                  { years: '2024 — 2025', role: 'Researcher', org: 'University of Washington' },
+                  { years: '2023 — 2024', role: 'Product Designer', org: 'Amento' },
+                  { years: '2022 — 2023', role: 'Designer', org: 'Handel Architects (NYC)' },
+                  { years: '2021 — 2022', role: 'Founding Product Designer', org: 'Keye (Remote)', note: 'also Flock (3mo), SCB (2mo)' },
+                  { years: '2018 — 2020', role: 'User Experience Designer', org: 'Gensler (Chicago)' },
+                  { years: '2013 — 2017', role: 'Design Intern', org: 'Collins International (Bangalore), SCI-Arc (LA), Studios Architecture (NY), Fr-EE (NY)' },
+                ].map((entry, i) => (
+                  <div key={i} style={{
+                    display: 'grid',
+                    gridTemplateColumns: isMobile ? '1fr' : '140px 1fr',
+                    gap: isMobile ? '4px' : '20px',
+                    padding: '16px 0',
+                    borderTop: i === 0 ? 'none' : '1px solid rgba(0,0,0,0.08)',
+                  }}>
+                    <div style={{
+                      fontFamily: 'ui-monospace, SFMono-Regular, Menlo, monospace',
+                      fontSize: '12.5px',
+                      color: '#78716C',
+                      paddingTop: '2px',
+                    }}>{entry.years}</div>
+                    <div>
+                      <div style={{ fontSize: '15px', color: '#1C1917' }}>
+                        <span style={{ fontWeight: 600 }}>{entry.role}</span>
+                        <span style={{ color: '#78716C' }}> · {entry.org}</span>
+                      </div>
+                      {entry.note && (
+                        <div style={{ fontSize: '13px', color: '#A8A29E', marginTop: '4px' }}>{entry.note}</div>
+                      )}
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              <div style={{
                 display: 'flex',
                 gap: '32px',
                 flexWrap: 'wrap',

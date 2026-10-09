@@ -8,7 +8,7 @@ export default function MisinfoFeaturesContent() {
 
       <p style={{ marginTop: '48px', fontSize: '20px', fontWeight: 600 }}>The pivot: from platform-embedded to standalone</p>
 
-      <p style={{ marginTop: '20px' }}>Before any interface work, I'd already concluded a standalone public-interest tool couldn't fund itself — so the first iteration met people where the infrastructure and users already existed: a Misinformation Center embedded in a major social platform, with fact-check labels, community reporting, a hub in the feed. Dead on arrival for two independent reasons: users wouldn't trust the platform spreading misinformation to also solve it, and that platform's own base skews older, missing the audience most active in verification. That reopened the exact funding question I'd tried to design around, and I sat stuck on it for weeks while teammates moved to easier scopes — a Snopes-style news app, a game, a city website redesign.</p>
+      <p style={{ marginTop: '20px' }}>First version lived inside a major platform — users didn't trust it to police itself, and its audience skewed too old for verification. I went standalone.</p>
 
       <img src="/images/misinformation-center/Facebook misinformation center.png" alt="Misinformation Center wireframes embedded in a major social platform — the killed direction" width={2999} height={1210} style={{ width: '100%', height: 'auto', borderRadius: '0px', marginTop: '32px', marginBottom: '48px', display: 'block' }} />
 
@@ -52,7 +52,7 @@ export default function MisinfoFeaturesContent() {
           The quiz was designed in the visual register of the platforms where misinformation actually spreads, not the register of an educational tool.
         </div>
 
-        <p style={{ marginTop: '20px' }}>After Misinfo Day, completion states were redesigned around skill progression rather than score — "You're getting better at spotting this" outperformed a percentage. Users also wanted to know why an item was false, which conflicted with the 40-second constraint; the resolution was speed for the question, depth for the reveal, sources one tap away.</p>
+        <p style={{ marginTop: '20px' }}>Completion states shifted to skill progression — "getting better" beat a percentage. The 40-second limit meant speed for the question, depth one tap away.</p>
       </div>
 
       <div style={{ marginTop: '120px' }}>
