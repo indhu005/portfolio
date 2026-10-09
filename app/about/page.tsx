@@ -58,10 +58,9 @@ const photoCaptions = [
   "Foam, doing the most for a Tuesday",
 ]
 
-// Curated down to 16 for variety — nature, abstract/art, architecture, animals,
-// and personal moments, with redundant beach/architecture/ceiling duplicates cut
-// to the single strongest shot in each cluster.
-const KEPT_PHOTO_IDS = new Set([4, 8, 9, 10, 13, 21, 22, 24, 25, 26, 28, 29, 30, 33, 34, 36])
+// Curated down to 6 — architecture-forward with a couple of nature shots,
+// trimmed from a larger set to keep the page from reading as a photo journal.
+const KEPT_PHOTO_IDS = new Set([4, 9, 23, 29, 30, 34])
 
 const photos = Array.from({ length: 36 }, (_, i) => ({
   id: i + 1,
@@ -247,7 +246,7 @@ export default function About() {
               {[
                 { k: 'Based', v: 'Seattle, WA' },
                 { k: 'Focus', v: 'Systems, trust, and AI guardrails' },
-                { k: 'Cities lived in', v: '5 — Chicago, Milwaukee, LA, New York, Seattle' },
+                { k: 'Experience', v: '8+ years, 0→1 through enterprise' },
               ].map((field) => (
                 <div key={field.k} style={{ marginBottom: '20px' }}>
                   <div style={{
@@ -261,6 +260,32 @@ export default function About() {
                   <div style={{ fontSize: '14px', lineHeight: '1.5', color: '#1C1917' }}>{field.v}</div>
                 </div>
               ))}
+
+              <div style={{ marginTop: '32px', paddingTop: '24px', borderTop: '1px solid rgba(0,0,0,0.1)' }}>
+                <div style={{
+                  fontFamily: 'ui-monospace, SFMono-Regular, Menlo, monospace',
+                  fontSize: '10.5px',
+                  letterSpacing: '0.08em',
+                  textTransform: 'uppercase',
+                  color: '#78716C',
+                  marginBottom: '14px',
+                }}>Experience</div>
+                {[
+                  { role: 'Independent Product Designer', org: 'Freelance', years: '2025 — Present' },
+                  { role: 'Graduate Capstone Designer', org: 'University of Washington', years: 'Jan — Dec 2024' },
+                  { role: 'Senior Product Designer', org: 'Amento', years: 'Jun 2023 — May 2024' },
+                  { role: 'Product Designer II', org: 'Handel Architects', years: 'Mar 2022 — May 2023' },
+                  { role: 'Founding Product Designer', org: 'Keye', years: 'Jan 2021 — Dec 2022' },
+                  { role: 'Senior Product Designer', org: 'Flock.ai', years: 'Nov 2021 — Jan 2022' },
+                  { role: 'Product Designer, Volunteer', org: 'Distribute Aid', years: 'Jun — Dec 2020' },
+                  { role: 'User Experience Designer', org: 'Gensler', years: 'May 2018 — Feb 2020' },
+                ].map((job) => (
+                  <div key={job.role + job.org} style={{ marginBottom: '14px' }}>
+                    <div style={{ fontSize: '13.5px', fontWeight: 600, color: '#1C1917', lineHeight: '1.4' }}>{job.role}</div>
+                    <div style={{ fontSize: '12.5px', color: '#78716C', marginTop: '2px' }}>{job.org} · {job.years}</div>
+                  </div>
+                ))}
+              </div>
             </div>
 
             {/* MAIN — field notes */}
@@ -305,22 +330,6 @@ export default function About() {
                   label: 'The bar',
                   body: <>The best products are invisible. An Apple Watch that catches a heartbeat and calls for help. If someone notices they're using your product, it hasn't done its job yet.</>,
                 },
-                {
-                  n: '04',
-                  label: 'How I see',
-                  body: <>I take a lot of photos of stuff most people walk past. Fog swallowing a road through sequoias. A library that looks about to unfold onto the sidewalk. I'm not sure why my eyes work that way, but I can't turn it off.</>,
-                },
-                {
-                  n: '05',
-                  label: 'What I collect',
-                  body: <>Every city I've lived in left an opinion about public transit nobody asked for. I collect things that make people look twice, and lose sleep over problems that were never part of the assignment. Superpower or boundary problem, probably both.</>,
-                },
-                {
-                  n: '06',
-                  label: 'Coda',
-                  italic: true,
-                  body: <>When I'm in my 60s, I want a barn full of animals, surrounded by tall trees, reading every day. Until then, I'll be the one asking why the button needs to move at all.</>,
-                },
               ].map((entry) => (
                 <div key={entry.n} style={{
                   display: 'grid',
@@ -347,13 +356,13 @@ export default function About() {
                     }}>{entry.label}</div>
                     <p style={{
                       margin: 0,
-                      maxWidth: entry.pull || entry.italic ? '56ch' : '62ch',
-                      fontFamily: entry.pull || entry.italic ? 'var(--font-fraunces), serif' : 'inherit',
-                      fontStyle: entry.italic ? 'italic' : 'normal',
+                      maxWidth: entry.pull ? '56ch' : '62ch',
+                      fontFamily: entry.pull ? 'var(--font-fraunces), serif' : 'inherit',
+                      fontStyle: 'normal',
                       fontWeight: entry.pull ? 600 : 400,
-                      fontSize: entry.pull ? (isMobile ? '19px' : '21px') : entry.italic ? (isMobile ? '18px' : '20px') : (isMobile ? '16px' : '17px'),
-                      lineHeight: entry.pull || entry.italic ? '1.55' : '1.75',
-                      color: entry.pull || entry.italic ? '#1C1917' : '#44403C',
+                      fontSize: entry.pull ? (isMobile ? '19px' : '21px') : (isMobile ? '16px' : '17px'),
+                      lineHeight: entry.pull ? '1.55' : '1.75',
+                      color: entry.pull ? '#1C1917' : '#44403C',
                     }}>
                       {entry.body}
                     </p>
@@ -400,7 +409,6 @@ export default function About() {
               </div>
             </div>
           </div>
-
           {/* PHOTO GRID */}
           <div style={{
             marginTop: isMobile ? '60px' : '80px',

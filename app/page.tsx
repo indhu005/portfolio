@@ -414,8 +414,8 @@ export default function Home() {
               }}>
                 {[
                   { stat: '95% pilot adoption', context: 'LAT — 12-month enterprise rollout, measured by weekly active use of the core workflow' },
-                  { stat: '0→20K MAUs · $1.5M raised', context: 'Keye — founding designer, team of 5, later pivoted into YC F24' },
-                  { stat: '~1,800 testers', context: 'Misinfo Day — concept validated via a 2,000-respondent survey' },
+                  { stat: '0→20K MAUs · $1.5M raised', context: 'Keye — founding designer, team of 5, later pivoted into YC W2024' },
+                  { stat: "96% said they'd use it", context: 'Misinfo Center — 36 Gen Z/millennial testers, field-tested at Misinfo Day' },
                 ].map((item) => (
                   <div key={item.stat}>
                     <div style={{
@@ -836,7 +836,7 @@ export default function Home() {
                   cells={[
                     { label: 'Role & Team', value: 'Founding Designer · team of 5 — 2 engineers, 1 PM, 2 designers I hired' },
                     { label: 'Constraint', value: "Engineering was 12 time zones away; a co-founder's exit erased backend capacity for planned integrations." },
-                    { label: 'Impact', value: '0→20K MAUs · $1.5M raised · later pivoted into YC F24' },
+                    { label: 'Impact', value: '0→20K MAUs · $1.5M raised · later pivoted into YC W2024' },
                     { label: 'Tech & Approach', value: 'Design systems · Chrome extension · Credit-based economics' },
                   ]}
                 />
@@ -1060,7 +1060,7 @@ export default function Home() {
                   dark
                   cells={[
                     { label: 'Role & Team', value: 'Sole Designer (Graduate Capstone) · solo post-Feb 2024, contributed to user research for TrueMedia.org' },
-                    { label: 'Impact', value: '~1,800 testers at Misinfo Day · 2,000-respondent survey · Concept validation' },
+                    { label: 'Impact', value: "96% of 36 testers said they'd use it · ~1,800 tested live at Misinfo Day" },
                     { label: 'Tech & Approach', value: 'Concept design · Gamification · Platform strategy' },
                   ]}
                 />
@@ -1230,7 +1230,7 @@ export default function Home() {
                 },
                 {
                   statement: 'I test the concept before I polish the interface.',
-                  body: '17 of 19 testers at Misinfo Day rejected the original scan-and-verify concept. That result sent the design back to a quiz-first format before any visual work began.',
+                  body: '17 of 19 testers at Misinfo Day rejected the original platform-embedded concept. That result sent the design back to a quiz-first format before any visual work began.',
                   project: 'Misinformation Center',
                 },
                 {

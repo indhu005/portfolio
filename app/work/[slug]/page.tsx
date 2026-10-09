@@ -21,7 +21,7 @@ const caseStudies = {
       role: 'Founding Product Designer',
       team: '5 (2 engineers, 1 PM, 2 designers I hired)',
       timeline: '2 years (2021–2022)',
-      impact: '0→20K MAUs | $1.5M raised | later pivoted into YC F24',
+      impact: '0→20K MAUs | $1.5M raised | later pivoted into YC W2024',
       skills: 'Product strategy · Design systems · User research · PRDs · Chrome extension · Credit economics',
       decisionAuthority: 'Owned: every shipped surface, the credit-cap mechanic, the product-card system, hiring the two designers who followed me. Founders owned vision and fundraising; I translated it into what shipped alongside the PM.'
     },
@@ -35,7 +35,7 @@ const caseStudies = {
 
 <p style="margin-top: 28px;"><span style="font-weight: 600;">My role.</span> Founding (and for most of Keye's life, only) designer. Founders set vision and fundraising; the PM and I turned it into what shipped — I designed every surface, wrote PRDs, ran research, and hired the two designers who replaced me.</p>
 
-<p style="margin-top: 28px;"><span style="font-weight: 600;">Timeline.</span> 2 years (2021–2022): beta to credit system to marketplace to extension to seed funding. After the team dispersed, the company pivoted into YC F24 on the traction we built.</p>
+<p style="margin-top: 28px;"><span style="font-weight: 600;">Timeline.</span> 2 years (2021–2022): beta to credit system to marketplace to extension to seed funding. After the team dispersed, the company pivoted into YC W2024 on the traction we built.</p>
 
 <div style="background-color: #F9FAFB; padding: 24px 28px; border-radius: 0px; border-left: 3px solid #FF7C5F; margin-top: 32px;">
   <div style="font-size: 11px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #A8A29E; margin-bottom: 10px;">My contribution</div>
@@ -44,7 +44,7 @@ const caseStudies = {
 
 <div style="background-color: #F9FAFB; padding: 24px 28px; border-radius: 0px; border-left: 3px solid #FF7C5F; margin-top: 20px;">
   <div style="font-size: 11px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #A8A29E; margin-bottom: 10px;">Team leverage</div>
-  <div style="font-size: 15px; color: #57534E; line-height: 1.7;">I scoped the MVP alongside the founders from three static screens, then hired and ran point for the two designers who eventually replaced me — building design velocity the team didn't have before I joined, and didn't lose after I left, through seed funding and into YC F24.</div>
+  <div style="font-size: 15px; color: #57534E; line-height: 1.7;">I scoped the MVP alongside the founders from three static screens, then hired and ran point for the two designers who eventually replaced me — building design velocity the team didn't have before I joined, and didn't lose after I left, through seed funding and into YC W2024.</div>
 </div>
 
 <div class="cs-laptop-mockup" style="width: 60%; margin: 120px auto 120px;">
@@ -60,7 +60,6 @@ const caseStudies = {
           <source src="/videos/Keye/Snapshot%2001%20video.mp4" type="video/mp4">
           Your browser does not support the video tag.
         </video>
-        <button type="button" class="cs-video-toggle" aria-label="Pause video" onclick="var v=this.previousElementSibling;if(v.paused){v.play();this.textContent='⏸';this.setAttribute('aria-label','Pause video');}else{v.pause();this.textContent='▶';this.setAttribute('aria-label','Play video');}">⏸</button>
       </div>
     </div>
   </div>
@@ -115,7 +114,7 @@ const caseStudies = {
     <span>$1.5M pre-seed</span><span class="metrics-sep">·</span>
     <span>$30K in grants &amp; competition wins</span><span class="metrics-sep">·</span>
     <span>Featured in Forbes, BulletPitch, UPenn Venture Lab</span><span class="metrics-sep">·</span>
-    <span>Accepted to YC F24</span>
+    <span>Accepted to YC W2024</span>
   </div>
 </div>
 
@@ -132,7 +131,6 @@ const caseStudies = {
     <source src="/videos/Keye/Paywall%20video.mp4" type="video/mp4">
     Your browser does not support the video tag.
   </video>
-  <button type="button" class="cs-video-toggle" aria-label="Pause video" onclick="var v=this.previousElementSibling;if(v.paused){v.play();this.textContent='⏸';this.setAttribute('aria-label','Pause video');}else{v.pause();this.textContent='▶';this.setAttribute('aria-label','Play video');}">⏸</button>
 </div>
 
 <div style="display: flex; gap: 24px; margin-top: 48px; margin-bottom: 8px; flex-wrap: wrap;">
@@ -163,6 +161,8 @@ const caseStudies = {
         title: '03 — Evidence Over Instinct',
         headline: "The founders were moving fast on instinct. I slowed things down just enough to check if the instinct was right",
         content: `<p>My first task was the purchase flow. Founders had baked in mandatory consent and a feedback survey at checkout — completion dropped 30% there. I moved consent to signup and tested the survey in three placements; only the post-access popup worked, because users had just used the product. Drop-off fell 20% in one sprint.</p>
+
+<p style="margin-top: 28px; font-size: 14px; color: #6B7280;">Research base: early beta users recruited through the UPenn network — students and early-career professionals. Standout or unusual survey answers got drilled down into follow-up interviews, and users who'd contacted customer care were invited to interviews and usability sessions, incentivized with Amazon gift cards.</p>
 
 <div class="cs-changelog">
   <div class="cs-changelog-row">
@@ -224,7 +224,7 @@ const caseStudies = {
   <a href="#extension" class="feature-index-item">
     <div class="feature-index-num">03</div>
     <div class="feature-index-title">The Chrome Extension</div>
-    <div class="feature-index-hook">An 18-month problem solved in ten days, inspired by a rain jacket.</div>
+    <div class="feature-index-hook">An 18-month problem solved in under a week, inspired by a rain jacket.</div>
   </a>
 </div>
 
@@ -355,7 +355,6 @@ const caseStudies = {
             <source src="/videos/Keye/Credit%20system%20video%20cropped.mp4" type="video/mp4">
             Your browser does not support the video tag.
           </video>
-          <button type="button" class="cs-video-toggle" aria-label="Pause video" onclick="var v=this.previousElementSibling;if(v.paused){v.play();this.textContent='⏸';this.setAttribute('aria-label','Pause video');}else{v.pause();this.textContent='▶';this.setAttribute('aria-label','Play video');}">⏸</button>
         </div>
       </div>
     </div>
@@ -412,7 +411,6 @@ const caseStudies = {
             <video autoplay loop muted playsinline preload="metadata" width="1640" height="970" aria-label="Screen recording of the Request a Product card in the Coming Soon grid" style="display: block; width: 100%; height: auto;">
               <source src="/videos/Keye/Request%20a%20product%20cropped.mp4" type="video/mp4">
             </video>
-            <button type="button" class="cs-video-toggle" aria-label="Pause video" onclick="var v=this.previousElementSibling;if(v.paused){v.play();this.textContent='⏸';this.setAttribute('aria-label','Pause video');}else{v.pause();this.textContent='▶';this.setAttribute('aria-label','Play video');}">⏸</button>
           </div>
         </div>
       </div>
@@ -498,7 +496,6 @@ const caseStudies = {
     <video autoplay loop muted playsinline preload="metadata" width="1101" height="755" aria-label="Screen recording of the Keye Chrome extension — install, login, and auto-fill on a partner site" style="display: block; width: 100%; height: auto;">
       <source src="/videos/Keye/Chrome%20extension%20cropped.mp4" type="video/mp4">
     </video>
-    <button type="button" class="cs-video-toggle" aria-label="Pause video" onclick="var v=this.previousElementSibling;if(v.paused){v.play();this.textContent='⏸';this.setAttribute('aria-label','Pause video');}else{v.pause();this.textContent='▶';this.setAttribute('aria-label','Play video');}">⏸</button>
   </div>
 
   <div class="feature-stat">
@@ -506,9 +503,11 @@ const caseStudies = {
     <div class="feature-stat-label">Extension adoption, 3 months post-launch vs. by the time I left — the fix for an 18-month-old unsolved problem</div>
   </div>
 
-  <p>Partner integrations were the founders' original plan — each partner would build against our API. Then our technical co-founder left, taking backend capacity with him, and that plan stopped being possible. Watching Honey auto-fill codes at checkout, I realized we didn't need partner engineering at all — just to live where the user already is. Prototyped in two days, shipped that week.</p>
+  <p>Partner integrations were the founders' original plan — each partner would build against our API. Then our technical co-founder left, taking backend capacity with him, and that plan stopped being possible. The idea came buying a rain jacket online: Honey auto-filled a discount code at checkout, and it hit me — we didn't need partner engineering at all, just an extension that could do the same thing for Keye. I pitched it to the founders that Friday, prototyped over the weekend, and sent a video Monday. It was approved on the spot and built over the next two days.</p>
 
   <div class="feature-note"><span class="feature-note-label">Constraint</span> No backend engineer left on the team after the co-founder's exit — whatever shipped next had to be entirely client-side.</div>
+
+  <div class="feature-note"><span class="feature-note-label">Access model</span> Autofill only worked for Keye's authorized partners — not shared logins. It replaced the copy-paste flow below with the same access the user already had, not a new way to pass credentials around.</div>
 
   <div class="feature-chip-row">
     <span class="feature-chip"><b>2 days</b> to prototype</span>
@@ -593,7 +592,7 @@ const caseStudies = {
         headline: "The most important thing a founding designer builds isn't the product. It's the foundation that lets the product grow without being rebuilt from scratch",
         content: `<p><span style="font-weight: 600;">What I got wrong.</span> I thought unlimited credits would show us honest user behavior — let people spend freely and we'd see what they actually wanted. It didn't. With no cost to switching, users just defaulted to the brand they already trusted; there was no signal in the data. The cap worked precisely because it removed that option — forcing a real tradeoff was what finally showed us what people would try when trying something new actually cost them something.</p>
 
-<p style="margin-top: 28px;">By year three, the founding team dispersed. The company pivoted into YC F24 on financial analytics — the marketplace didn't survive, but the research, partnerships, and funding that made YC possible did.</p>
+<p style="margin-top: 28px;">By year three, the founding team dispersed. The company pivoted into YC W2024 on financial analytics — the marketplace didn't survive, but the research, partnerships, and funding that made YC possible did.</p>
 
 <div class="pull-quote" style="margin-top: 48px;">The credit cap wasn't valuable because it monetized the product. It was valuable because it generated the behavioral data that shaped the entire partnership strategy.</div>
 
@@ -892,6 +891,8 @@ const caseStudies = {
 
               <p style={{ marginTop: '12px' }}><span style={{ fontWeight: 600, color: '#44403C' }}>Result.</span> <span style={{ color: '#78716C' }}>Override rate fell from 61% (pilot) to 19% (first quarter post-release). Work order resolution time fell from 3 days to 2 hours, tracked over 6–8 weeks. Meeting load took about 5 weeks to follow.</span></p>
 
+              <p style={{ fontSize: '14px', color: '#78716C', marginTop: '8px' }}>Resolution = closed without follow-up: all site details, photos, and vendor needs attached, nothing left for a manager to chase. Before, that meant a technician traveling back to an office to upload and email — work they dreaded enough to put off, while managers couldn&apos;t close the ticket without it. Voice capture in the field closed that gap directly.</p>
+
               <div style={{ backgroundColor: '#FFF9F5', padding: '24px', borderRadius: '0px', borderLeft: '3px solid #FF7C5F', marginTop: '32px' }}>
                 <div className="cs-card-title cs-card-title--sm">Model behavior</div>
                 <p style={{ fontSize: '15px', color: '#57534E', lineHeight: 1.7, margin: 0 }}>
@@ -899,6 +900,9 @@ const caseStudies = {
                 </p>
                 <p style={{ fontSize: '15px', color: '#57534E', lineHeight: 1.7, marginTop: '12px', marginBottom: 0 }}>
                   <span style={{ fontWeight: 600 }}>The real design decision:</span> what the model was allowed to withhold. A confident wrong answer is worse than an uncertain one — so Critical alerts always show their risk drivers and need a human decision before touching a budget.
+                </p>
+                <p style={{ fontSize: '15px', color: '#57534E', lineHeight: 1.7, marginTop: '12px', marginBottom: 0 }}>
+                  <span style={{ fontWeight: 600 }}>Watching for rubber-stamping:</span> a falling override rate alone doesn't prove the system got better — managers could just be deferring more. New maintenance data, market pricing, and logged overrides all feed the recalibration, and managers log reasoning notes even when they don't override, so the trail shows engagement, not just compliance.
                 </p>
               </div>
             </div>
@@ -911,7 +915,7 @@ const caseStudies = {
             <div style={{ backgroundColor: '#FFF9F5', padding: '24px', borderRadius: '0px', borderLeft: '3px solid #FF7C5F', marginBottom: '32px' }}>
               <div className="cs-card-title cs-card-title--sm">The Boiler Incident</div>
               <p style={{ fontSize: '15px', color: '#57534E', lineHeight: 1.7, margin: 0 }}>
-                <span style={{ fontWeight: 600 }}>Model said:</span> Critical — a $180K boiler flagged for replacement.<br/>
+                <span style={{ fontWeight: 600 }}>Model said:</span> Critical — the same Boiler Unit 3 from Decision 03, now flagged for a $180K replacement.<br/>
                 <span style={{ fontWeight: 600 }}>Human found:</span> duplicated maintenance records had inflated the risk score.<br/>
                 <span style={{ fontWeight: 600 }}>Design response:</span> a "Needs Verification" state, visible risk drivers, mandatory manager approval, and logged overrides.<br/>
                 <span style={{ fontWeight: 600 }}>Result:</span> adoption held steady — the near-miss became a reason to trust the system more, not less.
@@ -941,6 +945,7 @@ const caseStudies = {
 
               <div style={{ marginBottom: '24px' }}>
                 <p><span style={{ fontWeight: 600 }}>Offline field reporting.</span> Work Orders, Asset DNA, and Cost-to-Date linked automatically — an offline queue with voice capture and auto-sync cut reporting time sharply (see Impact).</p>
+                <p style={{ fontSize: '15px', color: '#57534E', lineHeight: 1.7, marginTop: '12px' }}>On a swing stage or underground, typing is a hazard, not an inconvenience — technicians need both hands free. Voice capture fills the work order form directly from the call, turning a report technicians used to dread into one they could give hands-free while already on site.</p>
               </div>
 
               <div style={{ width: '100%', height: '320px', backgroundColor: '#E5E7EB', borderRadius: '0px', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#9CA3AF', fontSize: '14px', marginBottom: '40px' }}>
@@ -989,7 +994,7 @@ const caseStudies = {
         content: `<div style="display: grid; grid-template-columns: 1fr; gap: 28px; margin-bottom: 48px;">
   <div>
     <div class="cs-card-title">Legacy Ecosystem Couldn't Be Disrupted</div>
-    <div style="font-size: 15px; color: #57534E; line-height: 1.6;">LAT shipped as a modular layer alongside the existing stack — no forced migration.</div>
+    <div style="font-size: 15px; color: #57534E; line-height: 1.6;">LAT shipped as a modular layer alongside the existing stack — no forced migration. The university's own internal CS and IT teams kept running the legacy CMMS/ERP backend throughout; our 2 external engineers built and owned only the LAT API layer on top of it.</div>
   </div>
 
   <div>
@@ -1079,9 +1084,42 @@ const caseStudies = {
             <div style={{ backgroundColor: '#FFF9F5', padding: '28px', borderRadius: '0px', borderLeft: '3px solid #FF7C5F', marginTop: '8px', marginBottom: '40px' }}>
               <div className="cs-card-title cs-card-title--md">The model keeps learning</div>
               <div style={{ fontSize: '15px', color: '#57534E', lineHeight: 1.7 }}>By month four, stakeholders saw urgent maintenance requests already falling and projected that trend forward a year: <span style={{ fontWeight: 600, color: '#44403C' }}>25% fewer unexpected maintenance costs</span> <span style={{ fontFamily: 'ui-monospace, SFMono-Regular, Menlo, monospace', fontSize: '10px', fontWeight: 700, letterSpacing: '0.06em', textTransform: 'uppercase', color: '#B45309' }}>Projected</span>, extrapolated from the observed decline, not yet realized.</div>
+              <div style={{ fontSize: '13px', color: '#78716C', marginTop: '10px' }}>Weather drives a lot of this institution&apos;s maintenance load — winter failures spike independent of asset condition — and that seasonality is already priced into how the university plans CAPEX, so the 4-month baseline isn&apos;t assumed to hold flat across a full year.</div>
             </div>
 
-            <img loading="lazy" decoding="async" width={2000} height={1455} src="/images/lat/AB%20Testing.webp" alt="AB Testing comparison" style={{ width: '100%', height: 'auto', borderRadius: '0px', marginTop: '8px', marginBottom: '40px', display: 'block' }} />
+            <div style={{ marginTop: '8px', marginBottom: '40px' }}>
+              <h4 className="case-study-subhead">Decisions made through iteration, not assumption</h4>
+              <p style={{ fontSize: '15px', color: '#57534E', lineHeight: 1.7 }}>Early alert designs showed probability scores — &ldquo;68% failure risk.&rdquo; Managers hesitated. They didn&apos;t know what 68% meant or what to do with it. So we ran moderated comparative tests with pilot property managers: the same alert, two framings, shown side by side in live sessions while we measured time-to-decision. Version B — &ldquo;delaying costs $3K/month&rdquo; won decisively. Decision time dropped from 14 minutes to 4. The sessions told us what the assumption couldn&apos;t.</p>
+
+              <div className="self-responsive-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '24px', marginTop: '28px' }}>
+                <div style={{ padding: '20px', backgroundColor: '#FAFAFA', border: '1px solid rgba(0,0,0,0.08)' }}>
+                  <div style={{ fontSize: '12px', fontWeight: 700, color: '#9CA3AF', textTransform: 'uppercase', letterSpacing: '0.04em', marginBottom: '8px' }}>Version A — probability framing</div>
+                  <div style={{ fontSize: '18px', fontWeight: 700, color: '#1C1917', marginBottom: '8px' }}>&ldquo;Boiler failure risk: 68%&rdquo;</div>
+                  <div style={{ fontSize: '14px', color: '#78716C' }}>Managers asked: &ldquo;What does 68% mean? What do I do with it?&rdquo;</div>
+                </div>
+                <div style={{ padding: '20px', backgroundColor: '#FFF9F5', border: '1.5px solid #FF7C5F' }}>
+                  <div style={{ fontSize: '12px', fontWeight: 700, color: '#FF7C5F', textTransform: 'uppercase', letterSpacing: '0.04em', marginBottom: '8px' }}>Version B — consequence framing</div>
+                  <div style={{ fontSize: '18px', fontWeight: 700, color: '#1C1917', marginBottom: '8px' }}>&ldquo;Delaying costs $3K/month&rdquo;</div>
+                  <div style={{ fontSize: '14px', color: '#78716C' }}>Managers acted.</div>
+                </div>
+              </div>
+
+              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '24px', marginTop: '28px', flexWrap: 'wrap' }}>
+                <div style={{ textAlign: 'center' }}>
+                  <div style={{ fontSize: '32px', fontWeight: 700, color: '#9CA3AF' }}>14 Min</div>
+                  <div style={{ fontSize: '13px', color: '#9CA3AF' }}>Average decision time</div>
+                </div>
+                <div style={{ fontSize: '20px', color: '#FF7C5F' }}>&rarr;</div>
+                <div style={{ textAlign: 'center' }}>
+                  <div style={{ fontSize: '32px', fontWeight: 700, color: '#1C1917' }}>4 Min</div>
+                  <div style={{ fontSize: '13px', color: '#9CA3AF' }}>Average decision time</div>
+                </div>
+              </div>
+
+              <p style={{ fontSize: '15px', color: '#57534E', lineHeight: 1.7, marginTop: '28px' }}>Testing &ldquo;68% failure risk&rdquo; against &ldquo;delaying costs $3K/month&rdquo; with the managers who&apos;d actually use it — one framing caused hesitation, the other drove action. This single copy change cut average decision time from 14 minutes to 4.</p>
+
+              <div className="pull-quote" style={{ marginTop: '24px' }}>Humans act on consequences, not probabilities. This became the design principle behind every alert in LAT.</div>
+            </div>
 
             <div className="pull-quote">A usable interface wasn't enough on its own. Adoption depended on reliable data, understandable recommendations, and clear decision ownership.</div>
 
@@ -1166,7 +1204,7 @@ const caseStudies = {
       context: 'UW graduate capstone (solo after month two) asking whether people could be equipped to identify misinformation themselves, in research partnership with TrueMedia.org.',
       constraint: 'No engineering resourcing beyond a prototype, and testing showed users rejected any platform-integrated solution outright — the tool had to stand alone.',
       decision: 'Built four independent tools (Search, Scan, Quiz, Ask Us) that help people verify and learn, instead of another fact-check label.',
-      tradeoff: '17 of 19 testers rejected the original platform-integrated, scan-and-verify design — so I gave up that reach and shipped four standalone tools instead.'
+      tradeoff: '17 of 19 testers rejected the original platform-embedded concept — so I gave up that reach and shipped four standalone tools instead.'
     },
     tldr: {
       role: 'Sole Designer (Graduate Capstone)',
@@ -1174,7 +1212,7 @@ const caseStudies = {
       timeline: '12 months (Jan–Dec 2024)',
       impact: '~1,800 testers at Misinfo Day | 2,000-respondent survey | Concept validation',
       skills: 'User research · Concept design · Gamification · Platform strategy · Academic rigor',
-      decisionAuthority: 'Owned, solo after February 2024: research direction, all four tool concepts, and the pivot away from the original scan-and-verify design after 17 of 19 testers rejected it. TrueMedia.org set the research partnership scope.'
+      decisionAuthority: 'Owned, solo after February 2024: research direction, all four tool concepts, and the pivot away from the original platform-embedded concept after 17 of 19 testers rejected it. TrueMedia.org set the research partnership scope.'
     },
     sections: [
       {
@@ -1201,14 +1239,13 @@ const caseStudies = {
     <source src="/videos/misinformationcenter/flow%2002.mp4" type="video/mp4">
     Your browser does not support the video tag.
   </video>
-  <button type="button" class="cs-video-toggle" aria-label="Pause video" onclick="var v=this.previousElementSibling;if(v.paused){v.play();this.textContent='⏸';this.setAttribute('aria-label','Pause video');}else{v.pause();this.textContent='▶';this.setAttribute('aria-label','Play video');}">⏸</button>
 </div>
 
 <p style="margin-top: 28px;"><span style="font-weight: 600;">My role.</span> Sole designer on this UW graduate capstone (Jan–Dec 2024), started as a team of four. After February, the research, archetypes, all four features, and testing with ~1,800 people at Misinfo Day were mine alone.</p>
 
 <div style="background-color: #F9FAFB; padding: 24px 28px; border-radius: 0px; border-left: 3px solid #FF7C5F; margin-top: 28px;">
   <div style="font-size: 11px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #A8A29E; margin-bottom: 10px;">My contribution</div>
-  <div style="font-size: 15px; color: #57534E; line-height: 1.7;">I owned the research direction, all four tool concepts, and the pivot away from the original scan-and-verify design after 17 of 19 testers rejected it — TrueMedia.org set the scope of the research partnership that fed into it.</div>
+  <div style="font-size: 15px; color: #57534E; line-height: 1.7;">I owned the research direction, all four tool concepts, and the pivot away from the original platform-embedded concept after 17 of 19 testers rejected it — TrueMedia.org set the scope of the research partnership that fed into it.</div>
 </div>
 
 <p style="margin-top: 28px;">From March to May, I also collaborated with TrueMedia.org, a deepfake-detection nonprofit. They analyzed 60,000+ pieces of media and shut down in January 2025 — not from bad design, but because nobody profits from detection. That's this case study's throughline (section 06).</p>
@@ -1334,7 +1371,6 @@ const caseStudies = {
       <source src="/videos/misinformationcenter/Testing%20Image%20upload.mp4" type="video/mp4">
       Your browser does not support the video tag.
     </video>
-    <button type="button" class="cs-video-toggle" aria-label="Pause video" onclick="var v=this.previousElementSibling;if(v.paused){v.play();this.textContent='⏸';this.setAttribute('aria-label','Pause video');}else{v.pause();this.textContent='▶';this.setAttribute('aria-label','Play video');}">⏸</button>
   </div>
 </div>`
       },
@@ -1381,10 +1417,11 @@ const caseStudies = {
     <source src="/videos/misinformationcenter/Flow%2001%20Misinformation.mp4" type="video/mp4">
     Your browser does not support the video tag.
   </video>
-  <button type="button" class="cs-video-toggle" aria-label="Pause video" onclick="var v=this.previousElementSibling;if(v.paused){v.play();this.textContent='⏸';this.setAttribute('aria-label','Pause video');}else{v.pause();this.textContent='▶';this.setAttribute('aria-label','Play video');}">⏸</button>
 </div>
 
 <p style="margin-top: 8px; font-size: 15px; color: #6B7280;">2,000 survey respondents · 28 interviews · 14 usability sessions · ~1,800 at Misinfo Day.</p>
+
+<p style="margin-top: 8px; font-size: 14px; color: #6B7280;">Recruited through the UW Misinformation Center network — UW students and Seattle-area school networks.</p>
 
 <p style="margin-top: 28px;">Early testing — verify a headline in under 30 seconds — surfaced ambiguous labels and slow search, shaping the shift to color-coded ratings.</p>
 
@@ -1500,7 +1537,7 @@ export async function generateMetadata({
 
   const metadataMap: Record<string, { description: string; keywords: string[] }> = {
     keye: {
-      description: 'Founding Product Designer at Keye — from three static screens to YC F24. Built credit-based marketplace, Chrome extension, and design system. 0→20K MAUs, $1.5M raised.',
+      description: 'Founding Product Designer at Keye — from three static screens to YC W2024. Built credit-based marketplace, Chrome extension, and design system. 0→20K MAUs, $1.5M raised.',
       keywords: ['YC startup designer', 'founding designer', 'startup product design', 'credit marketplace', 'Chrome extension design', 'design systems', 'subscription marketplace', 'SaaS design']
     },
     lat: {

@@ -1339,8 +1339,8 @@ export default function LandingGameSimple() {
               })()}
             </div>
 
-            {/* View case studies - primary green button, black text */}
-            <div style={{ marginBottom: '16px' }}>
+            {/* See work / See resume - primary green + secondary outline, side by side */}
+            <div style={{ display: 'flex', justifyContent: 'center', gap: '12px', flexWrap: 'wrap', marginBottom: '16px' }}>
               <a
                 href="#case-studies"
                 onClick={(e) => {
@@ -1366,7 +1366,35 @@ export default function LandingGameSimple() {
                   e.currentTarget.style.backgroundColor = '#86C232'
                 }}
               >
-                Curious how I create real products
+                See work
+              </a>
+              <a
+                href="https://www.linkedin.com/in/indhu05/"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{
+                  display: 'inline-block',
+                  fontSize: '15px',
+                  fontWeight: 600,
+                  color: '#E5E5E5',
+                  backgroundColor: 'transparent',
+                  border: '1px solid rgba(255,255,255,0.3)',
+                  textDecoration: 'none',
+                  borderRadius: '999px',
+                  padding: '10px 20px',
+                  transition: 'border-color 0.2s, color 0.2s',
+                  cursor: 'pointer',
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.borderColor = 'rgba(255,255,255,0.6)'
+                  e.currentTarget.style.color = '#FFFFFF'
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.borderColor = 'rgba(255,255,255,0.3)'
+                  e.currentTarget.style.color = '#E5E5E5'
+                }}
+              >
+                See resume
               </a>
             </div>
 

@@ -4,9 +4,9 @@ import { useState, useEffect } from 'react'
 type Framing = 'probability' | 'consequence'
 
 const tiers = [
-  { label: 'Critical', bg: '#DCFCE7', color: '#166534' },
-  { label: 'Monitor', bg: '#FEF3C7', color: '#92400E' },
-  { label: 'Safe', bg: '#F3F4F6', color: '#57534E' },
+  { label: 'Critical', bg: '#FEE2E2', color: '#991B1B' },
+  { label: 'Monitor', bg: '#DBEAFE', color: '#1E40AF' },
+  { label: 'Safe', bg: '#DCFCE7', color: '#166534' },
 ]
 
 const frames: { key: Framing; label: string; content: React.ReactNode }[] = [
