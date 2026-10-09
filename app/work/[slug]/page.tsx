@@ -816,18 +816,20 @@ const caseStudies = {
 
               <p style={{ fontSize: '15px', color: '#44403C', marginTop: '32px', maxWidth: '640px' }}><span style={{ fontWeight: 600 }}>A failed sync shouldn't feel like lost work.</span> We kept the update safely on-device and made recovery one tap.</p>
 
-              <div style={{ marginTop: '64px', backgroundColor: '#FFFFFF', border: '1px solid #F1F5F9', borderRadius: '16px', padding: '32px' }}>
+              <div style={{ marginTop: '64px', backgroundColor: '#FFF7F5', borderRadius: '16px', padding: '32px' }}>
                 <div style={{ display: 'inline-block', fontSize: '10px', fontWeight: 700, letterSpacing: '0.06em', textTransform: 'uppercase', color: '#FFFFFF', backgroundColor: '#FF7C5F', padding: '3px 9px', borderRadius: '999px', marginBottom: '12px' }}>Technician</div>
                 <LatSyncFlow />
               </div>
 
               <p style={{ fontSize: '15px', color: '#44403C', marginTop: '24px', maxWidth: '640px' }}>Every state says what is saved, what isn't, and what is blocking the job.</p>
 
-              <div style={{ marginTop: '56px', backgroundColor: '#EFF6FF', borderRadius: '16px', padding: '32px' }}>
+              <p style={{ fontSize: '15px', color: '#78716C', marginTop: '16px', maxWidth: '640px' }}>Reliable data first, accountable decisions second: once a technician's update is trustworthy, the PM's job is to review it and decide — not to double as a data-integrity check.</p>
+
+              <div style={{ marginTop: '40px', backgroundColor: '#EFF6FF', borderRadius: '16px', padding: '32px' }}>
                 <div style={{ display: 'inline-block', fontSize: '10px', fontWeight: 700, letterSpacing: '0.06em', textTransform: 'uppercase', color: '#FFFFFF', backgroundColor: '#2563EB', padding: '3px 9px', borderRadius: '999px', marginBottom: '12px' }}>PM</div>
                 <div style={{ fontSize: '11px', fontWeight: 700, letterSpacing: '0.06em', textTransform: 'uppercase', color: '#64748B', marginBottom: '20px' }}>The same job, from the manager's side</div>
 
-                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(170px, 1fr))', gap: '20px' }}>
+                <div className="self-responsive-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '20px' }}>
                   <div>
                     <img loading="lazy" decoding="async" src="/images/lat/LAT%20%C2%B7%20PM%20jobs%2C%20metrics%20and%20digest.png" alt="PM view of jobs, metrics, and a digest" style={{ width: '100%', height: 'auto', display: 'block', borderRadius: '16px' }} />
                     <div style={{ fontSize: '10.5px', fontWeight: 700, letterSpacing: '0.05em', textTransform: 'uppercase', color: '#2563EB', marginTop: '10px' }}>All jobs &amp; digest</div>
@@ -837,7 +839,7 @@ const caseStudies = {
                   <div>
                     <img loading="lazy" decoding="async" src="/images/lat/LAT%20%C2%B7%20PM%20approvals.png" alt="PM view of pending approvals" style={{ width: '100%', height: 'auto', display: 'block', borderRadius: '16px' }} />
                     <div style={{ fontSize: '10.5px', fontWeight: 700, letterSpacing: '0.05em', textTransform: 'uppercase', color: '#2563EB', marginTop: '10px' }}>Approvals</div>
-                    <div style={{ fontSize: '12px', color: '#475569', lineHeight: 1.45, marginTop: '5px' }}>Every pending request — job, requester, work, cost — in one place.</div>
+                    <div style={{ fontSize: '12px', color: '#475569', lineHeight: 1.45, marginTop: '5px' }}>Every pending request — job, requester, work, cost — in one place. Approving here authorizes the spend; above $5K it routes to Accounts instead.</div>
                   </div>
 
                   <div>

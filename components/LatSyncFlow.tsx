@@ -3,37 +3,22 @@ import { useState } from 'react'
 
 type SyncResult = 'success' | 'failed'
 
-const baseSteps = [
-  { key: 'online', label: 'Online', desc: 'Technician opens the job with a connection. Updates can be sent immediately.' },
-  { key: 'offline', label: 'Signal drops', desc: 'Connection is lost. The screen says so — work continues in an offline form.' },
-  { key: 'saved', label: 'Saved locally', desc: 'The update is stored on the device first. The job stays locked until it syncs.' },
-  { key: 'syncing', label: 'Signal returns', desc: 'Connection comes back. The app attempts to sync the saved update.' },
-] as const
-
 const cards = [
   {
     key: 'online',
     label: 'Online',
     color: '#16A34A',
     src: '/images/lat/LAT%20%C2%B7%20Boiler%20Unit%203%20job%20detail.png',
-    alt: "Technician job detail with a live connection — the job can't close until an update is saved",
-    caption: "Sees the job, sends updates. Can't close until saved.",
+    alt: "Technician job detail with a live connection — the job can't close until an update syncs",
+    caption: "Sees the job, sends updates. Can't close until synced.",
   },
   {
     key: 'offline',
-    label: 'Offline form',
+    label: 'Offline',
     color: '#D97706',
     src: '/images/lat/LAT%20%C2%B7%20Technician%20job%20%E2%80%94%20Offline%20form%20filled.png',
     alt: 'Technician job form filled out with no signal',
-    caption: 'No signal — work continues, nothing lost.',
-  },
-  {
-    key: 'saved',
-    label: 'Saved locally',
-    color: '#2563EB',
-    src: '/images/lat/LAT%20%C2%B7%20Technician%20job%20%E2%80%94%20Saved%20locally.png',
-    alt: 'Technician job update saved locally on the device, waiting to sync',
-    caption: "Stored on-device first. Footer shows what's still waiting.",
+    caption: 'No signal — work continues, nothing lost. Saved to the device until it syncs.',
   },
   {
     key: 'failed',
@@ -56,33 +41,17 @@ const cards = [
 export default function LatSyncFlow() {
   const [result, setResult] = useState<SyncResult>('success')
   const [extraWork, setExtraWork] = useState(false)
-  const [activeKey, setActiveKey] = useState<string>('online')
   const [hasInteracted, setHasInteracted] = useState(false)
 
-  const branchSteps = result === 'success'
-    ? [{ key: 'synced', label: 'Synced', desc: 'The update reaches the system. It shows as synced on the job.' }]
-    : [
-        { key: 'failed', label: 'Sync failed', desc: 'The banner turns red and says the data is safe. Retry sync is the only action.' },
-        { key: 'retry', label: 'Retry sync', desc: 'Tapping retry sends the saved update again — loops back to the sync attempt.' },
-      ]
+  const label = result === 'failed' ? 'Sync fails' : extraWork ? 'Synced, approval needed' : 'Synced, job closes'
 
-  const closingStep = extraWork
-    ? { key: 'approval', label: 'PM approval', desc: "The job can't close until the PM approves the extra work." }
-    : { key: 'closed', label: 'Job closes', desc: 'No extra work requested — the job closes once the update is synced.' }
+  const desc = result === 'failed'
+    ? "The banner turns red and the data stays safe. Retry sync is the only action — if it fails again, this just repeats, and nothing is lost even if the app closes first."
+    : extraWork
+      ? "The update syncs. Because extra work was requested, the job stays locked until a PM approves it."
+      : "The update syncs and the job closes — no extra approval needed."
 
-  const allSteps = [...baseSteps, ...branchSteps, closingStep]
-  const active = allSteps.find((s) => s.key === activeKey) ?? allSteps[0]
-
-  // Map diagram nodes to the matching screenshot card
-  const cardKeyForStep: Record<string, string> = {
-    online: 'online',
-    offline: 'offline',
-    saved: 'saved',
-    failed: 'failed',
-    retry: 'failed',
-    approval: 'approval',
-  }
-  const highlightedCard = hasInteracted ? cardKeyForStep[activeKey] : undefined
+  const highlightedCard = hasInteracted ? (result === 'failed' ? 'failed' : extraWork ? 'approval' : 'online') : undefined
 
   return (
     <div style={{ width: '100%', marginTop: '32px', marginBottom: '48px' }}>
@@ -138,53 +107,21 @@ export default function LatSyncFlow() {
         </button>
       </div>
 
-      <div style={{ display: 'flex', alignItems: 'center', flexWrap: 'wrap', gap: '4px' }}>
-        {allSteps.map((step, i) => (
-          <div key={step.key} style={{ display: 'flex', alignItems: 'center', gap: '4px' }}>
-            <button
-              type="button"
-              onClick={() => { setActiveKey(step.key); setHasInteracted(true) }}
-              style={{
-                fontSize: '12.5px',
-                fontWeight: 600,
-                padding: '8px 12px',
-                borderRadius: '0px',
-                cursor: 'pointer',
-                whiteSpace: 'nowrap',
-                border: activeKey === step.key ? '1.5px solid #FF7C5F' : '1px solid rgba(0,0,0,0.12)',
-                backgroundColor: activeKey === step.key ? '#1C1917' : '#FFFFFF',
-                color: activeKey === step.key ? '#FFFFFF' : '#44403C',
-                transition: 'all 0.15s ease',
-              }}
-            >
-              {step.label}
-            </button>
-            {i < allSteps.length - 1 && (
-              <span style={{ color: step.key === 'retry' ? '#FF7C5F' : '#D1D5DB', fontSize: '16px' }}>
-                {step.key === 'retry' ? '↺' : '→'}
-              </span>
-            )}
-          </div>
-        ))}
+      <div style={{ padding: '18px 20px', backgroundColor: '#FFF9F5', borderLeft: '3px solid #FF7C5F' }}>
+        <div style={{ fontSize: '11px', fontWeight: 700, letterSpacing: '0.06em', textTransform: 'uppercase', color: '#FF7C5F', marginBottom: '6px' }}>{label}</div>
+        <div style={{ fontSize: '14px', color: '#44403C', lineHeight: 1.6 }}>{desc}</div>
       </div>
 
-      <div style={{ marginTop: '20px', marginBottom: '32px', padding: '18px 20px', backgroundColor: '#FFF9F5', borderLeft: '3px solid #FF7C5F' }}>
-        <div style={{ fontSize: '11px', fontWeight: 700, letterSpacing: '0.06em', textTransform: 'uppercase', color: '#FF7C5F', marginBottom: '6px' }}>{active.label}</div>
-        <div style={{ fontSize: '14px', color: '#44403C', lineHeight: 1.6 }}>{active.desc}</div>
-      </div>
+      <div style={{ fontSize: '11px', fontWeight: 700, letterSpacing: '0.06em', textTransform: 'uppercase', color: '#A8A29E', marginBottom: '8px' }}>One job, four states</div>
+      <div style={{ fontSize: '13px', color: '#78716C', marginBottom: '20px' }}>Click a state above or below to compare.</div>
 
-      <div style={{ fontSize: '11px', fontWeight: 700, letterSpacing: '0.06em', textTransform: 'uppercase', color: '#A8A29E', marginBottom: '8px' }}>One job, five states</div>
-      <div style={{ fontSize: '13px', color: '#78716C', marginBottom: '20px' }}>Cropped to the status bar and banner — the part that changes.</div>
-
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(170px, 1fr))', gap: '20px' }}>
+      <div className="self-responsive-grid" style={{ display: 'grid', gridTemplateColumns: `repeat(${cards.length}, 1fr)`, gap: '20px' }}>
         {cards.map((card) => {
           const isActive = highlightedCard === card.key
           return (
             <div key={card.key}>
               <div style={{
                 width: '100%',
-                height: '340px',
-                overflow: 'hidden',
                 borderRadius: '12px',
                 opacity: highlightedCard && !isActive ? 0.35 : 1,
                 filter: highlightedCard && !isActive ? 'grayscale(60%)' : 'none',
@@ -199,8 +136,7 @@ export default function LatSyncFlow() {
                     width: '100%',
                     height: 'auto',
                     display: 'block',
-                    objectFit: 'cover',
-                    objectPosition: 'top',
+                    borderRadius: '12px',
                   }}
                 />
               </div>

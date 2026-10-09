@@ -112,6 +112,16 @@ img, video {
   }
 }
 
+/* Some grids (e.g. LAT's sync-flow and PM screenshot grids) use
+   auto-fill/minmax and are already responsive — don't collapse them to a
+   single full-bleed column, which blows up their images on iPad-width
+   viewports. Higher specificity than the blanket rule above. */
+@media (max-width: 1024px) {
+  .case-study-content div.self-responsive-grid[style*="grid-template-columns"] {
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)) !important;
+  }
+}
+
 /* Pull quote styling */
 .pull-quote {
   border-left: 3px solid var(--border-accent);
