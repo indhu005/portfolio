@@ -219,7 +219,7 @@ const caseStudies = {
   <a href="#product-card" class="feature-index-item">
     <div class="feature-index-num">02</div>
     <div class="feature-index-title">The Product Card</div>
-    <div class="feature-index-hook">Six versions of the one component every other feature had to live inside.</div>
+    <div class="feature-index-hook">Five versions of the one component every other feature had to live inside.</div>
   </a>
   <a href="#extension" class="feature-index-item">
     <div class="feature-index-num">03</div>
@@ -1296,8 +1296,6 @@ const caseStudies = {
     Your browser does not support the video tag.
   </video>
 </div>
-
-<p style="margin-top: 8px; font-size: 15px; color: #6B7280;">2,000 survey respondents · 28 interviews · 14 usability sessions · ~1,800 at Misinfo Day.</p>
 
 <p style="margin-top: 8px; font-size: 14px; color: #6B7280;">Recruited through the UW Misinformation Center network — UW students and Seattle-area school networks.</p>
 
