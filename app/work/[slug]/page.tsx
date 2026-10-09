@@ -914,13 +914,6 @@ const caseStudies = {
               <p style={{ marginTop: '12px', color: '#78716C' }}><span style={{ fontWeight: 600, color: '#44403C' }}>Result.</span> Planning time dropped 60% vs. the prior year. Across 12 managers, weekly item-closure rate rose from ~4-of-10 to 8–9-of-10. Across 20+ logged decisions over 5 weeks, time from opening an asset to recording a decision fell from 14 to 4 minutes.</p>
             </div>
 
-            <div style={{ width: '100%', height: '400px', backgroundColor: '#E5E7EB', borderRadius: '0px', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#9CA3AF', fontSize: '14px', marginTop: '40px', marginBottom: '48px' }}>
-              <div style={{ textAlign: 'center', padding: '20px' }}>
-                <div style={{ fontWeight: 600, marginBottom: '8px' }}>IMAGE 2: Dashboard Before/After</div>
-                <div style={{ fontSize: '13px', lineHeight: 1.5 }}>Graph wall → priority queue</div>
-              </div>
-            </div>
-
             <div style={{ backgroundColor: '#FFFFFF', border: '1px solid #F3E8E2', borderTop: '4px solid #FF7C5F', borderRadius: '0px', padding: '40px', boxShadow: '0 4px 24px rgba(0,0,0,0.04)', marginBottom: '48px' }}>
               <div style={{ fontSize: '13px', fontWeight: 700, color: '#FF7C5F', letterSpacing: '0.06em', textTransform: 'uppercase', marginBottom: '8px' }}>Decision 03 — the core insight</div>
               <div style={{ fontSize: '26px', fontWeight: 600, color: '#1C1917', marginBottom: '16px' }}>Turn predictions into consequences</div>
@@ -977,13 +970,6 @@ const caseStudies = {
               </div>
             </div>
 
-            <div style={{ width: '100%', height: '400px', backgroundColor: '#E5E7EB', borderRadius: '0px', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#9CA3AF', fontSize: '14px', marginTop: '40px', marginBottom: '48px' }}>
-              <div style={{ textAlign: 'center', padding: '20px' }}>
-                <div style={{ fontWeight: 600, marginBottom: '8px' }}>IMAGE 4: Boiler Incident Screen</div>
-                <div style={{ fontSize: '13px', lineHeight: 1.5 }}>Critical alert with drivers highlighted<br/>"Needs Verification" badge<br/>Override logged</div>
-              </div>
-            </div>
-
             <div style={{ borderTop: '1px solid #E5E7EB', paddingTop: '32px' }}>
               <div style={{ fontSize: '13px', fontWeight: 700, color: '#9CA3AF', letterSpacing: '0.06em', textTransform: 'uppercase', marginBottom: '4px' }}>Supporting workflows</div>
               <p style={{ fontSize: '14px', color: '#78716C', marginBottom: '20px' }}>Outside the core prioritize → explain → verify loop, two more workflows fed the same data model.</p>
@@ -993,22 +979,8 @@ const caseStudies = {
                 <p style={{ fontSize: '15px', color: '#57534E', lineHeight: 1.7, marginTop: '12px' }}>On a swing stage or underground, typing is a hazard, not an inconvenience — technicians need both hands free. Voice capture fills the work order form directly from the call, turning a report technicians used to dread into one they could give hands-free while already on site.</p>
               </div>
 
-              <div style={{ width: '100%', height: '320px', backgroundColor: '#E5E7EB', borderRadius: '0px', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#9CA3AF', fontSize: '14px', marginBottom: '40px' }}>
-                <div style={{ textAlign: 'center', padding: '20px' }}>
-                  <div style={{ fontWeight: 600, marginBottom: '8px' }}>IMAGE 1: Field Workflow Evolution</div>
-                  <div style={{ fontSize: '13px', lineHeight: 1.5 }}>Offline queue → voice capture → auto-sync</div>
-                </div>
-              </div>
-
               <div style={{ marginBottom: '24px' }}>
                 <p><span style={{ fontWeight: 600 }}>Scenario simulation.</span> In-house cost/timeline comparisons replaced commissioned feasibility studies and drew interest from other universities.</p>
-              </div>
-
-              <div style={{ width: '100%', height: '320px', backgroundColor: '#E5E7EB', borderRadius: '0px', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#9CA3AF', fontSize: '14px' }}>
-                <div style={{ textAlign: 'center', padding: '20px' }}>
-                  <div style={{ fontWeight: 600, marginBottom: '8px' }}>IMAGE 5: Scenario Comparison</div>
-                  <div style={{ fontSize: '13px', lineHeight: 1.5 }}>"Repair" vs "Replace" side-by-side<br/>Cost, timeline, risk deltas</div>
-                </div>
               </div>
             </div>
           </div>
@@ -1053,13 +1025,6 @@ const caseStudies = {
   </div>
 </div>
 
-<div style="width: 100%; height: 450px; background-color: #E5E7EB; border-radius: 0px; display: flex; align-items: center; justify-content: center; color: #9CA3AF; font-size: 14px; margin-top: 40px; margin-bottom: 40px;">
-  <div style="text-align: center; padding: 20px;">
-    <div style="font-weight: 600; margin-bottom: 8px;">IMAGE: Approval Workflow</div>
-    <div style="font-size: 13px; line-height: 1.5;">Review gate → reasoning display → override logging</div>
-  </div>
-</div>
-
 <div style="display: grid; grid-template-columns: 1fr; gap: 28px; margin-bottom: 48px;">
   <div>
     <div class="cs-card-title">Roles Had Wildly Different Needs</div>
@@ -1072,20 +1037,8 @@ const caseStudies = {
   </div>
 
   <div>
-    <div class="cs-card-title">Twelve Months Forced Scope Discipline</div>
-    <div style="font-size: 15px; color: #57534E; line-height: 1.6;">AI auto-scheduling, ESG modeling, digital twins — all tempting, all cut. The filter: one north star, two drivers.</div>
-  </div>
-
-  <div>
     <div class="cs-card-title">Vendors Stayed Outside LAT</div>
     <div style="font-size: 15px; color: #57534E; line-height: 1.6;">A small, high-churn group, not LAT's users — not worth the engineering cost. The project manager stays the connective layer, syncing vendor status in by hand.</div>
-  </div>
-</div>
-
-<div style="width: 100%; height: 450px; background-color: #E5E7EB; border-radius: 0px; display: flex; align-items: center; justify-content: center; color: #9CA3AF; font-size: 14px; margin-top: 40px; margin-bottom: 40px;">
-  <div style="text-align: center; padding: 20px;">
-    <div style="font-weight: 600; margin-bottom: 8px;">IMAGE: Offline-First Architecture</div>
-    <div style="font-size: 13px; line-height: 1.5;">Local queue → capture → auto-sync → retry</div>
   </div>
 </div>
 
@@ -1132,48 +1085,7 @@ const caseStudies = {
               <div style={{ fontSize: '13px', color: '#78716C', marginTop: '10px' }}>Weather drives a lot of this institution&apos;s maintenance load — winter failures spike independent of asset condition — and that seasonality is already priced into how the university plans CAPEX, so the 4-month baseline isn&apos;t assumed to hold flat across a full year.</div>
             </div>
 
-            <div style={{ marginTop: '8px', marginBottom: '40px' }}>
-              <h4 className="case-study-subhead">Decisions made through iteration, not assumption</h4>
-              <p style={{ fontSize: '15px', color: '#57534E', lineHeight: 1.7 }}>Early alert designs showed probability scores — &ldquo;68% failure risk.&rdquo; Managers hesitated. They didn&apos;t know what 68% meant or what to do with it. So we ran moderated comparative tests with pilot property managers: the same alert, two framings, shown side by side in live sessions while we measured time-to-decision. Version B — &ldquo;delaying costs $3K/month&rdquo; won decisively. Decision time dropped from 14 minutes to 4. The sessions told us what the assumption couldn&apos;t.</p>
-
-              <div className="self-responsive-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '24px', marginTop: '28px' }}>
-                <div style={{ padding: '20px', backgroundColor: '#FAFAFA', border: '1px solid rgba(0,0,0,0.08)' }}>
-                  <div style={{ fontSize: '12px', fontWeight: 700, color: '#9CA3AF', textTransform: 'uppercase', letterSpacing: '0.04em', marginBottom: '8px' }}>Version A — probability framing</div>
-                  <div style={{ fontSize: '18px', fontWeight: 700, color: '#1C1917', marginBottom: '8px' }}>&ldquo;Boiler failure risk: 68%&rdquo;</div>
-                  <div style={{ fontSize: '14px', color: '#78716C' }}>Managers asked: &ldquo;What does 68% mean? What do I do with it?&rdquo;</div>
-                </div>
-                <div style={{ padding: '20px', backgroundColor: '#FFF9F5', border: '1.5px solid #FF7C5F' }}>
-                  <div style={{ fontSize: '12px', fontWeight: 700, color: '#FF7C5F', textTransform: 'uppercase', letterSpacing: '0.04em', marginBottom: '8px' }}>Version B — consequence framing</div>
-                  <div style={{ fontSize: '18px', fontWeight: 700, color: '#1C1917', marginBottom: '8px' }}>&ldquo;Delaying costs $3K/month&rdquo;</div>
-                  <div style={{ fontSize: '14px', color: '#78716C' }}>Managers acted.</div>
-                </div>
-              </div>
-
-              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '24px', marginTop: '28px', flexWrap: 'wrap' }}>
-                <div style={{ textAlign: 'center' }}>
-                  <div style={{ fontSize: '32px', fontWeight: 700, color: '#9CA3AF' }}>14 Min</div>
-                  <div style={{ fontSize: '13px', color: '#9CA3AF' }}>Average decision time</div>
-                </div>
-                <div style={{ fontSize: '20px', color: '#FF7C5F' }}>&rarr;</div>
-                <div style={{ textAlign: 'center' }}>
-                  <div style={{ fontSize: '32px', fontWeight: 700, color: '#1C1917' }}>4 Min</div>
-                  <div style={{ fontSize: '13px', color: '#9CA3AF' }}>Average decision time</div>
-                </div>
-              </div>
-
-              <p style={{ fontSize: '15px', color: '#57534E', lineHeight: 1.7, marginTop: '28px' }}>Testing &ldquo;68% failure risk&rdquo; against &ldquo;delaying costs $3K/month&rdquo; with the managers who&apos;d actually use it — one framing caused hesitation, the other drove action. This single copy change cut average decision time from 14 minutes to 4.</p>
-
-              <div className="pull-quote" style={{ marginTop: '24px' }}>Humans act on consequences, not probabilities. This became the design principle behind every alert in LAT.</div>
-            </div>
-
-            <div className="pull-quote">A usable interface wasn't enough on its own. Adoption depended on reliable data, understandable recommendations, and clear decision ownership.</div>
-
-            <div style={{ width: '100%', height: '450px', backgroundColor: '#E5E7EB', borderRadius: '0px', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#9CA3AF', fontSize: '14px', marginTop: '40px', marginBottom: '40px' }}>
-              <div style={{ textAlign: 'center', padding: '20px' }}>
-                <div style={{ fontWeight: 600, marginBottom: '8px' }}>IMAGE: Trust Over Time Chart</div>
-                <div style={{ fontSize: '13px', lineHeight: 1.5 }}>Override rate declining as adoption climbs, charted over the pilot</div>
-              </div>
-            </div>
+            <div className="pull-quote" style={{ marginTop: '8px', marginBottom: '40px' }}>A usable interface wasn't enough on its own. Adoption depended on reliable data, understandable recommendations, and clear decision ownership.</div>
           </div>
         ),
       },
