@@ -41,7 +41,7 @@ const caseStudies = {
 
 <p style="margin-top: 28px;"><span style="font-weight: 600;">My role.</span> Founding (and for most of Keye's life, only) designer. Founders set vision and fundraising; the PM and I turned it into what shipped — I designed every surface, wrote PRDs, ran research, and hired the two designers who replaced me.</p>
 
-<p style="margin-top: 28px;"><span style="font-weight: 600;">Timeline.</span> 2 years (2021–2022): beta to credit system to marketplace to extension to seed funding. After the team dispersed, the company left the subscription marketplace behind and pivoted into financial analytics, carrying the traction we built into YC F24.</p>
+<p style="margin-top: 28px;"><span style="font-weight: 600;">Timeline.</span> My 2 years on Keye (Jan 2021–Dec 2022): beta to credit system to marketplace to extension to seed funding. After I left, Keye kept running the same product for a while longer; when the rest of the founding team dispersed and only Rohan (finance background) stayed on, YC pushed the pivot into financial analytics, carrying the traction we'd built into YC F24.</p>
 
 <div style="background-color: #F9FAFB; padding: 24px 28px; border-radius: 0px; border-left: 3px solid #FF7C5F; margin-top: 32px;">
   <div style="font-size: 11px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #A8A29E; margin-bottom: 10px;">My contribution</div>
@@ -93,7 +93,7 @@ const caseStudies = {
   </div>
   <div class="metrics-cell">
     <div class="metrics-num">1–2% → 30–35%</div>
-    <div class="metrics-label">Lesser-known product activity, six weeks after the credit cap shipped — the design decision behind the partner-subscription growth above</div>
+    <div class="metrics-label">Lesser-known product activity, six weeks after the credit cap shipped. That window also coincided with reach expanding from university to public users, so not all of the jump is isolated to the cap alone.</div>
     <div style="font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 10px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #4ADE80; margin-top: 10px;">Observed</div>
   </div>
   <div class="metrics-cell">
@@ -252,7 +252,7 @@ const caseStudies = {
     <div class="cs-stage-header"><span>v2 — 10% flat fee</span><span class="cs-stage-tag">Trigger: founders' pricing direction</span></div>
     <div style="display: flex; gap: 32px; align-items: center; flex-wrap: wrap;">
       <img class="cs-stage-img" loading="lazy" decoding="async" src="/images/keye/credit-system-v2.webp" alt="v2 flat 10% fee flow" style="width: 449px; flex: 0 0 449px; margin: 0; border-radius: 10px; box-shadow: 0 10px 24px rgba(28, 25, 23, 0.1); border-color: #D6D3D1; padding: 20px; background-color: #FFFFFF;">
-      <p style="flex: 1; min-width: 240px; margin: 0;">Founders proposed a flat commission on every purchase. Survey data pointed to something closer to 5–6% users would actually tolerate — 10% shipped anyway, but that gap is what shaped the cap that eventually shipped.</p>
+      <p style="flex: 1; min-width: 240px; margin: 0;">Founders proposed a flat 10% commission on every purchase, and it shipped before we had any tolerance data to check it against. Once people had used the product at that rate, a follow-up survey showed real tolerance was closer to 5–6% — the gap between what we'd charged and what people actually accepted is what shaped the cap that eventually shipped.</p>
     </div>
   </div>
 
@@ -272,7 +272,7 @@ const caseStudies = {
         <p style="margin: 0;">Capping credits at 200 a month turned scarcity into a discovery mechanic: with a limited budget, users started spending on products they'd have otherwise skipped in favor of the brand they already knew.</p>
         <div class="feature-stat" style="margin: 20px 0 0;">
           <div class="feature-stat-num" style="font-size: 40px;">1–2% → 30–35%</div>
-          <div class="feature-stat-label">Lesser-known product activity, six weeks after the cap shipped</div>
+          <div class="feature-stat-label">Lesser-known product activity, six weeks after the cap shipped — that window also coincided with reach expanding from university to public users, so not all of the jump is isolated to the cap alone</div>
         </div>
       </div>
     </div>
@@ -291,7 +291,7 @@ const caseStudies = {
   <div class="pc-metrics-strip" style="margin-top: 24px;">
     <div class="pc-metrics-cell"><div class="feature-stat-num" style="font-size: 30px;">5</div><div class="feature-stat-label">pricing models shipped in ten months</div></div>
     <div class="pc-metrics-cell"><div class="feature-stat-num" style="font-size: 30px;">1–2%→30–35%</div><div class="feature-stat-label">lesser-known product activity, six weeks post-cap</div></div>
-    <div class="pc-metrics-cell"><div class="feature-stat-num" style="font-size: 30px;">87%</div><div class="feature-stat-label">of surveyed users avoided a purchase just to skip entering payment info</div></div>
+    <div class="pc-metrics-cell"><div class="feature-stat-num" style="font-size: 30px;">87%</div><div class="feature-stat-label">of ~6,000 surveyed respondents, across US university and alumni networks, avoided a purchase just to skip entering payment info</div></div>
     <div class="pc-metrics-cell"><div class="feature-stat-num" style="font-size: 30px;">+32%</div><div class="feature-stat-label">trial-to-paid conversion post-monetization</div></div>
   </div>
 
@@ -333,7 +333,7 @@ const caseStudies = {
     <div class="pc-stage-label">v2 — Componentized, square shape, label system</div>
     <img class="pc-crop-img" loading="lazy" decoding="async" src="/images/keye/product-card-v3-square-labels.webp" alt="Featured Products row — square cards with a Leaving Soon label and on-card credit cost badges">
     <div class="pc-stage-title">Turned the card into a true component, squared off to fit more per scroll: countdown timer, Waitlisted state, labels for Featured, Leaving Soon, Coming Soon, and credit cost moved onto the face.</div>
-    <div class="feature-note" style="border-left: 3px solid #4A72E5;"><span class="feature-note-label" style="color: #4A72E5;">Impact</span><span>the card became a status object, not just an ad — Featured placement drove <b>+18% trial activity</b>, and visible pricing pre-qualified clicks.</span></div>
+    <div class="feature-note" style="border-left: 3px solid #4A72E5;"><span class="feature-note-label" style="color: #4A72E5;">Impact</span><span>the card became a status object, not just an ad — Featured products saw <b>+18% trial activity</b> over non-featured ones (not a clean causal isolation, since Featured also skewed toward products users already wanted), and visible pricing pre-qualified clicks.</span></div>
     <div class="feature-note" style="border-left: 3px solid #FF7C5F;"><span class="feature-note-label" style="color: #FF7C5F;">Finding</span><span>users tried PicMonkey over Adobe at equal visual footing with visible pricing — price and placement beat brand recognition, ancestor of the credit system's <b>1–2% → 30–35%</b> jump.</span></div>
     <div class="pc-considered"><b>Considered:</b>&nbsp;a separate "My Accounts" page, and the full description on the card face — rejected both, since the grid needs to explain a purchase, not fight scanning with deciding.</div>
   </div>
@@ -434,7 +434,7 @@ const caseStudies = {
 
   <div class="feature-note" style="border-left: 3px solid #FF7C5F;"><span class="feature-note-label" style="color: #FF7C5F;">Constraint</span><span>No backend engineer left on the team after the co-founder's exit — whatever shipped next had to be entirely client-side.</span></div>
 
-  <div class="feature-note" style="border-left: 3px solid #4A72E5;"><span class="feature-note-label" style="color: #4A72E5;">Access model</span><span>Autofill only worked for Keye's authorized partners — not shared logins. It replaced the copy-paste flow below with the same access the user already had, not a new way to pass credentials around.</span></div>
+  <div class="feature-note" style="border-left: 3px solid #4A72E5;"><span class="feature-note-label" style="color: #4A72E5;">Access model</span><span>Autofill only worked for Keye's authorized partners — not shared logins. It replaced the copy-paste flow below with the same access the user already had, not a new way to pass credentials around or widen what Keye could see.</span></div>
 
   <div class="pull-quote">The fix wasn't a partnership we finally got — it was a pattern that already existed somewhere else.</div>
 
@@ -482,7 +482,7 @@ const caseStudies = {
   <div class="pc-metrics-strip" style="margin-top: 24px; grid-template-columns: repeat(3, 1fr);">
     <div class="pc-metrics-cell"><div class="feature-stat-num" style="font-size: 30px;">2 days</div><div class="feature-stat-label">from pitch to prototype</div></div>
     <div class="pc-metrics-cell"><div class="feature-stat-num" style="font-size: 30px;">22%</div><div class="feature-stat-label">install rate in the first 2 weeks</div></div>
-    <div class="pc-metrics-cell"><div class="feature-stat-num" style="font-size: 30px;">60% → 65%</div><div class="feature-stat-label">extension adoption, 3 months post-launch vs. by the time I left — the fix for an 18-month-old unsolved problem</div></div>
+    <div class="pc-metrics-cell"><div class="feature-stat-num" style="font-size: 30px;">60% → 65%</div><div class="feature-stat-label">extension adoption among active users, 3 months post-launch vs. by the time I left — a separate measurement window from the 22% install-rate figure</div></div>
   </div>
 </div>`
       },
@@ -559,12 +559,12 @@ const caseStudies = {
 
   <div>
     <div class="cs-card-title">The Influencer Debate</div>
-    <div style="font-size: 15px; color: #57534E; line-height: 1.6;">Marketing wanted influencer streams and social mechanics; I reframed it as access, not entertainment. Founders agreed.</div>
+    <div style="font-size: 15px; color: #57534E; line-height: 1.6;">Marketing wanted influencer streams and social mechanics — a real shot at faster acquisition. Founders stayed cautious about churn, worried it would bring in users who'd switch right back out; I reframed it as access, not entertainment, and we gave up that acquisition channel entirely.</div>
   </div>
 
   <div>
     <div class="cs-card-title">The Mobile App Concession</div>
-    <div style="font-size: 15px; color: #57534E; line-height: 1.6;">I wanted native; cost won the argument. I conceded, and made mobile web thorough enough to barely cost users anything.</div>
+    <div style="font-size: 15px; color: #57534E; line-height: 1.6;">Engineering and I both pushed for native — we knew it would make the product more popular. But $500K in seed funding had to cover hosting and subscriptions too, and native wasn't affordable alongside that. I conceded and made mobile web thorough enough to close most of the gap.</div>
   </div>
 
   <div>
@@ -583,8 +583,8 @@ const caseStudies = {
 
 <div style="background-color: #1C1917; padding: 28px 32px; border-radius: 0px; margin-top: 40px; margin-bottom: 8px;">
   <div style="font-size: 11px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #A8A29E; margin-bottom: 10px;">The pivot</div>
-  <div style="font-family: 'Fraunces', serif; font-size: 22px; font-weight: 600; color: #FFFFFF; line-height: 1.4; margin-bottom: 12px;">By year three, the founding team dispersed and the subscription marketplace I designed didn't survive — but it got the company into YC.</div>
-  <div style="font-size: 15px; color: #D6D3D1; line-height: 1.7;">Keye dropped the marketplace model and rebuilt around financial analytics. What carried over wasn't the product — the research, partnerships, and funding it generated made the YC F24 acceptance possible.</div>
+  <div style="font-family: 'Fraunces', serif; font-size: 22px; font-weight: 600; color: #FFFFFF; line-height: 1.4; margin-bottom: 12px;">Years after I left, the rest of the founding team dispersed and the subscription marketplace I designed didn't survive — but it got the company into YC.</div>
+  <div style="font-size: 15px; color: #D6D3D1; line-height: 1.7;">Keye dropped the marketplace model and rebuilt around financial analytics. What carried over wasn't the product — it was the research, partnerships, and funding it generated, which likely contributed to the YC F24 acceptance.</div>
 </div>
 
 <div class="pull-quote" style="margin-top: 48px;">The credit cap's value wasn't monetization — it was the behavioral data that shaped the entire partnership strategy.</div>
