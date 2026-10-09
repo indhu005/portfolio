@@ -650,7 +650,52 @@ const caseStudies = {
   <div style="font-size: 15px; color: #57534E; line-height: 1.7;">I reframed the product from a shared facilities dashboard into role-specific decision surfaces, set the approval model that let managers act on AI recommendations without blind faith, and carried the offline-first field workflow from research through pilot.</div>
 </div>
 
-<div style="width: 100%; min-height: 450px; background-color: #E5E7EB; border-radius: 0px; display: flex; align-items: center; justify-content: center; color: #9CA3AF; font-size: 14px; margin-top: 40px;">Hero — one asset rendered for a technician (mobile), a manager (priority queue), and an executive (summary). One data model, three surfaces.</div>`
+<div style="width: 100%; min-height: 450px; background-color: #E5E7EB; border-radius: 0px; display: flex; align-items: center; justify-content: center; color: #9CA3AF; font-size: 14px; margin-top: 40px;">Hero — one asset rendered for a technician (mobile), a manager (priority queue), and an executive (summary). One data model, three surfaces.</div>
+
+<h4 class="case-study-subhead" id="impact">Impact</h4>
+
+<p style="font-size: 14px; color: #6B7280; margin-bottom: 24px;">Pilot cohort: 43 people (18 technicians, 15 operations/asset managers, 7 accounting, 3 executives), tracked over a 12-week pilot window.</p>
+
+<div class="metrics-grid metrics-grid--dark" style="margin-bottom: 20px;">
+  <div class="metrics-cell metrics-cell--hero">
+    <div class="metrics-num">95%</div>
+    <div class="metrics-label">Weekly active use across the 43-person pilot (~41 of 43), vs. the university IT department's 70% threshold for keeping a tool live</div>
+    <div style="font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 10px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #4ADE80; margin-top: 10px;">Observed</div>
+  </div>
+  <div class="metrics-cell">
+    <div class="metrics-num">70% → 95%</div>
+    <div class="metrics-label">Record completeness (required fields present, no duplicates), pre/post canonical ID + sync validation. 70% baseline was the client's pre-project estimate, not a direct measurement.</div>
+    <div style="font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 10px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #4ADE80; margin-top: 10px;">Observed</div>
+  </div>
+  <div class="metrics-cell">
+    <div class="metrics-num">~20 → ~8 min</div>
+    <div class="metrics-label">Average reporting time per ticket across all pilot technicians, pre/post offline-first workflow</div>
+    <div style="font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 10px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #4ADE80; margin-top: 10px;">Observed</div>
+  </div>
+  <div class="metrics-cell">
+    <div class="metrics-num">-36%</div>
+    <div class="metrics-label">Budget revisions, 12-week pilot vs. the same 12 weeks the prior year — from the university's own CAPEX/budget records</div>
+    <div style="font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 10px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #60A5FA; margin-top: 10px;">Measured</div>
+  </div>
+  <div class="metrics-cell">
+    <div class="metrics-num">-12%</div>
+    <div class="metrics-label">Emergency repair incidents, 12-week pilot vs. the same 12 weeks the prior year — from the university's maintenance records</div>
+    <div style="font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 10px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #60A5FA; margin-top: 10px;">Measured</div>
+  </div>
+  <div class="metrics-cell">
+    <div class="metrics-num">-60%</div>
+    <div class="metrics-label">Planning time, pilot vs. the prior year (see Decision 02) — managers' own time-tracking</div>
+    <div style="font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 10px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #60A5FA; margin-top: 10px;">Measured</div>
+  </div>
+</div>
+
+<p style="font-size: 14px; color: #6B7280; margin-bottom: 40px;">Observed metrics come directly from pilot usage logs. Measured metrics are pulled from the university's own budget and maintenance records, comparing the 12-week pilot against the same period the year before.</p>
+
+<p><span style="font-weight: 600;">Operational.</span> Linking work orders to lifecycle cost made repair history visible in real time.</p>
+
+<p style="margin-top: 28px;"><span style="font-weight: 600;">Decision-making.</span> Teams stopped entering meetings to reconcile facts, and started entering them to decide.</p>
+
+<p style="margin-top: 28px;"><span style="font-weight: 600;">Strategic.</span> Scenario simulation moved feasibility analysis in-house and drew interest from other universities.</p>`
       },
       {
         id: 'context-problem',
@@ -1133,58 +1178,8 @@ const caseStudies = {
         ),
       },
       {
-        id: 'impact',
-        title: '07 — Impact',
-        headline: "The biggest change wasn't cost savings — it was decision confidence",
-        content: `<p style="font-size: 14px; color: #6B7280; margin-bottom: 24px;">Pilot cohort: 43 people (18 technicians, 15 operations/asset managers, 7 accounting, 3 executives), tracked over a 12-week pilot window.</p>
-
-<div class="metrics-grid metrics-grid--dark" style="margin-bottom: 20px;">
-  <div class="metrics-cell">
-    <div class="metrics-num">95%</div>
-    <div class="metrics-label">Weekly active use across the 43-person pilot (~41 of 43), vs. the university IT department's 70% threshold for keeping a tool live</div>
-    <div style="font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 10px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #4ADE80; margin-top: 10px;">Observed</div>
-  </div>
-  <div class="metrics-cell">
-    <div class="metrics-num">70% → 95%</div>
-    <div class="metrics-label">Record completeness (required fields present, no duplicates), pre/post canonical ID + sync validation. 70% baseline was the client's pre-project estimate, not a direct measurement.</div>
-    <div style="font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 10px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #4ADE80; margin-top: 10px;">Observed</div>
-  </div>
-  <div class="metrics-cell">
-    <div class="metrics-num">~20 → ~8 min</div>
-    <div class="metrics-label">Average reporting time per ticket across all pilot technicians, pre/post offline-first workflow</div>
-    <div style="font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 10px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #4ADE80; margin-top: 10px;">Observed</div>
-  </div>
-</div>
-
-<div class="metrics-grid metrics-grid--dark" style="margin-bottom: 20px;">
-  <div class="metrics-cell">
-    <div class="metrics-num">-36%</div>
-    <div class="metrics-label">Budget revisions, 12-week pilot vs. the same 12 weeks the prior year — from the university's own CAPEX/budget records</div>
-    <div style="font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 10px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #60A5FA; margin-top: 10px;">Measured</div>
-  </div>
-  <div class="metrics-cell">
-    <div class="metrics-num">-12%</div>
-    <div class="metrics-label">Emergency repair incidents, 12-week pilot vs. the same 12 weeks the prior year — from the university's maintenance records</div>
-    <div style="font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 10px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #60A5FA; margin-top: 10px;">Measured</div>
-  </div>
-  <div class="metrics-cell">
-    <div class="metrics-num">-60%</div>
-    <div class="metrics-label">Planning time, pilot vs. the prior year (see Decision 02) — managers' own time-tracking</div>
-    <div style="font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 10px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #60A5FA; margin-top: 10px;">Measured</div>
-  </div>
-</div>
-
-<p style="font-size: 14px; color: #6B7280; margin-bottom: 40px;">Observed metrics come directly from pilot usage logs. Measured metrics are pulled from the university's own budget and maintenance records, comparing the 12-week pilot against the same period the year before.</p>
-
-<p><span style="font-weight: 600;">Operational.</span> Linking work orders to lifecycle cost made repair history visible in real time.</p>
-
-<p style="margin-top: 28px;"><span style="font-weight: 600;">Decision-making.</span> Teams stopped entering meetings to reconcile facts, and started entering them to decide.</p>
-
-<p style="margin-top: 28px;"><span style="font-weight: 600;">Strategic.</span> Scenario simulation moved feasibility analysis in-house and drew interest from other universities.</p>`
-      },
-      {
         id: 'reflection',
-        title: '08 — Reflection',
+        title: '07 — Reflection',
         headline: "Clarity drove action more than completeness — users didn't want more data, they wanted less to think about",
         content: `<p><span style="font-weight: 600;">What I got wrong.</span> I thought predictive accuracy would drive adoption. Data integrity mattered more — strong predictions failed when the data was messy.</p>
 
