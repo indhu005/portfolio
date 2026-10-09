@@ -58,9 +58,8 @@ const photoCaptions = [
   "Foam, doing the most for a Tuesday",
 ]
 
-// Curated down to 6 — architecture-forward with a couple of nature shots,
-// trimmed from a larger set to keep the page from reading as a photo journal.
-const KEPT_PHOTO_IDS = new Set([4, 9, 23, 29, 30, 34])
+// Curated down to 5 — Pacific coast beach shots.
+const KEPT_PHOTO_IDS = new Set([12, 13, 15, 19, 32])
 
 const photos = Array.from({ length: 36 }, (_, i) => ({
   id: i + 1,
@@ -261,31 +260,6 @@ export default function About() {
                 </div>
               ))}
 
-              <div style={{ marginTop: '32px', paddingTop: '24px', borderTop: '1px solid rgba(0,0,0,0.1)' }}>
-                <div style={{
-                  fontFamily: 'ui-monospace, SFMono-Regular, Menlo, monospace',
-                  fontSize: '10.5px',
-                  letterSpacing: '0.08em',
-                  textTransform: 'uppercase',
-                  color: '#78716C',
-                  marginBottom: '14px',
-                }}>Experience</div>
-                {[
-                  { role: 'Independent Product Designer', org: 'Freelance', years: '2025 — Present' },
-                  { role: 'Graduate Capstone Designer', org: 'University of Washington', years: 'Jan — Dec 2024' },
-                  { role: 'Senior Product Designer', org: 'Amento', years: 'Jun 2023 — May 2024' },
-                  { role: 'Product Designer II', org: 'Handel Architects', years: 'Mar 2022 — May 2023' },
-                  { role: 'Founding Product Designer', org: 'Keye', years: 'Jan 2021 — Dec 2022' },
-                  { role: 'Senior Product Designer', org: 'Flock.ai', years: 'Nov 2021 — Jan 2022' },
-                  { role: 'Product Designer, Volunteer', org: 'Distribute Aid', years: 'Jun — Dec 2020' },
-                  { role: 'User Experience Designer', org: 'Gensler', years: 'May 2018 — Feb 2020' },
-                ].map((job) => (
-                  <div key={job.role + job.org} style={{ marginBottom: '14px' }}>
-                    <div style={{ fontSize: '13.5px', fontWeight: 600, color: '#1C1917', lineHeight: '1.4' }}>{job.role}</div>
-                    <div style={{ fontSize: '12.5px', color: '#78716C', marginTop: '2px' }}>{job.org} · {job.years}</div>
-                  </div>
-                ))}
-              </div>
             </div>
 
             {/* MAIN — field notes */}
@@ -418,7 +392,7 @@ export default function About() {
           }}>
             <div style={{
               display: 'grid',
-              gridTemplateColumns: isMobile ? 'repeat(2, 1fr)' : isTablet ? 'repeat(3, 1fr)' : 'repeat(4, 1fr)',
+              gridTemplateColumns: isMobile ? 'repeat(2, 1fr)' : `repeat(${photos.length}, 1fr)`,
               gap: isMobile ? '16px' : isTablet ? '28px' : '40px',
               transition: 'all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1)',
             }}>

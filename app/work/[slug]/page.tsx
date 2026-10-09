@@ -308,8 +308,7 @@ const caseStudies = {
   <div class="cs-stage">
     <div class="cs-stage-header"><span>v2 — 10% flat fee</span><span class="cs-stage-tag">Trigger: founders' pricing direction</span></div>
     <img class="cs-stage-img" loading="lazy" decoding="async" src="/images/keye/credit-system-v2.webp" alt="v2 flat 10% fee flow">
-    <p>Founders proposed a flat commission on every purchase. Survey data pointed to something closer to 5–6% users would actually tolerate — the direction stayed theirs, but that gap is what shaped the cap that eventually shipped.</p>
-    <div class="pc-considered"><b>Tension:</b>&nbsp;10% shipped despite the 5–6% signal — evidence didn't override the founders' call, it informed the next version instead.</div>
+    <p>Founders proposed a flat commission on every purchase. Survey data pointed to something closer to 5–6% users would actually tolerate — 10% shipped anyway, but that gap is what shaped the cap that eventually shipped.</p>
   </div>
 
   <div class="cs-stage">
@@ -332,14 +331,6 @@ const caseStudies = {
     <div class="cs-stage-header"><span>v5 — Tiered plans</span><span class="cs-stage-tag">Trigger: power users wanted headroom</span></div>
     <img class="cs-stage-img" loading="lazy" decoding="async" src="/images/keye/credit-system-v5.webp" alt="v5 tiered plans">
     <p>The cap worked, but it also capped the highest-intent users. Tiered plans let them buy up without loosening the scarcity effect for everyone else — same mechanic, an escape valve for the edge case.</p>
-  </div>
-
-  <div class="feature-chip-row">
-    <span class="feature-chip"><b>v1</b> Free</span>
-    <span class="feature-chip"><b>v2</b> 10% flat fee</span>
-    <span class="feature-chip"><b>v3</b> Uncapped credits</span>
-    <span class="feature-chip"><b>v4</b> 200/mo cap</span>
-    <span class="feature-chip"><b>v5</b> Tiered plans</span>
   </div>
 
   <div class="cs-laptop-mockup" style="width: 60%; margin: 64px auto 56px;">
@@ -370,12 +361,7 @@ const caseStudies = {
     <div class="pc-metrics-cell"><div class="feature-stat-num" style="font-size: 30px;">+32%</div><div class="feature-stat-label">trial-to-paid conversion post-monetization</div></div>
   </div>
 
-  <div class="pc-patterns">
-    <div class="pc-patterns-title">Why this mattered beyond revenue</div>
-    <div class="pc-patterns-item">The cap did more than monetize the product — it generated the behavioral data that shaped the entire partnership strategy, evidence that price, not brand loyalty, was the lever moving trial activity on lesser-known tools.</div>
-  </div>
-
-  <div class="pull-quote">Every version of the credit system came from testing with the founders — five models, one team, ten months of learning together.</div>
+  <div class="pull-quote">The cap did more than monetize the product — it generated the behavioral data that shaped the entire partnership strategy, evidence that price, not brand loyalty, was the lever moving trial activity on lesser-known tools.</div>
 </div>
 
 <div id="product-card" class="feature-block">
@@ -438,14 +424,6 @@ const caseStudies = {
     <p><b>Impact:</b> in the extension, the card appears on the partner's own site, collapsing discovery and activation into one moment.</p>
   </div>
 
-  <div class="feature-chip-row">
-    <span class="feature-chip"><b>v1</b> No system</span>
-    <span class="feature-chip"><b>v2</b> Componentized + labels</span>
-    <span class="feature-chip"><b>v3</b> Request added</span>
-    <span class="feature-chip"><b>v4</b> Buy Again + Refer</span>
-    <span class="feature-chip"><b>v5</b> Mobile system</span>
-  </div>
-
   <div class="feature-eyebrow" style="margin-top: 56px;">The card, annotated</div>
   <h4 class="feature-heading">What the v2–v5 system converged on</h4>
 
@@ -475,13 +453,6 @@ const caseStudies = {
     <div class="pc-metrics-cell"><div class="feature-stat-num" style="font-size: 30px;">+18%</div><div class="feature-stat-label">trial activity on Featured vs. non-featured products, four weeks</div></div>
     <div class="pc-metrics-cell"><div class="feature-stat-num" style="font-size: 30px;">−34%</div><div class="feature-stat-label">customer-care requests, after Request a Product shipped in-grid</div></div>
     <div class="pc-metrics-cell"><div class="feature-stat-num" style="font-size: 30px;">4 jobs</div><div class="feature-stat-label">discover, re-engage, recover, acquire — served by v4, one component</div></div>
-  </div>
-
-  <div class="pc-patterns">
-    <div class="pc-patterns-title">Three patterns across all five versions</div>
-    <div class="pc-patterns-item"><b>1.</b> Every state traces back to an external trigger — an interview observation, a support inbox, sustained user pressure.</div>
-    <div class="pc-patterns-item"><b>2.</b> Each version's job count grew while its visual footprint stayed flat.</div>
-    <div class="pc-patterns-item"><b>3.</b> The v2 componentization decision paid for the next three versions.</div>
   </div>
 
   <div class="pull-quote">Getting the component right early is what let six systems ship inside one card without rebuilding it five times.</div>
