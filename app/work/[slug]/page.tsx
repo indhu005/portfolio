@@ -1,8 +1,9 @@
 import CaseStudyLayout from '@/components/CaseStudyLayout'
 import MisinfoFeaturesContent from '@/components/MisinfoFeaturesContent'
 import LatAlertToggle from '@/components/LatAlertToggle'
+import LatWorkOrderPrototype from '@/components/LatWorkOrderPrototype'
+import LatPriorityQueuePrototype from '@/components/LatPriorityQueuePrototype'
 import LatTradeoffTable from '@/components/LatTradeoffTable'
-import LatSyncFlow from '@/components/LatSyncFlow'
 import { Metadata } from 'next'
 
 const caseStudies = {
@@ -638,8 +639,6 @@ const caseStudies = {
   <div style="font-size: 15px; color: #57534E; line-height: 1.7;">I reframed the product from a shared facilities dashboard into role-specific decision surfaces, set the approval model that let managers act on AI recommendations without blind faith, and carried the offline-first field workflow from research through pilot.</div>
 </div>
 
-<div style="width: 100%; min-height: 450px; background-color: #E5E7EB; border-radius: 0px; display: flex; align-items: center; justify-content: center; color: #9CA3AF; font-size: 14px; margin-top: 40px;">Hero — one asset rendered for a technician (mobile), a manager (priority queue), and an executive (summary). One data model, three surfaces.</div>
-
 <h4 class="case-study-subhead" id="impact">Impact</h4>
 
 <p style="font-size: 14px; color: #6B7280; margin-bottom: 24px;">Pilot cohort: 43 people (18 technicians, 15 operations/asset managers, 7 accounting, 3 executives), tracked over a 12-week pilot window — the test cohort for a tool that rolled out to 4,000+ people campus-wide.</p>
@@ -734,24 +733,24 @@ const caseStudies = {
         content: '',
         customComponent: (
           <div>
-            <p style={{ fontSize: '15px', color: '#44403C', maxWidth: '680px', marginBottom: '56px' }}>Research showed the problem wasn't a lack of data — it was that each role had to translate raw numbers into a decision themselves. So the system did four things: <span style={{ fontWeight: 600 }}>keep data clean</span> at the source, <span style={{ fontWeight: 600 }}>prioritize</span> what needed attention, <span style={{ fontWeight: 600 }}>explain</span> what a prediction meant financially, and <span style={{ fontWeight: 600 }}>verify</span> it before it reached a budget. AI wasn't the product here — trustworthy decision-making was.</p>
+            <p style={{ fontSize: '15px', color: '#44403C', marginBottom: '56px' }}>The problem wasn't missing data — it was translating numbers into decisions. The system did four things: <span style={{ fontWeight: 600 }}>kept data clean</span>, <span style={{ fontWeight: 600 }}>prioritized</span> attention, <span style={{ fontWeight: 600 }}>explained</span> financial stakes, <span style={{ fontWeight: 600 }}>verified</span> before budget impact. AI wasn't the product — trustworthy decisions were.</p>
 
-            <div style={{ marginBottom: '96px' }}>
-              <div style={{ fontSize: '11px', fontWeight: 700, letterSpacing: '0.06em', textTransform: 'uppercase', color: '#A8A29E', marginBottom: '20px' }}>One data model, three surfaces</div>
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '0', border: '1px solid #E7E5E4' }}>
-                <div style={{ padding: '18px 24px' }}>
-                  <div style={{ fontWeight: 600, color: '#1C1917', marginBottom: '4px' }}>Technician — mobile, offline-first</div>
-                  <div style={{ fontSize: '14px', color: '#57534E' }}>Field reports queue locally, voice-captured, and sync when connectivity returns</div>
+            <div style={{ marginBottom: '72px', maxWidth: '520px', marginLeft: 'auto', marginRight: 'auto', textAlign: 'center' }}>
+              <div style={{ fontSize: '10px', fontWeight: 700, letterSpacing: '0.06em', textTransform: 'uppercase', color: '#A8A29E', marginBottom: '14px' }}>One data model, three surfaces</div>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '0', border: '1px solid #E7E5E4', borderRadius: '12px', overflow: 'hidden', textAlign: 'left' }}>
+                <div style={{ padding: '13px 18px', borderLeft: '4px solid #FF7C5F' }}>
+                  <div style={{ fontSize: '14px', fontWeight: 700, color: '#1C1917', marginBottom: '3px' }}>Technician — mobile, offline-first</div>
+                  <div style={{ fontSize: '12.5px', fontWeight: 500, color: '#44403C' }}>Field reports queue locally, voice-captured, and sync when connectivity returns</div>
                 </div>
-                <div style={{ textAlign: 'center', color: '#FF7C5F', fontSize: '18px', borderTop: '1px solid #E7E5E4', borderBottom: '1px solid #E7E5E4', padding: '6px' }}>↓ feeds shared data model ↓</div>
-                <div style={{ padding: '18px 24px' }}>
-                  <div style={{ fontWeight: 600, color: '#1C1917', marginBottom: '4px' }}>Manager — priority queue</div>
-                  <div style={{ fontSize: '14px', color: '#57534E' }}>Same records, ranked by risk and consequence instead of raw graphs; approves or overrides flagged items</div>
+                <div style={{ textAlign: 'center', color: '#FF7C5F', fontWeight: 700, fontSize: '14px', backgroundColor: '#FFF7F5', borderTop: '1px solid #E7E5E4', borderBottom: '1px solid #E7E5E4', padding: '4px' }}>↓ feeds shared data model ↓</div>
+                <div style={{ padding: '13px 18px', borderLeft: '4px solid #2563EB' }}>
+                  <div style={{ fontSize: '14px', fontWeight: 700, color: '#1C1917', marginBottom: '3px' }}>Manager — priority queue</div>
+                  <div style={{ fontSize: '12.5px', fontWeight: 500, color: '#44403C' }}>Same records, ranked by risk and consequence instead of raw graphs; approves or overrides flagged items</div>
                 </div>
-                <div style={{ textAlign: 'center', color: '#FF7C5F', fontSize: '18px', borderTop: '1px solid #E7E5E4', borderBottom: '1px solid #E7E5E4', padding: '6px' }}>↓ rolls up ↓</div>
-                <div style={{ padding: '18px 24px' }}>
-                  <div style={{ fontWeight: 600, color: '#1C1917', marginBottom: '4px' }}>Executive — summary</div>
-                  <div style={{ fontSize: '14px', color: '#57534E' }}>Portfolio-level cost and risk, traceable back to the field report that drove it</div>
+                <div style={{ textAlign: 'center', color: '#2563EB', fontWeight: 700, fontSize: '14px', backgroundColor: '#EFF6FF', borderTop: '1px solid #E7E5E4', borderBottom: '1px solid #E7E5E4', padding: '4px' }}>↓ rolls up ↓</div>
+                <div style={{ padding: '13px 18px', borderLeft: '4px solid #0D9488' }}>
+                  <div style={{ fontSize: '14px', fontWeight: 700, color: '#1C1917', marginBottom: '3px' }}>Executive — summary</div>
+                  <div style={{ fontSize: '12.5px', fontWeight: 500, color: '#44403C' }}>Portfolio-level cost and risk, traceable back to the field report that drove it</div>
                 </div>
               </div>
             </div>
@@ -763,133 +762,82 @@ const caseStudies = {
             </div>
 
             <div style={{ marginBottom: '48px' }}>
-              <div style={{ display: 'inline-block', fontSize: '10px', fontWeight: 700, letterSpacing: '0.06em', textTransform: 'uppercase', color: '#FFFFFF', backgroundColor: '#FF7C5F', padding: '3px 9px', borderRadius: '999px', marginBottom: '12px' }}>Technician</div>
-              <div style={{ fontSize: '11px', fontWeight: 700, letterSpacing: '0.06em', textTransform: 'uppercase', color: '#A8A29E', marginBottom: '20px' }}>Queue, three iterations</div>
+              <p style={{ fontSize: '15px', color: '#44403C', maxWidth: '640px' }}>Sync state became visible on the work order itself — saved, sending, or failed, with a one-tap retry.</p>
 
-              <p style={{ fontSize: '15px', color: '#44403C', maxWidth: '640px' }}>Sync state became visible on the work order itself.</p>
-
-              <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'flex-start', gap: '24px', marginTop: '40px', flexWrap: 'wrap' }}>
-                <div style={{ flex: '0 1 230px', minWidth: '170px' }}>
-                  <img loading="lazy" decoding="async" width={1206} height={2622} src="/images/lat/LAT%20Technician%20Work%20Orders%20V1.png" alt="Technician work order queue, version 1 — a long list with filter tabs and priority tags" style={{ width: '100%', height: 'auto', borderRadius: '16px', display: 'block' }} />
-                  <div style={{ fontSize: '10.5px', fontWeight: 700, letterSpacing: '0.05em', textTransform: 'uppercase', color: '#A8A29E', marginTop: '10px' }}>Starting point</div>
-                  <div style={{ fontSize: '12px', color: '#78716C', lineHeight: 1.45, marginTop: '5px' }}>Filtered list, tabs, priority tags.</div>
-                </div>
-
-                <div style={{ flex: '0 0 100px', textAlign: 'center', alignSelf: 'center' }}>
-                  <div style={{ color: '#FF7C5F', fontSize: '24px' }}>→</div>
-                  <div style={{ fontSize: '12px', color: '#78716C', marginTop: '10px', lineHeight: 1.45 }}>Status tabs dropped; scheduling and sync moved onto each card.</div>
-                </div>
-
-                <div style={{ flex: '0 1 230px', minWidth: '170px' }}>
-                  <img loading="lazy" decoding="async" width={1206} height={2622} src="/images/lat/LAT%20Technician%20Work%20Orders%20V2.png" alt="Technician work order queue, version 2 — one sort control, due times, and sync state on every card" style={{ width: '100%', height: 'auto', borderRadius: '16px', display: 'block' }} />
-                  <div style={{ fontSize: '10.5px', fontWeight: 700, letterSpacing: '0.05em', textTransform: 'uppercase', color: '#FF7C5F', marginTop: '10px' }}>One queue, one switch</div>
-                  <div style={{ fontSize: '12px', color: '#78716C', lineHeight: 1.45, marginTop: '5px' }}>Due time + sync state on every card.</div>
-                </div>
-
-                <div style={{ flex: '0 0 100px', textAlign: 'center', alignSelf: 'center' }}>
-                  <div style={{ color: '#FF7C5F', fontSize: '24px' }}>→</div>
-                  <div style={{ fontSize: '12px', color: '#78716C', marginTop: '10px', lineHeight: 1.45 }}>Queue-level summary of unsent changes; each card shows its own status.</div>
-                </div>
-
-                <div style={{ flex: '0 1 230px', minWidth: '170px' }}>
-                  <img loading="lazy" decoding="async" width={1206} height={3633} src="/images/lat/LAT%20%C2%B7%20Technician%20work%20orders%20V3.png" alt="Technician work order queue, version 3 — a summary banner showing unsent changes, including the failed Roof drain job with its Retry button" style={{ width: '100%', height: 'auto', borderRadius: '16px', display: 'block' }} />
-                  <div style={{ fontSize: '10.5px', fontWeight: 700, letterSpacing: '0.05em', textTransform: 'uppercase', color: '#FF7C5F', marginTop: '10px' }}>One shift, one status</div>
-                  <div style={{ fontSize: '12px', color: '#78716C', lineHeight: 1.45, marginTop: '5px' }}>Banner breaks out saved, sending, and failed.</div>
-                </div>
-              </div>
-
-              <div style={{ marginTop: '64px' }}>
-                <div style={{ fontSize: '11px', fontWeight: 700, letterSpacing: '0.06em', textTransform: 'uppercase', color: '#A8A29E', marginBottom: '20px' }}>The work-order card, four states</div>
-
-                <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'flex-start', gap: '28px', rowGap: '40px', flexWrap: 'wrap' }}>
-                  <div style={{ flex: '1 1 240px', maxWidth: '260px', minWidth: '200px' }}>
-                    <div style={{ backgroundColor: '#FFFFFF', border: '1px solid #E7E5E4', borderRadius: '12px', boxShadow: '0 2px 10px rgba(0,0,0,0.06)', padding: '16px' }}>
-                      <img loading="lazy" decoding="async" width={1086} height={306} src="/images/lat/Work%20order-2.png" alt="Work order card, base state — priority badge, title, and location" style={{ width: '100%', height: 'auto', display: 'block', borderRadius: '6px' }} />
+              <div style={{ display: 'flex', gap: '32px', marginTop: '28px', flexWrap: 'wrap' }}>
+                <div style={{ flex: '1 1 0', backgroundColor: '#FFF7F5', borderRadius: '16px', padding: '24px' }}>
+                  <div style={{ display: 'inline-block', fontSize: '10px', fontWeight: 700, letterSpacing: '0.06em', textTransform: 'uppercase', color: '#FFFFFF', backgroundColor: '#FF7C5F', padding: '3px 9px', borderRadius: '999px', marginBottom: '16px' }}>Technician</div>
+                  <div style={{ display: 'flex', gap: '24px', flexWrap: 'wrap' }}>
+                    <div style={{ flex: '1 1 0', minWidth: '130px' }}>
+                      <img loading="lazy" decoding="async" width={1206} height={3633} src="/images/lat/LAT%20%C2%B7%20Technician%20work%20orders%20V3.png" alt="Technician work order queue — a summary banner showing unsent changes, including the failed Roof drain job with its Retry button" style={{ width: '100%', height: 'auto', borderRadius: '16px', display: 'block' }} />
+                      <div style={{ fontSize: '10.5px', fontWeight: 700, letterSpacing: '0.05em', textTransform: 'uppercase', color: '#FF7C5F', marginTop: '10px' }}>One shift, one status</div>
+                      <div style={{ fontSize: '12px', color: '#78716C', lineHeight: 1.45, marginTop: '5px' }}>Banner breaks out saved, sending, and failed.</div>
                     </div>
-                    <div style={{ fontSize: '10.5px', fontWeight: 700, letterSpacing: '0.05em', textTransform: 'uppercase', color: '#A8A29E', marginTop: '10px' }}>01 — Identify the work</div>
-                    <div style={{ fontSize: '12px', color: '#78716C', lineHeight: 1.45, marginTop: '5px' }}>Priority, job, and location at a glance.</div>
+                    <div style={{ flex: '1 1 0', minWidth: '130px' }}>
+                      <img loading="lazy" decoding="async" src="/images/lat/LAT%20%C2%B7%20Technician%20job%20%E2%80%94%20Extra%20work%20approval%20pending.png" alt="Technician job with synced updates, awaiting PM approval for extra work" style={{ width: '100%', height: 'auto', borderRadius: '16px', display: 'block' }} />
+                      <div style={{ fontSize: '10.5px', fontWeight: 700, letterSpacing: '0.05em', textTransform: 'uppercase', color: '#FF7C5F', marginTop: '10px' }}>Extra work, locked</div>
+                      <div style={{ fontSize: '12px', color: '#78716C', lineHeight: 1.45, marginTop: '5px' }}>Synced, but locked until a Project Manager approves the extra work.</div>
+                    </div>
                   </div>
+                </div>
 
-                  <div style={{ flex: '1 1 240px', maxWidth: '260px', minWidth: '200px' }}>
-                    <div style={{ backgroundColor: '#FFFFFF', border: '1px solid #E7E5E4', borderRadius: '12px', boxShadow: '0 2px 10px rgba(0,0,0,0.06)', padding: '16px' }}>
-                      <img loading="lazy" decoding="async" width={1086} height={429} src="/images/lat/Work%20order-1.png" alt="Work order card with due and scheduled times, and sync state added" style={{ width: '100%', height: 'auto', display: 'block', borderRadius: '6px' }} />
+                <div style={{ flex: '1 1 0', backgroundColor: '#EFF6FF', borderRadius: '16px', padding: '24px' }}>
+                  <div style={{ display: 'inline-block', fontSize: '10px', fontWeight: 700, letterSpacing: '0.06em', textTransform: 'uppercase', color: '#FFFFFF', backgroundColor: '#2563EB', padding: '3px 9px', borderRadius: '999px', marginBottom: '16px' }}>Project Manager</div>
+                  <div style={{ display: 'flex', gap: '24px', flexWrap: 'wrap' }}>
+                    <div style={{ flex: '1 1 0', minWidth: '130px' }}>
+                      <img loading="lazy" decoding="async" src="/images/lat/LAT%20%C2%B7%20PM%20approvals.png" alt="Project Manager view of pending approvals" style={{ width: '100%', height: 'auto', borderRadius: '16px', display: 'block' }} />
+                      <div style={{ fontSize: '10.5px', fontWeight: 700, letterSpacing: '0.05em', textTransform: 'uppercase', color: '#2563EB', marginTop: '10px' }}>Approvals</div>
+                      <div style={{ fontSize: '12px', color: '#78716C', lineHeight: 1.45, marginTop: '5px' }}>Authorizes the spend; above $5K it routes to Accounts.</div>
                     </div>
-                    <div style={{ fontSize: '10.5px', fontWeight: 700, letterSpacing: '0.05em', textTransform: 'uppercase', color: '#FF7C5F', marginTop: '10px' }}>02 — Plan the work</div>
-                    <div style={{ fontSize: '12px', color: '#78716C', lineHeight: 1.45, marginTop: '5px' }}>Due and scheduled time, without opening the job.</div>
-                  </div>
-
-                  <div style={{ flex: '1 1 240px', maxWidth: '260px', minWidth: '200px' }}>
-                    <div style={{ backgroundColor: '#FFFFFF', border: '1px solid #E7E5E4', borderRadius: '12px', boxShadow: '0 2px 10px rgba(0,0,0,0.06)', padding: '16px' }}>
-                      <img loading="lazy" decoding="async" width={1086} height={504} src="/images/lat/Work%20order.png" alt="Work order card with an unread update badge added" style={{ width: '100%', height: 'auto', display: 'block', borderRadius: '6px' }} />
+                    <div style={{ flex: '1 1 0', minWidth: '130px' }}>
+                      <img loading="lazy" decoding="async" src="/images/lat/LAT%20%C2%B7%20PM%20Boiler%20Unit%203%20job%20detail.png" alt="Project Manager view of the Boiler Unit 3 job detail" style={{ width: '100%', height: 'auto', borderRadius: '16px', display: 'block' }} />
+                      <div style={{ fontSize: '10.5px', fontWeight: 700, letterSpacing: '0.05em', textTransform: 'uppercase', color: '#2563EB', marginTop: '10px' }}>Job detail</div>
+                      <div style={{ fontSize: '12px', color: '#78716C', lineHeight: 1.45, marginTop: '5px' }}>Request, synced updates, and messages together before deciding.</div>
                     </div>
-                    <div style={{ fontSize: '10.5px', fontWeight: 700, letterSpacing: '0.05em', textTransform: 'uppercase', color: '#FF7C5F', marginTop: '10px' }}>03 — Know what changed</div>
-                    <div style={{ fontSize: '12px', color: '#78716C', lineHeight: 1.45, marginTop: '5px' }}>Unread update. Changes are visible before they become surprises.</div>
-                  </div>
-
-                  <div style={{ flex: '1 1 240px', maxWidth: '260px', minWidth: '200px' }}>
-                    <div style={{ backgroundColor: '#FFFFFF', border: '1px solid #E7E5E4', borderRadius: '12px', boxShadow: '0 2px 10px rgba(0,0,0,0.06)', padding: '16px' }}>
-                      <img loading="lazy" decoding="async" width={1086} height={669} src="/images/lat/Sync%20failed.png" alt="Work order card showing a failed sync and the Retry sync button, for the Roof drain job reassigned by Maya" style={{ width: '100%', height: 'auto', display: 'block', borderRadius: '6px' }} />
-                    </div>
-                    <div style={{ fontSize: '10.5px', fontWeight: 700, letterSpacing: '0.05em', textTransform: 'uppercase', color: '#FF7C5F', marginTop: '10px' }}>04 — Know what actually happened</div>
-                    <div style={{ fontSize: '12px', color: '#78716C', lineHeight: 1.45, marginTop: '5px' }}>Sync state and retry, always visible.</div>
                   </div>
                 </div>
               </div>
 
               <p style={{ fontSize: '15px', color: '#44403C', marginTop: '32px', maxWidth: '640px' }}><span style={{ fontWeight: 600 }}>A failed sync shouldn't feel like lost work.</span> We kept the update safely on-device and made recovery one tap.</p>
 
-              <div style={{ marginTop: '64px', backgroundColor: '#FFF7F5', borderRadius: '16px', padding: '32px' }}>
-                <div style={{ display: 'inline-block', fontSize: '10px', fontWeight: 700, letterSpacing: '0.06em', textTransform: 'uppercase', color: '#FFFFFF', backgroundColor: '#FF7C5F', padding: '3px 9px', borderRadius: '999px', marginBottom: '12px' }}>Technician</div>
-                <LatSyncFlow />
+              <div style={{ marginTop: '32px' }}>
+                <div style={{ fontSize: '11px', fontWeight: 700, letterSpacing: '0.06em', textTransform: 'uppercase', color: '#A8A29E', marginBottom: '6px' }}>Built from the LAT design system</div>
+                <div style={{ fontSize: '13px', color: '#78716C', marginBottom: '16px', maxWidth: '500px' }}>A live version of the work order form, using the real component tokens — type an asset name, dictate notes, add a photo, flag approval.</div>
+                <LatWorkOrderPrototype />
               </div>
 
-              <p style={{ fontSize: '15px', color: '#44403C', marginTop: '24px', maxWidth: '640px' }}>Every state says what is saved, what isn't, and what is blocking the job.</p>
-
-              <p style={{ fontSize: '15px', color: '#78716C', marginTop: '16px', maxWidth: '640px' }}>Reliable data first, accountable decisions second: once a technician's update is trustworthy, the PM's job is to review it and decide — not to double as a data-integrity check.</p>
-
-              <div style={{ marginTop: '40px', backgroundColor: '#EFF6FF', borderRadius: '16px', padding: '32px' }}>
-                <div style={{ display: 'inline-block', fontSize: '10px', fontWeight: 700, letterSpacing: '0.06em', textTransform: 'uppercase', color: '#FFFFFF', backgroundColor: '#2563EB', padding: '3px 9px', borderRadius: '999px', marginBottom: '12px' }}>PM</div>
-                <div style={{ fontSize: '11px', fontWeight: 700, letterSpacing: '0.06em', textTransform: 'uppercase', color: '#64748B', marginBottom: '20px' }}>The same job, from the manager's side</div>
-
-                <div className="self-responsive-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '20px' }}>
-                  <div>
-                    <img loading="lazy" decoding="async" src="/images/lat/LAT%20%C2%B7%20PM%20jobs%2C%20metrics%20and%20digest.png" alt="PM view of jobs, metrics, and a digest" style={{ width: '100%', height: 'auto', display: 'block', borderRadius: '16px' }} />
-                    <div style={{ fontSize: '10.5px', fontWeight: 700, letterSpacing: '0.05em', textTransform: 'uppercase', color: '#2563EB', marginTop: '10px' }}>All jobs &amp; digest</div>
-                    <div style={{ fontSize: '12px', color: '#475569', lineHeight: 1.45, marginTop: '5px' }}>Open jobs, unsent updates, approvals waiting — plus an AI digest of what needs attention.</div>
-                  </div>
-
-                  <div>
-                    <img loading="lazy" decoding="async" src="/images/lat/LAT%20%C2%B7%20PM%20approvals.png" alt="PM view of pending approvals" style={{ width: '100%', height: 'auto', display: 'block', borderRadius: '16px' }} />
-                    <div style={{ fontSize: '10.5px', fontWeight: 700, letterSpacing: '0.05em', textTransform: 'uppercase', color: '#2563EB', marginTop: '10px' }}>Approvals</div>
-                    <div style={{ fontSize: '12px', color: '#475569', lineHeight: 1.45, marginTop: '5px' }}>Every pending request — job, requester, work, cost — in one place. Approving here authorizes the spend; above $5K it routes to Accounts instead.</div>
-                  </div>
-
-                  <div>
-                    <img loading="lazy" decoding="async" src="/images/lat/LAT%20%C2%B7%20PM%20Boiler%20Unit%203%20job%20detail.png" alt="PM view of the Boiler Unit 3 job detail" style={{ width: '100%', height: 'auto', display: 'block', borderRadius: '16px' }} />
-                    <div style={{ fontSize: '10.5px', fontWeight: 700, letterSpacing: '0.05em', textTransform: 'uppercase', color: '#2563EB', marginTop: '10px' }}>Job detail</div>
-                    <div style={{ fontSize: '12px', color: '#475569', lineHeight: 1.45, marginTop: '5px' }}>Request, synced updates, and messages together before deciding.</div>
-                  </div>
-
-                  <div>
-                    <img loading="lazy" decoding="async" src="/images/lat/LAT%20%C2%B7%20PM%20activity%20and%20roles.png" alt="PM view of activity and roles" style={{ width: '100%', height: 'auto', display: 'block', borderRadius: '16px' }} />
-                    <div style={{ fontSize: '10.5px', fontWeight: 700, letterSpacing: '0.05em', textTransform: 'uppercase', color: '#2563EB', marginTop: '10px' }}>Activity &amp; roles</div>
-                    <div style={{ fontSize: '12px', color: '#475569', lineHeight: 1.45, marginTop: '5px' }}>Who approved what, and who's allowed to: PM up to $5K, Accounts above.</div>
-                  </div>
-                </div>
-              </div>
-
-              <p style={{ fontSize: '15px', color: '#78716C', marginTop: '40px', maxWidth: '640px' }}><span style={{ fontWeight: 600, color: '#44403C' }}>Result.</span> This is the field layer behind the 50% → 92% data-accuracy jump (see Impact) — everything managers and executives act on starts here. Tracked in Mixpanel across 170+ users over six weeks, median time to approve ran 7-9 minutes when a request arrived with everything needed, and 2.2-2.8 hours when it was still an open work order waiting on incoming data.</p>
+              <p style={{ fontSize: '15px', color: '#78716C', marginTop: '40px' }}><span style={{ fontWeight: 600, color: '#44403C' }}>Result.</span> This is the field layer behind the 50% → 92% data-accuracy jump (see Impact). Median time to approve ran 7-9 minutes when a request arrived with everything needed, and 2.2-2.8 hours when it was still an open work order waiting on incoming data.</p>
             </div>
 
-            <div style={{ marginBottom: '8px' }}>
+            <div style={{ marginBottom: '40px' }}>
               <div style={{ fontSize: '13px', fontWeight: 700, color: '#FF7C5F', letterSpacing: '0.06em', textTransform: 'uppercase', marginBottom: '8px' }}>Decision 02</div>
               <div style={{ fontSize: '20px', fontWeight: 600, color: '#1C1917', marginBottom: '16px' }}>Replace the "Everything Dashboard"</div>
               <p><span style={{ fontWeight: 600 }}>Problem.</span> Managers scanned 8+ graphs without acting on them.</p>
-              <p style={{ marginTop: '12px' }}><span style={{ fontWeight: 600 }}>Considered.</span> Customizable graphs, a trimmed dashboard, alerts-only, and graphs that only appeared when needed — all prototyped and tested. All still overwhelmed managers and technicians; in testing, the hidden graphs went mostly unopened.</p>
-              <p style={{ marginTop: '12px' }}><span style={{ fontWeight: 600 }}>Design.</span> A ranked priority queue replaced the dashboard. Filters stayed, repurposed to show which options were feasible rather than drill into one asset. Only the versions that tested well shipped — stakeholders were cost-conscious, and IT didn't want to retrain technicians twice.</p>
-              <p style={{ marginTop: '12px' }}><span style={{ fontWeight: 600 }}>Why.</span> Post-test interviews said it plainly: less is more.</p>
-              <p style={{ marginTop: '12px' }}><span style={{ fontWeight: 600 }}>Cost.</span> The queue gave up the auto-arranged calendar — managers liked it, but it got messy — replaced with a daily view linked to the monthly calendar.</p>
-              <p style={{ marginTop: '12px', color: '#78716C' }}><span style={{ fontWeight: 600, color: '#44403C' }}>Result.</span> 20+ managers got access to the queue; 15 adopted it. Across those 15, weekly item-closure rate rose from ~4-of-10 to 8–9-of-10. Across 20+ logged decisions over 5 weeks, time from opening an asset to recording a decision fell from 14 to 4 minutes. Training took about 30 minutes per person, and help requests stayed rare outside one 20-minute outage in week 4 — not the retraining burden IT was bracing for.</p>
+              <p style={{ marginTop: '12px' }}><span style={{ fontWeight: 600 }}>Considered.</span> Customizable graphs, a trimmed dashboard, alerts-only, contextual graphs — all prototyped, all still overwhelmed managers; hidden graphs went mostly unopened.</p>
+              <p style={{ marginTop: '12px' }}><span style={{ fontWeight: 600 }}>Design.</span> A ranked priority queue replaced the dashboard; filters stayed, repurposed to show feasible options rather than drill into one asset. Only versions that tested well shipped — budget- and retraining-conscious.</p>
+              <p style={{ marginTop: '12px' }}><span style={{ fontWeight: 600 }}>Why.</span> Post-test interviews: less is more.</p>
+              <p style={{ marginTop: '12px' }}><span style={{ fontWeight: 600 }}>Cost.</span> Gave up the auto-arranged calendar (liked, but messy) for a daily view linked to the monthly one.</p>
+              <p style={{ marginTop: '12px', color: '#78716C' }}><span style={{ fontWeight: 600, color: '#44403C' }}>Result.</span> 15 of 20+ managers adopted the queue. Weekly item-closure rate nearly doubled, and decision time dropped from 14 minutes to 4. Training was quick, and help requests stayed rare — not the retraining burden IT braced for.</p>
+
+              <div style={{ marginTop: '24px', marginBottom: '32px' }}>
+                <div style={{ fontSize: '11px', fontWeight: 700, letterSpacing: '0.06em', textTransform: 'uppercase', color: '#A8A29E', marginBottom: '6px' }}>Built from the LAT design system</div>
+                <div style={{ fontSize: '13px', color: '#78716C', marginBottom: '16px', maxWidth: '500px' }}>Select a work order to see priority and detail swap together, then mark it reviewed.</div>
+                <LatPriorityQueuePrototype />
+              </div>
+
+              <div style={{ fontSize: '20px', fontWeight: 600, color: '#1C1917', marginBottom: '16px' }}>Design for AI failure, not the demo</div>
+
+              <div style={{ backgroundColor: '#FFF9F5', padding: '24px', borderRadius: '0px', borderLeft: '3px solid #FF7C5F', marginBottom: '32px' }}>
+                <div className="cs-card-title cs-card-title--sm">The Boiler Incident</div>
+                <p style={{ fontSize: '15px', color: '#57534E', lineHeight: 1.7, margin: 0 }}>
+                  <span style={{ fontWeight: 600 }}>Model said:</span> Critical — the same Boiler Unit 3 from Decision 03, now flagged for a $180K replacement.<br/>
+                  <span style={{ fontWeight: 600 }}>Human found:</span> duplicated maintenance records had inflated the risk score.<br/>
+                  <span style={{ fontWeight: 600 }}>Design response:</span> a "Needs Verification" state, visible risk drivers, mandatory manager approval, and logged overrides.<br/>
+                  <span style={{ fontWeight: 600 }}>Result:</span> adoption held steady — the near-miss became a reason to trust the system more, not less.
+                </p>
+              </div>
+
+              <div style={{ width: '100%', minHeight: '320px', backgroundColor: '#E5E7EB', borderRadius: '12px', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#9CA3AF', fontSize: '14px' }}>Image — the "Needs Verification" state on the Boiler Unit 3 incident</div>
             </div>
 
             <div style={{ backgroundColor: '#FFFFFF', border: '1px solid #F3E8E2', borderTop: '4px solid #FF7C5F', borderRadius: '0px', padding: '40px', boxShadow: '0 4px 24px rgba(0,0,0,0.04)', marginBottom: '48px' }}>
@@ -897,45 +845,32 @@ const caseStudies = {
               <div style={{ fontSize: '26px', fontWeight: 600, color: '#1C1917', marginBottom: '16px' }}>Turn predictions into consequences</div>
               <div className="pull-quote" style={{ marginBottom: '20px' }}>A probability isn't a decision. A consequence is.</div>
 
-              <p>First version said <span style={{ fontStyle: 'italic' }}>"Boiler failure risk: 68%"</span> — a probability. Managers didn't override it, they said they'd "have to look into it." They didn't trust a number they couldn't trace. Chasing that down also surfaced a data-quality problem serious enough that we brought on a data-scientist intern to fix the dataset.</p>
+              <p>First version showed <span style={{ fontStyle: 'italic' }}>"Boiler failure risk: 68%."</span> Managers didn't trust a number they couldn't trace — chasing it surfaced a data-quality problem serious enough for a data-scientist intern.</p>
 
-              <p style={{ marginTop: '12px' }}>We tested time-to-failure and plain-language severity before landing on cost in dollars. Dollars won because managers already decide on a fixed rhythm — the monthly CAPEX cycle — and a dollar figure maps straight onto "can I request this now," instead of making them translate a probability themselves.</p>
+              <p style={{ marginTop: '12px' }}>We tested time-to-failure and plain-language severity before landing on dollars — managers already think in the monthly CAPEX cycle, and a dollar figure maps straight onto "can I request this now."</p>
 
               <LatAlertToggle />
 
-              <p style={{ marginTop: '24px' }}><span style={{ fontWeight: 600 }}>Why.</span> The alert didn't need to prove confidence — it needed to give managers enough to decide: what's at stake, and what happens if they wait.</p>
+              <p style={{ marginTop: '24px' }}><span style={{ fontWeight: 600 }}>Why.</span> Enough to decide what's at stake, not proof of confidence.</p>
 
-              <p style={{ marginTop: '12px' }}><span style={{ fontWeight: 600, color: '#44403C' }}>Result.</span> <span style={{ color: '#78716C' }}>Override rate fell from 61% (pilot) to 19% (first quarter post-release). Acceptance of the AI's recommendation rose from 42% to 78% over the same stretch — among 400 managers across campuses, tracked over four months — as the early skepticism wore off. Work order resolution time fell from 3 days to 2 hours, tracked over 6–8 weeks. Meeting load took about 5 weeks to follow.</span></p>
+              <p style={{ marginTop: '12px' }}><span style={{ fontWeight: 600, color: '#44403C' }}>Result.</span> <span style={{ color: '#78716C' }}>Override rate 61%→19%; acceptance 42%→78%; resolution time 3 days→2 hours.</span></p>
 
-              <p style={{ fontSize: '14px', color: '#78716C', marginTop: '8px' }}>Resolution = closed without follow-up: all site details, photos, and vendor needs attached, nothing left for a manager to chase. Before, that meant a technician traveling back to an office to upload and email — work they dreaded enough to put off, while managers couldn&apos;t close the ticket without it. Voice capture in the field closed that gap directly.</p>
+              <p style={{ fontSize: '14px', color: '#78716C', marginTop: '8px' }}>Resolution = closed with nothing left to chase: site details, photos, and vendor needs all attached. Technicians used to dread the office trip to upload and email it — voice capture in the field closed that gap directly.</p>
 
               <div style={{ backgroundColor: '#FFF9F5', padding: '24px', borderRadius: '0px', borderLeft: '3px solid #FF7C5F', marginTop: '32px' }}>
                 <div className="cs-card-title cs-card-title--sm">Model behavior</div>
                 <p style={{ fontSize: '15px', color: '#57534E', lineHeight: 1.7, margin: 0 }}>
-                  Each asset gets a risk score from maintenance history, age, and inspections, routed into <span style={{ fontWeight: 600 }}>Critical / Monitor / Safe</span> — never a raw probability. Every override is logged and fed back in, so the score recalibrates against real outcomes.
+                  Each asset's risk score (maintenance history, age, inspections) routes into <span style={{ fontWeight: 600 }}>Critical / Monitor / Safe</span> — never a raw probability. Overrides feed back in, recalibrating against real outcomes.
                 </p>
                 <p style={{ fontSize: '15px', color: '#57534E', lineHeight: 1.7, marginTop: '12px', marginBottom: 0 }}>
-                  <span style={{ fontWeight: 600 }}>The real design decision:</span> what the model was allowed to withhold. A confident wrong answer is worse than an uncertain one — so Critical alerts always show their risk drivers and need a human decision before touching a budget.
+                  <span style={{ fontWeight: 600 }}>The real decision:</span> what the model could withhold. Critical alerts always show their risk drivers and require a human call before touching budget.
                 </p>
                 <p style={{ fontSize: '15px', color: '#57534E', lineHeight: 1.7, marginTop: '12px', marginBottom: 0 }}>
-                  <span style={{ fontWeight: 600 }}>Watching for rubber-stamping:</span> a falling override rate alone doesn't prove the system got better — managers could just be deferring more. New maintenance data, market pricing, and logged overrides all feed the recalibration, and managers log reasoning notes even when they don't override, so the trail shows engagement, not just compliance.
+                  <span style={{ fontWeight: 600 }}>Watching for rubber-stamping:</span> a falling override rate alone doesn't prove improvement — managers could just be deferring more. Logged overrides feed recalibration, and managers log reasoning even when they agree, so the trail shows engagement, not compliance.
                 </p>
               </div>
-            </div>
 
-            <div style={{ marginBottom: '8px' }}>
-              <div style={{ fontSize: '13px', fontWeight: 700, color: '#FF7C5F', letterSpacing: '0.06em', textTransform: 'uppercase', marginBottom: '8px' }}>Decision 04</div>
-              <div style={{ fontSize: '20px', fontWeight: 600, color: '#1C1917', marginBottom: '16px' }}>Design for AI failure, not the demo</div>
-            </div>
-
-            <div style={{ backgroundColor: '#FFF9F5', padding: '24px', borderRadius: '0px', borderLeft: '3px solid #FF7C5F', marginBottom: '32px' }}>
-              <div className="cs-card-title cs-card-title--sm">The Boiler Incident</div>
-              <p style={{ fontSize: '15px', color: '#57534E', lineHeight: 1.7, margin: 0 }}>
-                <span style={{ fontWeight: 600 }}>Model said:</span> Critical — the same Boiler Unit 3 from Decision 03, now flagged for a $180K replacement.<br/>
-                <span style={{ fontWeight: 600 }}>Human found:</span> duplicated maintenance records had inflated the risk score.<br/>
-                <span style={{ fontWeight: 600 }}>Design response:</span> a "Needs Verification" state, visible risk drivers, mandatory manager approval, and logged overrides.<br/>
-                <span style={{ fontWeight: 600 }}>Result:</span> adoption held steady — the near-miss became a reason to trust the system more, not less.
-              </p>
+              <div style={{ width: '100%', minHeight: '320px', backgroundColor: '#E5E7EB', borderRadius: '12px', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#9CA3AF', fontSize: '14px', marginTop: '32px' }}>Image — consequence-framed alert, Critical/Monitor/Safe badges</div>
             </div>
 
             <div style={{ display: 'flex', gap: '24px', marginBottom: '40px', flexWrap: 'wrap' }}>
@@ -953,13 +888,12 @@ const caseStudies = {
               <p style={{ fontSize: '14px', color: '#78716C', marginBottom: '20px' }}>Outside the core prioritize → explain → verify loop, two more workflows fed the same data model.</p>
 
               <div style={{ marginBottom: '24px' }}>
-                <p><span style={{ fontWeight: 600 }}>Offline field reporting.</span> Work Orders, Asset DNA, and Cost-to-Date linked automatically — an offline queue with voice capture and auto-sync cut reporting time sharply (see Impact).</p>
-                <p style={{ fontSize: '15px', color: '#57534E', lineHeight: 1.7, marginTop: '12px' }}>On a swing stage or underground, typing is a hazard, not an inconvenience — technicians need both hands free. Voice capture fills the work order form directly from the call, turning a report technicians used to dread into one they could give hands-free while already on site.</p>
-                <p style={{ fontSize: '15px', color: '#57534E', lineHeight: 1.7, marginTop: '12px' }}>40+ technicians reported using the offline capture in the first four weeks, saving work locally when there was no signal. That surfaced a need we hadn't scoped — technicians underground wanted to pull up asset history, not just file reports, while offline — so we added offline access to that history. 19 technicians reported hitting a failed sync, almost always underground, with a successful retry once they resurfaced. Managers said in interviews this was the bigger win: without a synced update, a job can't close, so they no longer had to chase technicians to find out if work was actually done.</p>
+                <p><span style={{ fontWeight: 600 }}>Offline field reporting.</span> Work Orders, Asset DNA, and Cost-to-Date link automatically — offline capture, voice input, and auto-sync cut reporting time sharply (see Impact).</p>
+                <p style={{ fontSize: '15px', color: '#57534E', lineHeight: 1.7, marginTop: '12px' }}>Typing underground or on a swing stage isn't practical, so voice fills the form hands-free. 40+ technicians used offline capture in the first month; it surfaced an unscoped need for offline asset history, which we added. The real win, per managers: synced updates close jobs without chasing technicians down.</p>
               </div>
 
               <div style={{ marginBottom: '24px' }}>
-                <p><span style={{ fontWeight: 600 }}>Scenario simulation.</span> In-house cost/timeline comparisons replaced commissioned feasibility studies and drew interest from other universities.</p>
+                <p><span style={{ fontWeight: 600 }}>Scenario simulation.</span> In-house cost comparisons replaced feasibility studies, drawing outside interest.</p>
               </div>
             </div>
           </div>
@@ -970,7 +904,7 @@ const caseStudies = {
         title: '04 — The Turning Point',
         headline: 'We weren\'t designing another dashboard — we were connecting decisions that used to happen in isolation',
         content: `<div class="cs-video-wrap" style="width: 100%; max-width: 1200px; margin: 0 auto 48px;">
-  <video autoplay loop muted playsinline preload="metadata" width="1882" height="1046" aria-label="Role-based dashboard surfaces over a shared data foundation" style="display: block; width: 100%; height: auto; border-radius: 0px;">
+  <video autoplay loop muted playsinline preload="metadata" width="1882" height="1046" aria-label="Role-based dashboard surfaces over a shared data foundation" style="display: block; width: 100%; height: auto; border-radius: 0px;" onloadedmetadata="this.playbackRate=1.5" oncanplay="this.playbackRate=1.5">
     <source src="/videos/lat/Flow%2002.mp4" type="video/mp4">
     Your browser does not support the video tag.
   </video>
@@ -987,56 +921,20 @@ const caseStudies = {
         id: 'constraints',
         title: '05 — Constraints & Design Responses',
         headline: "The legacy ecosystem couldn't be disrupted — LAT shipped as a modular layer alongside it",
-        content: `<div style="display: grid; grid-template-columns: 1fr; gap: 28px; margin-bottom: 48px;">
-  <div>
-    <div class="cs-card-title">Legacy Ecosystem Couldn't Be Disrupted</div>
-    <div style="font-size: 15px; color: #57534E; line-height: 1.6;">LAT shipped as a modular layer alongside the existing stack — no forced migration. The university's own internal CS and IT teams kept running the legacy CMMS/ERP backend throughout; our 2 external engineers built and owned only the LAT API layer on top of it.</div>
+        content: `<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px;">
+  <div style="background-color: #FFFFFF; border: 1px solid #E5E7EB; border-top: 3px solid #4A72E5; padding: 20px 24px;">
+    <div class="cs-card-title cs-card-title--sm-tight">Legacy Ecosystem Couldn't Be Disrupted</div>
+    <div style="font-size: 14px; color: #57534E; line-height: 1.55;">A modular layer alongside the existing stack, not a replacement. The university's CS/IT teams kept running legacy CMMS/ERP; our 2 engineers owned only the LAT API layer on top.</div>
   </div>
 
-  <div>
-    <div class="cs-card-title">Data Integrity Had Hard Boundaries</div>
-    <div style="font-size: 15px; color: #57534E; line-height: 1.6;">Strict governance meant inherited, duplicated records — the source of the boiler incident (Decision 04). Validation states and confidence tiers became how managers learned to trust the score.</div>
+  <div style="background-color: #FFFFFF; border: 1px solid #E5E7EB; border-top: 3px solid #FF7C5F; padding: 20px 24px;">
+    <div class="cs-card-title cs-card-title--sm-tight">Data Integrity Had Hard Boundaries</div>
+    <div style="font-size: 14px; color: #57534E; line-height: 1.55;">Strict governance meant inherited, duplicated records — the root of the boiler incident (Decision 04). Validation states and confidence tiers built that trust back.</div>
   </div>
 
-  <div>
-    <div class="cs-card-title">Capital Decisions Were Political</div>
-    <div style="font-size: 15px; color: #57534E; line-height: 1.6;">Layered approvals, donor influence — automation here is inherently political.</div>
-  </div>
-</div>
-
-<div style="display: grid; grid-template-columns: 1fr; gap: 28px; margin-bottom: 48px;">
-  <div>
-    <div class="cs-card-title">Roles Had Wildly Different Needs</div>
-    <div style="font-size: 15px; color: #57534E; line-height: 1.6;">Technicians needed voice-to-text. Managers needed delegation. Executives needed two options. Role-based surfaces beat one universal view.</div>
-  </div>
-
-  <div>
-    <div class="cs-card-title">Field Reality: Connectivity & Devices</div>
-    <div style="font-size: 15px; color: #57534E; line-height: 1.6;">Technicians worked underground and on swing stages. We shipped offline-first capture with queued auto-sync.</div>
-  </div>
-
-  <div>
-    <div class="cs-card-title">Vendors Stayed Outside LAT</div>
-    <div style="font-size: 15px; color: #57534E; line-height: 1.6;">A small, high-churn group, not LAT's users — not worth the engineering cost. The project manager stays the connective layer, syncing vendor status in by hand.</div>
-  </div>
-</div>
-
-<h4 class="case-study-subhead" style="margin-top: 16px;">Design System Patterns</h4>
-
-<div style="display: grid; grid-template-columns: 1fr; gap: 28px; margin-top: 24px; margin-bottom: 24px;">
-  <div>
-    <div class="cs-card-title">Tokens for two environments</div>
-    <div style="font-size: 15px; color: #57534E; line-height: 1.6;">The same component library had to work on a phone in direct sunlight underground and a dense desktop dashboard indoors. Technician mobile got a high-contrast, larger-type token set; manager and executive surfaces used a denser set built for longer indoor sessions.</div>
-  </div>
-
-  <div>
-    <div class="cs-card-title">Reusable edge-case patterns</div>
-    <div style="font-size: 15px; color: #57534E; line-height: 1.6;">Four patterns recurred across every surface instead of being built once each: an offline-status banner, a sync-conflict resolution state, the Critical/Monitor/Safe risk badge, and the human-override dialog — visible reasoning, mandatory comment, logged decision — that shipped after the boiler incident.</div>
-  </div>
-
-  <div>
-    <div class="cs-card-title">Engineering handoff</div>
-    <div style="font-size: 15px; color: #57534E; line-height: 1.6;">Each component shipped with its states spec'd against what the API actually returned — loading, stale-while-revalidating, offline-queued, error — not just the happy path. Latencies were set with the engineers so slow states got real skeletons, not spinners bolted on after.</div>
+  <div style="background-color: #FFFFFF; border: 1px solid #E5E7EB; border-top: 3px solid #0D9488; padding: 20px 24px;">
+    <div class="cs-card-title cs-card-title--sm-tight">Roles Had Wildly Different Needs</div>
+    <div style="font-size: 14px; color: #57534E; line-height: 1.55;">Technicians needed voice-to-text, managers delegation, executives two options — role-based surfaces beat one universal view.</div>
   </div>
 </div>`
       },
