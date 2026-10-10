@@ -37,11 +37,11 @@ const caseStudies = {
         title: '01 — Snapshot',
         content: `<img class="cs-changelog-zoomable" loading="lazy" decoding="async" src="/images/keye/snapshot-mobile-grid-white.webp" alt="Eight screens of the Keye mobile product card system" style="width: 100%; max-width: 1248px; max-height: none; height: auto; object-fit: initial; box-shadow: none; display: block; margin: 40px auto 56px;" onclick="document.getElementById('cs-lightbox-img').src=this.src;document.getElementById('cs-lightbox-img').alt=this.alt;document.getElementById('cs-lightbox').style.display='flex';">
 
-<p><span style="font-weight: 600;">Product</span><br/>A credit-based marketplace for flexible access to premium tools — Grammarly, Adobe, Otter.ai, MasterClass, Crunchbase, and 150+ others — without long-term subscriptions. ClassPass for digital tools.</p>
+<p><span style="font-weight: 600;">Product</span><br/>A credit-based marketplace for flexible access to 150+ premium tools — Grammarly, Adobe, Crunchbase — without long-term subscriptions. ClassPass for digital tools.</p>
 
-<p style="margin-top: 28px;"><span style="font-weight: 600;">My role.</span> Founding (and for most of Keye's life, only) designer. Founders set vision and fundraising; the PM and I turned it into what shipped — I designed every surface, wrote PRDs, ran research, and hired the two designers who replaced me.</p>
+<p style="margin-top: 28px;"><span style="font-weight: 600;">My role.</span> Founding (and for most of Keye's life, only) designer. I designed every surface, wrote PRDs, ran research, and hired the two designers who replaced me.</p>
 
-<p style="margin-top: 28px;"><span style="font-weight: 600;">Timeline.</span> My 2 years on Keye (Jan 2021–Dec 2022): beta to credit system to marketplace to extension to seed funding. After I left, Keye kept running the same product for a while longer; when the rest of the founding team dispersed and only Rohan (finance background) stayed on, YC pushed the pivot into financial analytics, carrying the traction we'd built into YC F24.</p>
+<p style="margin-top: 28px;"><span style="font-weight: 600;">Timeline.</span> My 2 years on Keye (Jan 2021–Dec 2022): beta to credit system to marketplace to seed funding. After I left, the founding team dispersed except Rohan (finance background) — YC then pushed the pivot into financial analytics, carrying our traction into YC F24.</p>
 
 <div style="background-color: #F9FAFB; padding: 24px 28px; border-radius: 0px; border-left: 3px solid #FF7C5F; margin-top: 32px;">
   <div style="font-size: 11px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #A8A29E; margin-bottom: 10px;">My contribution</div>
@@ -50,7 +50,7 @@ const caseStudies = {
 
 <div style="background-color: #F9FAFB; padding: 24px 28px; border-radius: 0px; border-left: 3px solid #FF7C5F; margin-top: 20px;">
   <div style="font-size: 11px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #A8A29E; margin-bottom: 10px;">Team leverage</div>
-  <div style="font-size: 15px; color: #57534E; line-height: 1.7;">I scoped the MVP alongside the founders from three static screens, then hired and ran point for the two designers who eventually replaced me — building design velocity the team didn't have before I joined, and didn't lose after I left, through seed funding and into YC F24.</div>
+  <div style="font-size: 15px; color: #57534E; line-height: 1.7;">I scoped the MVP from three static screens, then hired and ran point for my replacements — building design velocity the team didn't have before, and didn't lose after I left, through seed funding and into YC F24.</div>
 </div>
 
 <div class="cs-laptop-mockup" style="width: 72%; margin: 120px auto 120px;">
@@ -552,11 +552,6 @@ const caseStudies = {
         content: `<p>Every hard call here was negotiated, not dictated — my job was bringing evidence into the room.</p>
 
 <div style="display: grid; grid-template-columns: 1fr; gap: 28px; margin-top: 32px;">
-  <div>
-    <div class="cs-card-title">The GIF Decision</div>
-    <div style="font-size: 15px; color: #57534E; line-height: 1.6;">I wanted animated characters; engineering flagged performance. Evidence on Lottie's lightweight format won out over both positions.</div>
-  </div>
-
   <div>
     <div class="cs-card-title">The Influencer Debate</div>
     <div style="font-size: 15px; color: #57534E; line-height: 1.6;">Marketing wanted influencer streams and social mechanics — a real shot at faster acquisition. Founders stayed cautious about churn, worried it would bring in users who'd switch right back out; I reframed it as access, not entertainment, and we gave up that acquisition channel entirely.</div>
@@ -1144,22 +1139,22 @@ const caseStudies = {
 
 <div class="snapshot-bottom-content">
 <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin-top: 48px; margin-bottom: 48px;">
-  <div style="background-color: #FFFFFF; border: 1px solid #E5E7EB; border-top: 3px solid #D97706; padding: 20px 24px;">
+  <a href="#literacy-quiz" style="background-color: #FFFFFF; border: 1px solid #E5E7EB; border-top: 3px solid #D97706; padding: 20px 24px; text-decoration: none; color: inherit; display: block; cursor: pointer;">
     <div class="cs-card-title cs-card-title--sm-tight">Literacy Quiz</div>
     <div style="font-size: 14px; color: #57534E; line-height: 1.5;">A level-based game teaching users to spot manipulated content</div>
-  </div>
-  <div style="background-color: #FFFFFF; border: 1px solid #E5E7EB; border-top: 3px solid #4A72E5; padding: 20px 24px;">
+  </a>
+  <a href="#search-image" style="background-color: #FFFFFF; border: 1px solid #E5E7EB; border-top: 3px solid #4A72E5; padding: 20px 24px; text-decoration: none; color: inherit; display: block; cursor: pointer;">
     <div class="cs-card-title cs-card-title--sm-tight">Search & Image Search</div>
     <div style="font-size: 14px; color: #57534E; line-height: 1.5;">Verify links, headlines, and images with layered credibility ratings</div>
-  </div>
-  <div style="background-color: #FFFFFF; border: 1px solid #E5E7EB; border-top: 3px solid #0D9488; padding: 20px 24px;">
+  </a>
+  <a href="#scan" style="background-color: #FFFFFF; border: 1px solid #E5E7EB; border-top: 3px solid #0D9488; padding: 20px 24px; text-decoration: none; color: inherit; display: block; cursor: pointer;">
     <div class="cs-card-title cs-card-title--sm-tight">Scan</div>
     <div style="font-size: 14px; color: #57534E; line-height: 1.5;">Camera-based verification for printed content — flyers, newspapers, ads</div>
-  </div>
-  <div style="background-color: #FFFFFF; border: 1px solid #E5E7EB; border-top: 3px solid #FF7C5F; padding: 20px 24px;">
+  </a>
+  <a href="#ask-us" style="background-color: #FFFFFF; border: 1px solid #E5E7EB; border-top: 3px solid #FF7C5F; padding: 20px 24px; text-decoration: none; color: inherit; display: block; cursor: pointer;">
     <div class="cs-card-title cs-card-title--sm-tight">Ask Us</div>
     <div style="font-size: 14px; color: #57534E; line-height: 1.5;">Human-backed fact-checking for gray-area content algorithms miss</div>
-  </div>
+  </a>
 </div>
 
 <div style="display: flex; flex-wrap: wrap; gap: 40px; margin-top: 28px; padding: 24px 0; border-top: 1px solid #E5E7EB; border-bottom: 1px solid #E5E7EB;">

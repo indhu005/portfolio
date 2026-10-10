@@ -12,7 +12,7 @@ export default function MisinfoFeaturesContent() {
 
       <img src="/images/misinformation-center/Facebook misinformation center.png" alt="Misinformation Center wireframes embedded in a major social platform — the killed direction" width={2999} height={1210} style={{ width: '100%', height: 'auto', borderRadius: '0px', marginTop: '32px', marginBottom: '48px', display: 'block' }} />
 
-      <div style={{ marginTop: '120px' }}>
+      <div id="literacy-quiz" style={{ marginTop: '120px' }}>
         <p className="feature-eyebrow">Feature 01</p>
         <p className="feature-heading">Literacy Quiz</p>
 
@@ -55,7 +55,7 @@ export default function MisinfoFeaturesContent() {
         <p style={{ marginTop: '20px' }}>Completion states shifted to skill progression — "getting better" beat a percentage. The 40-second limit meant speed for the question, depth one tap away.</p>
       </div>
 
-      <div style={{ marginTop: '120px' }}>
+      <div id="search-image" style={{ marginTop: '120px' }}>
         <p className="feature-eyebrow">Feature 02</p>
         <p className="feature-heading">Search & Image Search</p>
 
@@ -95,7 +95,7 @@ export default function MisinfoFeaturesContent() {
         </p>
 
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '32px', marginTop: '32px' }}>
-          <div>
+          <div id="scan">
             <div style={{ width: '100%', maxWidth: '160px', marginBottom: '16px' }}>
               <video autoPlay loop muted playsInline preload="auto" style={{ display: 'block', width: '100%', aspectRatio: '448 / 906', borderRadius: '0px' }}>
                 <source src="/videos/misinformationcenter/Scan.mp4" type="video/mp4" />
@@ -106,7 +106,7 @@ export default function MisinfoFeaturesContent() {
             <div style={{ fontSize: '14px', color: '#57534E', lineHeight: '1.6' }}>For misinformation that shows up on paper — flyers, newspapers, posters. Older users hesitated on forms but scanned instantly, a behavior already learned from restaurant QR codes.</div>
           </div>
 
-          <div>
+          <div id="ask-us">
             <div style={{ width: '100%', maxWidth: '160px', marginBottom: '16px' }}>
               <video autoPlay loop muted playsInline preload="auto" style={{ display: 'block', width: '100%', aspectRatio: '444 / 906', borderRadius: '0px' }}>
                 <source src="/videos/misinformationcenter/Submit.mp4" type="video/mp4" />

@@ -403,7 +403,7 @@ export default function Home() {
               </p>
 
               <p style={{ fontSize: isMobile ? '15px' : '16px', color: '#78716C', marginBottom: isWideDesktop ? '32px' : '28px', ...revealStyle(140) }}>
-                Currently building an AI-forward marketplace, in stealth.
+                Currently building an AI-forward marketplace, in stealth. Fluent working with AI agents and LLMs — I prototype, build, and ship with them daily.
               </p>
 
               {/* Proof Strip — fast, scannable backing for the claims above */}

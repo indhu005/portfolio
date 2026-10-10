@@ -246,6 +246,7 @@ export default function About() {
                 { k: 'Based', v: 'Seattle, WA' },
                 { k: 'Focus', v: 'Systems, trust, and AI guardrails' },
                 { k: 'Experience', v: '8+ years, 0→1 through enterprise' },
+                { k: 'AI Fluency', v: 'Fluent working with AI agents and LLMs — prototyping, building, and shipping with them daily' },
               ].map((field) => (
                 <div key={field.k} style={{ marginBottom: '20px' }}>
                   <div style={{
