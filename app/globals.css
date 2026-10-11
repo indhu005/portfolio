@@ -90,10 +90,18 @@ a:active {
   line-height: 1.7;
 }
 
-/* Ensure images within case study content stay constrained to max-width */
-.case-study-content img {
+/* Ensure images within case study content stay constrained to max-width.
+   Default frame (ring + soft shadow) so screenshots with their own white
+   canvas read as intentionally mounted on the warm page background instead
+   of an unblended white box. Inline styles on individual <img>/<video> tags
+   (e.g. full-bleed diagrams) override this automatically since inline
+   always wins over a stylesheet rule. */
+.case-study-content img,
+.case-study-content video {
   max-width: 100%;
   display: block;
+  border-radius: 8px;
+  box-shadow: 0 0 0 1px rgba(28, 25, 23, 0.07), 0 2px 8px rgba(28, 25, 23, 0.07);
 }
 
 /* Site-wide safety net: no image or video should ever be wider than its

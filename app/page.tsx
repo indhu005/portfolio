@@ -494,6 +494,7 @@ export default function Home() {
                 display: 'flex',
                 flexDirection: 'column',
                 border: '1.5px solid #1C1917',
+                borderRadius: '10px',
                 padding: isMobile ? '24px' : isWideDesktop ? '48px' : '40px',
                 backgroundColor: '#1C1917',
               }}>
@@ -580,7 +581,7 @@ export default function Home() {
                       color: '#FFFFFF',
                       marginTop: isMobile ? '12px' : '16px',
                     }}>
-                      95% pilot adoption
+                      96% rollout adoption
                     </div>
                   </div>
                   {!isMobile && (
@@ -625,7 +626,7 @@ export default function Home() {
                   cells={[
                     { label: 'Role & Team', value: 'Lead Designer (60% design, 40% strategy) · team of 4 — PM, 2 external engineers, client stakeholders' },
                     { label: 'Constraint', value: "Legacy CMMS/ERP stack couldn't be disrupted, data integrity had hard boundaries, capital decisions were politically sensitive." },
-                    { label: 'Impact', value: '95% weekly active use · 50%→92% data accuracy · 25% cost reduction projected' },
+                    { label: 'Impact', value: '96% weekly active use · 50%→92% data accuracy · 25% cost reduction projected' },
                     { label: 'Tech & Approach', value: 'ML/AI design · API-first architecture · Human-in-the-loop approval gates' },
                   ]}
                 />
@@ -709,6 +710,7 @@ export default function Home() {
                 display: 'flex',
                 flexDirection: 'column',
                 border: '1.5px solid #4A72E5',
+                borderRadius: '10px',
                 padding: isMobile ? '24px' : isWideDesktop ? '48px' : '40px',
                 backgroundColor: '#4A72E5',
               }}>
@@ -786,7 +788,7 @@ export default function Home() {
                       color: 'rgba(255,255,255,0.9)',
                       maxWidth: '800px',
                     }}>
-                      From three static screens to a YC-backed subscription marketplace — designing ClassPass for digital tools.
+                      From three static screens to a company that later reached YC — designing ClassPass for digital tools.
                     </p>
                     <div style={{
                       fontFamily: 'var(--font-fraunces), serif',
@@ -947,6 +949,7 @@ export default function Home() {
                 display: 'flex',
                 flexDirection: 'column',
                 border: '1.5px solid #000000',
+                borderRadius: '10px',
                 padding: isMobile ? '24px' : isWideDesktop ? '48px' : '40px',
                 backgroundColor: '#000000',
               }}>

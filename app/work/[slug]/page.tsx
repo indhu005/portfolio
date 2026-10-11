@@ -30,7 +30,7 @@ const caseStudies = {
       impact: '0→20K MAUs | $1.5M raised | pivoted from subscription marketplace to financial analytics as YC F24',
       skills: 'Product strategy · Design systems · User research · PRDs · Chrome extension · Credit economics',
       tools: 'Figma · FigJam · Adobe After Effects · FullStory · Mixpanel · Jira · CSS · React',
-      decisionAuthority: 'Owned: every shipped surface, the credit-cap mechanic, the product-card system, hiring the two designers who followed me. Founders owned vision and fundraising; I translated it into what shipped alongside the PM.'
+      decisionAuthority: 'Owned: every shipped surface, the credit-cap mechanic, the product-card system, hiring the two designers who followed me. Founders owned vision and fundraising — I translated it into what shipped.'
     },
     sections: [
       {
@@ -38,20 +38,15 @@ const caseStudies = {
         title: '01 — Snapshot',
         content: `<img class="cs-changelog-zoomable" loading="lazy" decoding="async" src="/images/keye/snapshot-mobile-grid-white.webp" alt="Eight screens of the Keye mobile product card system" style="width: 100%; max-width: 1248px; max-height: none; height: auto; object-fit: initial; box-shadow: none; display: block; margin: 40px auto 56px;" onclick="document.getElementById('cs-lightbox-img').src=this.src;document.getElementById('cs-lightbox-img').alt=this.alt;document.getElementById('cs-lightbox').style.display='flex';">
 
-<p><span style="font-weight: 600;">Product</span><br/>A credit-based marketplace for flexible access to 150+ premium tools — Grammarly, Adobe, Crunchbase — without long-term subscriptions. ClassPass for digital tools.</p>
+<p><span style="font-weight: 600;">Product</span><br/>A credit-based marketplace for flexible access to 150+ premium tools — Grammarly, Adobe, Crunchbase — without subscriptions. ClassPass for digital tools.</p>
 
-<p style="margin-top: 28px;"><span style="font-weight: 600;">My role.</span> Founding (and for most of Keye's life, only) designer. I designed every surface, wrote PRDs, ran research, and hired the two designers who replaced me.</p>
+<p style="margin-top: 28px;"><span style="font-weight: 600;">My role.</span> Founding, and for most of Keye's life only, designer — designed every surface, wrote PRDs, ran research, hired the two designers who replaced me.</p>
 
-<p style="margin-top: 28px;"><span style="font-weight: 600;">Timeline.</span> My 2 years on Keye (Jan 2021–Dec 2022): beta to credit system to marketplace to seed funding. After I left, the founding team dispersed except Rohan (finance background) — YC then pushed the pivot into financial analytics, carrying our traction into YC F24.</p>
+<p style="margin-top: 28px;"><span style="font-weight: 600;">Timeline.</span> 2 years on Keye (Jan 2021–Dec 2022): beta → credit system → marketplace → seed funding. What happened after I left is in the Pivot, below.</p>
 
 <div style="background-color: #F9FAFB; padding: 24px 28px; border-radius: 0px; border-left: 3px solid #FF7C5F; margin-top: 32px;">
   <div style="font-size: 11px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #A8A29E; margin-bottom: 10px;">My contribution</div>
-  <div style="font-size: 15px; color: #57534E; line-height: 1.7;">I owned the credit-system pivots that kept the product solvent as we learned from real usage, built the product-card system that scaled across every surface, and shipped the Chrome extension that hit a 22% install rate within two weeks.</div>
-</div>
-
-<div style="background-color: #F9FAFB; padding: 24px 28px; border-radius: 0px; border-left: 3px solid #FF7C5F; margin-top: 20px;">
-  <div style="font-size: 11px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #A8A29E; margin-bottom: 10px;">Team leverage</div>
-  <div style="font-size: 15px; color: #57534E; line-height: 1.7;">I scoped the MVP from three static screens, then hired and ran point for my replacements — building design velocity the team didn't have before, and didn't lose after I left, through seed funding and into YC F24.</div>
+  <div style="font-size: 15px; color: #57534E; line-height: 1.7;">Owned the credit-system pivots that kept the product solvent, built the product-card system scaling across every surface, shipped the Chrome extension (22% install rate in two weeks), and scoped the MVP from three static screens before hiring and running point for my replacements — design velocity the team kept through seed funding into YC F24.</div>
 </div>
 
 <div class="cs-laptop-mockup" style="width: 72%; margin: 120px auto 120px;">
@@ -87,21 +82,6 @@ const caseStudies = {
     <div class="metrics-label">Products · direct partnerships incl. Adobe, Grammarly, Otter.ai</div>
     <div style="font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 10px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #4ADE80; margin-top: 10px;">Observed</div>
   </div>
-  <div class="metrics-cell">
-    <div class="metrics-num">+32%</div>
-    <div class="metrics-label">Trial-to-paid conversion post monetization</div>
-    <div style="font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 10px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #4ADE80; margin-top: 10px;">Observed</div>
-  </div>
-  <div class="metrics-cell">
-    <div class="metrics-num">1–2% → 30–35%</div>
-    <div class="metrics-label">Lesser-known product activity, six weeks after the credit cap shipped. That window also coincided with reach expanding from university to public users, so not all of the jump is isolated to the cap alone.</div>
-    <div style="font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 10px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #4ADE80; margin-top: 10px;">Observed</div>
-  </div>
-  <div class="metrics-cell">
-    <div class="metrics-num">60% → 65%</div>
-    <div class="metrics-label">Extension adoption, 3 months post-launch vs. by the time I left</div>
-    <div style="font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 10px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #4ADE80; margin-top: 10px;">Observed</div>
-  </div>
   <div class="metrics-funding">
     <span>$1.5M pre-seed</span><span class="metrics-sep">·</span>
     <span>$30K in grants &amp; competition wins</span><span class="metrics-sep">·</span>
@@ -110,14 +90,13 @@ const caseStudies = {
     <span><a href="https://youtu.be/ZDtnAwaLr-0" target="_blank" rel="noopener noreferrer">Demo Day video</a></span>
   </div>
 </div>
-
-<p style="font-size: 14px; color: #6B7280;">Trial-to-paid and extension adoption = share of eligible users converting within the stated window, tracked in product analytics.</p>`
+`
       },
       {
         id: 'context-problem',
         title: '02 — The Problem',
         headline: 'People were faking emails, sharing passwords, even paying for VPNs just to try a tool before committing to it',
-        content: `<p>Users created fake emails for free trials, shared passwords in friend groups, even paid for a VPN for cheaper regional pricing. Premium tools were priced for committed subscribers, not curious explorers.</p>
+        content: `<p>Users created fake emails for free trials, shared passwords in friend groups, even paid for a VPN for cheaper regional pricing — premium tools were priced for committed subscribers only.</p>
 
 <div class="cs-video-wrap" style="width: 100%; max-width: 960px; margin: 40px auto 40px; position: relative; overflow: hidden; aspect-ratio: 2304 / 432;">
   <video autoplay loop muted playsinline preload="metadata" width="2304" height="1440" aria-label="Screen recording of the Keye paywall" style="position: absolute; top: 0; left: 0; width: 100%; height: auto; transform: translateY(-70%); border-radius: 0px;">
@@ -141,13 +120,13 @@ const caseStudies = {
     <div style="font-size: 13px; color: #9CA3AF; margin-top: 12px; text-align: center;">Snippets from real conversations across UPenn.</div>
   </div>
   <div style="flex: 1; min-width: 280px;">
-    <p>This wasn't rare — group chats across campus were already full of people splitting subscriptions and swapping logins; Keye just gave that behavior a legitimate home.</p>
+    <p>Common — group chats across campus were already full of people splitting subscriptions and swapping logins; Keye gave that behavior a legitimate home.</p>
   </div>
 </div>
 
-<p style="margin-top: 48px;">ClassPass proved flexible multi-provider access worked; Apple One bundled someone else's services. Neither filled the gap between free trial and full subscription — that gap was Keye's opportunity.</p>
+<p style="margin-top: 48px;">ClassPass proved flexible multi-provider access worked; Apple One bundled someone else's services — neither filled the gap between free trial and full subscription. That gap was Keye's opportunity.</p>
 
-<p style="margin-top: 28px;">The friction ran both directions — users wanted to sample tools without committing, and lesser-known tools had no cheap way to reach people who'd never heard of them; Keye's credit system gave both sides a lower-cost way in.</p>`
+<p style="margin-top: 28px;">Friction ran both directions: users wanted to sample tools without committing, and lesser-known tools had no cheap way to reach new people. Keye's credit system gave both sides a lower-cost way in.</p>`
       },
       {
         id: 'feature-index',
@@ -176,7 +155,7 @@ const caseStudies = {
   <h4 class="feature-heading">The Credit System</h4>
   <p class="feature-subheadline">Five pricing models, ten months</p>
 
-  <p>Founders set the direction — monetize before runway ran out — and I tested each model against real usage, treating <b>price as a discovery lever</b> as much as a revenue one.</p>
+  <p>Founders set the direction — monetize before runway ran out — I tested each model against real usage, treating <b>price as a discovery lever</b>, not just a revenue one.</p>
 
   <div class="feature-eyebrow" style="margin-top: 64px;">The mechanism</div>
   <h4 class="feature-heading">Why a cap creates discovery, not just a limit</h4>
@@ -246,7 +225,7 @@ const caseStudies = {
     <div class="cs-stage-header"><span>v1 — Free</span><span class="cs-stage-tag">Goal: prove usage</span></div>
     <div style="display: flex; gap: 32px; align-items: center; flex-wrap: wrap;">
       <img class="cs-stage-img" loading="lazy" decoding="async" src="/images/keye/credit-system-v1b.webp" alt="v1 free flow, no monetization" style="width: 449px; flex: 0 0 449px; margin: 0; border-radius: 10px; box-shadow: 0 10px 24px rgba(28, 25, 23, 0.1); border-color: #D6D3D1; padding: 20px; background-color: #FFFFFF;">
-      <p style="flex: 1; min-width: 240px; margin: 0;">No monetization at all. The goal wasn't revenue — it was proving people would use the product before asking anyone to pay for it.</p>
+      <p style="flex: 1; min-width: 240px; margin: 0;">No monetization. The goal: prove people would use the product before asking them to pay.</p>
     </div>
   </div>
 
@@ -254,7 +233,7 @@ const caseStudies = {
     <div class="cs-stage-header"><span>v2 — 10% flat fee</span><span class="cs-stage-tag">Trigger: founders' pricing direction</span></div>
     <div style="display: flex; gap: 32px; align-items: center; flex-wrap: wrap;">
       <img class="cs-stage-img" loading="lazy" decoding="async" src="/images/keye/credit-system-v2.webp" alt="v2 flat 10% fee flow" style="width: 449px; flex: 0 0 449px; margin: 0; border-radius: 10px; box-shadow: 0 10px 24px rgba(28, 25, 23, 0.1); border-color: #D6D3D1; padding: 20px; background-color: #FFFFFF;">
-      <p style="flex: 1; min-width: 240px; margin: 0;">Founders proposed a flat 10% commission on every purchase, and it shipped before we had any tolerance data to check it against. Once people had used the product at that rate, a follow-up survey showed real tolerance was closer to 5–6% — the gap between what we'd charged and what people actually accepted is what shaped the cap that eventually shipped.</p>
+      <p style="flex: 1; min-width: 240px; margin: 0;">Founders proposed a flat 10% commission, shipped before we had tolerance data. A follow-up survey later showed real tolerance was closer to 5–6% — that gap between charged and accepted shaped the cap that eventually shipped.</p>
     </div>
   </div>
 
@@ -262,7 +241,7 @@ const caseStudies = {
     <div class="cs-stage-header"><span>v3 — Uncapped credits</span><span class="cs-stage-tag">Signal: heavy users cost more than they generated</span></div>
     <div style="display: flex; gap: 32px; align-items: center; flex-wrap: wrap;">
       <img class="cs-stage-img" loading="lazy" decoding="async" src="/images/keye/credit-system-v3.webp" alt="v3 uncapped credits" style="width: 449px; flex: 0 0 449px; margin: 0; border-radius: 10px; box-shadow: 0 10px 24px rgba(28, 25, 23, 0.1); border-color: #D6D3D1; padding: 20px; background-color: #FFFFFF;">
-      <p style="flex: 1; min-width: 240px; margin: 0;">Closer to what users said they'd pay — but with no ceiling, the heaviest users consumed more value than the fee recovered. Fixing that meant a cap, not a bigger fee.</p>
+      <p style="flex: 1; min-width: 240px; margin: 0;">Closer to what users said they'd pay, but with no ceiling, heavy users consumed more value than the fee recovered — fixing that meant a cap, not a bigger fee.</p>
     </div>
   </div>
 
@@ -271,10 +250,10 @@ const caseStudies = {
     <div style="display: flex; gap: 32px; align-items: center; flex-wrap: wrap;">
       <img class="cs-stage-img" loading="lazy" decoding="async" src="/images/keye/credit-system-v4.webp" alt="v4 200 credit monthly cap" style="width: 449px; flex: 0 0 449px; margin: 0; border-radius: 10px; box-shadow: 0 10px 24px rgba(28, 25, 23, 0.1); border-color: #D6D3D1; padding: 20px; background-color: #FFFFFF;">
       <div style="flex: 1; min-width: 240px;">
-        <p style="margin: 0;">Capping credits at 200 a month turned scarcity into a discovery mechanic: with a limited budget, users started spending on products they'd have otherwise skipped in favor of the brand they already knew.</p>
+        <p style="margin: 0;">Capping credits at 200/month turned scarcity into discovery: with a limited budget, users spent on products they'd otherwise have skipped for the brand they already knew.</p>
         <div class="feature-stat" style="margin: 20px 0 0;">
           <div class="feature-stat-num" style="font-size: 40px;">1–2% → 30–35%</div>
-          <div class="feature-stat-label">Lesser-known product activity, six weeks after the cap shipped — that window also coincided with reach expanding from university to public users, so not all of the jump is isolated to the cap alone</div>
+          <div class="feature-stat-label">Lesser-known product activity, six weeks after the cap shipped — the window also coincided with reach expanding from university to public users, so not all of the jump isolates to the cap</div>
         </div>
       </div>
     </div>
@@ -284,20 +263,19 @@ const caseStudies = {
     <div class="cs-stage-header"><span>v5 — Tiered plans</span><span class="cs-stage-tag">Trigger: power users wanted headroom</span></div>
     <div style="display: flex; gap: 32px; align-items: center; flex-wrap: wrap;">
       <img class="cs-stage-img" loading="lazy" decoding="async" src="/images/keye/credit-system-v5.webp" alt="v5 tiered plans" style="width: 562px; flex: 0 0 562px; margin: 0;">
-      <p style="flex: 1; min-width: 240px; margin: 0;">The cap worked, but it also capped the highest-intent users. Tiered plans let them buy up without loosening the scarcity effect for everyone else — same mechanic, an escape valve for the edge case.</p>
+      <p style="flex: 1; min-width: 240px; margin: 0;">The cap also capped the highest-intent users. Tiered plans let them buy up without loosening scarcity for everyone else — same mechanic, an escape valve for the edge case.</p>
     </div>
   </div>
   </div>
 
   <div class="feature-eyebrow" style="margin-top: 48px;">What the credit system delivered</div>
-  <div class="pc-metrics-strip" style="margin-top: 24px;">
+  <div class="pc-metrics-strip" style="margin-top: 24px; grid-template-columns: repeat(3, 1fr);">
     <div class="pc-metrics-cell"><div class="feature-stat-num" style="font-size: 30px;">5</div><div class="feature-stat-label">pricing models shipped in ten months</div></div>
-    <div class="pc-metrics-cell"><div class="feature-stat-num" style="font-size: 30px;">1–2%→30–35%</div><div class="feature-stat-label">lesser-known product activity, six weeks post-cap</div></div>
-    <div class="pc-metrics-cell"><div class="feature-stat-num" style="font-size: 30px;">87%</div><div class="feature-stat-label">of ~6,000 surveyed respondents, across US university and alumni networks, avoided a purchase just to skip entering payment info</div></div>
+    <div class="pc-metrics-cell"><div class="feature-stat-num" style="font-size: 30px;">87%</div><div class="feature-stat-label">of ~6,000 surveyed respondents avoided a purchase to skip entering payment info</div></div>
     <div class="pc-metrics-cell"><div class="feature-stat-num" style="font-size: 30px;">+32%</div><div class="feature-stat-label">trial-to-paid conversion post-monetization</div></div>
   </div>
 
-  <div class="pull-quote" style="margin-top: 40px;">The cap did more than monetize the product — it generated the behavioral data that shaped the entire partnership strategy, evidence that price, not brand loyalty, was the lever moving trial activity on lesser-known tools.</div>
+  <div class="pull-quote" style="margin-top: 40px;">The cap did more than monetize the product — it generated the behavioral data that shaped the entire partnership strategy around price as the real lever for trial activity on lesser-known tools.</div>
 
   <div class="cs-laptop-mockup" style="width: 72%; margin: 80px auto;">
     <div class="cs-laptop-lid">
@@ -321,23 +299,22 @@ const caseStudies = {
   <h4 class="feature-heading">The Product Card</h4>
   <p class="feature-subheadline">Five versions, one component</p>
 
-  <p>The product card is the one surface every Keye user touches on every visit — credits, waitlists, requests, referrals, mobile, the extension all live inside it. Each version added a funnel job: <b>browse → status → merchandising → recovery → growth → cross-platform.</b></p>
+  <p>The product card is the surface every Keye user touches every visit — credits, waitlists, requests, referrals, mobile, the extension all live inside it. Each version added a funnel job: <b>browse → status → merchandising → recovery → growth → cross-platform.</b></p>
 
   <div class="version-rail">
   <div class="pc-stage" style="margin-top: 40px;">
     <div class="pc-stage-label">v1 — Inherited (before I joined)</div>
     <img class="pc-crop-img" loading="lazy" decoding="async" src="/images/keye/product-card-v1-inherited.webp" alt="Three hand-built subscription cards — Headspace, Smiling Mind, Crunchbase — with a stray duplicate description line on Crunchbase">
-    <div class="pc-stage-title">Three products, each card built by hand. No system behind any of them.</div>
-    <p>A single job — browse, then click access — with no component behind it, so any change meant editing every card by hand (visible in Crunchbase's stray duplicate line). Invisible at three products; a wall at forty. I flagged this in my interview, before I had any stake in the outcome.</p>
+    <div class="pc-stage-title">Three products, each card built by hand — no system behind any of them (visible in Crunchbase's stray duplicate line). Invisible at three products, a wall at forty; I flagged it in my interview, before I had any stake.</div>
   </div>
 
   <div class="pc-stage">
     <div class="pc-stage-label">v2 — Componentized, square shape, label system</div>
     <img class="pc-crop-img" loading="lazy" decoding="async" src="/images/keye/product-card-v3-square-labels.webp" alt="Featured Products row — square cards with a Leaving Soon label and on-card credit cost badges">
-    <div class="pc-stage-title">Turned the card into a true component, squared off to fit more per scroll: countdown timer, Waitlisted state, labels for Featured, Leaving Soon, Coming Soon, and credit cost moved onto the face.</div>
-    <div class="feature-note" style="border-left: 3px solid #4A72E5;"><span class="feature-note-label" style="color: #4A72E5;">Impact</span><span>the card became a status object, not just an ad — Featured products saw <b>+18% trial activity</b> over non-featured ones (not a clean causal isolation, since Featured also skewed toward products users already wanted), and visible pricing pre-qualified clicks.</span></div>
+    <div class="pc-stage-title">A true component, squared off to fit more per scroll: countdown timer, Waitlisted state, labels for Featured, Leaving Soon, Coming Soon, credit cost moved onto the face.</div>
+    <div class="feature-note" style="border-left: 3px solid #4A72E5;"><span class="feature-note-label" style="color: #4A72E5;">Impact</span><span>the card became a status object — Featured products saw <b>+18% trial activity</b> over non-featured ones (not a clean causal isolation; Featured also skewed toward products users already wanted), and visible pricing pre-qualified clicks.</span></div>
     <div class="feature-note" style="border-left: 3px solid #FF7C5F;"><span class="feature-note-label" style="color: #FF7C5F;">Finding</span><span>users tried PicMonkey over Adobe at equal visual footing with visible pricing — price and placement beat brand recognition, ancestor of the credit system's <b>1–2% → 30–35%</b> jump.</span></div>
-    <div class="pc-considered"><b>Considered:</b>&nbsp;a separate "My Accounts" page, and the full description on the card face — rejected both, since the grid needs to explain a purchase, not fight scanning with deciding.</div>
+    <div class="pc-considered"><b>Considered:</b>&nbsp;a separate "My Accounts" page, and the full description on the card face — rejected both; the grid needs to explain a purchase while staying scannable.</div>
   </div>
 
   <div class="pc-stage">
@@ -402,10 +379,8 @@ const caseStudies = {
   <p><b>One badge slot:</b> Leaving Soon, Coming Soon, Featured, and Waitlisted never stack — one lifecycle badge at a time, CTA color following it — <b>green</b> for buying access, <b>blue</b> for waitlisted, <b>coral</b> for capture-intent, <b>black</b> for a secondary action.</p>
 
   <div class="feature-eyebrow" style="margin-top: 48px;">What the card carried</div>
-  <div class="pc-metrics-strip">
+  <div class="pc-metrics-strip" style="grid-template-columns: repeat(2, 1fr);">
     <div class="pc-metrics-cell"><div class="feature-stat-num" style="font-size: 30px;">6 → 0</div><div class="feature-stat-label">features shipped on this one card, zero new components</div></div>
-    <div class="pc-metrics-cell"><div class="feature-stat-num" style="font-size: 30px;">+18%</div><div class="feature-stat-label">trial activity on Featured vs. non-featured products, four weeks</div></div>
-    <div class="pc-metrics-cell"><div class="feature-stat-num" style="font-size: 30px;">−34%</div><div class="feature-stat-label">customer-care requests, after Request a Product shipped in-grid</div></div>
     <div class="pc-metrics-cell"><div class="feature-stat-num" style="font-size: 30px;">4 jobs</div><div class="feature-stat-label">discover, re-engage, recover, acquire — served by v4, one component</div></div>
   </div>
 
@@ -432,11 +407,11 @@ const caseStudies = {
     <div class="cs-laptop-base"><div class="cs-laptop-notch"></div></div>
   </div>
 
-  <p>Partner integrations were the plan until our co-founder left with the backend capacity. The idea came buying a rain jacket online — Honey auto-filled a discount code, and I realized we just needed an extension, not partner engineering. Pitched Friday, built in two days.</p>
+  <p>Partner integrations were the plan until our co-founder left with the backend capacity. The idea came buying a rain jacket online — Honey auto-filled a discount code, and I realized an extension could do the job instead of partner engineering. Pitched Friday, built in two days.</p>
 
-  <div class="feature-note" style="border-left: 3px solid #FF7C5F;"><span class="feature-note-label" style="color: #FF7C5F;">Constraint</span><span>No backend engineer left on the team after the co-founder's exit — whatever shipped next had to be entirely client-side.</span></div>
+  <div class="feature-note" style="border-left: 3px solid #FF7C5F;"><span class="feature-note-label" style="color: #FF7C5F;">Constraint</span><span>No backend engineer left after the co-founder's exit — whatever shipped next had to be entirely client-side.</span></div>
 
-  <div class="feature-note" style="border-left: 3px solid #4A72E5;"><span class="feature-note-label" style="color: #4A72E5;">Access model</span><span>Autofill only worked for Keye's authorized partners — not shared logins. It replaced the copy-paste flow below with the same access the user already had, not a new way to pass credentials around or widen what Keye could see.</span></div>
+  <div class="feature-note" style="border-left: 3px solid #4A72E5;"><span class="feature-note-label" style="color: #4A72E5;">Access model</span><span>Autofill worked only for Keye's authorized partners, never shared logins. It replaced the copy-paste flow below with the same access the user already had — nothing new to pass around, nothing wider for Keye to see.</span></div>
 
   <div class="pull-quote">The fix wasn't a partnership we finally got — it was a pattern that already existed somewhere else.</div>
 
@@ -444,7 +419,7 @@ const caseStudies = {
     <div class="cs-stage-header"><span>Before</span></div>
     <div style="display: flex; gap: 32px; align-items: center; flex-wrap: wrap;">
       <img loading="lazy" decoding="async" src="/images/keye/chrome-ext-killed.webp" alt="The old flow — manually copying a username and password to paste into the partner site, with the Go to headspace.com button visible at the bottom" style="width: 673px; flex: 0 0 673px; margin: 0; border-radius: 10px; box-shadow: 0 10px 24px rgba(28, 25, 23, 0.1); border: 1px solid #D6D3D1; padding: 20px; background-color: #FFFFFF; cursor: zoom-in;" onclick="document.getElementById('cs-lightbox-img').src=this.src;document.getElementById('cs-lightbox-img').alt=this.alt;document.getElementById('cs-lightbox').style.display='flex';" />
-      <p style="flex: 1; min-width: 240px; margin: 0;">The screen the extension made obsolete: copy a username and password here, then paste them in on the partner's site.</p>
+      <p style="flex: 1; min-width: 240px; margin: 0;">The screen the extension made obsolete: copy a password here, paste it on the partner's site.</p>
     </div>
   </div>
 
@@ -452,7 +427,7 @@ const caseStudies = {
     <div class="cs-stage-header"><span>Step 1</span></div>
     <div style="display: flex; gap: 32px; align-items: center; flex-wrap: wrap;">
       <img loading="lazy" decoding="async" src="/images/keye/chrome-ext-step1.webp" alt="Install prompt — Enable Keye quick access, Add to Chrome, it's free" style="width: 673px; flex: 0 0 673px; margin: 0; border-radius: 10px; box-shadow: 0 10px 24px rgba(28, 25, 23, 0.1); border: 1px solid #D6D3D1; padding: 20px; background-color: #FFFFFF; cursor: zoom-in;" onclick="document.getElementById('cs-lightbox-img').src=this.src;document.getElementById('cs-lightbox-img').alt=this.alt;document.getElementById('cs-lightbox').style.display='flex';" />
-      <p style="flex: 1; min-width: 240px; margin: 0;">Install, prompted right on the grid — no separate onboarding flow to build or maintain.</p>
+      <p style="flex: 1; min-width: 240px; margin: 0;">Install, prompted right on the grid — no separate onboarding flow needed.</p>
     </div>
   </div>
 
@@ -460,7 +435,7 @@ const caseStudies = {
     <div class="cs-stage-header"><span>Step 2</span></div>
     <div style="display: flex; gap: 32px; align-items: center; flex-wrap: wrap;">
       <img loading="lazy" decoding="async" src="/images/keye/chrome-ext-step2.webp" alt="Extension panel showing Active accesses with Autofill buttons for Tubi, Headspace, and Peloton" style="width: 673px; flex: 0 0 673px; margin: 0; border-radius: 10px; box-shadow: 0 10px 24px rgba(28, 25, 23, 0.1); border: 1px solid #D6D3D1; padding: 20px; background-color: #FFFFFF; cursor: zoom-in;" onclick="document.getElementById('cs-lightbox-img').src=this.src;document.getElementById('cs-lightbox-img').alt=this.alt;document.getElementById('cs-lightbox').style.display='flex';" />
-      <p style="flex: 1; min-width: 240px; margin: 0;">Every active access, one click from Autofill — the same credential list, now living in the browser toolbar.</p>
+      <p style="flex: 1; min-width: 240px; margin: 0;">Every active access, one click from Autofill — the same list, now in the browser toolbar.</p>
     </div>
   </div>
 
@@ -468,7 +443,7 @@ const caseStudies = {
     <div class="cs-stage-header"><span>Step 3</span></div>
     <div style="display: flex; gap: 32px; align-items: center; flex-wrap: wrap;">
       <img loading="lazy" decoding="async" src="/images/keye/chrome-ext-step3.webp" alt="Extension panel open on Peloton's own site, prompting Autofill for the active Keye access" style="width: 673px; flex: 0 0 673px; margin: 0; border-radius: 10px; box-shadow: 0 10px 24px rgba(28, 25, 23, 0.1); border: 1px solid #D6D3D1; padding: 20px; background-color: #FFFFFF; cursor: zoom-in;" onclick="document.getElementById('cs-lightbox-img').src=this.src;document.getElementById('cs-lightbox-img').alt=this.alt;document.getElementById('cs-lightbox').style.display='flex';" />
-      <p style="flex: 1; min-width: 240px; margin: 0;">The moment that mattered: the panel follows the user onto the partner's own site, not just Keye's.</p>
+      <p style="flex: 1; min-width: 240px; margin: 0;">The moment that mattered: the panel follows the user onto the partner's own site.</p>
     </div>
   </div>
 
@@ -476,7 +451,7 @@ const caseStudies = {
     <div class="cs-stage-header"><span>Final</span></div>
     <div style="display: flex; gap: 32px; align-items: center; flex-wrap: wrap;">
       <img loading="lazy" decoding="async" src="/images/keye/chrome-ext-final.webp" alt="Final shipped version — personalized 'Welcome, Nidhi!' panel with an active access grid" style="width: 673px; flex: 0 0 673px; margin: 0; border-radius: 10px; box-shadow: 0 10px 24px rgba(28, 25, 23, 0.1); border: 1px solid #D6D3D1; padding: 20px; background-color: #FFFFFF; cursor: zoom-in;" onclick="document.getElementById('cs-lightbox-img').src=this.src;document.getElementById('cs-lightbox-img').alt=this.alt;document.getElementById('cs-lightbox').style.display='flex';" />
-      <p style="flex: 1; min-width: 240px; margin: 0;">The version that shipped — personalized by name, active accesses laid out as a grid instead of a list.</p>
+      <p style="flex: 1; min-width: 240px; margin: 0;">The version that shipped — personalized by name, accesses laid out as a grid.</p>
     </div>
   </div>
 
@@ -484,7 +459,7 @@ const caseStudies = {
   <div class="pc-metrics-strip" style="margin-top: 24px; grid-template-columns: repeat(3, 1fr);">
     <div class="pc-metrics-cell"><div class="feature-stat-num" style="font-size: 30px;">2 days</div><div class="feature-stat-label">from pitch to prototype</div></div>
     <div class="pc-metrics-cell"><div class="feature-stat-num" style="font-size: 30px;">22%</div><div class="feature-stat-label">install rate in the first 2 weeks</div></div>
-    <div class="pc-metrics-cell"><div class="feature-stat-num" style="font-size: 30px;">60% → 65%</div><div class="feature-stat-label">extension adoption among active users, 3 months post-launch vs. by the time I left — a separate measurement window from the 22% install-rate figure</div></div>
+    <div class="pc-metrics-cell"><div class="feature-stat-num" style="font-size: 30px;">60% → 65%</div><div class="feature-stat-label">extension adoption among active users, 3 months post-launch to by the time I left</div></div>
   </div>
 </div>`
       },
@@ -492,9 +467,9 @@ const caseStudies = {
         id: 'started',
         title: '04 — Evidence Over Instinct',
         headline: "The founders were moving fast on instinct. I slowed things down just enough to check if the instinct was right",
-        content: `<p>My first task was the purchase flow: founders had baked in mandatory consent and a checkout survey dropping completion 30%, so I moved consent to signup and relocated the survey to a post-access popup, cutting drop-off 20% in one sprint.</p>
+        content: `<p>My first task was the purchase flow: founders had baked in mandatory consent and a checkout survey dropping completion 30%. I moved consent to signup and the survey to a post-access popup, cutting drop-off 20% in one sprint.</p>
 
-<p style="margin-top: 28px; font-size: 14px; color: #6B7280;">Research base: early beta users from the UPenn network, with standout survey answers and customer-care contacts followed up in interviews and usability sessions, incentivized with Amazon gift cards.</p>
+<p style="margin-top: 28px; font-size: 14px; color: #6B7280;">Research base: early beta UPenn users, standout survey/support responses followed up via interviews, incentivized with Amazon gift cards.</p>
 
 <div class="cs-stage" style="margin-top: 40px;">
   <div class="cs-stage-header"><span>V1</span></div>
@@ -502,7 +477,7 @@ const caseStudies = {
     <img loading="lazy" decoding="async" src="/images/keye/section-03-v1.webp" alt="Survey V1 — embedded directly in the purchase flow" style="width: 673px; flex: 0 0 673px; margin: 0; border-radius: 10px; box-shadow: 0 10px 24px rgba(28, 25, 23, 0.1); border: 1px solid #D6D3D1; padding: 20px; background-color: #FFFFFF; cursor: zoom-in;" onclick="document.getElementById('cs-lightbox-img').src=this.src;document.getElementById('cs-lightbox-img').alt=this.alt;document.getElementById('cs-lightbox').style.display='flex';" />
     <div style="flex: 1; min-width: 240px;">
       <p style="margin: 0;">Embedded directly in the purchase flow, shown before confirming access.</p>
-      <p class="cs-changelog-signal" style="margin-top: 8px;">Signal: users were confused by the mandatory survey — drop-off hit 50%, and it drove a spike in customer service requests.</p>
+      <p class="cs-changelog-signal" style="margin-top: 8px;">Signal: users confused by the mandatory survey — drop-off hit 50%, spiking customer service requests.</p>
     </div>
   </div>
 </div>
@@ -513,7 +488,7 @@ const caseStudies = {
     <img loading="lazy" decoding="async" src="/images/keye/section-03-v2.webp" alt="Survey V2 — reframed as Step 3 of a numbered checkout flow" style="width: 673px; flex: 0 0 673px; margin: 0; border-radius: 10px; box-shadow: 0 10px 24px rgba(28, 25, 23, 0.1); border: 1px solid #D6D3D1; padding: 20px; background-color: #FFFFFF; cursor: zoom-in;" onclick="document.getElementById('cs-lightbox-img').src=this.src;document.getElementById('cs-lightbox-img').alt=this.alt;document.getElementById('cs-lightbox').style.display='flex';" />
     <div style="flex: 1; min-width: 240px;">
       <p style="margin: 0;">Reframed as Step 3 of a numbered checkout sequence.</p>
-      <p class="cs-changelog-signal" style="margin-top: 8px;">Signal: only moved the needle 2–3% — founders wanted this data organically, but it was still a barrier to funnel growth.</p>
+      <p class="cs-changelog-signal" style="margin-top: 8px;">Signal: moved the needle only 2–3% — still a barrier to funnel growth.</p>
     </div>
   </div>
 </div>
@@ -524,7 +499,7 @@ const caseStudies = {
     <img loading="lazy" decoding="async" src="/images/keye/section-03-v3.webp" alt="Survey V3 — rebuilt as its own page, shown right after product use" style="width: 673px; flex: 0 0 673px; margin: 0; border-radius: 10px; box-shadow: 0 10px 24px rgba(28, 25, 23, 0.1); border: 1px solid #D6D3D1; padding: 20px; background-color: #FFFFFF; cursor: zoom-in;" onclick="document.getElementById('cs-lightbox-img').src=this.src;document.getElementById('cs-lightbox-img').alt=this.alt;document.getElementById('cs-lightbox').style.display='flex';" />
     <div style="flex: 1; min-width: 240px;">
       <p style="margin: 0;">Rebuilt as its own page, shown right after the product was used.</p>
-      <p class="cs-changelog-signal" style="margin-top: 8px;">Signal: consent moved to signup instead of repeating at every purchase — drop-off fell sharply once it stopped feeling repetitive.</p>
+      <p class="cs-changelog-signal" style="margin-top: 8px;">Signal: consent moved to signup instead of repeating at purchase — drop-off fell sharply.</p>
     </div>
   </div>
 </div>
@@ -551,22 +526,17 @@ const caseStudies = {
         id: 'tradeoffs',
         title: '05 — Tradeoffs & Hard Calls',
         headline: 'None of these were mine to decide alone — engineering, marketing, founders, and investors each pushed back, and the product was better for it',
-        content: `<p>Every hard call here was negotiated, not dictated — my job was bringing evidence into the room.</p>
+        content: `<p>Every hard call here was negotiated collaboratively — my job was bringing evidence into the room.</p>
 
 <div style="display: grid; grid-template-columns: 1fr; gap: 28px; margin-top: 32px;">
   <div>
     <div class="cs-card-title">The Influencer Debate</div>
-    <div style="font-size: 15px; color: #57534E; line-height: 1.6;">Marketing wanted influencer streams and social mechanics — a real shot at faster acquisition. Founders stayed cautious about churn, worried it would bring in users who'd switch right back out; I reframed it as access, not entertainment, and we gave up that acquisition channel entirely.</div>
+    <div style="font-size: 15px; color: #57534E; line-height: 1.6;">Marketing wanted influencer streams for faster acquisition. Founders stayed cautious about churn; I reframed it around access over entertainment, and we gave up that channel entirely.</div>
   </div>
 
   <div>
     <div class="cs-card-title">The Mobile App Concession</div>
-    <div style="font-size: 15px; color: #57534E; line-height: 1.6;">Engineering and I both pushed for native — we knew it would make the product more popular. But $500K in seed funding had to cover hosting and subscriptions too, and native wasn't affordable alongside that. I conceded and made mobile web thorough enough to close most of the gap.</div>
-  </div>
-
-  <div>
-    <div class="cs-card-title">The Mid-Growth Rebrand</div>
-    <div style="font-size: 15px; color: #57534E; line-height: 1.6;">Changing palette and typography mid-funnel was risky — we shipped live, and it coincided with a 33% growth spike.</div>
+    <div style="font-size: 15px; color: #57534E; line-height: 1.6;">Engineering and I both pushed for native, knowing it'd be more popular. But $500K in seed funding also had to cover hosting and subscriptions — native wasn't affordable. I conceded and made mobile web thorough enough to close most of the gap.</div>
   </div>
 </div>
 
@@ -576,12 +546,12 @@ const caseStudies = {
         id: 'impact',
         title: '06 — Impact & Reflection',
         headline: "The most important thing a founding designer builds isn't the product. It's the foundation that lets the product grow without being rebuilt from scratch",
-        content: `<p><span style="font-weight: 600;">What I got wrong.</span> I thought unlimited credits would reveal honest user behavior. It didn't — with no cost to switching, users just defaulted to the brand they trusted. The cap worked because removing that option forced a real tradeoff, finally showing what people would try when it cost them something.</p>
+        content: `<p><span style="font-weight: 600;">What I got wrong.</span> I thought unlimited credits would reveal honest user behavior — they didn't. With no cost to switching, users defaulted to the brand they trusted. The cap worked because removing that option forced a real tradeoff, finally showing what people would try when it cost them something.</p>
 
 <div style="background-color: #1C1917; padding: 28px 32px; border-radius: 0px; margin-top: 40px; margin-bottom: 8px;">
   <div style="font-size: 11px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #A8A29E; margin-bottom: 10px;">The pivot</div>
   <div style="font-family: 'Fraunces', serif; font-size: 22px; font-weight: 600; color: #FFFFFF; line-height: 1.4; margin-bottom: 12px;">Years after I left, the rest of the founding team dispersed and the subscription marketplace I designed didn't survive — but what it generated likely helped get the company into YC.</div>
-  <div style="font-size: 15px; color: #D6D3D1; line-height: 1.7;">Keye dropped the marketplace model and rebuilt around financial analytics. What carried over wasn't the product — it was the research, partnerships, and funding it generated, which likely contributed to the YC F24 acceptance.</div>
+  <div style="font-size: 15px; color: #D6D3D1; line-height: 1.7;">Keye dropped the marketplace model and rebuilt around financial analytics. The research, partnerships, and funding it generated carried over and likely contributed to the YC F24 acceptance.</div>
 </div>
 
 <div class="pull-quote" style="margin-top: 48px;">The credit cap's value wasn't monetization — it was the behavioral data that shaped the entire partnership strategy.</div>
@@ -611,11 +581,11 @@ const caseStudies = {
       decisionAuthority: 'Owned: workflow design, the human-in-the-loop approval model, and the alert-framing decisions that rebuilt manager trust in the system (see Decision 03). Client stakeholders owned data-integrity and political constraints I had to design within.'
     },
     preSnapshotHeadline: 'Fragmented data was forcing humans to do the work a system should have done',
-    preSnapshotContent: `<p style="font-size: 14px; color: #6B7280;">70–75% of operational U.S. buildings predate 2000 (<a href="https://www.eia.gov/consumption/commercial/reports/" target="_blank" rel="noopener noreferrer" style="color: #6B7280; text-decoration: underline;">EIA.gov</a>). The tools we evaluated didn't connect maintenance history, lifecycle risk, and capital planning in a way that fit the university's existing systems.</p>
+    preSnapshotContent: `<p style="font-size: 14px; color: #6B7280;">70–75% of operational U.S. buildings predate 2000 (<a href="https://www.eia.gov/consumption/commercial/reports/" target="_blank" rel="noopener noreferrer" style="color: #6B7280; text-decoration: underline;">EIA.gov</a>). The tools we evaluated didn't connect maintenance history, lifecycle risk, and capital planning to fit the university's existing systems.</p>
 
 <p style="margin-top: 28px;">A technician underground can't access repair history. A manager stitches spreadsheets before planning. Leadership decides on partial data.</p>
 
-<img loading="lazy" decoding="async" width="2000" height="1200" src="/images/lat/User%20Issues.webp" alt="Diagram of fragmented maintenance data flow" style="width: 100%; height: auto; border-radius: 0px; margin-top: 40px; margin-bottom: 40px; display: block;" />
+<img loading="lazy" decoding="async" width="2000" height="1200" src="/images/lat/User%20Issues.webp" alt="Diagram of fragmented maintenance data flow" style="width: 100%; height: auto; border-radius: 0px; margin-top: 40px; margin-bottom: 40px; display: block; box-shadow: none;" />
 
 <div style="display: flex; align-items: flex-start; gap: 24px; margin-top: 8px; margin-bottom: 8px; flex-wrap: wrap;">
   <div style="flex: 1; min-width: 250px; position: relative;">
@@ -637,12 +607,12 @@ const caseStudies = {
         title: '01 — Snapshot',
         content: `<div style="background-color: #F9FAFB; padding: 24px 28px; border-radius: 0px; border-left: 3px solid #FF7C5F;">
   <div style="font-size: 11px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #A8A29E; margin-bottom: 10px;">My contribution</div>
-  <div style="font-size: 15px; color: #57534E; line-height: 1.7;">I reframed the product from a shared facilities dashboard into role-specific decision surfaces, set the approval model that let managers act on AI recommendations without blind faith, and carried the offline-first field workflow from research through pilot.</div>
+  <div style="font-size: 15px; color: #57534E; line-height: 1.7;">Reframed the product from a shared facilities dashboard into role-specific decision surfaces, set the approval model that let managers act on AI recommendations without blind faith, and carried the offline-first field workflow from research through pilot.</div>
 </div>
 
 <h4 class="case-study-subhead" id="impact">Impact</h4>
 
-<p style="font-size: 14px; color: #6B7280; margin-bottom: 24px;">Pilot cohort: 43 people (18 technicians, 15 operations/asset managers, 7 accounting, 3 executives), tracked over a 12-week pilot window — the test cohort for a tool that rolled out to 4,000+ people campus-wide.</p>
+<p style="font-size: 14px; color: #6B7280; margin-bottom: 24px;">Pilot cohort: 43 people (18 technicians, 15 operations/asset managers, 7 accounting, 3 executives), tracked over 12 weeks — the test group for a tool that rolled out to 4,000+ campus-wide.</p>
 
 <div class="metrics-grid metrics-grid--dark" style="margin-bottom: 20px;">
   <div class="metrics-cell metrics-cell--hero">
@@ -651,18 +621,8 @@ const caseStudies = {
     <div style="font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 10px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #4ADE80; margin-top: 10px;">Observed</div>
   </div>
   <div class="metrics-cell">
-    <div class="metrics-num">87%</div>
-    <div class="metrics-label">Record completeness (required fields present, no duplicates), measured post canonical ID + sync validation</div>
-    <div style="font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 10px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #4ADE80; margin-top: 10px;">Observed</div>
-  </div>
-  <div class="metrics-cell">
     <div class="metrics-num">50% → 92%</div>
     <div class="metrics-label">Data accuracy — historical records had years of duplicate and inconsistent entries; a cleanup pass plus a flow that caught redundancies at the source closed most of the gap as adoption grew</div>
-    <div style="font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 10px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #4ADE80; margin-top: 10px;">Observed</div>
-  </div>
-  <div class="metrics-cell">
-    <div class="metrics-num">~20 → ~8 min</div>
-    <div class="metrics-label">Average reporting time per ticket across all pilot technicians, pre/post offline-first workflow</div>
     <div style="font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 10px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #4ADE80; margin-top: 10px;">Observed</div>
   </div>
 </div>
@@ -687,11 +647,11 @@ const caseStudies = {
   <button type="button" class="cs-video-toggle" aria-label="Pause video" onclick="var v=this.previousElementSibling;if(v.paused){v.play();this.textContent='⏸';this.setAttribute('aria-label','Pause video');}else{v.pause();this.textContent='▶';this.setAttribute('aria-label','Play video');}">⏸</button>
 </div>
 
-<p style="font-size: 14px; color: #6B7280;">Discovery research (interviews, separate from the 43-person pilot that came later): 7–8 technicians and vendors, 4 project managers, 2 accountants, 5–6 executives, and the Director of Facilities — the university's primary sponsor.</p>
+<p style="font-size: 14px; color: #6B7280;">Discovery research (separate from the 43-person pilot that came later): 7–8 technicians and vendors, 4 project managers, 2 accountants, 5–6 executives, and the Director of Facilities — the university's primary sponsor.</p>
 
-<div class="pull-quote" style="margin-top: 48px;">The institution wasn't lacking expertise. It was operating without a unified source of truth.</div>
+<div class="pull-quote" style="margin-top: 48px;">The institution had expertise. It lacked a unified source of truth.</div>
 
-<p style="margin-top: 48px;">CMMS platforms don't model asset lifespan or CapEx tradeoffs — preventive maintenance ran on time, not risk. Replacing the stack wasn't viable, and none of the tools we evaluated offered the integrated version at any price.</p>
+<p style="margin-top: 48px;">CMMS platforms don't model asset lifespan or CapEx tradeoffs — preventive maintenance ran on time, not risk. Replacing the stack wasn't viable, and no tool we evaluated offered the integrated version at any price.</p>
 
 <div style="margin-top: 40px; margin-bottom: 40px;">
   <div style="font-size: 11px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #A8A29E; margin-bottom: 16px;">Fragmentation, by owner</div>
@@ -702,15 +662,15 @@ const caseStudies = {
     </div>
     <div style="border-left: 3px solid #E7E5E4; padding-left: 16px;">
       <div style="font-weight: 600; color: #1C1917; margin-bottom: 4px;">Maintenance scheduling</div>
-      <div style="font-size: 14px; color: #57534E; line-height: 1.6;">Legacy CMMS/ERP, IT-owned — ran on fixed time intervals, not real risk</div>
+      <div style="font-size: 14px; color: #57534E; line-height: 1.6;">Legacy CMMS/ERP, IT-owned — ran on fixed intervals, not real risk</div>
     </div>
     <div style="border-left: 3px solid #E7E5E4; padding-left: 16px;">
       <div style="font-weight: 600; color: #1C1917; margin-bottom: 4px;">Capital requests</div>
-      <div style="font-size: 14px; color: #57534E; line-height: 1.6;">Project managers &amp; accountants — manual spreadsheets stitched before each planning cycle</div>
+      <div style="font-size: 14px; color: #57534E; line-height: 1.6;">Managers &amp; accountants — spreadsheets stitched before each planning cycle</div>
     </div>
     <div style="border-left: 3px solid #E7E5E4; padding-left: 16px;">
       <div style="font-weight: 600; color: #1C1917; margin-bottom: 4px;">Final approval</div>
-      <div style="font-size: 14px; color: #57534E; line-height: 1.6;">Executives &amp; the Director of Facilities — decided on whatever partial data reached them</div>
+      <div style="font-size: 14px; color: #57534E; line-height: 1.6;">Executives &amp; the Director of Facilities — decided on whatever data reached them</div>
     </div>
   </div>
 </div>
@@ -725,7 +685,7 @@ const caseStudies = {
   </div>
 </div>
 
-<img loading="lazy" decoding="async" width="3300" height="2400" src="/images/lat/Market%20Gap.jpg" alt="Market Gap Analysis" style="width: 100%; height: auto; border-radius: 0px; margin-top: 40px; margin-bottom: 40px; display: block;" />`
+<img loading="lazy" decoding="async" width="3300" height="2400" src="/images/lat/Market%20Gap.jpg" alt="Market Gap Analysis" style="width: 100%; height: auto; border-radius: 0px; margin-top: 40px; margin-bottom: 40px; display: block; box-shadow: none;" />`
       },
       {
         id: 'solution',
@@ -734,7 +694,7 @@ const caseStudies = {
         content: '',
         customComponent: (
           <div>
-            <p style={{ fontSize: '15px', color: '#44403C', marginBottom: '56px' }}>The problem wasn't missing data — it was translating numbers into decisions. The system did four things: <span style={{ fontWeight: 600 }}>kept data clean</span>, <span style={{ fontWeight: 600 }}>prioritized</span> attention, <span style={{ fontWeight: 600 }}>explained</span> financial stakes, <span style={{ fontWeight: 600 }}>verified</span> before budget impact. AI wasn't the product — trustworthy decisions were.</p>
+            <p style={{ fontSize: '15px', color: '#44403C', marginBottom: '56px' }}>Translating numbers into decisions was the real problem. The system did four things: <span style={{ fontWeight: 600 }}>kept data clean</span>, <span style={{ fontWeight: 600 }}>prioritized</span> attention, <span style={{ fontWeight: 600 }}>explained</span> financial stakes, <span style={{ fontWeight: 600 }}>verified</span> before budget impact. Trustworthy decisions were the actual product.</p>
 
             <div style={{ marginBottom: '72px', maxWidth: '520px', marginLeft: 'auto', marginRight: 'auto', textAlign: 'center' }}>
               <div style={{ fontSize: '10px', fontWeight: 700, letterSpacing: '0.06em', textTransform: 'uppercase', color: '#A8A29E', marginBottom: '14px' }}>One data model, three surfaces</div>
@@ -759,7 +719,7 @@ const caseStudies = {
             <div style={{ marginBottom: '8px' }}>
               <div style={{ fontSize: '13px', fontWeight: 700, color: '#FF7C5F', letterSpacing: '0.06em', textTransform: 'uppercase', marginBottom: '8px' }}>Decision 01</div>
               <div style={{ fontSize: '20px', fontWeight: 600, color: '#1C1917', marginBottom: '16px' }}>Keep the data clean at the source</div>
-              <p><span style={{ fontWeight: 600 }}>Problem.</span> Field data is where "50% data accuracy" actually breaks — a completed job whose update never reaches the system is, for everyone downstream, a job that never happened.</p>
+              <p><span style={{ fontWeight: 600 }}>Problem.</span> Field data is where "50% data accuracy" actually breaks — a completed job whose update never reaches the system is, downstream, a job that never happened.</p>
             </div>
 
             <div style={{ marginBottom: '48px' }}>
@@ -807,7 +767,7 @@ const caseStudies = {
                 <LatWorkOrderPrototype />
               </div>
 
-              <p style={{ fontSize: '15px', color: '#78716C', marginTop: '40px' }}><span style={{ fontWeight: 600, color: '#44403C' }}>Result.</span> This is the field layer behind the 50% → 92% data-accuracy jump (see Impact). Median time to approve ran 7-9 minutes when a request arrived with everything needed, and 2.2-2.8 hours when it was still an open work order waiting on incoming data.</p>
+              <p style={{ fontSize: '15px', color: '#78716C', marginTop: '40px' }}><span style={{ fontWeight: 600, color: '#44403C' }}>Result.</span> This is the field layer behind the 50%→92% data-accuracy jump (see Impact). Median approval time: 7-9 minutes with everything needed, 2.2-2.8 hours when still waiting on data.</p>
             </div>
 
             <div style={{ marginBottom: '40px' }}>
@@ -847,7 +807,7 @@ const caseStudies = {
 
               <p>First version showed <span style={{ fontStyle: 'italic' }}>"Boiler failure risk: 68%."</span> Managers didn't trust a number they couldn't trace — chasing it surfaced a data-quality problem serious enough for a data-scientist intern.</p>
 
-              <p style={{ marginTop: '12px' }}>We tested time-to-failure and plain-language severity before landing on dollars — managers already think in the monthly CAPEX cycle, and a dollar figure maps straight onto "can I request this now."</p>
+              <p style={{ marginTop: '12px' }}>We tested time-to-failure and plain-language severity before landing on dollars — managers think in the monthly CAPEX cycle, where a dollar figure maps straight onto "can I request this now."</p>
 
               <LatAlertToggle />
 
@@ -855,7 +815,7 @@ const caseStudies = {
 
               <p style={{ marginTop: '12px' }}><span style={{ fontWeight: 600, color: '#44403C' }}>Result.</span> <span style={{ color: '#78716C' }}>Override rate 61%→19%; acceptance 42%→78%; resolution time 3 days→2 hours.</span></p>
 
-              <p style={{ fontSize: '14px', color: '#78716C', marginTop: '8px' }}>Resolution = closed with nothing left to chase: site details, photos, and vendor needs all attached. Technicians used to dread the office trip to upload and email it — voice capture in the field closed that gap directly.</p>
+              <p style={{ fontSize: '14px', color: '#78716C', marginTop: '8px' }}>Resolution = closed with nothing left to chase: site details, photos, vendor needs all attached. Technicians dreaded the office trip to upload and email it — voice capture in the field closed that gap.</p>
 
               <div style={{ backgroundColor: '#FFF9F5', padding: '24px', borderRadius: '0px', borderLeft: '3px solid #FF7C5F', marginTop: '32px' }}>
                 <div className="cs-card-title cs-card-title--sm">Model behavior</div>
@@ -866,7 +826,7 @@ const caseStudies = {
                   <span style={{ fontWeight: 600 }}>The real decision:</span> what the model could withhold. Critical alerts always show their risk drivers and require a human call before touching budget.
                 </p>
                 <p style={{ fontSize: '15px', color: '#57534E', lineHeight: 1.7, marginTop: '12px', marginBottom: 0 }}>
-                  <span style={{ fontWeight: 600 }}>Watching for rubber-stamping:</span> a falling override rate alone doesn't prove improvement — managers could just be deferring more. Logged overrides feed recalibration, and managers log reasoning even when they agree, so the trail shows engagement, not compliance.
+                  <span style={{ fontWeight: 600 }}>Watching for rubber-stamping:</span> a falling override rate alone doesn't prove improvement — managers could just be deferring more. Logged overrides feed recalibration, and managers log reasoning even when they agree, so the trail shows real engagement.
                 </p>
               </div>
 
@@ -888,8 +848,8 @@ const caseStudies = {
               <p style={{ fontSize: '14px', color: '#78716C', marginBottom: '20px' }}>Outside the core prioritize → explain → verify loop, two more workflows fed the same data model.</p>
 
               <div style={{ marginBottom: '24px' }}>
-                <p><span style={{ fontWeight: 600 }}>Offline field reporting.</span> Work Orders, Asset DNA, and Cost-to-Date link automatically — offline capture, voice input, and auto-sync cut reporting time sharply (see Impact).</p>
-                <p style={{ fontSize: '15px', color: '#57534E', lineHeight: 1.7, marginTop: '12px' }}>Typing underground or on a swing stage isn't practical, so voice fills the form hands-free. 40+ technicians used offline capture in the first month; it surfaced an unscoped need for offline asset history, which we added. The real win, per managers: synced updates close jobs without chasing technicians down.</p>
+                <p><span style={{ fontWeight: 600 }}>Offline field reporting.</span> Work Orders, Asset DNA, and Cost-to-Date link automatically — offline capture, voice input, and auto-sync cut average reporting time from ~20 to ~8 minutes per ticket.</p>
+                <p style={{ fontSize: '15px', color: '#57534E', lineHeight: 1.7, marginTop: '12px' }}>Typing underground or on a swing stage isn't practical, so voice fills the form hands-free. 40+ technicians used offline capture in the first month, surfacing an unscoped need for offline asset history, which we added. The real win, per managers: synced updates close jobs without chasing technicians.</p>
               </div>
 
               <div style={{ marginBottom: '24px' }}>
@@ -911,11 +871,11 @@ const caseStudies = {
   <button type="button" class="cs-video-toggle" aria-label="Pause video" onclick="var v=this.previousElementSibling;if(v.paused){v.play();this.textContent='⏸';this.setAttribute('aria-label','Pause video');}else{v.pause();this.textContent='▶';this.setAttribute('aria-label','Play video');}">⏸</button>
 </div>
 
-<p>We thought we were customizing a product. Research showed each role was making decisions in isolation, off the same data — what was missing wasn't data, it was shared context and trust.</p>
+<p>We thought we were customizing a product. Research showed each role was making decisions in isolation, off the same data — what was missing was shared context and trust.</p>
 
 <p style="margin-top: 28px;">So instead of one dashboard for everyone, we built role-based surfaces over a shared foundation, surfacing only what was actionable.</p>
 
-<img loading="lazy" decoding="async" width="2000" height="1146" src="/images/lat/pROBLEM.webp" alt="System architecture diagram" style="width: 100%; height: auto; border-radius: 0px; margin-top: 40px; margin-bottom: 40px; display: block;" />`
+<img loading="lazy" decoding="async" width="2000" height="1146" src="/images/lat/pROBLEM.webp" alt="System architecture diagram" style="width: 100%; height: auto; border-radius: 0px; margin-top: 40px; margin-bottom: 0px; display: block; box-shadow: none;" />`
       },
       {
         id: 'constraints',
@@ -924,7 +884,7 @@ const caseStudies = {
         content: `<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px;">
   <div style="background-color: #FFFFFF; border: 1px solid #E5E7EB; border-top: 3px solid #4A72E5; padding: 20px 24px;">
     <div class="cs-card-title cs-card-title--sm-tight">Legacy Ecosystem Couldn't Be Disrupted</div>
-    <div style="font-size: 14px; color: #57534E; line-height: 1.55;">A modular layer alongside the existing stack, not a replacement. The university's CS/IT teams kept running legacy CMMS/ERP; our 2 engineers owned only the LAT API layer on top.</div>
+    <div style="font-size: 14px; color: #57534E; line-height: 1.55;">A modular layer alongside the existing stack. The university's CS/IT teams kept running legacy CMMS/ERP; our 2 engineers owned only the LAT API layer on top.</div>
   </div>
 
   <div style="background-color: #FFFFFF; border: 1px solid #E5E7EB; border-top: 3px solid #FF7C5F; padding: 20px 24px;">
@@ -947,7 +907,7 @@ const caseStudies = {
           <div>
             <p>Every feature mapped to one driver: <span style={{ fontWeight: 600 }}>cost, planning accuracy, or adoption.</span> Offline workflows and data integrity came before expanding AI scope — these three tradeoffs show where.</p>
 
-            <p style={{ fontSize: '14px', color: '#78716C', marginTop: '8px' }}>Override rate = the share of AI flags a manager or accountant overturned, compared early vs. late in the 12-week pilot. The drop wasn't a single step — it fell week over week as managers built confidence in the score, and they started logging reasoning notes even when they agreed with it, not just when they overrode it.</p>
+            <p style={{ fontSize: '14px', color: '#78716C', marginTop: '8px' }}>Override rate = the share of AI flags a manager or accountant overturned, compared early vs. late in the 12-week pilot. The drop was gradual — it fell week over week as managers built confidence in the score and began logging reasoning notes even when they agreed with it.</p>
 
             <LatTradeoffTable />
 
@@ -958,11 +918,11 @@ const caseStudies = {
 
             <div style={{ backgroundColor: '#FFF9F5', padding: '28px', borderRadius: '0px', borderLeft: '3px solid #FF7C5F', marginTop: '8px', marginBottom: '40px' }}>
               <div className="cs-card-title cs-card-title--md">The model keeps learning</div>
-              <div style={{ fontSize: '15px', color: '#57534E', lineHeight: 1.7 }}>By month four, stakeholders saw urgent maintenance requests already falling and projected that trend forward a year: <span style={{ fontWeight: 600, color: '#44403C' }}>25% fewer unexpected maintenance costs</span> <span style={{ fontFamily: 'ui-monospace, SFMono-Regular, Menlo, monospace', fontSize: '10px', fontWeight: 700, letterSpacing: '0.06em', textTransform: 'uppercase', color: '#B45309' }}>Projected</span>, extrapolated from the observed decline, not yet realized.</div>
-              <div style={{ fontSize: '13px', color: '#78716C', marginTop: '10px' }}>Weather drives a lot of this institution&apos;s maintenance load — winter failures spike independent of asset condition — and that seasonality is already priced into how the university plans CAPEX, so the 4-month baseline isn&apos;t assumed to hold flat across a full year.</div>
+              <div style={{ fontSize: '15px', color: '#57534E', lineHeight: 1.7 }}>By month four, stakeholders saw urgent maintenance requests already falling and projected that trend forward a year: <span style={{ fontWeight: 600, color: '#44403C' }}>25% fewer unexpected maintenance costs</span> <span style={{ fontFamily: 'ui-monospace, SFMono-Regular, Menlo, monospace', fontSize: '10px', fontWeight: 700, letterSpacing: '0.06em', textTransform: 'uppercase', color: '#B45309' }}>Projected</span>.</div>
+              <div style={{ fontSize: '13px', color: '#78716C', marginTop: '10px' }}>Weather drives a lot of this institution&apos;s maintenance load — winter failures spike independent of asset condition — already priced into CAPEX planning, so the 4-month baseline isn&apos;t assumed to hold flat across a year.</div>
             </div>
 
-            <div className="pull-quote" style={{ marginTop: '8px', marginBottom: '40px' }}>A usable interface wasn't enough on its own. Adoption depended on reliable data, understandable recommendations, and clear decision ownership.</div>
+            <div className="pull-quote" style={{ marginTop: '8px', marginBottom: '40px' }}>A usable interface alone couldn't drive adoption — that depended on reliable data, understandable recommendations, and clear decision ownership.</div>
           </div>
         ),
       },
@@ -1009,14 +969,14 @@ const caseStudies = {
   <div style="font-size: 11px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #A8A29E; margin-bottom: 10px;">Headline result</div>
   <div style="font-family: 'Fraunces', serif; font-size: 20px; font-weight: 600; color: #1C1917; line-height: 1.3; margin-bottom: 16px;">Two hours of searching became a few minutes of checking.</div>
   <div style="font-family: 'Fraunces', serif; font-size: 40px; font-weight: 700; color: #1C1917; line-height: 1.1;">2h → 5m</div>
-  <div style="font-size: 14px; color: #6B7280; margin-top: 10px;">Four participants at different life stages described spending around two hours verifying a claim on their own. In testing, they reached the same answer in about five minutes — baseline self-reported, outcome observed in session.</div>
+  <div style="font-size: 14px; color: #6B7280; margin-top: 10px;">Four participants described spending around two hours verifying a claim alone. In testing, they reached the same answer in about five minutes — baseline self-reported, outcome observed.</div>
 </div>
 
 <p>Platforms try to control misinformation, but users don't trust them. This capstone asked a different question: what if we equipped people to identify it themselves?</p>
 
 <img loading="lazy" decoding="async" src="/images/misinformation-center/Truth.png" alt="Truth visual" style="width: 100%; border-radius: 0px; margin-top: 40px; margin-bottom: 40px; display: block;" />
 
-<p style="margin-top: 28px;"><span style="font-weight: 600;">Agency over authority.</span> People resist being told what's true, but respond well to tools that help them decide for themselves — not another fact-check label.</p>
+<p style="margin-top: 28px;"><span style="font-weight: 600;">Agency over authority.</span> People resist being told what's true, but respond well to tools that help them decide for themselves.</p>
 
 <div class="cs-video-wrap" style="width: 100%; max-width: 700px; margin: 40px auto 0;">
   <video autoplay loop muted playsinline preload="metadata" width="2248" height="1388" aria-label="Screen recording of the verification tool embedded in trusted surfaces like the share sheet and lock screen widget" style="display: block; width: 100%; height: auto; border-radius: 0px;" onloadedmetadata="this.playbackRate=1.8;" onplay="this.playbackRate=1.8;">
@@ -1025,14 +985,14 @@ const caseStudies = {
   </video>
 </div>
 
-<p style="margin-top: 28px;"><span style="font-weight: 600;">My role.</span> Sole designer on this UW graduate capstone (Jan–Dec 2024), started as a team of four. After February, the research, archetypes, all four features, and testing with ~1,800 people at Misinfo Day were mine alone.</p>
+<p style="margin-top: 28px;"><span style="font-weight: 600;">My role.</span> Sole designer on this UW graduate capstone (Jan–Dec 2024), started as a team of four. After February: research, archetypes, all four features, and testing ~1,800 people at Misinfo Day, mine alone.</p>
 
 <div style="background-color: #F9FAFB; padding: 24px 28px; border-radius: 0px; border-left: 3px solid #FF7C5F; margin-top: 28px;">
   <div style="font-size: 11px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #A8A29E; margin-bottom: 10px;">My contribution</div>
-  <div style="font-size: 15px; color: #57534E; line-height: 1.7;">I owned the research direction, all four tool concepts, and the pivot away from the original platform-embedded concept after 17 of 19 testers rejected it — TrueMedia.org set the scope of the research partnership that fed into it.</div>
+  <div style="font-size: 15px; color: #57534E; line-height: 1.7;">Owned the research direction, all four tool concepts, and the pivot away from the platform-embedded concept after 17 of 19 testers rejected it — TrueMedia.org set the research partnership's scope.</div>
 </div>
 
-<p style="margin-top: 28px;">From March to May, I also collaborated with TrueMedia.org, a deepfake-detection nonprofit. They analyzed 60,000+ pieces of media and shut down in January 2025 — not from bad design, but because nobody profits from detection. That's this case study's throughline (section 06).</p>
+<p style="margin-top: 28px;">From March to May, I collaborated with TrueMedia.org, a deepfake-detection nonprofit that analyzed 60,000+ pieces of media before shutting down in January 2025 — nobody profits from detection. That's this case study's throughline (section 06).</p>
 </div>
 
 <div class="snapshot-bottom-content">
@@ -1075,7 +1035,7 @@ const caseStudies = {
 </div>
 
 <div style="width: 100%; margin-top: 40px; margin-bottom: 40px;">
-  <img loading="lazy" decoding="async" src="/images/misinformation-center/User quote.png" alt="User quote" style="width: 100%; height: auto; border-radius: 0px; display: block;" />
+  <img loading="lazy" decoding="async" src="/images/misinformation-center/User quote.png" alt="User quote" style="width: 100%; height: auto; border-radius: 0px; display: block; box-shadow: none;" />
 </div>
 </div>
 </div>`
@@ -1088,25 +1048,25 @@ const caseStudies = {
 
 <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 40px; margin-top: 64px; margin-bottom: 64px;">
   <div>
-    <img loading="lazy" decoding="async" src="/images/misinformation-center/Problem 01.webp" alt="Survey Results" style="width: 100%; height: auto; border-radius: 0px; margin-bottom: 24px; display: block;" />
+    <img loading="lazy" decoding="async" src="/images/misinformation-center/Problem 01.webp" alt="Survey Results" style="width: 100%; height: auto; border-radius: 0px; margin-bottom: 24px; display: block; box-shadow: none;" />
     <div class="cs-card-title cs-card-title--xs">Survey Results (n=2,000)</div>
     <div style="font-size: 13px; color: #57534E; line-height: 1.6;">74% encountered misinformation weekly, 62% of parents felt overwhelmed, and <20% trusted existing fact-checkers.</div>
   </div>
 
   <div>
-    <img loading="lazy" decoding="async" src="/images/misinformation-center/Problem 02.webp" alt="The Generational Sandwich" style="width: 100%; height: auto; border-radius: 0px; margin-bottom: 24px; display: block;" />
+    <img loading="lazy" decoding="async" src="/images/misinformation-center/Problem 02.webp" alt="The Generational Sandwich" style="width: 100%; height: auto; border-radius: 0px; margin-bottom: 24px; display: block; box-shadow: none;" />
     <div class="cs-card-title cs-card-title--xs">The Generational Sandwich</div>
     <div style="font-size: 13px; color: #57534E; line-height: 1.6;">Mothers filtering misinformation for kids while protecting elderly parents from scams — shaped the archetype strategy.</div>
   </div>
 
   <div>
-    <img loading="lazy" decoding="async" src="/images/misinformation-center/Problem 03.webp" alt="The Transparency Demand" style="width: 100%; height: auto; border-radius: 0px; margin-bottom: 24px; display: block;" />
+    <img loading="lazy" decoding="async" src="/images/misinformation-center/Problem 03.webp" alt="The Transparency Demand" style="width: 100%; height: auto; border-radius: 0px; margin-bottom: 24px; display: block; box-shadow: none;" />
     <div class="cs-card-title cs-card-title--xs">The Transparency Demand</div>
-    <div style="font-size: 13px; color: #57534E; line-height: 1.6;">Users wanted to see who benefits from content, not just a fact-check label.</div>
+    <div style="font-size: 13px; color: #57534E; line-height: 1.6;">Users wanted to see who benefits from content, beyond a fact-check label.</div>
   </div>
 
   <div>
-    <img loading="lazy" decoding="async" src="/images/misinformation-center/Problem 04.webp" alt="The Platform Trust Problem" style="width: 100%; height: auto; border-radius: 0px; margin-bottom: 24px; display: block;" />
+    <img loading="lazy" decoding="async" src="/images/misinformation-center/Problem 04.webp" alt="The Platform Trust Problem" style="width: 100%; height: auto; border-radius: 0px; margin-bottom: 24px; display: block; box-shadow: none;" />
     <div class="cs-card-title cs-card-title--xs">The Platform Trust Problem</div>
     <div style="font-size: 13px; color: #57534E; line-height: 1.6;">Testing rejected a solution integrated into a major social platform immediately — the tool had to stand independent.</div>
   </div>
@@ -1130,7 +1090,7 @@ const caseStudies = {
 
 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 40px; margin-top: 28px; align-items: start;">
   <div>
-    <p style="margin-top: 0;"><span style="font-weight: 600;">What testing disproved.</span> 17 of 19 wouldn't engage with a version built inside a major platform — not a design problem, so I moved it out.</p>
+    <p style="margin-top: 0;"><span style="font-weight: 600;">What testing disproved.</span> 17 of 19 wouldn't engage with a version built inside a major platform — a trust problem, so I moved it out.</p>
 
     <p style="margin-top: 16px;"><span style="font-weight: 600;">What testing confirmed.</span> The interactive quiz beat the written guide. At the showcase it held without help, except one gap: no exit from every screen.</p>
 
@@ -1180,7 +1140,7 @@ const caseStudies = {
 
 <div class="pull-quote" style="margin-top: 48px; margin-bottom: 48px;">Verification had to live where misinformation spreads, but platform ownership destroyed trust.</div>
 
-<p><span style="font-weight: 600;">The integration insight.</span> I brought this to all three professors — none engaged, waving it off as digging too deep. I worked it through instead with my husband, an AI scientist outside product: a trusted utility in trusted surfaces — Safari share sheet, Apple News, native camera — backed by verifiable institutions, owned by none of the platforms it lives in.</p>
+<p><span style="font-weight: 600;">The integration insight.</span> Professors waved this off as digging too deep, so I worked it through with my husband, an AI scientist outside product: a trusted utility in trusted surfaces — Safari share sheet, Apple News, native camera — backed by verifiable institutions, owned by none of the platforms it lives in.</p>
 
 <div style="display: flex; gap: 24px; margin-top: 48px; flex-wrap: wrap;">
   <div style="flex: 1; min-width: 250px; position: relative;">
@@ -1239,11 +1199,11 @@ const caseStudies = {
 
 <p style="margin-top: 28px;">The strategy: design for the first two — they become the human layer protecting the third, like a mother who verifies before forwarding to her parent.</p>
 
-<img loading="lazy" decoding="async" src="/images/misinformation-center/User thinking.png" alt="The generational chain diagram and three archetype cards with real interview quotes" style="width: 100%; border-radius: 0px; margin-top: 40px; margin-bottom: 40px; display: block;" />
+<img loading="lazy" decoding="async" src="/images/misinformation-center/User thinking.png" alt="The generational chain diagram and three archetype cards with real interview quotes" style="width: 100%; border-radius: 0px; margin-top: 40px; margin-bottom: 40px; display: block; box-shadow: none;" />
 
-<p style="margin-top: 36px;"><span style="font-weight: 600;">What Misinfo Day revealed that recruited testing couldn't.</span> Live crowds show what people do, not what they say. Younger participants abandoned reading within seconds; older participants trusted Ask Us over automated ratings. Engagement spiked when framed as a skill, not a correction.</p>
+<p style="margin-top: 36px;"><span style="font-weight: 600;">What Misinfo Day revealed that recruited testing couldn't.</span> Live crowds reveal behavior that self-reports miss. Younger participants abandoned reading within seconds; older participants trusted Ask Us over automated ratings. Engagement spiked when framed as a skill rather than a correction.</p>
 
-<p style="margin-top: 28px;">This is also when Scan got decided — attendees wanted to check what was in front of them, not just their phone.</p>
+<p style="margin-top: 28px;">This is also when Scan got decided — attendees wanted to check what was physically in front of them, too.</p>
 
 <div style="margin-top: 48px;">
   <div style="font-size: 13px; color: #6B7280; margin-bottom: 12px;">Misinfo Day — live testing with ~1,800 participants</div>
@@ -1257,7 +1217,7 @@ const caseStudies = {
         id: 'impact',
         title: '07 — Impact & Results',
         headline: "96% of 36 Gen Z and millennial testers said they'd use it. Older users needed a camera first.",
-        content: `<p>Younger testers took to search and the quiz immediately. Older participants stayed out until Scan arrived — pointing a camera at a newspaper asked nothing of them they didn't already know, and it removed the part they disliked most: having to ask a younger relative for help.</p>
+        content: `<p>Younger testers took to search and the quiz immediately. Older participants stayed out until Scan arrived — pointing a camera at a newspaper asked nothing new of them, and removed what they disliked most: asking a younger relative for help.</p>
 
 <div style="display: flex; flex-wrap: wrap; gap: 40px; margin-top: 40px; padding: 24px 0; border-top: 1px solid #E5E7EB; border-bottom: 1px solid #E5E7EB;">
   <div>
@@ -1265,12 +1225,8 @@ const caseStudies = {
     <div style="font-size: 13px; color: #6B7280; margin-top: 4px;">of 36 Gen Z and millennial testers said they'd use it</div>
   </div>
   <div>
-    <div style="font-size: 26px; font-weight: 700; color: #1C1917;">2h → 5m</div>
-    <div style="font-size: 13px; color: #6B7280; margin-top: 4px;">verification they described as taking two hours took about five minutes in testing — reported by 4 participants</div>
-  </div>
-  <div>
     <div style="font-size: 26px; font-weight: 700; color: #1C1917;">~8,000</div>
-    <div style="font-size: 13px; color: #6B7280; margin-top: 4px;">people used the live product over 3 months, beyond the initial testing group — the fast-verification pattern held at that scale</div>
+    <div style="font-size: 13px; color: #6B7280; margin-top: 4px;">used the live product over 3 months, beyond the test group — the fast-verification pattern held at scale</div>
   </div>
 </div>
 
@@ -1282,14 +1238,14 @@ const caseStudies = {
         headline: 'Detection is the expensive end of the chain — authenticating content at creation is fundamentally more efficient, but nobody profits from implementing it',
         content: `<p>TrueMedia.org built deepfake detection for the 2024 election; through UW I contributed research synthesis. Their tool served journalists, mine a teenager. They analyzed 60,000+ pieces of media before shutting down in January 2025, open-sourcing the tech instead of chasing funding.</p>
 
-<p style="margin-top: 28px;">TrueMedia's Head of Product reframed it for me: platforms are ambivalent about detection since it drives engagement, and personalized scams never reach anyone to verify them. Authenticating content at creation would be more efficient than detection — but C2PA proposed that and stalled on incentives.</p>`
+<p style="margin-top: 28px;">TrueMedia's Head of Product reframed it: platforms are ambivalent about detection since it drives engagement, and personalized scams never reach anyone to verify them. Authenticating content at creation would be more efficient — but C2PA proposed that and stalled on incentives.</p>`
       },
       {
         id: 'reflection',
         title: '09 — Reflection',
         showPrototypeCta: true,
         headline: 'A designer who thinks only about what users see is a UI designer. A designer who thinks about everything required to make that experience real and sustainable is a product leader',
-        content: `<p><span style="font-weight: 600;">What this project taught me.</span> Design alone can't make a public good sustainable — TrueMedia was research-grounded and mission-complete, yet closed on economics, not design. The answer was integration into trusted surfaces, which never had a business model.</p>
+        content: `<p><span style="font-weight: 600;">What this project taught me.</span> Design alone can't make a public good sustainable — TrueMedia was research-grounded and mission-complete, yet closed on economics rather than design. The answer, integration into trusted surfaces, never had a business model.</p>
 
 <p style="margin-top: 28px;"><span style="font-weight: 600;">What changed.</span> Feedback pushed the quiz toward teaching why, and badges toward layered reveals — signal first, reasoning a tap away. By 2026, AI solves the staffing; the ecosystem question remains.</p>
 
