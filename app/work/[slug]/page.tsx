@@ -622,7 +622,7 @@ const caseStudies = {
   </div>
   <div class="metrics-cell">
     <div class="metrics-num">50% → 92%</div>
-    <div class="metrics-label">Data accuracy — historical records had years of duplicate and inconsistent entries; a cleanup pass plus a flow that caught redundancies at the source closed most of the gap as adoption grew</div>
+    <div class="metrics-label">Data accuracy, pilot through full rollout — historical records had years of duplicate and inconsistent entries; a cleanup pass plus a flow that caught redundancies at the source closed most of the gap as adoption grew</div>
     <div style="font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 10px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #4ADE80; margin-top: 10px;">Observed</div>
   </div>
 </div>
@@ -690,11 +690,11 @@ const caseStudies = {
       {
         id: 'solution',
         title: '03 — Solution',
-        headline: 'Four decisions: keep the data clean, prioritize what matters, explain what it costs, verify before it acts',
+        headline: 'Three decisions, one standard running through all of them: never act without a human verifying it first',
         content: '',
         customComponent: (
           <div>
-            <p style={{ fontSize: '15px', color: '#44403C', marginBottom: '56px' }}>Translating numbers into decisions was the real problem. The system did four things: <span style={{ fontWeight: 600 }}>kept data clean</span>, <span style={{ fontWeight: 600 }}>prioritized</span> attention, <span style={{ fontWeight: 600 }}>explained</span> financial stakes, <span style={{ fontWeight: 600 }}>verified</span> before budget impact. Trustworthy decisions were the actual product.</p>
+            <p style={{ fontSize: '15px', color: '#44403C', marginBottom: '56px' }}>Translating numbers into decisions was the real problem. The system did three things: <span style={{ fontWeight: 600 }}>kept data clean</span>, <span style={{ fontWeight: 600 }}>prioritized</span> attention, <span style={{ fontWeight: 600 }}>explained</span> financial stakes — each one verified before it reached a budget. Trustworthy decisions were the actual product.</p>
 
             <div style={{ marginBottom: '72px', maxWidth: '520px', marginLeft: 'auto', marginRight: 'auto', textAlign: 'center' }}>
               <div style={{ fontSize: '10px', fontWeight: 700, letterSpacing: '0.06em', textTransform: 'uppercase', color: '#A8A29E', marginBottom: '14px' }}>One data model, three surfaces</div>
@@ -790,7 +790,7 @@ const caseStudies = {
               <div style={{ backgroundColor: '#FFF9F5', padding: '24px', borderRadius: '0px', borderLeft: '3px solid #FF7C5F', marginBottom: '32px' }}>
                 <div className="cs-card-title cs-card-title--sm">The Boiler Incident</div>
                 <p style={{ fontSize: '15px', color: '#57534E', lineHeight: 1.7, margin: 0 }}>
-                  <span style={{ fontWeight: 600 }}>Model said:</span> Critical — the same Boiler Unit 3 from Decision 03, now flagged for a $180K replacement.<br/>
+                  <span style={{ fontWeight: 600 }}>Model said:</span> Critical — Boiler Unit 3, the same asset Decision 03 below walks through, now flagged for a $180K replacement.<br/>
                   <span style={{ fontWeight: 600 }}>Human found:</span> duplicated maintenance records had inflated the risk score.<br/>
                   <span style={{ fontWeight: 600 }}>Design response:</span> a "Needs Verification" state, visible risk drivers, mandatory manager approval, and logged overrides.<br/>
                   <span style={{ fontWeight: 600 }}>Result:</span> adoption held steady — the near-miss became a reason to trust the system more, not less.
@@ -875,7 +875,7 @@ const caseStudies = {
 
 <p style="margin-top: 28px;">So instead of one dashboard for everyone, we built role-based surfaces over a shared foundation, surfacing only what was actionable.</p>
 
-<img loading="lazy" decoding="async" width="2000" height="1146" src="/images/lat/pROBLEM.webp" alt="System architecture diagram" style="width: 100%; height: auto; border-radius: 0px; margin-top: 40px; margin-bottom: 0px; display: block; box-shadow: none;" />`
+<img loading="lazy" decoding="async" width="2000" height="1146" src="/images/lat/pROBLEM.webp" alt="Three-panel diagram of the old approach's failure modes: Manual (human error in a disconnected technician-to-PM chain), Silos (departments and tools that don't talk to each other), and Reactive (maintenance decided after problems occur, not before)" style="width: 100%; height: auto; border-radius: 0px; margin-top: 40px; margin-bottom: 0px; display: block; box-shadow: none;" />`
       },
       {
         id: 'constraints',
