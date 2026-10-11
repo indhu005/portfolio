@@ -358,8 +358,8 @@ export default function About() {
               <div style={{ marginBottom: '56px' }}>
                 {[
                   { years: '2025 — Present', role: 'Product Designer', org: 'Stealth early-stage startup', note: 'AI-forward marketplace' },
-                  { years: '2024 — 2025', role: 'Researcher', org: 'University of Washington' },
-                  { years: '2023 — 2024', role: 'Product Designer', org: 'Amento' },
+                  { years: '2024 — 2025', role: 'Researcher', org: 'University of Washington', note: 'Misinformation Center' },
+                  { years: '2023 — 2024', role: 'Product Designer', org: 'Amento', note: 'LAT platform' },
                   { years: '2022 — 2023', role: 'Designer', org: 'Handel Architects (NYC)' },
                   { years: '2021 — 2022', role: 'Founding Product Designer', org: 'Keye (Remote)', note: 'also Flock (3mo), SCB (2mo)' },
                   { years: '2018 — 2020', role: 'User Experience Designer', org: 'Gensler (Chicago)' },

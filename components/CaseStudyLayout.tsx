@@ -209,7 +209,7 @@ export default function CaseStudyLayout({ caseStudy, slug }: CaseStudyLayoutProp
           gap: '6px',
           height: '40px',
           padding: '0 14px',
-          background: 'rgba(255, 255, 255, 0.82)',
+          background: 'rgba(255, 255, 255, 0.96)',
           backdropFilter: 'blur(12px)',
           WebkitBackdropFilter: 'blur(12px)',
           border: '1px solid rgba(28, 25, 23, 0.1)',

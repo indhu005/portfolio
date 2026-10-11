@@ -10,7 +10,7 @@ const caseStudies = {
   keye: {
     title: 'Keye',
     subtitle: 'Subscription Marketplace',
-    description: 'From three static screens to a YC-backed company',
+    description: 'From three static screens to a company that later reached YC',
     heroVideo: '/videos/Keye/Keye%20hero%20cropped.mp4',
     externalLinks: [
       { label: 'Visit Keye', url: 'https://production.keye.co' },
@@ -25,11 +25,11 @@ const caseStudies = {
     },
     tldr: {
       role: 'Founding Product Designer',
-      team: '5 (2 engineers, 1 PM, me as product designer, a brand designer who joined later for email design)',
+      team: '5 (2 engineers, 1 PM, me as product designer), plus 2 designers I hired and trained near the end — a brand designer for email, and my product-design successor (left after 2 months when the founders paused product to focus on fundraising)',
       timeline: '2 years (2021–2022)',
       impact: '0→20K MAUs | $1.5M raised | pivoted from subscription marketplace to financial analytics as YC F24',
       skills: 'Product strategy · Design systems · User research · PRDs · Chrome extension · Credit economics',
-      tools: 'Figma · FigJam · Adobe After Effects · FullStory · Mixpanel · Jira · CSS · C++ · React',
+      tools: 'Figma · FigJam · Adobe After Effects · FullStory · Mixpanel · Jira · CSS · React',
       decisionAuthority: 'Owned: every shipped surface, the credit-cap mechanic, the product-card system, hiring the two designers who followed me. Founders owned vision and fundraising; I translated it into what shipped alongside the PM.'
     },
     sections: [
@@ -105,8 +105,9 @@ const caseStudies = {
   <div class="metrics-funding">
     <span>$1.5M pre-seed</span><span class="metrics-sep">·</span>
     <span>$30K in grants &amp; competition wins</span><span class="metrics-sep">·</span>
-    <span>Featured in Forbes, BulletPitch, UPenn Venture Lab</span><span class="metrics-sep">·</span>
-    <span>Accepted to YC F24</span>
+    <span>Featured in <a href="https://www.bulletpitch.com/p/keye" target="_blank" rel="noopener noreferrer">Bullet Pitch</a>, <a href="https://magazine.wharton.upenn.edu/issues/fall-winter-2022/keye/" target="_blank" rel="noopener noreferrer">Wharton Magazine</a>, <a href="https://nyweekly.com/business/keye-launches-beta-to-revolutionize-acc/" target="_blank" rel="noopener noreferrer">NY Weekly</a>, <a href="https://medium.com/@keye_co/are-we-all-suffering-from-subscription-fatigue-39768c9da1d4" target="_blank" rel="noopener noreferrer">Medium</a></span><span class="metrics-sep">·</span>
+    <span>Accepted to YC F24</span><span class="metrics-sep">·</span>
+    <span><a href="https://youtu.be/ZDtnAwaLr-0" target="_blank" rel="noopener noreferrer">Demo Day video</a></span>
   </div>
 </div>
 
@@ -579,7 +580,7 @@ const caseStudies = {
 
 <div style="background-color: #1C1917; padding: 28px 32px; border-radius: 0px; margin-top: 40px; margin-bottom: 8px;">
   <div style="font-size: 11px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #A8A29E; margin-bottom: 10px;">The pivot</div>
-  <div style="font-family: 'Fraunces', serif; font-size: 22px; font-weight: 600; color: #FFFFFF; line-height: 1.4; margin-bottom: 12px;">Years after I left, the rest of the founding team dispersed and the subscription marketplace I designed didn't survive — but it got the company into YC.</div>
+  <div style="font-family: 'Fraunces', serif; font-size: 22px; font-weight: 600; color: #FFFFFF; line-height: 1.4; margin-bottom: 12px;">Years after I left, the rest of the founding team dispersed and the subscription marketplace I designed didn't survive — but what it generated likely helped get the company into YC.</div>
   <div style="font-size: 15px; color: #D6D3D1; line-height: 1.7;">Keye dropped the marketplace model and rebuilt around financial analytics. What carried over wasn't the product — it was the research, partnerships, and funding it generated, which likely contributed to the YC F24 acceptance.</div>
 </div>
 
@@ -596,16 +597,16 @@ const caseStudies = {
     subtitle: 'Lifecycle Assessment Tracker',
     description: 'Designing an AI-assisted maintenance system people could trust with $180K decisions',
     brief: {
-      context: 'Lead designer for an ML platform helping a university manage 60–80+ buildings across three campuses.',
+      context: 'Lead designer for an ML platform helping a university manage 60–80+ buildings across three campuses, delivered through a consulting engagement at Amento.',
       constraint: 'Legacy CMMS/ERP couldn\'t be disrupted, data had hard integrity boundaries, and capital decisions were political.',
       decision: 'Shipped as a modular API layer with human-in-the-loop AI: approval gates, visible reasoning, logged overrides.',
       tradeoff: 'Chose human review over full automation, even though it was slower than letting the model act on its own — the boiler incident validated staying cautious.'
     },
     tldr: {
-      role: 'Lead Product Designer (60% design, 40% strategy)',
+      role: 'Lead Product Designer (60% design, 40% strategy), at Amento',
       team: '1 PM, 1 designer (me), 2 external engineers, client stakeholders',
       timeline: '12 months (Jun 2023–May 2024)',
-      impact: '95% pilot adoption',
+      impact: '95% pilot → 96% rollout adoption',
       skills: 'Enterprise UX · Trust-centered AI design · Stakeholder alignment · Field research · API-first architecture',
       decisionAuthority: 'Owned: workflow design, the human-in-the-loop approval model, and the alert-framing decisions that rebuilt manager trust in the system (see Decision 03). Client stakeholders owned data-integrity and political constraints I had to design within.'
     },
@@ -645,8 +646,8 @@ const caseStudies = {
 
 <div class="metrics-grid metrics-grid--dark" style="margin-bottom: 20px;">
   <div class="metrics-cell metrics-cell--hero">
-    <div class="metrics-num">95%</div>
-    <div class="metrics-label">Weekly active use across the full ~4,000-person rollout by week 12 — adoption started slow in week 1 and climbed steadily from there, clearing the university IT department's 70% threshold for keeping a tool live</div>
+    <div class="metrics-num">96%</div>
+    <div class="metrics-label">Weekly active use across the full ~4,000-person rollout by week 12 — up from 95% in the 43-person pilot that preceded it, clearing the university IT department's 70% threshold for keeping a tool live</div>
     <div style="font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 10px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #4ADE80; margin-top: 10px;">Observed</div>
   </div>
   <div class="metrics-cell">
@@ -666,7 +667,7 @@ const caseStudies = {
   </div>
 </div>
 
-<p style="font-size: 14px; color: #6B7280; margin-bottom: 40px;">Observed metrics come directly from pilot usage logs.</p>
+<p style="font-size: 14px; color: #6B7280; margin-bottom: 40px;">Observed metrics come directly from pilot and rollout usage logs.</p>
 
 <p><span style="font-weight: 600;">Operational.</span> Linking work orders to lifecycle cost made repair history visible in real time.</p>
 
@@ -812,12 +813,11 @@ const caseStudies = {
             <div style={{ marginBottom: '40px' }}>
               <div style={{ fontSize: '13px', fontWeight: 700, color: '#FF7C5F', letterSpacing: '0.06em', textTransform: 'uppercase', marginBottom: '8px' }}>Decision 02</div>
               <div style={{ fontSize: '20px', fontWeight: 600, color: '#1C1917', marginBottom: '16px' }}>Replace the "Everything Dashboard"</div>
-              <p><span style={{ fontWeight: 600 }}>Problem.</span> Managers scanned 8+ graphs without acting on them.</p>
-              <p style={{ marginTop: '12px' }}><span style={{ fontWeight: 600 }}>Considered.</span> Customizable graphs, a trimmed dashboard, alerts-only, contextual graphs — all prototyped, all still overwhelmed managers; hidden graphs went mostly unopened.</p>
-              <p style={{ marginTop: '12px' }}><span style={{ fontWeight: 600 }}>Design.</span> A ranked priority queue replaced the dashboard; filters stayed, repurposed to show feasible options rather than drill into one asset. Only versions that tested well shipped — budget- and retraining-conscious.</p>
-              <p style={{ marginTop: '12px' }}><span style={{ fontWeight: 600 }}>Why.</span> Post-test interviews: less is more.</p>
-              <p style={{ marginTop: '12px' }}><span style={{ fontWeight: 600 }}>Cost.</span> Gave up the auto-arranged calendar (liked, but messy) for a daily view linked to the monthly one.</p>
-              <p style={{ marginTop: '12px', color: '#78716C' }}><span style={{ fontWeight: 600, color: '#44403C' }}>Result.</span> 15 of 20+ managers adopted the queue. Weekly item-closure rate nearly doubled, and decision time dropped from 14 minutes to 4. Training was quick, and help requests stayed rare — not the retraining burden IT braced for.</p>
+              <p><span style={{ fontWeight: 600 }}>Problem.</span> 8 of 10 managers were overwhelmed by the dashboard's graphs, map, and calendar — and queued items instead of acting.</p>
+              <p style={{ marginTop: '12px' }}><span style={{ fontWeight: 600 }}>Considered.</span> Four dashboard variants, all still overwhelming. Only the tested-well version shipped, given cost and retraining constraints.</p>
+              <p style={{ marginTop: '12px' }}><span style={{ fontWeight: 600 }}>Design.</span> A ranked priority queue replaced it; filters now show which options are feasible.</p>
+              <p style={{ marginTop: '12px' }}><span style={{ fontWeight: 600 }}>Cost.</span> Lost the liked-but-messy auto-arranged calendar; rolled out to 20 managers for two weeks before the full 64.</p>
+              <p style={{ marginTop: '12px', color: '#78716C' }}><span style={{ fontWeight: 600, color: '#44403C' }}>Result.</span> Weekly closure rate roughly doubled (4/10 → 8–9/10 across 12 managers), decision time dropped 14→4 min, and IT saw just 1–2 help requests a month after full launch.</p>
 
               <div style={{ marginTop: '24px', marginBottom: '32px' }}>
                 <div style={{ fontSize: '11px', fontWeight: 700, letterSpacing: '0.06em', textTransform: 'uppercase', color: '#A8A29E', marginBottom: '6px' }}>Built from the LAT design system</div>
@@ -929,7 +929,7 @@ const caseStudies = {
 
   <div style="background-color: #FFFFFF; border: 1px solid #E5E7EB; border-top: 3px solid #FF7C5F; padding: 20px 24px;">
     <div class="cs-card-title cs-card-title--sm-tight">Data Integrity Had Hard Boundaries</div>
-    <div style="font-size: 14px; color: #57534E; line-height: 1.55;">Strict governance meant inherited, duplicated records — the root of the boiler incident (Decision 04). Validation states and confidence tiers built that trust back.</div>
+    <div style="font-size: 14px; color: #57534E; line-height: 1.55;">Strict governance meant inherited, duplicated records — the root of the boiler incident (Decision 03). Validation states and confidence tiers built that trust back.</div>
   </div>
 
   <div style="background-color: #FFFFFF; border: 1px solid #E5E7EB; border-top: 3px solid #0D9488; padding: 20px 24px;">
@@ -1327,7 +1327,7 @@ export async function generateMetadata({
       keywords: ['YC startup designer', 'founding designer', 'startup product design', 'credit marketplace', 'Chrome extension design', 'design systems', 'subscription marketplace', 'SaaS design']
     },
     lat: {
-      description: 'Lead Product Designer for LAT Platform — ML-driven lifecycle assessment for university campus maintenance. 95% weekly active use, 50%→92% data accuracy, 25% projected cost reduction.',
+      description: 'Lead Product Designer for LAT Platform — ML-driven lifecycle assessment for university campus maintenance. 96% weekly active use, 50%→92% data accuracy, 25% projected cost reduction.',
       keywords: ['enterprise UX', 'trust-centered AI design', 'AI product design', 'university technology', 'predictive maintenance', 'lifecycle assessment', 'B2B design', 'decision intelligence']
     },
     'misinformation-center': {

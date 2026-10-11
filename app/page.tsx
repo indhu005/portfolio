@@ -399,7 +399,7 @@ export default function Home() {
               </p>
 
               <p style={{ marginBottom: isWideDesktop ? '32px' : '28px', ...revealStyle(120) }}>
-                I'm a senior product designer with 8+ years taking 0→1 AI and enterprise products to launch. I design the trust layer between people and AI — from a founding role at Keye, a YC-backed marketplace, to LAT, an enterprise AI platform that reached 95% adoption inside a politically sensitive institution.
+                I'm a senior product designer with 8+ years across mediums — from digital design at Gensler to founding AI product roles at Keye and LAT. I design the trust layer between people and AI, from a YC-stage fintech to an enterprise platform that reached 96% adoption inside a politically sensitive institution.
               </p>
 
               <p style={{ fontSize: isMobile ? '15px' : '16px', color: '#78716C', marginBottom: isWideDesktop ? '32px' : '28px', ...revealStyle(140) }}>
@@ -417,7 +417,7 @@ export default function Home() {
                 ...revealStyle(160),
               }}>
                 {[
-                  { stat: '95% pilot adoption', context: 'LAT — 12-month enterprise rollout, measured by weekly active use of the core workflow' },
+                  { stat: '95%→96% adoption', context: 'LAT — 43-person pilot to ~4,000-person rollout, measured by weekly active use of the core workflow' },
                   { stat: '0→20K MAUs · $1.5M raised', context: 'Keye — founding designer, team of 5; pivoted from subscription marketplace to financial analytics as YC F24' },
                   { stat: "96% said they'd use it", context: 'Misinfo Center — 36 Gen Z/millennial testers, field-tested at Misinfo Day' },
                 ].map((item) => (
@@ -838,7 +838,7 @@ export default function Home() {
                   offset={isMobile ? 0 : 56}
                   dark
                   cells={[
-                    { label: 'Role & Team', value: 'Founding Designer · team of 5 — 2 engineers, 1 PM, me as product designer, a brand designer who joined later' },
+                    { label: 'Role & Team', value: 'Founding Designer · team of 5, plus 2 designers I hired before leaving' },
                     { label: 'Constraint', value: "Engineering was 12 time zones away; a co-founder's exit erased backend capacity for planned integrations." },
                     { label: 'Impact', value: '0→20K MAUs · $1.5M raised · pivoted from subscription marketplace to financial analytics as YC F24' },
                     { label: 'Tech & Approach', value: 'Design systems · Chrome extension · Credit-based economics' },
