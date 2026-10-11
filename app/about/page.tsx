@@ -245,7 +245,7 @@ export default function About() {
               {[
                 { k: 'Based', v: 'Seattle, WA' },
                 { k: 'Focus', v: 'Systems, trust, and AI guardrails' },
-                { k: 'Experience', v: '8+ years, 0→1 through enterprise' },
+                { k: 'Experience', v: '8 years design · 5+ in product, 0→1 through enterprise' },
                 { k: 'AI Fluency', v: 'Fluent working with AI agents and LLMs — prototyping, building, and shipping with them daily' },
               ].map((field) => (
                 <div key={field.k} style={{ marginBottom: '20px' }}>
@@ -357,10 +357,10 @@ export default function About() {
 
               <div style={{ marginBottom: '56px' }}>
                 {[
-                  { years: '2025 — Present', role: 'Product Designer', org: 'Stealth early-stage startup', note: 'AI-forward marketplace' },
+                  { years: '2025 — Present', role: 'Senior Product Designer', org: 'Stealth early-stage startup', note: 'AI-forward marketplace' },
                   { years: '2024 — 2025', role: 'Researcher', org: 'University of Washington', note: 'Misinformation Center' },
-                  { years: '2023 — 2024', role: 'Product Designer', org: 'Amento', note: 'LAT platform' },
-                  { years: '2022 — 2023', role: 'Designer', org: 'Handel Architects (NYC)' },
+                  { years: '2023 — 2024', role: 'Senior Product Designer', org: 'Amento', note: 'LAT platform' },
+                  { years: '2022 — 2023', role: 'Senior Designer', org: 'Handel Architects (NYC)' },
                   { years: '2021 — 2022', role: 'Founding Product Designer', org: 'Keye (Remote)', note: 'also Flock (3mo), SCB (2mo)' },
                   { years: '2018 — 2020', role: 'User Experience Designer', org: 'Gensler (Chicago)' },
                   { years: '2013 — 2017', role: 'Design Intern', org: 'Collins International (Bangalore), SCI-Arc (LA), Studios Architecture (NY), Fr-EE (NY)' },

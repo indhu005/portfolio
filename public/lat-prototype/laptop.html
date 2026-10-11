@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+<script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet><style>html,body{margin:0;height:100%;overflow:hidden}body{background:transparent;font-family:Geist,system-ui,sans-serif}</style></helmet>
+<div style="width:100vw;height:100vh;display:flex;align-items:center;justify-content:center">
+<div style="width:{{ boxW }}px;height:{{ boxH }}px;flex:none;position:relative">
+<div style="width:1420px;height:821px;position:absolute;left:0;top:0;transform:scale({{ scale }});transform-origin:0 0;display:flex;flex-direction:column;align-items:center">
+<div style="width:1260px;background:#1C1C1E;border-radius:22px 22px 6px 6px;padding:18px 18px 22px;box-sizing:border-box;box-shadow:0 0 0 2px #8C8C90 inset;position:relative">
+<div style="position:absolute;top:7px;left:50%;width:6px;height:6px;margin-left:-3px;border-radius:50%;background:#3A3A3E"></div>
+<div style="width:1224px;height:765px;overflow:hidden;background:#fff;position:relative"><iframe src="index.html" title="LAT Today prototype" style="width:1440px;height:900px;border:0;transform:scale(0.85);transform-origin:0 0;display:block"></iframe></div></div>
+<div style="width:1420px;height:16px;background:linear-gradient(#D9D9DC,#B9B9BD);border-radius:0 0 18px 18px;position:relative;box-shadow:0 2px 0 #9A9A9E"><div style="position:absolute;top:0;left:50%;width:180px;height:7px;margin-left:-90px;background:#A8A8AC;border-radius:0 0 10px 10px"></div></div>
+</div></div></div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { s: 1 };
+  fit = () => this.setState({ s: Math.min(1, (window.innerWidth - 48) / 1420, (window.innerHeight - 48) / 821) });
+  componentDidMount() { this.fit(); window.addEventListener('resize', this.fit); }
+  componentWillUnmount() { window.removeEventListener('resize', this.fit); }
+  renderVals() { const s = this.state.s; return { scale: s, boxW: Math.round(1420 * s), boxH: Math.round(821 * s) }; }
+}
+</script>
+</body>
+</html>

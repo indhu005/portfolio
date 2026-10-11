@@ -55,6 +55,7 @@ interface CaseStudy {
   sections: Section[]
   heroImage?: string
   heroVideo?: string
+  heroVideoPlain?: boolean
   figmaPrototypeUrl?: string
   externalLinks?: { label: string; url: string }[]
   preSnapshotHeadline?: string
@@ -393,6 +394,30 @@ export default function CaseStudyLayout({ caseStudy, slug }: CaseStudyLayoutProp
               {/* Hero Video/Image for first section (Snapshot) */}
               {index === 0 && (
                 caseStudy.heroVideo ? (
+                  caseStudy.heroVideoPlain ? (
+                    <div style={{
+                      width: '100%',
+                      maxWidth: isMobile || isTablet ? '850px' : '1020px',
+                      marginBottom: '50px',
+                      marginLeft: 'auto',
+                      marginRight: 'auto',
+                      padding: '24px',
+                      backgroundColor: '#FFFFFF',
+                      borderRadius: '16px',
+                    }}>
+                      <video
+                        autoPlay
+                        loop
+                        muted
+                        playsInline
+                        preload="metadata"
+                        aria-label={`${caseStudy.title} hero`}
+                        style={{ display: 'block', width: '100%', maxWidth: '900px', height: 'auto', margin: '0 auto', border: 'none', borderRadius: 0, boxShadow: 'none' }}
+                      >
+                        <source src={caseStudy.heroVideo} type="video/mp4" />
+                      </video>
+                    </div>
+                  ) : (
                   <div
                     className="cs-laptop-mockup"
                     style={{
@@ -426,6 +451,7 @@ export default function CaseStudyLayout({ caseStudy, slug }: CaseStudyLayoutProp
                     <div className="cs-laptop-hinge"></div>
                     <div className="cs-laptop-base"><div className="cs-laptop-notch"></div></div>
                   </div>
+                  )
                 ) : caseStudy.heroImage ? (
                   <img
                     src={caseStudy.heroImage}

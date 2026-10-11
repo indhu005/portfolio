@@ -395,11 +395,11 @@ export default function Home() {
                 marginBottom: isWideDesktop ? '32px' : '28px',
                 ...revealStyle(90),
               }}>
-                I decide who the system defers to.
+                I decide what AI gets to see and act on, and what stays a human call.
               </p>
 
               <p style={{ marginBottom: isWideDesktop ? '32px' : '28px', ...revealStyle(120) }}>
-                I'm a senior product designer with 8+ years across mediums — from digital design at Gensler to founding AI product roles at Keye and LAT. I design the trust layer between people and AI, from a YC-stage fintech to an enterprise platform that reached 96% adoption inside a politically sensitive institution.
+                I'm a senior product designer with 8 years of experience — from Gensler to founding Keye and senior product design on LAT. I design the trust layer between people and AI, from a 0→1 marketplace that later went YC, to an enterprise platform that reached 96% adoption inside a politically sensitive institution.
               </p>
 
               <p style={{ fontSize: isMobile ? '15px' : '16px', color: '#78716C', marginBottom: isWideDesktop ? '32px' : '28px', ...revealStyle(140) }}>
@@ -645,9 +645,13 @@ export default function Home() {
                 >
                   <div style={{
                     width: '100%',
-                    height: isMobile ? '320px' : isWideDesktop ? '760px' : '620px',
-                    backgroundColor: '#293133',
+                    maxWidth: '880px',
+                    margin: '0 auto',
+                    backgroundColor: '#000000',
                     borderRadius: '0px',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
                     transition: 'transform 0.3s ease, box-shadow 0.3s ease',
                   }}
                   onMouseEnter={(e) => {
@@ -658,7 +662,19 @@ export default function Home() {
                     e.currentTarget.style.transform = 'translateY(0)'
                     e.currentTarget.style.boxShadow = 'none'
                   }}
-                  />
+                  >
+                    <video
+                      autoPlay
+                      loop
+                      muted
+                      playsInline
+                      preload="metadata"
+                      aria-label="LAT CapEx proposal workflow"
+                      style={{ display: 'block', width: '100%', height: 'auto', border: 'none', borderRadius: 0, boxShadow: 'none' }}
+                    >
+                      <source src="/videos/lat/LAT%20Landing%20-%20Laptop.mp4" type="video/mp4" />
+                    </video>
+                  </div>
                 </a>
 
                 {/* CTA — mobile only; desktop CTA lives in the title row */}

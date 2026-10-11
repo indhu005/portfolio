@@ -1,9 +1,8 @@
 import CaseStudyLayout from '@/components/CaseStudyLayout'
 import MisinfoFeaturesContent from '@/components/MisinfoFeaturesContent'
 import LatAlertToggle from '@/components/LatAlertToggle'
-import LatWorkOrderPrototype from '@/components/LatWorkOrderPrototype'
-import LatPriorityQueuePrototype from '@/components/LatPriorityQueuePrototype'
 import LatTradeoffTable from '@/components/LatTradeoffTable'
+import LatDashboardVersions from '@/components/LatDashboardVersions'
 import { Metadata } from 'next'
 
 const caseStudies = {
@@ -566,6 +565,8 @@ const caseStudies = {
     title: 'LAT',
     subtitle: 'Lifecycle Assessment Tracker',
     description: 'Designing an AI-assisted maintenance system people could trust with $180K decisions',
+    heroVideo: '/videos/lat/LAT%20AI%20Overrides%20-%20Laptop.mp4',
+    heroVideoPlain: true,
     brief: {
       context: 'Lead designer for an ML platform helping a university manage 60–80+ buildings across three campuses, delivered through a consulting engagement at Amento.',
       constraint: 'Legacy CMMS/ERP couldn\'t be disrupted, data had hard integrity boundaries, and capital decisions were political.',
@@ -605,14 +606,25 @@ const caseStudies = {
       {
         id: 'snapshot',
         title: '01 — Snapshot',
-        content: `<div style="background-color: #F9FAFB; padding: 24px 28px; border-radius: 0px; border-left: 3px solid #FF7C5F;">
+        content: `<div style="background-color: #FFF7F5; padding: 28px 32px; border-radius: 12px; border: 1.5px solid #FFD9CC;">
+  <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 8px;">
+    <span style="display: inline-flex; align-items: center; gap: 6px; font-size: 11px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #FFFFFF; background-color: #FF7C5F; padding: 4px 10px; border-radius: 999px;"><span style="width: 6px; height: 6px; border-radius: 50%; background-color: #FFFFFF; display: inline-block;"></span>Live</span>
+    <span style="font-size: 20px; font-weight: 700; color: #1C1917;">Click through the real prototype</span>
+  </div>
+  <div style="font-size: 14px; color: #78716C; margin-bottom: 20px; max-width: 560px;">A flagged decision, three tasks, the CapEx proposal, and Messages — all wired together, built from the real LAT design system.</div>
+  <div style="width: 97%; margin: 0 auto; aspect-ratio: 1420 / 821;">
+    <iframe src="/lat-prototype/laptop.html" title="LAT Today — live prototype" loading="lazy" style="display: block; width: 100%; height: 100%; border: 0;"></iframe>
+  </div>
+</div>
+
+<div style="background-color: #F9FAFB; padding: 24px 28px; border-radius: 0px; border-left: 3px solid #FF7C5F; margin-top: 32px;">
   <div style="font-size: 11px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #A8A29E; margin-bottom: 10px;">My contribution</div>
   <div style="font-size: 15px; color: #57534E; line-height: 1.7;">Reframed the product from a shared facilities dashboard into role-specific decision surfaces, set the approval model that let managers act on AI recommendations without blind faith, and carried the offline-first field workflow from research through pilot.</div>
 </div>
 
 <h4 class="case-study-subhead" id="impact">Impact</h4>
 
-<p style="font-size: 14px; color: #6B7280; margin-bottom: 24px;">Pilot cohort: 43 people (18 technicians, 15 operations/asset managers, 7 accounting, 3 executives), tracked over 12 weeks — the test group for a tool that rolled out to 4,000+ campus-wide.</p>
+<p style="font-size: 14px; color: #6B7280; margin-bottom: 24px;">Pilot cohort: 43 people (18 technicians, 15 operations/asset managers, 7 accounting, 3 executives), tracked over 12 weeks — the test group for a tool that rolled out to ~4,000 technicians and facilities-adjacent staff with system access across every building and campus.</p>
 
 <div class="metrics-grid metrics-grid--dark" style="margin-bottom: 20px;">
   <div class="metrics-cell metrics-cell--hero">
@@ -761,12 +773,6 @@ const caseStudies = {
 
               <p style={{ fontSize: '15px', color: '#44403C', marginTop: '32px', maxWidth: '640px' }}><span style={{ fontWeight: 600 }}>A failed sync shouldn't feel like lost work.</span> We kept the update safely on-device and made recovery one tap.</p>
 
-              <div style={{ marginTop: '32px' }}>
-                <div style={{ fontSize: '11px', fontWeight: 700, letterSpacing: '0.06em', textTransform: 'uppercase', color: '#A8A29E', marginBottom: '6px' }}>Built from the LAT design system</div>
-                <div style={{ fontSize: '13px', color: '#78716C', marginBottom: '16px', maxWidth: '500px' }}>A live version of the work order form, using the real component tokens — type an asset name, dictate notes, add a photo, flag approval.</div>
-                <LatWorkOrderPrototype />
-              </div>
-
               <p style={{ fontSize: '15px', color: '#78716C', marginTop: '40px' }}><span style={{ fontWeight: 600, color: '#44403C' }}>Result.</span> This is the field layer behind the 50%→92% data-accuracy jump (see Impact). Median approval time: 7-9 minutes with everything needed, 2.2-2.8 hours when still waiting on data.</p>
             </div>
 
@@ -774,18 +780,63 @@ const caseStudies = {
               <div style={{ fontSize: '13px', fontWeight: 700, color: '#FF7C5F', letterSpacing: '0.06em', textTransform: 'uppercase', marginBottom: '8px' }}>Decision 02</div>
               <div style={{ fontSize: '20px', fontWeight: 600, color: '#1C1917', marginBottom: '16px' }}>Replace the "Everything Dashboard"</div>
               <p><span style={{ fontWeight: 600 }}>Problem.</span> 8 of 10 managers were overwhelmed by the dashboard's graphs, map, and calendar — and queued items instead of acting.</p>
-              <p style={{ marginTop: '12px' }}><span style={{ fontWeight: 600 }}>Considered.</span> Four dashboard variants, all still overwhelming. Only the tested-well version shipped, given cost and retraining constraints.</p>
-              <p style={{ marginTop: '12px' }}><span style={{ fontWeight: 600 }}>Design.</span> A ranked priority queue replaced it; filters now show which options are feasible.</p>
+              <p style={{ marginTop: '12px' }}><span style={{ fontWeight: 600 }}>Considered.</span> Five versions, from a 26-panel dashboard down to one decision and three tasks — each one removed or added something, and the overwhelm only eased once we stopped trimming panels and started ranking what the manager should do.</p>
+
+              <div style={{ padding: '24px', backgroundColor: '#FFFFFF', borderRadius: '16px', marginTop: '24px' }}>
+                <video
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  preload="metadata"
+                  aria-label="The shipped priority queue, replacing the Everything Dashboard"
+                  style={{ display: 'block', width: '100%', maxWidth: '900px', height: 'auto', margin: '0 auto', border: 'none', borderRadius: 0, boxShadow: 'none' }}
+                >
+                  <source src="/videos/lat/LAT%20Everything%20Dashboard%20-%20Laptop.mp4" type="video/mp4" />
+                </video>
+              </div>
+
+              <div style={{ marginTop: '28px', display: 'grid', gridTemplateColumns: 'repeat(5, 1fr)', gap: '1px', backgroundColor: '#E7E5E4', border: '1px solid #E7E5E4', borderRadius: '12px', overflow: 'hidden' }}>
+                {[
+                  { v: 'V1', label: 'Everything dashboard', sub: 'First launch', stat: '26', unit: 'panels + 12 KPI tiles' },
+                  { v: 'V2', label: 'Refined', sub: 'Half the graphs', stat: '14', unit: 'panels, 6 KPI tiles' },
+                  { v: 'V3', label: 'AI summary + list', sub: 'Still overwhelmed', stat: '16', unit: 'panels + 4 dropdowns' },
+                  { v: 'V4', label: 'Today, closer to final', sub: 'Ranked queue', stat: '1', unit: 'ranked list of 5' },
+                  { v: 'Final', label: 'Decision + 3 tasks', sub: 'Clickable prototype', stat: '1', unit: 'decision, 0 charts' },
+                ].map((s) => (
+                  <div key={s.v} style={{ backgroundColor: s.v === 'Final' ? '#FFF7F5' : '#FFFFFF', padding: '14px 12px' }}>
+                    <div style={{ fontSize: '10px', fontWeight: 700, letterSpacing: '0.06em', textTransform: 'uppercase', color: '#A8A29E' }}>{s.v}</div>
+                    <div style={{ fontSize: '12.5px', fontWeight: 700, color: '#1C1917', marginTop: '3px', lineHeight: 1.3 }}>{s.label}</div>
+                    <div style={{ fontSize: '11px', color: '#78716C', marginTop: '2px' }}>{s.sub}</div>
+                    <div style={{ fontSize: '22px', fontWeight: 700, color: '#1C1917', marginTop: '8px' }}>{s.stat}</div>
+                    <div style={{ fontSize: '10.5px', color: '#78716C', marginTop: '2px' }}>{s.unit}</div>
+                  </div>
+                ))}
+              </div>
+
+              <LatDashboardVersions />
+
+              <div style={{ marginTop: '28px', display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '16px' }}>
+                {[
+                  { n: 'Pattern 1', t: "Removing panels didn't fix it", d: '26 to 14 panels still left managers without a first action.' },
+                  { n: 'Pattern 2', t: 'Adding AI and controls added load', d: 'A summary and 4 dropdowns gave more to read and more to decide.' },
+                  { n: 'Pattern 3', t: 'Ranking and cost framing did', d: 'A single ranked decision with a dollar figure and date was the change that worked.' },
+                ].map((p) => (
+                  <div key={p.n} style={{ border: '1px solid #E7E5E4', borderRadius: '10px', padding: '16px' }}>
+                    <div style={{ fontSize: '10px', fontWeight: 700, letterSpacing: '0.06em', textTransform: 'uppercase', color: '#A8A29E', marginBottom: '6px' }}>{p.n}</div>
+                    <div style={{ fontSize: '13.5px', fontWeight: 700, color: '#1C1917', marginBottom: '6px', lineHeight: 1.3 }}>{p.t}</div>
+                    <div style={{ fontSize: '12.5px', color: '#78716C', lineHeight: 1.5 }}>{p.d}</div>
+                  </div>
+                ))}
+              </div>
+
+              <p style={{ fontSize: '11.5px', color: '#A8A29E', marginTop: '16px' }}>Panel counts are from the built files and include the KPI strip as one panel. All figures in the dashboards are illustrative sample data.</p>
+
+              <p style={{ marginTop: '24px' }}><span style={{ fontWeight: 600 }}>Design.</span> A ranked priority queue replaced it; filters now show which options are feasible.</p>
               <p style={{ marginTop: '12px' }}><span style={{ fontWeight: 600 }}>Cost.</span> Lost the liked-but-messy auto-arranged calendar; rolled out to 20 managers for two weeks before the full 64.</p>
               <p style={{ marginTop: '12px', color: '#78716C' }}><span style={{ fontWeight: 600, color: '#44403C' }}>Result.</span> Weekly closure rate roughly doubled (4/10 → 8–9/10 across 12 managers), decision time dropped 14→4 min, and IT saw just 1–2 help requests a month after full launch.</p>
 
-              <div style={{ marginTop: '24px', marginBottom: '32px' }}>
-                <div style={{ fontSize: '11px', fontWeight: 700, letterSpacing: '0.06em', textTransform: 'uppercase', color: '#A8A29E', marginBottom: '6px' }}>Built from the LAT design system</div>
-                <div style={{ fontSize: '13px', color: '#78716C', marginBottom: '16px', maxWidth: '500px' }}>Select a work order to see priority and detail swap together, then mark it reviewed.</div>
-                <LatPriorityQueuePrototype />
-              </div>
-
-              <div style={{ fontSize: '20px', fontWeight: 600, color: '#1C1917', marginBottom: '16px' }}>Design for AI failure, not the demo</div>
+              <div style={{ fontSize: '20px', fontWeight: 600, color: '#1C1917', marginBottom: '16px', marginTop: '40px' }}>Design for AI failure, not the demo</div>
 
               <div style={{ backgroundColor: '#FFF9F5', padding: '24px', borderRadius: '0px', borderLeft: '3px solid #FF7C5F', marginBottom: '32px' }}>
                 <div className="cs-card-title cs-card-title--sm">The Boiler Incident</div>
@@ -797,7 +848,19 @@ const caseStudies = {
                 </p>
               </div>
 
-              <div style={{ width: '100%', minHeight: '320px', backgroundColor: '#E5E7EB', borderRadius: '12px', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#9CA3AF', fontSize: '14px' }}>Image — the "Needs Verification" state on the Boiler Unit 3 incident</div>
+              <div style={{ padding: '24px', backgroundColor: '#FFFFFF', borderRadius: '16px' }}>
+                <video
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  preload="metadata"
+                  aria-label="The Needs Verification override flow on the Boiler Unit 3 incident"
+                  style={{ display: 'block', width: '100%', maxWidth: '900px', height: 'auto', margin: '0 auto', border: 'none', borderRadius: 0, boxShadow: 'none' }}
+                >
+                  <source src="/videos/lat/LAT%20AI%20Overrides%20-%20Laptop.mp4" type="video/mp4" />
+                </video>
+              </div>
             </div>
 
             <div style={{ backgroundColor: '#FFFFFF', border: '1px solid #F3E8E2', borderTop: '4px solid #FF7C5F', borderRadius: '0px', padding: '40px', boxShadow: '0 4px 24px rgba(0,0,0,0.04)', marginBottom: '48px' }}>
@@ -805,32 +868,21 @@ const caseStudies = {
               <div style={{ fontSize: '26px', fontWeight: 600, color: '#1C1917', marginBottom: '16px' }}>Turn predictions into consequences</div>
               <div className="pull-quote" style={{ marginBottom: '20px' }}>A probability isn't a decision. A consequence is.</div>
 
-              <p>First version showed <span style={{ fontStyle: 'italic' }}>"Boiler failure risk: 68%."</span> Managers didn't trust a number they couldn't trace — chasing it surfaced a data-quality problem serious enough for a data-scientist intern.</p>
-
-              <p style={{ marginTop: '12px' }}>We tested time-to-failure and plain-language severity before landing on dollars — managers think in the monthly CAPEX cycle, where a dollar figure maps straight onto "can I request this now."</p>
+              <p>First version showed <span style={{ fontStyle: 'italic' }}>"Boiler failure risk: 68%."</span> Managers didn't trust a number they couldn't trace. We landed on dollars instead — managers think in the monthly CAPEX cycle, where a figure maps straight onto "can I request this now."</p>
 
               <LatAlertToggle />
 
-              <p style={{ marginTop: '24px' }}><span style={{ fontWeight: 600 }}>Why.</span> Enough to decide what's at stake, not proof of confidence.</p>
-
-              <p style={{ marginTop: '12px' }}><span style={{ fontWeight: 600, color: '#44403C' }}>Result.</span> <span style={{ color: '#78716C' }}>Override rate 61%→19%; acceptance 42%→78%; resolution time 3 days→2 hours.</span></p>
-
-              <p style={{ fontSize: '14px', color: '#78716C', marginTop: '8px' }}>Resolution = closed with nothing left to chase: site details, photos, vendor needs all attached. Technicians dreaded the office trip to upload and email it — voice capture in the field closed that gap.</p>
+              <p style={{ marginTop: '24px' }}><span style={{ fontWeight: 600, color: '#44403C' }}>Result.</span> <span style={{ color: '#78716C' }}>Override rate 61%→19%; acceptance 42%→78%; resolution time 3 days→2 hours — voice capture in the field closed the gap technicians avoided by skipping the office trip.</span></p>
 
               <div style={{ backgroundColor: '#FFF9F5', padding: '24px', borderRadius: '0px', borderLeft: '3px solid #FF7C5F', marginTop: '32px' }}>
                 <div className="cs-card-title cs-card-title--sm">Model behavior</div>
                 <p style={{ fontSize: '15px', color: '#57534E', lineHeight: 1.7, margin: 0 }}>
-                  Each asset's risk score (maintenance history, age, inspections) routes into <span style={{ fontWeight: 600 }}>Critical / Monitor / Safe</span> — never a raw probability. Overrides feed back in, recalibrating against real outcomes.
+                  Risk routes into <span style={{ fontWeight: 600 }}>Critical / Monitor / Safe</span>, never a raw probability. Critical alerts always show their drivers and require a human call before touching budget.
                 </p>
                 <p style={{ fontSize: '15px', color: '#57534E', lineHeight: 1.7, marginTop: '12px', marginBottom: 0 }}>
-                  <span style={{ fontWeight: 600 }}>The real decision:</span> what the model could withhold. Critical alerts always show their risk drivers and require a human call before touching budget.
-                </p>
-                <p style={{ fontSize: '15px', color: '#57534E', lineHeight: 1.7, marginTop: '12px', marginBottom: 0 }}>
-                  <span style={{ fontWeight: 600 }}>Watching for rubber-stamping:</span> a falling override rate alone doesn't prove improvement — managers could just be deferring more. Logged overrides feed recalibration, and managers log reasoning even when they agree, so the trail shows real engagement.
+                  <span style={{ fontWeight: 600 }}>Watching for rubber-stamping:</span> managers log reasoning even when they agree, so a falling override rate reads as trust, not deferral.
                 </p>
               </div>
-
-              <div style={{ width: '100%', minHeight: '320px', backgroundColor: '#E5E7EB', borderRadius: '12px', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#9CA3AF', fontSize: '14px', marginTop: '32px' }}>Image — consequence-framed alert, Critical/Monitor/Safe badges</div>
             </div>
 
             <div style={{ display: 'flex', gap: '24px', marginBottom: '40px', flexWrap: 'wrap' }}>

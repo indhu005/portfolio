@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     default: 'Indhu V — Senior Product Designer, AI Products & 0→1 | Seattle',
     template: '%s | Indhu V'
   },
-  description: 'Senior product designer with 8+ years taking 0→1 AI and enterprise products to launch. Founding designer at Keye, a fintech that went through YC; lead designer on LAT, an enterprise AI platform for university operations. Based in Seattle.',
+  description: 'Senior product designer — 8 years across mediums, 5+ in product — taking 0→1 AI and enterprise products to launch. Founding designer at Keye, a 0→1 marketplace that later went YC; senior product design on LAT, an enterprise AI platform for university operations. Based in Seattle.',
   keywords: ['senior product designer', '0 to 1 product designer', 'founding designer', 'AI product designer', 'enterprise SaaS design', 'Seattle product designer', 'San Francisco product designer', 'AI/ML product design', 'design systems', 'enterprise UX', 'YC designer'],
   authors: [{ name: 'Indhu V', url: 'https://indhu.design' }],
   creator: 'Indhu V',
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     url: 'https://indhu.design',
     siteName: 'Indhu V — Senior Product Designer',
     title: 'Indhu V — Senior Product Designer, AI Products & 0→1',
-    description: 'Senior product designer with 8+ years taking 0→1 AI and enterprise products to launch. Founding designer at Keye, a fintech that went through YC; lead designer on LAT, an enterprise AI platform.',
+    description: 'Senior product designer — 8 years across mediums, 5+ in product — taking 0→1 AI and enterprise products to launch. Founding designer at Keye, a 0→1 marketplace that later went YC; senior product design on LAT, an enterprise AI platform.',
     images: [
       {
         url: '/og-image.png',
@@ -47,7 +47,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Indhu V — Senior Product Designer, AI Products & 0→1',
-    description: 'Senior product designer with 8+ years taking 0→1 AI and enterprise products to launch. Founding designer at Keye, a fintech that went through YC; lead designer on LAT, an enterprise AI platform.',
+    description: 'Senior product designer — 8 years across mediums, 5+ in product — taking 0→1 AI and enterprise products to launch. Founding designer at Keye, a 0→1 marketplace that later went YC; senior product design on LAT, an enterprise AI platform.',
     images: ['/og-image.png'],
     creator: '@indhu_design'
   },

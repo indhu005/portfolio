@@ -1386,7 +1386,7 @@ img, video {
   border-radius: 18px 18px 0 0;
   padding: 16px 16px 10px;
   position: relative;
-  box-shadow: 0 40px 90px rgba(0, 0, 0, 0.28);
+  box-shadow: none;
 }
 
 .cs-laptop-camera {
@@ -1464,12 +1464,12 @@ img, video {
 
 .cs-laptop-hinge {
   height: 12px;
-  background: linear-gradient(180deg, #3A3A3A 0%, #C9C9C9 100%);
+  background: #C9C9C9;
 }
 
 .cs-laptop-base {
   height: 14px;
-  background: linear-gradient(180deg, #D7D7D7 0%, #B5B5B5 100%);
+  background: #D7D7D7;
   border-radius: 0 0 10px 10px;
   position: relative;
 }

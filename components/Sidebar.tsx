@@ -123,7 +123,7 @@ export default function Sidebar({
           fontWeight: 400,
           color: '#6B7280',
           marginBottom: '4px',
-        }}>Product Designer</div>
+        }}>Senior Product Designer</div>
         <div style={{
           fontSize: isLargeDesktop ? '18px' : '15px',
           fontWeight: 400,
