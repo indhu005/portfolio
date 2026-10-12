@@ -1369,7 +1369,7 @@ export default function LandingGameSimple() {
                 See work
               </a>
               <a
-                href="https://www.linkedin.com/in/indhu05/"
+                href="/Indhu-Venkatachalam-Senior-Product-Designer.docx.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
                 style={{

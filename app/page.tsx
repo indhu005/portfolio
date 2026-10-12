@@ -403,7 +403,7 @@ export default function Home() {
               </p>
 
               <p style={{ fontSize: isMobile ? '15px' : '16px', color: '#78716C', marginBottom: isWideDesktop ? '32px' : '28px', ...revealStyle(140) }}>
-                Currently building an AI-forward marketplace, in stealth. Fluent working with AI agents and LLMs — I prototype, build, and ship with them daily.
+                Since 2025, I've been building an AI-forward marketplace in stealth — prototyping, building, and shipping daily with AI agents and LLMs.
               </p>
 
               {/* Proof Strip — fast, scannable backing for the claims above */}
@@ -418,7 +418,7 @@ export default function Home() {
               }}>
                 {[
                   { stat: '95%→96% adoption', context: 'LAT — 43-person pilot to ~4,000-person rollout, measured by weekly active use of the core workflow' },
-                  { stat: '0→20K MAUs · $1.5M raised', context: 'Keye — founding designer, team of 5; pivoted from subscription marketplace to financial analytics as YC F24' },
+                  { stat: '0→20K MAUs · $1.5M raised', context: 'Keye — founding designer, team of 5; later went YC F24' },
                   { stat: "96% said they'd use it", context: 'Misinfo Center — 36 Gen Z/millennial testers, field-tested at Misinfo Day' },
                 ].map((item) => (
                   <div key={item.stat}>
@@ -457,26 +457,59 @@ export default function Home() {
             <div style={{
               display: 'flex',
               alignItems: 'center',
-              gap: '12px',
+              justifyContent: 'space-between',
+              flexWrap: 'wrap',
+              gap: '16px',
               marginBottom: isMobile ? '32px' : isWideDesktop ? '64px' : '48px',
             }}>
-              <span style={{
-                width: '10px',
-                height: '10px',
-                borderRadius: '50%',
-                backgroundColor: 'var(--accent)',
-                flexShrink: 0,
-              }} />
-              <h2 style={{
-                fontFamily: 'var(--font-fraunces), serif',
-                fontSize: isMobile ? '22px' : isWideDesktop ? '39px' : '34px',
-                fontWeight: 700,
-                color: '#1C1917',
-                letterSpacing: '-0.01em',
-                margin: 0,
-              }}>
-                Selected Work
-              </h2>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+                <span style={{
+                  width: '10px',
+                  height: '10px',
+                  borderRadius: '50%',
+                  backgroundColor: 'var(--accent)',
+                  flexShrink: 0,
+                }} />
+                <h2 style={{
+                  fontFamily: 'var(--font-fraunces), serif',
+                  fontSize: isMobile ? '22px' : isWideDesktop ? '39px' : '34px',
+                  fontWeight: 700,
+                  color: '#1C1917',
+                  letterSpacing: '-0.01em',
+                  margin: 0,
+                }}>
+                  Selected Work
+                </h2>
+              </div>
+              <a
+                href="/Indhu-Venkatachalam-Senior-Product-Designer.docx.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  fontSize: '14px',
+                  fontWeight: 600,
+                  color: '#1C1917',
+                  backgroundColor: 'transparent',
+                  border: '1.5px solid #1C1917',
+                  textDecoration: 'none',
+                  borderRadius: '999px',
+                  padding: '9px 18px',
+                  transition: 'background-color 0.2s, color 0.2s',
+                  flexShrink: 0,
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.backgroundColor = '#1C1917'
+                  e.currentTarget.style.color = '#FFFFFF'
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.backgroundColor = 'transparent'
+                  e.currentTarget.style.color = '#1C1917'
+                }}
+              >
+                See resume
+              </a>
             </div>
 
             {/* Case Study Cards */}
@@ -858,7 +891,7 @@ export default function Home() {
                   cells={[
                     { label: 'Role & Team', value: 'Founding Designer · team of 5, plus 2 designers I hired before leaving' },
                     { label: 'Constraint', value: "Engineering was 12 time zones away; a co-founder's exit erased backend capacity for planned integrations." },
-                    { label: 'Impact', value: '0→20K MAUs · $1.5M raised · pivoted from subscription marketplace to financial analytics as YC F24' },
+                    { label: 'Impact', value: '0→20K MAUs · $1.5M raised · later went YC F24' },
                     { label: 'Tech & Approach', value: 'Design systems · Chrome extension · Credit-based economics' },
                   ]}
                 />

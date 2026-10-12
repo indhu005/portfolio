@@ -202,7 +202,7 @@ export default function Sidebar({
               {/* TOC */}
               {isExpanded && project.slug !== 'play' && (
                 <div style={{ marginLeft: '26px', marginBottom: '8px' }}>
-                  {(sections || toc).filter((item) => item.id !== 'strategy').map((item) => {
+                  {(sections || toc).filter((item) => item.id !== 'strategy' && item.id !== 'started').map((item) => {
                     const isActiveSection = activeSection === item.id
                     const displayTitle = sections ? getShortTitle(item.title) : item.title
 
@@ -269,7 +269,7 @@ export default function Sidebar({
         </Link>
         {[
           { label: 'Email', href: 'mailto:indhuve05@gmail.com' },
-          { label: 'Resume', href: null },
+          { label: 'Resume', href: '/Indhu-Venkatachalam-Senior-Product-Designer.docx.pdf' },
           { label: 'LinkedIn', href: 'https://www.linkedin.com/in/indhu05/' }
         ].map((item) => (
           item.href ? (

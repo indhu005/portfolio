@@ -26,7 +26,7 @@ const caseStudies = {
       role: 'Founding Product Designer',
       team: '5 (2 engineers, 1 PM, me as product designer), plus 2 designers I hired and trained near the end — a brand designer for email, and my product-design successor (left after 2 months when the founders paused product to focus on fundraising)',
       timeline: '2 years (2021–2022)',
-      impact: '0→20K MAUs | $1.5M raised | pivoted from subscription marketplace to financial analytics as YC F24',
+      impact: '0→20K MAUs | $1.5M raised | later went YC F24',
       skills: 'Product strategy · Design systems · User research · PRDs · Chrome extension · Credit economics',
       tools: 'Figma · FigJam · Adobe After Effects · FullStory · Mixpanel · Jira · CSS · React',
       decisionAuthority: 'Owned: every shipped surface, the credit-cap mechanic, the product-card system, hiring the two designers who followed me. Founders owned vision and fundraising — I translated it into what shipped.'
@@ -71,7 +71,7 @@ const caseStudies = {
 <h4 class="case-study-subhead">Impact</h4>
 
 <div class="metrics-grid metrics-grid--dark" style="margin-bottom: 48px;">
-  <div class="metrics-cell metrics-cell--hero">
+  <div class="metrics-cell">
     <div class="metrics-num">0 → 20K+</div>
     <div class="metrics-label">Monthly active users in under 12 months</div>
     <div style="font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 10px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #4ADE80; margin-top: 10px;">Observed</div>
@@ -79,6 +79,11 @@ const caseStudies = {
   <div class="metrics-cell">
     <div class="metrics-num">150+ / 35+</div>
     <div class="metrics-label">Products · direct partnerships incl. Adobe, Grammarly, Otter.ai</div>
+    <div style="font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 10px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #4ADE80; margin-top: 10px;">Observed</div>
+  </div>
+  <div class="metrics-cell">
+    <div class="metrics-num">+32%</div>
+    <div class="metrics-label">Trial-to-paid conversion post-monetization</div>
     <div style="font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 10px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #4ADE80; margin-top: 10px;">Observed</div>
   </div>
   <div class="metrics-funding">
@@ -268,8 +273,7 @@ const caseStudies = {
   </div>
 
   <div class="feature-eyebrow" style="margin-top: 48px;">What the credit system delivered</div>
-  <div class="pc-metrics-strip" style="margin-top: 24px; grid-template-columns: repeat(3, 1fr);">
-    <div class="pc-metrics-cell"><div class="feature-stat-num" style="font-size: 30px;">5</div><div class="feature-stat-label">pricing models shipped in ten months</div></div>
+  <div class="pc-metrics-strip" style="margin-top: 24px; grid-template-columns: repeat(2, 1fr);">
     <div class="pc-metrics-cell"><div class="feature-stat-num" style="font-size: 30px;">87%</div><div class="feature-stat-label">of ~6,000 surveyed respondents avoided a purchase to skip entering payment info</div></div>
     <div class="pc-metrics-cell"><div class="feature-stat-num" style="font-size: 30px;">+32%</div><div class="feature-stat-label">trial-to-paid conversion post-monetization</div></div>
   </div>
@@ -455,10 +459,9 @@ const caseStudies = {
   </div>
 
   <div class="feature-eyebrow" style="margin-top: 48px;">What the extension delivered</div>
-  <div class="pc-metrics-strip" style="margin-top: 24px; grid-template-columns: repeat(3, 1fr);">
-    <div class="pc-metrics-cell"><div class="feature-stat-num" style="font-size: 30px;">2 days</div><div class="feature-stat-label">from pitch to prototype</div></div>
+  <div class="pc-metrics-strip" style="margin-top: 24px; grid-template-columns: repeat(2, 1fr);">
     <div class="pc-metrics-cell"><div class="feature-stat-num" style="font-size: 30px;">22%</div><div class="feature-stat-label">install rate in the first 2 weeks</div></div>
-    <div class="pc-metrics-cell"><div class="feature-stat-num" style="font-size: 30px;">60% → 65%</div><div class="feature-stat-label">extension adoption among active users, 3 months post-launch to by the time I left</div></div>
+    <div class="pc-metrics-cell"><div class="feature-stat-num" style="font-size: 30px;">60% → 65%</div><div class="feature-stat-label">extension adoption among active users, 3 months post-launch</div></div>
   </div>
 </div>`
       },
@@ -469,55 +472,6 @@ const caseStudies = {
         content: `<p>My first task was the purchase flow: founders had baked in mandatory consent and a checkout survey dropping completion 30%. I moved consent to signup and the survey to a post-access popup, cutting drop-off 20% in one sprint.</p>
 
 <p style="margin-top: 28px; font-size: 14px; color: #6B7280;">Research base: early beta UPenn users, standout survey/support responses followed up via interviews, incentivized with Amazon gift cards.</p>
-
-<div class="cs-stage" style="margin-top: 40px;">
-  <div class="cs-stage-header"><span>V1</span></div>
-  <div style="display: flex; gap: 32px; align-items: center; flex-wrap: wrap;">
-    <img loading="lazy" decoding="async" src="/images/keye/section-03-v1.webp" alt="Survey V1 — embedded directly in the purchase flow" style="width: 673px; flex: 0 0 673px; margin: 0; border-radius: 10px; box-shadow: 0 10px 24px rgba(28, 25, 23, 0.1); border: 1px solid #D6D3D1; padding: 20px; background-color: #FFFFFF; cursor: zoom-in;" onclick="document.getElementById('cs-lightbox-img').src=this.src;document.getElementById('cs-lightbox-img').alt=this.alt;document.getElementById('cs-lightbox').style.display='flex';" />
-    <div style="flex: 1; min-width: 240px;">
-      <p style="margin: 0;">Embedded directly in the purchase flow, shown before confirming access.</p>
-      <p class="cs-changelog-signal" style="margin-top: 8px;">Signal: users confused by the mandatory survey — drop-off hit 50%, spiking customer service requests.</p>
-    </div>
-  </div>
-</div>
-
-<div class="cs-stage">
-  <div class="cs-stage-header"><span>V2</span></div>
-  <div style="display: flex; gap: 32px; align-items: center; flex-wrap: wrap;">
-    <img loading="lazy" decoding="async" src="/images/keye/section-03-v2.webp" alt="Survey V2 — reframed as Step 3 of a numbered checkout flow" style="width: 673px; flex: 0 0 673px; margin: 0; border-radius: 10px; box-shadow: 0 10px 24px rgba(28, 25, 23, 0.1); border: 1px solid #D6D3D1; padding: 20px; background-color: #FFFFFF; cursor: zoom-in;" onclick="document.getElementById('cs-lightbox-img').src=this.src;document.getElementById('cs-lightbox-img').alt=this.alt;document.getElementById('cs-lightbox').style.display='flex';" />
-    <div style="flex: 1; min-width: 240px;">
-      <p style="margin: 0;">Reframed as Step 3 of a numbered checkout sequence.</p>
-      <p class="cs-changelog-signal" style="margin-top: 8px;">Signal: moved the needle only 2–3% — still a barrier to funnel growth.</p>
-    </div>
-  </div>
-</div>
-
-<div class="cs-stage">
-  <div class="cs-stage-header"><span>V3</span></div>
-  <div style="display: flex; gap: 32px; align-items: center; flex-wrap: wrap;">
-    <img loading="lazy" decoding="async" src="/images/keye/section-03-v3.webp" alt="Survey V3 — rebuilt as its own page, shown right after product use" style="width: 673px; flex: 0 0 673px; margin: 0; border-radius: 10px; box-shadow: 0 10px 24px rgba(28, 25, 23, 0.1); border: 1px solid #D6D3D1; padding: 20px; background-color: #FFFFFF; cursor: zoom-in;" onclick="document.getElementById('cs-lightbox-img').src=this.src;document.getElementById('cs-lightbox-img').alt=this.alt;document.getElementById('cs-lightbox').style.display='flex';" />
-    <div style="flex: 1; min-width: 240px;">
-      <p style="margin: 0;">Rebuilt as its own page, shown right after the product was used.</p>
-      <p class="cs-changelog-signal" style="margin-top: 8px;">Signal: consent moved to signup instead of repeating at purchase — drop-off fell sharply.</p>
-    </div>
-  </div>
-</div>
-
-<div class="cs-stage" style="margin-bottom: 24px;">
-  <div class="cs-stage-header"><span>V4</span></div>
-  <div style="display: flex; gap: 32px; align-items: center; flex-wrap: wrap;">
-    <img loading="lazy" decoding="async" src="/images/keye/section-03-v4.webp" alt="Survey V4 — folded back into the app as an in-context modal, the version that shipped" style="width: 673px; flex: 0 0 673px; margin: 0; border-radius: 10px; box-shadow: 0 10px 24px rgba(28, 25, 23, 0.1); border: 1px solid #D6D3D1; padding: 20px; background-color: #FFFFFF; cursor: zoom-in;" onclick="document.getElementById('cs-lightbox-img').src=this.src;document.getElementById('cs-lightbox-img').alt=this.alt;document.getElementById('cs-lightbox').style.display='flex';" />
-    <div style="flex: 1; min-width: 240px;">
-      <p style="margin: 0;">Folded back into the app as an in-context modal — the version that shipped.</p>
-      <p class="cs-changelog-signal" style="margin-top: 8px;">Signal: the final version.</p>
-    </div>
-  </div>
-</div>
-
-<div id="cs-lightbox" class="cs-lightbox" onclick="this.style.display='none';">
-  <button type="button" class="cs-lightbox-close" aria-label="Close" onclick="event.stopPropagation();document.getElementById('cs-lightbox').style.display='none';">✕</button>
-  <img id="cs-lightbox-img" src="" alt="" onclick="event.stopPropagation();" />
-</div>
 
 <div class="pull-quote" style="margin-top: 28px;">On a seed-stage startup budget, I worked by signal saturation: once the same friction appeared across five or six users, it was real enough to act on.</div>`
       },
@@ -549,8 +503,7 @@ const caseStudies = {
 
 <div style="background-color: #1C1917; padding: 28px 32px; border-radius: 0px; margin-top: 40px; margin-bottom: 8px;">
   <div style="font-size: 11px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #A8A29E; margin-bottom: 10px;">The pivot</div>
-  <div style="font-family: 'Fraunces', serif; font-size: 22px; font-weight: 600; color: #FFFFFF; line-height: 1.4; margin-bottom: 12px;">Years after I left, the rest of the founding team dispersed and the subscription marketplace I designed didn't survive — but what it generated likely helped get the company into YC.</div>
-  <div style="font-size: 15px; color: #D6D3D1; line-height: 1.7;">Keye dropped the marketplace model and rebuilt around financial analytics. The research, partnerships, and funding it generated carried over and likely contributed to the YC F24 acceptance.</div>
+  <div style="font-family: 'Fraunces', serif; font-size: 22px; font-weight: 600; color: #FFFFFF; line-height: 1.4;">Years after I left, the rest of the founding team dispersed and the subscription marketplace I designed didn't survive — but what it generated likely helped get the company into YC F24.</div>
 </div>
 
 <div class="pull-quote" style="margin-top: 48px;">The credit cap's value wasn't monetization — it was the behavioral data that shaped the entire partnership strategy.</div>
@@ -627,7 +580,7 @@ const caseStudies = {
 <p style="font-size: 14px; color: #6B7280; margin-bottom: 24px;">Pilot cohort: 43 people (18 technicians, 15 operations/asset managers, 7 accounting, 3 executives), tracked over 12 weeks — the test group for a tool that rolled out to ~4,000 technicians and facilities-adjacent staff with system access across every building and campus.</p>
 
 <div class="metrics-grid metrics-grid--dark" style="margin-bottom: 20px;">
-  <div class="metrics-cell metrics-cell--hero">
+  <div class="metrics-cell">
     <div class="metrics-num">96%</div>
     <div class="metrics-label">Weekly active use across the full ~4,000-person rollout by week 12 — up from 95% in the 43-person pilot that preceded it, clearing the university IT department's 70% threshold for keeping a tool live</div>
     <div style="font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 10px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #4ADE80; margin-top: 10px;">Observed</div>
@@ -636,6 +589,11 @@ const caseStudies = {
     <div class="metrics-num">50% → 92%</div>
     <div class="metrics-label">Data accuracy, pilot through full rollout — historical records had years of duplicate and inconsistent entries; a cleanup pass plus a flow that caught redundancies at the source closed most of the gap as adoption grew</div>
     <div style="font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 10px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #4ADE80; margin-top: 10px;">Observed</div>
+  </div>
+  <div class="metrics-cell">
+    <div class="metrics-num">25%</div>
+    <div class="metrics-label">Fewer unexpected maintenance costs, month-4 trend projected forward a year</div>
+    <div style="font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 10px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #B45309; margin-top: 10px;">Projected</div>
   </div>
 </div>
 
@@ -815,22 +773,6 @@ const caseStudies = {
               </div>
 
               <LatDashboardVersions />
-
-              <div style={{ marginTop: '28px', display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '16px' }}>
-                {[
-                  { n: 'Pattern 1', t: "Removing panels didn't fix it", d: '26 to 14 panels still left managers without a first action.' },
-                  { n: 'Pattern 2', t: 'Adding AI and controls added load', d: 'A summary and 4 dropdowns gave more to read and more to decide.' },
-                  { n: 'Pattern 3', t: 'Ranking and cost framing did', d: 'A single ranked decision with a dollar figure and date was the change that worked.' },
-                ].map((p) => (
-                  <div key={p.n} style={{ border: '1px solid #E7E5E4', borderRadius: '10px', padding: '16px' }}>
-                    <div style={{ fontSize: '10px', fontWeight: 700, letterSpacing: '0.06em', textTransform: 'uppercase', color: '#A8A29E', marginBottom: '6px' }}>{p.n}</div>
-                    <div style={{ fontSize: '13.5px', fontWeight: 700, color: '#1C1917', marginBottom: '6px', lineHeight: 1.3 }}>{p.t}</div>
-                    <div style={{ fontSize: '12.5px', color: '#78716C', lineHeight: 1.5 }}>{p.d}</div>
-                  </div>
-                ))}
-              </div>
-
-              <p style={{ fontSize: '11.5px', color: '#A8A29E', marginTop: '16px' }}>Panel counts are from the built files and include the KPI strip as one panel. All figures in the dashboards are illustrative sample data.</p>
 
               <p style={{ marginTop: '24px' }}><span style={{ fontWeight: 600 }}>Design.</span> A ranked priority queue replaced it; filters now show which options are feasible.</p>
               <p style={{ marginTop: '12px' }}><span style={{ fontWeight: 600 }}>Cost.</span> Lost the liked-but-messy auto-arranged calendar; rolled out to 20 managers for two weeks before the full 64.</p>
@@ -1280,6 +1222,10 @@ const caseStudies = {
     <div style="font-size: 26px; font-weight: 700; color: #1C1917;">~8,000</div>
     <div style="font-size: 13px; color: #6B7280; margin-top: 4px;">used the live product over 3 months, beyond the test group — the fast-verification pattern held at scale</div>
   </div>
+  <div>
+    <div style="font-size: 26px; font-weight: 700; color: #1C1917;">~1,800</div>
+    <div style="font-size: 13px; color: #6B7280; margin-top: 4px;">tested live at Misinfo Day, across a 2,000-respondent follow-up survey</div>
+  </div>
 </div>
 
 <p style="margin-top: 28px;">The final version was framed as a system utility — something that lives beside the compass and the calculator, not an app you remember to open.</p>`
@@ -1296,8 +1242,8 @@ const caseStudies = {
         id: 'reflection',
         title: '09 — Reflection',
         showPrototypeCta: true,
-        headline: 'A designer who thinks only about what users see is a UI designer. A designer who thinks about everything required to make that experience real and sustainable is a product leader',
-        content: `<p><span style="font-weight: 600;">What this project taught me.</span> Design alone can't make a public good sustainable — TrueMedia was research-grounded and mission-complete, yet closed on economics rather than design. The answer, integration into trusted surfaces, never had a business model.</p>
+        headline: 'What I got wrong: I designed a good product for a problem design alone couldn\'t solve',
+        content: `<p>TrueMedia was research-grounded and mission-complete, yet closed on economics rather than design. The answer — integration into trusted surfaces — never had a business model.</p>
 
 <p style="margin-top: 28px;"><span style="font-weight: 600;">What changed.</span> Feedback pushed the quiz toward teaching why, and badges toward layered reveals — signal first, reasoning a tap away. By 2026, AI solves the staffing; the ecosystem question remains.</p>
 
@@ -1331,7 +1277,7 @@ export async function generateMetadata({
 
   const metadataMap: Record<string, { description: string; keywords: string[] }> = {
     keye: {
-      description: 'Founding Product Designer at Keye — from three static screens to a subscription marketplace, which later pivoted to financial analytics as YC F24. Built credit-based marketplace, Chrome extension, and design system. 0→20K MAUs, $1.5M raised.',
+      description: 'Founding Product Designer at Keye — from three static screens to a subscription marketplace that later went YC F24. Built credit-based marketplace, Chrome extension, and design system. 0→20K MAUs, $1.5M raised.',
       keywords: ['YC startup designer', 'founding designer', 'startup product design', 'credit marketplace', 'Chrome extension design', 'design systems', 'subscription marketplace', 'SaaS design']
     },
     lat: {

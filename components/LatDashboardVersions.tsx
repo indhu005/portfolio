@@ -25,17 +25,18 @@ export default function LatDashboardVersions() {
 
   return (
     <>
-      <div style={{ marginTop: '28px', display: 'flex', flexDirection: 'column', gap: '12px' }}>
+      <p style={{ fontSize: '12.5px', color: '#A8A29E', marginTop: '20px', marginBottom: 0 }}>Click a screen to view the full image.</p>
+      <div style={{ marginTop: '12px', display: 'flex', flexDirection: 'column', gap: '4px' }}>
         {stages.map((s) => (
-          <div key={s.v} className="cs-stage">
-            <div className="cs-stage-header"><span>{s.v}</span></div>
-            <div style={{ display: 'flex', gap: '32px', alignItems: 'center', flexWrap: 'wrap' }}>
+          <div key={s.v} className="cs-stage" style={{ marginBottom: 0 }}>
+            <div className="cs-stage-header" style={{ marginBottom: '6px' }}><span>{s.v}</span></div>
+            <div style={{ display: 'flex', gap: '20px', alignItems: 'center', flexWrap: 'wrap' }}>
               <img
                 loading="lazy"
                 decoding="async"
                 src={s.img}
                 alt={s.alt}
-                style={{ width: '460px', flex: '0 0 460px', margin: 0, borderRadius: '10px', boxShadow: '0 10px 24px rgba(28, 25, 23, 0.1)', border: '1px solid #D6D3D1', padding: '20px', backgroundColor: '#FFFFFF', cursor: 'zoom-in' }}
+                style={{ width: '160px', flex: '0 0 160px', margin: 0, borderRadius: '8px', boxShadow: '0 6px 16px rgba(28, 25, 23, 0.08)', border: '1px solid #D6D3D1', padding: '10px', backgroundColor: '#FFFFFF', cursor: 'zoom-in' }}
                 onClick={() => openLightbox(s.img, s.alt)}
               />
               <div style={{ flex: 1, minWidth: '240px' }}>
