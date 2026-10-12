@@ -1235,6 +1235,65 @@ export default function Home() {
                   </div>
                 )}
               </article>
+
+              {/* Card 4 - Coming Soon (AI-native stealth work) */}
+              <article style={{
+                display: 'flex',
+                flexDirection: 'column',
+                border: '1.5px dashed #D6D3D1',
+                borderRadius: '10px',
+                padding: isMobile ? '24px' : isWideDesktop ? '48px' : '40px',
+                backgroundColor: 'transparent',
+              }}>
+                <div style={{
+                  display: 'flex',
+                  gap: isMobile ? '16px' : '32px',
+                  alignItems: 'flex-start',
+                }}>
+                  <div style={{
+                    fontSize: isWideDesktop ? '15px' : '13px',
+                    fontWeight: 700,
+                    color: '#A8A29E',
+                    letterSpacing: '0.08em',
+                    flexShrink: 0,
+                    paddingTop: '6px',
+                  }}>
+                    04
+                  </div>
+                  <div style={{ flex: 1, minWidth: 0 }}>
+                    <div style={{
+                      fontSize: '11px',
+                      fontWeight: 700,
+                      textTransform: 'uppercase',
+                      letterSpacing: '0.08em',
+                      color: '#A8A29E',
+                      marginBottom: '6px',
+                    }}>
+                      AI-Native · 0→1 · In Stealth
+                    </div>
+                    <h3 style={{
+                      fontFamily: 'var(--font-fraunces), serif',
+                      fontSize: isMobile ? '22px' : isWideDesktop ? '30px' : '26px',
+                      fontWeight: 700,
+                      color: '#78716C',
+                      letterSpacing: '-0.01em',
+                      margin: 0,
+                      marginBottom: isMobile ? '12px' : '16px',
+                    }}>
+                      Coming soon
+                    </h3>
+                    <p style={{
+                      fontSize: isMobile ? '15px' : '16px',
+                      lineHeight: '1.6',
+                      color: '#A8A29E',
+                      maxWidth: '640px',
+                      margin: 0,
+                    }}>
+                      Since 2025, I've been building an AI-forward marketplace in stealth — prototyping, building, and shipping daily with AI agents and LLMs. More here once it ships.
+                    </p>
+                  </div>
+                </div>
+              </article>
             </div>
           </section>
 
