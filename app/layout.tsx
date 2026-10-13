@@ -1,5 +1,7 @@
 import type { Metadata, Viewport } from 'next'
 import { DM_Sans, Fraunces } from 'next/font/google'
+import Script from 'next/script'
+import { cookies } from 'next/headers'
 import './globals.css'
 import ScrollRestoration from '@/components/ScrollRestoration'
 import { Analytics } from '@vercel/analytics/react'
@@ -69,11 +71,14 @@ export const viewport: Viewport = {
   initialScale: 1,
 }
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: {
   children: React.ReactNode
 }) {
+  const cookieStore = await cookies()
+  const excludeAnalytics = cookieStore.get('exclude-analytics')?.value === '1'
+
   return (
     <html lang="en" className={fraunces.variable}>
       <head>
@@ -89,8 +94,21 @@ export default function RootLayout({
         <PortfolioStructuredData />
         <ScrollRestoration />
         {children}
-        <Analytics />
-        <SpeedInsights />
+        {!excludeAnalytics && (
+          <>
+            <Analytics />
+            <SpeedInsights />
+            <Script id="clarity" strategy="afterInteractive">
+              {`
+                (function(c,l,a,r,i,t,y){
+                  c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+                  t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+                  y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+                })(window, document, "clarity", "script", "ywp6o83f8d");
+              `}
+            </Script>
+          </>
+        )}
       </body>
     </html>
   )
