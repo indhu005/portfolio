@@ -1879,8 +1879,7 @@ img, video {
 }
 
 /* Micro-interactions — small, tactile hover responses rather than big
-   attention-grabbing motion. Pills lift slightly; card videos get a gentle
-   zoom so the whole-card click target still feels responsive on hover. */
+   attention-grabbing motion. Pills lift slightly on hover. */
 .cs-pill-hover {
   transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.2s ease;
 }
@@ -1890,17 +1889,8 @@ img, video {
   box-shadow: 0 6px 16px rgba(28, 25, 23, 0.16);
 }
 
-.cs-card-media {
-  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-article:hover .cs-card-media {
-  transform: scale(1.015);
-}
-
 @media (prefers-reduced-motion: reduce) {
-  .cs-pill-hover,
-  .cs-card-media {
+  .cs-pill-hover {
     transition: none;
   }
 }

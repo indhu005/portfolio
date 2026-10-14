@@ -505,7 +505,7 @@ export default function Home() {
                   badge="Shipped"
                 />
 
-                <div className="cs-card-media" style={{
+                <div style={{
                   width: isMobile ? 'calc(100% + 48px)' : isTablet ? 'calc(100% + 80px)' : '84%',
                   marginTop: isMobile ? '24px' : '32px',
                   display: 'flex',
@@ -547,7 +547,7 @@ export default function Home() {
                 />
 
                 {/* Landing hero — same video + laptop treatment used as the hero in the Keye case study */}
-                <div className="cs-card-media" style={{
+                <div style={{
                   width: isMobile ? 'calc(100% + 48px)' : isTablet ? 'calc(100% + 80px)' : '84%',
                   marginTop: isMobile ? '24px' : '32px',
                 }}>
@@ -606,7 +606,7 @@ export default function Home() {
                 />
 
                 {/* Landing videos, side by side — cropped tight to the phone so they sit seamlessly on the black card */}
-                <div className="cs-card-media" style={{
+                <div style={{
                   display: 'flex',
                   flexDirection: 'row',
                   gap: isMobile ? '34px' : '56px',
@@ -626,12 +626,12 @@ export default function Home() {
                       display: 'block',
                       width: '100%',
                       maxWidth: isMobile ? '150px' : isTablet ? '220px' : '353px',
-                      aspectRatio: '456 / 910',
+                      aspectRatio: '464 / 912',
                       objectFit: 'cover',
                       borderRadius: '0px',
                     }}
                   >
-                    <source src="/videos/misinformationcenter/Literacyquiz.mp4" type="video/mp4" />
+                    <source src="/videos/misinformationcenter/Landing%20video%20quiz%20cropped3.mp4" type="video/mp4" />
                   </video>
                   <video
                     autoPlay
