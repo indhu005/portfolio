@@ -83,20 +83,36 @@ export default function Sidebar({
   return (
     <div
       style={{
-      flex: '0 0 320px',
-      width: '320px',
-      minWidth: '320px',
-      maxWidth: '320px',
+      flex: '0 0 400px',
+      width: '400px',
+      minWidth: '400px',
+      maxWidth: '400px',
       height: isCompact ? 'auto' : '100vh',
       minHeight: isCompact ? undefined : '100vh',
+      position: isCompact ? 'static' : 'sticky',
+      top: 0,
+      alignSelf: 'flex-start',
       borderRight: 'none',
       backgroundColor: '#FFFFFF',
-      padding: '40px 0px 40px 40px',
+      padding: '40px 20px 40px 20px',
       display: 'flex',
       flexDirection: 'column',
       justifyContent: isCompact ? 'flex-start' : 'center',
       overflowY: isCompact ? 'visible' : 'auto',
     }}>
+
+      {/* Long rounded rectangle — the nav content lives inside this box
+          instead of the whole sidebar column being colored. Left padding stays
+          40px so sidebar-key-top's -40px/+40px hover-highlight trick still
+          reaches this box's edge rather than the outer column's. */}
+      <div style={{
+        backgroundColor: '#F5F4F2',
+        border: '1px solid #1C1917',
+        borderRadius: '28px',
+        padding: '40px 40px 20px 40px',
+        marginLeft: '40px',
+        boxShadow: '0 4px 14px rgba(28, 25, 23, 0.08)',
+      }}>
 
       {/* NAME */}
       <Link
@@ -121,13 +137,13 @@ export default function Sidebar({
         <div style={{
           fontSize: isLargeDesktop ? '18px' : '15px',
           fontWeight: 400,
-          color: '#6B7280',
+          color: '#1C1917',
           marginBottom: '4px',
         }}>Senior Product Designer</div>
         <div style={{
           fontSize: isLargeDesktop ? '18px' : '15px',
           fontWeight: 400,
-          color: '#6B7280',
+          color: '#1C1917',
         }}>based in Seattle</div>
       </div>
 
@@ -160,7 +176,7 @@ export default function Sidebar({
                 style={{
                   fontSize: navFontSize,
                   fontWeight: 700,
-                  color: isActiveProject ? '#1C1917' : '#374151',
+                  color: '#1C1917',
                   cursor: 'pointer',
                   paddingTop: navPaddingY,
                   paddingBottom: navPaddingY,
@@ -171,11 +187,11 @@ export default function Sidebar({
                   textDecoration: 'none',
                 }}
                 onMouseEnter={(e) => { if (!isActiveProject) e.currentTarget.style.color = ACTIVE_COLOR }}
-                onMouseLeave={(e) => { if (!isActiveProject) e.currentTarget.style.color = '#374151' }}
+                onMouseLeave={(e) => { if (!isActiveProject) e.currentTarget.style.color = '#1C1917' }}
               >
                 <span style={{
                   fontSize: isCompact ? '13px' : '11px',
-                  color: isActiveProject ? ACTIVE_COLOR : '#9CA3AF',
+                  color: isActiveProject ? ACTIVE_COLOR : '#1C1917',
                   flexShrink: 0,
                   width: '16px',
                   fontVariantNumeric: 'tabular-nums',
@@ -217,11 +233,11 @@ export default function Sidebar({
                             }
                           }}
                           onMouseEnter={(e) => { if (!isActiveSection) e.currentTarget.style.color = ACTIVE_COLOR }}
-                          onMouseLeave={(e) => { if (!isActiveSection) e.currentTarget.style.color = '#9CA3AF' }}
+                          onMouseLeave={(e) => { if (!isActiveSection) e.currentTarget.style.color = '#1C1917' }}
                           className="sidebar-key sidebar-key-nested"
                           style={{
                             fontSize: isCompact ? '15px' : isLargeDesktop ? '16px' : '13px',
-                            color: isActiveSection ? '#1C1917' : '#9CA3AF',
+                            color: '#1C1917',
                             fontWeight: 400,
                             display: 'inline-block',
                             cursor: onSectionClick ? 'pointer' : 'default',
@@ -279,12 +295,12 @@ export default function Sidebar({
               target={item.href.startsWith('mailto:') ? undefined : '_blank'}
               rel={item.href.startsWith('mailto:') ? undefined : 'noopener noreferrer'}
               onMouseEnter={(e) => e.currentTarget.style.color = 'var(--accent)'}
-              onMouseLeave={(e) => e.currentTarget.style.color = '#6B7280'}
+              onMouseLeave={(e) => e.currentTarget.style.color = '#1C1917'}
               className="sidebar-key sidebar-key-top"
               style={{
                 fontSize: navFontSize,
                 fontWeight: 400,
-                color: '#6B7280',
+                color: '#1C1917',
                 paddingTop: navPaddingY,
                 paddingBottom: navPaddingY,
                 cursor: 'pointer',
@@ -298,12 +314,12 @@ export default function Sidebar({
             <div
               key={item.label}
               onMouseEnter={(e) => e.currentTarget.style.color = 'var(--accent)'}
-              onMouseLeave={(e) => e.currentTarget.style.color = '#6B7280'}
+              onMouseLeave={(e) => e.currentTarget.style.color = '#1C1917'}
               className="sidebar-key sidebar-key-top"
               style={{
                 fontSize: navFontSize,
                 fontWeight: 400,
-                color: '#6B7280',
+                color: '#1C1917',
                 paddingTop: navPaddingY,
                 paddingBottom: navPaddingY,
                 cursor: 'pointer',
@@ -316,6 +332,7 @@ export default function Sidebar({
         ))}
       </div>
 
+      </div>
     </div>
   )
 }

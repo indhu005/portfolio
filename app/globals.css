@@ -35,7 +35,7 @@
 }
 
 .sidebar-key:active {
-  background-color: rgba(28, 25, 23, 0.12);
+  background-color: rgba(28, 25, 23, 0.1);
   transform: scaleY(0.92);
 }
 
