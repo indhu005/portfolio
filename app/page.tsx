@@ -505,24 +505,39 @@ export default function Home() {
                   badge="Shipped"
                 />
 
+                {/* Landing hero — same laptop mockup treatment as Keye, minus the
+                    browser-chrome strip (LAT's own app already has its own header) */}
                 <div style={{
                   width: isMobile ? 'calc(100% + 48px)' : isTablet ? 'calc(100% + 80px)' : '84%',
                   marginTop: isMobile ? '24px' : '32px',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
                 }}>
-                  <video
-                    autoPlay
-                    loop
-                    muted
-                    playsInline
-                    preload="metadata"
-                    aria-label="LAT CapEx proposal workflow"
-                    style={{ display: 'block', width: '100%', aspectRatio: '1536 / 1024', objectFit: 'cover', border: 'none', borderRadius: 0, boxShadow: 'none' }}
+                  <div
+                    className="cs-laptop-mockup"
+                    style={{
+                      width: '100%',
+                      maxWidth: 'none',
+                      margin: '0 auto',
+                    }}
                   >
-                    <source src="/videos/lat/LAT%20Landing%20-%20Laptop%20cropped.mp4" type="video/mp4" />
-                  </video>
+                    <div className="cs-laptop-lid">
+                      <div className="cs-laptop-camera"></div>
+                      <div className="cs-laptop-screen">
+                        <video
+                          autoPlay
+                          loop
+                          muted
+                          playsInline
+                          preload="metadata"
+                          aria-label="LAT CapEx proposal workflow"
+                          style={{ display: 'block', width: '100%', height: 'auto' }}
+                        >
+                          <source src="/videos/lat/LAT%20Landing%20inner%20screen.mp4" type="video/mp4" />
+                        </video>
+                      </div>
+                    </div>
+                    <div className="cs-laptop-hinge"></div>
+                    <div className="cs-laptop-base"><div className="cs-laptop-notch"></div></div>
+                  </div>
                 </div>
               </article>
 
