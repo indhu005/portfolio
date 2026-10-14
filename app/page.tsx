@@ -22,67 +22,73 @@ const useMediaQuery = (query: string) => {
   return mounted ? matches : false
 }
 
-const ArrowIcon = () => (
-  <svg width="16" height="10" viewBox="0 0 16 10" fill="none" style={{ transition: 'transform 0.2s ease' }}>
-    <path d="M1 5H15M15 5L11 1M15 5L11 9" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" />
-  </svg>
-)
-
-type TldrCell = { label: string; value: string }
-
-// Mini-TLDR spec-table strip — same Context/Constraint/Decision/Tradeoff
-// language as the case study Brief block, condensed to 4 cells. Column
-// count folds 4 -> 2 -> 1 across breakpoints; border placement is derived
-// from column count so dividers never end up on the wrong edge.
-const TldrStrip = ({ cells, isMobile, isTablet, offset, dark, onLight }: { cells: TldrCell[]; isMobile: boolean; isTablet: boolean; offset: number; dark?: boolean; onLight?: boolean }) => {
-  const columns = isMobile ? 1 : isTablet ? 2 : 4
-  const borderColor = dark ? 'rgba(255,255,255,0.3)' : onLight ? 'rgba(28,25,23,0.25)' : '#F1F0EE'
-  const labelColor = dark ? 'rgba(255,255,255,0.75)' : onLight ? 'rgba(28,25,23,0.65)' : '#57534E'
-  const valueColor = dark ? '#FFFFFF' : '#1C1917'
-  return (
+// Compact pill-shaped label above each case study video — title, category, year, and
+// shipped status condensed into one line instead of a full header block.
+const InfoPill = ({ title, meta, year, badge, isMobile }: { title: string; meta: string; year: string; badge?: string; isMobile: boolean }) => (
+  isMobile ? (
+    // Phone: two compact lines in a rounded tag instead of a stretched pill — a
+    // single-line pill with this much text wraps into a tall blob at narrow widths.
     <div style={{
-      display: 'grid',
-      gridTemplateColumns: `repeat(${columns}, 1fr)`,
-      marginTop: isMobile ? '24px' : '32px',
-      marginLeft: offset,
-      borderTop: `1px solid ${borderColor}`,
-      borderBottom: `1px solid ${borderColor}`,
+      display: 'inline-flex',
+      flexDirection: 'column',
+      alignItems: 'flex-start',
+      gap: '2px',
+      backgroundColor: '#FFFFFF',
+      border: '1px solid #1C1917',
+      borderRadius: '12px',
+      padding: '8px 12px',
+      maxWidth: '100%',
+      boxShadow: '0 3px 8px rgba(28, 25, 23, 0.12)',
     }}>
-      {cells.map((cell, i) => {
-        const isFirstInRow = i % columns === 0
-        const isFirstRow = i < columns
-        return (
-          <div key={cell.label} style={{
-            paddingTop: isMobile ? '16px' : '20px',
-            paddingRight: isMobile ? 0 : '20px',
-            paddingBottom: isMobile ? '16px' : '20px',
-            paddingLeft: isFirstInRow ? 0 : '20px',
-            borderLeft: isFirstInRow ? 'none' : `1px solid ${borderColor}`,
-            borderTop: isFirstRow ? 'none' : `1px solid ${borderColor}`,
-          }}>
-            <div style={{
-              fontSize: '10.5px',
-              fontWeight: 700,
-              textTransform: 'uppercase',
-              letterSpacing: '0.08em',
-              color: labelColor,
-              marginBottom: '8px',
-            }}>
-              {cell.label}
-            </div>
-            <div style={{
-              fontSize: '14.5px',
-              lineHeight: '1.55',
-              color: valueColor,
-            }}>
-              {cell.value}
-            </div>
-          </div>
-        )
-      })}
+      <span style={{ fontFamily: 'var(--font-fraunces), serif', fontWeight: 700, fontSize: '13px', color: '#1C1917' }}>
+        {title}
+      </span>
+      <span style={{ display: 'flex', alignItems: 'center', gap: '6px', flexWrap: 'wrap', fontSize: '10.5px', fontWeight: 600, color: '#78716C' }}>
+        <span>{meta}</span>
+        <span style={{ color: '#D6D3D1' }}>·</span>
+        <span>{year}</span>
+        {badge && (
+          <>
+            <span style={{ color: '#D6D3D1' }}>·</span>
+            <span style={{ fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.04em', color: '#1C1917' }}>
+              {badge}
+            </span>
+          </>
+        )}
+      </span>
+    </div>
+  ) : (
+    <div style={{
+      display: 'inline-flex',
+      alignItems: 'center',
+      gap: '10px',
+      flexWrap: 'wrap',
+      justifyContent: 'center',
+      backgroundColor: '#FFFFFF',
+      border: '1px solid #1C1917',
+      borderRadius: '999px',
+      padding: '10px 22px',
+      maxWidth: '100%',
+      boxShadow: '0 3px 8px rgba(28, 25, 23, 0.12)',
+    }}>
+      <span style={{ fontFamily: 'var(--font-fraunces), serif', fontWeight: 700, fontSize: '15px', color: '#1C1917' }}>
+        {title}
+      </span>
+      <span style={{ color: '#A8A29E' }}>·</span>
+      <span style={{ fontSize: '13px', fontWeight: 600, color: '#57534E' }}>{meta}</span>
+      <span style={{ color: '#A8A29E' }}>·</span>
+      <span style={{ fontSize: '13px', fontWeight: 600, color: '#57534E' }}>{year}</span>
+      {badge && (
+        <>
+          <span style={{ color: '#A8A29E' }}>·</span>
+          <span style={{ fontSize: '11px', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.04em', color: '#1C1917' }}>
+            {badge}
+          </span>
+        </>
+      )}
     </div>
   )
-}
+)
 
 export default function Home() {
   const router = useRouter()
@@ -92,7 +98,6 @@ export default function Home() {
   const [splashVisible, setSplashVisible] = useState(true)
   const [inGameZone, setInGameZone] = useState(true)
   const [overDarkCard, setOverDarkCard] = useState(false)
-  const [scrollProgress, setScrollProgress] = useState(0)
   const gameWrapperRef = useRef<HTMLDivElement>(null)
   const latCardRef = useRef<HTMLElement>(null)
   const misinfoCardRef = useRef<HTMLElement>(null)
@@ -114,21 +119,6 @@ export default function Home() {
       clearTimeout(removeTimer)
     }
   }, [])
-
-  // Drives the little character walking down the sidebar's border as the page scrolls —
-  // 0 at the top of the page, 1 at the bottom of the scrollable content.
-  useEffect(() => {
-    if (isTablet) return
-    const container = document.querySelector('[data-scroll-container]')
-    if (!container) return
-    const updateProgress = () => {
-      const max = container.scrollHeight - container.clientHeight
-      setScrollProgress(max > 0 ? container.scrollTop / max : 0)
-    }
-    updateProgress()
-    container.addEventListener('scroll', updateProgress, { passive: true })
-    return () => container.removeEventListener('scroll', updateProgress)
-  }, [isTablet])
 
   // Tracks whether the fixed hamburger button still overlaps the game hero (mirrors its accent
   // color there) or a dark product card (LAT/Misinfo are near-black, so the icon needs to go white
@@ -212,34 +202,6 @@ export default function Home() {
       {/* SIDEBAR - Hidden on mobile/tablet */}
       {!isTablet && <Sidebar />}
 
-      {/* Scroll-progress marker — a football climbing the sidebar's blue border, spinning as it goes */}
-      {!isTablet && (
-        <svg
-          width="16"
-          height="16"
-          viewBox="0 0 16 16"
-          style={{
-            position: 'fixed',
-            left: '320px',
-            top: `calc(${(scrollProgress * 88).toFixed(2)}vh + 24px)`,
-            zIndex: 60,
-            transform: 'translate(0, -50%)',
-            transition: 'top 0.08s linear',
-            pointerEvents: 'none',
-            filter: 'drop-shadow(0 2px 3px rgba(0,0,0,0.2))',
-            animation: 'footballSpin 1.4s linear infinite',
-          }}
-        >
-          <circle cx="8" cy="8" r="7.5" fill="#FFFFFF" stroke="#1C1917" strokeWidth="0.75" />
-          <path d="M8 5.3L10.47 7.1L9.53 9.98H6.47L5.53 7.1L8 5.3Z" fill="#1C1917" />
-          <path
-            d="M8 5.3V3.3M10.47 7.1L12.2 5.9M9.53 9.98L10.8 11.8M6.47 9.98L5.2 11.8M5.53 7.1L3.8 5.9"
-            stroke="#1C1917"
-            strokeWidth="0.6"
-            strokeLinecap="round"
-          />
-        </svg>
-      )}
 
       {/* MOBILE MENU BUTTON */}
       {isTablet && (() => {
@@ -451,15 +413,22 @@ export default function Home() {
 
           {/* Case Studies Section */}
           <section id="case-studies" style={{
+            position: 'relative',
+            overflow: 'hidden',
             marginTop: isMobile ? '60px' : isWideDesktop ? '120px' : '100px',
           }}>
+            {/* Ambient drifting blobs — just enough motion that the white background
+                doesn't read as flat, kept low-opacity/blurred so it stays behind content */}
+            <div aria-hidden="true" className="cs-section-blob cs-section-blob--coral" />
+
             {/* Section Header */}
             <div style={{
+              position: 'relative',
+              zIndex: 1,
               display: 'flex',
               alignItems: 'center',
-              justifyContent: 'space-between',
               flexWrap: 'wrap',
-              gap: '16px',
+              gap: '40px',
               marginBottom: isMobile ? '32px' : isWideDesktop ? '64px' : '48px',
             }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
@@ -476,6 +445,7 @@ export default function Home() {
                   fontWeight: 700,
                   color: '#1C1917',
                   letterSpacing: '-0.01em',
+                  lineHeight: '1',
                   margin: 0,
                 }}>
                   Selected Work
@@ -488,439 +458,104 @@ export default function Home() {
                 style={{
                   display: 'inline-flex',
                   alignItems: 'center',
-                  fontSize: '14px',
-                  fontWeight: 600,
-                  color: '#1C1917',
-                  backgroundColor: 'transparent',
-                  border: '1.5px solid #1C1917',
-                  textDecoration: 'none',
+                  fontFamily: 'var(--font-fraunces), serif',
+                  fontWeight: 700,
+                  fontSize: isMobile ? '14px' : '15px',
+                  color: '#FFFFFF',
+                  backgroundColor: '#1C1917',
+                  border: '1px solid #1C1917',
                   borderRadius: '999px',
-                  padding: '9px 18px',
-                  transition: 'background-color 0.2s, color 0.2s',
+                  padding: isMobile ? '9px 16px' : '10px 22px',
+                  textDecoration: 'none',
+                  boxShadow: '0 3px 8px rgba(28, 25, 23, 0.12)',
                   flexShrink: 0,
                 }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.backgroundColor = '#1C1917'
-                  e.currentTarget.style.color = '#FFFFFF'
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.backgroundColor = 'transparent'
-                  e.currentTarget.style.color = '#1C1917'
-                }}
               >
-                See resume
+                Resume
               </a>
             </div>
 
             {/* Case Study Cards */}
             <div style={{
+              position: 'relative',
+              zIndex: 1,
               display: 'flex',
               flexDirection: 'column',
-              gap: isMobile ? '90px' : isWideDesktop ? '160px' : '130px',
+              gap: isMobile ? '63px' : isWideDesktop ? '112px' : '91px',
             }}>
               {/* Card 1 - LAT */}
               <article
                 ref={latCardRef}
-                onClick={isMobile ? () => router.push('/work/lat') : undefined}
+                onClick={() => router.push('/work/lat')}
                 style={{
-                cursor: isMobile ? 'pointer' : 'default',
+                cursor: 'pointer',
                 display: 'flex',
                 flexDirection: 'column',
-                border: '1.5px solid #1C1917',
+                alignItems: 'center',
                 borderRadius: '10px',
                 padding: isMobile ? '24px' : isWideDesktop ? '48px' : '40px',
-                backgroundColor: '#1C1917',
+                backgroundColor: '#FFFFFF',
               }}>
-                {/* Header: index + title + description */}
-                <div style={{
-                  display: 'flex',
-                  gap: isMobile ? '16px' : '32px',
-                  alignItems: 'flex-start',
-                  marginBottom: isMobile ? '20px' : '28px',
-                }}>
-                  <div style={{
-                    fontSize: isWideDesktop ? '15px' : '13px',
-                    fontWeight: 700,
-                    color: '#FFFFFF',
-                    letterSpacing: '0.08em',
-                    flexShrink: 0,
-                    paddingTop: '6px',
-                  }}>
-                    01
-                  </div>
-                  <div style={{ flex: 1, minWidth: 0 }}>
-                    <div style={{
-                      fontSize: '11px',
-                      fontWeight: 700,
-                      textTransform: 'uppercase',
-                      letterSpacing: '0.08em',
-                      color: '#4A72E5',
-                      marginBottom: '6px',
-                    }}>
-                      Enterprise AI · 0→1 Systems
-                    </div>
-                    <div style={{
-                      display: 'flex',
-                      flexWrap: isMobile ? 'wrap' : 'nowrap',
-                      alignItems: 'center',
-                      gap: isMobile ? '8px 10px' : '10px',
-                      marginBottom: isMobile ? '8px' : '10px',
-                    }}>
-                      <h3 style={{
-                        fontFamily: 'var(--font-fraunces), serif',
-                        fontSize: isMobile ? '24px' : isWideDesktop ? '34px' : '28px',
-                        fontWeight: 700,
-                        color: '#FFFFFF',
-                        letterSpacing: '-0.01em',
-                        margin: 0,
-                      }}>
-                        LAT Platform
-                      </h3>
-                      <span style={{
-                        fontSize: '11px',
-                        fontWeight: 700,
-                        textTransform: 'uppercase',
-                        letterSpacing: '0.06em',
-                        color: '#FFFFFF',
-                        border: '1px solid rgba(255,255,255,0.4)',
-                        borderRadius: '0px',
-                        padding: '4px 10px',
-                        flexShrink: 0,
-                      }}>
-                        Shipped
-                      </span>
-                      <span style={{
-                        fontSize: '11px',
-                        fontWeight: 700,
-                        letterSpacing: '0.02em',
-                        color: 'rgba(255,255,255,0.85)',
-                        flexShrink: 0,
-                      }}>
-                        Jun 2023 – May 2024
-                      </span>
-                    </div>
-                    <p style={{
-                      fontSize: isMobile ? '19px' : isWideDesktop ? '23px' : '22px',
-                      lineHeight: '1.6',
-                      color: 'rgba(255,255,255,0.9)',
-                      maxWidth: '800px',
-                    }}>
-                      Designing for AI failure and human-in-the-loop workflows — turning fragmented campus maintenance into a trusted financial decision system.
-                    </p>
-                    <div style={{
-                      fontFamily: 'var(--font-fraunces), serif',
-                      fontSize: isMobile ? '20px' : '24px',
-                      fontWeight: 700,
-                      color: '#FFFFFF',
-                      marginTop: isMobile ? '12px' : '16px',
-                    }}>
-                      96% rollout adoption
-                    </div>
-                  </div>
-                  {!isMobile && (
-                    <a
-                      href="/work/lat"
-                      style={{
-                        display: 'inline-flex',
-                        alignItems: 'center',
-                        gap: '8px',
-                        fontSize: '14px',
-                        fontWeight: 600,
-                        color: '#FFFFFF',
-                        backgroundColor: '#4A72E5',
-                        textDecoration: 'none',
-                        padding: '10px 18px',
-                        borderRadius: '999px',
-                        flexShrink: 0,
-                        transition: 'background-color 0.2s ease',
-                      }}
-                      onMouseEnter={(e) => {
-                        e.currentTarget.style.backgroundColor = '#3A5BC7'
-                        const svg = e.currentTarget.querySelector('svg')
-                        if (svg) svg.style.transform = 'translateX(4px)'
-                      }}
-                      onMouseLeave={(e) => {
-                        e.currentTarget.style.backgroundColor = '#4A72E5'
-                        const svg = e.currentTarget.querySelector('svg')
-                        if (svg) svg.style.transform = 'translateX(0)'
-                      }}
-                    >
-                      View case study
-                      <ArrowIcon />
-                    </a>
-                  )}
-                </div>
-
-                <TldrStrip
+                <InfoPill
                   isMobile={isMobile}
-                  isTablet={isTablet && !isMobile}
-                  offset={isMobile ? 0 : 56}
-                  dark
-                  cells={[
-                    { label: 'Role & Team', value: 'Lead Designer (60% design, 40% strategy) · team of 4 — PM, 2 external engineers, client stakeholders' },
-                    { label: 'Constraint', value: "Legacy CMMS/ERP stack couldn't be disrupted, data integrity had hard boundaries, capital decisions were politically sensitive." },
-                    { label: 'Impact', value: '96% weekly active use · 50%→92% data accuracy · 25% cost reduction projected' },
-                    { label: 'Tech & Approach', value: 'ML/AI design · API-first architecture · Human-in-the-loop approval gates' },
-                  ]}
+                  title="LAT Platform"
+                  meta="Enterprise AI · 0→1 Systems"
+                  year="Jun 2023 – May 2024"
+                  badge="Shipped"
                 />
 
-                {/* Large Image Placeholder */}
-                <a
-                  href="/work/lat"
-                  style={{
-                    display: 'block',
-                    width: isMobile ? '100%' : 'calc(100% - 56px)',
-                    marginLeft: isMobile ? 0 : '56px',
-                    marginTop: isMobile ? '24px' : '32px',
-                    textDecoration: 'none',
-                    cursor: 'pointer',
-                  }}
-                >
-                  <div style={{
-                    width: '100%',
-                    maxWidth: '880px',
-                    margin: '0 auto',
-                    backgroundColor: '#000000',
-                    borderRadius: '0px',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    transition: 'transform 0.3s ease, box-shadow 0.3s ease',
-                  }}
-                  onMouseEnter={(e) => {
-                    e.currentTarget.style.transform = 'translateY(-4px)'
-                    e.currentTarget.style.boxShadow = '0 12px 40px rgba(0, 0, 0, 0.12)'
-                  }}
-                  onMouseLeave={(e) => {
-                    e.currentTarget.style.transform = 'translateY(0)'
-                    e.currentTarget.style.boxShadow = 'none'
-                  }}
+                <div style={{
+                  width: isMobile ? 'calc(100% + 48px)' : isTablet ? 'calc(100% + 80px)' : '84%',
+                  marginTop: isMobile ? '24px' : '32px',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                }}>
+                  <video
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    preload="metadata"
+                    aria-label="LAT CapEx proposal workflow"
+                    style={{ display: 'block', width: '100%', aspectRatio: '1536 / 1024', objectFit: 'cover', border: 'none', borderRadius: 0, boxShadow: 'none' }}
                   >
-                    <video
-                      autoPlay
-                      loop
-                      muted
-                      playsInline
-                      preload="metadata"
-                      aria-label="LAT CapEx proposal workflow"
-                      style={{ display: 'block', width: '100%', height: 'auto', border: 'none', borderRadius: 0, boxShadow: 'none' }}
-                    >
-                      <source src="/videos/lat/LAT%20Landing%20-%20Laptop.mp4" type="video/mp4" />
-                    </video>
-                  </div>
-                </a>
-
-                {/* CTA — mobile only; desktop CTA lives in the title row */}
-                {isMobile && (
-                  <div style={{
-                    marginTop: '20px',
-                    display: 'flex',
-                  }}>
-                    <a
-                      href="/work/lat"
-                      style={{
-                        display: 'flex',
-                        alignItems: 'center',
-                        justifyContent: 'center',
-                        gap: '8px',
-                        width: '100%',
-                        fontSize: '15px',
-                        fontWeight: 600,
-                        color: '#FFFFFF',
-                        backgroundColor: '#4A72E5',
-                        textDecoration: 'none',
-                        padding: '14px 18px',
-                        borderRadius: '999px',
-                        transition: 'background-color 0.2s ease',
-                      }}
-                      onMouseEnter={(e) => {
-                        e.currentTarget.style.backgroundColor = '#3A5BC7'
-                        const svg = e.currentTarget.querySelector('svg')
-                        if (svg) svg.style.transform = 'translateX(4px)'
-                      }}
-                      onMouseLeave={(e) => {
-                        e.currentTarget.style.backgroundColor = '#4A72E5'
-                        const svg = e.currentTarget.querySelector('svg')
-                        if (svg) svg.style.transform = 'translateX(0)'
-                      }}
-                    >
-                      View case study
-                      <ArrowIcon />
-                    </a>
-                  </div>
-                )}
+                    <source src="/videos/lat/LAT%20Landing%20-%20Laptop%20cropped.mp4" type="video/mp4" />
+                  </video>
+                </div>
               </article>
 
               {/* Card 2 - Keye */}
               <article
-                onClick={isMobile ? () => router.push('/work/keye') : undefined}
+                onClick={() => router.push('/work/keye')}
                 style={{
-                cursor: isMobile ? 'pointer' : 'default',
+                cursor: 'pointer',
                 display: 'flex',
                 flexDirection: 'column',
-                border: '1.5px solid #4A72E5',
+                alignItems: 'center',
                 borderRadius: '10px',
                 padding: isMobile ? '24px' : isWideDesktop ? '48px' : '40px',
-                backgroundColor: '#4A72E5',
+                backgroundColor: '#FFFFFF',
               }}>
-                {/* Header: index + title + description */}
-                <div style={{
-                  display: 'flex',
-                  gap: isMobile ? '16px' : '32px',
-                  alignItems: 'flex-start',
-                  marginBottom: isMobile ? '20px' : '28px',
-                }}>
-                  <div style={{
-                    fontSize: isWideDesktop ? '15px' : '13px',
-                    fontWeight: 700,
-                    color: '#FFFFFF',
-                    letterSpacing: '0.08em',
-                    flexShrink: 0,
-                    paddingTop: '6px',
-                  }}>
-                    02
-                  </div>
-                  <div style={{ flex: 1, minWidth: 0 }}>
-                    <div style={{
-                      fontSize: '11px',
-                      fontWeight: 700,
-                      textTransform: 'uppercase',
-                      letterSpacing: '0.08em',
-                      color: '#FFFFFF',
-                      marginBottom: '6px',
-                    }}>
-                      Growth · Marketplace · Design Systems
-                    </div>
-                    <div style={{
-                      display: 'flex',
-                      flexWrap: isMobile ? 'wrap' : 'nowrap',
-                      alignItems: 'center',
-                      gap: isMobile ? '8px 10px' : '10px',
-                      marginBottom: isMobile ? '8px' : '10px',
-                    }}>
-                      <h3 style={{
-                        fontFamily: 'var(--font-fraunces), serif',
-                        fontSize: isMobile ? '24px' : isWideDesktop ? '34px' : '28px',
-                        fontWeight: 700,
-                        color: '#FFFFFF',
-                        letterSpacing: '-0.01em',
-                        margin: 0,
-                      }}>
-                        Keye
-                      </h3>
-                      <span style={{
-                        fontSize: '11px',
-                        fontWeight: 700,
-                        textTransform: 'uppercase',
-                        letterSpacing: '0.06em',
-                        color: '#FFFFFF',
-                        border: '1px solid rgba(255,255,255,0.4)',
-                        borderRadius: '0px',
-                        padding: '4px 10px',
-                        flexShrink: 0,
-                      }}>
-                        Shipped
-                      </span>
-                      <span style={{
-                        fontSize: '11px',
-                        fontWeight: 700,
-                        letterSpacing: '0.02em',
-                        color: 'rgba(255,255,255,0.85)',
-                        flexShrink: 0,
-                      }}>
-                        2021–2022
-                      </span>
-                    </div>
-                    <p style={{
-                      fontSize: isMobile ? '19px' : isWideDesktop ? '23px' : '22px',
-                      lineHeight: '1.6',
-                      color: 'rgba(255,255,255,0.9)',
-                      maxWidth: '800px',
-                    }}>
-                      From three static screens to a company that later reached YC — designing ClassPass for digital tools.
-                    </p>
-                    <div style={{
-                      fontFamily: 'var(--font-fraunces), serif',
-                      fontSize: isMobile ? '20px' : '24px',
-                      fontWeight: 700,
-                      color: '#FFFFFF',
-                      marginTop: isMobile ? '12px' : '16px',
-                    }}>
-                      0→20K MAUs
-                    </div>
-                  </div>
-                  {!isMobile && (
-                    <a
-                      href="/work/keye"
-                      style={{
-                        display: 'inline-flex',
-                        alignItems: 'center',
-                        gap: '8px',
-                        fontSize: '14px',
-                        fontWeight: 600,
-                        color: '#FFFFFF',
-                        backgroundColor: '#FF7C5F',
-                        textDecoration: 'none',
-                        padding: '10px 18px',
-                        borderRadius: '999px',
-                        flexShrink: 0,
-                        transition: 'background-color 0.2s ease',
-                      }}
-                      onMouseEnter={(e) => {
-                        e.currentTarget.style.backgroundColor = '#E85F42'
-                        const svg = e.currentTarget.querySelector('svg')
-                        if (svg) svg.style.transform = 'translateX(4px)'
-                      }}
-                      onMouseLeave={(e) => {
-                        e.currentTarget.style.backgroundColor = '#FF7C5F'
-                        const svg = e.currentTarget.querySelector('svg')
-                        if (svg) svg.style.transform = 'translateX(0)'
-                      }}
-                    >
-                      View case study
-                      <ArrowIcon />
-                    </a>
-                  )}
-                </div>
-
-                <TldrStrip
+                <InfoPill
                   isMobile={isMobile}
-                  isTablet={isTablet && !isMobile}
-                  offset={isMobile ? 0 : 56}
-                  dark
-                  cells={[
-                    { label: 'Role & Team', value: 'Founding Designer · team of 5, plus 2 designers I hired before leaving' },
-                    { label: 'Constraint', value: "Engineering was 12 time zones away; a co-founder's exit erased backend capacity for planned integrations." },
-                    { label: 'Impact', value: '0→20K MAUs · $1.5M raised · later went YC F24' },
-                    { label: 'Tech & Approach', value: 'Design systems · Chrome extension · Credit-based economics' },
-                  ]}
+                  title="Keye"
+                  meta="Marketplace · B2C"
+                  year="2021–2022"
+                  badge="Shipped"
                 />
 
                 {/* Landing hero — same video + laptop treatment used as the hero in the Keye case study */}
-                <a
-                  href="/work/keye"
-                  style={{
-                    display: 'block',
-                    width: isMobile ? '100%' : 'calc(100% - 56px)',
-                    marginLeft: isMobile ? 0 : '56px',
-                    marginTop: isMobile ? '24px' : '32px',
-                    textDecoration: 'none',
-                    cursor: 'pointer',
-                  }}
-                >
+                <div style={{
+                  width: isMobile ? 'calc(100% + 48px)' : isTablet ? 'calc(100% + 80px)' : '84%',
+                  marginTop: isMobile ? '24px' : '32px',
+                }}>
                   <div
                     className="cs-laptop-mockup"
                     style={{
                       width: '100%',
-                      transition: 'transform 0.3s ease, box-shadow 0.3s ease',
-                    }}
-                    onMouseEnter={(e) => {
-                      e.currentTarget.style.transform = 'translateY(-4px)'
-                      e.currentTarget.style.boxShadow = '0 12px 40px rgba(0, 0, 0, 0.12)'
-                    }}
-                    onMouseLeave={(e) => {
-                      e.currentTarget.style.transform = 'translateY(0)'
-                      e.currentTarget.style.boxShadow = 'none'
+                      maxWidth: 'none',
+                      margin: '0 auto',
                     }}
                   >
                     <div className="cs-laptop-lid">
@@ -946,294 +581,76 @@ export default function Home() {
                     <div className="cs-laptop-hinge"></div>
                     <div className="cs-laptop-base"><div className="cs-laptop-notch"></div></div>
                   </div>
-                </a>
-
-                {/* CTA — mobile only; desktop CTA lives in the title row */}
-                {isMobile && (
-                  <div style={{
-                    marginTop: '20px',
-                    display: 'flex',
-                  }}>
-                    <a
-                      href="/work/keye"
-                      style={{
-                        display: 'flex',
-                        alignItems: 'center',
-                        justifyContent: 'center',
-                        gap: '8px',
-                        width: '100%',
-                        fontSize: '15px',
-                        fontWeight: 600,
-                        color: '#FFFFFF',
-                        backgroundColor: '#FF7C5F',
-                        textDecoration: 'none',
-                        padding: '14px 18px',
-                        borderRadius: '999px',
-                        transition: 'background-color 0.2s ease',
-                      }}
-                      onMouseEnter={(e) => {
-                        e.currentTarget.style.backgroundColor = '#E85F42'
-                        const svg = e.currentTarget.querySelector('svg')
-                        if (svg) svg.style.transform = 'translateX(4px)'
-                      }}
-                      onMouseLeave={(e) => {
-                        e.currentTarget.style.backgroundColor = '#FF7C5F'
-                        const svg = e.currentTarget.querySelector('svg')
-                        if (svg) svg.style.transform = 'translateX(0)'
-                      }}
-                    >
-                      View case study
-                      <ArrowIcon />
-                    </a>
-                  </div>
-                )}
+                </div>
               </article>
 
               {/* Card 3 - Misinformation Center */}
               <article
                 ref={misinfoCardRef}
-                onClick={isMobile ? () => router.push('/work/misinformation-center') : undefined}
+                onClick={() => router.push('/work/misinformation-center')}
                 style={{
-                cursor: isMobile ? 'pointer' : 'default',
+                cursor: 'pointer',
                 display: 'flex',
                 flexDirection: 'column',
-                border: '1.5px solid #000000',
+                alignItems: 'center',
                 borderRadius: '10px',
                 padding: isMobile ? '24px' : isWideDesktop ? '48px' : '40px',
-                backgroundColor: '#000000',
+                backgroundColor: '#FFFFFF',
               }}>
-                {/* Header: index + title + description */}
-                <div style={{
-                  display: 'flex',
-                  gap: isMobile ? '16px' : '32px',
-                  alignItems: 'flex-start',
-                  marginBottom: isMobile ? '20px' : '28px',
-                }}>
-                  <div style={{
-                    fontSize: isWideDesktop ? '15px' : '13px',
-                    fontWeight: 700,
-                    color: '#FFFFFF',
-                    letterSpacing: '0.08em',
-                    flexShrink: 0,
-                    paddingTop: '6px',
-                  }}>
-                    03
-                  </div>
-                  <div style={{ flex: 1, minWidth: 0 }}>
-                    <div style={{
-                      fontSize: '11px',
-                      fontWeight: 700,
-                      textTransform: 'uppercase',
-                      letterSpacing: '0.08em',
-                      color: '#4A72E5',
-                      marginBottom: '6px',
-                    }}>
-                      Research · AI Trust · Media Literacy
-                    </div>
-                    <div style={{
-                      display: 'flex',
-                      flexWrap: isMobile ? 'wrap' : 'nowrap',
-                      alignItems: 'center',
-                      gap: isMobile ? '8px 10px' : '10px',
-                      marginBottom: isMobile ? '8px' : '10px',
-                    }}>
-                      <h3 style={{
-                        fontFamily: 'var(--font-fraunces), serif',
-                        fontSize: isMobile ? '24px' : isWideDesktop ? '34px' : '28px',
-                        fontWeight: 700,
-                        color: '#FFFFFF',
-                        letterSpacing: '-0.01em',
-                        margin: 0,
-                      }}>
-                        Misinformation Center
-                      </h3>
-                      <span style={{
-                        fontSize: '11px',
-                        fontWeight: 700,
-                        letterSpacing: '0.02em',
-                        color: '#FFFFFF',
-                        flexShrink: 0,
-                      }}>
-                        Jan–Dec 2024
-                      </span>
-                    </div>
-                    <p style={{
-                      fontSize: isMobile ? '19px' : isWideDesktop ? '23px' : '22px',
-                      lineHeight: '1.6',
-                      color: 'rgba(255,255,255,0.75)',
-                      maxWidth: '800px',
-                    }}>
-                      Media literacy tools for the AI age — equipping people to identify misinformation themselves through verification, education, and trust.
-                    </p>
-                    <div style={{
-                      fontFamily: 'var(--font-fraunces), serif',
-                      fontSize: isMobile ? '20px' : '24px',
-                      fontWeight: 700,
-                      color: '#FFFFFF',
-                      marginTop: isMobile ? '12px' : '16px',
-                    }}>
-                      ~1,800 testers at Misinfo Day
-                    </div>
-                  </div>
-                  {!isMobile && (
-                    <a
-                      href="/work/misinformation-center"
-                      style={{
-                        display: 'inline-flex',
-                        alignItems: 'center',
-                        gap: '8px',
-                        fontSize: '14px',
-                        fontWeight: 600,
-                        color: '#FFFFFF',
-                        backgroundColor: '#4A72E5',
-                        textDecoration: 'none',
-                        padding: '10px 18px',
-                        borderRadius: '999px',
-                        flexShrink: 0,
-                        transition: 'background-color 0.2s ease',
-                      }}
-                      onMouseEnter={(e) => {
-                        e.currentTarget.style.backgroundColor = '#3A5BC7'
-                        const svg = e.currentTarget.querySelector('svg')
-                        if (svg) svg.style.transform = 'translateX(4px)'
-                      }}
-                      onMouseLeave={(e) => {
-                        e.currentTarget.style.backgroundColor = '#4A72E5'
-                        const svg = e.currentTarget.querySelector('svg')
-                        if (svg) svg.style.transform = 'translateX(0)'
-                      }}
-                    >
-                      View case study
-                      <ArrowIcon />
-                    </a>
-                  )}
-                </div>
-
-                <TldrStrip
+                <InfoPill
                   isMobile={isMobile}
-                  isTablet={isTablet && !isMobile}
-                  offset={isMobile ? 0 : 56}
-                  dark
-                  cells={[
-                    { label: 'Role & Team', value: 'Sole Designer · solo post-Feb 2024, contributed to user research for TrueMedia.org' },
-                    { label: 'Impact', value: "96% of 36 testers said they'd use it · ~1,800 tested live at Misinfo Day" },
-                    { label: 'Tech & Approach', value: 'Concept design · Gamification · Platform strategy' },
-                  ]}
+                  title="Misinformation Center"
+                  meta="Research · Media Literacy"
+                  year="Jan–Dec 2024"
                 />
 
                 {/* Landing videos, side by side — cropped tight to the phone so they sit seamlessly on the black card */}
                 <div style={{
                   display: 'flex',
                   flexDirection: 'row',
-                  gap: isMobile ? '48px' : '140px',
-                  width: isMobile ? '100%' : 'calc(100% - 56px)',
-                  marginLeft: isMobile ? 0 : '56px',
+                  gap: isMobile ? '34px' : '56px',
+                  width: '100%',
                   marginTop: isMobile ? '24px' : '32px',
-                  marginBottom: isMobile ? '24px' : '32px',
                   justifyContent: 'center',
                   padding: isMobile ? '24px 0' : '32px 0',
                 }}>
-                  <a
-                    href="/work/misinformation-center"
-                    style={{ display: 'block', width: '100%', maxWidth: '300px', textDecoration: 'none', cursor: 'pointer' }}
+                  <video
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    preload="auto"
+                    aria-label="Misinformation Center landing feature 1"
+                    style={{
+                      display: 'block',
+                      width: '100%',
+                      maxWidth: isMobile ? '150px' : isTablet ? '220px' : '353px',
+                      aspectRatio: '464 / 912',
+                      objectFit: 'cover',
+                      borderRadius: '0px',
+                    }}
                   >
-                    <video
-                      autoPlay
-                      loop
-                      muted
-                      playsInline
-                      preload="auto"
-                      aria-label="Misinformation Center landing feature 1"
-                      style={{
-                        display: 'block',
-                        width: '100%',
-                        aspectRatio: '680 / 1340',
-                        borderRadius: '0px',
-                        transition: 'transform 0.3s ease, box-shadow 0.3s ease',
-                      }}
-                      onMouseEnter={(e) => {
-                        e.currentTarget.style.transform = 'translateY(-4px)'
-                        e.currentTarget.style.boxShadow = '0 12px 40px rgba(0, 0, 0, 0.12)'
-                      }}
-                      onMouseLeave={(e) => {
-                        e.currentTarget.style.transform = 'translateY(0)'
-                        e.currentTarget.style.boxShadow = 'none'
-                      }}
-                    >
-                      <source src="/videos/misinformationcenter/Landing%20video%2001%20cropped.mp4" type="video/mp4" />
-                    </video>
-                  </a>
-                  <a
-                    href="/work/misinformation-center"
-                    style={{ display: 'block', width: '100%', maxWidth: '300px', textDecoration: 'none', cursor: 'pointer' }}
+                    <source src="/videos/misinformationcenter/Landing%20video%2001%20cropped3.mp4" type="video/mp4" />
+                  </video>
+                  <video
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    preload="auto"
+                    aria-label="Misinformation Center landing feature 2"
+                    style={{
+                      display: 'block',
+                      width: '100%',
+                      maxWidth: isMobile ? '150px' : isTablet ? '220px' : '353px',
+                      aspectRatio: '464 / 912',
+                      objectFit: 'cover',
+                      borderRadius: '0px',
+                    }}
                   >
-                    <video
-                      autoPlay
-                      loop
-                      muted
-                      playsInline
-                      preload="auto"
-                      aria-label="Misinformation Center landing feature 2"
-                      style={{
-                        display: 'block',
-                        width: '100%',
-                        aspectRatio: '680 / 1340',
-                        borderRadius: '0px',
-                        transition: 'transform 0.3s ease, box-shadow 0.3s ease',
-                      }}
-                      onMouseEnter={(e) => {
-                        e.currentTarget.style.transform = 'translateY(-4px)'
-                        e.currentTarget.style.boxShadow = '0 12px 40px rgba(0, 0, 0, 0.12)'
-                      }}
-                      onMouseLeave={(e) => {
-                        e.currentTarget.style.transform = 'translateY(0)'
-                        e.currentTarget.style.boxShadow = 'none'
-                      }}
-                    >
-                      <source src="/videos/misinformationcenter/Landing%20video%2002%20cropped.mp4" type="video/mp4" />
-                    </video>
-                  </a>
+                    <source src="/videos/misinformationcenter/Landing%20video%2002%20cropped3.mp4" type="video/mp4" />
+                  </video>
                 </div>
-
-                {/* CTA — mobile only; desktop CTA lives in the title row */}
-                {isMobile && (
-                  <div style={{
-                    marginTop: '20px',
-                    display: 'flex',
-                  }}>
-                    <a
-                      href="/work/misinformation-center"
-                      style={{
-                        display: 'flex',
-                        alignItems: 'center',
-                        justifyContent: 'center',
-                        gap: '8px',
-                        width: '100%',
-                        fontSize: '15px',
-                        fontWeight: 600,
-                        color: '#FFFFFF',
-                        backgroundColor: '#4A72E5',
-                        textDecoration: 'none',
-                        padding: '14px 18px',
-                        borderRadius: '999px',
-                        transition: 'background-color 0.2s ease',
-                      }}
-                      onMouseEnter={(e) => {
-                        e.currentTarget.style.backgroundColor = '#3A5BC7'
-                        const svg = e.currentTarget.querySelector('svg')
-                        if (svg) svg.style.transform = 'translateX(4px)'
-                      }}
-                      onMouseLeave={(e) => {
-                        e.currentTarget.style.backgroundColor = '#4A72E5'
-                        const svg = e.currentTarget.querySelector('svg')
-                        if (svg) svg.style.transform = 'translateX(0)'
-                      }}
-                    >
-                      View case study
-                      <ArrowIcon />
-                    </a>
-                  </div>
-                )}
               </article>
 
               {/* Card 4 - Coming Soon (AI-native stealth work) */}
@@ -1328,6 +745,27 @@ export default function Home() {
               }}
             >
               About
+            </a>
+            <a
+              href="/Indhu-Venkatachalam-Senior-Product-Designer.docx.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                fontSize: isMobile ? '15px' : '16px',
+                fontWeight: 500,
+                color: '#1C1917',
+                textDecoration: 'none',
+                borderBottom: '1px solid transparent',
+                transition: 'border-color 0.2s',
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.borderBottomColor = 'var(--accent)'
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.borderBottomColor = 'transparent'
+              }}
+            >
+              Resume
             </a>
             <a
               href="https://www.linkedin.com/in/indhu05/"

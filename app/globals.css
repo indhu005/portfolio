@@ -1830,3 +1830,37 @@ img, video {
     order: 2;
   }
 }
+
+/* Selected Work section — two soft, blurred color blobs drifting slowly behind
+   the white background so it doesn't read as flat. Low opacity, blurred heavily,
+   and sit behind the header/cards (z-index 0 vs their z-index 1). */
+.cs-section-blob {
+  position: absolute;
+  z-index: 0;
+  border-radius: 50%;
+  filter: blur(70px);
+  pointer-events: none;
+  opacity: 0.22;
+}
+
+.cs-section-blob--coral {
+  bottom: -12%;
+  right: -6%;
+  width: 40vw;
+  max-width: 480px;
+  aspect-ratio: 1;
+  background: radial-gradient(circle, #FF7C5F, transparent 70%);
+  animation: cs-blob-drift-b 32s ease-in-out infinite alternate;
+}
+
+@keyframes cs-blob-drift-b {
+  0% { transform: translate(0, 0) scale(1); }
+  100% { transform: translate(-7%, -6%) scale(1.05); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cs-section-blob {
+    animation: none;
+  }
+}
+

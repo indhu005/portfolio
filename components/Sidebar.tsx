@@ -89,7 +89,7 @@ export default function Sidebar({
       maxWidth: '320px',
       height: isCompact ? 'auto' : '100vh',
       minHeight: isCompact ? undefined : '100vh',
-      borderRight: isCompact ? 'none' : '2px solid rgba(74, 114, 229, 0.18)',
+      borderRight: 'none',
       backgroundColor: '#FFFFFF',
       padding: '40px 0px 40px 40px',
       display: 'flex',
