@@ -187,6 +187,20 @@ img, video {
   100% { transform: translate(-50%, -50%) scale(2.2); opacity: 0; }
 }
 
+/* Landing game: quick ring pulse at the click point when planting — tactile
+   confirmation the click registered, on top of the sapling's own pop-in. */
+@keyframes plantRipple {
+  0% { transform: translate(-50%, -50%) scale(0.3); opacity: 0.5; }
+  100% { transform: translate(-50%, -50%) scale(1.8); opacity: 0; }
+}
+
+/* Sidebar: small "live" status dot next to the name — a slow outward ring pulse,
+   like an online indicator, so the sidebar reads as an active surface. */
+@keyframes sidebarLivePulse {
+  0% { transform: scale(1); opacity: 0.6; }
+  100% { transform: scale(2.8); opacity: 0; }
+}
+
 /* Landing game: birds drift across the top of the scene, opposite directions, different speeds */
 /* Clouds: simple straight drift is fine for these, left animates against the container so it's a real crossing, not a % of its own tiny width */
 @keyframes birdDriftRight {
@@ -1861,6 +1875,33 @@ img, video {
 @media (prefers-reduced-motion: reduce) {
   .cs-section-blob {
     animation: none;
+  }
+}
+
+/* Micro-interactions — small, tactile hover responses rather than big
+   attention-grabbing motion. Pills lift slightly; card videos get a gentle
+   zoom so the whole-card click target still feels responsive on hover. */
+.cs-pill-hover {
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.2s ease;
+}
+
+.cs-pill-hover:hover {
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 6px 16px rgba(28, 25, 23, 0.16);
+}
+
+.cs-card-media {
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+article:hover .cs-card-media {
+  transform: scale(1.015);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cs-pill-hover,
+  .cs-card-media {
+    transition: none;
   }
 }
 

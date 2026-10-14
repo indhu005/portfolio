@@ -91,10 +91,11 @@ export default function Sidebar({
       minHeight: isCompact ? undefined : '100vh',
       position: isCompact ? 'static' : 'sticky',
       top: 0,
+      zIndex: 200,
       alignSelf: 'flex-start',
       borderRight: 'none',
       backgroundColor: '#FFFFFF',
-      padding: '40px 20px 40px 20px',
+      padding: '40px 16px 40px 20px',
       display: 'flex',
       flexDirection: 'column',
       justifyContent: isCompact ? 'flex-start' : 'center',
@@ -114,23 +115,40 @@ export default function Sidebar({
         boxShadow: '0 4px 14px rgba(28, 25, 23, 0.08)',
       }}>
 
-      {/* NAME */}
-      <Link
-        href="/"
-        style={{
-          fontSize: isLargeDesktop ? '20px' : '16px',
-          fontWeight: 700,
-          color: '#1C1917',
-          cursor: 'pointer',
-          transition: 'color 0.12s ease-out',
-          textDecoration: 'none',
-          display: 'block',
-        }}
-        onMouseEnter={(e) => e.currentTarget.style.color = 'var(--accent)'}
-        onMouseLeave={(e) => e.currentTarget.style.color = '#1C1917'}
-      >
-        Indhu
-      </Link>
+      {/* NAME — small pulsing dot signals the sidebar as a live, active surface rather than a static image */}
+      <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+        <Link
+          href="/"
+          style={{
+            fontSize: isLargeDesktop ? '20px' : '16px',
+            fontWeight: 700,
+            color: '#1C1917',
+            cursor: 'pointer',
+            transition: 'color 0.12s ease-out',
+            textDecoration: 'none',
+            display: 'block',
+          }}
+          onMouseEnter={(e) => e.currentTarget.style.color = 'var(--accent)'}
+          onMouseLeave={(e) => e.currentTarget.style.color = '#1C1917'}
+        >
+          Indhu
+        </Link>
+        <span style={{ position: 'relative', width: '8px', height: '8px', flexShrink: 0 }}>
+          <span style={{
+            position: 'absolute',
+            inset: 0,
+            borderRadius: '50%',
+            backgroundColor: '#4A72E5',
+          }} />
+          <span style={{
+            position: 'absolute',
+            inset: 0,
+            borderRadius: '50%',
+            backgroundColor: '#4A72E5',
+            animation: 'sidebarLivePulse 2s ease-out infinite',
+          }} />
+        </span>
+      </div>
 
       {/* SUBTITLE */}
       <div style={{ marginTop: '8px' }}>

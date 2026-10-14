@@ -210,6 +210,7 @@ export default function LandingGameSimple() {
   const [planted, setPlanted] = useState(0)
   const [trucks, setTrucks] = useState<Truck[]>([])
   const [smokes, setSmokes] = useState<Smoke[]>([])
+  const [ripples, setRipples] = useState<Set<string>>(new Set())
   const [timeLeft, setTimeLeft] = useState(ROUND_DURATION)
   const [gameActive, setGameActive] = useState(true)
   const [gameEnded, setGameEnded] = useState(false)
@@ -554,6 +555,16 @@ export default function LandingGameSimple() {
         newGrid[row][col] = { state: 'sapling', variant: treeVariant, plantedAt: Date.now() }
         return newGrid
       })
+
+      const rippleKey = `${row}-${col}`
+      setRipples(prev => new Set(prev).add(rippleKey))
+      setTimeout(() => {
+        setRipples(prev => {
+          const next = new Set(prev)
+          next.delete(rippleKey)
+          return next
+        })
+      }, 500)
     }
   }
 
@@ -1216,6 +1227,19 @@ export default function LandingGameSimple() {
               {cell.state === 'sapling' && <SaplingIcon variant={cell.variant || 0} size={isMobile ? 30 : isTablet ? 42 : 60} isDaytime={isDaytime} />}
               {cell.state === 'tree' && <TreeIcon variant={cell.variant || 0} size={isMobile ? 45 : isTablet ? 62 : 90} isDaytime={isDaytime} />}
               {cell.state === 'building' && <BuildingIcon variant={cell.variant || 0} size={isMobile ? 41 : isTablet ? 48 : 69} isDaytime={isDaytime} />}
+              {ripples.has(`${rowIndex}-${colIndex}`) && (
+                <div style={{
+                  position: 'absolute',
+                  top: '50%',
+                  left: '50%',
+                  width: `${cellSize * 0.8}px`,
+                  height: `${cellSize * 0.8}px`,
+                  borderRadius: '50%',
+                  border: '2px solid #8DC562',
+                  animation: 'plantRipple 0.5s ease-out forwards',
+                  pointerEvents: 'none',
+                }} />
+              )}
             </div>
           ))
         )}
@@ -1273,15 +1297,17 @@ export default function LandingGameSimple() {
       {/* End game modal */}
       {gameEnded && (
         <>
-          {/* Dark overlay */}
+          {/* Dark overlay — offset a bit from the very top of the game area, but
+              not so much that it exposes the location/time text at top:24px */}
           <div
             style={{
               position: 'absolute',
-              top: 0,
+              top: '16px',
               left: 0,
               right: 0,
               bottom: 0,
               backgroundColor: 'rgba(0, 0, 0, 0.7)',
+              borderRadius: '28px',
               zIndex: 100,
             }}
           />
@@ -1295,7 +1321,7 @@ export default function LandingGameSimple() {
               right: isMobile ? '16px' : 'auto',
               transform: isMobile ? 'translateY(-50%)' : 'translate(-50%, -50%)',
               backgroundColor: '#1C1917',
-              borderRadius: '16px',
+              borderRadius: '28px',
               padding: isMobile ? '32px 24px' : '40px 48px',
               textAlign: 'center',
               zIndex: 101,

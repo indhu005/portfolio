@@ -28,7 +28,7 @@ const InfoPill = ({ title, meta, year, badge, isMobile }: { title: string; meta:
   isMobile ? (
     // Phone: two compact lines in a rounded tag instead of a stretched pill — a
     // single-line pill with this much text wraps into a tall blob at narrow widths.
-    <div style={{
+    <div className="cs-pill-hover" style={{
       display: 'inline-flex',
       flexDirection: 'column',
       alignItems: 'flex-start',
@@ -58,7 +58,7 @@ const InfoPill = ({ title, meta, year, badge, isMobile }: { title: string; meta:
       </span>
     </div>
   ) : (
-    <div style={{
+    <div className="cs-pill-hover" style={{
       display: 'inline-flex',
       alignItems: 'center',
       gap: '10px',
@@ -282,7 +282,7 @@ export default function Home() {
           style={{
             flex: 1,
             overflowY: 'auto',
-            padding: isMobile ? '0 20px 40px 20px' : isTablet ? '0 32px 50px 32px' : isWideDesktop ? '0 80px 80px 80px' : '0 48px 60px 48px',
+            padding: isMobile ? '0 20px 40px 20px' : isTablet ? '0 32px 50px 32px' : isWideDesktop ? '0 64px 80px 56px' : '0 40px 60px 36px',
             minWidth: 0,
             scrollBehavior: 'smooth',
             backgroundColor: '#FFFFFF',
@@ -382,8 +382,8 @@ export default function Home() {
                   { stat: '95%→96% adoption', context: 'LAT — 43-person pilot to ~4,000-person rollout, measured by weekly active use of the core workflow' },
                   { stat: '0→20K MAUs · $1.5M raised', context: 'Keye — founding designer, team of 5; later went YC F24' },
                   { stat: "96% said they'd use it", context: 'Misinfo Center — 36 Gen Z/millennial testers, field-tested at Misinfo Day' },
-                ].map((item) => (
-                  <div key={item.stat}>
+                ].map((item, i) => (
+                  <div key={item.stat} style={revealStyle(220 + i * 70)}>
                     <div style={{
                       fontFamily: 'var(--font-fraunces), serif',
                       fontSize: isMobile ? '18px' : '20px',
@@ -455,6 +455,7 @@ export default function Home() {
                 href="/Indhu-Venkatachalam-Senior-Product-Designer.docx.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
+                className="cs-pill-hover"
                 style={{
                   display: 'inline-flex',
                   alignItems: 'center',
@@ -504,7 +505,7 @@ export default function Home() {
                   badge="Shipped"
                 />
 
-                <div style={{
+                <div className="cs-card-media" style={{
                   width: isMobile ? 'calc(100% + 48px)' : isTablet ? 'calc(100% + 80px)' : '84%',
                   marginTop: isMobile ? '24px' : '32px',
                   display: 'flex',
@@ -546,7 +547,7 @@ export default function Home() {
                 />
 
                 {/* Landing hero — same video + laptop treatment used as the hero in the Keye case study */}
-                <div style={{
+                <div className="cs-card-media" style={{
                   width: isMobile ? 'calc(100% + 48px)' : isTablet ? 'calc(100% + 80px)' : '84%',
                   marginTop: isMobile ? '24px' : '32px',
                 }}>
@@ -605,7 +606,7 @@ export default function Home() {
                 />
 
                 {/* Landing videos, side by side — cropped tight to the phone so they sit seamlessly on the black card */}
-                <div style={{
+                <div className="cs-card-media" style={{
                   display: 'flex',
                   flexDirection: 'row',
                   gap: isMobile ? '34px' : '56px',
@@ -625,12 +626,12 @@ export default function Home() {
                       display: 'block',
                       width: '100%',
                       maxWidth: isMobile ? '150px' : isTablet ? '220px' : '353px',
-                      aspectRatio: '464 / 912',
+                      aspectRatio: '456 / 910',
                       objectFit: 'cover',
                       borderRadius: '0px',
                     }}
                   >
-                    <source src="/videos/misinformationcenter/Landing%20video%2001%20cropped3.mp4" type="video/mp4" />
+                    <source src="/videos/misinformationcenter/Literacyquiz.mp4" type="video/mp4" />
                   </video>
                   <video
                     autoPlay
