@@ -55,7 +55,7 @@ export default function LatDashboardVersions() {
         onClick={closeLightbox}
       >
         <button type="button" className="cs-lightbox-close" aria-label="Close" onClick={(e) => { e.stopPropagation(); closeLightbox() }}>✕</button>
-        <img id="lat-lightbox-img" src="" alt="" onClick={(e) => e.stopPropagation()} />
+        <img id="lat-lightbox-img" alt="" onClick={(e) => e.stopPropagation()} />
       </div>
     </>
   )

@@ -66,12 +66,15 @@ export default function Sidebar({
   // Sidebar renders inside the mobile/tablet overlay (see page.tsx `isTablet &&` gate),
   // so <=1240px here means touch context — bump tap targets to meet the 44px minimum.
   const [isCompact, setIsCompact] = useState(false)
+  // Laptop-range screens — pull the sidebar closer to the viewport's left edge here.
+  const [isLaptop, setIsLaptop] = useState(false)
 
   useEffect(() => {
     const checkLargeDesktop = () => {
       const width = window.innerWidth
       setIsLargeDesktop(width >= 1600)
       setIsCompact(width <= 1240)
+      setIsLaptop(width > 1240 && width < 1800)
     }
     checkLargeDesktop()
     window.addEventListener('resize', checkLargeDesktop)
@@ -96,7 +99,7 @@ export default function Sidebar({
       alignSelf: 'flex-start',
       borderRight: 'none',
       backgroundColor: '#FFFFFF',
-      padding: '40px 16px 40px 20px',
+      padding: isLaptop ? '40px 56px 40px 4px' : '40px 16px 40px 20px',
       display: 'flex',
       flexDirection: 'column',
       justifyContent: isCompact ? 'flex-start' : 'center',
