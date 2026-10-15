@@ -80,7 +80,7 @@ export default async function RootLayout({
   const excludeAnalytics = cookieStore.get('exclude-analytics')?.value === '1'
 
   return (
-    <html lang="en" className={fraunces.variable}>
+    <html lang="en" className={fraunces.variable} data-scroll-behavior="smooth">
       <head>
         <link rel="dns-prefetch" href="https://embed.figma.com" />
         <link rel="preconnect" href="https://embed.figma.com" crossOrigin="anonymous" />
