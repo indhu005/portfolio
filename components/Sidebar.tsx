@@ -69,8 +69,9 @@ export default function Sidebar({
 
   useEffect(() => {
     const checkLargeDesktop = () => {
-      setIsLargeDesktop(window.innerWidth >= 1600)
-      setIsCompact(window.innerWidth <= 1240)
+      const width = window.innerWidth
+      setIsLargeDesktop(width >= 1600)
+      setIsCompact(width <= 1240)
     }
     checkLargeDesktop()
     window.addEventListener('resize', checkLargeDesktop)
@@ -87,7 +88,7 @@ export default function Sidebar({
       width: '400px',
       minWidth: '400px',
       maxWidth: '400px',
-      height: isCompact ? 'auto' : '100vh',
+      height: isCompact ? '100%' : '100vh',
       minHeight: isCompact ? undefined : '100vh',
       position: isCompact ? 'static' : 'sticky',
       top: 0,
@@ -113,6 +114,10 @@ export default function Sidebar({
         padding: '40px 40px 20px 40px',
         marginLeft: '40px',
         boxShadow: '0 4px 14px rgba(28, 25, 23, 0.08)',
+        // On the mobile/tablet overlay, stretch the box to fill the available height
+        // instead of sizing to content — avoids a plain white dead zone below the
+        // last nav item when the menu is shorter than the screen.
+        flex: isCompact ? 1 : undefined,
       }}>
 
       {/* NAME — small pulsing dot signals the sidebar as a live, active surface rather than a static image */}

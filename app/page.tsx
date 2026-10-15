@@ -96,14 +96,13 @@ export default function Home() {
   const [revealed, setRevealed] = useState(false)
   const [splashFading, setSplashFading] = useState(false)
   const [splashVisible, setSplashVisible] = useState(true)
-  const [inGameZone, setInGameZone] = useState(true)
-  const [overDarkCard, setOverDarkCard] = useState(false)
-  const gameWrapperRef = useRef<HTMLDivElement>(null)
-  const latCardRef = useRef<HTMLElement>(null)
-  const misinfoCardRef = useRef<HTMLElement>(null)
   const isMobile = useMediaQuery('(max-width: 768px)')
   const isTablet = useMediaQuery('(max-width: 1240px)')
   const isWideDesktop = useMediaQuery('(min-width: 2200px)')
+  // Laptop-range screens (sidebar + hero column together hit the 1200px wrapper's
+  // max-width here) — used to widen the hero text column so it doesn't leave a dead
+  // gutter next to "Selected Work" below it.
+  const isLaptop = useMediaQuery('(min-width: 1241px) and (max-width: 1799px)')
 
   useEffect(() => {
     const timer = setTimeout(() => setRevealed(true), 50)
@@ -119,30 +118,6 @@ export default function Home() {
       clearTimeout(removeTimer)
     }
   }, [])
-
-  // Tracks whether the fixed hamburger button still overlaps the game hero (mirrors its accent
-  // color there) or a dark product card (LAT/Misinfo are near-black, so the icon needs to go white
-  // to stay visible instead of a black icon disappearing against a black background)
-  useEffect(() => {
-    if (!isTablet) return
-    const container = document.querySelector('[data-scroll-container]')
-    if (!container) return
-    const buttonCenterY = 40 // button sits at top:20px, height:40px
-    const checkZones = () => {
-      const wrapper = gameWrapperRef.current
-      if (wrapper) setInGameZone(wrapper.getBoundingClientRect().bottom > 60)
-
-      const isOverCard = (ref: React.RefObject<HTMLElement | null>) => {
-        if (!ref.current) return false
-        const rect = ref.current.getBoundingClientRect()
-        return rect.top < buttonCenterY && rect.bottom > buttonCenterY
-      }
-      setOverDarkCard(isOverCard(latCardRef) || isOverCard(misinfoCardRef))
-    }
-    checkZones()
-    container.addEventListener('scroll', checkZones, { passive: true })
-    return () => container.removeEventListener('scroll', checkZones)
-  }, [isTablet])
 
   const revealStyle = (delayMs: number): CSSProperties => ({
     opacity: revealed ? 1 : 0,
@@ -203,10 +178,12 @@ export default function Home() {
       {!isTablet && <Sidebar />}
 
 
-      {/* MOBILE MENU BUTTON */}
-      {isTablet && (() => {
-        const iconIsWhite = inGameZone || overDarkCard
-        return (
+      {/* MOBILE MENU BUTTON — one consistent style regardless of scroll position/what's
+          behind it (previously switched background/icon color based on being over the
+          game hero or a dark card; that made it blend into the game-end grey overlay).
+          Opaque white keeps it legible everywhere, and zIndex:1000 sits above the
+          game-end overlay's zIndex:100 so it's never visually buried under it. */}
+      {isTablet && (
         <button
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           aria-label={mobileMenuOpen ? 'Close menu' : 'Open menu'}
@@ -220,33 +197,29 @@ export default function Home() {
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
-            background: inGameZone ? '#F2955A' : 'transparent',
-            backdropFilter: inGameZone ? 'none' : 'blur(12px)',
-            WebkitBackdropFilter: inGameZone ? 'none' : 'blur(12px)',
-            border: inGameZone ? 'none' : '1px solid rgba(28, 25, 23, 0.1)',
+            backgroundColor: '#FFFFFF',
+            border: '1px solid rgba(28, 25, 23, 0.12)',
             borderRadius: '10px',
             cursor: 'pointer',
-            boxShadow: inGameZone ? '0 2px 8px rgba(0,0,0,0.15)' : 'none',
-            transition: 'background-color 0.2s ease, box-shadow 0.2s ease',
+            boxShadow: '0 2px 8px rgba(0,0,0,0.15)',
           }}
         >
           <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
             {mobileMenuOpen ? (
               <>
-                <path d="M4 4L14 14" stroke={iconIsWhite ? '#FFFFFF' : '#1C1917'} strokeWidth="1.6" strokeLinecap="round" />
-                <path d="M14 4L4 14" stroke={iconIsWhite ? '#FFFFFF' : '#1C1917'} strokeWidth="1.6" strokeLinecap="round" />
+                <path d="M4 4L14 14" stroke="#1C1917" strokeWidth="1.6" strokeLinecap="round" />
+                <path d="M14 4L4 14" stroke="#1C1917" strokeWidth="1.6" strokeLinecap="round" />
               </>
             ) : (
               <>
-                <path d="M2.5 5H15.5" stroke={iconIsWhite ? '#FFFFFF' : '#1C1917'} strokeWidth="1.6" strokeLinecap="round" />
-                <path d="M2.5 9H15.5" stroke={iconIsWhite ? '#FFFFFF' : '#1C1917'} strokeWidth="1.6" strokeLinecap="round" />
-                <path d="M2.5 13H15.5" stroke={iconIsWhite ? '#FFFFFF' : '#1C1917'} strokeWidth="1.6" strokeLinecap="round" />
+                <path d="M2.5 5H15.5" stroke="#1C1917" strokeWidth="1.6" strokeLinecap="round" />
+                <path d="M2.5 9H15.5" stroke="#1C1917" strokeWidth="1.6" strokeLinecap="round" />
+                <path d="M2.5 13H15.5" stroke="#1C1917" strokeWidth="1.6" strokeLinecap="round" />
               </>
             )}
           </svg>
         </button>
-        )
-      })()}
+      )}
 
       {/* MOBILE/TABLET OVERLAY MENU */}
       {isTablet && mobileMenuOpen && (
@@ -290,7 +263,7 @@ export default function Home() {
         >
           {/* Landing Game — same maxWidth/centering as the wrapper below so the grid can align its
               left edge to "Hi, I'm Indhu" instead of centering in the full (wider) content area */}
-          <div ref={gameWrapperRef} style={{
+          <div style={{
             maxWidth: isWideDesktop ? '1400px' : '1200px',
             marginLeft: 'auto',
             marginRight: 'auto',
@@ -307,7 +280,12 @@ export default function Home() {
           }}>
           {/* Home page content */}
           <main style={{
-            maxWidth: isWideDesktop ? '1100px' : '920px',
+            // Laptop-range screens hit the 1200px wrapper's max-width (the sidebar no
+            // longer leaves enough room left over for it to keep growing), so the 920px
+            // hero cap left a large dead gutter between the hero text and "Selected Work"
+            // below it — widen it here to close that gap. Still narrower than the 1200px
+            // wrapper to avoid an overlong reading line.
+            maxWidth: isWideDesktop ? '1100px' : isLaptop ? '1050px' : '920px',
             marginTop: '0px',
             marginLeft: '0',
             marginRight: 'auto',
@@ -482,11 +460,10 @@ export default function Home() {
               zIndex: 1,
               display: 'flex',
               flexDirection: 'column',
-              gap: isMobile ? '63px' : isWideDesktop ? '112px' : '91px',
+              gap: isMobile ? '64px' : isWideDesktop ? '112px' : '91px',
             }}>
               {/* Card 1 - LAT */}
               <article
-                ref={latCardRef}
                 onClick={() => router.push('/work/lat')}
                 style={{
                 cursor: 'pointer',
@@ -602,7 +579,6 @@ export default function Home() {
 
               {/* Card 3 - Misinformation Center */}
               <article
-                ref={misinfoCardRef}
                 onClick={() => router.push('/work/misinformation-center')}
                 style={{
                 cursor: 'pointer',
@@ -620,7 +596,7 @@ export default function Home() {
                   year="Jan–Dec 2024"
                 />
 
-                {/* Landing videos, side by side — cropped tight to the phone so they sit seamlessly on the black card */}
+                {/* Landing videos, side by side — cropped tight to the phone so they sit seamlessly on the card */}
                 <div style={{
                   display: 'flex',
                   flexDirection: 'row',

@@ -1297,17 +1297,20 @@ export default function LandingGameSimple() {
       {/* End game modal */}
       {gameEnded && (
         <>
-          {/* Dark overlay — offset a bit from the very top of the game area, but
-              not so much that it exposes the location/time text at top:24px */}
+          {/* Dark overlay — on phone/tablet, offset a small amount from the very top so
+              it doesn't hug the screen edge, but still less than the fixed hamburger
+              button's own top:20px position so the button (zIndex:1000) stays fully
+              inside/on top of the grey area instead of poking out above it. Desktop has
+              no hamburger to worry about, so it stays full-bleed there. */}
           <div
             style={{
               position: 'absolute',
-              top: '16px',
+              top: (isMobile || isTablet) ? '12px' : 0,
               left: 0,
               right: 0,
               bottom: 0,
               backgroundColor: 'rgba(0, 0, 0, 0.7)',
-              borderRadius: '28px',
+              borderRadius: (isMobile || isTablet) ? '6px' : '28px',
               zIndex: 100,
             }}
           />
