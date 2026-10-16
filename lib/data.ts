@@ -74,6 +74,6 @@ export const profileData = {
   title: 'Product Designer',
   location: 'based in Seattle',
   email: 'hello@indhu.design',
-  resume: '/resume.pdf',
+  resume: '/Indhu-Venkatachalam-Senior-Product-Designer.pdf',
   linkedin: 'https://linkedin.com/in/indhu',
 };

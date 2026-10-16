@@ -1398,7 +1398,7 @@ export default function LandingGameSimple() {
                 See work
               </a>
               <a
-                href="/Indhu-Venkatachalam-Senior-Product-Designer.docx.pdf"
+                href="/Indhu-Venkatachalam-Senior-Product-Designer.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
                 style={{

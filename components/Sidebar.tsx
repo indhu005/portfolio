@@ -311,7 +311,7 @@ export default function Sidebar({
         </Link>
         {[
           { label: 'Email', href: 'mailto:indhuve05@gmail.com' },
-          { label: 'Resume', href: '/Indhu-Venkatachalam-Senior-Product-Designer.docx.pdf' },
+          { label: 'Resume', href: '/Indhu-Venkatachalam-Senior-Product-Designer.pdf' },
           { label: 'LinkedIn', href: 'https://www.linkedin.com/in/indhu05/' }
         ].map((item) => (
           item.href ? (
