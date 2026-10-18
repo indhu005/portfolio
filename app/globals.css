@@ -31,11 +31,11 @@
 }
 
 .sidebar-key:hover {
-  background-color: rgba(28, 25, 23, 0.05);
+  background-color: rgba(255, 255, 255, 0.08);
 }
 
 .sidebar-key:active {
-  background-color: rgba(28, 25, 23, 0.1);
+  background-color: rgba(255, 255, 255, 0.14);
   transform: scaleY(0.92);
 }
 

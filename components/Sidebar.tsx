@@ -111,8 +111,8 @@ export default function Sidebar({
           40px so sidebar-key-top's -40px/+40px hover-highlight trick still
           reaches this box's edge rather than the outer column's. */}
       <div style={{
-        backgroundColor: '#F5F4F2',
-        border: '1px solid #1C1917',
+        backgroundColor: '#1C1917',
+        border: '1px solid #4A72E5',
         borderRadius: '28px',
         padding: '40px 40px 20px 40px',
         marginLeft: '40px',
@@ -130,14 +130,14 @@ export default function Sidebar({
           style={{
             fontSize: isLargeDesktop ? '20px' : '16px',
             fontWeight: 700,
-            color: '#1C1917',
+            color: '#FFFFFF',
             cursor: 'pointer',
             transition: 'color 0.12s ease-out',
             textDecoration: 'none',
             display: 'block',
           }}
           onMouseEnter={(e) => e.currentTarget.style.color = 'var(--accent)'}
-          onMouseLeave={(e) => e.currentTarget.style.color = '#1C1917'}
+          onMouseLeave={(e) => e.currentTarget.style.color = '#FFFFFF'}
         >
           Indhu
         </Link>
@@ -163,13 +163,13 @@ export default function Sidebar({
         <div style={{
           fontSize: isLargeDesktop ? '18px' : '15px',
           fontWeight: 400,
-          color: '#1C1917',
+          color: '#FFFFFF',
           marginBottom: '4px',
         }}>Senior Product Designer</div>
         <div style={{
           fontSize: isLargeDesktop ? '18px' : '15px',
           fontWeight: 400,
-          color: '#1C1917',
+          color: '#FFFFFF',
         }}>based in Seattle</div>
       </div>
 
@@ -178,7 +178,7 @@ export default function Sidebar({
         <div style={{
           fontSize: '11px',
           fontWeight: 700,
-          color: '#1C1917',
+          color: '#FFFFFF',
           marginBottom: '12px',
           textTransform: 'uppercase',
           letterSpacing: '0.06em',
@@ -202,7 +202,7 @@ export default function Sidebar({
                 style={{
                   fontSize: navFontSize,
                   fontWeight: 700,
-                  color: '#1C1917',
+                  color: '#FFFFFF',
                   cursor: 'pointer',
                   paddingTop: navPaddingY,
                   paddingBottom: navPaddingY,
@@ -213,11 +213,11 @@ export default function Sidebar({
                   textDecoration: 'none',
                 }}
                 onMouseEnter={(e) => { if (!isActiveProject) e.currentTarget.style.color = ACTIVE_COLOR }}
-                onMouseLeave={(e) => { if (!isActiveProject) e.currentTarget.style.color = '#1C1917' }}
+                onMouseLeave={(e) => { if (!isActiveProject) e.currentTarget.style.color = '#FFFFFF' }}
               >
                 <span style={{
                   fontSize: isCompact ? '13px' : '11px',
-                  color: isActiveProject ? ACTIVE_COLOR : '#1C1917',
+                  color: isActiveProject ? ACTIVE_COLOR : '#FFFFFF',
                   flexShrink: 0,
                   width: '16px',
                   fontVariantNumeric: 'tabular-nums',
@@ -259,11 +259,11 @@ export default function Sidebar({
                             }
                           }}
                           onMouseEnter={(e) => { if (!isActiveSection) e.currentTarget.style.color = ACTIVE_COLOR }}
-                          onMouseLeave={(e) => { if (!isActiveSection) e.currentTarget.style.color = '#1C1917' }}
+                          onMouseLeave={(e) => { if (!isActiveSection) e.currentTarget.style.color = '#FFFFFF' }}
                           className="sidebar-key sidebar-key-nested"
                           style={{
                             fontSize: isCompact ? '15px' : isLargeDesktop ? '16px' : '13px',
-                            color: '#1C1917',
+                            color: '#FFFFFF',
                             fontWeight: 400,
                             display: 'inline-block',
                             cursor: onSectionClick ? 'pointer' : 'default',
@@ -296,7 +296,7 @@ export default function Sidebar({
           style={{
             fontSize: navFontSize,
             fontWeight: 700,
-            color: '#1C1917',
+            color: '#FFFFFF',
             paddingTop: navPaddingY,
             paddingBottom: navPaddingY,
             marginBottom: '12px',
@@ -305,7 +305,7 @@ export default function Sidebar({
             textDecoration: 'none',
           }}
           onMouseEnter={(e) => e.currentTarget.style.color = 'var(--accent)'}
-          onMouseLeave={(e) => e.currentTarget.style.color = '#1C1917'}
+          onMouseLeave={(e) => e.currentTarget.style.color = '#FFFFFF'}
         >
           About
         </Link>
@@ -321,12 +321,12 @@ export default function Sidebar({
               target={item.href.startsWith('mailto:') ? undefined : '_blank'}
               rel={item.href.startsWith('mailto:') ? undefined : 'noopener noreferrer'}
               onMouseEnter={(e) => e.currentTarget.style.color = 'var(--accent)'}
-              onMouseLeave={(e) => e.currentTarget.style.color = '#1C1917'}
+              onMouseLeave={(e) => e.currentTarget.style.color = '#FFFFFF'}
               className="sidebar-key sidebar-key-top"
               style={{
                 fontSize: navFontSize,
                 fontWeight: 400,
-                color: '#1C1917',
+                color: '#FFFFFF',
                 paddingTop: navPaddingY,
                 paddingBottom: navPaddingY,
                 cursor: 'pointer',
@@ -340,12 +340,12 @@ export default function Sidebar({
             <div
               key={item.label}
               onMouseEnter={(e) => e.currentTarget.style.color = 'var(--accent)'}
-              onMouseLeave={(e) => e.currentTarget.style.color = '#1C1917'}
+              onMouseLeave={(e) => e.currentTarget.style.color = '#FFFFFF'}
               className="sidebar-key sidebar-key-top"
               style={{
                 fontSize: navFontSize,
                 fontWeight: 400,
-                color: '#1C1917',
+                color: '#FFFFFF',
                 paddingTop: navPaddingY,
                 paddingBottom: navPaddingY,
                 cursor: 'pointer',
