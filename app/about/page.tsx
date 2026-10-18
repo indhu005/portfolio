@@ -276,7 +276,7 @@ export default function About() {
               }}>Field notes</div>
 
               <div style={{
-                fontFamily: 'var(--font-fraunces), serif',
+                fontFamily: 'var(--font-heading), serif',
                 fontStyle: 'italic',
                 fontWeight: 400,
                 fontSize: isMobile ? '24px' : isTablet ? '28px' : '32px',
@@ -332,7 +332,7 @@ export default function About() {
                     <p style={{
                       margin: 0,
                       maxWidth: entry.pull ? '56ch' : '62ch',
-                      fontFamily: entry.pull ? 'var(--font-fraunces), serif' : 'inherit',
+                      fontFamily: entry.pull ? 'var(--font-heading), serif' : 'inherit',
                       fontStyle: 'normal',
                       fontWeight: entry.pull ? 600 : 400,
                       fontSize: entry.pull ? (isMobile ? '19px' : '21px') : (isMobile ? '16px' : '17px'),

@@ -297,7 +297,7 @@ export default function CaseStudyLayout({ caseStudy, slug }: CaseStudyLayoutProp
               marginBottom: isMobile ? '14px' : '18px',
             }}>{caseStudy.title}</h1>
             <p style={{
-              fontFamily: 'var(--font-fraunces), serif',
+              fontFamily: 'var(--font-heading), serif',
               fontSize: isMobile ? '28px' : isTablet ? '36px' : '46px',
               fontWeight: 600,
               color: '#1C1917',
@@ -703,7 +703,7 @@ export default function CaseStudyLayout({ caseStudy, slug }: CaseStudyLayoutProp
                       color: 'var(--text-primary)',
                       marginBottom: '24px',
                       lineHeight: '1.3',
-                      fontFamily: 'var(--font-fraunces), serif',
+                      fontFamily: 'var(--font-heading), serif',
                     }}>
                       {caseStudy.preSnapshotHeadline}
                     </h3>
@@ -781,7 +781,7 @@ export default function CaseStudyLayout({ caseStudy, slug }: CaseStudyLayoutProp
                   color: 'var(--text-primary)',
                   marginBottom: '24px',
                   lineHeight: '1.3',
-                  fontFamily: 'var(--font-fraunces), serif',
+                  fontFamily: 'var(--font-heading), serif',
                   maxWidth: isMobile || isTablet ? '850px' : '1020px',
                   marginLeft: 'auto',
                   marginRight: 'auto',
@@ -895,7 +895,7 @@ export default function CaseStudyLayout({ caseStudy, slug }: CaseStudyLayoutProp
                     <div style={{
                       fontSize: isMobile ? '24px' : '32px',
                       fontWeight: 700,
-                      fontFamily: 'var(--font-fraunces), serif',
+                      fontFamily: 'var(--font-heading), serif',
                       marginBottom: '4px',
                     }}>
                       {nextStudy.name}

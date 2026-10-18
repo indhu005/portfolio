@@ -64,7 +64,7 @@ export default function IntroAnimation({ onComplete }: IntroAnimationProps) {
             top: '50%',
             left: '50%',
             transform: 'translate(-50%, -50%)',
-            fontFamily: 'var(--font-fraunces), serif',
+            fontFamily: 'var(--font-heading), serif',
             fontSize: 'clamp(48px, 8vw, 96px)',
             fontWeight: 700,
             color: '#FFFFFF',

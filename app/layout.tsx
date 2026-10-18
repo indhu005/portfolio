@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from 'next'
-import { DM_Sans, Fraunces } from 'next/font/google'
+import { Fraunces, Space_Grotesk, Inter } from 'next/font/google'
 import Script from 'next/script'
 import { cookies } from 'next/headers'
 import './globals.css'
@@ -8,16 +8,23 @@ import { Analytics } from '@vercel/analytics/react'
 import { SpeedInsights } from '@vercel/speed-insights/next'
 import { PersonStructuredData, PortfolioStructuredData } from '@/components/StructuredData'
 
-const dmSans = DM_Sans({
-  subsets: ['latin'],
-  weight: ['400', '500', '700']
-})
-
 const fraunces = Fraunces({
   subsets: ['latin'],
   weight: ['400', '500', '700'],
   style: ['normal', 'italic'],
   variable: '--font-fraunces'
+})
+
+const spaceGrotesk = Space_Grotesk({
+  subsets: ['latin'],
+  weight: ['400', '500', '700'],
+  variable: '--font-space-grotesk'
+})
+
+const inter = Inter({
+  subsets: ['latin'],
+  weight: ['400', '500', '700'],
+  variable: '--font-inter'
 })
 
 export const metadata: Metadata = {
@@ -80,12 +87,16 @@ export default async function RootLayout({
   const excludeAnalytics = cookieStore.get('exclude-analytics')?.value === '1'
 
   return (
-    <html lang="en" className={fraunces.variable} data-scroll-behavior="smooth">
+    <html
+      lang="en"
+      className={[fraunces.variable, spaceGrotesk.variable, inter.variable].join(' ')}
+      data-scroll-behavior="smooth"
+    >
       <head>
         <link rel="dns-prefetch" href="https://embed.figma.com" />
         <link rel="preconnect" href="https://embed.figma.com" crossOrigin="anonymous" />
       </head>
-      <body className={dmSans.className} style={{
+      <body className={inter.className} style={{
         margin: 0,
         padding: 0,
         backgroundColor: '#FFFFFF',

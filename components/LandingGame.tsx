@@ -889,7 +889,7 @@ export default function LandingGame() {
             fontWeight: 600,
             color: '#1C1917',
             marginBottom: isMobile ? '12px' : isWideDesktop ? '30px' : '20px',
-            fontFamily: 'var(--font-fraunces), serif',
+            fontFamily: 'var(--font-heading), serif',
             lineHeight: '1.4',
           }}
         >
@@ -1490,7 +1490,7 @@ export default function LandingGame() {
               fontWeight: 700,
               color: '#1C1917',
               marginBottom: '20px',
-              fontFamily: 'var(--font-fraunces), serif',
+              fontFamily: 'var(--font-heading), serif',
               lineHeight: '1.2',
             }}>
               About the Game

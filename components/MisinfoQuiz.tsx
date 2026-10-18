@@ -101,7 +101,7 @@ export default function MisinfoQuiz() {
         <div style={{ fontSize: '48px', marginBottom: '24px' }}>
           {score === 5 ? '🎉' : score >= 3 ? '👍' : '💪'}
         </div>
-        <div style={{ fontSize: '32px', fontWeight: 700, marginBottom: '16px', fontFamily: 'var(--font-fraunces), serif' }}>
+        <div style={{ fontSize: '32px', fontWeight: 700, marginBottom: '16px', fontFamily: 'var(--font-heading), serif' }}>
           You got {score} out of {questions.length}
         </div>
         <div style={{ fontSize: '16px', color: '#9CA3AF', marginBottom: '32px', lineHeight: '1.6' }}>

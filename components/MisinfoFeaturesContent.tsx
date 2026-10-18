@@ -128,14 +128,14 @@ export default function MisinfoFeaturesContent() {
       <div style={{ display: 'flex', gap: '24px', marginTop: '40px', flexWrap: 'wrap' }}>
         <div style={{ flex: 1, minWidth: '250px', position: 'relative' }}>
           <div style={{ backgroundColor: '#F3F4F6', padding: '24px', borderRadius: '0px', position: 'relative' }}>
-            <p style={{ fontStyle: 'italic', fontFamily: 'var(--font-fraunces), serif', color: '#1F2937', margin: 0 }}>"The prototype is very well crafted… the experience looks easy and also fun."</p>
+            <p style={{ fontStyle: 'italic', fontFamily: 'var(--font-heading), serif', color: '#1F2937', margin: 0 }}>"The prototype is very well crafted… the experience looks easy and also fun."</p>
             <p style={{ marginTop: '12px', fontSize: '13px', color: '#6B7280' }}>— capstone reviewer</p>
           </div>
           <div style={{ width: 0, height: 0, borderLeft: '12px solid transparent', borderRight: '12px solid transparent', borderTop: '12px solid #F3F4F6', position: 'absolute', bottom: '-12px', left: '32px' }}></div>
         </div>
       </div>
 
-      <p style={{ marginTop: '64px', fontFamily: 'var(--font-fraunces), serif', fontStyle: 'italic', fontSize: '22px', color: '#1C1917', textAlign: 'center' }}>
+      <p style={{ marginTop: '64px', fontFamily: 'var(--font-heading), serif', fontStyle: 'italic', fontSize: '22px', color: '#1C1917', textAlign: 'center' }}>
         Let&apos;s get into the details now.
       </p>
     </div>

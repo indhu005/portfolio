@@ -81,7 +81,7 @@ export default function LatTradeoffTable() {
               Shipped
             </div>
             <div style={{
-              fontFamily: 'var(--font-fraunces), serif',
+              fontFamily: 'var(--font-heading), serif',
               fontSize: '15.5px',
               fontWeight: 700,
               color: '#1C1917',

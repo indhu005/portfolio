@@ -1,4 +1,4 @@
-﻿'use client'
+'use client'
 import Sidebar from '@/components/Sidebar'
 import LandingGameSimple from '@/components/LandingGameSimple'
 import { useRouter } from 'next/navigation'
@@ -22,11 +22,11 @@ const useMediaQuery = (query: string) => {
   return mounted ? matches : false
 }
 
-// Compact pill-shaped label above each case study video â€” title, category, year, and
+// Compact pill-shaped label above each case study video — title, category, year, and
 // shipped status condensed into one line instead of a full header block.
 const InfoPill = ({ title, meta, year, badge, isMobile }: { title: string; meta: string; year: string; badge?: string; isMobile: boolean }) => (
   isMobile ? (
-    // Phone: two compact lines in a rounded tag instead of a stretched pill â€” a
+    // Phone: two compact lines in a rounded tag instead of a stretched pill — a
     // single-line pill with this much text wraps into a tall blob at narrow widths.
     <div className="cs-pill-hover" style={{
       display: 'inline-flex',
@@ -40,16 +40,16 @@ const InfoPill = ({ title, meta, year, badge, isMobile }: { title: string; meta:
       maxWidth: '100%',
       boxShadow: '0 3px 8px rgba(28, 25, 23, 0.12)',
     }}>
-      <span style={{ fontFamily: 'var(--font-fraunces), serif', fontWeight: 700, fontSize: '13px', color: '#1C1917' }}>
+      <span style={{ fontFamily: 'var(--font-heading), serif', fontWeight: 700, fontSize: '13px', color: '#1C1917' }}>
         {title}
       </span>
       <span style={{ display: 'flex', alignItems: 'center', gap: '6px', flexWrap: 'wrap', fontSize: '10.5px', fontWeight: 600, color: '#78716C' }}>
         <span>{meta}</span>
-        <span style={{ color: '#D6D3D1' }}>Â·</span>
+        <span style={{ color: '#D6D3D1' }}>·</span>
         <span>{year}</span>
         {badge && (
           <>
-            <span style={{ color: '#D6D3D1' }}>Â·</span>
+            <span style={{ color: '#D6D3D1' }}>·</span>
             <span style={{ fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.04em', color: '#1C1917' }}>
               {badge}
             </span>
@@ -71,16 +71,16 @@ const InfoPill = ({ title, meta, year, badge, isMobile }: { title: string; meta:
       maxWidth: '100%',
       boxShadow: '0 3px 8px rgba(28, 25, 23, 0.12)',
     }}>
-      <span style={{ fontFamily: 'var(--font-fraunces), serif', fontWeight: 700, fontSize: '15px', color: '#1C1917' }}>
+      <span style={{ fontFamily: 'var(--font-heading), serif', fontWeight: 700, fontSize: '15px', color: '#1C1917' }}>
         {title}
       </span>
-      <span style={{ color: '#A8A29E' }}>Â·</span>
+      <span style={{ color: '#A8A29E' }}>·</span>
       <span style={{ fontSize: '13px', fontWeight: 600, color: '#57534E' }}>{meta}</span>
-      <span style={{ color: '#A8A29E' }}>Â·</span>
+      <span style={{ color: '#A8A29E' }}>·</span>
       <span style={{ fontSize: '13px', fontWeight: 600, color: '#57534E' }}>{year}</span>
       {badge && (
         <>
-          <span style={{ color: '#A8A29E' }}>Â·</span>
+          <span style={{ color: '#A8A29E' }}>·</span>
           <span style={{ fontSize: '11px', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.04em', color: '#1C1917' }}>
             {badge}
           </span>
@@ -100,7 +100,7 @@ export default function Home() {
   const isTablet = useMediaQuery('(max-width: 1240px)')
   const isWideDesktop = useMediaQuery('(min-width: 2200px)')
   // Laptop-range screens (sidebar + hero column together hit the 1200px wrapper's
-  // max-width here) â€” used to widen the hero text column so it doesn't leave a dead
+  // max-width here) — used to widen the hero text column so it doesn't leave a dead
   // gutter next to "Selected Work" below it.
   const isLaptop = useMediaQuery('(min-width: 1241px) and (max-width: 1799px)')
 
@@ -178,7 +178,7 @@ export default function Home() {
       {!isTablet && <Sidebar />}
 
 
-      {/* MOBILE MENU BUTTON â€” one consistent style regardless of scroll position/what's
+      {/* MOBILE MENU BUTTON — one consistent style regardless of scroll position/what's
           behind it (previously switched background/icon color based on being over the
           game hero or a dark card; that made it blend into the game-end grey overlay).
           Opaque white keeps it legible everywhere, and zIndex:1000 sits above the
@@ -261,7 +261,7 @@ export default function Home() {
             backgroundColor: '#FFFFFF',
           }}
         >
-          {/* Landing Game â€” same maxWidth/centering as the wrapper below so the grid can align its
+          {/* Landing Game — same maxWidth/centering as the wrapper below so the grid can align its
               left edge to "Hi, I'm Indhu" instead of centering in the full (wider) content area */}
           <div style={{
             maxWidth: isWideDesktop ? '1400px' : '1200px',
@@ -283,7 +283,7 @@ export default function Home() {
             // Laptop-range screens hit the 1200px wrapper's max-width (the sidebar no
             // longer leaves enough room left over for it to keep growing), so the 920px
             // hero cap left a large dead gutter between the hero text and "Selected Work"
-            // below it â€” widen it here to close that gap. Still narrower than the 1200px
+            // below it — widen it here to close that gap. Still narrower than the 1200px
             // wrapper to avoid an overlong reading line.
             maxWidth: isWideDesktop ? '1100px' : isLaptop ? '1050px' : '920px',
             marginTop: '0px',
@@ -292,7 +292,7 @@ export default function Home() {
             textAlign: 'left',
           }}>
             <h1 style={{
-              fontFamily: 'var(--font-fraunces), serif',
+              fontFamily: 'var(--font-heading), serif',
               fontSize: isMobile ? '38px' : isTablet ? '50px' : isWideDesktop ? '74px' : '62px',
               fontWeight: 700,
               lineHeight: '1.08',
@@ -316,10 +316,10 @@ export default function Home() {
               ...revealStyle(60),
             }}>
               <span style={{ fontWeight: 700, color: '#57534E' }}>Senior Product Designer</span>
-              <span style={{ color: '#D6D3D1' }}>Â·</span>
+              <span style={{ color: '#D6D3D1' }}>·</span>
               <span style={{ fontWeight: 500, color: '#57534E' }}>Seattle</span>
-              <span style={{ color: '#D6D3D1' }}>Â·</span>
-              <span style={{ fontWeight: 700, color: '#57534E' }}>0â†’1, AI/ML &amp; Trustworthy Systems</span>
+              <span style={{ color: '#D6D3D1' }}>·</span>
+              <span style={{ fontWeight: 700, color: '#57534E' }}>0→1, AI/ML &amp; Trustworthy Systems</span>
             </div>
 
             <div style={{
@@ -328,7 +328,7 @@ export default function Home() {
               color: '#1C1917',
             }}>
               <p style={{
-                fontFamily: 'var(--font-fraunces), serif',
+                fontFamily: 'var(--font-heading), serif',
                 fontSize: isMobile ? '26px' : isWideDesktop ? '34px' : '30px',
                 fontWeight: 700,
                 lineHeight: '1.3',
@@ -339,14 +339,14 @@ export default function Home() {
               </p>
 
               <p style={{ marginBottom: isWideDesktop ? '32px' : '28px', ...revealStyle(120) }}>
-                I'm a senior product designer with 8 years of experience â€” from Gensler to founding Keye and senior product design on LAT. I design the trust layer between people and AI, from a 0â†’1 marketplace that later went YC, to an enterprise platform that reached 96% adoption inside a politically sensitive institution.
+                I'm a senior product designer with 8 years of experience — from Gensler to founding Keye and senior product design on LAT. I design the trust layer between people and AI, from a 0→1 marketplace that later went YC, to an enterprise platform that reached 96% adoption inside a politically sensitive institution.
               </p>
 
               <p style={{ fontSize: isMobile ? '15px' : '16px', color: '#78716C', marginBottom: isWideDesktop ? '32px' : '28px', ...revealStyle(140) }}>
-                Since 2025, I've been building an AI-forward marketplace in stealth â€” prototyping, building, and shipping daily with AI agents and LLMs.
+                Since 2025, I've been building an AI-forward marketplace in stealth — prototyping, building, and shipping daily with AI agents and LLMs.
               </p>
 
-              {/* Proof Strip â€” fast, scannable backing for the claims above */}
+              {/* Proof Strip — fast, scannable backing for the claims above */}
               <div style={{
                 display: 'grid',
                 gridTemplateColumns: isMobile ? '1fr' : 'repeat(3, 1fr)',
@@ -357,13 +357,13 @@ export default function Home() {
                 ...revealStyle(160),
               }}>
                 {[
-                  { stat: '95%â†’96% adoption', context: 'LAT â€” 43-person pilot to ~4,000-person rollout, measured by weekly active use of the core workflow' },
-                  { stat: '0â†’20K MAUs Â· $1.5M raised', context: 'Keye â€” founding designer, team of 5; later went YC F24' },
-                  { stat: "96% said they'd use it", context: 'Misinfo Center â€” 36 Gen Z/millennial testers, field-tested at Misinfo Day' },
+                  { stat: '95%→96% adoption', context: 'LAT — 43-person pilot to ~4,000-person rollout, measured by weekly active use of the core workflow' },
+                  { stat: '0→20K MAUs · $1.5M raised', context: 'Keye — founding designer, team of 5; later went YC F24' },
+                  { stat: "96% said they'd use it", context: 'Misinfo Center — 36 Gen Z/millennial testers, field-tested at Misinfo Day' },
                 ].map((item, i) => (
                   <div key={item.stat} style={revealStyle(220 + i * 70)}>
                     <div style={{
-                      fontFamily: 'var(--font-fraunces), serif',
+                      fontFamily: 'var(--font-heading), serif',
                       fontSize: isMobile ? '18px' : '20px',
                       fontWeight: 700,
                       color: '#1C1917',
@@ -384,7 +384,7 @@ export default function Home() {
               </div>
 
               <p style={{ marginBottom: isWideDesktop ? '32px' : '28px', ...revealStyle(220) }}>
-                I obsess over how and why â€” and lately, why now. These days that means deciding what AI gets to see and act on, and what stays a human call.
+                I obsess over how and why — and lately, why now. These days that means deciding what AI gets to see and act on, and what stays a human call.
               </p>
             </div>
           </main>
@@ -395,7 +395,7 @@ export default function Home() {
             overflow: 'hidden',
             marginTop: isMobile ? '60px' : isWideDesktop ? '120px' : '100px',
           }}>
-            {/* Ambient drifting blobs â€” just enough motion that the white background
+            {/* Ambient drifting blobs — just enough motion that the white background
                 doesn't read as flat, kept low-opacity/blurred so it stays behind content */}
             <div aria-hidden="true" className="cs-section-blob cs-section-blob--coral" />
 
@@ -418,7 +418,7 @@ export default function Home() {
                   flexShrink: 0,
                 }} />
                 <h2 style={{
-                  fontFamily: 'var(--font-fraunces), serif',
+                  fontFamily: 'var(--font-heading), serif',
                   fontSize: isMobile ? '22px' : isWideDesktop ? '39px' : '34px',
                   fontWeight: 700,
                   color: '#1C1917',
@@ -437,7 +437,7 @@ export default function Home() {
                 style={{
                   display: 'inline-flex',
                   alignItems: 'center',
-                  fontFamily: 'var(--font-fraunces), serif',
+                  fontFamily: 'var(--font-heading), serif',
                   fontWeight: 700,
                   fontSize: isMobile ? '14px' : '15px',
                   color: '#FFFFFF',
@@ -477,12 +477,12 @@ export default function Home() {
                 <InfoPill
                   isMobile={isMobile}
                   title="LAT Platform"
-                  meta="Enterprise AI Â· 0â†’1 Systems"
-                  year="Jun 2023 â€“ May 2024"
+                  meta="Enterprise AI · 0→1 Systems"
+                  year="Jun 2023 – May 2024"
                   badge="Shipped"
                 />
 
-                {/* Landing hero â€” same laptop mockup treatment as Keye, minus the
+                {/* Landing hero — same laptop mockup treatment as Keye, minus the
                     browser-chrome strip (LAT's own app already has its own header) */}
                 <div style={{
                   width: isMobile ? 'calc(100% + 48px)' : isTablet ? 'calc(100% + 80px)' : '84%',
@@ -533,12 +533,12 @@ export default function Home() {
                 <InfoPill
                   isMobile={isMobile}
                   title="Keye"
-                  meta="Marketplace Â· B2C"
-                  year="2021â€“2022"
+                  meta="Marketplace · B2C"
+                  year="2021–2022"
                   badge="Shipped"
                 />
 
-                {/* Landing hero â€” same video + laptop treatment used as the hero in the Keye case study */}
+                {/* Landing hero — same video + laptop treatment used as the hero in the Keye case study */}
                 <div style={{
                   width: isMobile ? 'calc(100% + 48px)' : isTablet ? 'calc(100% + 80px)' : '84%',
                   marginTop: isMobile ? '24px' : '32px',
@@ -592,11 +592,11 @@ export default function Home() {
                 <InfoPill
                   isMobile={isMobile}
                   title="Misinformation Center"
-                  meta="Research Â· Media Literacy"
-                  year="Janâ€“Dec 2024"
+                  meta="Research · Media Literacy"
+                  year="Jan–Dec 2024"
                 />
 
-                {/* Landing videos, side by side â€” cropped tight to the phone so they sit seamlessly on the card */}
+                {/* Landing videos, side by side — cropped tight to the phone so they sit seamlessly on the card */}
                 <div style={{
                   display: 'flex',
                   flexDirection: 'row',
@@ -678,10 +678,10 @@ export default function Home() {
                       color: '#A8A29E',
                       marginBottom: '6px',
                     }}>
-                      AI-Native Â· 0â†’1 Â· In Stealth
+                      AI-Native · 0→1 · In Stealth
                     </div>
                     <h3 style={{
-                      fontFamily: 'var(--font-fraunces), serif',
+                      fontFamily: 'var(--font-heading), serif',
                       fontSize: isMobile ? '22px' : isWideDesktop ? '30px' : '26px',
                       fontWeight: 700,
                       color: '#78716C',
@@ -698,7 +698,7 @@ export default function Home() {
                       maxWidth: '640px',
                       margin: 0,
                     }}>
-                      Since 2025, I've been building an AI-forward marketplace in stealth â€” prototyping, building, and shipping daily with AI agents and LLMs. More here once it ships.
+                      Since 2025, I've been building an AI-forward marketplace in stealth — prototyping, building, and shipping daily with AI agents and LLMs. More here once it ships.
                     </p>
                   </div>
                 </div>

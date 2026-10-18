@@ -112,7 +112,7 @@ const caseStudies = {
 <div style="display: flex; gap: 24px; margin-top: 48px; margin-bottom: 8px; flex-wrap: wrap;">
   <div style="flex: 1; min-width: 250px; position: relative;">
     <div style="background-color: #F3F4F6; padding: 24px; border-radius: 0px; position: relative;">
-      <p style="font-style: italic; font-family: 'Fraunces', serif; color: #1F2937; margin: 0;">"I keep creating new email accounts to get free trials. It's the only way to try things without committing."</p>
+      <p style="font-style: italic; font-family: var(--font-heading), serif; color: #1F2937; margin: 0;">"I keep creating new email accounts to get free trials. It's the only way to try things without committing."</p>
     </div>
     <div style="width: 0; height: 0; border-left: 12px solid transparent; border-right: 12px solid transparent; border-top: 12px solid #F3F4F6; position: absolute; bottom: -12px; left: 32px;"></div>
   </div>
@@ -503,7 +503,7 @@ const caseStudies = {
 
 <div style="background-color: #1C1917; padding: 28px 32px; border-radius: 0px; margin-top: 40px; margin-bottom: 8px;">
   <div style="font-size: 11px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #A8A29E; margin-bottom: 10px;">The pivot</div>
-  <div style="font-family: 'Fraunces', serif; font-size: 22px; font-weight: 600; color: #FFFFFF; line-height: 1.4;">Years after I left, the rest of the founding team dispersed and the subscription marketplace I designed didn't survive — but what it generated likely helped get the company into YC F24.</div>
+  <div style="font-family: var(--font-heading), serif; font-size: 22px; font-weight: 600; color: #FFFFFF; line-height: 1.4;">Years after I left, the rest of the founding team dispersed and the subscription marketplace I designed didn't survive — but what it generated likely helped get the company into YC F24.</div>
 </div>
 
 <div class="pull-quote" style="margin-top: 48px;">The credit cap's value wasn't monetization — it was the behavioral data that shaped the entire partnership strategy.</div>
@@ -544,13 +544,13 @@ const caseStudies = {
 <div style="display: flex; align-items: flex-start; gap: 24px; margin-top: 8px; margin-bottom: 8px; flex-wrap: wrap;">
   <div style="flex: 1; min-width: 250px; position: relative;">
     <div style="background-color: #1C1917; padding: 24px; border-radius: 0px; position: relative;">
-      <p style="font-style: italic; font-family: 'Fraunces', serif; color: #FFFFFF; font-size: 23px; font-weight: 500; margin: 0;">"I do the physical work in 30 minutes, but reporting takes another 20."</p>
+      <p style="font-style: italic; font-family: var(--font-heading), serif; color: #FFFFFF; font-size: 23px; font-weight: 500; margin: 0;">"I do the physical work in 30 minutes, but reporting takes another 20."</p>
     </div>
     <div style="width: 0; height: 0; border-left: 12px solid transparent; border-right: 12px solid transparent; border-top: 12px solid #1C1917; position: absolute; bottom: -12px; left: 32px;"></div>
   </div>
   <div style="flex: 1; min-width: 250px; position: relative;">
     <div style="background-color: #1C1917; padding: 24px; border-radius: 0px; position: relative;">
-      <p style="font-style: italic; font-family: 'Fraunces', serif; color: #FFFFFF; font-size: 23px; font-weight: 500; margin: 0;">"Each year I'm choosing between urgent-now and smart-long-term with partial data."</p>
+      <p style="font-style: italic; font-family: var(--font-heading), serif; color: #FFFFFF; font-size: 23px; font-weight: 500; margin: 0;">"Each year I'm choosing between urgent-now and smart-long-term with partial data."</p>
     </div>
     <div style="width: 0; height: 0; border-left: 12px solid transparent; border-right: 12px solid transparent; border-top: 12px solid #1C1917; position: absolute; bottom: -12px; left: 32px;"></div>
   </div>
@@ -830,7 +830,7 @@ const caseStudies = {
             <div style={{ display: 'flex', gap: '24px', marginBottom: '40px', flexWrap: 'wrap' }}>
               <div style={{ flex: 1, minWidth: '250px', position: 'relative' }}>
                 <div style={{ backgroundColor: '#F3F4F6', padding: '24px', position: 'relative' }}>
-                  <p style={{ fontStyle: 'italic', fontFamily: "'Fraunces', serif", color: '#1F2937', margin: 0 }}>"It's great that I can add my own opinion instead of just accepting or rejecting a flagged asset, and pulling up its history in one click instead of digging through folders has made decision-making a lot less stressful."</p>
+                  <p style={{ fontStyle: 'italic', fontFamily: "var(--font-heading), serif", color: '#1F2937', margin: 0 }}>"It's great that I can add my own opinion instead of just accepting or rejecting a flagged asset, and pulling up its history in one click instead of digging through folders has made decision-making a lot less stressful."</p>
                   <p style={{ marginTop: '12px', fontSize: '13px', color: '#6B7280' }}>— facilities manager, post-launch stakeholder interview</p>
                 </div>
                 <div style={{ width: 0, height: 0, borderLeft: '12px solid transparent', borderRight: '12px solid transparent', borderTop: '12px solid #F3F4F6', position: 'absolute', bottom: '-12px', left: '32px' }}></div>
@@ -961,8 +961,8 @@ const caseStudies = {
 
 <div style="border: 1px dashed #D1D5DB; background-color: #FAFAF9; padding: 28px 32px; margin-bottom: 40px;">
   <div style="font-size: 11px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #A8A29E; margin-bottom: 10px;">Headline result</div>
-  <div style="font-family: 'Fraunces', serif; font-size: 20px; font-weight: 600; color: #1C1917; line-height: 1.3; margin-bottom: 16px;">Two hours of searching became a few minutes of checking.</div>
-  <div style="font-family: 'Fraunces', serif; font-size: 40px; font-weight: 700; color: #1C1917; line-height: 1.1;">2h → 5m</div>
+  <div style="font-family: var(--font-heading), serif; font-size: 20px; font-weight: 600; color: #1C1917; line-height: 1.3; margin-bottom: 16px;">Two hours of searching became a few minutes of checking.</div>
+  <div style="font-family: var(--font-heading), serif; font-size: 40px; font-weight: 700; color: #1C1917; line-height: 1.1;">2h → 5m</div>
   <div style="font-size: 14px; color: #6B7280; margin-top: 10px;">Four participants described spending around two hours verifying a claim alone. In testing, they reached the same answer in about five minutes — baseline self-reported, outcome observed.</div>
 </div>
 
@@ -1139,7 +1139,7 @@ const caseStudies = {
 <div style="display: flex; gap: 24px; margin-top: 48px; flex-wrap: wrap;">
   <div style="flex: 1; min-width: 250px; position: relative;">
     <div style="background-color: #F3F4F6; padding: 24px; border-radius: 0px; position: relative;">
-      <p style="font-style: italic; font-family: 'Fraunces', serif; color: #1F2937; margin: 0;">"Great idea to bring in UI scenarios outside of the app itself, like the lock screen widget."</p>
+      <p style="font-style: italic; font-family: var(--font-heading), serif; color: #1F2937; margin: 0;">"Great idea to bring in UI scenarios outside of the app itself, like the lock screen widget."</p>
       <p style="margin-top: 12px; font-size: 13px; color: #6B7280;">— capstone reviewer</p>
     </div>
     <div style="width: 0; height: 0; border-left: 12px solid transparent; border-right: 12px solid transparent; border-top: 12px solid #F3F4F6; position: absolute; bottom: -12px; left: 32px;"></div>
@@ -1250,7 +1250,7 @@ const caseStudies = {
 <div style="display: flex; gap: 24px; margin-top: 48px; margin-bottom: 8px; flex-wrap: wrap;">
   <div style="flex: 1; min-width: 250px; position: relative;">
     <div style="background-color: #F3F4F6; padding: 24px; border-radius: 0px; position: relative;">
-      <p style="font-style: italic; font-family: 'Fraunces', serif; color: #1F2937; margin: 0;">"Demo was very well designed. Excited to see the next steps."</p>
+      <p style="font-style: italic; font-family: var(--font-heading), serif; color: #1F2937; margin: 0;">"Demo was very well designed. Excited to see the next steps."</p>
       <p style="margin-top: 12px; font-size: 13px; color: #6B7280;">— capstone reviewer</p>
     </div>
     <div style="width: 0; height: 0; border-left: 12px solid transparent; border-right: 12px solid transparent; border-top: 12px solid #F3F4F6; position: absolute; bottom: -12px; left: 32px;"></div>

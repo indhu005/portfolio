@@ -629,7 +629,7 @@ export default function LandingGameSimple() {
           fontWeight: 600,
           color: '#1C1917',
           marginBottom: isMobile ? '8px' : '12px',
-          fontFamily: 'var(--font-fraunces), serif',
+          fontFamily: 'var(--font-heading), serif',
           lineHeight: '1.4',
         }}>
           Plant faster than the city can build. Good luck.
@@ -1514,7 +1514,7 @@ export default function LandingGameSimple() {
               fontWeight: 700,
               color: '#1C1917',
               marginBottom: '20px',
-              fontFamily: 'var(--font-fraunces), serif',
+              fontFamily: 'var(--font-heading), serif',
               lineHeight: '1.2',
             }}>
               About the Game

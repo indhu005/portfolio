@@ -61,8 +61,14 @@ html, body {
   -webkit-overflow-scrolling: touch;
 }
 
+html {
+  --font-heading: var(--font-space-grotesk), sans-serif;
+  --font-body: var(--font-inter), sans-serif;
+}
+
 body {
   background-color: #FAF8F3;
+  font-family: var(--font-body);
 }
 
 a {
@@ -134,7 +140,7 @@ img, video {
 .pull-quote {
   border-left: 3px solid var(--border-accent);
   padding-left: 16px;
-  font-family: var(--font-fraunces), serif;
+  font-family: var(--font-heading), serif;
   font-weight: 600;
   font-size: 19px;
   line-height: 1.5;
@@ -340,7 +346,7 @@ img, video {
 }
 
 .metrics-num {
-  font-family: var(--font-fraunces), serif;
+  font-family: var(--font-heading), serif;
   font-weight: 500;
   font-size: 32px;
   line-height: 1.05;
@@ -414,7 +420,7 @@ img, video {
 }
 
 .feature-stat-num {
-  font-family: var(--font-fraunces), serif;
+  font-family: var(--font-heading), serif;
   font-weight: 600;
   font-size: 64px;
   line-height: 1;
@@ -1029,7 +1035,7 @@ img, video {
 }
 
 .feature-index-title {
-  font-family: var(--font-fraunces), serif;
+  font-family: var(--font-heading), serif;
   font-weight: 600;
   font-size: 19px;
   color: #1C1917;
@@ -1065,7 +1071,7 @@ img, video {
 }
 
 .feature-heading {
-  font-family: var(--font-fraunces), serif;
+  font-family: var(--font-heading), serif;
   font-weight: 700;
   font-size: clamp(21px, 2.4vw, 26px);
   color: #1C1917;
@@ -1610,7 +1616,7 @@ img, video {
 }
 
 .play-title {
-  font-family: var(--font-fraunces), serif;
+  font-family: var(--font-heading), serif;
   font-size: 64px;
   font-weight: 700;
   line-height: 1.1;
@@ -1643,7 +1649,7 @@ img, video {
 }
 
 .play-project-title {
-  font-family: var(--font-fraunces), serif;
+  font-family: var(--font-heading), serif;
   font-size: 36px;
   font-weight: 700;
   line-height: 1.2;
