@@ -32,7 +32,7 @@ export default function MisinfoFeaturesContent() {
             </ul>
           </div>
 
-          <div style={{ width: '100%', maxWidth: '288px', margin: '0 auto', backgroundColor: '#FFFFFF', borderRadius: '16px', padding: '0px', overflow: 'hidden' }}>
+          <div className="misinfo-video-md" style={{ width: '100%', maxWidth: '288px', margin: '0 auto', backgroundColor: '#FFFFFF', borderRadius: '16px', padding: '0px', overflow: 'hidden' }}>
             <video autoPlay loop muted playsInline preload="auto" style={{ display: 'block', width: '100%', aspectRatio: '456 / 910', borderRadius: '0px' }}>
               <source src="/videos/misinformationcenter/Literacyquiz.mp4" type="video/mp4" />
               Your browser does not support the video tag.
@@ -81,7 +81,7 @@ export default function MisinfoFeaturesContent() {
             </div>
           </div>
 
-          <div style={{ width: '100%', maxWidth: '288px', margin: '0 auto', backgroundColor: '#FFFFFF', borderRadius: '16px', padding: '0px', overflow: 'hidden' }}>
+          <div className="misinfo-video-md" style={{ width: '100%', maxWidth: '288px', margin: '0 auto', backgroundColor: '#FFFFFF', borderRadius: '16px', padding: '0px', overflow: 'hidden' }}>
             <video autoPlay loop muted playsInline preload="auto" style={{ display: 'block', width: '100%', aspectRatio: '458 / 900', borderRadius: '0px' }}>
               <source src="/videos/misinformationcenter/Search .mp4" type="video/mp4" />
               Your browser does not support the video tag.
@@ -98,7 +98,7 @@ export default function MisinfoFeaturesContent() {
 
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '32px', marginTop: '32px' }}>
           <div id="scan">
-            <div style={{ width: '100%', maxWidth: '160px', marginBottom: '16px', backgroundColor: '#FFFFFF', borderRadius: '14px', padding: '0px', overflow: 'hidden' }}>
+            <div className="misinfo-video-sm" style={{ width: '100%', maxWidth: '160px', marginBottom: '16px', backgroundColor: '#FFFFFF', borderRadius: '14px', padding: '0px', overflow: 'hidden' }}>
               <video autoPlay loop muted playsInline preload="auto" style={{ display: 'block', width: '100%', aspectRatio: '448 / 906', borderRadius: '0px' }}>
                 <source src="/videos/misinformationcenter/Scan.mp4" type="video/mp4" />
                 Your browser does not support the video tag.
@@ -109,7 +109,7 @@ export default function MisinfoFeaturesContent() {
           </div>
 
           <div id="ask-us">
-            <div style={{ width: '100%', maxWidth: '160px', marginBottom: '16px', backgroundColor: '#FFFFFF', borderRadius: '14px', padding: '0px', overflow: 'hidden' }}>
+            <div className="misinfo-video-sm" style={{ width: '100%', maxWidth: '160px', marginBottom: '16px', backgroundColor: '#FFFFFF', borderRadius: '14px', padding: '0px', overflow: 'hidden' }}>
               <video autoPlay loop muted playsInline preload="auto" style={{ display: 'block', width: '100%', aspectRatio: '444 / 906', borderRadius: '0px' }}>
                 <source src="/videos/misinformationcenter/Submit.mp4" type="video/mp4" />
                 Your browser does not support the video tag.

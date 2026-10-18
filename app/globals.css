@@ -1428,6 +1428,31 @@ img, video {
   }
 }
 
+/* Misinfo Center feature videos — bigger on tablet/phone than the desktop
+   max-width, since the fixed px caps were sized for the two-column desktop
+   layout and read small once the grid stacks to one column. Breakpoint
+   matches this site's tablet threshold (CaseStudyLayout's isTablet, 1240px),
+   not the generic 1024px used elsewhere in this file. */
+@media (max-width: 1240px) {
+  .misinfo-video-md {
+    max-width: 480px !important;
+  }
+
+  .misinfo-video-sm {
+    max-width: 300px !important;
+  }
+}
+
+@media (max-width: 640px) {
+  .misinfo-video-md {
+    max-width: 360px !important;
+  }
+
+  .misinfo-video-sm {
+    max-width: 200px !important;
+  }
+}
+
 .cs-laptop-lid {
   background: #2B2B2B;
   border-radius: 18px 18px 0 0;

@@ -1,7 +1,13 @@
 'use client'
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useLayoutEffect } from 'react'
 import { useRouter } from 'next/navigation'
 import Link from 'next/link'
+
+// Measuring window size after paint causes a one-frame flash of the desktop
+// layout when this component mounts fresh (e.g. opening the mobile overlay
+// menu). useLayoutEffect measures before paint, avoiding that flash — but it
+// warns when it runs during SSR, so fall back to useEffect there.
+const useIsomorphicLayoutEffect = typeof window !== 'undefined' ? useLayoutEffect : useEffect
 
 const projects = [
   { name: 'LAT', slug: 'lat', tag: 'Shipped' },
@@ -71,7 +77,7 @@ export default function Sidebar({
   // Laptop-range screens — pull the sidebar closer to the viewport's left edge here.
   const [isLaptop, setIsLaptop] = useState(false)
 
-  useEffect(() => {
+  useIsomorphicLayoutEffect(() => {
     const checkLargeDesktop = () => {
       const width = window.innerWidth
       setIsLargeDesktop(width >= 1600)
@@ -90,10 +96,10 @@ export default function Sidebar({
   return (
     <div
       style={{
-      flex: '0 0 400px',
-      width: '400px',
-      minWidth: '400px',
-      maxWidth: '400px',
+      flex: isCompact ? '1 1 auto' : '0 0 400px',
+      width: isCompact ? '100%' : '400px',
+      minWidth: isCompact ? 0 : '400px',
+      maxWidth: isCompact ? '100%' : '400px',
       height: isCompact ? '100%' : '100vh',
       minHeight: isCompact ? undefined : '100vh',
       position: isCompact ? 'static' : 'sticky',
@@ -102,7 +108,7 @@ export default function Sidebar({
       alignSelf: 'flex-start',
       borderRight: 'none',
       backgroundColor: dark ? '#000000' : '#FFFFFF',
-      padding: isLaptop ? '40px 56px 40px 4px' : '40px 16px 40px 20px',
+      padding: isCompact ? '0' : isLaptop ? '40px 56px 40px 4px' : '40px 16px 40px 20px',
       display: 'flex',
       flexDirection: 'column',
       justifyContent: isCompact ? 'flex-start' : 'center',
@@ -115,11 +121,11 @@ export default function Sidebar({
           reaches this box's edge rather than the outer column's. */}
       <div style={{
         backgroundColor: dark ? '#000000' : '#FFFFFF',
-        border: dark ? '1px solid #FFFFFF' : '1px solid #1C1917',
-        borderRadius: '28px',
-        padding: '40px 40px 20px 40px',
-        marginLeft: '40px',
-        boxShadow: '0 4px 14px rgba(28, 25, 23, 0.08)',
+        border: isCompact ? 'none' : dark ? '1px solid #FFFFFF' : '1px solid #1C1917',
+        borderRadius: isCompact ? 0 : '28px',
+        padding: isCompact ? '32px 40px 20px 40px' : '40px 40px 20px 40px',
+        marginLeft: isCompact ? 0 : '40px',
+        boxShadow: isCompact ? 'none' : '0 4px 14px rgba(28, 25, 23, 0.08)',
         // On the mobile/tablet overlay, stretch the box to fill the available height
         // instead of sizing to content — avoids a plain white dead zone below the
         // last nav item when the menu is shorter than the screen.

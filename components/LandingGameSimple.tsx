@@ -577,7 +577,7 @@ export default function LandingGameSimple() {
       marginBottom: '-20px',
       overflow: 'hidden',
       backgroundColor: '#FAF8F3',
-      borderRadius: isMobile ? '20px' : '64px 12px 64px 12px',
+      borderRadius: (isMobile || isTablet) ? '0' : '64px 12px 64px 12px',
       paddingTop: isMobile ? '16px' : '20px',
       paddingRight: isMobile ? '36px' : '40px',
       // No left padding on desktop (beyond the 20px bleed compensation): the grid still

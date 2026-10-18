@@ -163,8 +163,8 @@ export default function Home() {
       {/* MOBILE MENU BUTTON — one consistent style regardless of scroll position/what's
           behind it (previously switched background/icon color based on being over the
           game hero or a dark card; that made it blend into the game-end grey overlay).
-          Opaque white keeps it legible everywhere, and zIndex:1000 sits above the
-          game-end overlay's zIndex:100 so it's never visually buried under it. */}
+          Opaque black with a white icon keeps it legible everywhere, and zIndex:1000
+          sits above the game-end overlay's zIndex:100 so it's never visually buried. */}
       {isTablet && (
         <button
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -179,8 +179,8 @@ export default function Home() {
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
-            backgroundColor: '#FFFFFF',
-            border: '1px solid rgba(28, 25, 23, 0.12)',
+            backgroundColor: '#000000',
+            border: '1px solid #FFFFFF',
             borderRadius: '10px',
             cursor: 'pointer',
             boxShadow: '0 2px 8px rgba(0,0,0,0.15)',
@@ -189,14 +189,14 @@ export default function Home() {
           <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
             {mobileMenuOpen ? (
               <>
-                <path d="M4 4L14 14" stroke="#1C1917" strokeWidth="1.6" strokeLinecap="round" />
-                <path d="M14 4L4 14" stroke="#1C1917" strokeWidth="1.6" strokeLinecap="round" />
+                <path d="M4 4L14 14" stroke="#FFFFFF" strokeWidth="1.6" strokeLinecap="round" />
+                <path d="M14 4L4 14" stroke="#FFFFFF" strokeWidth="1.6" strokeLinecap="round" />
               </>
             ) : (
               <>
-                <path d="M2.5 5H15.5" stroke="#1C1917" strokeWidth="1.6" strokeLinecap="round" />
-                <path d="M2.5 9H15.5" stroke="#1C1917" strokeWidth="1.6" strokeLinecap="round" />
-                <path d="M2.5 13H15.5" stroke="#1C1917" strokeWidth="1.6" strokeLinecap="round" />
+                <path d="M2.5 5H15.5" stroke="#FFFFFF" strokeWidth="1.6" strokeLinecap="round" />
+                <path d="M2.5 9H15.5" stroke="#FFFFFF" strokeWidth="1.6" strokeLinecap="round" />
+                <path d="M2.5 13H15.5" stroke="#FFFFFF" strokeWidth="1.6" strokeLinecap="round" />
               </>
             )}
           </svg>
@@ -212,7 +212,7 @@ export default function Home() {
             left: 0,
             width: '100vw',
             height: '100vh',
-            backgroundColor: '#FFFFFF',
+            backgroundColor: '#000000',
             zIndex: 999,
             overflowY: 'auto',
             padding: '80px 20px 20px 20px',
@@ -249,7 +249,7 @@ export default function Home() {
             maxWidth: isWideDesktop ? '1400px' : '1200px',
             marginLeft: 'auto',
             marginRight: 'auto',
-            marginTop: isMobile ? '20px' : '32px',
+            marginTop: isTablet ? '0' : '32px',
             marginBottom: isMobile ? '20px' : isWideDesktop ? '36px' : '28px',
           }}>
             <LandingGameSimple />
@@ -640,16 +640,20 @@ export default function Home() {
                   year="Jan–Dec 2024"
                 />
 
-                {/* Landing videos, side by side — cropped tight to the phone so they sit seamlessly on the card */}
+                {/* Landing videos, side by side — bleeds past the card's own side
+                    padding on mobile (negative margin cancels it) so the row gets the
+                    full content-area width instead of being squeezed by it. */}
                 <div className="cs-ambient-float" style={{
                   display: 'flex',
                   flexDirection: 'row',
                   alignItems: 'center',
-                  gap: isMobile ? '16px' : '24px',
-                  width: '100%',
-                  marginTop: isMobile ? '24px' : '32px',
+                  gap: isMobile ? '10px' : '24px',
+                  width: isMobile ? 'calc(100% + 48px)' : '100%',
+                  marginLeft: isMobile ? '-24px' : 0,
+                  marginRight: isMobile ? '-24px' : 0,
+                  marginTop: isMobile ? '16px' : '32px',
                   justifyContent: 'center',
-                  padding: isMobile ? '24px 0' : '32px 0',
+                  padding: isMobile ? '0' : '32px 0',
                   animationDelay: '-4s',
                 }}>
                   <video
@@ -662,10 +666,17 @@ export default function Home() {
                     style={{
                       display: 'block',
                       flex: '1 1 0',
+                      minWidth: 0,
                       width: '100%',
-                      maxWidth: isMobile ? '210px' : isTablet ? '300px' : '460px',
-                      aspectRatio: '800 / 1020',
+                      maxWidth: isMobile ? '220px' : isTablet ? '420px' : '460px',
+                      // The source video is an 800x1020 canvas but the actual phone
+                      // mockup only fills a centered 436x890 region (measured via
+                      // ffmpeg cropdetect) — matching the box to that aspect ratio
+                      // and letting cover zoom in crops out the baked-in black
+                      // padding instead of leaving a visible gap around the phone.
+                      aspectRatio: '436 / 890',
                       objectFit: 'cover',
+                      objectPosition: '50% 53%',
                       borderRadius: '0px',
                     }}
                   >
@@ -681,10 +692,17 @@ export default function Home() {
                     style={{
                       display: 'block',
                       flex: '1 1 0',
+                      minWidth: 0,
                       width: '100%',
-                      maxWidth: isMobile ? '210px' : isTablet ? '300px' : '460px',
-                      aspectRatio: '800 / 1020',
+                      maxWidth: isMobile ? '220px' : isTablet ? '420px' : '460px',
+                      // The source video is an 800x1020 canvas but the actual phone
+                      // mockup only fills a centered 436x890 region (measured via
+                      // ffmpeg cropdetect) — matching the box to that aspect ratio
+                      // and letting cover zoom in crops out the baked-in black
+                      // padding instead of leaving a visible gap around the phone.
+                      aspectRatio: '436 / 890',
                       objectFit: 'cover',
+                      objectPosition: '50% 53%',
                       borderRadius: '0px',
                     }}
                   >
