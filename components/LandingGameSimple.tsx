@@ -530,7 +530,7 @@ export default function LandingGameSimple() {
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
-        backgroundColor: '#FFFFFF',
+        backgroundColor: '#FAF8F3',
       }}>
         Loading...
       </div>
@@ -571,15 +571,19 @@ export default function LandingGameSimple() {
   return (
     <div style={{
       position: 'relative',
-      width: '100%',
-      backgroundColor: '#FFFFFF',
-      borderRadius: '4px',
+      width: 'calc(100% + 40px)',
+      marginLeft: '-20px',
+      marginRight: '-20px',
+      marginBottom: '-20px',
+      overflow: 'hidden',
+      backgroundColor: '#FAF8F3',
+      borderRadius: isMobile ? '20px' : '64px 12px 64px 12px',
       paddingTop: isMobile ? '16px' : '20px',
-      paddingRight: isMobile ? '16px' : '20px',
-      // No left padding on desktop: the grid left-aligns flush with this box's edge so it
-      // lines up with "Hi, I'm Indhu" below, which shares the same parent maxWidth/margin.
-      paddingLeft: isMobile || isTablet ? (isMobile ? '16px' : '20px') : '0px',
-      paddingBottom: isMobile ? '90px' : isTablet ? '140px' : '20px', // More padding on tablet to prevent overlap
+      paddingRight: isMobile ? '36px' : '40px',
+      // No left padding on desktop (beyond the 20px bleed compensation): the grid still
+      // lands flush with "Hi, I'm Indhu" below, which shares the same parent maxWidth/margin.
+      paddingLeft: isMobile || isTablet ? (isMobile ? '36px' : '40px') : '20px',
+      paddingBottom: isMobile ? '110px' : isTablet ? '160px' : '40px', // More padding on tablet to prevent overlap
       display: 'flex',
       flexDirection: 'column',
       alignItems: isMobile || isTablet ? 'center' : 'flex-start',
@@ -1310,7 +1314,7 @@ export default function LandingGameSimple() {
               right: 0,
               bottom: 0,
               backgroundColor: 'rgba(0, 0, 0, 0.7)',
-              borderRadius: (isMobile || isTablet) ? '6px' : '28px',
+              borderRadius: (isMobile || isTablet) ? '6px' : '64px 12px 64px 12px',
               zIndex: 100,
             }}
           />

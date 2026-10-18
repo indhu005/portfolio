@@ -1,6 +1,8 @@
 'use client'
 import Sidebar from '@/components/Sidebar'
 import LandingGameSimple from '@/components/LandingGameSimple'
+import { Reveal, CountUp } from '@/components/ScrollReveal'
+import ShootingStars from '@/components/ShootingStars'
 import { useRouter } from 'next/navigation'
 import { useState, useEffect, useRef, type CSSProperties } from 'react'
 
@@ -33,24 +35,24 @@ const InfoPill = ({ title, meta, year, badge, isMobile }: { title: string; meta:
       flexDirection: 'column',
       alignItems: 'flex-start',
       gap: '2px',
-      backgroundColor: '#FFFFFF',
-      border: '1px solid #1C1917',
+      backgroundColor: '#000000',
+      border: '1px solid #FFFFFF',
       borderRadius: '12px',
       padding: '8px 12px',
       maxWidth: '100%',
-      boxShadow: '0 3px 8px rgba(28, 25, 23, 0.12)',
+      boxShadow: '0 3px 8px rgba(0, 0, 0, 0.3)',
     }}>
-      <span style={{ fontFamily: 'var(--font-heading), serif', fontWeight: 700, fontSize: '13px', color: '#1C1917' }}>
+      <span style={{ fontFamily: 'var(--font-heading), serif', fontWeight: 700, fontSize: '13px', color: '#FFFFFF' }}>
         {title}
       </span>
-      <span style={{ display: 'flex', alignItems: 'center', gap: '6px', flexWrap: 'wrap', fontSize: '10.5px', fontWeight: 600, color: '#78716C' }}>
+      <span style={{ display: 'flex', alignItems: 'center', gap: '6px', flexWrap: 'wrap', fontSize: '10.5px', fontWeight: 600, color: 'rgba(255, 255, 255, 0.6)' }}>
         <span>{meta}</span>
-        <span style={{ color: '#D6D3D1' }}>·</span>
+        <span style={{ color: 'rgba(255, 255, 255, 0.3)' }}>·</span>
         <span>{year}</span>
         {badge && (
           <>
-            <span style={{ color: '#D6D3D1' }}>·</span>
-            <span style={{ fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.04em', color: '#1C1917' }}>
+            <span style={{ color: 'rgba(255, 255, 255, 0.3)' }}>·</span>
+            <span style={{ fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.04em', color: '#FFFFFF' }}>
               {badge}
             </span>
           </>
@@ -64,24 +66,24 @@ const InfoPill = ({ title, meta, year, badge, isMobile }: { title: string; meta:
       gap: '10px',
       flexWrap: 'wrap',
       justifyContent: 'center',
-      backgroundColor: '#FFFFFF',
-      border: '1px solid #1C1917',
+      backgroundColor: '#000000',
+      border: '1px solid #FFFFFF',
       borderRadius: '999px',
       padding: '10px 22px',
       maxWidth: '100%',
-      boxShadow: '0 3px 8px rgba(28, 25, 23, 0.12)',
+      boxShadow: '0 3px 8px rgba(0, 0, 0, 0.3)',
     }}>
-      <span style={{ fontFamily: 'var(--font-heading), serif', fontWeight: 700, fontSize: '15px', color: '#1C1917' }}>
+      <span style={{ fontFamily: 'var(--font-heading), serif', fontWeight: 700, fontSize: '15px', color: '#FFFFFF' }}>
         {title}
       </span>
-      <span style={{ color: '#A8A29E' }}>·</span>
-      <span style={{ fontSize: '13px', fontWeight: 600, color: '#57534E' }}>{meta}</span>
-      <span style={{ color: '#A8A29E' }}>·</span>
-      <span style={{ fontSize: '13px', fontWeight: 600, color: '#57534E' }}>{year}</span>
+      <span style={{ color: 'rgba(255, 255, 255, 0.35)' }}>·</span>
+      <span style={{ fontSize: '13px', fontWeight: 600, color: 'rgba(255, 255, 255, 0.65)' }}>{meta}</span>
+      <span style={{ color: 'rgba(255, 255, 255, 0.35)' }}>·</span>
+      <span style={{ fontSize: '13px', fontWeight: 600, color: 'rgba(255, 255, 255, 0.65)' }}>{year}</span>
       {badge && (
         <>
-          <span style={{ color: '#A8A29E' }}>·</span>
-          <span style={{ fontSize: '11px', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.04em', color: '#1C1917' }}>
+          <span style={{ color: 'rgba(255, 255, 255, 0.35)' }}>·</span>
+          <span style={{ fontSize: '11px', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.04em', color: '#FFFFFF' }}>
             {badge}
           </span>
         </>
@@ -95,7 +97,7 @@ export default function Home() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [revealed, setRevealed] = useState(false)
   const [splashFading, setSplashFading] = useState(false)
-  const [splashVisible, setSplashVisible] = useState(true)
+  const [splashVisible, setSplashVisible] = useState(false)
   const isMobile = useMediaQuery('(max-width: 768px)')
   const isTablet = useMediaQuery('(max-width: 1240px)')
   const isWideDesktop = useMediaQuery('(min-width: 2200px)')
@@ -109,10 +111,15 @@ export default function Home() {
     return () => clearTimeout(timer)
   }, [])
 
-  // Brand-color splash on first paint, fades into the page shortly after
+  // Black loading fade — only on a user's first visit this session, not every
+  // time they navigate back to the homepage.
   useEffect(() => {
-    const fadeTimer = setTimeout(() => setSplashFading(true), 650)
-    const removeTimer = setTimeout(() => setSplashVisible(false), 1250)
+    const alreadyShown = sessionStorage.getItem('entry-splash-shown')
+    if (alreadyShown) return
+    sessionStorage.setItem('entry-splash-shown', '1')
+    setSplashVisible(true)
+    const fadeTimer = setTimeout(() => setSplashFading(true), 400)
+    const removeTimer = setTimeout(() => setSplashVisible(false), 850)
     return () => {
       clearTimeout(fadeTimer)
       clearTimeout(removeTimer)
@@ -122,7 +129,8 @@ export default function Home() {
   const revealStyle = (delayMs: number): CSSProperties => ({
     opacity: revealed ? 1 : 0,
     transform: revealed ? 'translateY(0)' : 'translateY(18px)',
-    transition: `opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1) ${delayMs}ms, transform 0.7s cubic-bezier(0.16, 1, 0.3, 1) ${delayMs}ms`,
+    filter: revealed ? 'blur(0px)' : 'blur(6px)',
+    transition: `opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1) ${delayMs}ms, transform 0.7s cubic-bezier(0.16, 1, 0.3, 1) ${delayMs}ms, filter 0.7s cubic-bezier(0.16, 1, 0.3, 1) ${delayMs}ms`,
   })
 
   return (
@@ -135,47 +143,21 @@ export default function Home() {
       width: '100vw',
     }}>
 
-      {/* Splash screen - brand green flash before the page fades in */}
+      {/* Entry loading fade — plain black curtain, first visit only */}
       {splashVisible && (
         <div style={{
           position: 'fixed',
           inset: 0,
-          backgroundColor: '#8CC751',
+          backgroundColor: '#000000',
           zIndex: 9999,
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          borderRadius: splashFading ? '50%' : '0%',
-          transform: splashFading ? 'scale(0.03)' : 'scale(1)',
-          transition: 'transform 0.55s cubic-bezier(0.6, 0, 0.35, 1), border-radius 0.55s ease-in',
-          animation: 'splashPulse 0.6s ease-out',
+          opacity: splashFading ? 0 : 1,
+          transition: 'opacity 0.45s ease-in',
           pointerEvents: splashFading ? 'none' : 'auto',
-          overflow: 'hidden',
-        }}>
-          <div style={{
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center',
-            gap: '16px',
-            opacity: splashFading ? 0 : 1,
-            transition: 'opacity 0.2s ease-out',
-          }}>
-            <img
-              src="/images/home/tree 01 (3).svg"
-              alt=""
-              style={{
-                width: '72px',
-                height: '72px',
-                objectFit: 'contain',
-                animation: 'splashSproutPop 0.5s 0.08s cubic-bezier(0.34, 1.56, 0.64, 1) both',
-              }}
-            />
-          </div>
-        </div>
+        }} />
       )}
 
       {/* SIDEBAR - Hidden on mobile/tablet */}
-      {!isTablet && <Sidebar />}
+      {!isTablet && <Sidebar dark />}
 
 
       {/* MOBILE MENU BUTTON — one consistent style regardless of scroll position/what's
@@ -237,7 +219,7 @@ export default function Home() {
           }}
           onClick={() => setMobileMenuOpen(false)}
         >
-          <Sidebar />
+          <Sidebar dark />
         </div>
       )}
 
@@ -258,7 +240,7 @@ export default function Home() {
             padding: isMobile ? '0 20px 40px 20px' : isTablet ? '0 32px 50px 32px' : isWideDesktop ? '0 64px 80px 56px' : '0 40px 60px 36px',
             minWidth: 0,
             scrollBehavior: 'smooth',
-            backgroundColor: '#FFFFFF',
+            backgroundColor: '#000000',
           }}
         >
           {/* Landing Game — same maxWidth/centering as the wrapper below so the grid can align its
@@ -267,7 +249,8 @@ export default function Home() {
             maxWidth: isWideDesktop ? '1400px' : '1200px',
             marginLeft: 'auto',
             marginRight: 'auto',
-            marginBottom: isMobile ? '48px' : isWideDesktop ? '96px' : '80px',
+            marginTop: isMobile ? '20px' : '32px',
+            marginBottom: isMobile ? '20px' : isWideDesktop ? '36px' : '28px',
           }}>
             <LandingGameSimple />
           </div>
@@ -285,24 +268,36 @@ export default function Home() {
             // hero cap left a large dead gutter between the hero text and "Selected Work"
             // below it — widen it here to close that gap. Still narrower than the 1200px
             // wrapper to avoid an overlong reading line.
-            maxWidth: isWideDesktop ? '1100px' : isLaptop ? '1050px' : '920px',
+            position: 'relative',
+            overflow: 'hidden',
+            maxWidth: isWideDesktop ? '1240px' : isLaptop ? '1150px' : '1000px',
             marginTop: '0px',
             marginLeft: '0',
             marginRight: 'auto',
             textAlign: 'left',
+            backgroundColor: '#000000',
+            borderRadius: isMobile ? '20px' : '28px',
+            padding: isMobile ? '32px 24px' : isWideDesktop ? '64px 72px' : '56px 60px',
           }}>
+            {/* Ambient drifting blob behind the hero copy — same low-opacity/blurred
+                treatment as the case-studies section blob, just a different hue/phase
+                so the hero doesn't read as flat before you scroll to anything else. */}
+            <div aria-hidden="true" className="cs-section-blob cs-section-blob--blue" />
+            <ShootingStars />
+
+            <div style={{ position: 'relative', zIndex: 1 }}>
             <h1 style={{
               fontFamily: 'var(--font-heading), serif',
               fontSize: isMobile ? '38px' : isTablet ? '50px' : isWideDesktop ? '74px' : '62px',
               fontWeight: 700,
               lineHeight: '1.08',
-              color: '#1C1917',
+              color: '#FFFFFF',
               marginTop: isWideDesktop ? '20px' : '0',
               marginBottom: isMobile ? '16px' : '20px',
               letterSpacing: '-0.02em',
               ...revealStyle(0),
             }}>
-              Hi, I'm <span style={{ color: '#1C1917' }}>Indhu</span>
+              Hi, I'm <span style={{ color: '#FFFFFF' }}>Indhu</span>
             </h1>
 
             <div style={{
@@ -310,28 +305,55 @@ export default function Home() {
               flexWrap: 'wrap',
               alignItems: 'center',
               gap: isMobile ? '8px' : '10px',
-              fontSize: isMobile ? '14px' : '15px',
-              letterSpacing: '0.01em',
               marginBottom: isMobile ? '32px' : isWideDesktop ? '56px' : '48px',
               ...revealStyle(60),
             }}>
-              <span style={{ fontWeight: 700, color: '#57534E' }}>Senior Product Designer</span>
-              <span style={{ color: '#D6D3D1' }}>·</span>
-              <span style={{ fontWeight: 500, color: '#57534E' }}>Seattle</span>
-              <span style={{ color: '#D6D3D1' }}>·</span>
-              <span style={{ fontWeight: 700, color: '#57534E' }}>0→1, AI/ML &amp; Trustworthy Systems</span>
+              {[
+                { label: 'Senior Product Designer', variant: 'solid', pin: false },
+                { label: 'Seattle', variant: 'accent', pin: true },
+                { label: '0→1, AI/ML & Trustworthy Systems', variant: 'solid', pin: false },
+              ].map((item) => (
+                <span
+                  key={item.label}
+                  className="cs-pill-hover"
+                  style={{
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    gap: '5px',
+                    fontSize: isMobile ? '12px' : '12.5px',
+                    fontWeight: 500,
+                    letterSpacing: '0.01em',
+                    color: item.variant === 'solid' ? 'rgba(255, 255, 255, 0.92)' : '#7C9BF0',
+                    backgroundColor: item.variant === 'solid' ? 'rgba(255, 255, 255, 0.06)' : 'rgba(74, 114, 229, 0.12)',
+                    border: item.variant === 'solid' ? '1px solid rgba(255, 255, 255, 0.12)' : '1px solid rgba(124, 155, 240, 0.3)',
+                    borderRadius: '7px',
+                    padding: isMobile ? '5px 10px' : '6px 11px',
+                  }}
+                >
+                  {item.pin && (
+                    <svg width="10" height="10" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                      <path
+                        d="M12 2C7.58 2 4 5.58 4 10c0 5.25 6.72 11.19 7.01 11.44a1.5 1.5 0 0 0 1.98 0C13.28 21.19 20 15.25 20 10c0-4.42-3.58-8-8-8Zm0 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6Z"
+                        fill="#7C9BF0"
+                      />
+                    </svg>
+                  )}
+                  {item.label}
+                </span>
+              ))}
             </div>
 
             <div style={{
               fontSize: isMobile ? '20px' : isWideDesktop ? '24px' : '22px',
               lineHeight: '1.8',
-              color: '#1C1917',
+              color: 'rgba(255, 255, 255, 0.85)',
             }}>
               <p style={{
                 fontFamily: 'var(--font-heading), serif',
                 fontSize: isMobile ? '26px' : isWideDesktop ? '34px' : '30px',
                 fontWeight: 700,
                 lineHeight: '1.3',
+                color: '#FFFFFF',
                 marginBottom: isWideDesktop ? '32px' : '28px',
                 ...revealStyle(90),
               }}>
@@ -339,11 +361,11 @@ export default function Home() {
               </p>
 
               <p style={{ marginBottom: isWideDesktop ? '32px' : '28px', ...revealStyle(120) }}>
-                I'm a senior product designer with 8 years of experience — from Gensler to founding Keye and senior product design on LAT. I design the trust layer between people and AI, from a 0→1 marketplace that later went YC, to an enterprise platform that reached 96% adoption inside a politically sensitive institution.
+                8 years as a product designer — Gensler, founding Keye, senior design on LAT. I build the trust layer between people and AI: a 0→1 marketplace that went YC, an enterprise platform at 96% adoption in a politically sensitive institution.
               </p>
 
-              <p style={{ fontSize: isMobile ? '15px' : '16px', color: '#78716C', marginBottom: isWideDesktop ? '32px' : '28px', ...revealStyle(140) }}>
-                Since 2025, I've been building an AI-forward marketplace in stealth — prototyping, building, and shipping daily with AI agents and LLMs.
+              <p style={{ fontSize: isMobile ? '15px' : '16px', color: 'rgba(255, 255, 255, 0.5)', marginBottom: isWideDesktop ? '32px' : '28px', ...revealStyle(140) }}>
+                Since 2025, building an AI-forward marketplace in stealth, shipping daily with AI agents.
               </p>
 
               {/* Proof Strip — fast, scannable backing for the claims above */}
@@ -353,20 +375,33 @@ export default function Home() {
                 gap: isMobile ? '20px' : '24px',
                 marginBottom: isWideDesktop ? '32px' : '28px',
                 padding: isMobile ? '20px' : '24px 28px',
-                border: '1px solid #E7E5E4',
+                border: '1px solid rgba(255, 255, 255, 0.1)',
+                borderRadius: '12px',
                 ...revealStyle(160),
               }}>
                 {[
-                  { stat: '95%→96% adoption', context: 'LAT — 43-person pilot to ~4,000-person rollout, measured by weekly active use of the core workflow' },
-                  { stat: '0→20K MAUs · $1.5M raised', context: 'Keye — founding designer, team of 5; later went YC F24' },
-                  { stat: "96% said they'd use it", context: 'Misinfo Center — 36 Gen Z/millennial testers, field-tested at Misinfo Day' },
+                  {
+                    key: 'lat',
+                    stat: <>95%<CountUp to={96} prefix="→" suffix="%" /> adoption</>,
+                    context: 'LAT — 43-person pilot to ~4,000-person rollout, measured by weekly active use',
+                  },
+                  {
+                    key: 'keye',
+                    stat: <>0<CountUp to={20} prefix="→" suffix="K" /> MAUs · $1.5M raised</>,
+                    context: 'Keye — founding designer, team of 5; later went YC F24',
+                  },
+                  {
+                    key: 'misinfo',
+                    stat: <><CountUp to={96} suffix="%" /> said they&apos;d use it</>,
+                    context: 'Misinfo Center — 36 Gen Z/millennial testers, field-tested at Misinfo Day',
+                  },
                 ].map((item, i) => (
-                  <div key={item.stat} style={revealStyle(220 + i * 70)}>
+                  <div key={item.key} style={revealStyle(220 + i * 70)}>
                     <div style={{
                       fontFamily: 'var(--font-heading), serif',
                       fontSize: isMobile ? '18px' : '20px',
                       fontWeight: 700,
-                      color: '#1C1917',
+                      color: '#FFFFFF',
                       marginBottom: '6px',
                       lineHeight: '1.3',
                     }}>
@@ -375,7 +410,7 @@ export default function Home() {
                     <div style={{
                       fontSize: '13.5px',
                       lineHeight: '1.5',
-                      color: '#78716C',
+                      color: 'rgba(255, 255, 255, 0.5)',
                     }}>
                       {item.context}
                     </div>
@@ -384,8 +419,9 @@ export default function Home() {
               </div>
 
               <p style={{ marginBottom: isWideDesktop ? '32px' : '28px', ...revealStyle(220) }}>
-                I obsess over how and why — and lately, why now. These days that means deciding what AI gets to see and act on, and what stays a human call.
+                I obsess over how and why — and lately, why now.
               </p>
+            </div>
             </div>
           </main>
 
@@ -398,6 +434,7 @@ export default function Home() {
             {/* Ambient drifting blobs — just enough motion that the white background
                 doesn't read as flat, kept low-opacity/blurred so it stays behind content */}
             <div aria-hidden="true" className="cs-section-blob cs-section-blob--coral" />
+            <ShootingStars />
 
             {/* Section Header */}
             <div style={{
@@ -421,7 +458,7 @@ export default function Home() {
                   fontFamily: 'var(--font-heading), serif',
                   fontSize: isMobile ? '22px' : isWideDesktop ? '39px' : '34px',
                   fontWeight: 700,
-                  color: '#1C1917',
+                  color: '#FFFFFF',
                   letterSpacing: '-0.01em',
                   lineHeight: '1',
                   margin: 0,
@@ -440,13 +477,13 @@ export default function Home() {
                   fontFamily: 'var(--font-heading), serif',
                   fontWeight: 700,
                   fontSize: isMobile ? '14px' : '15px',
-                  color: '#FFFFFF',
-                  backgroundColor: '#1C1917',
-                  border: '1px solid #1C1917',
+                  color: '#1C1917',
+                  backgroundColor: '#FFFFFF',
+                  border: '1px solid #FFFFFF',
                   borderRadius: '999px',
                   padding: isMobile ? '9px 16px' : '10px 22px',
                   textDecoration: 'none',
-                  boxShadow: '0 3px 8px rgba(28, 25, 23, 0.12)',
+                  boxShadow: '0 3px 8px rgba(0, 0, 0, 0.3)',
                   flexShrink: 0,
                 }}
               >
@@ -463,6 +500,7 @@ export default function Home() {
               gap: isMobile ? '64px' : isWideDesktop ? '112px' : '91px',
             }}>
               {/* Card 1 - LAT */}
+              <Reveal>
               <article
                 onClick={() => router.push('/work/lat')}
                 style={{
@@ -472,7 +510,7 @@ export default function Home() {
                 alignItems: 'center',
                 borderRadius: '10px',
                 padding: isMobile ? '24px' : isWideDesktop ? '48px' : '40px',
-                backgroundColor: '#FFFFFF',
+                backgroundColor: 'transparent',
               }}>
                 <InfoPill
                   isMobile={isMobile}
@@ -484,9 +522,10 @@ export default function Home() {
 
                 {/* Landing hero — same laptop mockup treatment as Keye, minus the
                     browser-chrome strip (LAT's own app already has its own header) */}
-                <div style={{
+                <div className="cs-ambient-float" style={{
                   width: isMobile ? 'calc(100% + 48px)' : isTablet ? 'calc(100% + 80px)' : '84%',
                   marginTop: isMobile ? '24px' : '32px',
+                  animationDelay: '0s',
                 }}>
                   <div
                     className="cs-laptop-mockup"
@@ -517,8 +556,10 @@ export default function Home() {
                   </div>
                 </div>
               </article>
+              </Reveal>
 
               {/* Card 2 - Keye */}
+              <Reveal>
               <article
                 onClick={() => router.push('/work/keye')}
                 style={{
@@ -528,7 +569,7 @@ export default function Home() {
                 alignItems: 'center',
                 borderRadius: '10px',
                 padding: isMobile ? '24px' : isWideDesktop ? '48px' : '40px',
-                backgroundColor: '#FFFFFF',
+                backgroundColor: 'transparent',
               }}>
                 <InfoPill
                   isMobile={isMobile}
@@ -539,9 +580,10 @@ export default function Home() {
                 />
 
                 {/* Landing hero — same video + laptop treatment used as the hero in the Keye case study */}
-                <div style={{
+                <div className="cs-ambient-float" style={{
                   width: isMobile ? 'calc(100% + 48px)' : isTablet ? 'calc(100% + 80px)' : '84%',
                   marginTop: isMobile ? '24px' : '32px',
+                  animationDelay: '-2s',
                 }}>
                   <div
                     className="cs-laptop-mockup"
@@ -576,8 +618,10 @@ export default function Home() {
                   </div>
                 </div>
               </article>
+              </Reveal>
 
               {/* Card 3 - Misinformation Center */}
+              <Reveal>
               <article
                 onClick={() => router.push('/work/misinformation-center')}
                 style={{
@@ -587,7 +631,7 @@ export default function Home() {
                 alignItems: 'center',
                 borderRadius: '10px',
                 padding: isMobile ? '24px' : isWideDesktop ? '48px' : '40px',
-                backgroundColor: '#FFFFFF',
+                backgroundColor: 'transparent',
               }}>
                 <InfoPill
                   isMobile={isMobile}
@@ -597,14 +641,16 @@ export default function Home() {
                 />
 
                 {/* Landing videos, side by side — cropped tight to the phone so they sit seamlessly on the card */}
-                <div style={{
+                <div className="cs-ambient-float" style={{
                   display: 'flex',
                   flexDirection: 'row',
-                  gap: isMobile ? '34px' : '56px',
+                  alignItems: 'center',
+                  gap: isMobile ? '16px' : '24px',
                   width: '100%',
                   marginTop: isMobile ? '24px' : '32px',
                   justifyContent: 'center',
                   padding: isMobile ? '24px 0' : '32px 0',
+                  animationDelay: '-4s',
                 }}>
                   <video
                     autoPlay
@@ -615,14 +661,15 @@ export default function Home() {
                     aria-label="Misinformation Center landing feature 1"
                     style={{
                       display: 'block',
+                      flex: '1 1 0',
                       width: '100%',
-                      maxWidth: isMobile ? '150px' : isTablet ? '220px' : '353px',
-                      aspectRatio: '464 / 912',
+                      maxWidth: isMobile ? '210px' : isTablet ? '300px' : '460px',
+                      aspectRatio: '800 / 1020',
                       objectFit: 'cover',
                       borderRadius: '0px',
                     }}
                   >
-                    <source src="/videos/misinformationcenter/Landing%20video%20quiz%20cropped3.mp4" type="video/mp4" />
+                    <source src="/videos/misinformationcenter/Landing%20video%2003%20cropped.mp4" type="video/mp4" />
                   </video>
                   <video
                     autoPlay
@@ -633,23 +680,26 @@ export default function Home() {
                     aria-label="Misinformation Center landing feature 2"
                     style={{
                       display: 'block',
+                      flex: '1 1 0',
                       width: '100%',
-                      maxWidth: isMobile ? '150px' : isTablet ? '220px' : '353px',
-                      aspectRatio: '464 / 912',
+                      maxWidth: isMobile ? '210px' : isTablet ? '300px' : '460px',
+                      aspectRatio: '800 / 1020',
                       objectFit: 'cover',
                       borderRadius: '0px',
                     }}
                   >
-                    <source src="/videos/misinformationcenter/Landing%20video%2002%20cropped3.mp4" type="video/mp4" />
+                    <source src="/videos/misinformationcenter/Landing%20video%2004%20cropped.mp4" type="video/mp4" />
                   </video>
                 </div>
               </article>
+              </Reveal>
 
               {/* Card 4 - Coming Soon (AI-native stealth work) */}
+              <Reveal>
               <article style={{
                 display: 'flex',
                 flexDirection: 'column',
-                border: '1.5px dashed #D6D3D1',
+                border: '1.5px dashed rgba(255, 255, 255, 0.18)',
                 borderRadius: '10px',
                 padding: isMobile ? '24px' : isWideDesktop ? '48px' : '40px',
                 backgroundColor: 'transparent',
@@ -662,7 +712,7 @@ export default function Home() {
                   <div style={{
                     fontSize: isWideDesktop ? '15px' : '13px',
                     fontWeight: 700,
-                    color: '#A8A29E',
+                    color: 'rgba(255, 255, 255, 0.35)',
                     letterSpacing: '0.08em',
                     flexShrink: 0,
                     paddingTop: '6px',
@@ -675,7 +725,7 @@ export default function Home() {
                       fontWeight: 700,
                       textTransform: 'uppercase',
                       letterSpacing: '0.08em',
-                      color: '#A8A29E',
+                      color: 'rgba(255, 255, 255, 0.35)',
                       marginBottom: '6px',
                     }}>
                       AI-Native · 0→1 · In Stealth
@@ -684,7 +734,7 @@ export default function Home() {
                       fontFamily: 'var(--font-heading), serif',
                       fontSize: isMobile ? '22px' : isWideDesktop ? '30px' : '26px',
                       fontWeight: 700,
-                      color: '#78716C',
+                      color: 'rgba(255, 255, 255, 0.5)',
                       letterSpacing: '-0.01em',
                       margin: 0,
                       marginBottom: isMobile ? '12px' : '16px',
@@ -694,7 +744,7 @@ export default function Home() {
                     <p style={{
                       fontSize: isMobile ? '15px' : '16px',
                       lineHeight: '1.6',
-                      color: '#A8A29E',
+                      color: 'rgba(255, 255, 255, 0.35)',
                       maxWidth: '640px',
                       margin: 0,
                     }}>
@@ -703,10 +753,63 @@ export default function Home() {
                   </div>
                 </div>
               </article>
+              </Reveal>
             </div>
           </section>
 
           </div>
+
+          {/* Closing CTA — a deliberate last beat before the footer links, not just
+              another section ending in silence */}
+          <Reveal>
+            <div style={{
+              maxWidth: isWideDesktop ? '1400px' : '1200px',
+              marginTop: isMobile ? '80px' : isWideDesktop ? '140px' : '120px',
+              marginLeft: 'auto',
+              marginRight: 'auto',
+              paddingLeft: isMobile ? '0' : isWideDesktop ? '64px' : '48px',
+              paddingRight: isMobile ? '0' : isWideDesktop ? '64px' : '48px',
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+              justifyContent: 'center',
+              textAlign: 'center',
+              gap: isMobile ? '24px' : '32px',
+            }}>
+              <h2 style={{
+                fontFamily: 'var(--font-heading), serif',
+                fontSize: isMobile ? '28px' : isWideDesktop ? '44px' : '38px',
+                fontWeight: 700,
+                color: '#FFFFFF',
+                letterSpacing: '-0.01em',
+                lineHeight: '1.15',
+                textAlign: 'center',
+                margin: 0,
+              }}>
+                Let's build something people can trust.
+              </h2>
+              <a
+                href="mailto:indhuve05@gmail.com"
+                className="cs-pill-hover"
+                style={{
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  flexShrink: 0,
+                  fontFamily: 'var(--font-heading), serif',
+                  fontWeight: 700,
+                  fontSize: isMobile ? '15px' : '16px',
+                  color: '#0C0C0D',
+                  backgroundColor: '#FFFFFF',
+                  border: '1px solid #FFFFFF',
+                  borderRadius: '999px',
+                  padding: isMobile ? '12px 22px' : '14px 28px',
+                  textDecoration: 'none',
+                }}
+              >
+                Contact me
+              </a>
+            </div>
+          </Reveal>
 
           {/* Footer Links */}
           <footer style={{
@@ -724,7 +827,7 @@ export default function Home() {
               style={{
                 fontSize: isMobile ? '15px' : '16px',
                 fontWeight: 500,
-                color: '#1C1917',
+                color: 'rgba(255, 255, 255, 0.75)',
                 textDecoration: 'none',
                 borderBottom: '1px solid transparent',
                 transition: 'border-color 0.2s',
@@ -745,7 +848,7 @@ export default function Home() {
               style={{
                 fontSize: isMobile ? '15px' : '16px',
                 fontWeight: 500,
-                color: '#1C1917',
+                color: 'rgba(255, 255, 255, 0.75)',
                 textDecoration: 'none',
                 borderBottom: '1px solid transparent',
                 transition: 'border-color 0.2s',
@@ -766,7 +869,7 @@ export default function Home() {
               style={{
                 fontSize: isMobile ? '15px' : '16px',
                 fontWeight: 500,
-                color: '#1C1917',
+                color: 'rgba(255, 255, 255, 0.75)',
                 textDecoration: 'none',
                 borderBottom: '1px solid transparent',
                 transition: 'border-color 0.2s',
@@ -778,14 +881,14 @@ export default function Home() {
                 e.currentTarget.style.borderBottomColor = 'transparent'
               }}
             >
-              LinkedIn â†—
+              LinkedIn ↗
             </a>
             <a
               href="mailto:indhuve05@gmail.com"
               style={{
                 fontSize: isMobile ? '15px' : '16px',
                 fontWeight: 500,
-                color: '#1C1917',
+                color: 'rgba(255, 255, 255, 0.75)',
                 textDecoration: 'none',
                 borderBottom: '1px solid transparent',
                 transition: 'border-color 0.2s',

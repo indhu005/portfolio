@@ -30,6 +30,7 @@ interface SidebarProps {
   activeSection?: string | null
   onSectionClick?: (sectionId: string) => void
   sections?: Section[]
+  dark?: boolean
 }
 
 // Helper to create short navigation titles
@@ -57,7 +58,8 @@ export default function Sidebar({
   activeProject: activeProjectProp = null,
   activeSection = null,
   onSectionClick,
-  sections
+  sections,
+  dark = false
 }: SidebarProps = {}) {
   const router = useRouter()
   const ACTIVE_COLOR = '#4A72E5'
@@ -83,6 +85,7 @@ export default function Sidebar({
 
   const navPaddingY = isCompact ? '12px' : '6px'
   const navFontSize = isCompact ? '17px' : isLargeDesktop ? '18px' : '15px'
+  const textColor = dark ? '#FFFFFF' : '#1C1917'
 
   return (
     <div
@@ -98,7 +101,7 @@ export default function Sidebar({
       zIndex: 200,
       alignSelf: 'flex-start',
       borderRight: 'none',
-      backgroundColor: '#FFFFFF',
+      backgroundColor: dark ? '#000000' : '#FFFFFF',
       padding: isLaptop ? '40px 56px 40px 4px' : '40px 16px 40px 20px',
       display: 'flex',
       flexDirection: 'column',
@@ -111,8 +114,8 @@ export default function Sidebar({
           40px so sidebar-key-top's -40px/+40px hover-highlight trick still
           reaches this box's edge rather than the outer column's. */}
       <div style={{
-        backgroundColor: '#1C1917',
-        border: '1px solid #4A72E5',
+        backgroundColor: dark ? '#000000' : '#FFFFFF',
+        border: dark ? '1px solid #FFFFFF' : '1px solid #1C1917',
         borderRadius: '28px',
         padding: '40px 40px 20px 40px',
         marginLeft: '40px',
@@ -130,14 +133,14 @@ export default function Sidebar({
           style={{
             fontSize: isLargeDesktop ? '20px' : '16px',
             fontWeight: 700,
-            color: '#FFFFFF',
+            color: textColor,
             cursor: 'pointer',
             transition: 'color 0.12s ease-out',
             textDecoration: 'none',
             display: 'block',
           }}
           onMouseEnter={(e) => e.currentTarget.style.color = 'var(--accent)'}
-          onMouseLeave={(e) => e.currentTarget.style.color = '#FFFFFF'}
+          onMouseLeave={(e) => e.currentTarget.style.color = textColor}
         >
           Indhu
         </Link>
@@ -163,13 +166,13 @@ export default function Sidebar({
         <div style={{
           fontSize: isLargeDesktop ? '18px' : '15px',
           fontWeight: 400,
-          color: '#FFFFFF',
+          color: textColor,
           marginBottom: '4px',
         }}>Senior Product Designer</div>
         <div style={{
           fontSize: isLargeDesktop ? '18px' : '15px',
           fontWeight: 400,
-          color: '#FFFFFF',
+          color: textColor,
         }}>based in Seattle</div>
       </div>
 
@@ -178,7 +181,7 @@ export default function Sidebar({
         <div style={{
           fontSize: '11px',
           fontWeight: 700,
-          color: '#FFFFFF',
+          color: textColor,
           marginBottom: '12px',
           textTransform: 'uppercase',
           letterSpacing: '0.06em',
@@ -198,11 +201,11 @@ export default function Sidebar({
                     expandedProject === project.slug ? null : project.slug
                   )
                 }}
-                className="sidebar-key sidebar-key-top"
+                className={`sidebar-key sidebar-key-top ${dark ? "sidebar-key--dark" : ""}`}
                 style={{
                   fontSize: navFontSize,
                   fontWeight: 700,
-                  color: '#FFFFFF',
+                  color: textColor,
                   cursor: 'pointer',
                   paddingTop: navPaddingY,
                   paddingBottom: navPaddingY,
@@ -213,11 +216,11 @@ export default function Sidebar({
                   textDecoration: 'none',
                 }}
                 onMouseEnter={(e) => { if (!isActiveProject) e.currentTarget.style.color = ACTIVE_COLOR }}
-                onMouseLeave={(e) => { if (!isActiveProject) e.currentTarget.style.color = '#FFFFFF' }}
+                onMouseLeave={(e) => { if (!isActiveProject) e.currentTarget.style.color = textColor }}
               >
                 <span style={{
                   fontSize: isCompact ? '13px' : '11px',
-                  color: isActiveProject ? ACTIVE_COLOR : '#FFFFFF',
+                  color: isActiveProject ? ACTIVE_COLOR : textColor,
                   flexShrink: 0,
                   width: '16px',
                   fontVariantNumeric: 'tabular-nums',
@@ -259,11 +262,11 @@ export default function Sidebar({
                             }
                           }}
                           onMouseEnter={(e) => { if (!isActiveSection) e.currentTarget.style.color = ACTIVE_COLOR }}
-                          onMouseLeave={(e) => { if (!isActiveSection) e.currentTarget.style.color = '#FFFFFF' }}
-                          className="sidebar-key sidebar-key-nested"
+                          onMouseLeave={(e) => { if (!isActiveSection) e.currentTarget.style.color = textColor }}
+                          className={`sidebar-key sidebar-key-nested ${dark ? "sidebar-key--dark" : ""}`}
                           style={{
                             fontSize: isCompact ? '15px' : isLargeDesktop ? '16px' : '13px',
-                            color: '#FFFFFF',
+                            color: textColor,
                             fontWeight: 400,
                             display: 'inline-block',
                             cursor: onSectionClick ? 'pointer' : 'default',
@@ -292,11 +295,11 @@ export default function Sidebar({
       <div style={{ marginTop: '40px' }}>
         <Link
           href="/about"
-          className="sidebar-key sidebar-key-top"
+          className={`sidebar-key sidebar-key-top ${dark ? "sidebar-key--dark" : ""}`}
           style={{
             fontSize: navFontSize,
             fontWeight: 700,
-            color: '#FFFFFF',
+            color: textColor,
             paddingTop: navPaddingY,
             paddingBottom: navPaddingY,
             marginBottom: '12px',
@@ -305,7 +308,7 @@ export default function Sidebar({
             textDecoration: 'none',
           }}
           onMouseEnter={(e) => e.currentTarget.style.color = 'var(--accent)'}
-          onMouseLeave={(e) => e.currentTarget.style.color = '#FFFFFF'}
+          onMouseLeave={(e) => e.currentTarget.style.color = textColor}
         >
           About
         </Link>
@@ -321,12 +324,12 @@ export default function Sidebar({
               target={item.href.startsWith('mailto:') ? undefined : '_blank'}
               rel={item.href.startsWith('mailto:') ? undefined : 'noopener noreferrer'}
               onMouseEnter={(e) => e.currentTarget.style.color = 'var(--accent)'}
-              onMouseLeave={(e) => e.currentTarget.style.color = '#FFFFFF'}
-              className="sidebar-key sidebar-key-top"
+              onMouseLeave={(e) => e.currentTarget.style.color = textColor}
+              className={`sidebar-key sidebar-key-top ${dark ? "sidebar-key--dark" : ""}`}
               style={{
                 fontSize: navFontSize,
                 fontWeight: 400,
-                color: '#FFFFFF',
+                color: textColor,
                 paddingTop: navPaddingY,
                 paddingBottom: navPaddingY,
                 cursor: 'pointer',
@@ -340,12 +343,12 @@ export default function Sidebar({
             <div
               key={item.label}
               onMouseEnter={(e) => e.currentTarget.style.color = 'var(--accent)'}
-              onMouseLeave={(e) => e.currentTarget.style.color = '#FFFFFF'}
-              className="sidebar-key sidebar-key-top"
+              onMouseLeave={(e) => e.currentTarget.style.color = textColor}
+              className={`sidebar-key sidebar-key-top ${dark ? "sidebar-key--dark" : ""}`}
               style={{
                 fontSize: navFontSize,
                 fontWeight: 400,
-                color: '#FFFFFF',
+                color: textColor,
                 paddingTop: navPaddingY,
                 paddingBottom: navPaddingY,
                 cursor: 'pointer',

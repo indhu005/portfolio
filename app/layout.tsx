@@ -4,6 +4,7 @@ import Script from 'next/script'
 import { cookies } from 'next/headers'
 import './globals.css'
 import ScrollRestoration from '@/components/ScrollRestoration'
+import { ScrollProgressRail } from '@/components/ScrollReveal'
 import { Analytics } from '@vercel/analytics/react'
 import { SpeedInsights } from '@vercel/speed-insights/next'
 import { PersonStructuredData, PortfolioStructuredData } from '@/components/StructuredData'
@@ -104,6 +105,7 @@ export default async function RootLayout({
         <PersonStructuredData />
         <PortfolioStructuredData />
         <ScrollRestoration />
+        <ScrollProgressRail />
         {children}
         {!excludeAnalytics && (
           <>

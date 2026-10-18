@@ -31,10 +31,19 @@
 }
 
 .sidebar-key:hover {
-  background-color: rgba(255, 255, 255, 0.08);
+  background-color: rgba(28, 25, 23, 0.05);
 }
 
 .sidebar-key:active {
+  background-color: rgba(28, 25, 23, 0.1);
+  transform: scaleY(0.92);
+}
+
+.sidebar-key--dark:hover {
+  background-color: rgba(255, 255, 255, 0.08);
+}
+
+.sidebar-key--dark:active {
   background-color: rgba(255, 255, 255, 0.14);
   transform: scaleY(0.92);
 }
@@ -1370,6 +1379,24 @@ img, video {
   transition: transform 0.3s ease;
 }
 
+/* Ambient life for the homepage cards — a slow, continuous bob so the page
+   never reads as fully static, independent of scroll/hover state. Each card
+   gets a different phase so they don't all bob in lockstep. */
+@keyframes ambientFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-9px); }
+}
+
+.cs-ambient-float {
+  animation: ambientFloat 6s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cs-ambient-float {
+    animation: none;
+  }
+}
+
 .cs-laptop-mockup:hover {
   transform: translateY(-4px);
 }
@@ -1878,6 +1905,32 @@ img, video {
   100% { transform: translate(-7%, -6%) scale(1.05); }
 }
 
+.cs-section-blob--blue {
+  top: 8%;
+  left: 18%;
+  width: 26vw;
+  max-width: 320px;
+  aspect-ratio: 1;
+  opacity: 0.18;
+  filter: blur(60px);
+  background: radial-gradient(circle, #E7E5E4, transparent 70%);
+  animation: cs-blob-orbit 20s linear infinite;
+}
+
+/* True circular revolve (8-point approximation of a circle) rather than a
+   random drift — reads as orbiting inside the black card, not wandering. */
+@keyframes cs-blob-orbit {
+  0%   { transform: translate(26%, 0%)     scale(1.05); }
+  12.5%{ transform: translate(18%, 16%)    scale(1.12); }
+  25%  { transform: translate(0%, 22%)     scale(1.18); }
+  37.5%{ transform: translate(-18%, 16%)   scale(1.1); }
+  50%  { transform: translate(-26%, 0%)    scale(1); }
+  62.5%{ transform: translate(-18%, -16%)  scale(0.92); }
+  75%  { transform: translate(0%, -22%)    scale(0.88); }
+  87.5%{ transform: translate(18%, -16%)   scale(0.95); }
+  100% { transform: translate(26%, 0%)     scale(1.05); }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .cs-section-blob {
     animation: none;
@@ -1898,6 +1951,54 @@ img, video {
 @media (prefers-reduced-motion: reduce) {
   .cs-pill-hover {
     transition: none;
+  }
+}
+
+/* Shooting stars — ambient decoration for the dark sections of the homepage.
+   Each star is a short gradient streak that travels diagonally and fades,
+   looping on its own timer so the field never reads as fully static. */
+.shooting-stars-field {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.shooting-star {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  border-radius: 50%;
+  background: #FFFFFF;
+  box-shadow: 0 0 4px 1px rgba(255, 255, 255, 0.6);
+  opacity: 0;
+  animation-name: shootingStarTravel;
+  animation-timing-function: ease-in;
+  animation-iteration-count: infinite;
+}
+
+.shooting-star::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: 0;
+  width: 70px;
+  height: 1px;
+  background: linear-gradient(to left, rgba(255, 255, 255, 0.8), transparent);
+  transform: translateY(-50%);
+}
+
+@keyframes shootingStarTravel {
+  0% { transform: translate(0, 0); opacity: 0; }
+  5% { opacity: 1; }
+  20% { transform: translate(-220px, 140px); opacity: 0; }
+  100% { transform: translate(-220px, 140px); opacity: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .shooting-stars-field {
+    display: none;
   }
 }
 
