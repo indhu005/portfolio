@@ -45,20 +45,11 @@ export const metadata: Metadata = {
     siteName: 'Indhu Venkatachalam — Senior Product Designer',
     title: 'Indhu Venkatachalam — Senior Product Designer, AI Products & 0→1',
     description: 'Senior product designer in Seattle — 8 years across mediums, 5+ in product — taking 0→1 AI and enterprise products to launch. Founding designer at Keye, a 0→1 marketplace that later went YC; senior product design on LAT, an enterprise AI platform.',
-    images: [
-      {
-        url: '/og-image.png',
-        width: 1200,
-        height: 630,
-        alt: 'Indhu Venkatachalam — Senior Product Designer, AI Products & 0→1',
-      }
-    ]
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Indhu Venkatachalam — Senior Product Designer, AI Products & 0→1',
     description: 'Senior product designer in Seattle — 8 years across mediums, 5+ in product — taking 0→1 AI and enterprise products to launch. Founding designer at Keye, a 0→1 marketplace that later went YC; senior product design on LAT, an enterprise AI platform.',
-    images: ['/og-image.png'],
     creator: '@indhu_design'
   },
   robots: {

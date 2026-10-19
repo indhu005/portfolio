@@ -7,13 +7,6 @@ export const metadata: Metadata = {
     title: 'About Indhu Venkatachalam',
     description: 'Product designer who came to design from architecture. Based in Seattle, previously Chicago, Milwaukee, LA, and New York.',
     url: 'https://indhu.design/about',
-    images: [
-      {
-        url: '/og-image.png',
-        width: 1200,
-        height: 630,
-      }
-    ]
   },
   twitter: {
     card: 'summary_large_image',
