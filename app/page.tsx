@@ -298,6 +298,17 @@ export default function Home() {
               ...revealStyle(0),
             }}>
               Hi, I'm <span style={{ color: '#FFFFFF' }}>Indhu</span>
+              <span style={{
+                position: 'absolute',
+                width: '1px',
+                height: '1px',
+                padding: 0,
+                margin: '-1px',
+                overflow: 'hidden',
+                clip: 'rect(0, 0, 0, 0)',
+                whiteSpace: 'nowrap',
+                border: 0,
+              }}> Venkatachalam</span>
             </h1>
 
             <div style={{
