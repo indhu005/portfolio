@@ -871,6 +871,27 @@ export default function Home() {
               About
             </a>
             <a
+              href="https://calendly.com/indhuve05/30min"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                fontSize: isMobile ? '15px' : '16px',
+                fontWeight: 500,
+                color: 'rgba(255, 255, 255, 0.75)',
+                textDecoration: 'none',
+                borderBottom: '1px solid transparent',
+                transition: 'border-color 0.2s',
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.borderBottomColor = 'var(--accent)'
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.borderBottomColor = 'transparent'
+              }}
+            >
+              Book a time
+            </a>
+            <a
               href="/Indhu-Venkatachalam-Senior-Product-Designer.pdf"
               target="_blank"
               rel="noopener noreferrer"
