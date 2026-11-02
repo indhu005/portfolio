@@ -102,6 +102,18 @@ export default async function RootLayout({
           <>
             <Analytics />
             <SpeedInsights />
+            <Script
+              src="https://www.googletagmanager.com/gtag/js?id=G-632YR0DPYH"
+              strategy="afterInteractive"
+            />
+            <Script id="gtag-init" strategy="afterInteractive">
+              {`
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+                gtag('config', 'G-632YR0DPYH');
+              `}
+            </Script>
             <Script id="clarity" strategy="afterInteractive">
               {`
                 (function(c,l,a,r,i,t,y){
