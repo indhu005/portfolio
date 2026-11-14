@@ -202,7 +202,7 @@ const GroundMarker = ({ size = 60 }: { size?: number }) => {
   )
 }
 
-export default function LandingGameSimple() {
+export default function LandingGameSimple({ edgeLeft = 20, edgeRight = 20, edgeTop = 0 }: { edgeLeft?: number; edgeRight?: number; edgeTop?: number }) {
   const [mounted, setMounted] = useState(false)
   const [isMobile, setIsMobile] = useState(false)
   const [isTablet, setIsTablet] = useState(false)
@@ -571,14 +571,15 @@ export default function LandingGameSimple() {
   return (
     <div style={{
       position: 'relative',
-      width: 'calc(100% + 40px)',
-      marginLeft: '-20px',
-      marginRight: '-20px',
+      width: `calc(100% + ${edgeLeft + edgeRight}px)`,
+      marginLeft: `-${edgeLeft}px`,
+      marginRight: `-${edgeRight}px`,
+      marginTop: `-${edgeTop}px`,
       marginBottom: '-20px',
       overflow: 'hidden',
       backgroundColor: '#FAF8F3',
-      borderRadius: (isMobile || isTablet) ? '0' : '64px 12px 64px 12px',
-      paddingTop: isMobile ? '16px' : '20px',
+      borderRadius: '0',
+      paddingTop: isMobile ? `${16 + edgeTop}px` : `${20 + edgeTop}px`,
       paddingRight: isMobile ? '36px' : '40px',
       // No left padding on desktop (beyond the 20px bleed compensation): the grid still
       // lands flush with "Hi, I'm Indhu" below, which shares the same parent maxWidth/margin.
@@ -1314,7 +1315,7 @@ export default function LandingGameSimple() {
               right: 0,
               bottom: 0,
               backgroundColor: 'rgba(0, 0, 0, 0.7)',
-              borderRadius: (isMobile || isTablet) ? '6px' : '64px 12px 64px 12px',
+              borderRadius: '0',
               zIndex: 100,
             }}
           />

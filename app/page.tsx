@@ -1,10 +1,12 @@
 'use client'
 import Sidebar from '@/components/Sidebar'
 import LandingGameSimple from '@/components/LandingGameSimple'
+import ChickenClockWidget from '@/components/ChickenClockWidget'
 import { Reveal, CountUp } from '@/components/ScrollReveal'
-import ShootingStars from '@/components/ShootingStars'
 import { useRouter } from 'next/navigation'
 import { useState, useEffect, useRef, type CSSProperties } from 'react'
+
+const SHOW_CHICKEN_CLOCK = false
 
 const useMediaQuery = (query: string) => {
   const [matches, setMatches] = useState(false)
@@ -138,7 +140,7 @@ export default function Home() {
     <div style={{
       display: 'flex',
       height: '100vh',
-      backgroundColor: '#FFFFFF',
+      backgroundColor: '#FAF8F3',
       overflow: 'hidden',
       width: '100vw',
     }}>
@@ -157,7 +159,7 @@ export default function Home() {
       )}
 
       {/* SIDEBAR - Hidden on mobile/tablet */}
-      {!isTablet && <Sidebar dark />}
+      {!isTablet && <Sidebar bg="#FAF8F3" />}
 
 
       {/* MOBILE MENU BUTTON — one consistent style regardless of scroll position/what's
@@ -212,14 +214,14 @@ export default function Home() {
             left: 0,
             width: '100vw',
             height: '100vh',
-            backgroundColor: '#000000',
+            backgroundColor: '#FAF8F3',
             zIndex: 999,
             overflowY: 'auto',
             padding: '80px 20px 20px 20px',
           }}
           onClick={() => setMobileMenuOpen(false)}
         >
-          <Sidebar dark />
+          <Sidebar bg="#FAF8F3" />
         </div>
       )}
 
@@ -240,7 +242,7 @@ export default function Home() {
             padding: isMobile ? '0 20px 40px 20px' : isTablet ? '0 32px 50px 32px' : isWideDesktop ? '0 64px 80px 56px' : '0 40px 60px 36px',
             minWidth: 0,
             scrollBehavior: 'smooth',
-            backgroundColor: '#000000',
+            backgroundColor: '#FAF8F3',
           }}
         >
           {/* Landing Game — same maxWidth/centering as the wrapper below so the grid can align its
@@ -252,7 +254,11 @@ export default function Home() {
             marginTop: isTablet ? '0' : '32px',
             marginBottom: isMobile ? '20px' : isWideDesktop ? '36px' : '28px',
           }}>
-            <LandingGameSimple />
+            <LandingGameSimple
+              edgeLeft={isMobile ? 20 : isTablet ? 32 : isWideDesktop ? 56 : 36}
+              edgeRight={isMobile ? 20 : isTablet ? 32 : isWideDesktop ? 64 : 40}
+              edgeTop={isTablet ? 0 : 32}
+            />
           </div>
 
           {/* Shared centered wrapper so intro and Selected Work share the same left edge */}
@@ -275,7 +281,8 @@ export default function Home() {
             marginLeft: '0',
             marginRight: 'auto',
             textAlign: 'left',
-            backgroundColor: '#000000',
+            backgroundColor: '#FFFFFF',
+            border: '1px solid rgba(28, 25, 23, 0.08)',
             borderRadius: isMobile ? '20px' : '28px',
             padding: isMobile ? '32px 24px' : isWideDesktop ? '64px 72px' : '56px 60px',
           }}>
@@ -283,7 +290,6 @@ export default function Home() {
                 treatment as the case-studies section blob, just a different hue/phase
                 so the hero doesn't read as flat before you scroll to anything else. */}
             <div aria-hidden="true" className="cs-section-blob cs-section-blob--blue" />
-            <ShootingStars />
 
             <div style={{ position: 'relative', zIndex: 1 }}>
             <h1 style={{
@@ -291,13 +297,13 @@ export default function Home() {
               fontSize: isMobile ? '38px' : isTablet ? '50px' : isWideDesktop ? '74px' : '62px',
               fontWeight: 700,
               lineHeight: '1.08',
-              color: '#FFFFFF',
+              color: '#1C1917',
               marginTop: isWideDesktop ? '20px' : '0',
               marginBottom: isMobile ? '16px' : '20px',
               letterSpacing: '-0.02em',
               ...revealStyle(0),
             }}>
-              Hi, I'm <span style={{ color: '#FFFFFF' }}>Indhu</span>
+              Hi, I'm <span style={{ color: '#1C1917' }}>Indhu</span>
               <span style={{
                 position: 'absolute',
                 width: '1px',
@@ -334,9 +340,9 @@ export default function Home() {
                     fontSize: isMobile ? '12px' : '12.5px',
                     fontWeight: 500,
                     letterSpacing: '0.01em',
-                    color: item.variant === 'solid' ? 'rgba(255, 255, 255, 0.92)' : '#7C9BF0',
-                    backgroundColor: item.variant === 'solid' ? 'rgba(255, 255, 255, 0.06)' : 'rgba(74, 114, 229, 0.12)',
-                    border: item.variant === 'solid' ? '1px solid rgba(255, 255, 255, 0.12)' : '1px solid rgba(124, 155, 240, 0.3)',
+                    color: item.variant === 'solid' ? 'rgba(28, 25, 23, 0.85)' : '#4A6FD4',
+                    backgroundColor: item.variant === 'solid' ? 'rgba(28, 25, 23, 0.06)' : 'rgba(74, 114, 229, 0.1)',
+                    border: item.variant === 'solid' ? '1px solid rgba(28, 25, 23, 0.12)' : '1px solid rgba(74, 114, 229, 0.25)',
                     borderRadius: '7px',
                     padding: isMobile ? '5px 10px' : '6px 11px',
                   }}
@@ -345,7 +351,7 @@ export default function Home() {
                     <svg width="10" height="10" viewBox="0 0 24 24" fill="none" aria-hidden="true">
                       <path
                         d="M12 2C7.58 2 4 5.58 4 10c0 5.25 6.72 11.19 7.01 11.44a1.5 1.5 0 0 0 1.98 0C13.28 21.19 20 15.25 20 10c0-4.42-3.58-8-8-8Zm0 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6Z"
-                        fill="#7C9BF0"
+                        fill="#4A6FD4"
                       />
                     </svg>
                   )}
@@ -357,25 +363,27 @@ export default function Home() {
             <div style={{
               fontSize: isMobile ? '20px' : isWideDesktop ? '24px' : '22px',
               lineHeight: '1.8',
-              color: 'rgba(255, 255, 255, 0.85)',
+              color: 'rgba(28, 25, 23, 0.85)',
             }}>
               <p style={{
                 fontFamily: 'var(--font-heading), serif',
                 fontSize: isMobile ? '26px' : isWideDesktop ? '34px' : '30px',
                 fontWeight: 700,
                 lineHeight: '1.3',
-                color: '#FFFFFF',
+                color: '#1C1917',
                 marginBottom: isWideDesktop ? '32px' : '28px',
                 ...revealStyle(90),
               }}>
                 I decide what AI gets to see and act on, and what stays a human call.
               </p>
 
+
+
               <p style={{ marginBottom: isWideDesktop ? '32px' : '28px', ...revealStyle(120) }}>
                 8 years as a product designer — Gensler, founding Keye, senior design on LAT. I build the trust layer between people and AI: a 0→1 marketplace that went YC, an enterprise platform at 96% adoption in a politically sensitive institution.
               </p>
 
-              <p style={{ fontSize: isMobile ? '15px' : '16px', color: 'rgba(255, 255, 255, 0.5)', marginBottom: isWideDesktop ? '32px' : '28px', ...revealStyle(140) }}>
+              <p style={{ fontSize: isMobile ? '15px' : '16px', color: 'rgba(28, 25, 23, 0.5)', marginBottom: isWideDesktop ? '32px' : '28px', ...revealStyle(140) }}>
                 Since 2025, building an AI-forward marketplace in stealth, shipping daily with AI agents.
               </p>
 
@@ -386,7 +394,7 @@ export default function Home() {
                 gap: isMobile ? '20px' : '24px',
                 marginBottom: isWideDesktop ? '32px' : '28px',
                 padding: isMobile ? '20px' : '24px 28px',
-                border: '1px solid rgba(255, 255, 255, 0.1)',
+                border: '1px solid rgba(28, 25, 23, 0.1)',
                 borderRadius: '12px',
                 ...revealStyle(160),
               }}>
@@ -412,7 +420,7 @@ export default function Home() {
                       fontFamily: 'var(--font-heading), serif',
                       fontSize: isMobile ? '18px' : '20px',
                       fontWeight: 700,
-                      color: '#FFFFFF',
+                      color: '#1C1917',
                       marginBottom: '6px',
                       lineHeight: '1.3',
                     }}>
@@ -421,7 +429,7 @@ export default function Home() {
                     <div style={{
                       fontSize: '13.5px',
                       lineHeight: '1.5',
-                      color: 'rgba(255, 255, 255, 0.5)',
+                      color: 'rgba(28, 25, 23, 0.5)',
                     }}>
                       {item.context}
                     </div>
@@ -445,7 +453,6 @@ export default function Home() {
             {/* Ambient drifting blobs — just enough motion that the white background
                 doesn't read as flat, kept low-opacity/blurred so it stays behind content */}
             <div aria-hidden="true" className="cs-section-blob cs-section-blob--coral" />
-            <ShootingStars />
 
             {/* Section Header */}
             <div style={{
@@ -469,7 +476,7 @@ export default function Home() {
                   fontFamily: 'var(--font-heading), serif',
                   fontSize: isMobile ? '22px' : isWideDesktop ? '39px' : '34px',
                   fontWeight: 700,
-                  color: '#FFFFFF',
+                  color: '#1C1917',
                   letterSpacing: '-0.01em',
                   lineHeight: '1',
                   margin: 0,
@@ -488,13 +495,13 @@ export default function Home() {
                   fontFamily: 'var(--font-heading), serif',
                   fontWeight: 700,
                   fontSize: isMobile ? '14px' : '15px',
-                  color: '#1C1917',
-                  backgroundColor: '#FFFFFF',
-                  border: '1px solid #FFFFFF',
+                  color: '#FFFFFF',
+                  backgroundColor: '#1C1917',
+                  border: '1px solid #1C1917',
                   borderRadius: '999px',
                   padding: isMobile ? '9px 16px' : '10px 22px',
                   textDecoration: 'none',
-                  boxShadow: '0 3px 8px rgba(0, 0, 0, 0.3)',
+                  boxShadow: '0 3px 8px rgba(0, 0, 0, 0.15)',
                   flexShrink: 0,
                 }}
               >
@@ -609,7 +616,7 @@ export default function Home() {
                       <div className="cs-laptop-screen">
                         <div className="cs-browser-chrome">
                           <div className="cs-browser-dots"><span></span><span></span><span></span></div>
-                          <div className="cs-browser-url">ðŸ”’ unlockkeye.com</div>
+                          <div className="cs-browser-url">🔒 unlockkeye.com</div>
                         </div>
                         <video
                           autoPlay
@@ -691,7 +698,7 @@ export default function Home() {
                       borderRadius: '0px',
                     }}
                   >
-                    <source src="/videos/misinformationcenter/Landing%20video%2003%20cropped.mp4" type="video/mp4" />
+                    <source src="/videos/misinformationcenter/Landing%20video%2005%20cropped.mp4" type="video/mp4" />
                   </video>
                   <video
                     autoPlay
@@ -717,18 +724,55 @@ export default function Home() {
                       borderRadius: '0px',
                     }}
                   >
-                    <source src="/videos/misinformationcenter/Landing%20video%2004%20cropped.mp4" type="video/mp4" />
+                    <source src="/videos/misinformationcenter/Landing%20video%2006%20cropped.mp4" type="video/mp4" />
                   </video>
                 </div>
               </article>
               </Reveal>
+
+              {/* Card 3.5 - Chicken Clock (side project, lives only on the homepage).
+                  Hidden for now (SHOW_CHICKEN_CLOCK) while the auto-loop timing is
+                  being sorted out — flip the flag back on to bring it back. */}
+              {SHOW_CHICKEN_CLOCK && (
+              <Reveal>
+              <article style={{
+                display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'center',
+                borderRadius: '10px',
+                padding: isMobile ? '24px' : isWideDesktop ? '48px' : '40px',
+                backgroundColor: 'transparent',
+              }}>
+                <InfoPill
+                  isMobile={isMobile}
+                  title="Chicken Clock Screensaver"
+                  meta="Live Experiments"
+                  year="2026"
+                />
+                <div style={{
+                  marginTop: isMobile ? '24px' : '32px',
+                  display: 'flex',
+                  flexDirection: isMobile ? 'column' : 'row',
+                  justifyContent: 'center',
+                  alignItems: 'center',
+                  gap: isMobile ? '24px' : '32px',
+                  width: '100%',
+                  flexWrap: 'wrap',
+                }}>
+                  <ChickenClockWidget theme="day" />
+                  <ChickenClockWidget />
+                  <ChickenClockWidget theme="night" />
+                </div>
+              </article>
+              </Reveal>
+              )}
 
               {/* Card 4 - Coming Soon (AI-native stealth work) */}
               <Reveal>
               <article style={{
                 display: 'flex',
                 flexDirection: 'column',
-                border: '1.5px dashed rgba(255, 255, 255, 0.18)',
+                border: '1.5px dashed rgba(28, 25, 23, 0.18)',
                 borderRadius: '10px',
                 padding: isMobile ? '24px' : isWideDesktop ? '48px' : '40px',
                 backgroundColor: 'transparent',
@@ -741,7 +785,7 @@ export default function Home() {
                   <div style={{
                     fontSize: isWideDesktop ? '15px' : '13px',
                     fontWeight: 700,
-                    color: 'rgba(255, 255, 255, 0.35)',
+                    color: 'rgba(28, 25, 23, 0.35)',
                     letterSpacing: '0.08em',
                     flexShrink: 0,
                     paddingTop: '6px',
@@ -754,7 +798,7 @@ export default function Home() {
                       fontWeight: 700,
                       textTransform: 'uppercase',
                       letterSpacing: '0.08em',
-                      color: 'rgba(255, 255, 255, 0.35)',
+                      color: 'rgba(28, 25, 23, 0.35)',
                       marginBottom: '6px',
                     }}>
                       AI-Native · 0→1 · In Stealth
@@ -763,7 +807,7 @@ export default function Home() {
                       fontFamily: 'var(--font-heading), serif',
                       fontSize: isMobile ? '22px' : isWideDesktop ? '30px' : '26px',
                       fontWeight: 700,
-                      color: 'rgba(255, 255, 255, 0.5)',
+                      color: 'rgba(28, 25, 23, 0.5)',
                       letterSpacing: '-0.01em',
                       margin: 0,
                       marginBottom: isMobile ? '12px' : '16px',
@@ -773,7 +817,7 @@ export default function Home() {
                     <p style={{
                       fontSize: isMobile ? '15px' : '16px',
                       lineHeight: '1.6',
-                      color: 'rgba(255, 255, 255, 0.35)',
+                      color: 'rgba(28, 25, 23, 0.35)',
                       maxWidth: '640px',
                       margin: 0,
                     }}>
@@ -809,7 +853,7 @@ export default function Home() {
                 fontFamily: 'var(--font-heading), serif',
                 fontSize: isMobile ? '28px' : isWideDesktop ? '44px' : '38px',
                 fontWeight: 700,
-                color: '#FFFFFF',
+                color: '#1C1917',
                 letterSpacing: '-0.01em',
                 lineHeight: '1.15',
                 textAlign: 'center',
@@ -827,9 +871,9 @@ export default function Home() {
                   fontFamily: 'var(--font-heading), serif',
                   fontWeight: 700,
                   fontSize: isMobile ? '15px' : '16px',
-                  color: '#0C0C0D',
-                  backgroundColor: '#FFFFFF',
-                  border: '1px solid #FFFFFF',
+                  color: '#FFFFFF',
+                  backgroundColor: '#1C1917',
+                  border: '1px solid #1C1917',
                   borderRadius: '999px',
                   padding: isMobile ? '12px 22px' : '14px 28px',
                   textDecoration: 'none',
@@ -856,7 +900,7 @@ export default function Home() {
               style={{
                 fontSize: isMobile ? '15px' : '16px',
                 fontWeight: 500,
-                color: 'rgba(255, 255, 255, 0.75)',
+                color: 'rgba(28, 25, 23, 0.75)',
                 textDecoration: 'none',
                 borderBottom: '1px solid transparent',
                 transition: 'border-color 0.2s',
@@ -877,7 +921,7 @@ export default function Home() {
               style={{
                 fontSize: isMobile ? '15px' : '16px',
                 fontWeight: 500,
-                color: 'rgba(255, 255, 255, 0.75)',
+                color: 'rgba(28, 25, 23, 0.75)',
                 textDecoration: 'none',
                 borderBottom: '1px solid transparent',
                 transition: 'border-color 0.2s',
@@ -898,7 +942,7 @@ export default function Home() {
               style={{
                 fontSize: isMobile ? '15px' : '16px',
                 fontWeight: 500,
-                color: 'rgba(255, 255, 255, 0.75)',
+                color: 'rgba(28, 25, 23, 0.75)',
                 textDecoration: 'none',
                 borderBottom: '1px solid transparent',
                 transition: 'border-color 0.2s',
@@ -919,7 +963,7 @@ export default function Home() {
               style={{
                 fontSize: isMobile ? '15px' : '16px',
                 fontWeight: 500,
-                color: 'rgba(255, 255, 255, 0.75)',
+                color: 'rgba(28, 25, 23, 0.75)',
                 textDecoration: 'none',
                 borderBottom: '1px solid transparent',
                 transition: 'border-color 0.2s',
@@ -938,7 +982,7 @@ export default function Home() {
               style={{
                 fontSize: isMobile ? '15px' : '16px',
                 fontWeight: 500,
-                color: 'rgba(255, 255, 255, 0.75)',
+                color: 'rgba(28, 25, 23, 0.75)',
                 textDecoration: 'none',
                 borderBottom: '1px solid transparent',
                 transition: 'border-color 0.2s',

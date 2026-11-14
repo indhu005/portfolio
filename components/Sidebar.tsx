@@ -37,6 +37,7 @@ interface SidebarProps {
   onSectionClick?: (sectionId: string) => void
   sections?: Section[]
   dark?: boolean
+  bg?: string
 }
 
 // Helper to create short navigation titles
@@ -65,7 +66,8 @@ export default function Sidebar({
   activeSection = null,
   onSectionClick,
   sections,
-  dark = false
+  dark = false,
+  bg
 }: SidebarProps = {}) {
   const router = useRouter()
   const ACTIVE_COLOR = '#4A72E5'
@@ -107,7 +109,7 @@ export default function Sidebar({
       zIndex: 200,
       alignSelf: 'flex-start',
       borderRight: 'none',
-      backgroundColor: dark ? '#000000' : '#FFFFFF',
+      backgroundColor: bg ?? (dark ? '#000000' : '#FFFFFF'),
       padding: isCompact ? '0' : isLaptop ? '40px 56px 40px 4px' : '40px 16px 40px 20px',
       display: 'flex',
       flexDirection: 'column',
@@ -299,30 +301,6 @@ export default function Sidebar({
 
       {/* ABOUT */}
       <div style={{ marginTop: '40px' }}>
-        <a
-          href="https://calendly.com/indhuve05/30min"
-          target="_blank"
-          rel="noopener noreferrer"
-          style={{
-            display: 'inline-flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            fontSize: isCompact ? '15px' : isLargeDesktop ? '16px' : '14px',
-            fontWeight: 700,
-            color: '#FFFFFF',
-            backgroundColor: ACTIVE_COLOR,
-            borderRadius: '999px',
-            padding: isCompact ? '12px 20px' : '10px 18px',
-            marginBottom: '16px',
-            cursor: 'pointer',
-            textDecoration: 'none',
-            transition: 'opacity 0.12s ease-out, transform 0.06s ease-out',
-          }}
-          onMouseEnter={(e) => e.currentTarget.style.opacity = '0.85'}
-          onMouseLeave={(e) => e.currentTarget.style.opacity = '1'}
-        >
-          Set up a time →
-        </a>
         <Link
           href="/about"
           className={`sidebar-key sidebar-key-top ${dark ? "sidebar-key--dark" : ""}`}
