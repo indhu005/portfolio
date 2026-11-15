@@ -204,6 +204,10 @@ export default function LandingGameSimple({ edgeLeft = 20, edgeRight = 20, edgeT
   const [localTime, setLocalTime] = useState('')
   const [localRegion, setLocalRegion] = useState('')
   const [hasInteracted, setHasInteracted] = useState(false)
+  // Onboarding hint: a fake cursor that moves in and "clicks" one cell shortly
+  // after load, so first-time visitors who miss the "Click to plant trees"
+  // text still discover the grid is interactive.
+  const [hintStage, setHintStage] = useState<'idle' | 'approaching' | 'arrived' | 'clicking' | 'done'>('idle')
   const [playCount, setPlayCount] = useState(0) // Track replays for difficulty
   const [isDaytime, setIsDaytime] = useState(true) // Track if it's day or night
   const [audioMuted, setAudioMuted] = useState(true) // Starts muted; user must opt in to sound
@@ -211,8 +215,6 @@ export default function LandingGameSimple({ edgeLeft = 20, edgeRight = 20, edgeT
   const trafficAudioRef = useRef<HTMLAudioElement>(null)
   const truckAnimationRef = useRef<number>()
   const instructionCardRef = useRef<HTMLDivElement>(null)
-  const statsPanelRef = useRef<HTMLDivElement>(null)
-  const [statsPanelTop, setStatsPanelTop] = useState(95)
   const [gridMarginTop, setGridMarginTop] = useState(230)
 
   useEffect(() => {
@@ -227,26 +229,23 @@ export default function LandingGameSimple({ edgeLeft = 20, edgeRight = 20, edgeT
     return () => window.removeEventListener('resize', checkScreenSize)
   }, [])
 
-  // Keeps the desktop stats panel's bottom edge aligned with the instruction
-  // card's bottom edge, and keeps the grid clear of the card below it —
-  // both measured rather than hardcoded, since the card's (and panel's)
-  // height vary with how their text wraps at different viewport widths.
+  // Keeps the grid clear of the instruction card above it — measured rather
+  // than hardcoded, since the card's height varies with how its text wraps
+  // at different viewport widths.
   useEffect(() => {
     const updateCardMeasurements = () => {
       const card = instructionCardRef.current
       if (!card) return
-      const statsHeight = statsPanelRef.current?.offsetHeight ?? 136
-      setStatsPanelTop(card.offsetTop + card.offsetHeight - statsHeight)
       // Buffer has to clear the ambient birds layer, which sits 58px above the
       // grid's own top edge on tablet/desktop (hidden on mobile) — too small a
       // buffer here lets that decorative layer (and the grid's own row 0) creep
-      // up into the card/stats panel above it.
+      // up into the card above it.
       setGridMarginTop(card.offsetTop + card.offsetHeight + (isMobile ? 28 : 70))
     }
     updateCardMeasurements()
     window.addEventListener('resize', updateCardMeasurements)
     return () => window.removeEventListener('resize', updateCardMeasurements)
-  }, [isMobile, isTablet])
+  }, [isMobile, isTablet, gameActive, gameEnded])
 
   // Get local time and region (Seattle-based)
   useEffect(() => {
@@ -287,6 +286,45 @@ export default function LandingGameSimple({ edgeLeft = 20, edgeRight = 20, edgeT
         .map(() => Array(cols).fill(null).map(() => ({ state: 'empty' })))
     )
   }, [mounted, isMobile])
+
+  // Onboarding hint sequence: wait a couple seconds, then animate a fake
+  // cursor to the grid's second cell and "click" it. Cancels immediately if
+  // the visitor plants a tree themselves before it fires. Stages:
+  // idle -> approaching (mounted at the start offset) -> arrived (position
+  // changes on the next frame so the CSS transition actually animates) ->
+  // clicking (pulse + real click) -> done.
+  useEffect(() => {
+    if (!mounted || !gameActive || hasInteracted || hintStage !== 'idle') return
+    const approachTimer = setTimeout(() => setHintStage('approaching'), 2000)
+    return () => clearTimeout(approachTimer)
+  }, [mounted, gameActive, hasInteracted, hintStage])
+
+  useEffect(() => {
+    if (hintStage !== 'approaching') return
+    const frame = requestAnimationFrame(() => setHintStage('arrived'))
+    return () => cancelAnimationFrame(frame)
+  }, [hintStage])
+
+  useEffect(() => {
+    if (hintStage !== 'arrived') return
+    const clickTimer = setTimeout(() => setHintStage('clicking'), 650)
+    return () => clearTimeout(clickTimer)
+  }, [hintStage])
+
+  useEffect(() => {
+    if (hintStage !== 'clicking') return
+    const doneTimer = setTimeout(() => {
+      const cols = isMobile ? GRID_COLS_MOBILE : isTablet ? GRID_COLS_TABLET : GRID_COLS_DESKTOP
+      handleCellClick(1, Math.min(2, cols - 1))
+      setHintStage('done')
+    }, 180)
+    return () => clearTimeout(doneTimer)
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [hintStage])
+
+  useEffect(() => {
+    if (hasInteracted) setHintStage('done')
+  }, [hasInteracted])
 
   // Timer countdown
   useEffect(() => {
@@ -391,18 +429,8 @@ export default function LandingGameSimple({ edgeLeft = 20, edgeRight = 20, edgeT
       const minRow = isTablet ? 1 : 0
       const availableRows = GRID_ROWS - minRow
 
-      // On desktop, the mute button / "Why a game?" / yellow "?" button float
-      // over the grid's bottom-right corner — keep that small zone free of
-      // trees/buildings so they don't visually merge with those controls.
-      const isReserved = (row: number, col: number) =>
-        !isMobile && !isTablet && row >= GRID_ROWS - 2 && col === cols - 1
-
-      let targetRow = minRow + Math.floor(Math.random() * availableRows)
-      let targetCol = Math.floor(Math.random() * cols)
-      for (let attempt = 0; attempt < 6 && isReserved(targetRow, targetCol); attempt++) {
-        targetRow = minRow + Math.floor(Math.random() * availableRows)
-        targetCol = Math.floor(Math.random() * cols)
-      }
+      const targetRow = minRow + Math.floor(Math.random() * availableRows)
+      const targetCol = Math.floor(Math.random() * cols)
       const fromLeft = Math.random() < 0.5
 
       const targetX = targetCol * (cellSize + gap)
@@ -562,9 +590,6 @@ export default function LandingGameSimple({ edgeLeft = 20, edgeRight = 20, edgeT
 
   const handleCellClick = (row: number, col: number) => {
     if (!gameActive) return
-    // Keep the bottom-right corner clear of planted trees too, matching the
-    // same quiet zone trucks avoid (see isReserved in the truck-spawn effect).
-    if (!isMobile && !isTablet && row >= GRID_ROWS - 2 && col === cols - 1) return
 
     const cell = grid[row]?.[col]
     if (cell && cell.state === 'empty') {
@@ -608,10 +633,10 @@ export default function LandingGameSimple({ edgeLeft = 20, edgeRight = 20, edgeT
       // No left padding on desktop (beyond the 20px bleed compensation): the grid still
       // lands flush with "Hi, I'm Indhu" below, which shares the same parent maxWidth/margin.
       paddingLeft: isMobile || isTablet ? (isMobile ? '36px' : '40px') : '20px',
-      paddingBottom: isMobile ? '110px' : isTablet ? '160px' : '40px', // More padding on tablet to prevent overlap
+      paddingBottom: '20px',
       display: 'flex',
       flexDirection: 'column',
-      alignItems: isMobile || isTablet ? 'center' : 'flex-start',
+      alignItems: 'center',
       justifyContent: 'center',
     }}>
       {/* Center header — frosted glass instruction card */}
@@ -621,7 +646,7 @@ export default function LandingGameSimple({ edgeLeft = 20, edgeRight = 20, edgeT
         left: '50%',
         transform: 'translateX(-50%)',
         textAlign: 'center',
-        maxWidth: isMobile ? 'calc(100% - 32px)' : '600px',
+        maxWidth: isMobile ? 'calc(100% - 32px)' : '620px',
         zIndex: 50,
         fontFamily: 'DM Sans, sans-serif',
         backgroundColor: 'rgba(120, 118, 112, 0.18)',
@@ -701,353 +726,6 @@ export default function LandingGameSimple({ edgeLeft = 20, edgeRight = 20, edgeT
         )}
       </div>
 
-      {/* Mobile/Tablet: Bottom horizontal strip */}
-      {(isMobile || isTablet) && gameActive && !gameEnded && (
-        <div style={{
-          position: 'absolute',
-          bottom: '16px',
-          left: '16px',
-          right: '16px',
-          backgroundColor: 'rgba(255, 255, 255, 0.85)',
-          backdropFilter: 'blur(10px)',
-          WebkitBackdropFilter: 'blur(10px)',
-          border: '1px solid #D1D5DB',
-          borderRadius: '16px',
-          padding: '12px 16px',
-          display: 'flex',
-          alignItems: 'center',
-          gap: '12px',
-          zIndex: 100,
-          fontFamily: 'DM Sans, sans-serif',
-          boxShadow: '0 4px 16px rgba(0, 0, 0, 0.15)',
-        }}>
-          {/* Time and progress bar */}
-          <div style={{ flex: 1, minWidth: '60px' }}>
-            <div style={{
-              fontSize: '11px',
-              fontWeight: 500,
-              color: '#1C1917',
-              lineHeight: '1.2',
-              marginBottom: '4px',
-            }}>
-              Time: {timeLeft}s
-            </div>
-            <div style={{
-              width: '100%',
-              height: '3px',
-              backgroundColor: 'rgba(28, 25, 23, 0.1)',
-              borderRadius: '2px',
-              overflow: 'hidden',
-            }}>
-              <div style={{
-                height: '100%',
-                width: `${((ROUND_DURATION - timeLeft) / ROUND_DURATION) * 100}%`,
-                backgroundColor: '#FF8A0E',
-                transition: 'width 0.3s ease-out',
-                borderRadius: '2px',
-              }} />
-            </div>
-          </div>
-
-          {/* Planted count */}
-          <div style={{
-            fontSize: '14px',
-            fontWeight: 700,
-            color: '#1C1917',
-            whiteSpace: 'nowrap',
-          }}>
-            🌱 {planted}
-          </div>
-
-          {/* Skip button */}
-          <button
-            onClick={() => {
-              const workSection = document.getElementById('case-studies')
-              if (workSection) {
-                workSection.scrollIntoView({ behavior: 'smooth', block: 'start' })
-              }
-            }}
-            style={{
-              padding: '6px 12px',
-              backgroundColor: 'rgba(28, 25, 23, 0.9)',
-              color: '#FFFFFF',
-              border: 'none',
-              borderRadius: '999px',
-              fontSize: '11px',
-              fontWeight: 600,
-              cursor: 'pointer',
-              transition: 'all 0.2s ease',
-              fontFamily: 'DM Sans, sans-serif',
-              whiteSpace: 'nowrap',
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.backgroundColor = '#1C1917'
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.backgroundColor = 'rgba(28, 25, 23, 0.9)'
-            }}
-          >
-            Skip →
-          </button>
-
-          {/* Mute button — tablet only, shares the timer bar (phone has no ambient audio) */}
-          {isTablet && (
-            <button
-              onClick={() => setAudioMuted(prev => !prev)}
-              aria-label={audioMuted ? 'Unmute ambient sound' : 'Mute ambient sound'}
-              title={audioMuted ? 'Unmute ambient sound' : 'Mute ambient sound'}
-              style={{
-                width: '32px',
-                height: '32px',
-                borderRadius: '50%',
-                border: '1px solid rgba(28, 25, 23, 0.12)',
-                backgroundColor: 'rgba(28, 25, 23, 0.06)',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                cursor: 'pointer',
-                fontSize: '13px',
-                flexShrink: 0,
-              }}
-            >
-              {audioMuted ? '🔇' : '🔊'}
-            </button>
-          )}
-
-          {/* Yellow ? button */}
-          <button
-            onClick={() => {
-              setShowLearnMore(true)
-              setButtonActive(true)
-              setTimeout(() => setButtonActive(false), 300)
-            }}
-            style={{
-              width: '40px',
-              height: '40px',
-              backgroundColor: buttonActive ? '#FF6B35' : '#FFF44F',
-              border: 'none',
-              borderRadius: '50%',
-              fontSize: '18px',
-              fontWeight: 700,
-              color: '#1C1917',
-              cursor: 'pointer',
-              fontFamily: 'DM Sans, sans-serif',
-              transition: 'all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1)',
-              boxShadow: '0 3px 10px rgba(255, 244, 79, 0.5), 0 2px 6px rgba(0, 0, 0, 0.1)',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              flexShrink: 0,
-            }}
-            aria-label="Learn more about the game"
-          >
-            ?
-          </button>
-        </div>
-      )}
-
-      {/* Desktop only: mute button, stacked above "Why a game?" and the yellow ? button */}
-      {!isMobile && !isTablet && (
-        <button
-          onClick={() => setAudioMuted(prev => !prev)}
-          aria-label={audioMuted ? 'Unmute ambient sound' : 'Mute ambient sound'}
-          title={audioMuted ? 'Unmute ambient sound' : 'Mute ambient sound'}
-          style={{
-            position: 'absolute',
-            bottom: '194px',
-            right: '105px',
-            width: '32px',
-            height: '32px',
-            borderRadius: '50%',
-            border: '1px solid rgba(255, 255, 255, 0.12)',
-            backgroundColor: 'rgba(28, 25, 23, 0.9)',
-            boxShadow: '0 2px 8px rgba(0, 0, 0, 0.2)',
-            backdropFilter: 'blur(8px)',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            cursor: 'pointer',
-            zIndex: 100,
-            fontSize: '14px',
-          }}
-        >
-          {audioMuted ? '🔇' : '🔊'}
-        </button>
-      )}
-
-      {/* Desktop only: "Why a game?" label above the yellow ? button */}
-      {!isMobile && !isTablet && (
-        <button
-          onClick={() => {
-            setShowLearnMore(true)
-            setButtonActive(true)
-            setTimeout(() => setButtonActive(false), 300)
-          }}
-          style={{
-            position: 'absolute',
-            bottom: '150px',
-            right: '68px',
-            padding: '6px 14px',
-            backgroundColor: 'rgba(28, 25, 23, 0.9)',
-            color: '#FAF8F3',
-            border: 'none',
-            borderRadius: '999px',
-            fontSize: '12px',
-            fontWeight: 600,
-            cursor: 'pointer',
-            zIndex: 100,
-            fontFamily: 'DM Sans, sans-serif',
-            whiteSpace: 'nowrap',
-          }}
-        >
-          Why a game?
-        </button>
-      )}
-
-      {/* Desktop only: Yellow ? button - bottom right (tablets use mobile strip) */}
-      {!isMobile && !isTablet && (
-        <button
-          onClick={() => {
-            setShowLearnMore(true)
-            setButtonActive(true)
-            setTimeout(() => setButtonActive(false), 300)
-          }}
-          style={{
-            position: 'absolute',
-            bottom: '60px',
-            right: '89px',
-            width: '64px',
-            height: '64px',
-            backgroundColor: buttonActive ? '#FF6B35' : '#FFF44F',
-            border: 'none',
-            borderRadius: '50%',
-            fontSize: '24px',
-            fontWeight: 700,
-            color: '#1C1917',
-            cursor: 'pointer',
-            zIndex: 100,
-            fontFamily: 'DM Sans, sans-serif',
-            transition: 'all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1)',
-            boxShadow: buttonActive
-              ? '0 6px 20px rgba(255, 107, 53, 0.5), 0 3px 10px rgba(0, 0, 0, 0.15)'
-              : '0 4px 16px rgba(255, 244, 79, 0.5), 0 2px 8px rgba(0, 0, 0, 0.1)',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-          }}
-          onMouseEnter={(e) => {
-            if (!buttonActive) {
-              e.currentTarget.style.backgroundColor = '#FFF76B'
-              e.currentTarget.style.transform = 'scale(1.1) translateY(-4px)'
-              e.currentTarget.style.boxShadow = '0 8px 24px rgba(255, 244, 79, 0.65), 0 4px 12px rgba(0, 0, 0, 0.15)'
-            }
-          }}
-          onMouseLeave={(e) => {
-            if (!buttonActive) {
-              e.currentTarget.style.backgroundColor = '#FFF44F'
-              e.currentTarget.style.transform = 'scale(1) translateY(0)'
-              e.currentTarget.style.boxShadow = '0 4px 16px rgba(255, 244, 79, 0.5), 0 2px 8px rgba(0, 0, 0, 0.1)'
-            }
-          }}
-          aria-label="Learn more about the game"
-          title="Learn more about the game"
-        >
-          ?
-        </button>
-      )}
-
-
-      {/* Desktop only: Stats panel on right side (tablets use mobile bottom strip) */}
-      {!isMobile && !isTablet && gameActive && !gameEnded && (
-        <div ref={statsPanelRef} style={{
-          position: 'absolute',
-          top: `${statsPanelTop}px`,
-          right: '40px',
-          backgroundColor: 'rgba(255, 255, 255, 0.7)',
-          backdropFilter: 'blur(10px)',
-          WebkitBackdropFilter: 'blur(10px)',
-          border: '1px solid #D1D5DB',
-          borderRadius: '12px',
-          padding: '12px 20px',
-          display: 'flex',
-          flexDirection: 'column',
-          gap: '12px',
-          zIndex: 100,
-          fontFamily: 'DM Sans, sans-serif',
-          minWidth: '160px',
-          boxShadow: '0 2px 8px rgba(0, 0, 0, 0.1)',
-        }}>
-          {/* Time with progress bar */}
-          <div>
-            <div style={{
-              fontSize: '13px',
-              fontWeight: 500,
-              color: '#1C1917',
-              lineHeight: '1.2',
-              marginBottom: '6px',
-            }}>
-              Time: {timeLeft}s
-            </div>
-            <div style={{
-              width: '100%',
-              height: '4px',
-              backgroundColor: 'rgba(28, 25, 23, 0.1)',
-              borderRadius: '2px',
-              overflow: 'hidden',
-            }}>
-              <div style={{
-                height: '100%',
-                width: `${((ROUND_DURATION - timeLeft) / ROUND_DURATION) * 100}%`,
-                backgroundColor: '#FF8A0E',
-                transition: 'width 0.3s ease-out',
-                borderRadius: '2px',
-              }} />
-            </div>
-          </div>
-
-          {/* Planted count */}
-          <div style={{
-            fontSize: '18px',
-            fontWeight: 700,
-            color: '#1C1917',
-            lineHeight: '1.2',
-          }}>
-            Planted: {planted}
-          </div>
-
-          {/* Skip to Work button */}
-          <button
-            onClick={() => {
-              const workSection = document.getElementById('case-studies')
-              if (workSection) {
-                workSection.scrollIntoView({ behavior: 'smooth', block: 'start' })
-              }
-            }}
-            style={{
-              marginTop: '8px',
-              padding: '8px 16px',
-              backgroundColor: 'rgba(28, 25, 23, 0.9)',
-              color: '#FFFFFF',
-              border: 'none',
-              borderRadius: '999px',
-              fontSize: '13px',
-              fontWeight: 600,
-              cursor: 'pointer',
-              transition: 'all 0.2s ease',
-              fontFamily: 'DM Sans, sans-serif',
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.backgroundColor = '#1C1917'
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.backgroundColor = 'rgba(28, 25, 23, 0.9)'
-            }}
-          >
-            Skip to Work →
-          </button>
-        </div>
-      )}
-
       {/* Game container. Desktop: width is capped to the grid's own size (not 100%) so the outer
           wrapper's centering actually centers the grid — on wide monitors a 100%-wide, flex-start
           container left the fixed-size grid stranded far from the centered heading above it. */}
@@ -1056,7 +734,7 @@ export default function LandingGameSimple({ edgeLeft = 20, edgeRight = 20, edgeT
         width: isMobile || isTablet ? '100%' : `${cols * cellSize + (cols - 1) * gap}px`,
         marginTop: `${gridMarginTop}px`,
         display: 'flex',
-        justifyContent: isMobile || isTablet ? 'center' : 'flex-start',
+        justifyContent: 'center',
       }}>
         {/* Ambient clouds drifting behind the birds */}
         <div style={{ position: 'absolute', top: '-20px', left: 0, width: '100%', height: isMobile ? '60px' : '90px', pointerEvents: 'none', zIndex: 2 }}>
@@ -1137,10 +815,6 @@ export default function LandingGameSimple({ edgeLeft = 20, edgeRight = 20, edgeT
       }}>
         {grid.map((row, rowIndex) =>
           row.map((cell, colIndex) => {
-            // Bottom-right quiet zone on desktop — kept clear of the ground
-            // marker/click affordance too, so it doesn't look plantable just
-            // to sit empty under the mute / "Why a game?" / "?" controls.
-            const reserved = !isMobile && !isTablet && rowIndex >= GRID_ROWS - 2 && colIndex === cols - 1
             return (
             <div
               key={`${rowIndex}-${colIndex}`}
@@ -1152,12 +826,12 @@ export default function LandingGameSimple({ edgeLeft = 20, edgeRight = 20, edgeT
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
-                cursor: cell.state === 'empty' && !reserved ? 'pointer' : 'default',
+                cursor: cell.state === 'empty' ? 'pointer' : 'default',
                 borderRadius: '4px',
                 transition: 'transform 0.2s',
               }}
               onMouseEnter={(e) => {
-                if (cell.state === 'empty' && !reserved) {
+                if (cell.state === 'empty') {
                   e.currentTarget.style.transform = 'scale(1.05)'
                 }
               }}
@@ -1165,7 +839,7 @@ export default function LandingGameSimple({ edgeLeft = 20, edgeRight = 20, edgeT
                 e.currentTarget.style.transform = 'scale(1)'
               }}
             >
-              {cell.state === 'empty' && !reserved && <GroundMarker size={cellSize} />}
+              {cell.state === 'empty' && <GroundMarker size={cellSize} />}
               {cell.state === 'sapling' && <SaplingIcon variant={cell.variant || 0} size={isMobile ? 30 : isTablet ? 42 : 60} isDaytime={isDaytime} />}
               {cell.state === 'tree' && <TreeIcon variant={cell.variant || 0} size={isMobile ? 45 : isTablet ? 62 : 90} isDaytime={isDaytime} />}
               {cell.state === 'building' && <BuildingIcon variant={cell.variant || 0} size={isMobile ? 41 : isTablet ? 48 : 69} isDaytime={isDaytime} />}
@@ -1234,8 +908,209 @@ export default function LandingGameSimple({ edgeLeft = 20, edgeRight = 20, edgeT
             }}
           />
         ))}
+
+        {/* Onboarding hint cursor — fake click demonstrating the interaction
+            for first-time visitors who haven't planted anything yet. */}
+        {hintStage !== 'idle' && hintStage !== 'done' && (() => {
+          const hintRow = 1
+          const hintCol = Math.min(2, cols - 1)
+          const cellLeft = hintCol * (cellSize + gap)
+          const cellTop = hintRow * (cellSize + gap)
+          const targetX = cellLeft + cellSize / 2 - 2
+          const targetY = cellTop + cellSize / 2 - 2
+          const atTarget = hintStage === 'arrived' || hintStage === 'clicking'
+          return (
+            <div
+              aria-hidden="true"
+              style={{
+                position: 'absolute',
+                left: `${atTarget ? targetX : targetX - 44}px`,
+                top: `${atTarget ? targetY : targetY - 44}px`,
+                zIndex: 60,
+                pointerEvents: 'none',
+                transition: 'left 0.6s cubic-bezier(0.34, 1.1, 0.64, 1), top 0.6s cubic-bezier(0.34, 1.1, 0.64, 1)',
+              }}
+            >
+              <svg width="22" height="22" viewBox="0 0 22 22" fill="none" style={{ display: 'block' }}>
+                <path
+                  d="M4 2.5L17 9.5L10.8 11.3L9 17.5L4 2.5Z"
+                  fill="#1C1917"
+                  stroke="#FAF8F3"
+                  strokeWidth="1.2"
+                  strokeLinejoin="round"
+                />
+              </svg>
+              {hintStage === 'clicking' && (
+                <div style={{
+                  position: 'absolute',
+                  top: '50%',
+                  left: '50%',
+                  width: '28px',
+                  height: '28px',
+                  borderRadius: '50%',
+                  border: '2px solid rgba(28, 25, 23, 0.45)',
+                  animation: 'plantRipple 0.4s ease-out forwards',
+                }} />
+              )}
+            </div>
+          )
+        })()}
         </div>
       </div>
+
+      {/* Bottom control strip — same compact layout on every breakpoint
+          (desktop used to scatter the timer, mute, "Why a game?" and ? button
+          separately; unified here into one bar). Placed in normal flow below
+          the game container, never absolutely overlapping the grid. */}
+      {gameActive && !gameEnded && (
+        <div style={{
+          marginTop: isMobile ? '16px' : '20px',
+          marginLeft: 'auto',
+          marginRight: 'auto',
+          width: '50%',
+          minWidth: '220px',
+          backgroundColor: 'rgba(255, 255, 255, 0.85)',
+          backdropFilter: 'blur(10px)',
+          WebkitBackdropFilter: 'blur(10px)',
+          border: '1px solid #D1D5DB',
+          borderRadius: '12px',
+          padding: '6px 10px',
+          display: 'flex',
+          alignItems: 'center',
+          gap: '8px',
+          zIndex: 100,
+          fontFamily: 'DM Sans, sans-serif',
+          boxShadow: '0 4px 16px rgba(0, 0, 0, 0.15)',
+        }}>
+          {/* Time and progress bar */}
+          <div style={{ flex: 1, minWidth: '44px' }}>
+            <div style={{
+              fontSize: '11px',
+              fontWeight: 500,
+              color: '#1C1917',
+              lineHeight: '1.2',
+              marginBottom: '3px',
+            }}>
+              Time: {timeLeft}s
+            </div>
+            <div style={{
+              width: '100%',
+              height: '2px',
+              backgroundColor: 'rgba(28, 25, 23, 0.1)',
+              borderRadius: '2px',
+              overflow: 'hidden',
+            }}>
+              <div style={{
+                height: '100%',
+                width: `${((ROUND_DURATION - timeLeft) / ROUND_DURATION) * 100}%`,
+                backgroundColor: '#FF8A0E',
+                transition: 'width 0.3s ease-out',
+                borderRadius: '2px',
+              }} />
+            </div>
+          </div>
+
+          {/* Planted count */}
+          <div style={{
+            fontSize: '12px',
+            fontWeight: 700,
+            color: '#1C1917',
+            whiteSpace: 'nowrap',
+          }}>
+            🌱 {planted}
+          </div>
+
+          {/* Skip button */}
+          <button
+            onClick={() => {
+              const workSection = document.getElementById('case-studies')
+              if (workSection) {
+                workSection.scrollIntoView({ behavior: 'smooth', block: 'start' })
+              }
+            }}
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              minHeight: '32px',
+              padding: '0 14px',
+              backgroundColor: 'rgba(28, 25, 23, 0.9)',
+              color: '#FFFFFF',
+              border: 'none',
+              borderRadius: '999px',
+              fontSize: '12px',
+              fontWeight: 600,
+              cursor: 'pointer',
+              transition: 'all 0.2s ease',
+              fontFamily: 'DM Sans, sans-serif',
+              whiteSpace: 'nowrap',
+              flexShrink: 0,
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.backgroundColor = '#1C1917'
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.backgroundColor = 'rgba(28, 25, 23, 0.9)'
+            }}
+          >
+            Skip →
+          </button>
+
+          {/* Mute button — tablet/desktop share the timer bar (phone has no ambient audio) */}
+          {!isMobile && (
+            <button
+              onClick={() => setAudioMuted(prev => !prev)}
+              aria-label={audioMuted ? 'Unmute ambient sound' : 'Mute ambient sound'}
+              title={audioMuted ? 'Unmute ambient sound' : 'Mute ambient sound'}
+              style={{
+                width: '32px',
+                height: '32px',
+                borderRadius: '50%',
+                border: '1px solid rgba(28, 25, 23, 0.12)',
+                backgroundColor: 'rgba(28, 25, 23, 0.06)',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                cursor: 'pointer',
+                fontSize: '13px',
+                flexShrink: 0,
+              }}
+            >
+              {audioMuted ? '🔇' : '🔊'}
+            </button>
+          )}
+
+          {/* Yellow ? button */}
+          <button
+            onClick={() => {
+              setShowLearnMore(true)
+              setButtonActive(true)
+              setTimeout(() => setButtonActive(false), 300)
+            }}
+            style={{
+              width: '40px',
+              height: '40px',
+              backgroundColor: buttonActive ? '#FF6B35' : '#FFF44F',
+              border: 'none',
+              borderRadius: '50%',
+              fontSize: '18px',
+              fontWeight: 700,
+              color: '#1C1917',
+              cursor: 'pointer',
+              fontFamily: 'DM Sans, sans-serif',
+              transition: 'all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1)',
+              boxShadow: '0 3px 10px rgba(255, 244, 79, 0.5), 0 2px 6px rgba(0, 0, 0, 0.1)',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              flexShrink: 0,
+            }}
+            aria-label="Learn more about the game"
+          >
+            ?
+          </button>
+        </div>
+      )}
 
       {/* End game modal */}
       {gameEnded && (

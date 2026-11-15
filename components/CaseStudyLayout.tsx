@@ -1,7 +1,6 @@
 'use client'
 import { useState, useEffect, useRef } from 'react'
 import TopBar from './TopBar'
-import BottomBar from './BottomBar'
 import CaseStudySectionNav from './CaseStudySectionNav'
 import { CaseStudyStructuredData } from './StructuredData'
 
@@ -159,7 +158,6 @@ export default function CaseStudyLayout({ caseStudy, slug }: CaseStudyLayoutProp
         width: '100vw',
       }}>
         <TopBar />
-        <BottomBar />
         {/* Side rail — fixed to the viewport (not nested-scroll sticky) so every
             section stays reachable regardless of scroll position. Hidden on
             mobile/tablet where there isn't room for it alongside the content. */}
@@ -847,9 +845,9 @@ export default function CaseStudyLayout({ caseStudy, slug }: CaseStudyLayoutProp
             alignItems: 'center',
           }}>
             {[
-              { label: 'Email', href: 'mailto:indhuve05@gmail.com' },
-              { label: 'LinkedIn ↗', href: 'https://www.linkedin.com/in/indhu05/' },
-              { label: 'Resume ↗', href: '/Indhu-Venkatachalam-Senior-Product-Designer.pdf' },
+              { label: 'Email', href: 'mailto:indhuve05@gmail.com', external: false },
+              { label: 'LinkedIn', href: 'https://www.linkedin.com/in/indhu05/', external: true },
+              { label: 'Resume', href: '/Indhu-Venkatachalam-Senior-Product-Designer.pdf', external: true },
             ].map((item) => (
               <a
                 key={item.label}
@@ -857,6 +855,9 @@ export default function CaseStudyLayout({ caseStudy, slug }: CaseStudyLayoutProp
                 target={item.href.startsWith('mailto:') ? undefined : '_blank'}
                 rel={item.href.startsWith('mailto:') ? undefined : 'noopener noreferrer'}
                 style={{
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: '4px',
                   fontSize: isMobile ? '15px' : '16px',
                   fontWeight: 500,
                   color: '#1C1917',
@@ -868,6 +869,12 @@ export default function CaseStudyLayout({ caseStudy, slug }: CaseStudyLayoutProp
                 onMouseLeave={(e) => { e.currentTarget.style.borderBottomColor = 'transparent' }}
               >
                 {item.label}
+                {item.external && (
+                  <svg width="11" height="11" viewBox="0 0 12 12" fill="none" aria-hidden="true">
+                    <path d="M3.5 8.5L8.5 3.5" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" />
+                    <path d="M4.5 3.5H8.5V7.5" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                )}
               </a>
             ))}
           </div>

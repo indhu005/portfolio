@@ -222,6 +222,28 @@ export default function TopBar() {
                     <path d="M8.3 13V8.1" stroke="#1C1917" strokeWidth="1.3" strokeLinecap="round" />
                   </svg>
                 </a>
+
+                <Link
+                  href="/about"
+                  aria-label="About"
+                  className="topbar-icon-btn"
+                >
+                  <svg width="16" height="16" viewBox="0 0 18 18" fill="none" aria-hidden="true">
+                    <circle cx="9" cy="6.1" r="2.5" stroke="#1C1917" strokeWidth="1.3" />
+                    <path d="M3.6 14.5C4.2 11.5 6.3 9.9 9 9.9C11.7 9.9 13.8 11.5 14.4 14.5" stroke="#1C1917" strokeWidth="1.3" strokeLinecap="round" />
+                  </svg>
+                </Link>
+
+                <a
+                  href="mailto:indhuve05@gmail.com"
+                  aria-label="Email"
+                  className="topbar-icon-btn"
+                >
+                  <svg width="16" height="16" viewBox="0 0 18 18" fill="none" aria-hidden="true">
+                    <rect x="1.5" y="3.5" width="15" height="11" rx="1.6" stroke="#1C1917" strokeWidth="1.3" />
+                    <path d="M2 4.5L9 10L16 4.5" stroke="#1C1917" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                </a>
               </motion.div>
             )}
           </AnimatePresence>

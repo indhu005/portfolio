@@ -1,6 +1,5 @@
 'use client'
 import TopBar from '@/components/TopBar'
-import BottomBar from '@/components/BottomBar'
 
 const projects = [
   {
@@ -45,7 +44,6 @@ export default function Play() {
   return (
     <div className="play-shell">
       <TopBar />
-      <BottomBar />
 
       {/* RIGHT SIDE */}
       <div className="play-right">

@@ -1,7 +1,6 @@
 'use client'
 
 import TopBar from '@/components/TopBar'
-import BottomBar from '@/components/BottomBar'
 import { useState, useEffect } from 'react'
 
 const useMediaQuery = (query: string) => {
@@ -101,7 +100,6 @@ export default function About() {
     }}>
 
       <TopBar />
-      <BottomBar />
 
       {/* RIGHT SIDE */}
       <div style={{

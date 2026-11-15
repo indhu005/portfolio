@@ -1,6 +1,5 @@
 'use client'
 import TopBar from '@/components/TopBar'
-import BottomBar from '@/components/BottomBar'
 import LandingGameSimple from '@/components/LandingGameSimple'
 import Typewriter from '@/components/Typewriter'
 import { Reveal } from '@/components/ScrollReveal'
@@ -36,24 +35,25 @@ const InfoPill = ({ title, meta, year, badge, isMobile }: { title: string; meta:
       flexDirection: 'column',
       alignItems: 'flex-start',
       gap: '2px',
-      backgroundColor: '#000000',
-      border: '1px solid #FFFFFF',
+      backgroundColor: 'rgba(120, 118, 112, 0.18)',
+      backdropFilter: 'blur(14px)',
+      WebkitBackdropFilter: 'blur(14px)',
+      border: '1px solid rgba(28, 25, 23, 0.14)',
       borderRadius: '12px',
       padding: '8px 12px',
       maxWidth: '100%',
-      boxShadow: '0 3px 8px rgba(0, 0, 0, 0.3)',
     }}>
-      <span style={{ fontFamily: 'var(--font-heading), serif', fontWeight: 700, fontSize: '13px', color: '#FFFFFF' }}>
+      <span style={{ fontFamily: 'var(--font-heading), serif', fontWeight: 700, fontSize: '13px', color: '#1C1917' }}>
         {title}
       </span>
-      <span style={{ display: 'flex', alignItems: 'center', gap: '6px', flexWrap: 'wrap', fontSize: '10.5px', fontWeight: 600, color: 'rgba(255, 255, 255, 0.6)' }}>
+      <span style={{ display: 'flex', alignItems: 'center', gap: '6px', flexWrap: 'wrap', fontSize: '10.5px', fontWeight: 600, color: 'rgba(28, 25, 23, 0.6)' }}>
         <span>{meta}</span>
-        <span style={{ color: 'rgba(255, 255, 255, 0.3)' }}>·</span>
+        <span style={{ color: 'rgba(28, 25, 23, 0.3)' }}>·</span>
         <span>{year}</span>
         {badge && (
           <>
-            <span style={{ color: 'rgba(255, 255, 255, 0.3)' }}>·</span>
-            <span style={{ fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.04em', color: '#FFFFFF' }}>
+            <span style={{ color: 'rgba(28, 25, 23, 0.3)' }}>·</span>
+            <span style={{ fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.04em', color: '#1C1917' }}>
               {badge}
             </span>
           </>
@@ -67,24 +67,25 @@ const InfoPill = ({ title, meta, year, badge, isMobile }: { title: string; meta:
       gap: '10px',
       flexWrap: 'wrap',
       justifyContent: 'center',
-      backgroundColor: '#000000',
-      border: '1px solid #FFFFFF',
+      backgroundColor: 'rgba(120, 118, 112, 0.18)',
+      backdropFilter: 'blur(14px)',
+      WebkitBackdropFilter: 'blur(14px)',
+      border: '1px solid rgba(28, 25, 23, 0.14)',
       borderRadius: '999px',
-      padding: '10px 22px',
+      padding: '6px 18px',
       maxWidth: '100%',
-      boxShadow: '0 3px 8px rgba(0, 0, 0, 0.3)',
     }}>
-      <span style={{ fontFamily: 'var(--font-heading), serif', fontWeight: 700, fontSize: '15px', color: '#FFFFFF' }}>
+      <span style={{ fontFamily: 'var(--font-heading), serif', fontWeight: 700, fontSize: '13px', color: '#1C1917' }}>
         {title}
       </span>
-      <span style={{ color: 'rgba(255, 255, 255, 0.35)' }}>·</span>
-      <span style={{ fontSize: '13px', fontWeight: 600, color: 'rgba(255, 255, 255, 0.65)' }}>{meta}</span>
-      <span style={{ color: 'rgba(255, 255, 255, 0.35)' }}>·</span>
-      <span style={{ fontSize: '13px', fontWeight: 600, color: 'rgba(255, 255, 255, 0.65)' }}>{year}</span>
+      <span style={{ color: 'rgba(28, 25, 23, 0.35)' }}>·</span>
+      <span style={{ fontSize: '12px', fontWeight: 600, color: 'rgba(28, 25, 23, 0.65)' }}>{meta}</span>
+      <span style={{ color: 'rgba(28, 25, 23, 0.35)' }}>·</span>
+      <span style={{ fontSize: '13px', fontWeight: 600, color: 'rgba(28, 25, 23, 0.65)' }}>{year}</span>
       {badge && (
         <>
-          <span style={{ color: 'rgba(255, 255, 255, 0.35)' }}>·</span>
-          <span style={{ fontSize: '11px', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.04em', color: '#FFFFFF' }}>
+          <span style={{ color: 'rgba(28, 25, 23, 0.35)' }}>·</span>
+          <span style={{ fontSize: '11px', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.04em', color: '#1C1917' }}>
             {badge}
           </span>
         </>
@@ -154,7 +155,6 @@ export default function Home() {
       )}
 
       <TopBar />
-      <BottomBar />
 
       {/* MAIN COLUMN — the sidebar is gone; TopBar/BottomBar (fixed, overlaid) are
           the nav now, so this is just the full-width scroll container. */}
@@ -183,6 +183,20 @@ export default function Home() {
             marginLeft: 'auto',
             marginRight: 'auto',
           }}>
+          {/* Landing Game — now sits above the intro text, so it's the first
+              thing visible; same maxWidth as the wrapper so the grid's left
+              edge still lines up with the rest of the page. */}
+          <div style={{
+            marginTop: isMobile ? '20px' : isWideDesktop ? '16px' : '12px',
+            marginBottom: isMobile ? '20px' : isWideDesktop ? '36px' : '28px',
+          }}>
+            <LandingGameSimple
+              edgeLeft={isMobile ? 20 : isTablet ? 32 : isWideDesktop ? 56 : 36}
+              edgeRight={isMobile ? 20 : isTablet ? 32 : isWideDesktop ? 64 : 40}
+              edgeTop={0}
+            />
+          </div>
+
           {/* Home page content */}
           <main style={{
             // No card background here — only the title line below keeps one.
@@ -303,38 +317,19 @@ export default function Home() {
             </div>
           </main>
 
-          {/* Landing Game — sits below the intro, above the work; same maxWidth
-              as the wrapper so the grid's left edge still lines up with the
-              rest of the page. */}
-          <div style={{
-            marginTop: isMobile ? '40px' : isWideDesktop ? '28px' : '20px',
-            marginBottom: isMobile ? '20px' : isWideDesktop ? '36px' : '28px',
-          }}>
-            <LandingGameSimple
-              edgeLeft={isMobile ? 20 : isTablet ? 32 : isWideDesktop ? 56 : 36}
-              edgeRight={isMobile ? 20 : isTablet ? 32 : isWideDesktop ? 64 : 40}
-              edgeTop={0}
-            />
-          </div>
-
           {/* Case Studies Section */}
           <section id="case-studies" style={{
             position: 'relative',
             overflow: 'hidden',
-            marginTop: isMobile ? '60px' : isWideDesktop ? '120px' : '100px',
+            marginTop: isMobile ? '32px' : isWideDesktop ? '56px' : '44px',
           }}>
-            {/* Ambient drifting blobs — just enough motion that the white background
-                doesn't read as flat, kept low-opacity/blurred so it stays behind content */}
-            <div aria-hidden="true" className="cs-section-blob cs-section-blob--coral" />
-
-            {/* Section Header — centered to match the centered card content below,
-                rather than hugging the wrapper's left edge while the cards center. */}
+            {/* Section Header — left-aligned to match the headline/intro above. */}
             <div style={{
               position: 'relative',
               zIndex: 1,
               display: 'flex',
               alignItems: 'center',
-              justifyContent: 'center',
+              justifyContent: 'flex-start',
               flexWrap: 'wrap',
               gap: '20px',
               marginBottom: isMobile ? '32px' : isWideDesktop ? '64px' : '48px',
@@ -359,29 +354,6 @@ export default function Home() {
                   Selected Work
                 </h2>
               </div>
-              <a
-                href="/Indhu-Venkatachalam-Senior-Product-Designer.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="cs-pill-hover"
-                style={{
-                  display: 'inline-flex',
-                  alignItems: 'center',
-                  fontFamily: 'var(--font-heading), serif',
-                  fontWeight: 700,
-                  fontSize: isMobile ? '14px' : '15px',
-                  color: '#FFFFFF',
-                  backgroundColor: '#1C1917',
-                  border: '1px solid #1C1917',
-                  borderRadius: '999px',
-                  padding: isMobile ? '9px 16px' : '10px 22px',
-                  textDecoration: 'none',
-                  boxShadow: '0 3px 8px rgba(0, 0, 0, 0.15)',
-                  flexShrink: 0,
-                }}
-              >
-                Resume
-              </a>
             </div>
 
             {/* Work — a plain, fully scannable vertical list. Simpler beats clever:
@@ -392,7 +364,7 @@ export default function Home() {
               zIndex: 1,
               display: 'flex',
               flexDirection: 'column',
-              gap: isMobile ? '40px' : isWideDesktop ? '64px' : '56px',
+              gap: isMobile ? '32px' : isWideDesktop ? '40px' : '36px',
             }}>
               {/* Card 1 - LAT */}
               <Reveal>
@@ -440,7 +412,7 @@ export default function Home() {
                           playsInline
                           preload="metadata"
                           aria-label="LAT CapEx proposal workflow"
-                          style={{ display: 'block', width: '100%', height: 'auto' }}
+                          style={{ display: 'block', width: '100%', aspectRatio: '17 / 10', objectFit: 'cover', objectPosition: 'top center' }}
                         >
                           <source src="/videos/lat/LAT%20Landing%20inner%20screen.mp4" type="video/mp4" />
                         </video>
@@ -491,10 +463,6 @@ export default function Home() {
                     <div className="cs-laptop-lid">
                       <div className="cs-laptop-camera"></div>
                       <div className="cs-laptop-screen">
-                        <div className="cs-browser-chrome">
-                          <div className="cs-browser-dots"><span></span><span></span><span></span></div>
-                          <div className="cs-browser-url">🔒 unlockkeye.com</div>
-                        </div>
                         <video
                           autoPlay
                           loop
@@ -502,7 +470,7 @@ export default function Home() {
                           playsInline
                           preload="metadata"
                           aria-label="Keye landing page hero"
-                          style={{ display: 'block', width: '100%', height: 'auto' }}
+                          style={{ display: 'block', width: '100%', aspectRatio: '17 / 10', objectFit: 'cover', objectPosition: 'top center' }}
                         >
                           <source src="/videos/Keye/Keye%20hero%20cropped.mp4" type="video/mp4" />
                         </video>
@@ -546,9 +514,8 @@ export default function Home() {
                   width: isMobile ? 'calc(100% + 48px)' : '100%',
                   marginLeft: isMobile ? '-24px' : 0,
                   marginRight: isMobile ? '-24px' : 0,
-                  marginTop: isMobile ? '16px' : '32px',
+                  marginTop: isMobile ? '16px' : '20px',
                   justifyContent: 'center',
-                  padding: isMobile ? '0' : '32px 0',
                   animationDelay: '-4s',
                 }}>
                   <video
@@ -571,7 +538,7 @@ export default function Home() {
                       // padding instead of leaving a visible gap around the phone.
                       aspectRatio: '436 / 890',
                       objectFit: 'cover',
-                      objectPosition: '50% 53%',
+                      objectPosition: '50% 100%',
                       borderRadius: '0px',
                     }}
                   >
@@ -597,7 +564,7 @@ export default function Home() {
                       // padding instead of leaving a visible gap around the phone.
                       aspectRatio: '436 / 890',
                       objectFit: 'cover',
-                      objectPosition: '50% 53%',
+                      objectPosition: '50% 100%',
                       borderRadius: '0px',
                     }}
                   >
@@ -727,13 +694,15 @@ export default function Home() {
           {/* Footer Links */}
           <footer style={{
             maxWidth: isWideDesktop ? '1100px' : '1000px',
+            marginLeft: 'auto',
+            marginRight: 'auto',
             marginTop: isMobile ? '60px' : isWideDesktop ? '100px' : '80px',
-            paddingLeft: isMobile ? '0' : isWideDesktop ? '64px' : '48px',
             paddingBottom: isMobile ? '40px' : '60px',
             display: 'flex',
             gap: isMobile ? '24px' : '32px',
             flexWrap: 'wrap',
             alignItems: 'center',
+            justifyContent: 'center',
           }}>
             <a
               href="/about"
@@ -801,6 +770,9 @@ export default function Home() {
               target="_blank"
               rel="noopener noreferrer"
               style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '4px',
                 fontSize: isMobile ? '15px' : '16px',
                 fontWeight: 500,
                 color: 'rgba(28, 25, 23, 0.75)',
@@ -815,7 +787,11 @@ export default function Home() {
                 e.currentTarget.style.borderBottomColor = 'transparent'
               }}
             >
-              LinkedIn ↗
+              LinkedIn
+              <svg width="11" height="11" viewBox="0 0 12 12" fill="none" aria-hidden="true">
+                <path d="M3.5 8.5L8.5 3.5" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" />
+                <path d="M4.5 3.5H8.5V7.5" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
             </a>
             <a
               href="mailto:indhuve05@gmail.com"
@@ -842,12 +818,14 @@ export default function Home() {
               copy rather than a generic "made with love" line. */}
           <p style={{
             maxWidth: isWideDesktop ? '1100px' : '1000px',
-            paddingLeft: isMobile ? '0' : isWideDesktop ? '64px' : '48px',
+            marginLeft: 'auto',
+            marginRight: 'auto',
             paddingBottom: isMobile ? '40px' : '60px',
             marginTop: isMobile ? '-20px' : '-40px',
             fontSize: isMobile ? '12.5px' : '13px',
             fontStyle: 'italic',
             color: 'rgba(28, 25, 23, 0.4)',
+            textAlign: 'center',
           }}>
             No real cities were built or destroyed in the making of this page. 🌳
           </p>
