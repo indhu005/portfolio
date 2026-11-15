@@ -75,11 +75,35 @@ export default function CaseStudyLayout({ caseStudy, slug }: CaseStudyLayoutProp
   const isMobile = useMediaQuery('(max-width: 768px)')
   const isTablet = useMediaQuery('(max-width: 1240px)')
 
-  // Scroll to top on mount
+  const scrollToSection = (sectionId: string, behavior: ScrollBehavior = 'smooth') => {
+    const element = sectionRefs.current[sectionId] || document.getElementById(sectionId)
+    if (element && contentRef.current) {
+      const containerRect = contentRef.current.getBoundingClientRect()
+      const elementRect = element.getBoundingClientRect()
+      const offsetTop = contentRef.current.scrollTop + (elementRect.top - containerRect.top) - 100
+      contentRef.current.scrollTo({
+        top: offsetTop,
+        behavior
+      })
+    }
+  }
+
+  // Jump straight to a section if we arrived via a deep link (e.g. from search).
+  // Re-corrects a couple times since images/video above the target can still be
+  // loading and shifting layout when the first jump happens, otherwise scroll to
+  // top like normal.
   useEffect(() => {
-    if (contentRef.current) {
+    const hash = window.location.hash.slice(1)
+    if (hash && caseStudy.sections.some((s) => s.id === hash)) {
+      const jump = () => scrollToSection(hash, 'instant')
+      jump()
+      const t1 = setTimeout(jump, 200)
+      const t2 = setTimeout(jump, 600)
+      return () => { clearTimeout(t1); clearTimeout(t2) }
+    } else if (contentRef.current) {
       contentRef.current.scrollTo({ top: 0, behavior: 'instant' })
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   useEffect(() => {
@@ -118,19 +142,6 @@ export default function CaseStudyLayout({ caseStudy, slug }: CaseStudyLayoutProp
       return () => contentElement.removeEventListener('scroll', handleScroll)
     }
   }, [caseStudy.sections])
-
-  const scrollToSection = (sectionId: string) => {
-    const element = sectionRefs.current[sectionId] || document.getElementById(sectionId)
-    if (element && contentRef.current) {
-      const containerRect = contentRef.current.getBoundingClientRect()
-      const elementRect = element.getBoundingClientRect()
-      const offsetTop = contentRef.current.scrollTop + (elementRect.top - containerRect.top) - 100
-      contentRef.current.scrollTo({
-        top: offsetTop,
-        behavior: 'smooth'
-      })
-    }
-  }
 
   return (
     <>

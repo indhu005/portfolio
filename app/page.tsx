@@ -179,7 +179,7 @@ export default function Home() {
         >
           {/* Shared centered wrapper so intro, game, and Selected Work share the same left edge */}
           <div style={{
-            maxWidth: isWideDesktop ? '1400px' : '1200px',
+            maxWidth: isWideDesktop ? '1100px' : '1000px',
             marginLeft: 'auto',
             marginRight: 'auto',
           }}>
@@ -191,7 +191,7 @@ export default function Home() {
             // a dead gutter on the right at normal desktop widths.
             position: 'relative',
             overflow: 'hidden',
-            maxWidth: isWideDesktop ? '1400px' : '1200px',
+            maxWidth: isWideDesktop ? '1100px' : '1000px',
             marginTop: '0px',
             marginLeft: '0',
             marginRight: 'auto',
@@ -296,7 +296,7 @@ export default function Home() {
                 8 years: Gensler, founding Keye, senior design on LAT. A marketplace that went YC. An enterprise platform at 96% adoption inside a politically sensitive institution.
               </p>
 
-              <p style={{ fontSize: isMobile ? '12.5px' : '13px', color: 'rgba(28, 25, 23, 0.5)', marginBottom: isMobile ? '12px' : '14px', ...revealStyle(140) }}>
+              <p style={{ fontSize: isMobile ? '12.5px' : '13px', color: 'rgba(28, 25, 23, 0.5)', marginBottom: isMobile ? '4px' : '14px', ...revealStyle(140) }}>
                 Designing for AI agents since 2025.
               </p>
             </div>
@@ -307,7 +307,7 @@ export default function Home() {
               as the wrapper so the grid's left edge still lines up with the
               rest of the page. */}
           <div style={{
-            marginTop: isMobile ? '40px' : isWideDesktop ? '64px' : '56px',
+            marginTop: isMobile ? '40px' : isWideDesktop ? '28px' : '20px',
             marginBottom: isMobile ? '20px' : isWideDesktop ? '36px' : '28px',
           }}>
             <LandingGameSimple
@@ -676,7 +676,7 @@ export default function Home() {
               another section ending in silence */}
           <Reveal>
             <div style={{
-              maxWidth: isWideDesktop ? '1400px' : '1200px',
+              maxWidth: isWideDesktop ? '1100px' : '1000px',
               marginTop: isMobile ? '80px' : isWideDesktop ? '140px' : '120px',
               marginLeft: 'auto',
               marginRight: 'auto',
@@ -726,7 +726,7 @@ export default function Home() {
 
           {/* Footer Links */}
           <footer style={{
-            maxWidth: isWideDesktop ? '1400px' : '1200px',
+            maxWidth: isWideDesktop ? '1100px' : '1000px',
             marginTop: isMobile ? '60px' : isWideDesktop ? '100px' : '80px',
             paddingLeft: isMobile ? '0' : isWideDesktop ? '64px' : '48px',
             paddingBottom: isMobile ? '40px' : '60px',
@@ -837,7 +837,22 @@ export default function Home() {
               Email
             </a>
           </footer>
+
+          {/* Fun sign-off — small, dry, in the same voice as the game's own
+              copy rather than a generic "made with love" line. */}
+          <p style={{
+            maxWidth: isWideDesktop ? '1100px' : '1000px',
+            paddingLeft: isMobile ? '0' : isWideDesktop ? '64px' : '48px',
+            paddingBottom: isMobile ? '40px' : '60px',
+            marginTop: isMobile ? '-20px' : '-40px',
+            fontSize: isMobile ? '12.5px' : '13px',
+            fontStyle: 'italic',
+            color: 'rgba(28, 25, 23, 0.4)',
+          }}>
+            No real cities were built or destroyed in the making of this page. 🌳
+          </p>
         </div>
+
 
       </div>
     </div>

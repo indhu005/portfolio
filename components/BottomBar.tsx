@@ -10,8 +10,8 @@ interface NavItem {
   external?: boolean
 }
 
-const ICON_COLOR_ACTIVE = '#FFFFFF'
-const ICON_COLOR_INACTIVE = 'rgba(255, 255, 255, 0.5)'
+const ICON_COLOR_ACTIVE = '#1C1917'
+const ICON_COLOR_INACTIVE = 'rgba(28, 25, 23, 0.45)'
 
 const items: NavItem[] = [
   {
@@ -62,8 +62,8 @@ const items: NavItem[] = [
 ]
 
 /** Fixed, icon-only dock that replaces the old text sidebar as the primary
- * site-wide nav. Dark, so it reads as a distinct floating element against the
- * light page rather than blending into it like TopBar does. */
+ * site-wide nav. Same frosted-glass treatment as the game's instruction card,
+ * so the floating chrome reads as one consistent material across the page. */
 export default function BottomBar() {
   const pathname = usePathname()
 
@@ -74,23 +74,22 @@ export default function BottomBar() {
   }
 
   return (
-    <div className="siri-outline" style={{
+    <div style={{
       position: 'fixed',
       bottom: '24px',
       left: '50%',
       transform: 'translateX(-50%)',
       zIndex: 1000,
-      boxShadow: '0 8px 24px rgba(28, 25, 23, 0.16)',
-    }}>
-    <div style={{
       display: 'flex',
       alignItems: 'center',
       gap: '10px',
       padding: '14px 20px',
-      backgroundColor: 'rgba(28, 25, 23, 0.92)',
+      backgroundColor: 'rgba(120, 118, 112, 0.18)',
       backdropFilter: 'blur(14px)',
       WebkitBackdropFilter: 'blur(14px)',
+      border: '1px solid rgba(28, 25, 23, 0.14)',
       borderRadius: '999px',
+      boxShadow: '0 12px 32px rgba(28, 25, 23, 0.12)',
     }}>
       {items.map((item) => {
         const active = isActive(item.href)
@@ -126,7 +125,6 @@ export default function BottomBar() {
           </Link>
         )
       })}
-    </div>
     </div>
   )
 }

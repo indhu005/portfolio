@@ -155,21 +155,6 @@ const BuildingIcon = ({ size = 60, variant = 0, isDaytime = true }: { size?: num
   )
 }
 
-// Sun color moves through the day: dawn pink-orange -> morning yellow-orange -> midday bright orange -> evening fading orange-pink
-const getSunStyle = (hour: number): { background: string; glow: string } => {
-  if (hour >= 6 && hour < 9) {
-    return { background: 'linear-gradient(135deg, #FFB199, #FF7D6B)', glow: 'rgba(255, 137, 122, 0.3)' }
-  }
-  if (hour >= 9 && hour < 12) {
-    return { background: 'linear-gradient(135deg, #FFDD77, #FFA94D)', glow: 'rgba(255, 169, 77, 0.28)' }
-  }
-  if (hour >= 12 && hour < 16) {
-    return { background: 'linear-gradient(135deg, #FFB347, #FF8A0E)', glow: 'rgba(255, 138, 14, 0.28)' }
-  }
-  // Evening (16-18): fading orange-pink
-  return { background: 'linear-gradient(135deg, #FFA08A, #FF7FA8)', glow: 'rgba(255, 127, 168, 0.24)' }
-}
-
 // Simple ground marker component
 const GroundMarker = ({ size = 60 }: { size?: number }) => {
   const ellipseWidth = size * 0.7 * 0.2
@@ -221,11 +206,14 @@ export default function LandingGameSimple({ edgeLeft = 20, edgeRight = 20, edgeT
   const [hasInteracted, setHasInteracted] = useState(false)
   const [playCount, setPlayCount] = useState(0) // Track replays for difficulty
   const [isDaytime, setIsDaytime] = useState(true) // Track if it's day or night
-  const [dayHour, setDayHour] = useState(12) // Seattle hour, drives the sun's color through the day
   const [audioMuted, setAudioMuted] = useState(true) // Starts muted; user must opt in to sound
   const birdsAudioRef = useRef<HTMLAudioElement>(null)
   const trafficAudioRef = useRef<HTMLAudioElement>(null)
   const truckAnimationRef = useRef<number>()
+  const instructionCardRef = useRef<HTMLDivElement>(null)
+  const statsPanelRef = useRef<HTMLDivElement>(null)
+  const [statsPanelTop, setStatsPanelTop] = useState(95)
+  const [gridMarginTop, setGridMarginTop] = useState(230)
 
   useEffect(() => {
     setMounted(true)
@@ -239,6 +227,27 @@ export default function LandingGameSimple({ edgeLeft = 20, edgeRight = 20, edgeT
     return () => window.removeEventListener('resize', checkScreenSize)
   }, [])
 
+  // Keeps the desktop stats panel's bottom edge aligned with the instruction
+  // card's bottom edge, and keeps the grid clear of the card below it —
+  // both measured rather than hardcoded, since the card's (and panel's)
+  // height vary with how their text wraps at different viewport widths.
+  useEffect(() => {
+    const updateCardMeasurements = () => {
+      const card = instructionCardRef.current
+      if (!card) return
+      const statsHeight = statsPanelRef.current?.offsetHeight ?? 136
+      setStatsPanelTop(card.offsetTop + card.offsetHeight - statsHeight)
+      // Buffer has to clear the ambient birds layer, which sits 58px above the
+      // grid's own top edge on tablet/desktop (hidden on mobile) — too small a
+      // buffer here lets that decorative layer (and the grid's own row 0) creep
+      // up into the card/stats panel above it.
+      setGridMarginTop(card.offsetTop + card.offsetHeight + (isMobile ? 28 : 70))
+    }
+    updateCardMeasurements()
+    window.addEventListener('resize', updateCardMeasurements)
+    return () => window.removeEventListener('resize', updateCardMeasurements)
+  }, [isMobile, isTablet])
+
   // Get local time and region (Seattle-based)
   useEffect(() => {
     const updateTime = () => {
@@ -250,7 +259,6 @@ export default function LandingGameSimple({ edgeLeft = 20, edgeRight = 20, edgeT
 
       // Daytime: 6am - 6pm (6-18), Nighttime: 6pm - 6am
       setIsDaytime(hour >= 6 && hour < 18)
-      setDayHour(hour)
 
       setLocalTime(
         seattleTime.toLocaleTimeString('en-US', {
@@ -383,8 +391,18 @@ export default function LandingGameSimple({ edgeLeft = 20, edgeRight = 20, edgeT
       const minRow = isTablet ? 1 : 0
       const availableRows = GRID_ROWS - minRow
 
-      const targetRow = minRow + Math.floor(Math.random() * availableRows)
-      const targetCol = Math.floor(Math.random() * cols)
+      // On desktop, the mute button / "Why a game?" / yellow "?" button float
+      // over the grid's bottom-right corner — keep that small zone free of
+      // trees/buildings so they don't visually merge with those controls.
+      const isReserved = (row: number, col: number) =>
+        !isMobile && !isTablet && row >= GRID_ROWS - 2 && col === cols - 1
+
+      let targetRow = minRow + Math.floor(Math.random() * availableRows)
+      let targetCol = Math.floor(Math.random() * cols)
+      for (let attempt = 0; attempt < 6 && isReserved(targetRow, targetCol); attempt++) {
+        targetRow = minRow + Math.floor(Math.random() * availableRows)
+        targetCol = Math.floor(Math.random() * cols)
+      }
       const fromLeft = Math.random() < 0.5
 
       const targetX = targetCol * (cellSize + gap)
@@ -544,6 +562,9 @@ export default function LandingGameSimple({ edgeLeft = 20, edgeRight = 20, edgeT
 
   const handleCellClick = (row: number, col: number) => {
     if (!gameActive) return
+    // Keep the bottom-right corner clear of planted trees too, matching the
+    // same quiet zone trucks avoid (see isReserved in the truck-spawn effect).
+    if (!isMobile && !isTablet && row >= GRID_ROWS - 2 && col === cols - 1) return
 
     const cell = grid[row]?.[col]
     if (cell && cell.state === 'empty') {
@@ -576,10 +597,13 @@ export default function LandingGameSimple({ edgeLeft = 20, edgeRight = 20, edgeT
       marginRight: `-${edgeRight}px`,
       marginTop: `-${edgeTop}px`,
       marginBottom: '-20px',
-      overflow: 'hidden',
+      // Only relaxed while the end-game overlay is showing, so it can bleed a
+      // little above the instruction card instead of getting clipped at the
+      // same boundary that keeps everything else (trucks, decorations) tidy.
+      overflow: gameEnded ? 'visible' : 'hidden',
       backgroundColor: '#FAF8F3',
       borderRadius: '0',
-      paddingTop: isMobile ? `${16 + edgeTop}px` : `${20 + edgeTop}px`,
+      paddingTop: isMobile ? `${16 + edgeTop}px` : `${8 + edgeTop}px`,
       paddingRight: isMobile ? '36px' : '40px',
       // No left padding on desktop (beyond the 20px bleed compensation): the grid still
       // lands flush with "Hi, I'm Indhu" below, which shares the same parent maxWidth/margin.
@@ -590,19 +614,22 @@ export default function LandingGameSimple({ edgeLeft = 20, edgeRight = 20, edgeT
       alignItems: isMobile || isTablet ? 'center' : 'flex-start',
       justifyContent: 'center',
     }}>
-      {/* Center header — transparent instruction card, no background glow */}
-      <div style={{
+      {/* Center header — frosted glass instruction card */}
+      <div ref={instructionCardRef} style={{
         position: 'absolute',
-        top: '24px',
+        top: isMobile ? '12px' : '4px',
         left: '50%',
         transform: 'translateX(-50%)',
         textAlign: 'center',
         maxWidth: isMobile ? 'calc(100% - 32px)' : '600px',
         zIndex: 50,
         fontFamily: 'DM Sans, sans-serif',
-        backgroundColor: 'transparent',
-        border: '1px solid rgba(28, 25, 23, 0.1)',
+        backgroundColor: 'rgba(120, 118, 112, 0.18)',
+        backdropFilter: 'blur(14px)',
+        WebkitBackdropFilter: 'blur(14px)',
+        border: '1px solid rgba(28, 25, 23, 0.14)',
         borderRadius: '16px',
+        boxShadow: '0 12px 32px rgba(28, 25, 23, 0.12)',
         padding: isMobile ? '16px 18px 28px 18px' : '20px 28px 32px 28px',
       }}>
         {/* Location and time */}
@@ -932,9 +959,9 @@ export default function LandingGameSimple({ edgeLeft = 20, edgeRight = 20, edgeT
 
       {/* Desktop only: Stats panel on right side (tablets use mobile bottom strip) */}
       {!isMobile && !isTablet && gameActive && !gameEnded && (
-        <div style={{
+        <div ref={statsPanelRef} style={{
           position: 'absolute',
-          top: '95px',
+          top: `${statsPanelTop}px`,
           right: '40px',
           backgroundColor: 'rgba(255, 255, 255, 0.7)',
           backdropFilter: 'blur(10px)',
@@ -1027,7 +1054,7 @@ export default function LandingGameSimple({ edgeLeft = 20, edgeRight = 20, edgeT
       <div style={{
         position: 'relative',
         width: isMobile || isTablet ? '100%' : `${cols * cellSize + (cols - 1) * gap}px`,
-        marginTop: isMobile ? '196px' : isTablet ? '222px' : '230px',
+        marginTop: `${gridMarginTop}px`,
         display: 'flex',
         justifyContent: isMobile || isTablet ? 'center' : 'flex-start',
       }}>
@@ -1092,88 +1119,6 @@ export default function LandingGameSimple({ edgeLeft = 20, edgeRight = 20, edgeT
           </div>
         )}
 
-        {/* Sun/Moon - top left corner (opposite of timer). Hidden on phone (too cramped next to the menu/heading); sits just above the grid on tablet. */}
-        {!isMobile && (
-        <div
-          style={{
-            position: 'absolute',
-            top: isTablet ? '-100px' : '-140px',
-            left: isTablet ? '24px' : '40px',
-            pointerEvents: 'none',
-            zIndex: 5,
-          }}
-        >
-          {isDaytime ? (
-            <div
-              role="img"
-              aria-label="sun"
-              style={{
-                width: isMobile ? '23px' : '32px',
-                height: isMobile ? '23px' : '32px',
-                borderRadius: '50%',
-                background: getSunStyle(dayHour).background,
-                boxShadow: `0 0 0 ${isMobile ? '6px' : '8px'} ${getSunStyle(dayHour).glow}`,
-                transition: 'background 1.5s ease, box-shadow 1.5s ease',
-              }}
-            />
-          ) : (
-            <img
-              src="/images/home/moon.svg"
-              alt="moon"
-              style={{
-                width: isMobile ? '23px' : '32px',
-                height: isMobile ? '23px' : '32px',
-                objectFit: 'contain',
-              }}
-            />
-          )}
-        </div>
-        )}
-
-        {/* See the work — points visitors at the case studies without requiring them to play. Desktop only: on phone/tablet it collides with the heading text. */}
-        {!isMobile && !isTablet && (
-          <button
-            onClick={() => {
-              document.getElementById('case-studies')?.scrollIntoView({ behavior: 'smooth', block: 'start' })
-            }}
-            style={{
-              position: 'absolute',
-              top: '-141px',
-              left: '92px',
-              display: 'flex',
-              alignItems: 'center',
-              gap: '6px',
-              padding: '8px 16px',
-              backgroundColor: '#1C1917',
-              border: 'none',
-              borderRadius: '999px',
-              cursor: 'pointer',
-              color: '#FAF8F3',
-              fontSize: '13px',
-              fontWeight: 600,
-              letterSpacing: '0.02em',
-              whiteSpace: 'nowrap',
-              fontFamily: 'DM Sans, sans-serif',
-              boxShadow: '0 3px 10px rgba(0, 0, 0, 0.15)',
-              transition: 'transform 0.15s ease, box-shadow 0.15s ease',
-              zIndex: 5,
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.transform = 'translateY(-2px)'
-              e.currentTarget.style.boxShadow = '0 6px 16px rgba(0, 0, 0, 0.2)'
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.transform = 'translateY(0)'
-              e.currentTarget.style.boxShadow = '0 3px 10px rgba(0, 0, 0, 0.15)'
-            }}
-          >
-            See the work
-            <svg width="13" height="13" viewBox="0 0 16 16" fill="none" style={{ animation: 'scrollPromptBounce 1.6s ease-in-out infinite' }}>
-              <path d="M8 2.5V13.5M8 13.5L3 8.5M8 13.5L13 8.5" stroke="#FAF8F3" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-            </svg>
-          </button>
-        )}
-
         {/* Ambient audio — birds louder with more trees, traffic louder with more buildings. Starts muted. Phone has no mute control, so audio never plays there; tablet's control lives in the timer bar instead; desktop's lives above "Why a game?" at the top level. */}
         <audio ref={birdsAudioRef} src="/audio/birds%20chirping.mp3" loop preload="none" />
         <audio ref={trafficAudioRef} src="/audio/Traffic%20sound.mp3" loop preload="none" />
@@ -1191,7 +1136,12 @@ export default function LandingGameSimple({ edgeLeft = 20, edgeRight = 20, edgeT
         zIndex: 10,
       }}>
         {grid.map((row, rowIndex) =>
-          row.map((cell, colIndex) => (
+          row.map((cell, colIndex) => {
+            // Bottom-right quiet zone on desktop — kept clear of the ground
+            // marker/click affordance too, so it doesn't look plantable just
+            // to sit empty under the mute / "Why a game?" / "?" controls.
+            const reserved = !isMobile && !isTablet && rowIndex >= GRID_ROWS - 2 && colIndex === cols - 1
+            return (
             <div
               key={`${rowIndex}-${colIndex}`}
               onClick={() => handleCellClick(rowIndex, colIndex)}
@@ -1202,12 +1152,12 @@ export default function LandingGameSimple({ edgeLeft = 20, edgeRight = 20, edgeT
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
-                cursor: cell.state === 'empty' ? 'pointer' : 'default',
+                cursor: cell.state === 'empty' && !reserved ? 'pointer' : 'default',
                 borderRadius: '4px',
                 transition: 'transform 0.2s',
               }}
               onMouseEnter={(e) => {
-                if (cell.state === 'empty') {
+                if (cell.state === 'empty' && !reserved) {
                   e.currentTarget.style.transform = 'scale(1.05)'
                 }
               }}
@@ -1215,7 +1165,7 @@ export default function LandingGameSimple({ edgeLeft = 20, edgeRight = 20, edgeT
                 e.currentTarget.style.transform = 'scale(1)'
               }}
             >
-              {cell.state === 'empty' && <GroundMarker size={cellSize} />}
+              {cell.state === 'empty' && !reserved && <GroundMarker size={cellSize} />}
               {cell.state === 'sapling' && <SaplingIcon variant={cell.variant || 0} size={isMobile ? 30 : isTablet ? 42 : 60} isDaytime={isDaytime} />}
               {cell.state === 'tree' && <TreeIcon variant={cell.variant || 0} size={isMobile ? 45 : isTablet ? 62 : 90} isDaytime={isDaytime} />}
               {cell.state === 'building' && <BuildingIcon variant={cell.variant || 0} size={isMobile ? 41 : isTablet ? 48 : 69} isDaytime={isDaytime} />}
@@ -1233,7 +1183,8 @@ export default function LandingGameSimple({ edgeLeft = 20, edgeRight = 20, edgeT
                 }} />
               )}
             </div>
-          ))
+            )
+          })
         )}
 
 
@@ -1289,15 +1240,14 @@ export default function LandingGameSimple({ edgeLeft = 20, edgeRight = 20, edgeT
       {/* End game modal */}
       {gameEnded && (
         <>
-          {/* Dark overlay — on phone/tablet, offset a small amount from the very top so
-              it doesn't hug the screen edge, but still less than the fixed hamburger
-              button's own top:20px position so the button (zIndex:1000) stays fully
-              inside/on top of the grey area instead of poking out above it. Desktop has
-              no hamburger to worry about, so it stays full-bleed there. */}
+          {/* Dark overlay — extends a little above the instruction card's own
+              top edge (negative, allowed to bleed since the container relaxes
+              its overflow to visible while gameEnded) so the card doesn't look
+              like it's poking out above the grey area. */}
           <div
             style={{
               position: 'absolute',
-              top: (isMobile || isTablet) ? '12px' : 0,
+              top: '-16px',
               left: 0,
               right: 0,
               bottom: 0,
