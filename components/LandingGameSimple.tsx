@@ -590,23 +590,7 @@ export default function LandingGameSimple({ edgeLeft = 20, edgeRight = 20, edgeT
       alignItems: isMobile || isTablet ? 'center' : 'flex-start',
       justifyContent: 'center',
     }}>
-      {/* Warm ambient glow behind the header and scene, like sunlight washing the sky */}
-      <div style={{
-        position: 'absolute',
-        top: '0px',
-        left: '50%',
-        transform: 'translateX(-50%)',
-        width: '90%',
-        maxWidth: '900px',
-        height: isMobile ? '360px' : '520px',
-        background: isDaytime
-          ? 'radial-gradient(ellipse 60% 50% at 50% 20%, rgba(255,201,77,0.18), rgba(255,201,77,0) 70%)'
-          : 'radial-gradient(ellipse 60% 50% at 50% 20%, rgba(215,220,236,0.16), rgba(215,220,236,0) 70%)',
-        pointerEvents: 'none',
-        zIndex: 0,
-      }} />
-
-      {/* Center header */}
+      {/* Center header — transparent instruction card, no background glow */}
       <div style={{
         position: 'absolute',
         top: '24px',
@@ -616,7 +600,10 @@ export default function LandingGameSimple({ edgeLeft = 20, edgeRight = 20, edgeT
         maxWidth: isMobile ? 'calc(100% - 32px)' : '600px',
         zIndex: 50,
         fontFamily: 'DM Sans, sans-serif',
-        paddingBottom: isTablet ? '24px' : '0', // Extra padding on tablet to prevent overlap with stat card
+        backgroundColor: 'transparent',
+        border: '1px solid rgba(28, 25, 23, 0.1)',
+        borderRadius: '16px',
+        padding: isMobile ? '16px 18px 28px 18px' : '20px 28px 32px 28px',
       }}>
         {/* Location and time */}
         <div style={{

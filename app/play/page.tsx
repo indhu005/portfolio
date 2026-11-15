@@ -1,6 +1,6 @@
 'use client'
-import Sidebar from '@/components/Sidebar'
-import { useState } from 'react'
+import TopBar from '@/components/TopBar'
+import BottomBar from '@/components/BottomBar'
 
 const projects = [
   {
@@ -42,32 +42,10 @@ const projects = [
 ]
 
 export default function Play() {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
-
   return (
     <div className="play-shell">
-      {/* SIDEBAR - hidden on mobile/tablet via CSS, not JS, so there's no post-mount layout flip */}
-      <div className="play-sidebar-desktop">
-        <Sidebar />
-      </div>
-
-      {/* MOBILE MENU BUTTON - hidden on desktop via CSS */}
-      <button
-        className="play-mobile-menu-btn"
-        onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-      >
-        {mobileMenuOpen ? '✕ Close' : '☰ Menu'}
-      </button>
-
-      {/* MOBILE/TABLET OVERLAY MENU */}
-      {mobileMenuOpen && (
-        <div
-          className="play-mobile-overlay"
-          onClick={() => setMobileMenuOpen(false)}
-        >
-          <Sidebar />
-        </div>
-      )}
+      <TopBar />
+      <BottomBar />
 
       {/* RIGHT SIDE */}
       <div className="play-right">

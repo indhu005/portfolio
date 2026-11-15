@@ -1,7 +1,7 @@
 'use client'
 
-import Sidebar from '@/components/Sidebar'
-import Link from 'next/link'
+import TopBar from '@/components/TopBar'
+import BottomBar from '@/components/BottomBar'
 import { useState, useEffect } from 'react'
 
 const useMediaQuery = (query: string) => {
@@ -69,7 +69,6 @@ const photos = Array.from({ length: 36 }, (_, i) => ({
 })).filter((photo) => KEPT_PHOTO_IDS.has(photo.id))
 
 export default function About() {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [selectedPhoto, setSelectedPhoto] = useState<typeof photos[0] | null>(null)
   const isMobile = useMediaQuery('(max-width: 768px)')
   const isTablet = useMediaQuery('(max-width: 1240px)')
@@ -101,98 +100,8 @@ export default function About() {
       width: '100vw',
     }}>
 
-      {/* SIDEBAR - Hidden on mobile/tablet */}
-      {!isTablet && <Sidebar />}
-
-      {/* MOBILE MENU BUTTON */}
-      {isTablet && (
-        <button
-          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          aria-label={mobileMenuOpen ? 'Close menu' : 'Open menu'}
-          style={{
-            position: 'fixed',
-            top: '20px',
-            left: '20px',
-            zIndex: 1000,
-            width: '40px',
-            height: '40px',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            background: 'transparent',
-            backdropFilter: 'blur(12px)',
-            WebkitBackdropFilter: 'blur(12px)',
-            border: '1px solid rgba(28, 25, 23, 0.1)',
-            borderRadius: '10px',
-            cursor: 'pointer',
-          }}
-        >
-          <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
-            {mobileMenuOpen ? (
-              <>
-                <path d="M4 4L14 14" stroke="#1C1917" strokeWidth="1.6" strokeLinecap="round" />
-                <path d="M14 4L4 14" stroke="#1C1917" strokeWidth="1.6" strokeLinecap="round" />
-              </>
-            ) : (
-              <>
-                <path d="M2.5 5H15.5" stroke="#1C1917" strokeWidth="1.6" strokeLinecap="round" />
-                <path d="M2.5 9H15.5" stroke="#1C1917" strokeWidth="1.6" strokeLinecap="round" />
-                <path d="M2.5 13H15.5" stroke="#1C1917" strokeWidth="1.6" strokeLinecap="round" />
-              </>
-            )}
-          </svg>
-        </button>
-      )}
-
-      {/* MOBILE/TABLET BREADCRUMB */}
-      {isTablet && !mobileMenuOpen && (
-        <div style={{
-          position: 'fixed',
-          top: '20px',
-          left: '72px',
-          right: '20px',
-          zIndex: 999,
-          display: 'flex',
-          alignItems: 'center',
-          gap: '6px',
-          height: '40px',
-          padding: '0 14px',
-          background: 'rgba(255, 255, 255, 0.82)',
-          backdropFilter: 'blur(12px)',
-          WebkitBackdropFilter: 'blur(12px)',
-          border: '1px solid rgba(28, 25, 23, 0.1)',
-          borderRadius: '10px',
-          fontSize: '12px',
-          fontWeight: 500,
-          color: '#57534E',
-          overflow: 'hidden',
-          whiteSpace: 'nowrap',
-        }}>
-          <Link href="/" style={{ color: '#57534E', textDecoration: 'none', flexShrink: 0 }}>Home</Link>
-          <span style={{ flexShrink: 0 }}>/</span>
-          <span style={{ color: '#1C1917', fontWeight: 600, flexShrink: 0 }}>About</span>
-        </div>
-      )}
-
-      {/* MOBILE/TABLET OVERLAY MENU */}
-      {isTablet && mobileMenuOpen && (
-        <div
-          style={{
-            position: 'fixed',
-            top: 0,
-            left: 0,
-            width: '100vw',
-            height: '100vh',
-            backgroundColor: '#FFFFFF',
-            zIndex: 999,
-            overflowY: 'auto',
-            padding: '80px 20px 20px 20px',
-          }}
-          onClick={() => setMobileMenuOpen(false)}
-        >
-          <Sidebar />
-        </div>
-      )}
+      <TopBar />
+      <BottomBar />
 
       {/* RIGHT SIDE */}
       <div style={{
@@ -207,7 +116,7 @@ export default function About() {
           style={{
             flex: 1,
             overflowY: 'auto',
-            padding: isMobile ? '24px 20px 40px 20px' : isTablet ? '32px 32px 50px 32px' : '40px 48px 60px 48px',
+            padding: isMobile ? '88px 20px 100px 20px' : isTablet ? '96px 32px 110px 32px' : '96px 48px 110px 48px',
             minWidth: 0,
           }}
         >

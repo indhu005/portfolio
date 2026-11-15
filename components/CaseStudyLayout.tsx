@@ -1,7 +1,8 @@
 'use client'
 import { useState, useEffect, useRef } from 'react'
-import Link from 'next/link'
-import Sidebar from './Sidebar'
+import TopBar from './TopBar'
+import BottomBar from './BottomBar'
+import CaseStudySectionNav from './CaseStudySectionNav'
 import { CaseStudyStructuredData } from './StructuredData'
 
 const useMediaQuery = (query: string) => {
@@ -71,7 +72,6 @@ export default function CaseStudyLayout({ caseStudy, slug }: CaseStudyLayoutProp
   const [activeSection, setActiveSection] = useState<string>('snapshot')
   const sectionRefs = useRef<Record<string, HTMLDivElement | null>>({})
   const contentRef = useRef<HTMLDivElement>(null)
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const isMobile = useMediaQuery('(max-width: 768px)')
   const isTablet = useMediaQuery('(max-width: 1240px)')
 
@@ -147,116 +147,18 @@ export default function CaseStudyLayout({ caseStudy, slug }: CaseStudyLayoutProp
         overflow: 'hidden',
         width: '100vw',
       }}>
-        {/* SIDEBAR - Hidden on mobile/tablet */}
+        <TopBar />
+        <BottomBar />
+        {/* Side rail — fixed to the viewport (not nested-scroll sticky) so every
+            section stays reachable regardless of scroll position. Hidden on
+            mobile/tablet where there isn't room for it alongside the content. */}
         {!isTablet && (
-          <Sidebar
-            activeProject={slug}
+          <CaseStudySectionNav
+            sections={caseStudy.sections}
             activeSection={activeSection}
             onSectionClick={scrollToSection}
-            sections={caseStudy.sections}
           />
         )}
-
-      {/* MOBILE MENU BUTTON */}
-      {isTablet && (
-        <button
-          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          aria-label={mobileMenuOpen ? 'Close menu' : 'Open menu'}
-          style={{
-            position: 'fixed',
-            top: '20px',
-            left: '20px',
-            zIndex: 1000,
-            width: '40px',
-            height: '40px',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            background: 'transparent',
-            backdropFilter: 'blur(12px)',
-            WebkitBackdropFilter: 'blur(12px)',
-            border: '1px solid rgba(28, 25, 23, 0.1)',
-            borderRadius: '10px',
-            cursor: 'pointer',
-          }}
-        >
-          <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
-            {mobileMenuOpen ? (
-              <>
-                <path d="M4 4L14 14" stroke="#1C1917" strokeWidth="1.6" strokeLinecap="round" />
-                <path d="M14 4L4 14" stroke="#1C1917" strokeWidth="1.6" strokeLinecap="round" />
-              </>
-            ) : (
-              <>
-                <path d="M2.5 5H15.5" stroke="#1C1917" strokeWidth="1.6" strokeLinecap="round" />
-                <path d="M2.5 9H15.5" stroke="#1C1917" strokeWidth="1.6" strokeLinecap="round" />
-                <path d="M2.5 13H15.5" stroke="#1C1917" strokeWidth="1.6" strokeLinecap="round" />
-              </>
-            )}
-          </svg>
-        </button>
-      )}
-
-      {/* MOBILE/TABLET BREADCRUMB */}
-      {isTablet && !mobileMenuOpen && (
-        <div style={{
-          position: 'fixed',
-          top: '20px',
-          left: '72px',
-          right: '20px',
-          zIndex: 999,
-          display: 'flex',
-          alignItems: 'center',
-          gap: '6px',
-          height: '40px',
-          padding: '0 14px',
-          background: 'rgba(255, 255, 255, 0.96)',
-          backdropFilter: 'blur(12px)',
-          WebkitBackdropFilter: 'blur(12px)',
-          border: '1px solid rgba(28, 25, 23, 0.1)',
-          borderRadius: '10px',
-          fontSize: '12px',
-          fontWeight: 500,
-          color: '#57534E',
-          overflow: 'hidden',
-          whiteSpace: 'nowrap',
-        }}>
-          <Link href="/" style={{ color: '#57534E', textDecoration: 'none', flexShrink: 0 }}>Home</Link>
-          <span style={{ flexShrink: 0 }}>/</span>
-          <span style={{ color: '#1C1917', fontWeight: 600, flexShrink: 0 }}>{caseStudy.title}</span>
-          <span style={{ flexShrink: 0 }}>/</span>
-          <span style={{ color: '#1C1917', fontWeight: 600, overflow: 'hidden', textOverflow: 'ellipsis' }}>
-            {caseStudy.sections.find(s => s.id === activeSection)?.title.replace(/^\d+\s*—\s*/, '') ?? ''}
-          </span>
-        </div>
-      )}
-
-      {/* MOBILE/TABLET OVERLAY MENU */}
-      {isTablet && mobileMenuOpen && (
-        <div
-          style={{
-            position: 'fixed',
-            top: 0,
-            left: 0,
-            width: '100vw',
-            height: '100vh',
-            backgroundColor: '#FFFFFF',
-            zIndex: 999,
-            overflowY: 'auto',
-            padding: '80px 20px 20px 20px',
-          }}
-        >
-          <Sidebar
-            activeProject={slug}
-            activeSection={activeSection}
-            onSectionClick={(sectionId) => {
-              scrollToSection(sectionId)
-              setMobileMenuOpen(false)
-            }}
-            sections={caseStudy.sections}
-          />
-        </div>
-      )}
 
       {/* RIGHT SIDE */}
       <div style={{
@@ -273,7 +175,7 @@ export default function CaseStudyLayout({ caseStudy, slug }: CaseStudyLayoutProp
             flex: 1,
             overflowY: 'auto',
             overflowX: 'hidden',
-            padding: isMobile ? '88px 20px 40px 20px' : isTablet ? '96px 32px 50px 32px' : '56px 48px 60px 48px',
+            padding: isMobile ? '88px 20px 110px 20px' : isTablet ? '96px 32px 120px 32px' : '96px 48px 110px 180px',
             minWidth: 0,
             scrollBehavior: 'smooth',
             backgroundColor: '#FFFFFF',

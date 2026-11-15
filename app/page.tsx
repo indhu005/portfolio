@@ -1,12 +1,11 @@
 'use client'
-import Sidebar from '@/components/Sidebar'
+import TopBar from '@/components/TopBar'
+import BottomBar from '@/components/BottomBar'
 import LandingGameSimple from '@/components/LandingGameSimple'
-import ChickenClockWidget from '@/components/ChickenClockWidget'
-import { Reveal, CountUp } from '@/components/ScrollReveal'
+import Typewriter from '@/components/Typewriter'
+import { Reveal } from '@/components/ScrollReveal'
 import { useRouter } from 'next/navigation'
-import { useState, useEffect, useRef, type CSSProperties } from 'react'
-
-const SHOW_CHICKEN_CLOCK = false
+import { useState, useEffect, type CSSProperties } from 'react'
 
 const useMediaQuery = (query: string) => {
   const [matches, setMatches] = useState(false)
@@ -96,17 +95,13 @@ const InfoPill = ({ title, meta, year, badge, isMobile }: { title: string; meta:
 
 export default function Home() {
   const router = useRouter()
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [revealed, setRevealed] = useState(false)
+  const [heroNameTyped, setHeroNameTyped] = useState(false)
   const [splashFading, setSplashFading] = useState(false)
   const [splashVisible, setSplashVisible] = useState(false)
   const isMobile = useMediaQuery('(max-width: 768px)')
   const isTablet = useMediaQuery('(max-width: 1240px)')
   const isWideDesktop = useMediaQuery('(min-width: 2200px)')
-  // Laptop-range screens (sidebar + hero column together hit the 1200px wrapper's
-  // max-width here) — used to widen the hero text column so it doesn't leave a dead
-  // gutter next to "Selected Work" below it.
-  const isLaptop = useMediaQuery('(min-width: 1241px) and (max-width: 1799px)')
 
   useEffect(() => {
     const timer = setTimeout(() => setRevealed(true), 50)
@@ -158,74 +153,11 @@ export default function Home() {
         }} />
       )}
 
-      {/* SIDEBAR - Hidden on mobile/tablet */}
-      {!isTablet && <Sidebar bg="#FAF8F3" />}
+      <TopBar />
+      <BottomBar />
 
-
-      {/* MOBILE MENU BUTTON — one consistent style regardless of scroll position/what's
-          behind it (previously switched background/icon color based on being over the
-          game hero or a dark card; that made it blend into the game-end grey overlay).
-          Opaque black with a white icon keeps it legible everywhere, and zIndex:1000
-          sits above the game-end overlay's zIndex:100 so it's never visually buried. */}
-      {isTablet && (
-        <button
-          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          aria-label={mobileMenuOpen ? 'Close menu' : 'Open menu'}
-          style={{
-            position: 'fixed',
-            top: '20px',
-            left: '20px',
-            zIndex: 1000,
-            width: '40px',
-            height: '40px',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            backgroundColor: '#000000',
-            border: '1px solid #FFFFFF',
-            borderRadius: '10px',
-            cursor: 'pointer',
-            boxShadow: '0 2px 8px rgba(0,0,0,0.15)',
-          }}
-        >
-          <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
-            {mobileMenuOpen ? (
-              <>
-                <path d="M4 4L14 14" stroke="#FFFFFF" strokeWidth="1.6" strokeLinecap="round" />
-                <path d="M14 4L4 14" stroke="#FFFFFF" strokeWidth="1.6" strokeLinecap="round" />
-              </>
-            ) : (
-              <>
-                <path d="M2.5 5H15.5" stroke="#FFFFFF" strokeWidth="1.6" strokeLinecap="round" />
-                <path d="M2.5 9H15.5" stroke="#FFFFFF" strokeWidth="1.6" strokeLinecap="round" />
-                <path d="M2.5 13H15.5" stroke="#FFFFFF" strokeWidth="1.6" strokeLinecap="round" />
-              </>
-            )}
-          </svg>
-        </button>
-      )}
-
-      {/* MOBILE/TABLET OVERLAY MENU */}
-      {isTablet && mobileMenuOpen && (
-        <div
-          style={{
-            position: 'fixed',
-            top: 0,
-            left: 0,
-            width: '100vw',
-            height: '100vh',
-            backgroundColor: '#FAF8F3',
-            zIndex: 999,
-            overflowY: 'auto',
-            padding: '80px 20px 20px 20px',
-          }}
-          onClick={() => setMobileMenuOpen(false)}
-        >
-          <Sidebar bg="#FAF8F3" />
-        </div>
-      )}
-
-      {/* RIGHT SIDE */}
+      {/* MAIN COLUMN — the sidebar is gone; TopBar/BottomBar (fixed, overlaid) are
+          the nav now, so this is just the full-width scroll container. */}
       <div style={{
         flex: 1,
         display: 'flex',
@@ -239,29 +171,13 @@ export default function Home() {
           style={{
             flex: 1,
             overflowY: 'auto',
-            padding: isMobile ? '0 20px 40px 20px' : isTablet ? '0 32px 50px 32px' : isWideDesktop ? '0 64px 80px 56px' : '0 40px 60px 36px',
+            padding: isMobile ? '72px 20px 100px 20px' : isTablet ? '72px 32px 110px 32px' : isWideDesktop ? '80px 64px 120px 56px' : '72px 40px 110px 36px',
             minWidth: 0,
             scrollBehavior: 'smooth',
             backgroundColor: '#FAF8F3',
           }}
         >
-          {/* Landing Game — same maxWidth/centering as the wrapper below so the grid can align its
-              left edge to "Hi, I'm Indhu" instead of centering in the full (wider) content area */}
-          <div style={{
-            maxWidth: isWideDesktop ? '1400px' : '1200px',
-            marginLeft: 'auto',
-            marginRight: 'auto',
-            marginTop: isTablet ? '0' : '32px',
-            marginBottom: isMobile ? '20px' : isWideDesktop ? '36px' : '28px',
-          }}>
-            <LandingGameSimple
-              edgeLeft={isMobile ? 20 : isTablet ? 32 : isWideDesktop ? 56 : 36}
-              edgeRight={isMobile ? 20 : isTablet ? 32 : isWideDesktop ? 64 : 40}
-              edgeTop={isTablet ? 0 : 32}
-            />
-          </div>
-
-          {/* Shared centered wrapper so intro and Selected Work share the same left edge */}
+          {/* Shared centered wrapper so intro, game, and Selected Work share the same left edge */}
           <div style={{
             maxWidth: isWideDesktop ? '1400px' : '1200px',
             marginLeft: 'auto',
@@ -269,22 +185,19 @@ export default function Home() {
           }}>
           {/* Home page content */}
           <main style={{
-            // Laptop-range screens hit the 1200px wrapper's max-width (the sidebar no
-            // longer leaves enough room left over for it to keep growing), so the 920px
-            // hero cap left a large dead gutter between the hero text and "Selected Work"
-            // below it — widen it here to close that gap. Still narrower than the 1200px
-            // wrapper to avoid an overlong reading line.
+            // No card background here — only the title line below keeps one.
+            // Same maxWidth as the shared wrapper (and the Selected Work section
+            // below) so edges line up with the work section instead of leaving
+            // a dead gutter on the right at normal desktop widths.
             position: 'relative',
             overflow: 'hidden',
-            maxWidth: isWideDesktop ? '1240px' : isLaptop ? '1150px' : '1000px',
+            maxWidth: isWideDesktop ? '1400px' : '1200px',
             marginTop: '0px',
             marginLeft: '0',
             marginRight: 'auto',
             textAlign: 'left',
-            backgroundColor: '#FFFFFF',
-            border: '1px solid rgba(28, 25, 23, 0.08)',
-            borderRadius: isMobile ? '20px' : '28px',
-            padding: isMobile ? '32px 24px' : isWideDesktop ? '64px 72px' : '56px 60px',
+            backgroundColor: 'transparent',
+            padding: isMobile ? '8px 4px' : '12px 4px',
           }}>
             {/* Ambient drifting blob behind the hero copy — same low-opacity/blurred
                 treatment as the case-studies section blob, just a different hue/phase
@@ -294,16 +207,16 @@ export default function Home() {
             <div style={{ position: 'relative', zIndex: 1 }}>
             <h1 style={{
               fontFamily: 'var(--font-heading), serif',
-              fontSize: isMobile ? '38px' : isTablet ? '50px' : isWideDesktop ? '74px' : '62px',
+              fontSize: isMobile ? '32px' : isTablet ? '40px' : isWideDesktop ? '54px' : '46px',
               fontWeight: 700,
               lineHeight: '1.08',
               color: '#1C1917',
-              marginTop: isWideDesktop ? '20px' : '0',
+              marginTop: '0',
               marginBottom: isMobile ? '16px' : '20px',
               letterSpacing: '-0.02em',
               ...revealStyle(0),
             }}>
-              Hi, I'm <span style={{ color: '#1C1917' }}>Indhu</span>
+              <Typewriter text="Hi, I'm Indhu" startDelayMs={150} onDone={() => setHeroNameTyped(true)} />
               <span style={{
                 position: 'absolute',
                 width: '1px',
@@ -337,7 +250,7 @@ export default function Home() {
                     display: 'inline-flex',
                     alignItems: 'center',
                     gap: '5px',
-                    fontSize: isMobile ? '12px' : '12.5px',
+                    fontSize: isMobile ? '10.5px' : '11px',
                     fontWeight: 500,
                     letterSpacing: '0.01em',
                     color: item.variant === 'solid' ? 'rgba(28, 25, 23, 0.85)' : '#4A6FD4',
@@ -361,88 +274,48 @@ export default function Home() {
             </div>
 
             <div style={{
-              fontSize: isMobile ? '20px' : isWideDesktop ? '24px' : '22px',
-              lineHeight: '1.8',
-              color: 'rgba(28, 25, 23, 0.85)',
+              fontSize: isMobile ? '14px' : '15px',
+              lineHeight: '1.6',
+              color: 'rgba(28, 25, 23, 0.8)',
             }}>
               <p style={{
                 fontFamily: 'var(--font-heading), serif',
-                fontSize: isMobile ? '26px' : isWideDesktop ? '34px' : '30px',
+                fontSize: isMobile ? '18px' : isWideDesktop ? '22px' : '20px',
                 fontWeight: 700,
-                lineHeight: '1.3',
+                lineHeight: '1.35',
                 color: '#1C1917',
-                marginBottom: isWideDesktop ? '32px' : '28px',
+                marginBottom: isMobile ? '14px' : '16px',
                 ...revealStyle(90),
               }}>
-                I decide what AI gets to see and act on, and what stays a human call.
+                {heroNameTyped && (
+                  <Typewriter text="I design how people learn to trust and question AI agents." startDelayMs={150} showCursor={false} />
+                )}
               </p>
 
-
-
-              <p style={{ marginBottom: isWideDesktop ? '32px' : '28px', ...revealStyle(120) }}>
-                8 years as a product designer — Gensler, founding Keye, senior design on LAT. I build the trust layer between people and AI: a 0→1 marketplace that went YC, an enterprise platform at 96% adoption in a politically sensitive institution.
+              <p style={{ marginBottom: isMobile ? '12px' : '14px', ...revealStyle(120) }}>
+                8 years: Gensler, founding Keye, senior design on LAT. A marketplace that went YC. An enterprise platform at 96% adoption inside a politically sensitive institution.
               </p>
 
-              <p style={{ fontSize: isMobile ? '15px' : '16px', color: 'rgba(28, 25, 23, 0.5)', marginBottom: isWideDesktop ? '32px' : '28px', ...revealStyle(140) }}>
-                Since 2025, building an AI-forward marketplace in stealth, shipping daily with AI agents.
-              </p>
-
-              {/* Proof Strip — fast, scannable backing for the claims above */}
-              <div style={{
-                display: 'grid',
-                gridTemplateColumns: isMobile ? '1fr' : 'repeat(3, 1fr)',
-                gap: isMobile ? '20px' : '24px',
-                marginBottom: isWideDesktop ? '32px' : '28px',
-                padding: isMobile ? '20px' : '24px 28px',
-                border: '1px solid rgba(28, 25, 23, 0.1)',
-                borderRadius: '12px',
-                ...revealStyle(160),
-              }}>
-                {[
-                  {
-                    key: 'lat',
-                    stat: <>95%<CountUp to={96} prefix="→" suffix="%" /> adoption</>,
-                    context: 'LAT — 43-person pilot to ~4,000-person rollout, measured by weekly active use',
-                  },
-                  {
-                    key: 'keye',
-                    stat: <>0<CountUp to={20} prefix="→" suffix="K" /> MAUs · $1.5M raised</>,
-                    context: 'Keye — founding designer, team of 5; later went YC F24',
-                  },
-                  {
-                    key: 'misinfo',
-                    stat: <><CountUp to={96} suffix="%" /> said they&apos;d use it</>,
-                    context: 'Misinfo Center — 36 Gen Z/millennial testers, field-tested at Misinfo Day',
-                  },
-                ].map((item, i) => (
-                  <div key={item.key} style={revealStyle(220 + i * 70)}>
-                    <div style={{
-                      fontFamily: 'var(--font-heading), serif',
-                      fontSize: isMobile ? '18px' : '20px',
-                      fontWeight: 700,
-                      color: '#1C1917',
-                      marginBottom: '6px',
-                      lineHeight: '1.3',
-                    }}>
-                      {item.stat}
-                    </div>
-                    <div style={{
-                      fontSize: '13.5px',
-                      lineHeight: '1.5',
-                      color: 'rgba(28, 25, 23, 0.5)',
-                    }}>
-                      {item.context}
-                    </div>
-                  </div>
-                ))}
-              </div>
-
-              <p style={{ marginBottom: isWideDesktop ? '32px' : '28px', ...revealStyle(220) }}>
-                I obsess over how and why — and lately, why now.
+              <p style={{ fontSize: isMobile ? '12.5px' : '13px', color: 'rgba(28, 25, 23, 0.5)', marginBottom: isMobile ? '12px' : '14px', ...revealStyle(140) }}>
+                Designing for AI agents since 2025.
               </p>
             </div>
             </div>
           </main>
+
+          {/* Landing Game — sits below the intro, above the work; same maxWidth
+              as the wrapper so the grid's left edge still lines up with the
+              rest of the page. */}
+          <div style={{
+            marginTop: isMobile ? '40px' : isWideDesktop ? '64px' : '56px',
+            marginBottom: isMobile ? '20px' : isWideDesktop ? '36px' : '28px',
+          }}>
+            <LandingGameSimple
+              edgeLeft={isMobile ? 20 : isTablet ? 32 : isWideDesktop ? 56 : 36}
+              edgeRight={isMobile ? 20 : isTablet ? 32 : isWideDesktop ? 64 : 40}
+              edgeTop={0}
+            />
+          </div>
 
           {/* Case Studies Section */}
           <section id="case-studies" style={{
@@ -454,14 +327,16 @@ export default function Home() {
                 doesn't read as flat, kept low-opacity/blurred so it stays behind content */}
             <div aria-hidden="true" className="cs-section-blob cs-section-blob--coral" />
 
-            {/* Section Header */}
+            {/* Section Header — centered to match the centered card content below,
+                rather than hugging the wrapper's left edge while the cards center. */}
             <div style={{
               position: 'relative',
               zIndex: 1,
               display: 'flex',
               alignItems: 'center',
+              justifyContent: 'center',
               flexWrap: 'wrap',
-              gap: '40px',
+              gap: '20px',
               marginBottom: isMobile ? '32px' : isWideDesktop ? '64px' : '48px',
             }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
@@ -509,13 +384,15 @@ export default function Home() {
               </a>
             </div>
 
-            {/* Case Study Cards */}
+            {/* Work — a plain, fully scannable vertical list. Simpler beats clever:
+                a recruiter should see every case study at a glance, not have to
+                interact to find them. */}
             <div style={{
               position: 'relative',
               zIndex: 1,
               display: 'flex',
               flexDirection: 'column',
-              gap: isMobile ? '64px' : isWideDesktop ? '112px' : '91px',
+              gap: isMobile ? '40px' : isWideDesktop ? '64px' : '56px',
             }}>
               {/* Card 1 - LAT */}
               <Reveal>
@@ -729,43 +606,6 @@ export default function Home() {
                 </div>
               </article>
               </Reveal>
-
-              {/* Card 3.5 - Chicken Clock (side project, lives only on the homepage).
-                  Hidden for now (SHOW_CHICKEN_CLOCK) while the auto-loop timing is
-                  being sorted out — flip the flag back on to bring it back. */}
-              {SHOW_CHICKEN_CLOCK && (
-              <Reveal>
-              <article style={{
-                display: 'flex',
-                flexDirection: 'column',
-                alignItems: 'center',
-                borderRadius: '10px',
-                padding: isMobile ? '24px' : isWideDesktop ? '48px' : '40px',
-                backgroundColor: 'transparent',
-              }}>
-                <InfoPill
-                  isMobile={isMobile}
-                  title="Chicken Clock Screensaver"
-                  meta="Live Experiments"
-                  year="2026"
-                />
-                <div style={{
-                  marginTop: isMobile ? '24px' : '32px',
-                  display: 'flex',
-                  flexDirection: isMobile ? 'column' : 'row',
-                  justifyContent: 'center',
-                  alignItems: 'center',
-                  gap: isMobile ? '24px' : '32px',
-                  width: '100%',
-                  flexWrap: 'wrap',
-                }}>
-                  <ChickenClockWidget theme="day" />
-                  <ChickenClockWidget />
-                  <ChickenClockWidget theme="night" />
-                </div>
-              </article>
-              </Reveal>
-              )}
 
               {/* Card 4 - Coming Soon (AI-native stealth work) */}
               <Reveal>
