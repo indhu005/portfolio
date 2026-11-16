@@ -646,6 +646,13 @@ export default function LandingGameSimple({ edgeLeft = 20, edgeRight = 20, edgeT
         left: '50%',
         transform: 'translateX(-50%)',
         textAlign: 'center',
+        // width: max-content (not auto) — with only `left` set and no `right`,
+        // an auto-width absolutely positioned box's shrink-to-fit calculation
+        // treats the available width as container-width-minus-left (roughly
+        // half the container, since left:50%), wrapping text far more than
+        // necessary. max-content sizes to the natural content width instead,
+        // still capped by maxWidth below.
+        width: 'max-content',
         maxWidth: isMobile ? 'calc(100% - 32px)' : '620px',
         zIndex: 50,
         fontFamily: 'DM Sans, sans-serif',
