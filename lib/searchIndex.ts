@@ -28,7 +28,7 @@ export const SEARCH_INDEX: SearchItem[] = [
     description: 'Download the PDF',
     group: 'Pages',
     keywords: ['resume', 'cv', 'pdf', 'experience'],
-    url: '/Indhu-Venkatachalam-Senior-Product-Designer.pdf',
+    url: '/Indhu-Venkatachalam-Senior-Product-Design-Engineer.pdf',
     external: true,
   },
   {

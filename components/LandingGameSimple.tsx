@@ -1223,7 +1223,7 @@ export default function LandingGameSimple({ edgeLeft = 20, edgeRight = 20, edgeT
                 See work
               </a>
               <a
-                href="/Indhu-Venkatachalam-Senior-Product-Designer.pdf"
+                href="/Indhu-Venkatachalam-Senior-Product-Design-Engineer.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
                 style={{

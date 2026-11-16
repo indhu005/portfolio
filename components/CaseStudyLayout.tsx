@@ -828,7 +828,7 @@ export default function CaseStudyLayout({ caseStudy, slug }: CaseStudyLayoutProp
             {[
               { label: 'Email', href: 'mailto:indhuve05@gmail.com', external: false },
               { label: 'LinkedIn', href: 'https://www.linkedin.com/in/indhu05/', external: true },
-              { label: 'Resume', href: '/Indhu-Venkatachalam-Senior-Product-Designer.pdf', external: true },
+              { label: 'Resume', href: '/Indhu-Venkatachalam-Senior-Product-Design-Engineer.pdf', external: true },
             ].map((item) => (
               <a
                 key={item.label}
