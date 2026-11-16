@@ -9,9 +9,13 @@
     "lint": "eslint"
   },
   "dependencies": {
+    "@astryxdesign/cli": "^0.7.16",
+    "@astryxdesign/core": "^0.7.16",
+    "@astryxdesign/theme-neutral": "^0.7.16",
     "@clerk/nextjs": "^7.5.11",
     "@splinetool/react-spline": "^4.1.0",
     "@splinetool/runtime": "^1.12.98",
+    "@stylexjs/stylex": "^0.19.2",
     "@vercel/analytics": "^2.0.1",
     "@vercel/speed-insights": "^2.0.0",
     "framer-motion": "^12.42.2",

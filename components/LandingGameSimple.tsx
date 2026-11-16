@@ -34,7 +34,7 @@ const GRID_COLS_MOBILE = 6
 const ROUND_DURATION = 10 // 10 seconds
 
 // Simple tree component - full grown tree with sway animation
-const TreeIcon = ({ size = 60, variant = 0, isDaytime = true }: { size?: number; variant?: number; isDaytime?: boolean }) => {
+const TreeIcon = ({ size = 60, variant = 0 }: { size?: number; variant?: number }) => {
   const [isGusting, setIsGusting] = useState(false)
   const treeVariants = ['tree 01 (1).svg', 'tree 01 (2).svg', 'tree 01 (3).svg', 'tree 01 (4).svg', 'tree 01 (5).svg']
   const treeFile = treeVariants[variant % 5]
@@ -87,7 +87,7 @@ const TreeIcon = ({ size = 60, variant = 0, isDaytime = true }: { size?: number;
 }
 
 // Sapling component - smaller tree with grow animation
-const SaplingIcon = ({ size = 40, variant = 0, isDaytime = true }: { size?: number; variant?: number; isDaytime?: boolean }) => {
+const SaplingIcon = ({ size = 40, variant = 0 }: { size?: number; variant?: number }) => {
   const treeVariants = ['tree 01 (1).svg', 'tree 01 (2).svg', 'tree 01 (3).svg', 'tree 01 (4).svg', 'tree 01 (5).svg']
   const treeFile = treeVariants[variant % 5]
 
@@ -116,7 +116,7 @@ const SaplingIcon = ({ size = 40, variant = 0, isDaytime = true }: { size?: numb
 }
 
 // Building component with fast pop-in animation
-const BuildingIcon = ({ size = 60, variant = 0, isDaytime = true }: { size?: number; variant?: number; isDaytime?: boolean }) => {
+const BuildingIcon = ({ size = 60, variant = 0 }: { size?: number; variant?: number }) => {
   const [isPopping, setIsPopping] = useState(true)
   const buildingVariants = ['building 01.svg', 'building 02.svg', 'building 03.svg', 'building 04.svg']
   const buildingFile = buildingVariants[variant % 4]
@@ -840,9 +840,9 @@ export default function LandingGameSimple({ edgeLeft = 20, edgeRight = 20, edgeT
               }}
             >
               {cell.state === 'empty' && <GroundMarker size={cellSize} />}
-              {cell.state === 'sapling' && <SaplingIcon variant={cell.variant || 0} size={isMobile ? 30 : isTablet ? 42 : 60} isDaytime={isDaytime} />}
-              {cell.state === 'tree' && <TreeIcon variant={cell.variant || 0} size={isMobile ? 45 : isTablet ? 62 : 90} isDaytime={isDaytime} />}
-              {cell.state === 'building' && <BuildingIcon variant={cell.variant || 0} size={isMobile ? 41 : isTablet ? 48 : 69} isDaytime={isDaytime} />}
+              {cell.state === 'sapling' && <SaplingIcon variant={cell.variant || 0} size={isMobile ? 30 : isTablet ? 42 : 60} />}
+              {cell.state === 'tree' && <TreeIcon variant={cell.variant || 0} size={isMobile ? 45 : isTablet ? 62 : 90} />}
+              {cell.state === 'building' && <BuildingIcon variant={cell.variant || 0} size={isMobile ? 41 : isTablet ? 48 : 69} />}
               {ripples.has(`${rowIndex}-${colIndex}`) && (
                 <div style={{
                   position: 'absolute',
@@ -1358,7 +1358,7 @@ export default function LandingGameSimple({ edgeLeft = 20, edgeRight = 20, edgeT
               </p>
             </div>
 
-            {/* GIF Placeholder */}
+            {/* Gameplay clip */}
             <div style={{
               width: '100%',
               backgroundColor: '#F3F4F6',

@@ -30,7 +30,7 @@ const InfoPill = ({ title, meta, year, badge, isMobile }: { title: string; meta:
   isMobile ? (
     // Phone: two compact lines in a rounded tag instead of a stretched pill — a
     // single-line pill with this much text wraps into a tall blob at narrow widths.
-    <div className="cs-pill-hover" style={{
+    <div style={{
       display: 'inline-flex',
       flexDirection: 'column',
       alignItems: 'flex-start',
@@ -61,7 +61,7 @@ const InfoPill = ({ title, meta, year, badge, isMobile }: { title: string; meta:
       </span>
     </div>
   ) : (
-    <div className="cs-pill-hover" style={{
+    <div style={{
       display: 'inline-flex',
       alignItems: 'center',
       gap: '10px',
@@ -259,7 +259,6 @@ export default function Home() {
               ].map((item) => (
                 <span
                   key={item.label}
-                  className="cs-pill-hover"
                   style={{
                     display: 'inline-flex',
                     alignItems: 'center',
@@ -302,7 +301,7 @@ export default function Home() {
                 ...revealStyle(90),
               }}>
                 {heroNameTyped && (
-                  <Typewriter text="I design how people learn to trust and question AI agents." startDelayMs={150} showCursor={false} />
+                  <Typewriter text="Designing the boundary between what AI can do and where people stay in control." startDelayMs={150} showCursor={false} />
                 )}
               </p>
 
@@ -311,7 +310,7 @@ export default function Home() {
               </p>
 
               <p style={{ fontSize: isMobile ? '12.5px' : '13px', color: 'rgba(28, 25, 23, 0.5)', marginBottom: isMobile ? '4px' : '14px', ...revealStyle(140) }}>
-                Designing for AI agents since 2025.
+                Building for AI agents since 2025.
               </p>
             </div>
             </div>
@@ -412,6 +411,9 @@ export default function Home() {
                           playsInline
                           preload="metadata"
                           aria-label="LAT CapEx proposal workflow"
+                          // Crop rule for laptop screenshots: anchor to the top so the
+                          // app's own header/nav chrome is always visible, cropping
+                          // whatever's cut off from the bottom instead.
                           style={{ display: 'block', width: '100%', aspectRatio: '17 / 10', objectFit: 'cover', objectPosition: 'top center' }}
                         >
                           <source src="/videos/lat/LAT%20Landing%20inner%20screen.mp4" type="video/mp4" />
@@ -501,6 +503,7 @@ export default function Home() {
                   title="Misinformation Center"
                   meta="Research · Media Literacy"
                   year="Jan–Dec 2024"
+                  badge="Published"
                 />
 
                 {/* Landing videos, side by side — bleeds past the card's own side
@@ -516,6 +519,11 @@ export default function Home() {
                   marginRight: isMobile ? '-24px' : 0,
                   marginTop: isMobile ? '16px' : '20px',
                   justifyContent: 'center',
+                  // Crop rule for these phone screen recordings (objectPosition
+                  // on the videos below): anchor to the bottom so the status
+                  // bar/notch stays flush with the frame — different from the
+                  // laptop cards above because these have no fixed app header
+                  // worth preserving, just whatever screen the loop lands on.
                   animationDelay: '-4s',
                 }}>
                   <video
@@ -605,7 +613,7 @@ export default function Home() {
                       fontWeight: 700,
                       textTransform: 'uppercase',
                       letterSpacing: '0.08em',
-                      color: 'rgba(28, 25, 23, 0.35)',
+                      color: 'rgba(28, 25, 23, 0.5)',
                       marginBottom: '6px',
                     }}>
                       AI-Native · 0→1 · In Stealth
@@ -614,7 +622,7 @@ export default function Home() {
                       fontFamily: 'var(--font-heading), serif',
                       fontSize: isMobile ? '22px' : isWideDesktop ? '30px' : '26px',
                       fontWeight: 700,
-                      color: 'rgba(28, 25, 23, 0.5)',
+                      color: 'rgba(28, 25, 23, 0.65)',
                       letterSpacing: '-0.01em',
                       margin: 0,
                       marginBottom: isMobile ? '12px' : '16px',
@@ -624,7 +632,7 @@ export default function Home() {
                     <p style={{
                       fontSize: isMobile ? '15px' : '16px',
                       lineHeight: '1.6',
-                      color: 'rgba(28, 25, 23, 0.35)',
+                      color: 'rgba(28, 25, 23, 0.55)',
                       maxWidth: '640px',
                       margin: 0,
                     }}>
