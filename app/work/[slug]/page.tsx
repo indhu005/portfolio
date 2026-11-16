@@ -3,6 +3,7 @@ import MisinfoFeaturesContent from '@/components/MisinfoFeaturesContent'
 import LatAlertToggle from '@/components/LatAlertToggle'
 import LatTradeoffTable from '@/components/LatTradeoffTable'
 import LatDashboardVersions from '@/components/LatDashboardVersions'
+import AgenticPipelineConsole from '@/components/AgenticPipelineConsole'
 import { Metadata } from 'next'
 
 const caseStudies = {
@@ -1258,6 +1259,35 @@ const caseStudies = {
 </div>`
       },
     ]
+  },
+  'agentic-pipeline-console': {
+    title: 'Agentic Pipeline Console',
+    subtitle: 'AI Agent Orchestration',
+    description: 'An internal console for monitoring and debugging multi-step AI agent pipelines, in stealth',
+    sections: [
+      {
+        id: 'problem',
+        title: '01 — Problem',
+        headline: 'Pipelines failed quietly, and nobody noticed until a person did',
+        content: `<p>Agent pipelines ran in production with no shared view of what was actually happening — which runs were healthy, which had silently failed, which were waiting on a human. Debugging meant piecing it together across tools that weren't built to talk to each other.</p>`
+      },
+      {
+        id: 'strategy',
+        title: '02 — Solution',
+        headline: 'One console: every run\'s real status, escalations surfaced instead of buried',
+        content: `<p>A single surface showing every pipeline's live status, with the moment a run needed a human pulled to the front instead of left in a log somewhere. Built and validated against real runs rather than a mockup.</p>
+
+<h4 class="case-study-subhead" style="margin-top: 40px;">Process</h4>
+<p>Mapped where pipelines actually broke, built the console against live runs instead of static designs, then tightened it with the people debugging incidents at 2am.</p>`
+      },
+      {
+        id: 'console',
+        title: '03 — Live Console',
+        headline: 'See it below',
+        content: '',
+        customComponent: <AgenticPipelineConsole />,
+      },
+    ]
   }
 }
 
@@ -1343,5 +1373,6 @@ export async function generateStaticParams() {
     { slug: 'keye' },
     { slug: 'lat' },
     { slug: 'misinformation-center' },
+    { slug: 'agentic-pipeline-console' },
   ]
 }

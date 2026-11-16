@@ -378,26 +378,7 @@ export default function CaseStudyLayout({ caseStudy, slug }: CaseStudyLayoutProp
                       display: 'block',
                     }}
                   />
-                ) : (
-                  <div style={{
-                    width: '100%',
-                    maxWidth: isMobile || isTablet ? '850px' : '1020px',
-                    height: '580px',
-                    backgroundColor: '#7EB3F5',
-                    borderRadius: '0px',
-                    marginBottom: '50px',
-                    marginLeft: 'auto',
-                    marginRight: 'auto',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    color: '#FFFFFF',
-                    fontSize: '48px',
-                    fontWeight: 700,
-                  }}>
-                    {caseStudy.title} Hero
-                  </div>
-                )
+                ) : null
               )}
 
               {/* Section Label - moved above Brief/TL;DR for the first section, right under the hero */}

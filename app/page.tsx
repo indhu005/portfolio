@@ -3,6 +3,7 @@ import TopBar from '@/components/TopBar'
 import LandingGameSimple from '@/components/LandingGameSimple'
 import Typewriter from '@/components/Typewriter'
 import { Reveal } from '@/components/ScrollReveal'
+import AgenticPipelineConsole from '@/components/AgenticPipelineConsole'
 import { useRouter } from 'next/navigation'
 import { useState, useEffect, type CSSProperties } from 'react'
 
@@ -427,7 +428,39 @@ export default function Home() {
               </article>
               </Reveal>
 
-              {/* Card 2 - Keye */}
+              {/* Card 2 - Agentic Pipeline Console (AI-native stealth work) */}
+              <Reveal>
+              <article
+                onClick={() => router.push('/work/agentic-pipeline-console')}
+                style={{
+                cursor: 'pointer',
+                display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'center',
+                borderRadius: '10px',
+                padding: isMobile ? '24px' : isWideDesktop ? '48px' : '40px',
+                backgroundColor: 'transparent',
+              }}>
+                <InfoPill
+                  isMobile={isMobile}
+                  title="Agentic Pipeline Console"
+                  meta="AI Agent Orchestration"
+                  year="2025–Present"
+                  badge="In Stealth"
+                />
+
+                <div style={{
+                  width: isMobile ? 'calc(100% + 48px)' : isTablet ? 'calc(100% + 80px)' : '84%',
+                  marginTop: isMobile ? '24px' : '32px',
+                  maxWidth: '640px',
+                  pointerEvents: 'none',
+                }}>
+                  <AgenticPipelineConsole />
+                </div>
+              </article>
+              </Reveal>
+
+              {/* Card 3 - Keye */}
               <Reveal>
               <article
                 onClick={() => router.push('/work/keye')}
@@ -485,7 +518,7 @@ export default function Home() {
               </article>
               </Reveal>
 
-              {/* Card 3 - Misinformation Center */}
+              {/* Card 4 - Misinformation Center */}
               <Reveal>
               <article
                 onClick={() => router.push('/work/misinformation-center')}
@@ -582,66 +615,6 @@ export default function Home() {
               </article>
               </Reveal>
 
-              {/* Card 4 - Coming Soon (AI-native stealth work) */}
-              <Reveal>
-              <article style={{
-                display: 'flex',
-                flexDirection: 'column',
-                border: '1.5px dashed rgba(28, 25, 23, 0.18)',
-                borderRadius: '10px',
-                padding: isMobile ? '24px' : isWideDesktop ? '48px' : '40px',
-                backgroundColor: 'transparent',
-              }}>
-                <div style={{
-                  display: 'flex',
-                  gap: isMobile ? '16px' : '32px',
-                  alignItems: 'flex-start',
-                }}>
-                  <div style={{
-                    fontSize: isWideDesktop ? '15px' : '13px',
-                    fontWeight: 700,
-                    color: 'rgba(28, 25, 23, 0.35)',
-                    letterSpacing: '0.08em',
-                    flexShrink: 0,
-                    paddingTop: '6px',
-                  }}>
-                    04
-                  </div>
-                  <div style={{ flex: 1, minWidth: 0 }}>
-                    <div style={{
-                      fontSize: '11px',
-                      fontWeight: 700,
-                      textTransform: 'uppercase',
-                      letterSpacing: '0.08em',
-                      color: 'rgba(28, 25, 23, 0.5)',
-                      marginBottom: '6px',
-                    }}>
-                      AI-Native · 0→1 · In Stealth
-                    </div>
-                    <h3 style={{
-                      fontFamily: 'var(--font-heading), serif',
-                      fontSize: isMobile ? '22px' : isWideDesktop ? '30px' : '26px',
-                      fontWeight: 700,
-                      color: 'rgba(28, 25, 23, 0.65)',
-                      letterSpacing: '-0.01em',
-                      margin: 0,
-                      marginBottom: isMobile ? '12px' : '16px',
-                    }}>
-                      Coming soon
-                    </h3>
-                    <p style={{
-                      fontSize: isMobile ? '15px' : '16px',
-                      lineHeight: '1.6',
-                      color: 'rgba(28, 25, 23, 0.55)',
-                      maxWidth: '640px',
-                      margin: 0,
-                    }}>
-                      Since 2025, I've been building an AI-forward marketplace in stealth — prototyping, building, and shipping daily with AI agents and LLMs. More here once it ships.
-                    </p>
-                  </div>
-                </div>
-              </article>
-              </Reveal>
             </div>
           </section>
 
