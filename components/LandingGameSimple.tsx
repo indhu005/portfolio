@@ -720,6 +720,7 @@ export default function LandingGameSimple({ edgeLeft = 20, edgeRight = 20, edgeT
           <div style={{
             fontSize: isMobile ? '13px' : '14px',
             color: '#6B7280',
+            whiteSpace: 'nowrap',
           }}>
             {isMobile ? 'Tap' : 'Click'} to plant trees.
           </div>
