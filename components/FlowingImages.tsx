@@ -38,7 +38,7 @@ export default function FlowingImages({
   const eagerAll = frameMs < 600
 
   return (
-    <div style={{ position: 'absolute', inset: 0, overflow: 'hidden' }}>
+    <div style={{ position: 'absolute', inset: 0, overflow: 'hidden', background: '#FFFFFF' }}>
       {images.map((src, i) => {
         const isCurrent = i === idx
         const isPrev = i === prev
@@ -57,9 +57,11 @@ export default function FlowingImages({
               width: '100%',
               height: '100%',
               objectFit: fit,
-              // Current fades in on top; previous stays opaque beneath until
-              // covered; everything else is hidden behind them.
-              opacity: isCurrent || isPrev ? 1 : 0,
+              // Current fades in on top; previous stays opaque beneath only when
+              // crossfading (so the blend never dips through the background). With
+              // a hard cut (crossfadeMs 0) the underlay is hidden, so contain-fit
+              // letterbox shows the white card bg instead of the prior frame.
+              opacity: isCurrent || (isPrev && crossfadeMs > 0) ? 1 : 0,
               zIndex: isCurrent ? 2 : isPrev ? 1 : 0,
               transition: isCurrent ? `opacity ${crossfadeMs}ms ease` : 'none',
               willChange: 'opacity',
