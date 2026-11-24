@@ -24,11 +24,11 @@ const caseStudies = {
       tradeoff: 'Conceded a native app to protect runway; made mobile web good enough that it barely cost users anything.'
     },
     tldr: {
-      role: 'Founding Product Designer',
+      role: 'Founding Product Manager / Builder',
       team: '5 (2 engineers, 1 PM, me as product designer), plus 2 designers I hired and trained near the end — a brand designer for email, and my product-design successor (left after 2 months when the founders paused product to focus on fundraising)',
       timeline: '2 years (2021–2022)',
       impact: '0→20K MAUs | $1.5M raised | later went YC F24',
-      skills: 'Product strategy · Design systems · User research · PRDs · Chrome extension · Credit economics',
+      skills: 'Product strategy · Roadmapping · Design systems · User research · PRDs · Chrome extension · Credit economics',
       tools: 'Figma · FigJam · Adobe After Effects · FullStory · Mixpanel · Jira · CSS · React',
       decisionAuthority: 'Owned: every shipped surface, the credit-cap mechanic, the product-card system, hiring the two designers who followed me. Founders owned vision and fundraising — I translated it into what shipped.'
     },
@@ -40,7 +40,7 @@ const caseStudies = {
 
 <p><span style="font-weight: 600;">Product</span><br/>A credit-based marketplace for flexible access to 150+ premium tools — Grammarly, Adobe, Crunchbase — without subscriptions. ClassPass for digital tools.</p>
 
-<p style="margin-top: 28px;"><span style="font-weight: 600;">My role.</span> Founding, and for most of Keye's life only, designer — designed every surface, wrote PRDs, ran research, hired the two designers who replaced me.</p>
+<p style="margin-top: 28px;"><span style="font-weight: 600;">My role.</span> Founding, and for most of Keye's life only, product owner — owned the roadmap and PRDs, ran research, hired and directed the two designers who built what I'd scoped.</p>
 
 <p style="margin-top: 28px;"><span style="font-weight: 600;">Timeline.</span> 2 years on Keye (Jan 2021–Dec 2022): beta → credit system → marketplace → seed funding. What happened after I left is in the Pivot, below.</p>
 
@@ -518,20 +518,20 @@ const caseStudies = {
   lat: {
     title: 'LAT',
     subtitle: 'Lifecycle Assessment Tracker',
-    description: 'Designing an AI-assisted maintenance system people could trust with $180K decisions',
+    description: 'Owning product strategy for an AI-assisted maintenance system people could trust with $180K decisions',
     heroVideo: '/videos/lat/LAT%20AI%20Overrides%20-%20Laptop.mp4',
     heroVideoPlain: true,
     brief: {
-      context: 'Lead designer for an ML platform helping a university manage 60–80+ buildings across three campuses, delivered through a consulting engagement at Amento.',
+      context: 'Product manager for an ML platform helping a university manage 60–80+ buildings across three campuses, delivered through a consulting engagement at Amento.',
       constraint: 'Legacy CMMS/ERP couldn\'t be disrupted, data had hard integrity boundaries, and capital decisions were political.',
       decision: 'Shipped as a modular API layer with human-in-the-loop AI: approval gates, visible reasoning, logged overrides.',
       tradeoff: 'Chose human review over full automation, even though it was slower than letting the model act on its own — the boiler incident validated staying cautious.'
     },
     tldr: {
-      role: 'Lead Product Designer (60% design, 40% strategy), at Amento',
-      team: '1 PM, 1 designer (me), 2 external engineers, client stakeholders',
+      role: 'Lead Product Manager (60% strategy, 40% design), at Amento',
+      team: '1 designer (me), 2 external engineers, client stakeholders',
       timeline: '12 months (Jun 2023–May 2024)',
-      impact: '95% pilot → 96% rollout adoption',
+      impact: '1,000-person pilot → 30,000 users | 96% weekly active use | 61%→19% override rate',
       skills: 'Enterprise UX · Trust-centered AI design · Stakeholder alignment · Field research · API-first architecture',
       decisionAuthority: 'Owned: workflow design, the human-in-the-loop approval model, and the alert-framing decisions that rebuilt manager trust in the system (see Decision 03). Client stakeholders owned data-integrity and political constraints I had to design within.'
     },
@@ -578,12 +578,12 @@ const caseStudies = {
 
 <h4 class="case-study-subhead" id="impact">Impact</h4>
 
-<p style="font-size: 14px; color: #6B7280; margin-bottom: 24px;">Pilot cohort: 43 people (18 technicians, 15 operations/asset managers, 7 accounting, 3 executives), tracked over 12 weeks — the test group for a tool that rolled out to ~4,000 technicians and facilities-adjacent staff with system access across every building and campus.</p>
+<p style="font-size: 14px; color: #6B7280; margin-bottom: 24px;">Pilot cohort: ~1,000 people across technician, operations/asset manager, accounting, and executive roles, tracked over 12 weeks — the test group for a tool that rolled out to 30,000 technicians and facilities-adjacent staff with system access across every building and campus.</p>
 
 <div class="metrics-grid metrics-grid--dark" style="margin-bottom: 20px;">
   <div class="metrics-cell">
     <div class="metrics-num">96%</div>
-    <div class="metrics-label">Weekly active use across the full ~4,000-person rollout by week 12 — up from 95% in the 43-person pilot that preceded it, clearing the university IT department's 70% threshold for keeping a tool live</div>
+    <div class="metrics-label">Weekly active use across the full 30,000-person rollout by week 12 — up from 95% in the ~1,000-person pilot that preceded it, clearing the university IT department's 70% threshold for keeping a tool live</div>
     <div style="font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 10px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #4ADE80; margin-top: 10px;">Observed</div>
   </div>
   <div class="metrics-cell">
@@ -592,7 +592,7 @@ const caseStudies = {
     <div style="font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 10px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #4ADE80; margin-top: 10px;">Observed</div>
   </div>
   <div class="metrics-cell">
-    <div class="metrics-num">25%</div>
+    <div class="metrics-num">35%</div>
     <div class="metrics-label">Fewer unexpected maintenance costs, month-4 trend projected forward a year</div>
     <div style="font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 10px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #B45309; margin-top: 10px;">Projected</div>
   </div>
@@ -618,7 +618,7 @@ const caseStudies = {
   <button type="button" class="cs-video-toggle" aria-label="Pause video" onclick="var v=this.previousElementSibling;if(v.paused){v.play();this.textContent='⏸';this.setAttribute('aria-label','Pause video');}else{v.pause();this.textContent='▶';this.setAttribute('aria-label','Play video');}">⏸</button>
 </div>
 
-<p style="font-size: 14px; color: #6B7280;">Discovery research (separate from the 43-person pilot that came later): 7–8 technicians and vendors, 4 project managers, 2 accountants, 5–6 executives, and the Director of Facilities — the university's primary sponsor.</p>
+<p style="font-size: 14px; color: #6B7280;">Discovery research (separate from the ~1,000-person pilot that came later): 7–8 technicians and vendors, 4 project managers, 2 accountants, 5–6 executives, and the Director of Facilities — the university's primary sponsor.</p>
 
 <div class="pull-quote" style="margin-top: 48px;">The institution had expertise. It lacked a unified source of truth.</div>
 
@@ -913,7 +913,7 @@ const caseStudies = {
 
             <div style={{ backgroundColor: '#FFF9F5', padding: '28px', borderRadius: '0px', borderLeft: '3px solid #FF7C5F', marginTop: '8px', marginBottom: '40px' }}>
               <div className="cs-card-title cs-card-title--md">The model keeps learning</div>
-              <div style={{ fontSize: '15px', color: '#57534E', lineHeight: 1.7 }}>By month four, stakeholders saw urgent maintenance requests already falling and projected that trend forward a year: <span style={{ fontWeight: 600, color: '#44403C' }}>25% fewer unexpected maintenance costs</span> <span style={{ fontFamily: 'ui-monospace, SFMono-Regular, Menlo, monospace', fontSize: '10px', fontWeight: 700, letterSpacing: '0.06em', textTransform: 'uppercase', color: '#B45309' }}>Projected</span>.</div>
+              <div style={{ fontSize: '15px', color: '#57534E', lineHeight: 1.7 }}>By month four, stakeholders saw urgent maintenance requests already falling and projected that trend forward a year: <span style={{ fontWeight: 600, color: '#44403C' }}>35% fewer unexpected maintenance costs</span> <span style={{ fontFamily: 'ui-monospace, SFMono-Regular, Menlo, monospace', fontSize: '10px', fontWeight: 700, letterSpacing: '0.06em', textTransform: 'uppercase', color: '#B45309' }}>Projected</span>.</div>
               <div style={{ fontSize: '13px', color: '#78716C', marginTop: '10px' }}>Weather drives a lot of this institution&apos;s maintenance load — winter failures spike independent of asset condition — already priced into CAPEX planning, so the 4-month baseline isn&apos;t assumed to hold flat across a year.</div>
             </div>
 
@@ -946,7 +946,7 @@ const caseStudies = {
       tradeoff: '17/19 rejected platform-embedded — went standalone instead.'
     },
     tldr: {
-      role: 'Sole Designer (Graduate Capstone)',
+      role: 'Sole Product Owner (Graduate Capstone)',
       team: 'Solo (post-February 2024) · Research collaboration with TrueMedia.org',
       timeline: '12 months (Jan–Dec 2024)',
       impact: '~1,800 testers at Misinfo Day | 2,000-respondent survey | Concept validation',
@@ -1243,7 +1243,7 @@ const caseStudies = {
         id: 'reflection',
         title: '09 — Reflection',
         showPrototypeCta: true,
-        headline: 'What I got wrong: I designed a good product for a problem design alone couldn\'t solve',
+        headline: 'What I got wrong: I built a good product for a problem design alone couldn\'t solve',
         content: `<p>TrueMedia was research-grounded and mission-complete, yet closed on economics rather than design. The answer — integration into trusted surfaces — never had a business model.</p>
 
 <p style="margin-top: 28px;"><span style="font-weight: 600;">What changed.</span> Feedback pushed the quiz toward teaching why, and badges toward layered reveals — signal first, reasoning a tap away. By 2026, AI solves the staffing; the ecosystem question remains.</p>
@@ -1307,11 +1307,11 @@ export async function generateMetadata({
 
   const metadataMap: Record<string, { description: string; keywords: string[] }> = {
     keye: {
-      description: 'Founding Product Designer at Keye — from three static screens to a subscription marketplace that later went YC F24. Built credit-based marketplace, Chrome extension, and design system. 0→20K MAUs, $1.5M raised.',
+      description: 'Founding Product Manager / Builder at Keye — from three static screens to a subscription marketplace that later went YC F24. Built credit-based marketplace, Chrome extension, and design system. 0→20K MAUs, $1.5M raised.',
       keywords: ['YC startup designer', 'founding designer', 'startup product design', 'credit marketplace', 'Chrome extension design', 'design systems', 'subscription marketplace', 'SaaS design']
     },
     lat: {
-      description: 'Lead Product Designer for LAT Platform — ML-driven lifecycle assessment for university campus maintenance. 96% weekly active use, 50%→92% data accuracy, 25% projected cost reduction.',
+      description: 'Lead Product Manager for LAT Platform — ML-driven lifecycle assessment for university campus maintenance. 96% weekly active use across 30,000 users, 61%→19% override rate, 35% projected cost reduction.',
       keywords: ['enterprise UX', 'trust-centered AI design', 'AI product design', 'university technology', 'predictive maintenance', 'lifecycle assessment', 'B2B design', 'decision intelligence']
     },
     'misinformation-center': {

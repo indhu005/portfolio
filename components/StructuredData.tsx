@@ -6,7 +6,7 @@ export function PersonStructuredData() {
     '@type': 'Person',
     name: 'Indhu Venkatachalam',
     alternateName: 'Indhu V',
-    jobTitle: 'Senior Product Designer',
+    jobTitle: 'Product Manager / Builder',
     url: 'https://indhu.design',
     email: 'indhu.vasven@gmail.com',
     address: {
@@ -51,9 +51,9 @@ export function PortfolioStructuredData() {
   const structuredData = {
     '@context': 'https://schema.org',
     '@type': 'WebSite',
-    name: 'Indhu Venkatachalam — Product Designer',
+    name: 'Indhu Venkatachalam — Product Manager / Builder',
     url: 'https://indhu.design',
-    description: 'Indhu Venkatachalam, a product designer in Seattle specializing in AI/ML products, design systems, and user research.',
+    description: 'Indhu Venkatachalam, a product manager / builder in Seattle specializing in AI/ML products, design systems, and user research.',
     author: {
       '@type': 'Person',
       name: 'Indhu Venkatachalam'
@@ -62,7 +62,7 @@ export function PortfolioStructuredData() {
       '@type': 'Person',
       name: 'Indhu Venkatachalam',
       alternateName: 'Indhu V',
-      jobTitle: 'Senior Product Designer'
+      jobTitle: 'Product Manager / Builder'
     }
   }
 

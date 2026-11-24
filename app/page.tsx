@@ -178,26 +178,12 @@ export default function Home() {
             backgroundColor: '#FAF8F3',
           }}
         >
-          {/* Shared centered wrapper so intro, game, and Selected Work share the same left edge */}
+          {/* Shared centered wrapper so intro and Selected Work share the same left edge */}
           <div style={{
             maxWidth: isWideDesktop ? '1100px' : '1000px',
             marginLeft: 'auto',
             marginRight: 'auto',
           }}>
-          {/* Landing Game — now sits above the intro text, so it's the first
-              thing visible; same maxWidth as the wrapper so the grid's left
-              edge still lines up with the rest of the page. */}
-          <div style={{
-            marginTop: isMobile ? '20px' : isWideDesktop ? '16px' : '12px',
-            marginBottom: isMobile ? '20px' : isWideDesktop ? '36px' : '28px',
-          }}>
-            <LandingGameSimple
-              edgeLeft={isMobile ? 20 : isTablet ? 32 : isWideDesktop ? 56 : 36}
-              edgeRight={isMobile ? 20 : isTablet ? 32 : isWideDesktop ? 64 : 40}
-              edgeTop={0}
-            />
-          </div>
-
           {/* Home page content */}
           <main style={{
             // No card background here — only the title line below keeps one.
@@ -254,7 +240,7 @@ export default function Home() {
               ...revealStyle(60),
             }}>
               {[
-                { label: 'Senior Product Designer', variant: 'solid', pin: false },
+                { label: 'Product Manager / Builder', variant: 'solid', pin: false },
                 { label: 'Seattle', variant: 'accent', pin: true },
                 { label: '0→1, AI/ML & Trustworthy Systems', variant: 'solid', pin: false },
               ].map((item) => (
@@ -302,12 +288,12 @@ export default function Home() {
                 ...revealStyle(90),
               }}>
                 {heroNameTyped && (
-                  <Typewriter text="Designing the boundary between what AI can do and where people stay in control." startDelayMs={150} showCursor={false} />
+                  <Typewriter text="Deciding where AI should act and where people stay in control." startDelayMs={150} showCursor={false} />
                 )}
               </p>
 
               <p style={{ marginBottom: isMobile ? '12px' : '14px', ...revealStyle(120) }}>
-                8 years: Gensler, founding Keye, senior design on LAT. A marketplace that went YC. An enterprise platform at 96% adoption inside a politically sensitive institution.
+                8 years: Gensler, founding Keye, product leadership on LAT. A marketplace that went YC. An enterprise platform at 96% adoption inside a politically sensitive institution.
               </p>
 
               <p style={{ fontSize: isMobile ? '12.5px' : '13px', color: 'rgba(28, 25, 23, 0.5)', marginBottom: isMobile ? '4px' : '14px', ...revealStyle(140) }}>
@@ -617,6 +603,20 @@ export default function Home() {
 
             </div>
           </section>
+
+          {/* Landing Game — now sits after the Selected Work section; same
+              maxWidth as the wrapper so the grid's left edge still lines up
+              with the rest of the page. */}
+          <div style={{
+            marginTop: isMobile ? '40px' : isWideDesktop ? '64px' : '56px',
+            marginBottom: isMobile ? '20px' : isWideDesktop ? '36px' : '28px',
+          }}>
+            <LandingGameSimple
+              edgeLeft={isMobile ? 20 : isTablet ? 32 : isWideDesktop ? 56 : 36}
+              edgeRight={isMobile ? 20 : isTablet ? 32 : isWideDesktop ? 64 : 40}
+              edgeTop={0}
+            />
+          </div>
 
           </div>
 

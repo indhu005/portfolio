@@ -31,25 +31,25 @@ const inter = Inter({
 export const metadata: Metadata = {
   metadataBase: new URL('https://indhu.design'),
   title: {
-    default: 'Indhu Venkatachalam — Senior Product Designer, AI Products & 0→1 | Seattle',
+    default: 'Indhu Venkatachalam — Product Manager / Builder, AI Products & 0→1 | Seattle',
     template: '%s | Indhu Venkatachalam'
   },
-  description: 'Indhu Venkatachalam is a senior product designer in Seattle — 8 years across mediums, 5+ in product — taking 0→1 AI and enterprise products to launch. Founding designer at Keye, a 0→1 marketplace that later went YC; senior product design on LAT, an enterprise AI platform for university operations.',
-  keywords: ['Indhu Venkatachalam', 'Indhu V', 'senior product designer', '0 to 1 product designer', 'founding designer', 'AI product designer', 'enterprise SaaS design', 'Seattle product designer', 'San Francisco product designer', 'AI/ML product design', 'design systems', 'enterprise UX', 'YC designer'],
+  description: 'Indhu Venkatachalam is a product manager / builder in Seattle — 8 years across mediums, 5+ in product — taking 0→1 AI and enterprise products to launch. Founding designer at Keye, a 0→1 marketplace that later went YC; senior product design on LAT, an enterprise AI platform for university operations.',
+  keywords: ['Indhu Venkatachalam', 'Indhu V', 'product manager', 'product builder', '0 to 1 product manager', 'founding designer', 'AI product manager', 'enterprise SaaS design', 'Seattle product manager', 'San Francisco product manager', 'AI/ML product design', 'design systems', 'enterprise UX', 'YC designer'],
   authors: [{ name: 'Indhu Venkatachalam', url: 'https://indhu.design' }],
   creator: 'Indhu Venkatachalam',
   openGraph: {
     type: 'website',
     locale: 'en_US',
     url: 'https://indhu.design',
-    siteName: 'Indhu Venkatachalam — Senior Product Designer',
-    title: 'Indhu Venkatachalam — Senior Product Designer, AI Products & 0→1',
-    description: 'Senior product designer in Seattle — 8 years across mediums, 5+ in product — taking 0→1 AI and enterprise products to launch. Founding designer at Keye, a 0→1 marketplace that later went YC; senior product design on LAT, an enterprise AI platform.',
+    siteName: 'Indhu Venkatachalam — Product Manager / Builder',
+    title: 'Indhu Venkatachalam — Product Manager / Builder, AI Products & 0→1',
+    description: 'Product manager / builder in Seattle — 8 years across mediums, 5+ in product — taking 0→1 AI and enterprise products to launch. Founding designer at Keye, a 0→1 marketplace that later went YC; senior product design on LAT, an enterprise AI platform.',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Indhu Venkatachalam — Senior Product Designer, AI Products & 0→1',
-    description: 'Senior product designer in Seattle — 8 years across mediums, 5+ in product — taking 0→1 AI and enterprise products to launch. Founding designer at Keye, a 0→1 marketplace that later went YC; senior product design on LAT, an enterprise AI platform.',
+    title: 'Indhu Venkatachalam — Product Manager / Builder, AI Products & 0→1',
+    description: 'Product manager / builder in Seattle — 8 years across mediums, 5+ in product — taking 0→1 AI and enterprise products to launch. Founding designer at Keye, a 0→1 marketplace that later went YC; senior product design on LAT, an enterprise AI platform.',
     creator: '@indhu_design'
   },
   robots: {
