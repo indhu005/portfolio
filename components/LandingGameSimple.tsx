@@ -28,7 +28,7 @@ interface Smoke {
 }
 
 const GRID_ROWS = 4
-const GRID_COLS_DESKTOP = 9
+const GRID_COLS_DESKTOP = 7
 const GRID_COLS_TABLET = 8
 const GRID_COLS_MOBILE = 6
 const ROUND_DURATION = 10 // 10 seconds
@@ -315,7 +315,7 @@ export default function LandingGameSimple({ edgeLeft = 20, edgeRight = 20, edgeT
     if (hintStage !== 'clicking') return
     const doneTimer = setTimeout(() => {
       const cols = isMobile ? GRID_COLS_MOBILE : isTablet ? GRID_COLS_TABLET : GRID_COLS_DESKTOP
-      handleCellClick(1, Math.min(2, cols - 1))
+      handleCellClick(1, Math.min(2, cols - 1), true)
       setHintStage('done')
     }, 180)
     return () => clearTimeout(doneTimer)
@@ -576,7 +576,7 @@ export default function LandingGameSimple({ edgeLeft = 20, edgeRight = 20, edgeT
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
-        backgroundColor: '#FAF8F3',
+        backgroundColor: '#FFFFFF',
       }}>
         Loading...
       </div>
@@ -588,12 +588,15 @@ export default function LandingGameSimple({ edgeLeft = 20, edgeRight = 20, edgeT
   const cellSize = isMobile ? 48 : isTablet ? 64 : (typeof window !== 'undefined' && window.innerWidth >= 1800 ? 120 : 100)
   const gap = isMobile ? 8 : isTablet ? 12 : 16
 
-  const handleCellClick = (row: number, col: number) => {
+  const handleCellClick = (row: number, col: number, isHint = false) => {
     if (!gameActive) return
 
     const cell = grid[row]?.[col]
     if (cell && cell.state === 'empty') {
-      setHasInteracted(true) // Mark that user has interacted
+      // The auto-hint demo plants a sapling to show how it works, but it must
+      // NOT count as real interaction — otherwise the end screen fires on its
+      // own without anyone having played.
+      if (!isHint) setHasInteracted(true)
       setPlanted(prev => prev + 1)
       const treeVariant = Math.floor(Math.random() * 5)
       setGrid(prevGrid => {
@@ -626,13 +629,11 @@ export default function LandingGameSimple({ edgeLeft = 20, edgeRight = 20, edgeT
       // little above the instruction card instead of getting clipped at the
       // same boundary that keeps everything else (trucks, decorations) tidy.
       overflow: gameEnded ? 'visible' : 'hidden',
-      backgroundColor: '#FAF8F3',
+      backgroundColor: '#FFFFFF',
       borderRadius: '0',
       paddingTop: isMobile ? `${16 + edgeTop}px` : `${8 + edgeTop}px`,
-      paddingRight: isMobile ? '36px' : '40px',
-      // No left padding on desktop (beyond the 20px bleed compensation): the grid still
-      // lands flush with "Hi, I'm Indhu" below, which shares the same parent maxWidth/margin.
-      paddingLeft: isMobile || isTablet ? (isMobile ? '36px' : '40px') : '20px',
+      paddingRight: isMobile ? '12px' : '8px',
+      paddingLeft: isMobile ? '12px' : '8px',
       paddingBottom: '20px',
       display: 'flex',
       flexDirection: 'column',
@@ -656,10 +657,8 @@ export default function LandingGameSimple({ edgeLeft = 20, edgeRight = 20, edgeT
         maxWidth: isMobile ? 'calc(100% - 32px)' : '620px',
         zIndex: 50,
         fontFamily: 'DM Sans, sans-serif',
-        backgroundColor: 'rgba(120, 118, 112, 0.18)',
-        backdropFilter: 'blur(14px)',
-        WebkitBackdropFilter: 'blur(14px)',
-        border: '1px solid rgba(28, 25, 23, 0.14)',
+        backgroundColor: '#FFFFFF',
+        border: '1px solid rgba(28, 25, 23, 0.1)',
         borderRadius: '16px',
         boxShadow: '0 12px 32px rgba(28, 25, 23, 0.12)',
         padding: isMobile ? '16px 18px 28px 18px' : '20px 28px 32px 28px',
@@ -1120,13 +1119,10 @@ export default function LandingGameSimple({ edgeLeft = 20, edgeRight = 20, edgeT
         </div>
       )}
 
-      {/* End game modal */}
+      {/* End game modal — no dark scrim; the board is softly blurred behind the
+          round end card so the trees/buildings read as a frosted-glass backdrop. */}
       {gameEnded && (
         <>
-          {/* Dark overlay — extends a little above the instruction card's own
-              top edge (negative, allowed to bleed since the container relaxes
-              its overflow to visible while gameEnded) so the card doesn't look
-              like it's poking out above the grey area. */}
           <div
             style={{
               position: 'absolute',
@@ -1134,13 +1130,15 @@ export default function LandingGameSimple({ edgeLeft = 20, edgeRight = 20, edgeT
               left: 0,
               right: 0,
               bottom: 0,
-              backgroundColor: 'rgba(0, 0, 0, 0.7)',
-              borderRadius: '0',
+              backgroundColor: 'rgba(255, 255, 255, 0.35)',
+              backdropFilter: 'blur(7px)',
+              WebkitBackdropFilter: 'blur(7px)',
               zIndex: 100,
             }}
           />
 
-          {/* End card */}
+          {/* End card — a circle on desktop (round, like a coin/badge), falls back
+              to a rounded rectangle on mobile where a circle would crowd the text. */}
           <div
             style={{
               position: 'absolute',
@@ -1149,14 +1147,20 @@ export default function LandingGameSimple({ edgeLeft = 20, edgeRight = 20, edgeT
               right: isMobile ? '16px' : 'auto',
               transform: isMobile ? 'translateY(-50%)' : 'translate(-50%, -50%)',
               backgroundColor: '#1C1917',
-              borderRadius: '28px',
-              padding: isMobile ? '32px 24px' : '40px 48px',
+              borderRadius: isMobile ? '28px' : '50%',
+              width: isMobile ? 'auto' : '460px',
+              height: isMobile ? 'auto' : '460px',
+              padding: isMobile ? '32px 24px' : '48px',
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+              justifyContent: 'center',
               textAlign: 'center',
               zIndex: 101,
               fontFamily: 'DM Sans, sans-serif',
               boxShadow: '0 8px 32px rgba(0, 0, 0, 0.4)',
-              minWidth: isMobile ? 'auto' : '360px',
-              maxWidth: isMobile ? '100%' : 'auto',
+              minWidth: isMobile ? 'auto' : undefined,
+              maxWidth: isMobile ? '100%' : undefined,
             }}
           >
             {/* Stats line */}

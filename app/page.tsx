@@ -1,9 +1,11 @@
-'use client'
+﻿'use client'
 import TopBar from '@/components/TopBar'
 import LandingGameSimple from '@/components/LandingGameSimple'
+import HeroImageTrail from '@/components/HeroImageTrail'
+import FlowingImages from '@/components/FlowingImages'
+import { flowingCards, stillCards } from '@/lib/extraCards'
 import Typewriter from '@/components/Typewriter'
 import { Reveal } from '@/components/ScrollReveal'
-import AgenticPipelineConsole from '@/components/AgenticPipelineConsole'
 import { useRouter } from 'next/navigation'
 import { useState, useEffect, type CSSProperties } from 'react'
 
@@ -25,75 +27,39 @@ const useMediaQuery = (query: string) => {
   return mounted ? matches : false
 }
 
-// Compact pill-shaped label above each case study video — title, category, year, and
-// shipped status condensed into one line instead of a full header block.
-const InfoPill = ({ title, meta, year, badge, isMobile }: { title: string; meta: string; year: string; badge?: string; isMobile: boolean }) => (
-  isMobile ? (
-    // Phone: two compact lines in a rounded tag instead of a stretched pill — a
-    // single-line pill with this much text wraps into a tall blob at narrow widths.
-    <div style={{
-      display: 'inline-flex',
-      flexDirection: 'column',
-      alignItems: 'flex-start',
-      gap: '2px',
-      backgroundColor: 'rgba(120, 118, 112, 0.18)',
-      backdropFilter: 'blur(14px)',
-      WebkitBackdropFilter: 'blur(14px)',
-      border: '1px solid rgba(28, 25, 23, 0.14)',
-      borderRadius: '12px',
-      padding: '8px 12px',
-      maxWidth: '100%',
-    }}>
-      <span style={{ fontFamily: 'var(--font-heading), serif', fontWeight: 700, fontSize: '13px', color: '#1C1917' }}>
+// Plain-text label below each case study video — title, category, year, and
+// status broken into a heading line plus a row of pill chips underneath.
+const InfoPill = ({ title, meta, year, badge, isMobile, dark = false }: { title: string; meta: string; year: string; badge?: string; isMobile: boolean; dark?: boolean }) => {
+  const headingColor = dark ? '#FFFFFF' : '#1C1917'
+  const pillBase: CSSProperties = {
+    display: 'inline-flex',
+    alignItems: 'center',
+    fontSize: isMobile ? '10.5px' : '11.5px',
+    fontWeight: 600,
+    color: dark ? 'rgba(255, 255, 255, 0.82)' : 'rgba(28, 25, 23, 0.7)',
+    backgroundColor: dark ? 'rgba(255, 255, 255, 0.14)' : 'rgba(28, 25, 23, 0.06)',
+    border: dark ? '1px solid rgba(255, 255, 255, 0.22)' : '1px solid rgba(28, 25, 23, 0.1)',
+    borderRadius: '999px',
+    padding: '3px 10px',
+    whiteSpace: 'nowrap',
+  }
+  return (
+    <div style={{ display: 'flex', flexDirection: 'column', gap: isMobile ? '8px' : '10px' }}>
+      <span style={{ fontFamily: 'var(--font-heading), serif', fontWeight: 700, fontSize: isMobile ? '16px' : '19px', color: headingColor }}>
         {title}
       </span>
-      <span style={{ display: 'flex', alignItems: 'center', gap: '6px', flexWrap: 'wrap', fontSize: '10.5px', fontWeight: 600, color: 'rgba(28, 25, 23, 0.6)' }}>
-        <span>{meta}</span>
-        <span style={{ color: 'rgba(28, 25, 23, 0.3)' }}>·</span>
-        <span>{year}</span>
+      <div style={{ display: 'flex', alignItems: 'center', gap: '6px', flexWrap: 'wrap' }}>
+        <span style={pillBase}>{meta}</span>
+        <span style={pillBase}>{year}</span>
         {badge && (
-          <>
-            <span style={{ color: 'rgba(28, 25, 23, 0.3)' }}>·</span>
-            <span style={{ fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.04em', color: '#1C1917' }}>
-              {badge}
-            </span>
-          </>
-        )}
-      </span>
-    </div>
-  ) : (
-    <div style={{
-      display: 'inline-flex',
-      alignItems: 'center',
-      gap: '10px',
-      flexWrap: 'wrap',
-      justifyContent: 'center',
-      backgroundColor: 'rgba(120, 118, 112, 0.18)',
-      backdropFilter: 'blur(14px)',
-      WebkitBackdropFilter: 'blur(14px)',
-      border: '1px solid rgba(28, 25, 23, 0.14)',
-      borderRadius: '999px',
-      padding: '6px 18px',
-      maxWidth: '100%',
-    }}>
-      <span style={{ fontFamily: 'var(--font-heading), serif', fontWeight: 700, fontSize: '13px', color: '#1C1917' }}>
-        {title}
-      </span>
-      <span style={{ color: 'rgba(28, 25, 23, 0.35)' }}>·</span>
-      <span style={{ fontSize: '12px', fontWeight: 600, color: 'rgba(28, 25, 23, 0.65)' }}>{meta}</span>
-      <span style={{ color: 'rgba(28, 25, 23, 0.35)' }}>·</span>
-      <span style={{ fontSize: '13px', fontWeight: 600, color: 'rgba(28, 25, 23, 0.65)' }}>{year}</span>
-      {badge && (
-        <>
-          <span style={{ color: 'rgba(28, 25, 23, 0.35)' }}>·</span>
-          <span style={{ fontSize: '11px', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.04em', color: '#1C1917' }}>
+          <span style={{ ...pillBase, color: headingColor, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.04em' }}>
             {badge}
           </span>
-        </>
-      )}
+        )}
+      </div>
     </div>
   )
-)
+}
 
 export default function Home() {
   const router = useRouter()
@@ -137,7 +103,7 @@ export default function Home() {
     <div style={{
       display: 'flex',
       height: '100vh',
-      backgroundColor: '#FAF8F3',
+      backgroundColor: '#FFFFFF',
       overflow: 'hidden',
       width: '100vw',
     }}>
@@ -172,134 +138,119 @@ export default function Home() {
           style={{
             flex: 1,
             overflowY: 'auto',
-            padding: isMobile ? '72px 20px 100px 20px' : isTablet ? '72px 32px 110px 32px' : isWideDesktop ? '80px 64px 120px 56px' : '72px 40px 110px 36px',
+            padding: isMobile ? '150px 20px 100px 20px' : isTablet ? '170px 32px 110px 32px' : isWideDesktop ? '150px 64px 120px 56px' : '140px 40px 110px 36px',
             minWidth: 0,
             scrollBehavior: 'smooth',
-            backgroundColor: '#FAF8F3',
+            backgroundColor: '#FFFFFF',
           }}
         >
           {/* Shared centered wrapper so intro and Selected Work share the same left edge */}
           <div style={{
-            maxWidth: isWideDesktop ? '1100px' : '1000px',
+            maxWidth: isWideDesktop ? '1800px' : '1500px',
             marginLeft: 'auto',
             marginRight: 'auto',
           }}>
           {/* Home page content */}
           <main style={{
-            // No card background here — only the title line below keeps one.
-            // Same maxWidth as the shared wrapper (and the Selected Work section
-            // below) so edges line up with the work section instead of leaving
-            // a dead gutter on the right at normal desktop widths.
+            // Hero is a two-column row on desktop: intro copy on the left, the
+            // tree game filling the space on the right (which used to sit empty).
+            // Stacks to a single column on mobile/tablet.
             position: 'relative',
-            overflow: 'hidden',
-            maxWidth: isWideDesktop ? '1100px' : '1000px',
+            overflow: 'visible',
+            width: '100%',
             marginTop: '0px',
             marginLeft: '0',
             marginRight: 'auto',
             textAlign: 'left',
             backgroundColor: 'transparent',
             padding: isMobile ? '8px 4px' : '12px 4px',
+            display: 'flex',
+            flexDirection: isMobile || isTablet ? 'column' : 'row',
+            alignItems: isMobile || isTablet ? 'stretch' : 'flex-start',
+            gap: isMobile ? '40px' : isTablet ? '48px' : '32px',
           }}>
             {/* Ambient drifting blob behind the hero copy — same low-opacity/blurred
                 treatment as the case-studies section blob, just a different hue/phase
                 so the hero doesn't read as flat before you scroll to anything else. */}
             <div aria-hidden="true" className="cs-section-blob cs-section-blob--blue" />
 
-            <div style={{ position: 'relative', zIndex: 1 }}>
-            <h1 style={{
-              fontFamily: 'var(--font-heading), serif',
-              fontSize: isMobile ? '32px' : isTablet ? '40px' : isWideDesktop ? '54px' : '46px',
-              fontWeight: 700,
-              lineHeight: '1.08',
-              color: '#1C1917',
-              marginTop: '0',
-              marginBottom: isMobile ? '16px' : '20px',
-              letterSpacing: '-0.02em',
-              ...revealStyle(0),
-            }}>
-              <Typewriter text="Hi, I'm Indhu" startDelayMs={150} onDone={() => setHeroNameTyped(true)} />
-              <span style={{
-                position: 'absolute',
-                width: '1px',
-                height: '1px',
-                padding: 0,
-                margin: '-1px',
-                overflow: 'hidden',
-                clip: 'rect(0, 0, 0, 0)',
-                whiteSpace: 'nowrap',
-                border: 0,
-              }}> Venkatachalam</span>
-            </h1>
+            {/* Cursor image-trail — "photos I clicked" spawn + fade as the pointer
+                moves across the hero. */}
+            <HeroImageTrail />
 
             <div style={{
-              display: 'flex',
-              flexWrap: 'wrap',
-              alignItems: 'center',
-              gap: isMobile ? '8px' : '10px',
-              marginBottom: isMobile ? '32px' : isWideDesktop ? '56px' : '48px',
-              ...revealStyle(60),
+              position: 'relative',
+              zIndex: 1,
+              flex: isMobile || isTablet ? '1 1 auto' : '0 0 520px',
+              maxWidth: isMobile || isTablet ? '100%' : '520px',
+              // Drop the intro so its last line lands on the game grid's bottom row.
+              marginTop: isMobile || isTablet ? 0 : '378px',
             }}>
-              {[
-                { label: 'Product Manager / Builder', variant: 'solid', pin: false },
-                { label: 'Seattle', variant: 'accent', pin: true },
-                { label: '0→1, AI/ML & Trustworthy Systems', variant: 'solid', pin: false },
-              ].map((item) => (
-                <span
-                  key={item.label}
-                  style={{
-                    display: 'inline-flex',
-                    alignItems: 'center',
-                    gap: '5px',
-                    fontSize: isMobile ? '10.5px' : '11px',
-                    fontWeight: 500,
-                    letterSpacing: '0.01em',
-                    color: item.variant === 'solid' ? 'rgba(28, 25, 23, 0.85)' : '#4A6FD4',
-                    backgroundColor: item.variant === 'solid' ? 'rgba(28, 25, 23, 0.06)' : 'rgba(74, 114, 229, 0.1)',
-                    border: item.variant === 'solid' ? '1px solid rgba(28, 25, 23, 0.12)' : '1px solid rgba(74, 114, 229, 0.25)',
-                    borderRadius: '7px',
-                    padding: isMobile ? '5px 10px' : '6px 11px',
-                  }}
-                >
-                  {item.pin && (
-                    <svg width="10" height="10" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                      <path
-                        d="M12 2C7.58 2 4 5.58 4 10c0 5.25 6.72 11.19 7.01 11.44a1.5 1.5 0 0 0 1.98 0C13.28 21.19 20 15.25 20 10c0-4.42-3.58-8-8-8Zm0 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6Z"
-                        fill="#4A6FD4"
-                      />
-                    </svg>
-                  )}
-                  {item.label}
-                </span>
-              ))}
+              <div>
+                <h1 style={{
+                  fontFamily: 'var(--font-fraunces), serif',
+                  fontSize: isMobile ? '64px' : isTablet ? '96px' : isWideDesktop ? '132px' : '112px',
+                  fontWeight: 600,
+                  lineHeight: '0.92',
+                  color: '#1C1917',
+                  marginTop: '0',
+                  marginBottom: isMobile ? '20px' : '28px',
+                  letterSpacing: '-0.03em',
+                  ...revealStyle(0),
+                }}>
+                  <Typewriter text="Indhu" startDelayMs={150} onDone={() => setHeroNameTyped(true)} />
+                  <span style={{
+                    position: 'absolute',
+                    width: '1px',
+                    height: '1px',
+                    padding: 0,
+                    margin: '-1px',
+                    overflow: 'hidden',
+                    clip: 'rect(0, 0, 0, 0)',
+                    whiteSpace: 'nowrap',
+                    border: 0,
+                  }}> Venkatachalam</span>
+                </h1>
+
+                <div style={{
+                  marginTop: isMobile ? '20px' : '28px',
+                  fontSize: isMobile ? '15px' : isWideDesktop ? '17px' : '16px',
+                  lineHeight: '1.75',
+                  color: 'rgba(28, 25, 23, 0.78)',
+                  maxWidth: '52ch',
+                  ...revealStyle(90),
+                }}>
+                  <p style={{ margin: 0 }}>
+                    Product manager and builder in Seattle, previously a product designer and, before that, an architect. Eight years taking <span style={{ color: '#1C1917', fontWeight: 600 }}>0→1 and AI products</span> to launch. Early product work on <span style={{ color: '#1C1917', fontWeight: 600 }}>Keye</span> (later YC) and product lead on <span style={{ color: '#1C1917', fontWeight: 600 }}>LAT</span>, an enterprise AI platform at 96% adoption.
+                  </p>
+                </div>
+
+                <div style={{ marginTop: isMobile ? '20px' : '24px', fontSize: isMobile ? '13.5px' : '14px', color: 'rgba(28, 25, 23, 0.55)', fontStyle: 'italic', fontFamily: 'var(--font-fraunces), serif', ...revealStyle(130) }}>
+                  Outside of work, you&apos;ll find me clicking photos of trees.
+                </div>
+              </div>
             </div>
 
-            <div style={{
-              fontSize: isMobile ? '14px' : '15px',
-              lineHeight: '1.6',
-              color: 'rgba(28, 25, 23, 0.8)',
+            {/* Tree game — fills the right side of the hero on desktop; drops below
+                the intro on narrower screens. Lifted up into the top padding so it
+                sits higher than the intro copy. */}
+            <div data-no-trail style={{
+              position: 'relative',
+              zIndex: 1,
+              // Shrink to the game's natural width on desktop so no empty strip
+              // trails to the right of the grid; full-width when stacked.
+              flex: isMobile || isTablet ? '1 1 auto' : '0 0 auto',
+              minWidth: 0,
+              width: isMobile || isTablet ? '100%' : 'auto',
+              marginLeft: isMobile || isTablet ? 0 : 'auto',
+              // Lift the game so its instruction card's top meets the top-bar top.
+              marginTop: isMobile || isTablet ? 0 : '-130px',
             }}>
-              <p style={{
-                fontFamily: 'var(--font-heading), serif',
-                fontSize: isMobile ? '18px' : isWideDesktop ? '22px' : '20px',
-                fontWeight: 700,
-                lineHeight: '1.35',
-                color: '#1C1917',
-                marginBottom: isMobile ? '14px' : '16px',
-                ...revealStyle(90),
-              }}>
-                {heroNameTyped && (
-                  <Typewriter text="Deciding where AI should act and where people stay in control." startDelayMs={150} showCursor={false} />
-                )}
-              </p>
-
-              <p style={{ marginBottom: isMobile ? '12px' : '14px', ...revealStyle(120) }}>
-                8 years: Gensler, founding Keye, product leadership on LAT. A marketplace that went YC. An enterprise platform at 96% adoption inside a politically sensitive institution.
-              </p>
-
-              <p style={{ fontSize: isMobile ? '12.5px' : '13px', color: 'rgba(28, 25, 23, 0.5)', marginBottom: isMobile ? '4px' : '14px', ...revealStyle(140) }}>
-                Building for AI agents since 2025.
-              </p>
-            </div>
+              <LandingGameSimple
+                edgeLeft={0}
+                edgeRight={0}
+                edgeTop={0}
+              />
             </div>
           </main>
 
@@ -342,55 +293,61 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Work — a plain, fully scannable vertical list. Simpler beats clever:
-                a recruiter should see every case study at a glance, not have to
-                interact to find them. */}
+            {/* Work — a 2x2 grid (single column on mobile). Video/mockup leads
+                each card, title + outcome sit below it, so the grid reads as a
+                gallery of shipped work rather than a list of résumé lines. */}
+            {/* Connected table grid — cells touch, with hairline dividers formed by
+                the 1px gaps showing the container's line-colored background through.
+                Scales to any number of projects: new cells just extend the grid. */}
+            {/* Accordion row — flex cells that expand on hover (see .cs-work-cell).
+                The 1px gaps over the line-colored background form the dividers. */}
             <div style={{
               position: 'relative',
               zIndex: 1,
               display: 'flex',
-              flexDirection: 'column',
-              gap: isMobile ? '32px' : isWideDesktop ? '40px' : '36px',
+              flexWrap: 'wrap',
+              flexDirection: isMobile ? 'column' : 'row',
+              gap: isMobile ? '16px' : '20px',
             }}>
               {/* Card 1 - LAT */}
-              <Reveal>
+              <Reveal className="cs-work-cell" style={{ backgroundColor: '#141210' }}>
               <article
                 onClick={() => router.push('/work/lat')}
                 style={{
                 cursor: 'pointer',
                 display: 'flex',
                 flexDirection: 'column',
-                alignItems: 'center',
-                borderRadius: '10px',
-                padding: isMobile ? '24px' : isWideDesktop ? '48px' : '40px',
+                alignItems: 'flex-start',
+                height: '100%',
+                boxSizing: 'border-box',
+                padding: isMobile ? '24px' : '32px',
                 backgroundColor: 'transparent',
               }}>
-                <InfoPill
-                  isMobile={isMobile}
-                  title="LAT Platform"
-                  meta="Enterprise AI · 0→1 Systems"
-                  year="Jun 2023 – May 2024"
-                  badge="Shipped"
-                />
-
-                {/* Landing hero — same laptop mockup treatment as Keye, minus the
-                    browser-chrome strip (LAT's own app already has its own header) */}
-                <div className="cs-ambient-float" style={{
-                  width: isMobile ? 'calc(100% + 48px)' : isTablet ? 'calc(100% + 80px)' : '84%',
-                  marginTop: isMobile ? '24px' : '32px',
-                  animationDelay: '0s',
+                {/* Landing hero — laptop sits inside a soft orange rounded panel.
+                    The panel's padding scales the laptop down so nothing reads as
+                    cut, and a shared minHeight keeps LAT's and Keye's headings aligned
+                    despite the two source videos differing in aspect ratio. */}
+                <div className="cs-work-panel" style={{
+                  width: '100%',
+                  height: isMobile ? 'auto' : isWideDesktop ? '360px' : '320px',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  backgroundColor: 'transparent',
+                  borderRadius: '0',
+                  padding: isMobile ? '16px' : '26px',
                 }}>
                   <div
                     className="cs-laptop-mockup"
                     style={{
                       width: '100%',
-                      maxWidth: 'none',
+                      maxWidth: isMobile ? 'none' : isWideDesktop ? '430px' : '360px',
                       margin: '0 auto',
                     }}
                   >
                     <div className="cs-laptop-lid">
                       <div className="cs-laptop-camera"></div>
-                      <div className="cs-laptop-screen">
+                      <div className="cs-laptop-screen" style={{ backgroundColor: '#FFFFFF' }}>
                         <video
                           autoPlay
                           loop
@@ -398,10 +355,10 @@ export default function Home() {
                           playsInline
                           preload="metadata"
                           aria-label="LAT CapEx proposal workflow"
-                          // Crop rule for laptop screenshots: anchor to the top so the
-                          // app's own header/nav chrome is always visible, cropping
-                          // whatever's cut off from the bottom instead.
-                          style={{ display: 'block', width: '100%', aspectRatio: '17 / 10', objectFit: 'cover', objectPosition: 'top center' }}
+                          // Box aspect ratio matches the source video's own native
+                          // 1216x752 exactly, so it fills the frame with no crop and
+                          // no letterboxing either.
+                          style={{ display: 'block', width: '100%', aspectRatio: '1216 / 752', objectFit: 'contain', objectPosition: 'top center' }}
                         >
                           <source src="/videos/lat/LAT%20Landing%20inner%20screen.mp4" type="video/mp4" />
                         </video>
@@ -411,79 +368,70 @@ export default function Home() {
                     <div className="cs-laptop-base"><div className="cs-laptop-notch"></div></div>
                   </div>
                 </div>
-              </article>
-              </Reveal>
 
-              {/* Card 2 - Agentic Pipeline Console (AI-native stealth work) */}
-              <Reveal>
-              <article
-                onClick={() => router.push('/work/agentic-pipeline-console')}
-                style={{
-                cursor: 'pointer',
-                display: 'flex',
-                flexDirection: 'column',
-                alignItems: 'center',
-                borderRadius: '10px',
-                padding: isMobile ? '24px' : isWideDesktop ? '48px' : '40px',
-                backgroundColor: 'transparent',
-              }}>
-                <InfoPill
-                  isMobile={isMobile}
-                  title="Agentic Pipeline Console"
-                  meta="AI Agent Orchestration"
-                  year="2025–Present"
-                  badge="In Stealth"
-                />
-
-                <div style={{
-                  width: isMobile ? 'calc(100% + 48px)' : isTablet ? 'calc(100% + 80px)' : '84%',
-                  marginTop: isMobile ? '24px' : '32px',
-                  maxWidth: '640px',
-                  pointerEvents: 'none',
-                }}>
-                  <AgenticPipelineConsole />
+                <div style={{ marginTop: isMobile ? '20px' : '24px' }}>
+                  <InfoPill
+                    isMobile={isMobile}
+                    dark
+                    title="LAT Platform"
+                    meta="Enterprise AI · 0→1 Systems"
+                    year="Jun 2023 – May 2024"
+                    badge="Shipped"
+                  />
                 </div>
+
+                <p style={{
+                  fontSize: isMobile ? '13px' : '14px',
+                  color: 'rgba(255, 255, 255, 0.78)',
+                  textAlign: 'left',
+                  lineHeight: '1.7',
+                  maxWidth: '100%',
+                  marginTop: isMobile ? '12px' : '14px',
+                  marginBottom: 0,
+                }}>
+                  Took an AI maintenance tool from a 1,000-person pilot to <strong style={{ color: '#FFFFFF' }}>30,000 users</strong> at <strong style={{ color: '#FFFFFF' }}>96% weekly active use</strong>, deciding which $180K repairs got approved.
+                </p>
               </article>
               </Reveal>
 
               {/* Card 3 - Keye */}
-              <Reveal>
+              <Reveal className="cs-work-cell" style={{ backgroundColor: '#4F7DDD' }}>
               <article
                 onClick={() => router.push('/work/keye')}
                 style={{
                 cursor: 'pointer',
                 display: 'flex',
                 flexDirection: 'column',
-                alignItems: 'center',
-                borderRadius: '10px',
-                padding: isMobile ? '24px' : isWideDesktop ? '48px' : '40px',
+                alignItems: 'flex-start',
+                height: '100%',
+                boxSizing: 'border-box',
+                padding: isMobile ? '24px' : '32px',
                 backgroundColor: 'transparent',
               }}>
-                <InfoPill
-                  isMobile={isMobile}
-                  title="Keye"
-                  meta="Marketplace · B2C"
-                  year="2021–2022"
-                  badge="Shipped"
-                />
-
-                {/* Landing hero — same video + laptop treatment used as the hero in the Keye case study */}
-                <div className="cs-ambient-float" style={{
-                  width: isMobile ? 'calc(100% + 48px)' : isTablet ? 'calc(100% + 80px)' : '84%',
-                  marginTop: isMobile ? '24px' : '32px',
-                  animationDelay: '-2s',
+                {/* Landing hero — laptop sits inside a soft blue rounded panel,
+                    mirroring LAT's orange one (same radius, padding, and minHeight
+                    so the two cards' headings line up). */}
+                <div className="cs-work-panel" style={{
+                  width: '100%',
+                  height: isMobile ? 'auto' : isWideDesktop ? '360px' : '320px',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  backgroundColor: 'transparent',
+                  borderRadius: '0',
+                  padding: isMobile ? '16px' : '26px',
                 }}>
                   <div
                     className="cs-laptop-mockup"
                     style={{
                       width: '100%',
-                      maxWidth: 'none',
+                      maxWidth: isMobile ? 'none' : isWideDesktop ? '430px' : '360px',
                       margin: '0 auto',
                     }}
                   >
                     <div className="cs-laptop-lid">
                       <div className="cs-laptop-camera"></div>
-                      <div className="cs-laptop-screen">
+                      <div className="cs-laptop-screen" style={{ backgroundColor: '#FFFFFF' }}>
                         <video
                           autoPlay
                           loop
@@ -491,7 +439,10 @@ export default function Home() {
                           playsInline
                           preload="metadata"
                           aria-label="Keye landing page hero"
-                          style={{ display: 'block', width: '100%', aspectRatio: '17 / 10', objectFit: 'cover', objectPosition: 'top center' }}
+                          // Box aspect ratio matches the source video's own native
+                          // 2410x1374 exactly, so it fills the frame with no crop and
+                          // no letterboxing either.
+                          style={{ display: 'block', width: '100%', aspectRatio: '2410 / 1374', objectFit: 'contain', objectPosition: 'top center' }}
                         >
                           <source src="/videos/Keye/Keye%20hero%20cropped.mp4" type="video/mp4" />
                         </video>
@@ -501,176 +452,192 @@ export default function Home() {
                     <div className="cs-laptop-base"><div className="cs-laptop-notch"></div></div>
                   </div>
                 </div>
+
+                <div style={{ marginTop: isMobile ? '20px' : '24px' }}>
+                  <InfoPill
+                    isMobile={isMobile}
+                    dark
+                    title="Keye"
+                    meta="Marketplace · B2C"
+                    year="2021–2022"
+                    badge="Shipped"
+                  />
+                </div>
+
+                <p style={{
+                  fontSize: isMobile ? '13px' : '14px',
+                  color: 'rgba(255, 255, 255, 0.82)',
+                  textAlign: 'left',
+                  lineHeight: '1.7',
+                  maxWidth: '100%',
+                  marginTop: isMobile ? '12px' : '14px',
+                  marginBottom: 0,
+                }}>
+                  Built a credit marketplace from three static screens to <strong style={{ color: '#FFFFFF' }}>20,000 monthly users</strong> and a <strong style={{ color: '#FFFFFF' }}>$1.5M raise</strong> that later went YC.
+                </p>
               </article>
               </Reveal>
 
               {/* Card 4 - Misinformation Center */}
-              <Reveal>
+              <Reveal className="cs-work-cell" style={{ backgroundColor: '#FFFFFF' }}>
               <article
                 onClick={() => router.push('/work/misinformation-center')}
                 style={{
                 cursor: 'pointer',
                 display: 'flex',
                 flexDirection: 'column',
-                alignItems: 'center',
-                borderRadius: '10px',
-                padding: isMobile ? '24px' : isWideDesktop ? '48px' : '40px',
+                alignItems: 'flex-start',
+                height: '100%',
+                boxSizing: 'border-box',
+                padding: isMobile ? '24px' : '32px',
                 backgroundColor: 'transparent',
               }}>
-                <InfoPill
-                  isMobile={isMobile}
-                  title="Misinformation Center"
-                  meta="Research · Media Literacy"
-                  year="Jan–Dec 2024"
-                  badge="Published"
-                />
-
-                {/* Landing videos, side by side — bleeds past the card's own side
-                    padding on mobile (negative margin cancels it) so the row gets the
-                    full content-area width instead of being squeezed by it. */}
-                <div className="cs-ambient-float" style={{
+                {/* Landing videos, side by side inside a neutral grey rounded
+                    panel — same radius/padding treatment as the LAT and Keye
+                    panels above, just a different fill. */}
+                <div className="cs-work-panel" style={{
                   display: 'flex',
                   flexDirection: 'row',
                   alignItems: 'center',
-                  gap: isMobile ? '10px' : '24px',
-                  width: isMobile ? 'calc(100% + 48px)' : '100%',
-                  marginLeft: isMobile ? '-24px' : 0,
-                  marginRight: isMobile ? '-24px' : 0,
-                  marginTop: isMobile ? '16px' : '20px',
+                  gap: isMobile ? '12px' : '18px',
+                  width: '100%',
+                  height: isMobile ? 'auto' : isWideDesktop ? '360px' : '320px',
                   justifyContent: 'center',
-                  // Crop rule for these phone screen recordings (objectPosition
-                  // on the videos below): anchor to the bottom so the status
-                  // bar/notch stays flush with the frame — different from the
-                  // laptop cards above because these have no fixed app header
-                  // worth preserving, just whatever screen the loop lands on.
-                  animationDelay: '-4s',
+                  backgroundColor: 'transparent',
+                  borderRadius: '0',
+                  padding: isMobile ? '16px' : '26px',
                 }}>
-                  <video
-                    autoPlay
-                    loop
-                    muted
-                    playsInline
-                    preload="auto"
-                    aria-label="Misinformation Center landing feature 1"
-                    style={{
-                      display: 'block',
-                      flex: '1 1 0',
-                      minWidth: 0,
-                      width: '100%',
-                      maxWidth: isMobile ? '220px' : isTablet ? '420px' : '460px',
-                      // The source video is an 800x1020 canvas but the actual phone
-                      // mockup only fills a centered 436x890 region (measured via
-                      // ffmpeg cropdetect) — matching the box to that aspect ratio
-                      // and letting cover zoom in crops out the baked-in black
-                      // padding instead of leaving a visible gap around the phone.
-                      aspectRatio: '436 / 890',
-                      objectFit: 'cover',
-                      objectPosition: '50% 100%',
-                      borderRadius: '0px',
-                    }}
-                  >
-                    <source src="/videos/misinformationcenter/Landing%20video%2005%20cropped.mp4" type="video/mp4" />
-                  </video>
-                  <video
-                    autoPlay
-                    loop
-                    muted
-                    playsInline
-                    preload="auto"
-                    aria-label="Misinformation Center landing feature 2"
-                    style={{
-                      display: 'block',
-                      flex: '1 1 0',
-                      minWidth: 0,
-                      width: '100%',
-                      maxWidth: isMobile ? '220px' : isTablet ? '420px' : '460px',
-                      // The source video is an 800x1020 canvas but the actual phone
-                      // mockup only fills a centered 436x890 region (measured via
-                      // ffmpeg cropdetect) — matching the box to that aspect ratio
-                      // and letting cover zoom in crops out the baked-in black
-                      // padding instead of leaving a visible gap around the phone.
-                      aspectRatio: '436 / 890',
-                      objectFit: 'cover',
-                      objectPosition: '50% 100%',
-                      borderRadius: '0px',
-                    }}
-                  >
-                    <source src="/videos/misinformationcenter/Landing%20video%2006%20cropped.mp4" type="video/mp4" />
-                  </video>
+                  <div style={{
+                    position: 'relative',
+                    overflow: 'hidden',
+                    flex: '1 1 0',
+                    minWidth: 0,
+                    width: '100%',
+                    maxWidth: isMobile ? '130px' : isWideDesktop ? '150px' : '130px',
+                    aspectRatio: '436 / 890',
+                  }}>
+                    <video
+                      autoPlay
+                      loop
+                      muted
+                      playsInline
+                      preload="auto"
+                      aria-label="Misinformation Center scan feature"
+                      style={{
+                        display: 'block',
+                        position: 'absolute',
+                        inset: 0,
+                        width: '100%',
+                        height: '100%',
+                        // This source is already a tight, true-white-bg crop of just
+                        // the phone (448x906, near-identical aspect to the box below)
+                        // — no canvas margin to crop out, unlike the old Landing-video
+                        // exports which had the project's cream bg baked in.
+                        objectFit: 'cover',
+                        objectPosition: '50% 50%',
+                        borderRadius: '0px',
+                      }}
+                    >
+                      <source src="/videos/misinformationcenter/Scan.mp4" type="video/mp4" />
+                    </video>
+                  </div>
+                  <div style={{
+                    position: 'relative',
+                    overflow: 'hidden',
+                    flex: '1 1 0',
+                    minWidth: 0,
+                    width: '100%',
+                    maxWidth: isMobile ? '130px' : isWideDesktop ? '150px' : '130px',
+                    aspectRatio: '436 / 890',
+                  }}>
+                    <video
+                      autoPlay
+                      loop
+                      muted
+                      playsInline
+                      preload="auto"
+                      aria-label="Misinformation Center submit feature"
+                      style={{
+                        display: 'block',
+                        position: 'absolute',
+                        inset: 0,
+                        width: '100%',
+                        height: '100%',
+                        objectFit: 'cover',
+                        objectPosition: '50% 50%',
+                        borderRadius: '0px',
+                      }}
+                    >
+                      <source src="/videos/misinformationcenter/Submit.mp4" type="video/mp4" />
+                    </video>
+                  </div>
                 </div>
+
+                <div style={{ marginTop: isMobile ? '20px' : '24px' }}>
+                  <InfoPill
+                    isMobile={isMobile}
+                    title="Misinformation Center"
+                    meta="Research · Media Literacy"
+                    year="Jan–Dec 2024"
+                    badge="Published"
+                  />
+                </div>
+
+                <p style={{
+                  fontSize: isMobile ? '13px' : '14px',
+                  color: 'rgba(28, 25, 23, 0.7)',
+                  textAlign: 'left',
+                  lineHeight: '1.7',
+                  maxWidth: '100%',
+                  marginTop: isMobile ? '12px' : '14px',
+                  marginBottom: 0,
+                }}>
+                  A grad-school capstone on helping people judge what&apos;s real online. Tested live with <strong style={{ color: '#1C1917' }}>~1,800 people</strong> at Misinfo Day, which reshaped the whole approach.
+                </p>
               </article>
               </Reveal>
 
             </div>
+
+            {/* Non-clickable visual cards — folders of work playing like GIFs and
+                a few stills — in their own tighter 5-up grid below the studies. Flex
+                so a short last row stretches to fill (no empty grey cells). */}
+            <div style={{
+              display: 'flex',
+              flexWrap: 'wrap',
+              gap: isMobile ? '16px' : '20px',
+              marginTop: isMobile ? '16px' : '20px',
+            }}>
+              {[
+                ...flowingCards.map((c) => ({ key: c.title, images: c.images as string[] | undefined, image: undefined as string | undefined, fast: !!c.fast })),
+                ...stillCards.map((c) => ({ key: c.title, images: undefined as string[] | undefined, image: c.image, fast: false })),
+              ].map((card) => (
+                <div
+                  key={card.key}
+                  style={{
+                    position: 'relative',
+                    overflow: 'hidden',
+                    flex: isMobile ? '1 1 calc(50% - 8px)' : isTablet ? '1 1 calc(33.333% - 14px)' : '1 1 calc(20% - 16px)',
+                    minWidth: 0,
+                    height: isMobile ? '160px' : isWideDesktop ? '240px' : '200px',
+                    backgroundColor: '#F2F0EB',
+                  }}
+                >
+                  {card.images
+                    ? (card.key === 'Site'
+                        // Unlike images (site photo, Toronto map, diagrams) — hard-cut
+                        // between them so dissimilar frames never blend into a "filter".
+                        ? <FlowingImages images={card.images} frameMs={3200} crossfadeMs={0} fit="contain" />
+                        : card.fast
+                          ? <FlowingImages images={card.images} frameMs={420} crossfadeMs={240} />
+                          : <FlowingImages images={card.images} frameMs={4200} />)
+                    : <img src={card.image} alt="" loading="lazy" decoding="async" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover' }} />}
+                </div>
+              ))}
+            </div>
           </section>
 
-          {/* Landing Game — now sits after the Selected Work section; same
-              maxWidth as the wrapper so the grid's left edge still lines up
-              with the rest of the page. */}
-          <div style={{
-            marginTop: isMobile ? '40px' : isWideDesktop ? '64px' : '56px',
-            marginBottom: isMobile ? '20px' : isWideDesktop ? '36px' : '28px',
-          }}>
-            <LandingGameSimple
-              edgeLeft={isMobile ? 20 : isTablet ? 32 : isWideDesktop ? 56 : 36}
-              edgeRight={isMobile ? 20 : isTablet ? 32 : isWideDesktop ? 64 : 40}
-              edgeTop={0}
-            />
           </div>
-
-          </div>
-
-          {/* Closing CTA — a deliberate last beat before the footer links, not just
-              another section ending in silence */}
-          <Reveal>
-            <div style={{
-              maxWidth: isWideDesktop ? '1100px' : '1000px',
-              marginTop: isMobile ? '80px' : isWideDesktop ? '140px' : '120px',
-              marginLeft: 'auto',
-              marginRight: 'auto',
-              paddingLeft: isMobile ? '0' : isWideDesktop ? '64px' : '48px',
-              paddingRight: isMobile ? '0' : isWideDesktop ? '64px' : '48px',
-              display: 'flex',
-              flexDirection: 'column',
-              alignItems: 'center',
-              justifyContent: 'center',
-              textAlign: 'center',
-              gap: isMobile ? '24px' : '32px',
-            }}>
-              <h2 style={{
-                fontFamily: 'var(--font-heading), serif',
-                fontSize: isMobile ? '28px' : isWideDesktop ? '44px' : '38px',
-                fontWeight: 700,
-                color: '#1C1917',
-                letterSpacing: '-0.01em',
-                lineHeight: '1.15',
-                textAlign: 'center',
-                margin: 0,
-              }}>
-                Let's build something people can trust.
-              </h2>
-              <a
-                href="mailto:indhuve05@gmail.com"
-                className="cs-pill-hover"
-                style={{
-                  display: 'inline-flex',
-                  alignItems: 'center',
-                  flexShrink: 0,
-                  fontFamily: 'var(--font-heading), serif',
-                  fontWeight: 700,
-                  fontSize: isMobile ? '15px' : '16px',
-                  color: '#FFFFFF',
-                  backgroundColor: '#1C1917',
-                  border: '1px solid #1C1917',
-                  borderRadius: '999px',
-                  padding: isMobile ? '12px 22px' : '14px 28px',
-                  textDecoration: 'none',
-                }}
-              >
-                Contact me
-              </a>
-            </div>
-          </Reveal>
 
           {/* Footer Links */}
           <footer style={{

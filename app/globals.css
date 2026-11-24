@@ -2044,6 +2044,53 @@ img, video {
   transform: scale(0.9);
 }
 
+/* Selected Work — a wrapping grid of equal cells, 3 per row. Project cells expand
+   on their own on hover (lift + scale); visual cells are static (non-clickable). */
+.cs-work-cell,
+.cs-still-cell {
+  flex: 1 1 calc(33.333% - 14px);
+  min-width: 0;
+}
+.cs-work-cell {
+  transform-origin: center;
+  transition: transform 0.55s cubic-bezier(0.33, 1, 0.42, 1), box-shadow 0.55s ease, z-index 0s;
+}
+@media (min-width: 769px) {
+  .cs-work-cell:hover {
+    transform: scale(1.04);
+    z-index: 4;
+    box-shadow: 0 20px 50px rgba(23, 21, 15, 0.22);
+  }
+}
+
+.cs-work-panel {
+  position: relative;
+  overflow: hidden;
+}
+
+/* FlowingImages: the outgoing frame fades out over the already-opaque incoming
+   one, so the dark card background never shows through mid-transition. */
+@keyframes flowImgFadeOut {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
+/* Hero photo chips — straighten and lift slightly on hover. */
+.hero-photo-chip:hover {
+  transform: rotate(0deg) translateY(-4px) scale(1.12) !important;
+  z-index: 2;
+}
+
+/* Dark masthead variant — light ink on the near-black nav pill. */
+.topbar-link--dark:hover {
+  color: #FFFFFF !important;
+  background-color: rgba(255, 255, 255, 0.12);
+}
+
+.topbar-icon-btn--dark:hover {
+  background-color: rgba(255, 255, 255, 0.14);
+}
+
 .bottombar-icon-btn {
   background-color: transparent;
   transition: background-color 0.15s ease, transform 0.1s ease;

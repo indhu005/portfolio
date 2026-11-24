@@ -86,40 +86,117 @@ export default function TopBar() {
         }}
       />
 
-      <div ref={wrapRef} style={{ position: 'fixed', top: '20px', left: '50%', transform: 'translateX(-50%)', zIndex: 1000 }}>
+      <div style={{ position: 'fixed', top: '32px', left: 0, right: 0, zIndex: 1000, pointerEvents: 'none' }}>
+        <div style={{ width: '100%', paddingLeft: '56px', paddingRight: '64px', boxSizing: 'border-box' }}>
+        <div style={{ maxWidth: '1800px', margin: '0 auto', display: 'flex', justifyContent: 'flex-start' }}>
+      <div ref={wrapRef} style={{ position: 'relative', pointerEvents: 'auto' }}>
         <motion.div
           layout
           transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
           style={{
             display: 'flex',
             alignItems: 'center',
-            gap: '16px',
-            padding: '10px 18px',
-            backgroundColor: 'rgba(120, 118, 112, 0.18)',
-            backdropFilter: 'blur(14px)',
-            WebkitBackdropFilter: 'blur(14px)',
-            border: '1px solid rgba(28, 25, 23, 0.14)',
+            gap: '24px',
+            padding: '11px 22px',
+            backgroundColor: '#17150F',
+            border: '1px solid rgba(255, 255, 255, 0.08)',
             borderRadius: '999px',
-            boxShadow: '0 12px 32px rgba(28, 25, 23, 0.12)',
+            boxShadow: '0 14px 36px rgba(23, 21, 15, 0.28)',
             overflow: 'hidden',
           }}
         >
           <Link
             href="/"
+            className="topbar-link topbar-link--dark"
             style={{
-              fontFamily: 'var(--font-heading), serif',
+              fontFamily: 'var(--font-fraunces), serif',
               fontSize: '15px',
-              fontWeight: 700,
-              color: '#1C1917',
+              fontWeight: 600,
+              color: '#FAF8F3',
               textDecoration: 'none',
-              letterSpacing: '-0.01em',
+              letterSpacing: '0',
               flexShrink: 0,
             }}
           >
             Indhu
           </Link>
 
-          <span style={{ width: '1px', height: '14px', backgroundColor: 'rgba(28, 25, 23, 0.12)', flexShrink: 0 }} />
+          <AnimatePresence initial={false}>
+            {!searchOpen && (
+              <motion.div
+                key="links"
+                initial={{ opacity: 0, width: 0 }}
+                animate={{ opacity: 1, width: 'auto' }}
+                exit={{ opacity: 0, width: 0 }}
+                transition={{ duration: 0.25, ease: [0.22, 1, 0.36, 1] }}
+                style={{ display: 'flex', alignItems: 'center', gap: '24px', overflow: 'hidden', whiteSpace: 'nowrap' }}
+              >
+                <span style={{ width: '1px', height: '14px', backgroundColor: 'rgba(255, 255, 255, 0.16)', flexShrink: 0 }} />
+
+                <Link
+                  href="/#case-studies"
+                  className="topbar-link topbar-link--dark"
+                  style={{
+                    fontSize: '13px',
+                    fontWeight: 600,
+                    color: '#FFFFFF',
+                    textDecoration: 'none',
+                    whiteSpace: 'nowrap',
+                  }}
+                >
+                  Work
+                </Link>
+
+                <a
+                  href="/Indhu-Venkatachalam-Senior-Product-Design-Engineer.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="topbar-link topbar-link--dark"
+                  style={{
+                    fontSize: '13px',
+                    fontWeight: 600,
+                    color: '#FFFFFF',
+                    textDecoration: 'none',
+                    whiteSpace: 'nowrap',
+                  }}
+                >
+                  Resume
+                </a>
+
+                <Link
+                  href="/about"
+                  className="topbar-link topbar-link--dark"
+                  style={{
+                    fontSize: '13px',
+                    fontWeight: 600,
+                    color: '#FFFFFF',
+                    textDecoration: 'none',
+                    whiteSpace: 'nowrap',
+                  }}
+                >
+                  About
+                </Link>
+
+                <a
+                  href="https://www.linkedin.com/in/indhu05/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="LinkedIn"
+                  className="topbar-icon-btn topbar-icon-btn--dark"
+                >
+                  <svg width="16" height="16" viewBox="0 0 18 18" fill="none" aria-hidden="true">
+                    <rect x="1" y="1" width="16" height="16" rx="3" stroke="#FAF8F3" strokeWidth="1.3" />
+                    <circle cx="5.2" cy="5.4" r="1.05" fill="#FAF8F3" />
+                    <path d="M5.2 7.8V13" stroke="#FAF8F3" strokeWidth="1.3" strokeLinecap="round" />
+                    <path d="M8.3 13V9.8C8.3 8.6 9 7.8 10.1 7.8C11.1 7.8 11.7 8.5 11.7 9.8V13" stroke="#FAF8F3" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round" />
+                    <path d="M8.3 13V8.1" stroke="#FAF8F3" strokeWidth="1.3" strokeLinecap="round" />
+                  </svg>
+                </a>
+              </motion.div>
+            )}
+          </AnimatePresence>
+
+          <span style={{ width: '1px', height: '14px', backgroundColor: 'rgba(255, 255, 255, 0.16)', flexShrink: 0 }} />
 
           <AnimatePresence mode="wait" initial={false}>
             {searchOpen ? (
@@ -141,7 +218,7 @@ export default function TopBar() {
                   outline: 'none',
                   background: 'transparent',
                   fontSize: '13px',
-                  color: '#1C1917',
+                  color: '#FAF8F3',
                   fontFamily: 'inherit',
                 }}
               />
@@ -154,97 +231,14 @@ export default function TopBar() {
                 transition={{ duration: 0.2 }}
                 onClick={() => setSearchOpen(true)}
                 aria-label="Search"
-                className="topbar-icon-btn"
+                className="topbar-icon-btn topbar-icon-btn--dark"
                 style={{ background: 'none', border: 'none', cursor: 'pointer' }}
               >
                 <svg width="16" height="16" viewBox="0 0 18 18" fill="none" aria-hidden="true">
-                  <circle cx="8" cy="8" r="5.5" stroke="#1C1917" strokeWidth="1.4" />
-                  <path d="M12 12L16 16" stroke="#1C1917" strokeWidth="1.4" strokeLinecap="round" />
+                  <circle cx="8" cy="8" r="5.5" stroke="#FAF8F3" strokeWidth="1.4" />
+                  <path d="M12 12L16 16" stroke="#FAF8F3" strokeWidth="1.4" strokeLinecap="round" />
                 </svg>
               </motion.button>
-            )}
-          </AnimatePresence>
-
-          <AnimatePresence initial={false}>
-            {!searchOpen && (
-              <motion.div
-                key="links"
-                initial={{ opacity: 0, width: 0 }}
-                animate={{ opacity: 1, width: 'auto' }}
-                exit={{ opacity: 0, width: 0 }}
-                transition={{ duration: 0.25, ease: [0.22, 1, 0.36, 1] }}
-                style={{ display: 'flex', alignItems: 'center', gap: '16px', overflow: 'hidden', whiteSpace: 'nowrap' }}
-              >
-                <span style={{ width: '1px', height: '14px', backgroundColor: 'rgba(28, 25, 23, 0.12)', flexShrink: 0 }} />
-
-                <Link
-                  href="/#case-studies"
-                  className="topbar-link"
-                  style={{
-                    fontSize: '13px',
-                    fontWeight: 600,
-                    color: 'rgba(28, 25, 23, 0.75)',
-                    textDecoration: 'none',
-                    whiteSpace: 'nowrap',
-                  }}
-                >
-                  Work
-                </Link>
-
-                <a
-                  href="/Indhu-Venkatachalam-Senior-Product-Design-Engineer.pdf"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="topbar-link"
-                  style={{
-                    fontSize: '13px',
-                    fontWeight: 600,
-                    color: 'rgba(28, 25, 23, 0.75)',
-                    textDecoration: 'none',
-                    whiteSpace: 'nowrap',
-                  }}
-                >
-                  Resume
-                </a>
-
-                <a
-                  href="https://www.linkedin.com/in/indhu05/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="LinkedIn"
-                  className="topbar-icon-btn"
-                >
-                  <svg width="16" height="16" viewBox="0 0 18 18" fill="none" aria-hidden="true">
-                    <rect x="1" y="1" width="16" height="16" rx="3" stroke="#1C1917" strokeWidth="1.3" />
-                    <circle cx="5.2" cy="5.4" r="1.05" fill="#1C1917" />
-                    <path d="M5.2 7.8V13" stroke="#1C1917" strokeWidth="1.3" strokeLinecap="round" />
-                    <path d="M8.3 13V9.8C8.3 8.6 9 7.8 10.1 7.8C11.1 7.8 11.7 8.5 11.7 9.8V13" stroke="#1C1917" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round" />
-                    <path d="M8.3 13V8.1" stroke="#1C1917" strokeWidth="1.3" strokeLinecap="round" />
-                  </svg>
-                </a>
-
-                <Link
-                  href="/about"
-                  aria-label="About"
-                  className="topbar-icon-btn"
-                >
-                  <svg width="16" height="16" viewBox="0 0 18 18" fill="none" aria-hidden="true">
-                    <circle cx="9" cy="6.1" r="2.5" stroke="#1C1917" strokeWidth="1.3" />
-                    <path d="M3.6 14.5C4.2 11.5 6.3 9.9 9 9.9C11.7 9.9 13.8 11.5 14.4 14.5" stroke="#1C1917" strokeWidth="1.3" strokeLinecap="round" />
-                  </svg>
-                </Link>
-
-                <a
-                  href="mailto:indhuve05@gmail.com"
-                  aria-label="Email"
-                  className="topbar-icon-btn"
-                >
-                  <svg width="16" height="16" viewBox="0 0 18 18" fill="none" aria-hidden="true">
-                    <rect x="1.5" y="3.5" width="15" height="11" rx="1.6" stroke="#1C1917" strokeWidth="1.3" />
-                    <path d="M2 4.5L9 10L16 4.5" stroke="#1C1917" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round" />
-                  </svg>
-                </a>
-              </motion.div>
             )}
           </AnimatePresence>
         </motion.div>
@@ -261,8 +255,7 @@ export default function TopBar() {
               style={{
                 position: 'absolute',
                 top: 'calc(100% + 8px)',
-                left: '50%',
-                transform: 'translateX(-50%)',
+                left: 0,
                 width: '340px',
                 maxHeight: '420px',
                 overflowY: 'auto',
@@ -321,6 +314,9 @@ export default function TopBar() {
             </motion.div>
           )}
         </AnimatePresence>
+      </div>
+        </div>
+        </div>
       </div>
     </>
   )

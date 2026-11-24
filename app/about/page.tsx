@@ -154,7 +154,6 @@ export default function About() {
                 { k: 'Based', v: 'Seattle, WA' },
                 { k: 'Focus', v: 'Systems, trust, and AI guardrails' },
                 { k: 'Experience', v: '8 years building products · 5+ years owning roadmaps, 0→1 through enterprise' },
-                { k: 'AI Fluency', v: 'Fluent working with AI agents and LLMs — prototyping, building, and shipping with them daily' },
               ].map((field) => (
                 <div key={field.k} style={{ marginBottom: '20px' }}>
                   <div style={{
@@ -180,21 +179,8 @@ export default function About() {
                 textTransform: 'uppercase',
                 fontWeight: 700,
                 color: '#1C1917',
-                marginBottom: '4px',
+                marginBottom: isMobile ? '24px' : '32px',
               }}>Field notes</div>
-
-              <div style={{
-                fontFamily: 'var(--font-heading), serif',
-                fontStyle: 'italic',
-                fontWeight: 400,
-                fontSize: isMobile ? '24px' : isTablet ? '28px' : '32px',
-                lineHeight: '1.4',
-                color: '#1C1917',
-                maxWidth: '18ch',
-                margin: isMobile ? '0 0 40px' : '0 0 56px',
-              }}>
-                I decide who the system defers to.
-              </div>
 
               {[
                 {
@@ -205,11 +191,6 @@ export default function About() {
                 },
                 {
                   n: '02',
-                  label: 'Who decides',
-                  body: <>AI now decides more of what people see, trust, and act on, so guardrails matter more than polish. An enterprise ML platform earning trust inside a skeptical institution, and a media literacy tool built on judging for yourself, taught me the same lesson twice. <span style={{ color: '#1C1917', fontWeight: 500 }}>The interface is rarely the hard part. Deciding who the system should defer to is.</span></>,
-                },
-                {
-                  n: '03',
                   label: 'The bar',
                   body: <>The best products are invisible. An Apple Watch that catches a heartbeat and calls for help. If someone notices they're using your product, it hasn't done its job yet.</>,
                 },

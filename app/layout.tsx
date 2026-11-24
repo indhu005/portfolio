@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from 'next'
-import { Fraunces, Space_Grotesk, Inter } from 'next/font/google'
+import { Fraunces, Space_Grotesk, Inter, Playfair_Display, Instrument_Serif, DM_Serif_Display } from 'next/font/google'
 import Script from 'next/script'
 import { cookies } from 'next/headers'
 import './globals.css'
@@ -26,6 +26,27 @@ const inter = Inter({
   subsets: ['latin'],
   weight: ['400', '500', '700'],
   variable: '--font-inter'
+})
+
+const playfair = Playfair_Display({
+  subsets: ['latin'],
+  weight: ['400', '500', '700', '900'],
+  style: ['normal', 'italic'],
+  variable: '--font-playfair'
+})
+
+const instrumentSerif = Instrument_Serif({
+  subsets: ['latin'],
+  weight: ['400'],
+  style: ['normal', 'italic'],
+  variable: '--font-instrument'
+})
+
+const dmSerif = DM_Serif_Display({
+  subsets: ['latin'],
+  weight: ['400'],
+  style: ['normal', 'italic'],
+  variable: '--font-dm-serif'
 })
 
 export const metadata: Metadata = {
@@ -81,7 +102,7 @@ export default async function RootLayout({
   return (
     <html
       lang="en"
-      className={[fraunces.variable, spaceGrotesk.variable, inter.variable].join(' ')}
+      className={[fraunces.variable, spaceGrotesk.variable, inter.variable, playfair.variable, instrumentSerif.variable, dmSerif.variable].join(' ')}
       data-scroll-behavior="smooth"
     >
       <head>
